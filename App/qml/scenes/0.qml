@@ -419,6 +419,7 @@ Item {
 
     Image {
         id: darkness
+        z: 1
         visible: !aSwitch.active
         anchors { fill: parent }
 
@@ -434,6 +435,7 @@ Item {
 
     Switch {
         id: aSwitch
+        z: 2
         x: 1000; y: 303
 
         property string name: 'switch'
@@ -453,16 +455,23 @@ Item {
     }
 
     DropArea {
-        x: 53; y: 325
+        x: 60; y: 325
         width: 95; height: 97
         keys: [ "bucket" ]
-        onDropped: drop.accept()
+        onDropped: {
+            drop.accept()
+            var o = drag.source
+
+            o.removeFromInventory()
+            o.x = x
+            o.y = y+10
+        }
     }
 
 
     Image {
         id: foreground
-        z: 1
+        z: 10
         anchors { fill: parent }
 
         fillMode: Image.PreserveAspectFit

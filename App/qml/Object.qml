@@ -16,13 +16,23 @@ Entity {
 
     property string name: ''
 
-    Drag.keys: name
+    Drag.keys: [ 'inventory', name ]
 
-    onDragAccepted: {
-        if(inInventory) {
+    onDragStarted: z = 3
+    onDragEnded: z = 0
+
+    function removeFromInventory() {
+        if(game.inventory.has(root)) {
             mover.duration = 0
             game.inventory.remove(root)
+        }
+    }
 
+    function addToInventory() {
+        if(!game.inventory.has(root)) {
+            dragReturnAnimation.complete()
+            mover.duration = 500
+            game.inventory.addAnimated(root)
         }
     }
 
@@ -73,11 +83,8 @@ Entity {
     }
 
     onClicked: {
-        if(!inInventory) {
-           dragReturnAnimation.complete()
-           mover.duration = 500
-           game.inventory.addAnimated(root)
-       }
+        if(!inInventory)
+            addToInventory()
     }
 
 }

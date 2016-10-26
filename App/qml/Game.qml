@@ -275,6 +275,13 @@ Item {
             anchors { fill: parent }
             onClicked: inventory.show = !inventory.show
         }
+        DropArea {
+            anchors { fill: parent }
+            keys: [ "inventory" ]
+            onDropped: {
+                drag.source.addToInventory()
+            }
+        }
     }
 
     Inventory {
