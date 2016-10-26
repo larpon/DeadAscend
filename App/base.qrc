@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qml/qmldir</file>
+        <file>qml/App.qml</file>
+        <file>qml/Core.qml</file>
+        <file>qml/menus/Main.qml</file>
+        <file>qml/TextButton.qml</file>
+        <file>qml/Modes.qml</file>
+        <file>qml/Mode.qml</file>
+        <file>qml/Game.qml</file>
+        <file>qml/scenes/0.qml</file>
+        <file>qml/menus/Pause.qml</file>
+        <file>qml/Switch.qml</file>
+        <file>qml/EditorOverlay.qml</file>
+        <file>qml/Object.qml</file>
+        <file>qml/Inventory.qml</file>
+        <file>qml/JSONReader.qml</file>
+    </qresource>
+</RCC>

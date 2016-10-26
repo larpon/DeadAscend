@@ -1,0 +1,33 @@
+# Windows
+.vs/
+*.VC.db
+*.sln
+GeneratedFiles/
+*.vcxproj
+*.vcxproj.*
+*_resource.rc
+debug/
+release/
+x64/
+build/
+
+# QMake
+Makefile
+.qmake.*
+
+
+# Mac store files
+.DS_Store
+
+# KDE .directory files
+.directory
+
+# Build directories
+build-HammerBees-*
+
+# Ignore text editor .swp files
+*.swp
+
+# Qt Creator user profiles
+*.pro.user
+*.pro.user.*

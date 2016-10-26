@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="26">
+ <tileset firstgid="1" name="0" tilewidth="155" tileheight="191" tilecount="13" columns="0">
+  <tile id="0">
+   <image width="74" height="97" source="../App/assets/sprites/bucket/bucket_empty.png"/>
+  </tile>
+  <tile id="1">
+   <image width="19" height="25" source="../App/assets/sprites/buttons/button_01/button_01_up.png"/>
+  </tile>
+  <tile id="2">
+   <image width="65" height="191" source="../App/assets/sprites/rope/dangle/0001.png"/>
+  </tile>
+  <tile id="3">
+   <image width="27" height="85" source="../App/assets/sprites/water/drip/0001.png"/>
+  </tile>
+  <tile id="4">
+   <image width="32" height="91" source="../App/assets/sprites/water/run/0001.png"/>
+  </tile>
+  <tile id="5">
+   <image width="107" height="45" source="../App/assets/sprites/water/pool/0001.png"/>
+  </tile>
+  <tile id="6">
+   <image width="9" height="43" source="../App/assets/sprites/water/bucket_run/0001.png"/>
+  </tile>
+  <tile id="7">
+   <image width="61" height="15" source="../App/assets/sprites/water/bucket_fill/0001.png"/>
+  </tile>
+  <tile id="8">
+   <image width="31" height="17" source="../App/assets/sprites/bubblegum/bubblegum.png"/>
+  </tile>
+  <tile id="9">
+   <image width="118" height="47" source="../App/assets/sprites/hatch/open/0000.png"/>
+  </tile>
+  <tile id="10">
+   <image width="155" height="123" source="../App/assets/sprites/parasolbase/parasolbase.png"/>
+  </tile>
+  <tile id="11">
+   <image width="65" height="191" source="../App/assets/sprites/rope/dangle_bucket/0001.png"/>
+  </tile>
+  <tile id="12">
+   <image width="65" height="191" source="../App/assets/sprites/rope/dangle_bucket_water/0001.png"/>
+  </tile>
+ </tileset>
+ <imagelayer name="0 bg">
+  <image source="../App/assets/scenes/0.png" width="1100" height="660"/>
+ </imagelayer>
+ <objectgroup name="0">
+  <object id="2" name="bucket" type="Object" gid="1" x="107.409" y="571.306" width="74" height="97">
+   <properties>
+    <property name="tileId" value="0"/>
+   </properties>
+  </object>
+  <object id="3" name="switch" type="Switch" gid="2" x="1000.1" y="327.985" width="19" height="25">
+   <properties>
+    <property name="tileId" value="1"/>
+   </properties>
+  </object>
+  <object id="4" name="rope_dangle" type="ImageAnimation" gid="3" x="498.667" y="303" width="65" height="191">
+   <properties>
+    <property name="tileId" value="2"/>
+   </properties>
+  </object>
+  <object id="6" name="crack" type="MouseArea" x="204" y="200" width="56" height="88"/>
+  <object id="10" name="crack2" type="MouseArea" x="842.667" y="145.333" width="133.333" height="133.333">
+   <ellipse/>
+  </object>
+  <object id="12" name="woodenPlanks" type="MouseArea" x="278.667" y="268" width="86.6667" height="117.333"/>
+  <object id="13" name="light" type="MouseArea" x="58" y="110.667" width="86.6667" height="34.6663"/>
+  <object id="14" name="drip" type="ImageAnimation" gid="4" x="75.3333" y="412.333" width="27" height="85">
+   <properties>
+    <property name="tileId" value="3"/>
+   </properties>
+  </object>
+  <object id="15" name="run" type="ImageAnimation" gid="5" x="73.6667" y="416" width="32" height="91">
+   <properties>
+    <property name="tileId" value="4"/>
+   </properties>
+  </object>
+  <object id="16" name="pool" type="ImageAnimation" gid="6" x="0" y="461" width="107" height="45">
+   <properties>
+    <property name="tileId" value="5"/>
+   </properties>
+  </object>
+  <object id="17" name="bucket_run" type="ImageAnimation" gid="7" x="86.8333" y="368.667" width="9" height="43">
+   <properties>
+    <property name="tileId" value="6"/>
+   </properties>
+  </object>
+  <object id="18" name="bucket_fill" type="ImageAnimation" gid="8" x="59" y="373" width="61" height="15">
+   <properties>
+    <property name="tileId" value="7"/>
+   </properties>
+  </object>
+  <object id="19" name="bubblegum" type="Object" gid="9" x="865.5" y="543.5" width="31" height="17">
+   <properties>
+    <property name="tileId" value="8"/>
+   </properties>
+  </object>
+  <object id="20" name="hatch" type="ImageAnimation" gid="10" x="543" y="151" width="118" height="47">
+   <properties>
+    <property name="tileId" value="9"/>
+   </properties>
+  </object>
+  <object id="21" name="parasol_base" type="Object" gid="11" x="799" y="569" width="155" height="123">
+   <properties>
+    <property name="tileId" value="10"/>
+   </properties>
+  </object>
+  <object id="23" name="rope_dangle_bucket" type="ImageAnimation" gid="12" x="498.667" y="303" width="65" height="191"/>
+  <object id="25" name="rope_dangle_water" type="ImageAnimation" gid="13" x="498.667" y="304.333" width="65" height="191"/>
+ </objectgroup>
+</map>
