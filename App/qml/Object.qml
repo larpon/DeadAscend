@@ -4,6 +4,7 @@ import Qak 1.0
 
 Entity {
     id: root
+
     x: 0; y: 0
     width: image.width; height: image.height
 
@@ -15,7 +16,17 @@ Entity {
 
     property string name: ''
 
-    visible: !inInventory
+    Drag.keys: name
+
+    onDragAccepted: {
+        if(inInventory) {
+            mover.duration = 0
+            game.inventory.remove(root)
+
+        }
+    }
+
+    //visible: !inInventory
     property bool inInventory: false
     property bool fitInventory: false
     onInInventoryChanged: {
@@ -24,6 +35,18 @@ Entity {
         else
             source = itemSource
     }
+
+    Store {
+        id: store
+        name: "objects/"+root.name
+
+        property alias ox: root.x
+        property alias oy: root.y
+        property alias ovisible: root.visible
+    }
+
+    Component.onCompleted: store.load()
+    Component.onDestruction: store.save()
 
     function guessIcon(path) {
         var basename = path.split(/[\\/]/).pop()
@@ -49,6 +72,12 @@ Entity {
         width: (inInventory && fitInventory) ? 96 : sourceSize.width
     }
 
-    onClicked: game.inventory.add(root,true)
+    onClicked: {
+        if(!inInventory) {
+           dragReturnAnimation.complete()
+           mover.duration = 500
+           game.inventory.addAnimated(root)
+       }
+    }
 
 }

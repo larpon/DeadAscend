@@ -60,8 +60,6 @@ Item {
         }
     }
 
-
-
     ImageAnimation {
 
         x: 75; y: 328
@@ -454,9 +452,17 @@ Item {
         offSource: App.getAsset('sprites/buttons/button_01/button_01_up.png')
     }
 
+    DropArea {
+        x: 53; y: 325
+        width: 95; height: 97
+        keys: [ "bucket" ]
+        onDropped: drop.accept()
+    }
+
 
     Image {
         id: foreground
+        z: 1
         anchors { fill: parent }
 
         fillMode: Image.PreserveAspectFit

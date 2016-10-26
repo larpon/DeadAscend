@@ -1,6 +1,7 @@
 import QtQuick 2.0
 
 import Qak 1.0
+import Qak.Tools 1.0
 import Qak.QtQuick 2.0
 
 import "."
@@ -11,15 +12,19 @@ Item {
     property var key: "key"
     property var properties: []
 
+    readonly property int length: contents.length
     property var contents: []
 
+    property alias name: store.name
+
     signal added(var object)
+    signal notAdded(var object)
     signal removed(var object)
+    signal notRemoved(var object)
     signal updated()
 
     Store {
         id: store
-        name: "inventory"
 
         property alias contents: inventory.contents
 
@@ -30,7 +35,8 @@ Item {
 
     function add(obj) {
         if(has(obj)) {
-            App.debug(obj[key],'already in inventory. Skipping')
+            App.debug('ObjectStore',obj[key],'already in store. Skipping...')
+            notAdded(obj)
             return
         }
 
@@ -43,7 +49,7 @@ Item {
             o[prop] = obj[prop]
         }
 
-        App.debug('Adding',obj[key],'to inventory')
+        App.debug('ObjectStore','adding',obj[key])
         contents.push(o)
         added(obj)
         var t = contents
@@ -52,27 +58,42 @@ Item {
     }
 
     function has(obj) {
+
+        var okey = obj
+        if(Aid.isObject(obj) && key in obj)
+            okey = obj[key]
+
         for(var i in contents) {
             var ob = contents[i]
-            if(ob[key] === obj[key])
+            if(ob[key] === okey)
                 return true
         }
         return false
     }
 
     function remove(obj) {
+
+        var okey = obj
+        if(Aid.isObject(obj) && key in obj)
+            okey = obj[key]
+
+        var r = -1
         for(var i in contents) {
             var o = contents[i]
-            if(o[key] == obj[key]) {
-                App.debug('Remove',obj)
-                contents[i] = undefined
-                remove(obj)
-                var t = contents
-                contents = t
-                updated()
-                return
+            if(o[key] === okey) {
+                r = i
+                break
             }
         }
+        if(r >= 0) {
+            App.debug('ObjectStore','removing',obj[key])
+            contents.splice(r, 1)
+            removed(obj)
+            var t = contents
+            contents = t
+            updated()
+        } else
+            notRemoved(obj)
 
     }
 

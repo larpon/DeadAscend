@@ -34,6 +34,10 @@ Item {
     property var sceneData
     property var incubator: Incubator.get()
     property var dynamicLoaded: ({})
+    function getObject(name) {
+        if(name in dynamicLoaded)
+            return dynamicLoaded[name]
+    }
 
     property alias inventory: inventory
 
@@ -178,7 +182,7 @@ Item {
                 incubator.now(component, sceneLoader.item, attrs, function(o){
                     App.debug('Dynamic object',o.name,o)
                     if(inventory.has(o)) {
-                        inventoryVisual.add(o,false)
+                        inventory.add(o)
                     }
                     dynamicLoaded[o.name] = o
                 })
@@ -202,7 +206,7 @@ Item {
                 App.debug('INVENTORY Dynamic object',attrs.name,'prepared')
                 incubator.now(component, sceneLoader.item, attrs, function(o){
                     App.debug('INVENTORY Dynamic object',o.name,o)
-                    inventoryVisual.add(o,false)
+                    inventory.add(o)
 
                     dynamicLoaded[o.name] = o
                 })
@@ -246,6 +250,7 @@ Item {
         Behavior on opacity {
             NumberAnimation { duration: 1500 }
         }
+
     }
 
     Image {
@@ -268,63 +273,17 @@ Item {
         source: App.getAsset('inv_button.png')
         MouseArea {
             anchors { fill: parent }
-            onClicked: inventoryVisual.show = !inventoryVisual.show
+            onClicked: inventory.show = !inventory.show
         }
     }
 
-    Image {
-        id: inventoryVisual
+    Inventory {
+        id: inventory
 
-        source: App.getAsset('inventory.png')
-
+        paused: game.paused
 
         property bool show: false
-        readonly property bool _show: show && !game.paused
-
-
-        ListModel {
-            id: visualInv
-
-            property bool isEmpty: count == 0
-
-            function has(obj) {
-                for (var i=0; i < visualInv.count; i++) {
-                    if(obj.name === visualInv.get(i).name)
-                        return true
-                }
-                return false
-            }
-
-            function appendBack(o) {
-                if(isEmpty)
-                    append(o)
-                else
-                    insert(count-1,o)
-            }
-        }
-
-        ListView {
-            anchors {
-                fill: parent
-                leftMargin: 65
-                rightMargin: 65
-            }
-
-            spacing: 7
-
-            orientation: ListView.Horizontal
-
-            model: visualInv
-            delegate: Entity {
-                width: 96; height: 96
-                draggable: true
-                Image {
-
-                    source: iiconSource
-                }
-            }
-
-        }
+        readonly property bool _show: show && !paused
 
         on_ShowChanged: core.sounds.play('generic')
 
@@ -335,17 +294,17 @@ Item {
 
         states: [
             State {
-                name: "shown"; when: inventoryVisual._show
+                name: "shown"; when: inventory._show
                 AnchorChanges {
-                    target: inventoryVisual
+                    target: inventory
                     anchors.top: undefined
                     anchors.bottom: game.bottom
                 }
             },
             State {
-                name: "hidden"; when: !inventoryVisual._show
+                name: "hidden"; when: !inventory._show
                 AnchorChanges {
-                    target: inventoryVisual
+                    target: inventory
                     anchors.top: game.bottom
                     anchors.bottom: undefined
                 }
@@ -356,68 +315,6 @@ Item {
             from: "hidden"; to: "shown"; reversible: true
             AnchorAnimation { duration: 150 }
         }
-
-        Connections {
-            target: inventory
-
-            onAdded: {
-                inventoryVisual.add(object,true)
-            }
-
-        }
-
-
-        SequentialAnimation {
-            id: toInvAnim
-
-            running: false
-
-            function go(obj) {
-                target = obj
-                from.x = obj.x
-                from.y = obj.y
-                to.x = 20
-                to.y = game.height+obj.height
-                toInvAnim.restart()
-            }
-
-            property var target: inventory
-            property point from: Qt.point(0,0)
-            property point to: Qt.point(0,0)
-
-            ParallelAnimation {
-                NumberAnimation { target: toInvAnim.target; property: "x"; duration: 200; easing.type: Easing.InOutQuad; from: toInvAnim.from.x; to: toInvAnim.to.x }
-                NumberAnimation { target: toInvAnim.target; property: "y"; duration: 200; easing.type: Easing.InOutQuad; from: toInvAnim.from.y; to: toInvAnim.to.y }
-            }
-
-            ScriptAction {
-                script: {
-                    inventoryVisual.add(toInvAnim.target,false)
-                }
-            }
-        }
-
-        function add(obj,animate) {
-
-            if(animate)
-                toInvAnim.go(obj)
-            else {
-                App.debug('Added',obj.name,'to inventory')
-                obj.inInventory = true
-                if(!visualInv.has(obj)) {
-                    var e = { iitemSource: obj.itemSource, iiconSource: obj.iconSource, iname: obj.name }
-                    visualInv.appendBack(e)
-                }
-            }
-        }
-
-    }
-
-    Inventory {
-        id: inventory
-
-        key: "name"
-        properties: ["itemSource","iconSource"]
 
     }
 

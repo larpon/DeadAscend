@@ -14,7 +14,8 @@
         <file>qml/Switch.qml</file>
         <file>qml/EditorOverlay.qml</file>
         <file>qml/Object.qml</file>
-        <file>qml/Inventory.qml</file>
         <file>qml/JSONReader.qml</file>
+        <file>qml/ObjectStore.qml</file>
+        <file>qml/Inventory.qml</file>
     </qresource>
 </RCC>
