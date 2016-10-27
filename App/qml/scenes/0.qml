@@ -250,7 +250,7 @@ Item {
         ]
     }
 
-    AnimatedArea { // TODO
+    AnimatedArea {
 
         id: waterPoolAnimation
 
@@ -308,6 +308,8 @@ Item {
         onRunningChanged:  {
             if(running) {
                 waterDripAnimation.run = false
+                waterBucketFillAnimation.run = false
+                waterBucketRunAnimation.run = false
             }
         }
 
