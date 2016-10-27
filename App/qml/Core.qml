@@ -35,6 +35,7 @@ Item {
             add('switch',App.getAsset('sounds/lamp_switch_01.wav'))
             add('light_on',App.getAsset('sounds/light_on.wav'))
             add('drip',App.getAsset('sounds/water_drip_01.wav'))
+            add('squeak',App.getAsset('sounds/faucet_sqeak.wav'))
         }
     }
 

@@ -17,5 +17,8 @@
         <file>qml/JSONReader.qml</file>
         <file>qml/ObjectStore.qml</file>
         <file>qml/Inventory.qml</file>
+        <file>qml/DropSpot.qml</file>
+        <file>qml/Area.qml</file>
+        <file>qml/AnimatedArea.qml</file>
     </qresource>
 </RCC>

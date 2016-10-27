@@ -36,7 +36,7 @@ ObjectStore {
             object.x = 0
             object.y = 0
         }
-        object.inInventory = true
+        object.at = root.name
     }
 
     onNotAdded: {
@@ -54,16 +54,11 @@ ObjectStore {
             object.x = 0
             object.y = 0
         }
-        object.inInventory = true
+        object.at = root.name
     }
 
     onRemoved: {
-        object.inInventory = false
-
-        var m = game.mapFromItem(object.parent,object.x,object.y)
         object.parent = game
-        object.x = m.x
-        object.y = m.y
     }
 
     Item {

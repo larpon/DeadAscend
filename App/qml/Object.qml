@@ -5,26 +5,53 @@ import Qak 1.0
 Entity {
     id: root
 
-    x: 0; y: 0
+    //x: 0; y: 0
     width: image.width; height: image.height
 
     draggable: true
     source: itemSource
 
+    property bool autoInventory: true
+
     property string itemSource: ''
     property string iconSource: guessIcon(itemSource)
 
     property string name: ''
+    property string at: ''
+    property string _at: ''
 
     Drag.keys: [ 'inventory', name ]
 
-    onDragStarted: z = 3
-    onDragEnded: z = 0
+    onDragStarted: {
+        _at = at
+        at = "dragged"
+        game.objectDragged(root)
+    }
+
+    /*
+    onDragEnded: {
+        z = 0
+    }
+    */
+
+    onDragAccepted: {
+        if('name' in Drag.target)
+            at = Drag.target.name
+        if(at !== 'inventory')
+            removeFromInventory()
+        game.objectDropped(root)
+    }
+
+    onDragReturned: {
+        at = _at
+        game.objectReturned(root)
+    }
 
     function removeFromInventory() {
         if(game.inventory.has(root)) {
             mover.duration = 0
             game.inventory.remove(root)
+            game.objectRemovedFromInventory(root)
         }
     }
 
@@ -33,11 +60,11 @@ Entity {
             dragReturnAnimation.complete()
             mover.duration = 500
             game.inventory.addAnimated(root)
+            game.objectAddedToInventory(root)
         }
     }
 
-    //visible: !inInventory
-    property bool inInventory: false
+    property bool inInventory: at === 'inventory'
     property bool fitInventory: false
     onInInventoryChanged: {
         if(inInventory)
@@ -48,11 +75,12 @@ Entity {
 
     Store {
         id: store
-        name: "objects/"+root.name
+        name: root.name !== '' ? "objects/"+root.name : ''
 
-        property alias ox: root.x
-        property alias oy: root.y
-        property alias ovisible: root.visible
+        property alias _x: root.x
+        property alias _y: root.y
+        property alias at: root.at
+        property alias state: root.state
     }
 
     Component.onCompleted: store.load()
@@ -83,8 +111,14 @@ Entity {
     }
 
     onClicked: {
-        if(!inInventory)
+        if(!inInventory && autoInventory)
             addToInventory()
+    }
+
+    MouseArea {
+        anchors { fill: parent }
+        enabled: !root.draggable
+        onClicked: root.clicked(mouse)
     }
 
 }

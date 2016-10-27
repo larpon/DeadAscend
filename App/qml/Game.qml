@@ -34,10 +34,29 @@ Item {
     property var sceneData
     property var incubator: Incubator.get()
     property var dynamicLoaded: ({})
+
     function getObject(name) {
         if(name in dynamicLoaded)
             return dynamicLoaded[name]
+
+        Aid.loopChildren(sceneLoader.item,function(object) {
+            if('name' in object && object.name === name) {
+                return object
+            }
+        })
     }
+    function isObjectDynamic(name) {
+        return (name in dynamicLoaded)
+    }
+    function destroyObject(name) {
+        if(name in dynamicLoaded) {
+            var o = dynamicLoaded[name]
+            o.removeFromInventory()
+            o.destroy()
+            dynamicLoaded[name] = undefined
+        }
+    }
+
 
     property alias inventory: inventory
 
@@ -60,6 +79,12 @@ Item {
         store.save()
 
     }
+
+    signal objectDragged(var object)
+    signal objectDropped(var object)
+    signal objectReturned(var object)
+    signal objectAddedToInventory(var object)
+    signal objectRemovedFromInventory(var object)
 
     JSONReader {
         id: jsonReader
@@ -119,7 +144,7 @@ Item {
             var object = objects[i]
 
             if('type' in object) {
-                if(object.type !== "MouseArea") {
+                if(object.type !== "Area") {
                     // NOTE FIX tiled coordinates are origin Bottom Left
                     object.y = object.y-object.height
                 }
@@ -158,34 +183,15 @@ Item {
                 staticObject.y = object.y
                 staticObject.width = object.width
                 staticObject.height = object.height
+                if('z' in object)
+                    staticObject.z = object.z
+                if('state' in object)
+                    staticObject.state = object.state
+                if('itemSource' in object && 'itemSource' in staticObject)
+                    staticObject.itemSource = object.itemSource
             } else {
-                var attrs = {
-                    'name': object.name,
-                    'x':object.x,
-                    'y':object.y,
-                    'width': object.width,
-                    'height': object.height
-                }
-                if('itemSource' in object)
-                    attrs.itemSource = object.itemSource
-
-                var component = objectComponent
-
-                var notObjectWarn = ''
-                if(!('type' in object) || object.type !== "Object")
-                    notObjectWarn = "WARNING: NOT OBJECT TYPE"
-
-                App.debug('Dynamic object',attrs.name,'prepared',notObjectWarn)
-
                 fromScene[object.name] = true
-
-                incubator.now(component, sceneLoader.item, attrs, function(o){
-                    App.debug('Dynamic object',o.name,o)
-                    if(inventory.has(o)) {
-                        inventory.add(o)
-                    }
-                    dynamicLoaded[o.name] = o
-                })
+                spawnObject(object)
             }
         }
 
@@ -213,6 +219,38 @@ Item {
             }
 
         }
+    }
+
+    function spawnObject(object) {
+        var attrs = {
+            'name': object.name,
+            'x':object.x,
+            'y':object.y,
+            'width': object.width,
+            'height': object.height
+        }
+        if('state' in object)
+            attrs.state = object.state
+        if('itemSource' in object)
+            attrs.itemSource = object.itemSource
+
+        if('z' in object)
+            attrs.z = object.z
+
+        var component = objectComponent
+
+        var notObjectWarn = ''
+        if(!('type' in object) || object.type !== "Object")
+            notObjectWarn = "WARNING: NOT OBJECT TYPE"
+
+        App.debug('Dynamic object',attrs.name,'prepared',notObjectWarn)
+        incubator.now(component, sceneLoader.item, attrs, function(o){
+            App.debug('Dynamic object',o.name,o)
+            if(inventory.has(o)) {
+                inventory.add(o)
+            }
+            dynamicLoaded[o.name] = o
+        })
     }
 
     Component {
@@ -275,10 +313,12 @@ Item {
             anchors { fill: parent }
             onClicked: inventory.show = !inventory.show
         }
-        DropArea {
+        DropSpot {
             anchors { fill: parent }
             keys: [ "inventory" ]
+            name: "inventory"
             onDropped: {
+                drop.accept()
                 drag.source.addToInventory()
             }
         }

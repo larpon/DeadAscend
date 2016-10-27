@@ -4,8 +4,10 @@ import Qak 1.0
 
 import "."
 
-Item {
+Area {
     id: that
+
+    name: 'switch'
 
     property bool active: false
 
@@ -42,11 +44,8 @@ Item {
         source: resolveSource(active)
     }
 
-    MouseArea {
-        anchors { fill: parent }
-        onClicked: {
-            active = !active
-        }
+    onClicked: {
+        active = !active
     }
 
 }

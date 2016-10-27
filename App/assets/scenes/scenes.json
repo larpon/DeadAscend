@@ -81,7 +81,7 @@
                  "id":6,
                  "name":"crack",
                  "rotation":0,
-                 "type":"MouseArea",
+                 "type":"Area",
                  "visible":true,
                  "width":56,
                  "x":204,
@@ -92,8 +92,16 @@
                  "height":133.333,
                  "id":10,
                  "name":"crack2",
+                 "properties":
+                    {
+                     "round":true
+                    },
+                 "propertytypes":
+                    {
+                     "round":"bool"
+                    },
                  "rotation":0,
-                 "type":"MouseArea",
+                 "type":"Area",
                  "visible":true,
                  "width":133.333,
                  "x":842.667,
@@ -102,9 +110,9 @@
                 {
                  "height":117.333,
                  "id":12,
-                 "name":"woodenPlanks",
+                 "name":"wooden_planks",
                  "rotation":0,
-                 "type":"MouseArea",
+                 "type":"Area",
                  "visible":true,
                  "width":86.6667,
                  "x":278.667,
@@ -115,7 +123,7 @@
                  "id":13,
                  "name":"light",
                  "rotation":0,
-                 "type":"MouseArea",
+                 "type":"Area",
                  "visible":true,
                  "width":86.6667,
                  "x":58,
@@ -216,7 +224,7 @@
                     },
                  "rotation":0,
                  "type":"ImageAnimation",
-                 "visible":true,
+                 "visible":false,
                  "width":61,
                  "x":59,
                  "y":373
@@ -268,17 +276,21 @@
                  "name":"parasol_base",
                  "properties":
                     {
-                     "tileId":"10"
+                     "state":"over",
+                     "tileId":"10",
+                     "z":1
                     },
                  "propertytypes":
                     {
-                     "tileId":"string"
+                     "state":"string",
+                     "tileId":"string",
+                     "z":"int"
                     },
                  "rotation":0,
                  "type":"Object",
                  "visible":true,
                  "width":155,
-                 "x":799,
+                 "x":800,
                  "y":569
                 }, 
                 {
@@ -290,7 +302,7 @@
                  "type":"ImageAnimation",
                  "visible":true,
                  "width":65,
-                 "x":498.666666666667,
+                 "x":498.667,
                  "y":303
                 }, 
                 {
@@ -302,8 +314,19 @@
                  "type":"ImageAnimation",
                  "visible":true,
                  "width":65,
-                 "x":498.666666666667,
-                 "y":304.333333333333
+                 "x":498.667,
+                 "y":304.333
+                }, 
+                {
+                 "height":49.3333333333333,
+                 "id":28,
+                 "name":"faucet_handle",
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":60,
+                 "x":50.6666666666667,
+                 "y":274.666666666667
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -312,7 +335,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":26,
+ "nextobjectid":29,
  "orientation":"orthogonal",
  "renderorder":"left-up",
  "tileheight":660,
@@ -323,7 +346,7 @@
          "margin":0,
          "name":"0",
          "spacing":0,
-         "tilecount":13,
+         "tilecount":14,
          "tileheight":191,
          "tiles":
             {
@@ -346,6 +369,10 @@
              "12":
                 {
                  "image":"..\/sprites\/rope\/dangle_bucket_water\/0001.png"
+                },
+             "13":
+                {
+                 "image":"..\/sprites\/bucket\/bucket_full.png"
                 },
              "2":
                 {

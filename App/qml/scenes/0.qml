@@ -62,39 +62,6 @@ Item {
 
     ImageAnimation {
 
-        x: 75; y: 328
-        width: 27; height: 85
-
-        property string name: 'drip'
-
-        paused: (scene.paused)
-
-        source: App.getAsset("sprites/water/drip/0001.png")
-
-        defaultFrameDelay: 150
-
-        sequences: [
-            {
-                name: "drip",
-                frames: [1,2,3,4,5],
-                to: { "pause":1 }
-            },
-            {
-                name: "pause",
-                frames: [5],
-                to: { "drip":1 },
-                duration: 2000
-            }
-        ]
-
-        onFrame: {
-            if(sequenceName === 'drip' && frame === 4)
-                core.sounds.play('drip')
-        }
-    }
-
-    ImageAnimation {
-
         id: rope_dangle
 
         x: 494; y: 107
@@ -165,7 +132,7 @@ Item {
         property string name: 'rope_dangle_water'
 
         visible: !rope_dangle.visible && !rope_dangle_bucket.visible
-        paused: !visible || (scene.paused)
+        paused: !visible || scene.paused
 
         source: App.getAsset("sprites/rope/dangle_bucket_water/0001.png")
 
@@ -186,14 +153,67 @@ Item {
         ]
     }
 
-    ImageAnimation {
+    AnimatedArea {
+        id: waterDripAnimation
+
+        x: 75; y: 328
+        width: 27; height: 85
+
+        onRunningChanged: {
+            if(running) {
+                waterRunAnimation.run = false
+                waterBucketFillAnimation.run = false
+                waterBucketRunAnimation.run = false
+            }
+        }
+
+        run: true
+        name: 'drip'
+
+        paused: !visible || scene.paused
+
+        source: App.getAsset("sprites/water/drip/0001.png")
+
+        defaultFrameDelay: 150
+
+        sequences: [
+            {
+                name: "drip",
+                frames: [1,2,3,4,5],
+                to: { "pause":1 }
+            },
+            {
+                name: "pause",
+                frames: [5],
+                to: { "drip":1 },
+                duration: 2000
+            }
+        ]
+
+        onFrame: {
+            if(sequenceName === 'drip' && frame === 4)
+                core.sounds.play('drip')
+        }
+    }
+
+    AnimatedArea {
+
+        id: waterBucketRunAnimation
 
         x: 494; y: 107
         width: 65; height: 191
 
-        property string name: 'bucket_run'
+        onRunningChanged: {
+            if(running) {
+                waterDripAnimation.run = false
+                waterRunAnimation.run = false
+            }
+        }
 
-        paused: (scene.paused)
+        run: false
+        name: 'bucket_run'
+
+        paused: !visible || scene.paused
 
         defaultFrameDelay: 150
 
@@ -208,14 +228,15 @@ Item {
         ]
     }
 
-    ImageAnimation {
-
+    AnimatedArea {
+        id: waterBucketFillAnimation
         x: 494; y: 107
         width: 65; height: 191
 
-        property string name: 'bucket_fill'
+        run: false
+        name: 'bucket_fill'
 
-        paused: (scene.paused)
+        paused: !visible || scene.paused
 
         defaultFrameDelay: 500
 
@@ -229,35 +250,71 @@ Item {
         ]
     }
 
-    ImageAnimation { // TODO
+    AnimatedArea { // TODO
 
-        x: 494; y: 107
+        id: waterPoolAnimation
+
+        x: 494; y: 107; z: 0
         width: 65; height: 191
 
-        property string name: 'pool'
+        running: false
 
-        paused: (scene.paused)
+        run: false
 
-        defaultFrameDelay: 500
+        onRestarted: run = true
 
+        onRunChanged: {
+            if(run) {
+                running = true
+
+                game.setText("There's a hole in the bucket. You need to patch the bucket somehow")
+
+            } else {
+                setActiveSequence('stop')
+            }
+        }
+
+        name: 'pool'
+
+        paused: !visible || scene.paused
+
+        defaultFrameDelay: 150
         source: App.getAsset("sprites/water/pool/0001.png")
 
         sequences: [
             {
                 name: "run",
-                frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+                frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+                to: { 'loop': 1}
+            },
+            {
+                name: "loop",
+                frames: [15,16,17,18,17,16,15],
+                to: { 'loop': 1}
+            },
+            {
+                name: "stop",
+                frames: [15,16,17,18,19,20,21,22,23,24]
             }
         ]
     }
 
-    ImageAnimation {
+    AnimatedArea {
+        id: waterRunAnimation
 
         x: 494; y: 107
         width: 65; height: 191
 
-        property string name: 'run'
+        onRunningChanged:  {
+            if(running) {
+                waterDripAnimation.run = false
+            }
+        }
 
-        paused: (scene.paused)
+        run: false
+        name: 'run'
+
+        paused: !visible || scene.paused
 
         defaultFrameDelay: 150
 
@@ -272,10 +329,37 @@ Item {
         ]
     }
 
-    MouseArea {
+    Area {
+        id: faucetHandle
+        x: 50; y: 275
+        width: 61; height: 54
+
+        name: "faucet_handle"
+
+        state: "off"
+
+        onClicked: {
+            state === "off" ? state = "on" : state = "off"
+            core.sounds.play('squeak')
+        }
+
+        onStateChanged: resolveState()
+
+        function resolveState() {
+            if(state === "on") {
+                waterRunAnimation.run = true
+            } else {
+                waterDripAnimation.run = true
+            }
+            resolveBucketState()
+        }
+    }
+
+
+    Area {
         id: fliesAndLight
 
-        property string name: 'light'
+        name: 'light'
 
         x: 52; y: 104
         width: 112; height: 54
@@ -283,31 +367,53 @@ Item {
         onClicked: game.setText('The flourescent lights humms faintly - casting a grim light in the room...','Some flies are having a party here as well')
     }
 
-    MouseArea {
+    Area {
         x: 189; y: 180
         width: 95; height: 124
 
-        property string name: 'crack'
+        name: 'crack'
 
         onClicked: game.setText('Just another crack in the wall..')
     }
 
-    RoundMouseArea {
+    Area {
         x: 857; y: 134
         width: 100; height: 149
 
-        property string name: 'crack2'
+        name: 'crack2'
 
         onClicked: game.setText('A crack in the wall reveals the bare bricks. Something must have hit it hard')
     }
 
-    MouseArea {
+    Area {
         x: 268; y: 266
         width: 123; height: 125
 
-        property string name: 'woodenPlanks'
+        name: 'wooden_planks'
 
         onClicked: game.setText('Some wooden planks')
+    }
+
+    Object {
+        x: 800; y: 569
+
+        draggable: false
+        autoInventory: false
+
+        name: 'parasol_base'
+
+        onStateChanged: {
+            if(state === "over") {
+                moveTo(800-width,y)
+            } else {
+                moveTo(800,y)
+            }
+        }
+
+        onClicked: {
+            state === "over" ? state = "moved" :  state = "over"
+        }
+
     }
 
 
@@ -438,7 +544,7 @@ Item {
         z: 2
         x: 1000; y: 303
 
-        property string name: 'switch'
+        name: 'switch'
 
         onActiveChanged: {
             core.sounds.play('switch')
@@ -454,17 +560,62 @@ Item {
         offSource: App.getAsset('sprites/buttons/button_01/button_01_up.png')
     }
 
-    DropArea {
+    DropSpot {
         x: 60; y: 325
         width: 95; height: 97
         keys: [ "bucket" ]
+
+        name: "faucet"
+
         onDropped: {
             drop.accept()
+
             var o = drag.source
 
-            o.removeFromInventory()
             o.x = x
-            o.y = y+10
+            o.y = y+13
+
+        }
+    }
+
+    function resolveBucketState() {
+        var o = game.getObject('bucket')
+
+        if(o && o.at === "faucet" && faucetHandle.state === "on") {
+            waterBucketRunAnimation.run = true
+            waterPoolAnimation.restart()
+        } else
+            waterPoolAnimation.run = false
+
+    }
+
+    Connections {
+        target: game
+
+        onObjectDropped: {
+            if(object.name === "bucket")
+                resolveBucketState()
+        }
+
+        onObjectDragged: {
+            if(object.name === "bucket") {
+                faucetHandle.resolveState()
+            }
+        }
+
+        onObjectReturned: {
+            if(object.name === "bucket" && object.at === "faucet")
+                faucetHandle.resolveState()
+        }
+
+        onObjectAddedToInventory: {
+            if(object.name === "bucket")
+                faucetHandle.resolveState()
+        }
+
+        onObjectRemovedFromInventory: {
+            if(object.name === "bucket")
+                faucetHandle.resolveState()
         }
     }
 
