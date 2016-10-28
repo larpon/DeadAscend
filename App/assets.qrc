@@ -8,7 +8,6 @@
         <file>assets/scenes/0_fg_shadow.png</file>
         <file>assets/menu_button.png</file>
         <file>assets/inv_button.png</file>
-        <file>assets/inventory.png</file>
         <file>assets/sprites/alarm_clock/alarm_clock.png</file>
         <file>assets/sprites/arrows/e.png</file>
         <file>assets/sprites/arrows/n.png</file>
@@ -991,5 +990,8 @@
         <file>assets/back_button.png</file>
         <file>assets/exit_button.png</file>
         <file>assets/messagebox.png</file>
+        <file>assets/button L.png</file>
+        <file>assets/button R.png</file>
+        <file>assets/inv_slot.png</file>
     </qresource>
 </RCC>

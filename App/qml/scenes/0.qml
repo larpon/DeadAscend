@@ -22,6 +22,8 @@ Item {
 
         property alias lightOn: aSwitch.active
 
+        property bool bucketOnRope: false
+
     }
 
     Component.onCompleted: {
@@ -31,9 +33,30 @@ Item {
             game.setText('The room is pitch dark. You\'re likely to get eaten by a zombie. You better find some light somewhere.','TIP: There\'s a switch in here somewhere')
         else
             game.showExit(600,124,4000,'up')
+
+        var sfx = core.sounds
+        sfx.add('level0','switch',App.getAsset('sounds/lamp_switch_01.wav'))
+        sfx.add('level0','light_on',App.getAsset('sounds/light_on.wav'))
+        sfx.add('level0','drip',App.getAsset('sounds/water_drip_01.wav'))
+        sfx.add('level0','squeak',App.getAsset('sounds/faucet_sqeak.wav'))
+        sfx.add('level0','heavy_drag',App.getAsset('sounds/heavy_drag.wav'))
+        sfx.add('level0','hatch_open',App.getAsset('sounds/hatch_open.wav'))
+        sfx.add('level0','hatch_close',App.getAsset('sounds/hatch_close.wav'))
+        sfx.add('level0','water_run_loop',App.getAsset('sounds/water_run_loop_01.wav'))
     }
 
-    Component.onDestruction: store.save()
+    Component.onDestruction: {
+        store.save()
+        core.sounds.clear('level0')
+    }
+
+    property bool playWaterSound: faucetHandle.state == "on" || waterRunAnimation.running || waterBucketRunAnimation.running
+    onPlayWaterSoundChanged: {
+        if(playWaterSound)
+            core.sounds.play('water_run_loop',core.sounds.infinite)
+        else
+            core.sounds.stop('water_run_loop')
+    }
 
     Image {
         id: background
@@ -60,16 +83,17 @@ Item {
         }
     }
 
-    ImageAnimation {
+    AnimatedArea {
 
         id: rope_dangle
 
         x: 494; y: 107
         width: 65; height: 191
 
-        property string name: 'rope_dangle'
+        name: 'rope_dangle'
 
         visible: true
+        run: visible
         paused: !visible || (scene.paused)
 
         source: App.getAsset("sprites/rope/dangle/0001.png")
@@ -89,9 +113,38 @@ Item {
                 reverse: true
             }
         ]
+
+        MouseArea {
+            enabled: parent.visible
+            anchors { fill: parent }
+
+            onClicked: {
+                hatch.setActiveSequence("open then close")
+                game.setText('Gravity forces the hatch to close again','Find a way to keep the hatch open')
+            }
+        }
+
+        DropSpot {
+            anchors { fill: parent }
+
+            keys: [ "bucket", "bucket_patched" ]
+
+            name: "rope_dangle"
+
+            onDropped: {
+                drop.accept()
+
+                game.destroyObject('bucket')
+                rope_dangle.visible = false
+                rope_dangle_bucket.visible = true
+
+                hatch.setActiveSequence("open then close")
+                game.setText('The bucket is not heavy enough to keep the hatch open. Make it heavier')
+            }
+        }
     }
 
-    ImageAnimation {
+    AnimatedArea {
 
         id: rope_dangle_bucket
 
@@ -99,13 +152,14 @@ Item {
         width: 65; height: 191
 
         visible: false
+        run: visible
         paused: !visible || (scene.paused)
 
         source: App.getAsset("sprites/rope/dangle_bucket/0001.png")
 
         defaultFrameDelay: 150
 
-        property string name: 'rope_dangle_bucket'
+        name: 'rope_dangle_bucket'
 
         sequences: [
             {
@@ -120,16 +174,35 @@ Item {
                 reverse: true
             }
         ]
+
+        MouseArea {
+            enabled: parent.visible
+            anchors { fill: parent }
+
+            onClicked: {
+                var object = {
+                    name: 'bucket',
+                    itemSource: App.getAsset('sprites/bucket/bucket_empty.png')
+                }
+
+                game.spawnObject(object,function(o){
+                    game.inventory.add(o)
+                    rope_dangle.visible = true
+                    rope_dangle_bucket.visible = false
+                })
+
+            }
+        }
     }
 
-    ImageAnimation {
+    AnimatedArea {
 
         id: rope_dangle_water
 
         x: 494; y: 107
         width: 65; height: 191
 
-        property string name: 'rope_dangle_water'
+        name: 'rope_dangle_water'
 
         visible: !rope_dangle.visible && !rope_dangle_bucket.visible
         paused: !visible || scene.paused
@@ -211,6 +284,7 @@ Item {
         }
 
         run: false
+
         name: 'bucket_run'
 
         paused: !visible || scene.paused
@@ -226,6 +300,7 @@ Item {
                 to: { "run":1}
             }
         ]
+
     }
 
     AnimatedArea {
@@ -329,6 +404,7 @@ Item {
                 to: { "run":1}
             }
         ]
+
     }
 
     Area {
@@ -338,7 +414,7 @@ Item {
 
         name: "faucet_handle"
 
-        state: "off"
+        state: ""
 
         onClicked: {
             state === "off" ? state = "on" : state = "off"
@@ -404,6 +480,8 @@ Item {
 
         name: 'parasol_base'
 
+        mover.duration: 1400
+
         onStateChanged: {
             if(state === "over") {
                 moveTo(800-width,y)
@@ -413,6 +491,7 @@ Item {
         }
 
         onClicked: {
+            core.sounds.play('heavy_drag')
             state === "over" ? state = "moved" :  state = "over"
         }
 
@@ -497,14 +576,17 @@ Item {
         ]
     }
 
-    ImageAnimation {
-
+    AnimatedArea {
+        id: hatch
         x: 494; y: 107
-        width: 65; height: 191
+        width: 118; height: 47
 
-        property string name: 'hatch'
+        visible: true
+        name: 'hatch'
 
-        paused: (scene.paused)
+        state: sequence ? sequence.name : 'closed'
+
+        //paused: (scene.paused)
 
         defaultFrameDelay: 150
 
@@ -512,17 +594,28 @@ Item {
 
         sequences: [
             {
-                name: "open",
+                name: "closed",
                 frames: [1,2,3,4,5,6],
-                to: { "close":1}
+                reverse: true
             },
             {
-                name: "close",
+                name: "open",
+                frames: [1,2,3,4,5,6]
+                //to: { "closed":1}
+            },
+            {
+                name: "open then close",
                 frames: [1,2,3,4,5,6],
-                to: { "open":1},
-                reverse: true
+                to: { "closed":1}
             }
         ]
+
+        onSequenceChanged: {
+            if(sequence.name === "open" || sequence.name === "open then close")
+                core.sounds.play('hatch_open')
+            if(sequence.name === "closed")
+                core.sounds.play('hatch_close')
+        }
     }
 
     Image {
@@ -565,7 +658,7 @@ Item {
     DropSpot {
         x: 60; y: 325
         width: 95; height: 97
-        keys: [ "bucket" ]
+        keys: [ "bucket" , "bucket_patched" ]
 
         name: "faucet"
 

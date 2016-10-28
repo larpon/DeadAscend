@@ -58,7 +58,7 @@
     <property name="tileId" value="1"/>
    </properties>
   </object>
-  <object id="4" name="rope_dangle" type="ImageAnimation" gid="3" x="498.667" y="303" width="65" height="191">
+  <object id="4" name="rope_dangle" type="AnimatedArea" gid="3" x="498.667" y="303" width="65" height="191">
    <properties>
     <property name="tileId" value="2"/>
    </properties>
@@ -72,27 +72,27 @@
   </object>
   <object id="12" name="wooden_planks" type="Area" x="278.667" y="268" width="86.6667" height="117.333"/>
   <object id="13" name="light" type="Area" x="58" y="110.667" width="86.6667" height="34.6663"/>
-  <object id="14" name="drip" type="ImageAnimation" gid="4" x="75.3333" y="412.333" width="27" height="85">
+  <object id="14" name="drip" type="AnimatedArea" gid="4" x="75.3333" y="412.333" width="27" height="85">
    <properties>
     <property name="tileId" value="3"/>
    </properties>
   </object>
-  <object id="15" name="run" type="ImageAnimation" gid="5" x="73.6667" y="416" width="32" height="91">
+  <object id="15" name="run" type="AnimatedArea" gid="5" x="73.6667" y="416" width="32" height="91">
    <properties>
     <property name="tileId" value="4"/>
    </properties>
   </object>
-  <object id="16" name="pool" type="ImageAnimation" gid="6" x="0" y="461" width="107" height="45">
+  <object id="16" name="pool" type="AnimatedArea" gid="6" x="0" y="461" width="107" height="45">
    <properties>
     <property name="tileId" value="5"/>
    </properties>
   </object>
-  <object id="17" name="bucket_run" type="ImageAnimation" gid="7" x="86.8333" y="368.667" width="9" height="43">
+  <object id="17" name="bucket_run" type="AnimatedArea" gid="7" x="86.8333" y="368.667" width="9" height="43">
    <properties>
     <property name="tileId" value="6"/>
    </properties>
   </object>
-  <object id="18" name="bucket_fill" type="ImageAnimation" gid="8" x="59" y="373" width="61" height="15" visible="0">
+  <object id="18" name="bucket_fill" type="AnimatedArea" gid="8" x="59" y="373" width="61" height="15" visible="0">
    <properties>
     <property name="tileId" value="7"/>
    </properties>
@@ -102,7 +102,7 @@
     <property name="tileId" value="8"/>
    </properties>
   </object>
-  <object id="20" name="hatch" type="ImageAnimation" gid="10" x="543" y="151" width="118" height="47">
+  <object id="20" name="hatch" type="AnimatedArea" gid="10" x="543" y="151" width="118" height="47">
    <properties>
     <property name="tileId" value="9"/>
    </properties>
@@ -114,8 +114,8 @@
     <property name="z" type="int" value="1"/>
    </properties>
   </object>
-  <object id="23" name="rope_dangle_bucket" type="ImageAnimation" gid="12" x="498.667" y="303" width="65" height="191"/>
-  <object id="25" name="rope_dangle_water" type="ImageAnimation" gid="13" x="498.667" y="304.333" width="65" height="191"/>
+  <object id="23" name="rope_dangle_bucket" type="AnimatedArea" gid="12" x="498.667" y="303" width="65" height="191"/>
+  <object id="25" name="rope_dangle_water" type="AnimatedArea" gid="13" x="498.667" y="304.333" width="65" height="191"/>
   <object id="28" name="faucet_handle" type="Area" x="50.6667" y="274.667" width="60" height="49.3333"/>
  </objectgroup>
 </map>

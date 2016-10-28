@@ -31,11 +31,9 @@ Item {
         //volume: volumes.sfx
 
         Component.onCompleted: {
-            add('generic',App.getAsset('sounds/generic_add.wav'))
-            add('switch',App.getAsset('sounds/lamp_switch_01.wav'))
-            add('light_on',App.getAsset('sounds/light_on.wav'))
-            add('drip',App.getAsset('sounds/water_drip_01.wav'))
-            add('squeak',App.getAsset('sounds/faucet_sqeak.wav'))
+            add('add',App.getAsset('sounds/generic_add.wav'))
+            add('move',App.getAsset('sounds/generic_move.wav'))
+            add('tick',App.getAsset('sounds/generic_tick.wav'))
         }
     }
 

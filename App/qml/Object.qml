@@ -2,11 +2,14 @@ import QtQuick 2.0
 
 import Qak 1.0
 
+import "."
+
 Entity {
     id: root
 
     //x: 0; y: 0
-    width: image.width; height: image.height
+    //width: inInventory ? invImage.width : image.width
+    //height: inInventory ? invImage.height : image.height
 
     draggable: true
     source: itemSource
@@ -67,10 +70,15 @@ Entity {
     property bool inInventory: at === 'inventory'
     property bool fitInventory: false
     onInInventoryChanged: {
-        if(inInventory)
+        if(inInventory) {
             source = iconSource
-        else
+            root.width = invImage.width
+            root.height = invImage.height
+        } else {
             source = itemSource
+            root.width = image.width
+            root.height = image.height
+        }
     }
 
     Store {
@@ -81,6 +89,7 @@ Entity {
         property alias _y: root.y
         property alias at: root.at
         property alias state: root.state
+        //property alias _visible: root.visible
     }
 
     Component.onCompleted: store.load()
@@ -103,7 +112,26 @@ Entity {
     }
 
     Image {
+        id: invImage
+        visible: inInventory
+        fillMode: Image.PreserveAspectFit
+        source: App.getAsset('inv_slot.png')
+
+        width: 117
+
+        Image {
+            id: iconImage
+            anchors.centerIn: parent
+            fillMode: Image.PreserveAspectFit
+            source: root.adaptiveSource
+
+            width: (inInventory && fitInventory) ? 96 : sourceSize.width
+        }
+    }
+
+    Image {
         id: image
+        visible: !invImage.visible
         fillMode: Image.PreserveAspectFit
         source: root.adaptiveSource
 

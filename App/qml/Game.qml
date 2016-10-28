@@ -221,14 +221,18 @@ Item {
         }
     }
 
-    function spawnObject(object) {
+    function spawnObject(object,onSpawned) {
         var attrs = {
-            'name': object.name,
-            'x':object.x,
-            'y':object.y,
-            'width': object.width,
-            'height': object.height
+            'name': object.name
         }
+        if('x' in object)
+            attrs.x = object.x
+        if('y' in object)
+            attrs.y = object.y
+        if('width' in object)
+            attrs.width = object.width
+        if('height' in object)
+            attrs.height = object.height
         if('state' in object)
             attrs.state = object.state
         if('itemSource' in object)
@@ -250,6 +254,9 @@ Item {
                 inventory.add(o)
             }
             dynamicLoaded[o.name] = o
+            if (typeof onSpawned === "function") {
+                onSpawned(o)
+            }
         })
     }
 
@@ -329,10 +336,13 @@ Item {
 
         paused: game.paused
 
+        anchors.bottom: parent.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+
         property bool show: false
         readonly property bool _show: show && !paused
 
-        on_ShowChanged: core.sounds.play('generic')
+        on_ShowChanged: core.sounds.play('move')
 
         anchors {
             horizontalCenter: parent.horizontalCenter
