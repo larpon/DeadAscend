@@ -20,5 +20,8 @@
         <file>qml/DropSpot.qml</file>
         <file>qml/Area.qml</file>
         <file>qml/AnimatedArea.qml</file>
+        <file>qml/scenes/1.qml</file>
+        <file>qml/scenes/Base.qml</file>
+        <file>qml/Statistics.qml</file>
     </qresource>
 </RCC>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="29">
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="47">
  <tileset firstgid="1" name="0" tilewidth="155" tileheight="191" tilecount="14" columns="0">
   <tile id="0">
    <image width="74" height="97" source="../App/assets/sprites/bucket/bucket_empty.png"/>
@@ -44,12 +44,25 @@
    <image width="74" height="97" source="../App/assets/sprites/bucket/bucket_full.png"/>
   </tile>
  </tileset>
- <imagelayer name="0 bg">
+ <tileset firstgid="15" name="1" tilewidth="647" tileheight="207" tilecount="3" columns="0">
+  <tile id="0">
+   <image width="647" height="207" source="../App/assets/sprites/chandelier/swing/0001.png"/>
+  </tile>
+  <tile id="1">
+   <image width="102" height="133" source="../App/assets/sprites/paintings/painting_01.png"/>
+  </tile>
+  <tile id="2">
+   <image width="112" height="193" source="../App/assets/sprites/paintings/painting_02.png"/>
+  </tile>
+ </tileset>
+ <imagelayer name="0 bg" visible="0">
   <image source="../App/assets/scenes/0.png" width="1100" height="660"/>
  </imagelayer>
- <objectgroup name="0">
+ <objectgroup name="0" visible="0">
   <object id="2" name="bucket" type="Object" gid="1" x="107.409" y="571.306" width="74" height="97">
    <properties>
+    <property name="acceptDrops" type="bool" value="true"/>
+    <property name="combines" value="[ &quot;bubblegum&quot; ]"/>
     <property name="tileId" value="0"/>
    </properties>
   </object>
@@ -70,7 +83,11 @@
    </properties>
    <ellipse/>
   </object>
-  <object id="12" name="wooden_planks" type="Area" x="278.667" y="268" width="86.6667" height="117.333"/>
+  <object id="12" name="wooden_planks" type="Area" x="278.667" y="268" width="86.6667" height="117.333">
+   <properties>
+    <property name="description" value="Some old wooden planks"/>
+   </properties>
+  </object>
   <object id="13" name="light" type="Area" x="58" y="110.667" width="86.6667" height="34.6663"/>
   <object id="14" name="drip" type="AnimatedArea" gid="4" x="75.3333" y="412.333" width="27" height="85">
    <properties>
@@ -92,13 +109,15 @@
     <property name="tileId" value="6"/>
    </properties>
   </object>
-  <object id="18" name="bucket_fill" type="AnimatedArea" gid="8" x="59" y="373" width="61" height="15" visible="0">
+  <object id="18" name="bucket_fill" type="AnimatedArea" gid="8" x="62" y="366" width="61" height="15" visible="0">
    <properties>
     <property name="tileId" value="7"/>
    </properties>
   </object>
   <object id="19" name="bubblegum" type="Object" gid="9" x="865.5" y="543.5" width="31" height="17">
    <properties>
+    <property name="acceptDrops" type="bool" value="true"/>
+    <property name="combines" value="[ &quot;bucket&quot; ]"/>
     <property name="tileId" value="8"/>
    </properties>
   </object>
@@ -115,7 +134,87 @@
    </properties>
   </object>
   <object id="23" name="rope_dangle_bucket" type="AnimatedArea" gid="12" x="498.667" y="303" width="65" height="191"/>
-  <object id="25" name="rope_dangle_water" type="AnimatedArea" gid="13" x="498.667" y="304.333" width="65" height="191"/>
+  <object id="25" name="rope_dangle_water" type="AnimatedArea" gid="13" x="498.667" y="303" width="65" height="191"/>
   <object id="28" name="faucet_handle" type="Area" x="50.6667" y="274.667" width="60" height="49.3333"/>
+ </objectgroup>
+ <imagelayer name="1 bg">
+  <image source="../App/assets/scenes/1.png" width="1100" height="660"/>
+ </imagelayer>
+ <objectgroup name="1">
+  <object id="29" name="chandelier" type="AnimatedArea" gid="15" x="357" y="207" width="647" height="207">
+   <properties>
+    <property name="description" value="A chandelier. Moving slightly in the draft from the window"/>
+    <property name="tileId" value="0"/>
+   </properties>
+  </object>
+  <object id="30" name="painting1" type="Object" gid="16" x="519.667" y="542" width="102" height="133">
+   <properties>
+    <property name="description" value="A painting of a cardboard box"/>
+    <property name="tileId" value="1"/>
+   </properties>
+  </object>
+  <object id="31" name="painting2" type="Object" gid="17" x="729.333" y="553.333" width="112" height="193">
+   <properties>
+    <property name="description" value="A painting of some man. Could be a self-portrait"/>
+    <property name="tileId" value="2"/>
+   </properties>
+  </object>
+  <object id="32" name="exit" type="Area" x="553.333" y="193.333" width="273.333" height="100"/>
+  <object id="33" name="barrel" type="Area" x="874.667" y="472" width="141.333" height="184">
+   <properties>
+    <property name="description" value="A red barrel with a warning sign"/>
+   </properties>
+  </object>
+  <object id="34" name="box2" type="Area" x="890.667" y="333.333" width="126.667" height="130.667">
+   <properties>
+    <property name="description" value="Yeah. So. This is a box"/>
+   </properties>
+  </object>
+  <object id="35" name="box1" type="Area" x="908" y="225.333" width="109.333" height="102.667">
+   <properties>
+    <property name="description" value="The one thing almost every game has. The BOX"/>
+   </properties>
+  </object>
+  <object id="36" name="rope1" type="Area" x="268" y="296" width="28" height="361.333">
+   <properties>
+    <property name="description" value="The rope from downstairs. It's tied to the hatch"/>
+   </properties>
+  </object>
+  <object id="38" name="rope2" type="Area" x="276" y="296" width="121.333" height="50.6667">
+   <properties>
+    <property name="description" value="The rope from downstairs. It's tied to the hatch"/>
+   </properties>
+  </object>
+  <object id="39" name="exit_down" type="Area" x="341.333" y="565.333" width="238.667" height="94.6667"/>
+  <object id="40" name="rope3" type="Area" x="364" y="321.333" width="33.3333" height="257.333">
+   <properties>
+    <property name="description" value="The rope from downstairs. It's tied to the hatch"/>
+   </properties>
+  </object>
+  <object id="42" name="box3" type="Area" x="93.3333" y="565.333" width="160" height="94.6667">
+   <properties>
+    <property name="description" value="A nice cardboard box"/>
+   </properties>
+  </object>
+  <object id="43" name="window" type="Area" x="84" y="357.333" width="113.333" height="161.333">
+   <properties>
+    <property name="description" value="The night is beautiful. The moon is very bright"/>
+   </properties>
+  </object>
+  <object id="44" name="canister" type="Area" x="1037.33" y="557.333" width="64" height="102.667">
+   <properties>
+    <property name="description" value="A worn blue canister"/>
+   </properties>
+  </object>
+  <object id="45" name="box4" type="Area" x="813.333" y="577.333" width="64" height="84">
+   <properties>
+    <property name="description" value="What have we here. An empty box. Quite useless"/>
+   </properties>
+  </object>
+  <object id="46" name="plastic_container" type="Area" x="745.333" y="625.333" width="44" height="34.6667">
+   <properties>
+    <property name="description" value="A plastic bottle of some kind. Not of any use"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

@@ -6,7 +6,7 @@
          "name":"0 bg",
          "opacity":1,
          "type":"imagelayer",
-         "visible":true,
+         "visible":false,
          "width":0,
          "x":0,
          "y":0
@@ -23,10 +23,14 @@
                  "name":"bucket",
                  "properties":
                     {
+                     "acceptDrops":true,
+                     "combines":"[ \"bubblegum\" ]",
                      "tileId":"0"
                     },
                  "propertytypes":
                     {
+                     "acceptDrops":"bool",
+                     "combines":"string",
                      "tileId":"string"
                     },
                  "rotation":0,
@@ -70,7 +74,7 @@
                      "tileId":"string"
                     },
                  "rotation":0,
-                 "type":"ImageAnimation",
+                 "type":"AnimatedArea",
                  "visible":true,
                  "width":65,
                  "x":498.667,
@@ -111,6 +115,14 @@
                  "height":117.333,
                  "id":12,
                  "name":"wooden_planks",
+                 "properties":
+                    {
+                     "description":"Some old wooden planks"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string"
+                    },
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
@@ -143,7 +155,7 @@
                      "tileId":"string"
                     },
                  "rotation":0,
-                 "type":"ImageAnimation",
+                 "type":"AnimatedArea",
                  "visible":true,
                  "width":27,
                  "x":75.3333,
@@ -163,7 +175,7 @@
                      "tileId":"string"
                     },
                  "rotation":0,
-                 "type":"ImageAnimation",
+                 "type":"AnimatedArea",
                  "visible":true,
                  "width":32,
                  "x":73.6667,
@@ -183,7 +195,7 @@
                      "tileId":"string"
                     },
                  "rotation":0,
-                 "type":"ImageAnimation",
+                 "type":"AnimatedArea",
                  "visible":true,
                  "width":107,
                  "x":0,
@@ -203,7 +215,7 @@
                      "tileId":"string"
                     },
                  "rotation":0,
-                 "type":"ImageAnimation",
+                 "type":"AnimatedArea",
                  "visible":true,
                  "width":9,
                  "x":86.8333,
@@ -223,11 +235,11 @@
                      "tileId":"string"
                     },
                  "rotation":0,
-                 "type":"ImageAnimation",
+                 "type":"AnimatedArea",
                  "visible":false,
                  "width":61,
-                 "x":59,
-                 "y":373
+                 "x":62,
+                 "y":366
                 }, 
                 {
                  "gid":9,
@@ -236,10 +248,14 @@
                  "name":"bubblegum",
                  "properties":
                     {
+                     "acceptDrops":true,
+                     "combines":"[ \"bucket\" ]",
                      "tileId":"8"
                     },
                  "propertytypes":
                     {
+                     "acceptDrops":"bool",
+                     "combines":"string",
                      "tileId":"string"
                     },
                  "rotation":0,
@@ -263,7 +279,7 @@
                      "tileId":"string"
                     },
                  "rotation":0,
-                 "type":"ImageAnimation",
+                 "type":"AnimatedArea",
                  "visible":true,
                  "width":118,
                  "x":543,
@@ -299,7 +315,7 @@
                  "id":23,
                  "name":"rope_dangle_bucket",
                  "rotation":0,
-                 "type":"ImageAnimation",
+                 "type":"AnimatedArea",
                  "visible":true,
                  "width":65,
                  "x":498.667,
@@ -311,22 +327,342 @@
                  "id":25,
                  "name":"rope_dangle_water",
                  "rotation":0,
-                 "type":"ImageAnimation",
+                 "type":"AnimatedArea",
                  "visible":true,
                  "width":65,
                  "x":498.667,
-                 "y":304.333
+                 "y":303
                 }, 
                 {
-                 "height":49.3333333333333,
+                 "height":49.3333,
                  "id":28,
                  "name":"faucet_handle",
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
                  "width":60,
-                 "x":50.6666666666667,
-                 "y":274.666666666667
+                 "x":50.6667,
+                 "y":274.667
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":false,
+         "width":0,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "height":0,
+         "image":"1.png",
+         "name":"1 bg",
+         "opacity":1,
+         "type":"imagelayer",
+         "visible":true,
+         "width":0,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "height":0,
+         "name":"1",
+         "objects":[
+                {
+                 "gid":15,
+                 "height":207,
+                 "id":29,
+                 "name":"chandelier",
+                 "properties":
+                    {
+                     "description":"A chandelier. Moving slightly in the draft from the window",
+                     "tileId":"0"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"AnimatedArea",
+                 "visible":true,
+                 "width":647,
+                 "x":357,
+                 "y":207
+                }, 
+                {
+                 "gid":16,
+                 "height":133,
+                 "id":30,
+                 "name":"painting1",
+                 "properties":
+                    {
+                     "description":"A painting of a cardboard box",
+                     "tileId":"1"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":102,
+                 "x":519.667,
+                 "y":542
+                }, 
+                {
+                 "gid":17,
+                 "height":193,
+                 "id":31,
+                 "name":"painting2",
+                 "properties":
+                    {
+                     "description":"A painting of some man. Could be a self-portrait",
+                     "tileId":"2"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":112,
+                 "x":729.333,
+                 "y":553.333
+                }, 
+                {
+                 "height":100,
+                 "id":32,
+                 "name":"exit",
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":273.333,
+                 "x":553.333,
+                 "y":193.333
+                }, 
+                {
+                 "height":184,
+                 "id":33,
+                 "name":"barrel",
+                 "properties":
+                    {
+                     "description":"A red barrel with a warning sign"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":141.333,
+                 "x":874.667,
+                 "y":472
+                }, 
+                {
+                 "height":130.667,
+                 "id":34,
+                 "name":"box2",
+                 "properties":
+                    {
+                     "description":"Yeah. So. This is a box"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":126.667,
+                 "x":890.667,
+                 "y":333.333
+                }, 
+                {
+                 "height":102.667,
+                 "id":35,
+                 "name":"box1",
+                 "properties":
+                    {
+                     "description":"The one thing almost every game has. The BOX"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":109.333,
+                 "x":908,
+                 "y":225.333
+                }, 
+                {
+                 "height":361.333,
+                 "id":36,
+                 "name":"rope1",
+                 "properties":
+                    {
+                     "description":"The rope from downstairs. It's tied to the hatch"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":28,
+                 "x":268,
+                 "y":296
+                }, 
+                {
+                 "height":50.6667,
+                 "id":38,
+                 "name":"rope2",
+                 "properties":
+                    {
+                     "description":"The rope from downstairs. It's tied to the hatch"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":121.333,
+                 "x":276,
+                 "y":296
+                }, 
+                {
+                 "height":94.6667,
+                 "id":39,
+                 "name":"exit_down",
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":238.667,
+                 "x":341.333,
+                 "y":565.333
+                }, 
+                {
+                 "height":257.333,
+                 "id":40,
+                 "name":"rope3",
+                 "properties":
+                    {
+                     "description":"The rope from downstairs. It's tied to the hatch"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":33.3333,
+                 "x":364,
+                 "y":321.333
+                }, 
+                {
+                 "height":94.6667,
+                 "id":42,
+                 "name":"box3",
+                 "properties":
+                    {
+                     "description":"A nice cardboard box"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":160,
+                 "x":93.3333,
+                 "y":565.333
+                }, 
+                {
+                 "height":161.333,
+                 "id":43,
+                 "name":"window",
+                 "properties":
+                    {
+                     "description":"The night is beautiful. The moon is very bright"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":113.333,
+                 "x":84,
+                 "y":357.333
+                }, 
+                {
+                 "height":102.667,
+                 "id":44,
+                 "name":"canister",
+                 "properties":
+                    {
+                     "description":"A worn blue canister"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":64,
+                 "x":1037.33,
+                 "y":557.333
+                }, 
+                {
+                 "height":84,
+                 "id":45,
+                 "name":"box4",
+                 "properties":
+                    {
+                     "description":"What have we here. An empty box. Quite useless"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":64,
+                 "x":813.333,
+                 "y":577.333
+                }, 
+                {
+                 "height":34.6667,
+                 "id":46,
+                 "name":"plastic_container",
+                 "properties":
+                    {
+                     "description":"A plastic bottle of some kind. Not of any use"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":44,
+                 "x":745.333,
+                 "y":625.333
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -335,7 +671,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":29,
+ "nextobjectid":47,
  "orientation":"orthogonal",
  "renderorder":"left-up",
  "tileheight":660,
@@ -408,6 +744,31 @@
                 }
             },
          "tilewidth":155
+        }, 
+        {
+         "columns":0,
+         "firstgid":15,
+         "margin":0,
+         "name":"1",
+         "spacing":0,
+         "tilecount":3,
+         "tileheight":207,
+         "tiles":
+            {
+             "0":
+                {
+                 "image":"..\/sprites\/chandelier\/swing\/0001.png"
+                },
+             "1":
+                {
+                 "image":"..\/sprites\/paintings\/painting_01.png"
+                },
+             "2":
+                {
+                 "image":"..\/sprites\/paintings\/painting_02.png"
+                }
+            },
+         "tilewidth":647
         }],
  "tilewidth":1100,
  "version":1,

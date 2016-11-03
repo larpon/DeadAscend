@@ -31,9 +31,13 @@ Item {
     }
 
     property string currentScene: "0"
+    property Item scene: sceneLoader.item
     property var sceneData
     property var incubator: Incubator.get()
     property var dynamicLoaded: ({})
+    property var objectBlacklist: ({})
+    property var objectSpawnlist: ({})
+    property var staticObjects: ({})
 
     function getObject(name) {
         if(name in dynamicLoaded)
@@ -45,9 +49,11 @@ Item {
             }
         })
     }
+
     function isObjectDynamic(name) {
         return (name in dynamicLoaded)
     }
+
     function destroyObject(name) {
         if(name in dynamicLoaded) {
             var o = dynamicLoaded[name]
@@ -57,11 +63,47 @@ Item {
         }
     }
 
+    function blacklistObject(name) {
+        objectBlacklist[name] = true
+    }
+
+    function unblacklistObject(name) {
+        objectBlacklist[name] = false
+    }
+
+    function isBlacklisted(name) {
+        if(name in objectBlacklist) {
+            return (objectBlacklist[name] === true)
+        }
+        return false
+    }
+
+    function clearDynamicallyLoaded() {
+
+        var i, o
+        for(i in dynamicLoaded) {
+            if(dynamicLoaded[i]) {
+                o = dynamicLoaded[i]
+
+                if(Aid.qtypeof(o) === "Object" && !o.inInventory) {
+                    var name = o.name
+                    objectSpawnlist[name] = name
+                }
+
+                o.destroy()
+            }
+        }
+        dynamicLoaded = {}
+    }
 
     property alias inventory: inventory
 
-    readonly property bool canLoadScene: opacity > 0 && store.isLoaded && inventory.isLoaded && sceneLoader.active
-    onCanLoadSceneChanged: if(canLoadScene) loadScene()
+    readonly property bool canLoadScene: opacity > 0 && store.isLoaded && inventory.isLoaded && sceneLoader.active && sceneLoader.status === Loader.Ready
+    onCanLoadSceneChanged: {
+        if(canLoadScene) {
+            loadScene()
+        }
+    }
 
     Component.onCompleted: {
         store.load()
@@ -69,20 +111,17 @@ Item {
     }
 
     Component.onDestruction: {
-
-        for(var i in dynamicLoaded) {
-            dynamicLoaded[i].destroy()
-        }
-        dynamicLoaded = {}
-
+        clearDynamicallyLoaded()
         inventory.save()
         store.save()
-
     }
 
     signal objectDragged(var object)
     signal objectDropped(var object)
+    signal objectCombined(var object, var otherObject)
+    signal objectClicked(var object)
     signal objectReturned(var object)
+    signal objectTravelingToInventory(var object)
     signal objectAddedToInventory(var object)
     signal objectRemovedFromInventory(var object)
 
@@ -90,11 +129,17 @@ Item {
         id: jsonReader
     }
 
+    Statistics {
+        id: sessionStatistics
+    }
+
     Store {
         id: store
         name: "game"
 
         property alias currentScene: game.currentScene
+        property alias objectBlacklist: game.objectBlacklist
+        property alias objectSpawnlist: game.objectSpawnlist
 
     }
 
@@ -116,6 +161,31 @@ Item {
 
     }
 
+    function goToScene(scene) {
+        clearDynamicallyLoaded()
+        sceneLoader.active = false
+        sceneLoadTimer.scene = scene
+    }
+
+    readonly property bool sceneUnloaded: !sceneLoader.active || !sceneLoader.status === Loader.Ready
+    onSceneUnloadedChanged: {
+        App.debug('Scene unloaded',currentScene)
+    }
+
+    Timer {
+        id: sceneLoadTimer
+        running: sceneUnloaded
+        interval: 500
+        repeat: true
+        property string scene: ""
+        onTriggered: {
+            if(scene !== "") {
+                game.currentScene = scene
+                sceneLoader.active = true
+            } else
+                stop()
+        }
+    }
 
     function loadScene() {
         if(!sceneData)
@@ -143,33 +213,54 @@ Item {
         for(i in objects) {
             var object = objects[i]
 
-            if('type' in object) {
-                if(object.type !== "Area") {
-                    // NOTE FIX tiled coordinates are origin Bottom Left
-                    object.y = object.y-object.height
+            if(!('read' in object)) {
+
+                if('type' in object) {
+                    if(object.type !== "Area") {
+                        // NOTE FIX tiled coordinates are origin Bottom Left
+                        object.y = object.y-object.height
+
+                    }
+
+                    if(object.type === "Object") {
+                        // NOTE set scene the object is spawned on
+                        object.scene = game.currentScene
+                    }
                 }
-            }
 
-            if('properties' in object) {
-                Aid.extend(object,object.properties)
-                object.properties = undefined
-                object.propertytypes = undefined
-            }
+                if('properties' in object) {
+                    Aid.extend(object,object.properties)
+                    object.properties = undefined
+                    object.propertytypes = undefined
+                }
 
-            if("tileId" in object && 'image' in tiles[object.tileId]) {
-                object.itemSource = App.getAsset(tiles[object.tileId].image.replace("../",''))
+                if('combines' in object) {
+                    object.keys = JSON.parse(object.combines)
+                }
+
+                if("tileId" in object && 'image' in tiles[object.tileId]) {
+                    object.itemSource = App.getAsset(tiles[object.tileId].image.replace("../",''))
+                }
+                object.read = true
             }
         }
 
         initializeObjects(objects)
+
         //App.debug(App.serialize(objects))
     }
 
     function initializeObjects(objects) {
 
-        var i, staticObjects = {}, fromScene = {}
-        Aid.loopChildren(sceneLoader.item,function(object) {
+        staticObjects = {}
+
+        var i, fromScene = {}, component
+        Aid.loopChildren(scene.canvas,function(object) {
             if('name' in object) {
+                if(isBlacklisted(object.name)) {
+                    App.debug('Object',object.name,'is blacklisted. Skipping...')
+                    return
+                }
                 staticObjects[object.name] = object
             }
         })
@@ -178,7 +269,14 @@ Item {
             var object = objects[i]
             if(object.name in staticObjects) {
                 var staticObject = staticObjects[object.name]
-                App.debug('Static object',staticObject.name)
+
+                // NOTE Object already has a state saved on disk - skip setting values
+                if(Aid.qtypeof(staticObject) === "Object" && staticObject.store.existOnDisk()) {
+                    App.debug('Static object',staticObject.name,'already has a state saved on disk. Skipping...')
+                    continue
+                }
+
+                App.debug('Correcting static object',staticObject.name,'from scene data')
                 staticObject.x = object.x
                 staticObject.y = object.y
                 staticObject.width = object.width
@@ -189,16 +287,30 @@ Item {
                     staticObject.state = object.state
                 if('itemSource' in object && 'itemSource' in staticObject)
                     staticObject.itemSource = object.itemSource
+                if('acceptDrops' in object && 'acceptDrops' in staticObject)
+                    staticObject.acceptDrops = object.acceptDrops
+                if('keys' in object && 'keys' in staticObject)
+                    staticObject.keys = object.keys + staticObject.keys
+                if('scene' in object && 'scene' in staticObject)
+                    staticObject.scene = object.scene
+                if('description' in object && 'description' in staticObject)
+                    staticObject.description = object.description
+
             } else {
                 fromScene[object.name] = true
                 spawnObject(object)
             }
         }
 
-        // NOTE go through rest of inventory and spawn any objects from other scenes
+        // NOTE go through inventory and spawn any objects from other scenes
         var ic = inventory.contents
         for(i in ic) {
             object = ic[i]
+
+            if(isBlacklisted(object.name)) {
+                App.debug('Object',object.name,'is blacklisted. Skipping...')
+                continue
+            }
 
             if(!fromScene[object.name]) {
                 var attrs = {
@@ -209,12 +321,44 @@ Item {
 
                 component = objectComponent
 
-                App.debug('INVENTORY Dynamic object',attrs.name,'prepared')
-                incubator.now(component, sceneLoader.item, attrs, function(o){
-                    App.debug('INVENTORY Dynamic object',o.name,o)
+                App.debug('Spawning dynamic object from INVENTORY',attrs.name)
+                incubator.now(component, scene.canvas, attrs, function(o){
+                    App.debug('Spawned dynamic INVENTORY object',o.name,o)
                     inventory.add(o)
 
                     dynamicLoaded[o.name] = o
+                })
+            }
+        }
+
+        // NOTE go through loose objects and spawn
+        var os = objectSpawnlist
+        for(var name in os) {
+
+            if(isBlacklisted(name)) {
+                App.debug('Object',name,'is blacklisted. Skipping...')
+                continue
+            }
+
+            if(!fromScene[name]) {
+                var attrs = {
+                    'name': name,
+                }
+
+                component = objectComponent
+
+                App.debug('SPAWNED Dynamic object',attrs.name,'prepared')
+                incubator.now(component, scene.canvas, attrs, function(o){
+                    App.debug('SPAWNED Dynamic object',o.name,o.draggable,o.z)
+
+                    if(o.scene !== currentScene) {
+                        App.debug("I'm not currently here. Bye",o.name)
+                        o.destroy()
+                        return
+                    }
+
+                    dynamicLoaded[o.name] = o
+
                 })
             }
 
@@ -222,6 +366,12 @@ Item {
     }
 
     function spawnObject(object,onSpawned) {
+
+        if(isBlacklisted(object.name)) {
+            App.debug('Object',object.name,'is blacklisted. Not spawning...')
+            return
+        }
+
         var attrs = {
             'name': object.name
         }
@@ -229,6 +379,8 @@ Item {
             attrs.x = object.x
         if('y' in object)
             attrs.y = object.y
+        if('z' in object)
+            attrs.z = object.z
         if('width' in object)
             attrs.width = object.width
         if('height' in object)
@@ -237,19 +389,31 @@ Item {
             attrs.state = object.state
         if('itemSource' in object)
             attrs.itemSource = object.itemSource
+        if('acceptDrops' in object)
+            attrs.acceptDrops = object.acceptDrops
+        if('keys' in object)
+            attrs.keys = object.keys
+        if('scene' in object)
+            attrs.scene = object.scene
+        if('description' in object)
+            attrs.description = object.description
 
-        if('z' in object)
-            attrs.z = object.z
+        if(!('type' in object)) {
+            App.warn("No TYPE attribute in",object.name,"Skipping...")
+            return
+        }
+
+        if(!(object.type === "Object" || object.type === "Area")) {
+            App.warn(object.type,"is not a supported OBJECT spawn type",object.name,"Skipping...")
+            return
+        }
 
         var component = objectComponent
+        if(object.type === "Area")
+            component = areaComponent
 
-        var notObjectWarn = ''
-        if(!('type' in object) || object.type !== "Object")
-            notObjectWarn = "WARNING: NOT OBJECT TYPE"
-
-        App.debug('Dynamic object',attrs.name,'prepared',notObjectWarn)
-        incubator.now(component, sceneLoader.item, attrs, function(o){
-            App.debug('Dynamic object',o.name,o)
+        incubator.now(component, scene.canvas, attrs, function(o){
+            App.debug('Spawned dynamic object',o.name,o)
             if(inventory.has(o)) {
                 inventory.add(o)
             }
@@ -263,6 +427,13 @@ Item {
     Component {
         id: objectComponent
         Object {
+
+        }
+    }
+
+    Component {
+        id: areaComponent
+        Area {
 
         }
     }
@@ -325,8 +496,11 @@ Item {
             keys: [ "inventory" ]
             name: "inventory"
             onDropped: {
+                var o = drag.source
+                if(o._at === "inventory")
+                    return
                 drop.accept()
-                drag.source.addToInventory()
+                o.addToInventory()
             }
         }
     }
@@ -436,6 +610,9 @@ Item {
             font { family: core.fonts.standard.name; }
             font.pixelSize: 40
 
+            onLineLaidOut: {
+                messages.height = messageText.height + 20
+            }
             /*
             Behavior on scale {
                 NumberAnimation { duration: 100 }
@@ -479,50 +656,116 @@ Item {
         }
     }
 
-    Image {
-        id: exit
-        x: -width; y: -height
-        width: 179; height: 173
-        source: App.getAsset('exit_button.png')
+    Component {
+        id: exitComponent
+        Image {
+            id: exit
+            x: -width; y: -height
+            width: 179; height: 173
+            source: App.getAsset('exit_button.png')
 
-        visible: opacity > 0
-        opacity: 0
-        Behavior on opacity {
-            NumberAnimation { duration: 300 }
-        }
+            property alias delay: exitTimer.interval
 
-        SequentialAnimation {
-            running: exit.visible
-            loops: Animation.Infinite
-            NumberAnimation {
-                target: exit
-                property: "y"
-                to: exit.y - 20
-                duration: 800
-                easing.type: Easing.InOutQuad
+            visible: opacity > 0
+            opacity: 0
+            Behavior on opacity {
+                NumberAnimation { duration: 300 }
             }
 
-            NumberAnimation {
-                target: exit
-                property: "y"
-                to: exit.y + 10
-                duration: 800
-                easing.type: Easing.InOutQuad
+            onOpacityChanged: {
+                if(opacity == 0) {
+                    exit.destroy()
+                }
             }
-        }
 
-        Timer {
-            id: exitTimer
-            running: exit.visible
-            interval: 3000
-            onTriggered: exit.opacity = 0
+            SequentialAnimation {
+                running: exit.visible
+                loops: Animation.Infinite
+                NumberAnimation {
+                    target: exit
+                    property: "y"
+                    to: exit.y - 20
+                    duration: 800
+                    easing.type: Easing.InOutQuad
+                }
+
+                NumberAnimation {
+                    target: exit
+                    property: "y"
+                    to: exit.y + 10
+                    duration: 800
+                    easing.type: Easing.InOutQuad
+                }
+            }
+
+            Timer {
+                id: exitTimer
+                running: exit.visible
+                interval: 3000
+                onTriggered: exit.opacity = 0
+            }
+
+            Component.onDestruction: {
+                App.debug('Exit sign is out')
+            }
         }
     }
 
     function showExit(x,y,delay,direction) {
-        exit.x = x - exit.halfWidth
-        exit.y = y - exit.halfHeight
-        exitTimer.interval = delay
-        exit.opacity = 1
+
+        var attrs = {
+            x: x,
+            y: y,
+            delay: delay,
+            opacity: 1
+        }
+
+        incubator.now(exitComponent, game, attrs, function(o){
+
+        })
+
+    }
+
+    // Global object combinations
+    onObjectCombined: {
+        if(object.name === "bucket" && otherObject.name === "bubblegum") {
+            combineBucketWithGum(object,otherObject)
+        }
+
+        if(object.name === "bubblegum" && otherObject.name === "bucket") {
+            combineBucketWithGum(otherObject,object)
+        }
+    }
+
+    function combineBucketWithGum(bucket,gum) {
+        var object = {
+            name: "bucket_patched",
+            type: "Object",
+            x: bucket.x,
+            y: bucket.y,
+            z: bucket.z,
+            at: bucket.at,
+            scene: currentScene,
+            itemSource: bucket.itemSource,
+            state: bucket.state,
+            acceptDrops: false
+        }
+
+        var animate = !bucket.inInventory
+
+        blacklistObject(bucket.name)
+        blacklistObject(gum.name)
+        destroyObject(bucket.name)
+        destroyObject(gum.name)
+
+        game.spawnObject(object,function(o){
+            if(animate)
+                game.inventory.addAnimated(o)
+            else
+                game.inventory.add(o)
+        })
+
+        core.sounds.play('gum')
+        setText('There we go. A patched bucket!')
     }
 }

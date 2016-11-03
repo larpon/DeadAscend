@@ -6,8 +6,10 @@ Item {
     id: area
 
     property bool round: false
+    property bool ready: store.isLoaded
 
-    property string name: ''
+    property string name: ""
+    property string description: ""
 
     signal clicked(variant mouse)
 
@@ -29,12 +31,18 @@ Item {
 
     Store {
         id: store
-        name: area.name !== '' ? "area/"+area.name : ''
+        name: area.name !== "" ? "area/"+area.name : ""
 
         property alias _x: area.x
         property alias _y: area.y
-        property alias state: area.state
+        property alias _state: area.state
         property alias round: area.round
+        property alias description: area.description
+    }
+
+    onClicked: {
+        if(description !== "")
+            game.setText(description)
     }
 
     Component.onCompleted: store.load()

@@ -993,5 +993,7 @@
         <file>assets/button L.png</file>
         <file>assets/button R.png</file>
         <file>assets/inv_slot.png</file>
+        <file>assets/scenes/1_fg_shadow.png</file>
+        <file>assets/scenes/1.png</file>
     </qresource>
 </RCC>

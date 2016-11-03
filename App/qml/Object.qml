@@ -11,23 +11,37 @@ Entity {
     //width: inInventory ? invImage.width : image.width
     //height: inInventory ? invImage.height : image.height
 
-    draggable: true
+    clickable: !mover.moving
+    draggable: !mover.moving
     source: itemSource
 
+    property alias store: store
+
+    property bool ready: store.isLoaded
     property bool autoInventory: true
+    property bool acceptDrops: false
 
     property string itemSource: ''
     property string iconSource: guessIcon(itemSource)
 
-    property string name: ''
-    property string at: ''
-    property string _at: ''
+    property string name: ""
+    property string description: ""
+    property string scene: ""
+    property string at: ""
+    property string _at: ""
+    property int _z: 0
+
+    property alias keys: dropSpot.keys
 
     Drag.keys: [ 'inventory', name ]
 
     onDragStarted: {
+        if(at === "dragged") // Panic click prevention
+            return
         _at = at
         at = "dragged"
+        _z = z
+        z = 1
         game.objectDragged(root)
     }
 
@@ -42,11 +56,14 @@ Entity {
             at = Drag.target.name
         if(at !== 'inventory')
             removeFromInventory()
+        z = _z
+        scene = game.currentScene
         game.objectDropped(root)
     }
 
     onDragReturned: {
         at = _at
+        z = _z
         game.objectReturned(root)
     }
 
@@ -54,7 +71,6 @@ Entity {
         if(game.inventory.has(root)) {
             mover.duration = 0
             game.inventory.remove(root)
-            game.objectRemovedFromInventory(root)
         }
     }
 
@@ -63,7 +79,7 @@ Entity {
             dragReturnAnimation.complete()
             mover.duration = 500
             game.inventory.addAnimated(root)
-            game.objectAddedToInventory(root)
+            game.objectTravelingToInventory(root)
         }
     }
 
@@ -87,9 +103,17 @@ Entity {
 
         property alias _x: root.x
         property alias _y: root.y
+        property alias _z: root.z
+        property alias _width: root.width
+        property alias _height: root.height
+        property alias _state: root.state
+        property alias description: root.description
         property alias at: root.at
-        property alias state: root.state
-        //property alias _visible: root.visible
+        property alias scene: root.scene
+        property alias itemSource: root.itemSource
+        property alias acceptDrops: root.acceptDrops
+        property alias keys: root.keys
+
     }
 
     Component.onCompleted: store.load()
@@ -141,12 +165,21 @@ Entity {
     onClicked: {
         if(!inInventory && autoInventory)
             addToInventory()
+        game.objectClicked(root)
+
+        if(description !== "")
+            game.setText(description)
     }
 
-    MouseArea {
+    DropSpot {
+        id: dropSpot
         anchors { fill: parent }
-        enabled: !root.draggable
-        onClicked: root.clicked(mouse)
+        enabled: acceptDrops
+        keys: ['notcombinable']
+        onDropped: {
+            drop.accept()
+            game.objectCombined(root,drag.source)
+        }
     }
 
 }

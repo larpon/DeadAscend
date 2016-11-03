@@ -74,21 +74,28 @@ ObjectStore {
         var m = row.mapFromItem(object.parent,object.x,object.y)
         object.parent = row
 
-        var setX = (contents.length-1)*117
-        App.debug('XXXX',setX)
-        //var setY = row.children.length()
-
         if(animate) {
             object.x = m.x
             object.y = m.y
-            object.moveTo(setX,0)
+
+            var arr = function(){
+                object.at = root.name
+                arrange()
+                game.objectAddedToInventory(object)
+                object.mover.stopped.disconnect(arr)
+            }
+            object.mover.stopped.connect(arr)
+
+            var ppos = predictPosition()
+            object.moveTo(ppos.x,0)
             animate = false
         } else {
-            object.x = setX
+            object.x = 0
             object.y = 0
+            object.at = root.name
+            arrange()
+            game.objectAddedToInventory(object)
         }
-
-        object.at = root.name
     }
 
     onNotAdded: {
@@ -98,25 +105,35 @@ ObjectStore {
         var m = row.mapFromItem(object.parent,object.x,object.y)
         object.parent = row
 
-        var setX = (contents.length-1)*117
-        App.debug('XXXX',setX)
-        //var setY = row.children.length()
-
         if(animate) {
             object.x = m.x
             object.y = m.y
-            object.moveTo(setX,0)
+            object.at = root.name
+
+            var arr = function(){
+                object.at = root.name
+                arrange()
+                game.objectAddedToInventory(object)
+                object.mover.stopped.disconnect(arr)
+            }
+            object.mover.stopped.connect(arr)
+
+            var ppos = predictPosition()
+            object.moveTo(ppos.x,0)
             animate = false
         } else {
-            object.x = setX
+            object.x = 0
             object.y = 0
+            object.at = root.name
+            arrange()
+            game.objectAddedToInventory(object)
         }
-
-        object.at = root.name
     }
 
     onRemoved: {
-        object.parent = game
+        object.parent = game.scene.canvas
+        arrange()
+        game.objectRemovedFromInventory(root)
     }
 
     function addAnimated(obj) {
@@ -124,4 +141,27 @@ ObjectStore {
         add(obj)
     }
 
+    function arrange() {
+
+        var i, c = 0
+        for(i in row.children) {
+            var o = row.children[i]
+            if('name' in o) {
+                o.x = c * 117
+                c++
+            }
+        }
+    }
+
+    function predictPosition() {
+
+        var i, c = 0
+        for(i in row.children) {
+            var o = row.children[i]
+            if('name' in o) {
+                c++
+            }
+        }
+        return Qt.point((c * 117) - 117,0)
+    }
 }
