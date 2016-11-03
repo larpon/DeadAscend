@@ -29,6 +29,8 @@ Item {
         onClicked: area.clicked(mouse)
     }
 
+    DebugVisual { enabled: rect.enabled }
+
     Store {
         id: store
         name: area.name !== "" ? "area/"+area.name : ""
@@ -40,12 +42,13 @@ Item {
         property alias description: area.description
     }
 
+    Component.onCompleted: store.load()
+    Component.onDestruction: store.save()
+
     onClicked: {
         if(description !== "")
             game.setText(description)
     }
 
-    Component.onCompleted: store.load()
-    Component.onDestruction: store.save()
 }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="47">
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="85">
  <tileset firstgid="1" name="0" tilewidth="155" tileheight="191" tilecount="14" columns="0">
   <tile id="0">
    <image width="74" height="97" source="../App/assets/sprites/bucket/bucket_empty.png"/>
@@ -44,7 +44,7 @@
    <image width="74" height="97" source="../App/assets/sprites/bucket/bucket_full.png"/>
   </tile>
  </tileset>
- <tileset firstgid="15" name="1" tilewidth="647" tileheight="207" tilecount="3" columns="0">
+ <tileset firstgid="15" name="1" tilewidth="647" tileheight="455" tilecount="20" columns="0">
   <tile id="0">
    <image width="647" height="207" source="../App/assets/sprites/chandelier/swing/0001.png"/>
   </tile>
@@ -53,6 +53,80 @@
   </tile>
   <tile id="2">
    <image width="112" height="193" source="../App/assets/sprites/paintings/painting_02.png"/>
+  </tile>
+  <tile id="3">
+   <image width="24" height="30" source="../App/assets/sprites/fuse/big.png"/>
+  </tile>
+  <tile id="4">
+   <image width="83" height="373" source="../App/assets/sprites/ladder/rail_1.png"/>
+  </tile>
+  <tile id="5">
+   <image width="107" height="298" source="../App/assets/sprites/ladder/rail_2.png"/>
+  </tile>
+  <tile id="6">
+   <image width="98" height="29" source="../App/assets/sprites/ladder/rung_1.png"/>
+  </tile>
+  <tile id="7">
+   <image width="51" height="88" source="../App/assets/sprites/ladder/rung_2.png"/>
+  </tile>
+  <tile id="8">
+   <image width="34" height="61" source="../App/assets/sprites/ladder/rung_3.png"/>
+  </tile>
+  <tile id="9">
+   <image width="107" height="20" source="../App/assets/sprites/ladder/rung_4.png"/>
+  </tile>
+  <tile id="10">
+   <image width="72" height="77" source="../App/assets/sprites/ladder/rung_5.png"/>
+  </tile>
+  <tile id="11">
+   <image width="102" height="67" source="../App/assets/sprites/ladder/rung_6.png"/>
+  </tile>
+  <tile id="12">
+   <image width="191" height="439" source="../App/assets/sprites/ladder/assembled_rail_1.png"/>
+  </tile>
+  <tile id="13">
+   <image width="143" height="455" source="../App/assets/sprites/ladder/assembled_rail_2.png"/>
+  </tile>
+  <tile id="14">
+   <image width="192" height="33" source="../App/assets/sprites/ladder/assembled_rung_1.png"/>
+  </tile>
+  <tile id="15">
+   <image width="166" height="32" source="../App/assets/sprites/ladder/assembled_rung_2.png"/>
+  </tile>
+  <tile id="16">
+   <image width="139" height="30" source="../App/assets/sprites/ladder/assembled_rung_3.png"/>
+  </tile>
+  <tile id="17">
+   <image width="116" height="32" source="../App/assets/sprites/ladder/assembled_rung_4.png"/>
+  </tile>
+  <tile id="18">
+   <image width="95" height="25" source="../App/assets/sprites/ladder/assembled_rung_5.png"/>
+  </tile>
+  <tile id="19">
+   <image width="87" height="35" source="../App/assets/sprites/ladder/assembled_rung_6.png"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="35" name="2" tilewidth="173" tileheight="531" tilecount="7" columns="0">
+  <tile id="3">
+   <image width="173" height="531" source="../App/assets/sprites/lift/operate_1/0001.png"/>
+  </tile>
+  <tile id="4">
+   <image width="78" height="154" source="../App/assets/sprites/bottles/glass_bottle/green.png"/>
+  </tile>
+  <tile id="5">
+   <image width="90" height="61" source="../App/assets/sprites/ladder/assembled_top.png"/>
+  </tile>
+  <tile id="7">
+   <image width="163" height="168" source="../App/assets/sprites/medicine_cabinet/door_up.png"/>
+  </tile>
+  <tile id="8">
+   <image width="9" height="10" source="../App/assets/sprites/buttons/button_02/button_02.png"/>
+  </tile>
+  <tile id="9">
+   <image width="6" height="17" source="../App/assets/sprites/fuse/fuse_socket_empty.png"/>
+  </tile>
+  <tile id="10">
+   <image width="6" height="16" source="../App/assets/sprites/fuse/fuse_socket_filled.png"/>
   </tile>
  </tileset>
  <imagelayer name="0 bg" visible="0">
@@ -137,14 +211,20 @@
   <object id="25" name="rope_dangle_water" type="AnimatedArea" gid="13" x="498.667" y="303" width="65" height="191"/>
   <object id="28" name="faucet_handle" type="Area" x="50.6667" y="274.667" width="60" height="49.3333"/>
  </objectgroup>
- <imagelayer name="1 bg">
+ <imagelayer name="1 bg" visible="0">
   <image source="../App/assets/scenes/1.png" width="1100" height="660"/>
  </imagelayer>
- <objectgroup name="1">
+ <objectgroup draworder="index" name="1" visible="0">
   <object id="29" name="chandelier" type="AnimatedArea" gid="15" x="357" y="207" width="647" height="207">
    <properties>
     <property name="description" value="A chandelier. Moving slightly in the draft from the window"/>
     <property name="tileId" value="0"/>
+   </properties>
+  </object>
+  <object id="47" name="painting1_frame" type="Area" x="504" y="393.333" width="130.667" height="160">
+   <properties>
+    <property name="description" value="A nice frame"/>
+    <property name="z" type="int" value="-1"/>
    </properties>
   </object>
   <object id="30" name="painting1" type="Object" gid="16" x="519.667" y="542" width="102" height="133">
@@ -153,13 +233,19 @@
     <property name="tileId" value="1"/>
    </properties>
   </object>
+  <object id="48" name="painting2_frame" type="Area" x="717.333" y="342.667" width="130.667" height="218.667">
+   <properties>
+    <property name="description" value="A nice picture frame"/>
+    <property name="z" type="int" value="-1"/>
+   </properties>
+  </object>
   <object id="31" name="painting2" type="Object" gid="17" x="729.333" y="553.333" width="112" height="193">
    <properties>
     <property name="description" value="A painting of some man. Could be a self-portrait"/>
     <property name="tileId" value="2"/>
    </properties>
   </object>
-  <object id="32" name="exit" type="Area" x="553.333" y="193.333" width="273.333" height="100"/>
+  <object id="32" name="exit_up" type="Area" x="553.333" y="193.333" width="273.333" height="100"/>
   <object id="33" name="barrel" type="Area" x="874.667" y="472" width="141.333" height="184">
    <properties>
     <property name="description" value="A red barrel with a warning sign"/>
@@ -199,6 +285,7 @@
   <object id="43" name="window" type="Area" x="84" y="357.333" width="113.333" height="161.333">
    <properties>
     <property name="description" value="The night is beautiful. The moon is very bright"/>
+    <property name="z" type="int" value="-1"/>
    </properties>
   </object>
   <object id="44" name="canister" type="Area" x="1037.33" y="557.333" width="64" height="102.667">
@@ -214,6 +301,152 @@
   <object id="46" name="plastic_container" type="Area" x="745.333" y="625.333" width="44" height="34.6667">
    <properties>
     <property name="description" value="A plastic bottle of some kind. Not of any use"/>
+   </properties>
+  </object>
+  <object id="51" name="ladder_drop" type="Area" x="598" y="246" width="221.333" height="416">
+   <properties>
+    <property name="z" type="int" value="-2"/>
+   </properties>
+  </object>
+  <object id="52" name="fuse" type="Object" gid="18" x="168" y="516.333" width="24" height="30">
+   <properties>
+    <property name="tileId" value="3"/>
+   </properties>
+  </object>
+  <object id="53" name="rail_1" type="Object" gid="19" x="977.667" y="664.667" width="83" height="373">
+   <properties>
+    <property name="description" value="Looks like a ladder rail"/>
+    <property name="tileId" value="4"/>
+    <property name="z" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="54" name="rail_2" type="Object" gid="20" x="271" y="669" width="107" height="298">
+   <properties>
+    <property name="description" value="A ladder rail it seems. With 6 holes in it"/>
+    <property name="tileId" value="5"/>
+    <property name="z" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="55" name="rung_1" type="Object" gid="21" x="867" y="474" width="98" height="29">
+   <properties>
+    <property name="tileId" value="6"/>
+    <property name="z" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="56" name="rung_2" type="Object" gid="22" x="188.333" y="685.333" width="51" height="88">
+   <properties>
+    <property name="tileId" value="7"/>
+    <property name="z" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="57" name="rung_3" type="Object" gid="23" x="229.667" y="600.667" width="34" height="61">
+   <properties>
+    <property name="tileId" value="8"/>
+    <property name="z" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="58" name="rung_4" type="Object" gid="24" x="876.333" y="331.333" width="107" height="20">
+   <properties>
+    <property name="tileId" value="9"/>
+    <property name="z" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="60" name="rung_5" type="Object" gid="25" x="805.333" y="664.667" width="72" height="77">
+   <properties>
+    <property name="tileId" value="10"/>
+    <property name="z" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="62" name="rung_6" type="Object" gid="26" x="778.333" y="669" width="102" height="67">
+   <properties>
+    <property name="tileId" value="11"/>
+    <property name="z" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="63" name="assembled_rail_1" type="Object" gid="27" x="518" y="674.5" width="191" height="439" visible="0">
+   <properties>
+    <property name="z" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="64" name="assembled_rail_2" type="Object" gid="28" x="637.667" y="679.167" width="143" height="455" visible="0">
+   <properties>
+    <property name="z" type="int" value="4"/>
+   </properties>
+  </object>
+  <object id="68" name="assembled_rung_3" type="Object" gid="31" x="609" y="486" width="139" height="30" visible="0">
+   <properties>
+    <property name="z" type="int" value="3"/>
+   </properties>
+  </object>
+  <object id="65" name="assembled_rung_1" type="Object" gid="29" x="541.5" y="650.333" width="192" height="33" visible="0">
+   <properties>
+    <property name="z" type="int" value="3"/>
+   </properties>
+  </object>
+  <object id="66" name="assembled_rung_2" type="Object" gid="30" x="576" y="566" width="166" height="32" visible="0">
+   <properties>
+    <property name="z" type="int" value="3"/>
+   </properties>
+  </object>
+  <object id="70" name="assembled_rung_4" type="Object" gid="32" x="642" y="403" width="116" height="32" visible="0">
+   <properties>
+    <property name="z" type="int" value="3"/>
+   </properties>
+  </object>
+  <object id="72" name="assembled_rung_5" type="Object" gid="33" x="670" y="333" width="95" height="25" visible="0">
+   <properties>
+    <property name="z" type="int" value="3"/>
+   </properties>
+  </object>
+  <object id="73" name="assembled_rung_6" type="Object" gid="34" x="690" y="276" width="87" height="35" visible="0">
+   <properties>
+    <property name="z" type="int" value="3"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <imagelayer name="2 bg">
+  <image source="../App/assets/scenes/2.png" width="1100" height="660"/>
+ </imagelayer>
+ <objectgroup draworder="index" name="2">
+  <object id="75" name="lift" type="AnimatedArea" gid="38" x="576" y="531" width="173" height="531"/>
+  <object id="76" name="bottle_green" type="Object" gid="39" x="575" y="721" width="78" height="154">
+   <properties>
+    <property name="tileId" value="4"/>
+   </properties>
+  </object>
+  <object id="77" name="ladder_top" type="Object" gid="40" x="803" y="636" width="90" height="61">
+   <properties>
+    <property name="clickable" type="bool" value="false"/>
+    <property name="draggable" type="bool" value="false"/>
+    <property name="locked" type="bool" value="true"/>
+    <property name="z" type="int" value="-1"/>
+   </properties>
+  </object>
+  <object id="78" name="cabinet_door" type="Object" gid="42" x="838" y="391" width="163" height="168">
+   <properties>
+    <property name="tileId" value="7"/>
+   </properties>
+  </object>
+  <object id="80" name="exit_down" type="Area" x="729.333" y="538.667" width="173.333" height="105.333"/>
+  <object id="81" name="button_up_small" gid="43" x="754.667" y="391.667" width="9" height="10">
+   <properties>
+    <property name="tileId" value="8"/>
+   </properties>
+  </object>
+  <object id="82" name="button_down_small" type="Object" gid="43" x="754.25" y="403.25" width="9" height="10">
+   <properties>
+    <property name="draggable" type="bool" value="false"/>
+    <property name="tileId" value="8"/>
+   </properties>
+  </object>
+  <object id="83" name="socket_small" gid="44" x="775.75" y="400.5" width="6" height="17">
+   <properties>
+    <property name="tileId" value="9"/>
+   </properties>
+  </object>
+  <object id="84" name="fuse_small" gid="45" x="776" y="400" width="6" height="16">
+   <properties>
+    <property name="tileId" value="10"/>
    </properties>
   </object>
  </objectgroup>

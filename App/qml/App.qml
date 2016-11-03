@@ -77,19 +77,19 @@ QtObject {
         function _processObject(object, maxDepth, level) {
             var output = []
             var pad = "  "
-            if (maxDepth == undefined) {
+            if (maxDepth === undefined) {
                 maxDepth = -1
             }
-            if (level == undefined) {
+            if (level === undefined) {
                 level = 0
             }
-            var padding = Array(level + 1).join(pad)
+            var padding = new Array(level + 1).join(pad)
 
             output.push((Array.isArray(object) ? "[" : "{"))
             var fields = []
             for (var key in object) {
                 var keyText = Array.isArray(object) ? "" : ("\"" + key + "\": ")
-                if (typeof (object[key]) == "object" && key != "parent" && maxDepth != 0) {
+                if (typeof (object[key]) === "object" && key !== "parent" && maxDepth !== 0) {
                     var res = _processObject(object[key], maxDepth > 0 ? maxDepth - 1 : -1, level + 1)
                     fields.push(padding + pad + keyText + res)
                 } else {

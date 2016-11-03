@@ -36,6 +36,7 @@ Base {
 
     MouseArea {
         anchors { fill: parent }
+        z: -10
         onClicked: {
             var a = [
                 'Test'
@@ -83,6 +84,192 @@ Base {
         onClicked: game.goToScene("0")
     }
 
+    Area {
+        x: 0; y: 0
+        width: 10; height: 10
+
+        name: "exit_up"
+
+        onClicked: {
+            if(isLadderBuilt())
+                game.goToScene("2")
+            else
+                game.setText("Need something to reach the hole in the ceiling")
+        }
+    }
+
+    Area {
+        id: ladderDrop
+        x: 0; y: 0
+        width: 10; height: 10
+
+        name: "ladder_drop"
+
+        DropSpot {
+            x: 60; y: 325
+            width: 95; height: 97
+            keys: [ "rail_1" , "rail_2", "rung_1", "rung_2", "rung_3", "rung_4", "rung_5", "rung_6" ]
+
+            name: "ladder_drop"
+
+            onDropped: {
+                //drop.accept()
+
+                var o = drag.source
+
+                var so
+                if(o.name === "rail_1" || o.name === "rail_2") {
+                    so = game.getObject('assembled_'+o.name)
+                    so.state = "up"
+                    blacklistObject(o.name)
+                    destroyObject(o.name)
+                } else { // The rungs
+
+                    var ar1 = game.getObject('assembled_rail_1')
+                    var ar2 = game.getObject('assembled_rail_2')
+
+                    if(ar1.state === "up" && ar2.state === "up") {
+                        so = game.getObject('assembled_'+o.name)
+                        so.state = "up"
+                        blacklistObject(o.name)
+                        destroyObject(o.name)
+                        game.setText("Another rung in the rail!")
+                    }
+
+                    if((ar1.state === "up" && ar2.state !== "up") || (ar1.state !== "up" && ar2.state === "up")) {
+                        game.setText("One more rail should be put up. I think")
+                    } else
+                        game.setText("This could work if there was something to attach to")
+                }
+
+                if(isLadderBuilt()) {
+                    game.showExit(600,150,2000,'up')
+                    game.setText("YES! Finally we can proceed upwards")
+                }
+
+            }
+        }
+
+    }
+
+    function isLadderBuilt() {
+        var ar1 = game.getObject('assembled_rail_1')
+        var ar2 = game.getObject('assembled_rail_2')
+        var r1 = game.getObject('assembled_rung_1')
+        var r2 = game.getObject('assembled_rung_2')
+        var r3 = game.getObject('assembled_rung_3')
+        var r4 = game.getObject('assembled_rung_4')
+        var r5 = game.getObject('assembled_rung_5')
+        var r6 = game.getObject('assembled_rung_5')
+        var all = [ar1,ar2,r1,r2,r3,r4,r5,r6]
+        var allTrue = false
+        if(ar1 && ar2 && r1 && r2 && r3 && r4 && r5 && r6) {
+            for(var i in all) {
+                var e = all[i]
+
+                allTrue = e.state === "up"
+
+                if(!allTrue)
+                    return false
+            }
+        }
+        return allTrue
+    }
+
+    Object {
+        x: 0; y: 0; z: visible ? 2 : -3
+
+        visible: state === "up"
+
+        clickable: false
+        draggable: false
+        autoInventory: false
+
+        name: 'assembled_rail_1'
+        itemSource: App.getAsset('sprites/ladder/'+name+'.png')
+    }
+
+    Object {
+        x: 0; y: 0; z: visible ? 4 : -3
+
+        visible: state === "up"
+
+        clickable: false
+        draggable: false
+        autoInventory: false
+
+        name: 'assembled_rail_2'
+        itemSource: App.getAsset('sprites/ladder/'+name+'.png')
+    }
+
+    Object {
+        x: 0; y: 0; z: visible ? 3 : -3
+
+        visible: state === "up"
+
+        draggable: false
+        autoInventory: false
+
+        name: 'assembled_rung_1'
+        itemSource: App.getAsset('sprites/ladder/'+name+'.png')
+    }
+
+    Object {
+        x: 0; y: 0; z: visible ? 3 : -3
+
+        visible: state === "up"
+
+        draggable: false
+        autoInventory: false
+
+        name: 'assembled_rung_2'
+        itemSource: App.getAsset('sprites/ladder/'+name+'.png')
+    }
+
+    Object {
+        x: 0; y: 0; z: visible ? 3 : -3
+
+        visible: state === "up"
+
+        draggable: false
+        autoInventory: false
+
+        name: 'assembled_rung_3'
+        itemSource: App.getAsset('sprites/ladder/'+name+'.png')
+    }
+    Object {
+        x: 0; y: 0; z: visible ? 3 : -3
+
+        visible: state === "up"
+
+        draggable: false
+        autoInventory: false
+
+        name: 'assembled_rung_4'
+        itemSource: App.getAsset('sprites/ladder/'+name+'.png')
+    }
+    Object {
+        x: 0; y: 0; z: visible ? 3 : -3
+
+        visible: state === "up"
+
+        draggable: false
+        autoInventory: false
+
+        name: 'assembled_rung_5'
+        itemSource: App.getAsset('sprites/ladder/'+name+'.png')
+    }
+    Object {
+        x: 0; y: 0; z: visible ? 3 : -3
+
+        visible: state === "up"
+
+        draggable: false
+        autoInventory: false
+
+        name: 'assembled_rung_6'
+        itemSource: App.getAsset('sprites/ladder/'+name+'.png')
+    }
 
     onObjectDropped: {
     }

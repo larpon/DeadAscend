@@ -39,15 +39,25 @@ Item {
     property var objectSpawnlist: ({})
     property var staticObjects: ({})
 
+    property string scene2type: "right"
+
     function getObject(name) {
         if(name in dynamicLoaded)
             return dynamicLoaded[name]
 
-        Aid.loopChildren(sceneLoader.item,function(object) {
-            if('name' in object && object.name === name) {
-                return object
-            }
-        })
+        var found = false
+        var fObject
+        if(scene && 'canvas' in scene) {
+            Aid.loopChildren(scene.canvas,function(object) {
+                if(found)
+                    return
+
+                if('name' in object && object.name === name) {
+                    fObject = object
+                }
+            })
+        }
+        return fObject
     }
 
     function isObjectDynamic(name) {
@@ -140,6 +150,7 @@ Item {
         property alias currentScene: game.currentScene
         property alias objectBlacklist: game.objectBlacklist
         property alias objectSpawnlist: game.objectSpawnlist
+        property alias scene2type: game.scene2type
 
     }
 
@@ -293,6 +304,8 @@ Item {
                     staticObject.keys = object.keys + staticObject.keys
                 if('scene' in object && 'scene' in staticObject)
                     staticObject.scene = object.scene
+                if('round' in object && 'round' in staticObject)
+                    staticObject.round = object.round
                 if('description' in object && 'description' in staticObject)
                     staticObject.description = object.description
 
@@ -395,6 +408,8 @@ Item {
             attrs.keys = object.keys
         if('scene' in object)
             attrs.scene = object.scene
+        if('round' in object)
+            attrs.round = object.round
         if('description' in object)
             attrs.description = object.description
 
@@ -552,6 +567,7 @@ Item {
     function setText(txt) {
         var wpm = 160
         messages.queue = []
+        messages.show = false
         for (var i = 0; i < arguments.length; i++) {
             var wc = arguments[i].split(' ').length;
             messages.queue.push( {

@@ -125,6 +125,12 @@ Entity {
         var ext = bns.pop()
         var icon = bns.join('.')+'_icon.'+ext
 
+        // Rail & rung hack
+        if(path.indexOf("rail_") !== -1)
+            icon = 'rail_icon.'+ext
+        if(path.indexOf("rung_") !== -1)
+            icon = 'rung_icon.'+ext
+
         var guessedPath = path.replace(basename,icon)
         //console.debug('Object resolved',source,'icon',path.replace(basename,icon))
         if(!Qak.resource.exists(guessedPath)) {
@@ -160,6 +166,7 @@ Entity {
         source: root.adaptiveSource
 
         width: (inInventory && fitInventory) ? 96 : sourceSize.width
+        height: (inInventory && fitInventory) ? 96 : sourceSize.height
     }
 
     onClicked: {

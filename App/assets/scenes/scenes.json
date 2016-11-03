@@ -357,13 +357,13 @@
          "name":"1 bg",
          "opacity":1,
          "type":"imagelayer",
-         "visible":true,
+         "visible":false,
          "width":0,
          "x":0,
          "y":0
         }, 
         {
-         "draworder":"topdown",
+         "draworder":"index",
          "height":0,
          "name":"1",
          "objects":[
@@ -390,6 +390,27 @@
                  "y":207
                 }, 
                 {
+                 "height":160,
+                 "id":47,
+                 "name":"painting1_frame",
+                 "properties":
+                    {
+                     "description":"A nice frame",
+                     "z":-1
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":130.667,
+                 "x":504,
+                 "y":393.333
+                }, 
+                {
                  "gid":16,
                  "height":133,
                  "id":30,
@@ -410,6 +431,27 @@
                  "width":102,
                  "x":519.667,
                  "y":542
+                }, 
+                {
+                 "height":218.667,
+                 "id":48,
+                 "name":"painting2_frame",
+                 "properties":
+                    {
+                     "description":"A nice picture frame",
+                     "z":-1
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":130.667,
+                 "x":717.333,
+                 "y":342.667
                 }, 
                 {
                  "gid":17,
@@ -436,7 +478,7 @@
                 {
                  "height":100,
                  "id":32,
-                 "name":"exit",
+                 "name":"exit_up",
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
@@ -594,11 +636,13 @@
                  "name":"window",
                  "properties":
                     {
-                     "description":"The night is beautiful. The moon is very bright"
+                     "description":"The night is beautiful. The moon is very bright",
+                     "z":-1
                     },
                  "propertytypes":
                     {
-                     "description":"string"
+                     "description":"string",
+                     "z":"int"
                     },
                  "rotation":0,
                  "type":"Area",
@@ -663,6 +707,579 @@
                  "width":44,
                  "x":745.333,
                  "y":625.333
+                }, 
+                {
+                 "height":416,
+                 "id":51,
+                 "name":"ladder_drop",
+                 "properties":
+                    {
+                     "z":-2
+                    },
+                 "propertytypes":
+                    {
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":221.333,
+                 "x":598,
+                 "y":246
+                }, 
+                {
+                 "gid":18,
+                 "height":30,
+                 "id":52,
+                 "name":"fuse",
+                 "properties":
+                    {
+                     "tileId":"3"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":24,
+                 "x":168,
+                 "y":516.333
+                }, 
+                {
+                 "gid":19,
+                 "height":373,
+                 "id":53,
+                 "name":"rail_1",
+                 "properties":
+                    {
+                     "description":"Looks like a ladder rail",
+                     "tileId":"4",
+                     "z":1
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "tileId":"string",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":83,
+                 "x":977.667,
+                 "y":664.667
+                }, 
+                {
+                 "gid":20,
+                 "height":298,
+                 "id":54,
+                 "name":"rail_2",
+                 "properties":
+                    {
+                     "description":"A ladder rail it seems. With 6 holes in it",
+                     "tileId":"5",
+                     "z":1
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "tileId":"string",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":107,
+                 "x":271,
+                 "y":669
+                }, 
+                {
+                 "gid":21,
+                 "height":29,
+                 "id":55,
+                 "name":"rung_1",
+                 "properties":
+                    {
+                     "tileId":"6",
+                     "z":1
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":98,
+                 "x":867,
+                 "y":474
+                }, 
+                {
+                 "gid":22,
+                 "height":88,
+                 "id":56,
+                 "name":"rung_2",
+                 "properties":
+                    {
+                     "tileId":"7",
+                     "z":1
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":51,
+                 "x":188.333,
+                 "y":685.333
+                }, 
+                {
+                 "gid":23,
+                 "height":61,
+                 "id":57,
+                 "name":"rung_3",
+                 "properties":
+                    {
+                     "tileId":"8",
+                     "z":1
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":34,
+                 "x":229.667,
+                 "y":600.667
+                }, 
+                {
+                 "gid":24,
+                 "height":20,
+                 "id":58,
+                 "name":"rung_4",
+                 "properties":
+                    {
+                     "tileId":"9",
+                     "z":1
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":107,
+                 "x":876.333,
+                 "y":331.333
+                }, 
+                {
+                 "gid":25,
+                 "height":77,
+                 "id":60,
+                 "name":"rung_5",
+                 "properties":
+                    {
+                     "tileId":"10",
+                     "z":1
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":72,
+                 "x":805.333,
+                 "y":664.667
+                }, 
+                {
+                 "gid":26,
+                 "height":67,
+                 "id":62,
+                 "name":"rung_6",
+                 "properties":
+                    {
+                     "tileId":"11",
+                     "z":1
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":102,
+                 "x":778.333,
+                 "y":669
+                }, 
+                {
+                 "gid":27,
+                 "height":439,
+                 "id":63,
+                 "name":"assembled_rail_1",
+                 "properties":
+                    {
+                     "z":2
+                    },
+                 "propertytypes":
+                    {
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":false,
+                 "width":191,
+                 "x":518,
+                 "y":674.5
+                }, 
+                {
+                 "gid":28,
+                 "height":455,
+                 "id":64,
+                 "name":"assembled_rail_2",
+                 "properties":
+                    {
+                     "z":4
+                    },
+                 "propertytypes":
+                    {
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":false,
+                 "width":143,
+                 "x":637.667,
+                 "y":679.167
+                }, 
+                {
+                 "gid":31,
+                 "height":30,
+                 "id":68,
+                 "name":"assembled_rung_3",
+                 "properties":
+                    {
+                     "z":3
+                    },
+                 "propertytypes":
+                    {
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":false,
+                 "width":139,
+                 "x":609,
+                 "y":486
+                }, 
+                {
+                 "gid":29,
+                 "height":33,
+                 "id":65,
+                 "name":"assembled_rung_1",
+                 "properties":
+                    {
+                     "z":3
+                    },
+                 "propertytypes":
+                    {
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":false,
+                 "width":192,
+                 "x":541.5,
+                 "y":650.333
+                }, 
+                {
+                 "gid":30,
+                 "height":32,
+                 "id":66,
+                 "name":"assembled_rung_2",
+                 "properties":
+                    {
+                     "z":3
+                    },
+                 "propertytypes":
+                    {
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":false,
+                 "width":166,
+                 "x":576,
+                 "y":566
+                }, 
+                {
+                 "gid":32,
+                 "height":32,
+                 "id":70,
+                 "name":"assembled_rung_4",
+                 "properties":
+                    {
+                     "z":3
+                    },
+                 "propertytypes":
+                    {
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":false,
+                 "width":116,
+                 "x":642,
+                 "y":403
+                }, 
+                {
+                 "gid":33,
+                 "height":25,
+                 "id":72,
+                 "name":"assembled_rung_5",
+                 "properties":
+                    {
+                     "z":3
+                    },
+                 "propertytypes":
+                    {
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":false,
+                 "width":95,
+                 "x":670,
+                 "y":333
+                }, 
+                {
+                 "gid":34,
+                 "height":35,
+                 "id":73,
+                 "name":"assembled_rung_6",
+                 "properties":
+                    {
+                     "z":3
+                    },
+                 "propertytypes":
+                    {
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":false,
+                 "width":87,
+                 "x":690,
+                 "y":276
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":false,
+         "width":0,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "height":0,
+         "image":"2.png",
+         "name":"2 bg",
+         "opacity":1,
+         "type":"imagelayer",
+         "visible":true,
+         "width":0,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"index",
+         "height":0,
+         "name":"2",
+         "objects":[
+                {
+                 "gid":38,
+                 "height":531,
+                 "id":75,
+                 "name":"lift",
+                 "rotation":0,
+                 "type":"AnimatedArea",
+                 "visible":true,
+                 "width":173,
+                 "x":576,
+                 "y":531
+                }, 
+                {
+                 "gid":39,
+                 "height":154,
+                 "id":76,
+                 "name":"bottle_green",
+                 "properties":
+                    {
+                     "tileId":"4"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":78,
+                 "x":575,
+                 "y":721
+                }, 
+                {
+                 "gid":40,
+                 "height":61,
+                 "id":77,
+                 "name":"ladder_top",
+                 "properties":
+                    {
+                     "clickable":false,
+                     "draggable":false,
+                     "locked":true,
+                     "z":-1
+                    },
+                 "propertytypes":
+                    {
+                     "clickable":"bool",
+                     "draggable":"bool",
+                     "locked":"bool",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":90,
+                 "x":803,
+                 "y":636
+                }, 
+                {
+                 "gid":42,
+                 "height":168,
+                 "id":78,
+                 "name":"cabinet_door",
+                 "properties":
+                    {
+                     "tileId":"7"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":163,
+                 "x":838,
+                 "y":391
+                }, 
+                {
+                 "height":105.333,
+                 "id":80,
+                 "name":"exit_down",
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":173.333,
+                 "x":729.333,
+                 "y":538.667
+                }, 
+                {
+                 "gid":43,
+                 "height":10,
+                 "id":81,
+                 "name":"button_up_small",
+                 "properties":
+                    {
+                     "tileId":"8"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":9,
+                 "x":754.667,
+                 "y":391.667
+                }, 
+                {
+                 "gid":43,
+                 "height":10,
+                 "id":82,
+                 "name":"button_down_small",
+                 "properties":
+                    {
+                     "draggable":false,
+                     "tileId":"8"
+                    },
+                 "propertytypes":
+                    {
+                     "draggable":"bool",
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":9,
+                 "x":754.25,
+                 "y":403.25
+                }, 
+                {
+                 "gid":44,
+                 "height":17,
+                 "id":83,
+                 "name":"socket_small",
+                 "properties":
+                    {
+                     "tileId":"9"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":6,
+                 "x":775.75,
+                 "y":400.5
+                }, 
+                {
+                 "gid":45,
+                 "height":16,
+                 "id":84,
+                 "name":"fuse_small",
+                 "properties":
+                    {
+                     "tileId":"10"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":6,
+                 "x":776,
+                 "y":400
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -671,7 +1288,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":47,
+ "nextobjectid":85,
  "orientation":"orthogonal",
  "renderorder":"left-up",
  "tileheight":660,
@@ -751,8 +1368,8 @@
          "margin":0,
          "name":"1",
          "spacing":0,
-         "tilecount":3,
-         "tileheight":207,
+         "tilecount":20,
+         "tileheight":455,
          "tiles":
             {
              "0":
@@ -763,12 +1380,121 @@
                 {
                  "image":"..\/sprites\/paintings\/painting_01.png"
                 },
+             "10":
+                {
+                 "image":"..\/sprites\/ladder\/rung_5.png"
+                },
+             "11":
+                {
+                 "image":"..\/sprites\/ladder\/rung_6.png"
+                },
+             "12":
+                {
+                 "image":"..\/sprites\/ladder\/assembled_rail_1.png"
+                },
+             "13":
+                {
+                 "image":"..\/sprites\/ladder\/assembled_rail_2.png"
+                },
+             "14":
+                {
+                 "image":"..\/sprites\/ladder\/assembled_rung_1.png"
+                },
+             "15":
+                {
+                 "image":"..\/sprites\/ladder\/assembled_rung_2.png"
+                },
+             "16":
+                {
+                 "image":"..\/sprites\/ladder\/assembled_rung_3.png"
+                },
+             "17":
+                {
+                 "image":"..\/sprites\/ladder\/assembled_rung_4.png"
+                },
+             "18":
+                {
+                 "image":"..\/sprites\/ladder\/assembled_rung_5.png"
+                },
+             "19":
+                {
+                 "image":"..\/sprites\/ladder\/assembled_rung_6.png"
+                },
              "2":
                 {
                  "image":"..\/sprites\/paintings\/painting_02.png"
+                },
+             "3":
+                {
+                 "image":"..\/sprites\/fuse\/big.png"
+                },
+             "4":
+                {
+                 "image":"..\/sprites\/ladder\/rail_1.png"
+                },
+             "5":
+                {
+                 "image":"..\/sprites\/ladder\/rail_2.png"
+                },
+             "6":
+                {
+                 "image":"..\/sprites\/ladder\/rung_1.png"
+                },
+             "7":
+                {
+                 "image":"..\/sprites\/ladder\/rung_2.png"
+                },
+             "8":
+                {
+                 "image":"..\/sprites\/ladder\/rung_3.png"
+                },
+             "9":
+                {
+                 "image":"..\/sprites\/ladder\/rung_4.png"
                 }
             },
          "tilewidth":647
+        }, 
+        {
+         "columns":0,
+         "firstgid":35,
+         "margin":0,
+         "name":"2",
+         "spacing":0,
+         "tilecount":7,
+         "tileheight":531,
+         "tiles":
+            {
+             "10":
+                {
+                 "image":"..\/sprites\/fuse\/fuse_socket_filled.png"
+                },
+             "3":
+                {
+                 "image":"..\/sprites\/lift\/operate_1\/0001.png"
+                },
+             "4":
+                {
+                 "image":"..\/sprites\/bottles\/glass_bottle\/green.png"
+                },
+             "5":
+                {
+                 "image":"..\/sprites\/ladder\/assembled_top.png"
+                },
+             "7":
+                {
+                 "image":"..\/sprites\/medicine_cabinet\/door_up.png"
+                },
+             "8":
+                {
+                 "image":"..\/sprites\/buttons\/button_02\/button_02.png"
+                },
+             "9":
+                {
+                 "image":"..\/sprites\/fuse\/fuse_socket_empty.png"
+                }
+            },
+         "tilewidth":173
         }],
  "tilewidth":1100,
  "version":1,
