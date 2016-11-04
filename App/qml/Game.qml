@@ -31,6 +31,7 @@ Item {
     }
 
     property string currentScene: "0"
+    property string previousScene: ""
     property Item scene: sceneLoader.item
     property var sceneData
     property var incubator: Incubator.get()
@@ -95,7 +96,7 @@ Item {
             if(dynamicLoaded[i]) {
                 o = dynamicLoaded[i]
 
-                if(Aid.qtypeof(o) === "Object" && !o.inInventory) {
+                if(!isBlacklisted(o.name) && Aid.qtypeof(o) === "Object" && !o.inInventory && ('stateless' in o && !o.stateless)) {
                     var name = o.name
                     objectSpawnlist[name] = name
                 }
@@ -126,6 +127,7 @@ Item {
         store.save()
     }
 
+    signal objectReady(var object)
     signal objectDragged(var object)
     signal objectDropped(var object)
     signal objectCombined(var object, var otherObject)
@@ -173,6 +175,7 @@ Item {
     }
 
     function goToScene(scene) {
+        previousScene = currentScene
         clearDynamicallyLoaded()
         sceneLoader.active = false
         sceneLoadTimer.scene = scene
@@ -224,7 +227,7 @@ Item {
         for(i in objects) {
             var object = objects[i]
 
-            if(!('read' in object)) {
+            if(!('__read' in object)) {
 
                 if('type' in object) {
                     if(object.type !== "Area") {
@@ -241,18 +244,24 @@ Item {
 
                 if('properties' in object) {
                     Aid.extend(object,object.properties)
-                    object.properties = undefined
-                    object.propertytypes = undefined
+                    delete object.properties
+                    delete object.propertytypes
                 }
 
                 if('combines' in object) {
                     object.keys = JSON.parse(object.combines)
+                    delete object.combines
                 }
 
                 if("tileId" in object && 'image' in tiles[object.tileId]) {
                     object.itemSource = App.getAsset(tiles[object.tileId].image.replace("../",''))
+                    delete object.tileId
                 }
-                object.read = true
+
+                if("ellipse" in object) {
+                    delete object.ellipse
+                }
+                object.__read = true
             }
         }
 
@@ -288,32 +297,15 @@ Item {
                 }
 
                 App.debug('Correcting static object',staticObject.name,'from scene data')
-                staticObject.x = object.x
-                staticObject.y = object.y
-                staticObject.width = object.width
-                staticObject.height = object.height
-                if('z' in object)
-                    staticObject.z = object.z
-                if('state' in object)
-                    staticObject.state = object.state
-                if('itemSource' in object && 'itemSource' in staticObject)
-                    staticObject.itemSource = object.itemSource
-                if('acceptDrops' in object && 'acceptDrops' in staticObject)
-                    staticObject.acceptDrops = object.acceptDrops
-                if('keys' in object && 'keys' in staticObject)
-                    staticObject.keys = object.keys + staticObject.keys
-                if('scene' in object && 'scene' in staticObject)
-                    staticObject.scene = object.scene
-                if('round' in object && 'round' in staticObject)
-                    staticObject.round = object.round
-                if('description' in object && 'description' in staticObject)
-                    staticObject.description = object.description
+                setProperties(staticObject,object,true)
+
 
             } else {
                 fromScene[object.name] = true
                 spawnObject(object)
             }
         }
+
 
         // NOTE go through inventory and spawn any objects from other scenes
         var ic = inventory.contents
@@ -385,34 +377,6 @@ Item {
             return
         }
 
-        var attrs = {
-            'name': object.name
-        }
-        if('x' in object)
-            attrs.x = object.x
-        if('y' in object)
-            attrs.y = object.y
-        if('z' in object)
-            attrs.z = object.z
-        if('width' in object)
-            attrs.width = object.width
-        if('height' in object)
-            attrs.height = object.height
-        if('state' in object)
-            attrs.state = object.state
-        if('itemSource' in object)
-            attrs.itemSource = object.itemSource
-        if('acceptDrops' in object)
-            attrs.acceptDrops = object.acceptDrops
-        if('keys' in object)
-            attrs.keys = object.keys
-        if('scene' in object)
-            attrs.scene = object.scene
-        if('round' in object)
-            attrs.round = object.round
-        if('description' in object)
-            attrs.description = object.description
-
         if(!('type' in object)) {
             App.warn("No TYPE attribute in",object.name,"Skipping...")
             return
@@ -422,6 +386,9 @@ Item {
             App.warn(object.type,"is not a supported OBJECT spawn type",object.name,"Skipping...")
             return
         }
+
+        var attrs = { }
+        setProperties(attrs,object)
 
         var component = objectComponent
         if(object.type === "Area")
@@ -437,6 +404,25 @@ Item {
                 onSpawned(o)
             }
         })
+    }
+
+    function setProperties(to,from,onlySetIfExist) {
+        var excludes = ['id','gid','__read','visible']
+        for(var p in from) {
+            if(excludes.indexOf(p) > -1)
+                continue
+
+            if(onlySetIfExist) {
+                if(p in to) {
+                    to[p] = from[p]
+                    //App.debug('Property e',p,'from',from.name)
+                }
+            } else {
+                to[p] = from[p]
+                //App.debug('Property',p,'from',from.name)
+            }
+
+        }
     }
 
     Component {
@@ -760,11 +746,9 @@ Item {
             x: bucket.x,
             y: bucket.y,
             z: bucket.z,
-            at: bucket.at,
+            description: "The bucket is patched. No holes!",
             scene: currentScene,
             itemSource: bucket.itemSource,
-            state: bucket.state,
-            acceptDrops: false
         }
 
         var animate = !bucket.inInventory

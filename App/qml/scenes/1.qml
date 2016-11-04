@@ -10,6 +10,8 @@ import "."
 Base {
     id: scene
 
+    ready: store.isLoaded
+
     anchors { fill: parent }
 
     Store {

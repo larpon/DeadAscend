@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="85">
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="95">
  <tileset firstgid="1" name="0" tilewidth="155" tileheight="191" tilecount="14" columns="0">
   <tile id="0">
    <image width="74" height="97" source="../App/assets/sprites/bucket/bucket_empty.png"/>
@@ -129,6 +129,11 @@
    <image width="6" height="16" source="../App/assets/sprites/fuse/fuse_socket_filled.png"/>
   </tile>
  </tileset>
+ <tileset firstgid="46" name="3" tilewidth="179" tileheight="142" tilecount="1" columns="0">
+  <tile id="0">
+   <image width="179" height="142" source="../App/assets/sprites/lift/operate_2/0001.png"/>
+  </tile>
+ </tileset>
  <imagelayer name="0 bg" visible="0">
   <image source="../App/assets/scenes/0.png" width="1100" height="660"/>
  </imagelayer>
@@ -150,41 +155,58 @@
     <property name="tileId" value="2"/>
    </properties>
   </object>
-  <object id="6" name="crack" type="Area" x="204" y="200" width="56" height="88"/>
+  <object id="6" name="crack" type="Area" x="204" y="200" width="56" height="88">
+   <properties>
+    <property name="description" value="Just another crack in the wall..."/>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
   <object id="10" name="crack2" type="Area" x="842.667" y="145.333" width="133.333" height="133.333">
    <properties>
+    <property name="description" value="A crack in the wall reveals the bare bricks. Something must have hit it hard"/>
     <property name="round" type="bool" value="true"/>
+    <property name="stateless" type="bool" value="true"/>
    </properties>
    <ellipse/>
   </object>
   <object id="12" name="wooden_planks" type="Area" x="278.667" y="268" width="86.6667" height="117.333">
    <properties>
     <property name="description" value="Some old wooden planks"/>
+    <property name="stateless" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="13" name="light" type="Area" x="58" y="110.667" width="86.6667" height="34.6663"/>
+  <object id="13" name="light" type="Area" x="58" y="110.667" width="86.6667" height="34.6663">
+   <properties>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
   <object id="14" name="drip" type="AnimatedArea" gid="4" x="75.3333" y="412.333" width="27" height="85">
    <properties>
+    <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="3"/>
    </properties>
   </object>
   <object id="15" name="run" type="AnimatedArea" gid="5" x="73.6667" y="416" width="32" height="91">
    <properties>
+    <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="4"/>
    </properties>
   </object>
-  <object id="16" name="pool" type="AnimatedArea" gid="6" x="0" y="461" width="107" height="45">
+  <object id="16" name="pool" type="AnimatedArea" gid="6" x="0" y="448" width="107" height="45">
    <properties>
+    <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="5"/>
    </properties>
   </object>
   <object id="17" name="bucket_run" type="AnimatedArea" gid="7" x="86.8333" y="368.667" width="9" height="43">
    <properties>
+    <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="6"/>
    </properties>
   </object>
   <object id="18" name="bucket_fill" type="AnimatedArea" gid="8" x="62" y="366" width="61" height="15" visible="0">
    <properties>
+    <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="7"/>
    </properties>
   </object>
@@ -210,6 +232,18 @@
   <object id="23" name="rope_dangle_bucket" type="AnimatedArea" gid="12" x="498.667" y="303" width="65" height="191"/>
   <object id="25" name="rope_dangle_water" type="AnimatedArea" gid="13" x="498.667" y="303" width="65" height="191"/>
   <object id="28" name="faucet_handle" type="Area" x="50.6667" y="274.667" width="60" height="49.3333"/>
+  <object id="85" name="0_box" type="Area" x="444" y="292" width="74.6667" height="80">
+   <properties>
+    <property name="description" value="An old cardboard box. Full of useless junk"/>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="86" name="water_puddle1" type="Area" x="257.333" y="469.333" width="190.667" height="65.3333">
+   <properties>
+    <property name="description" value="Your ordinary puddle of water"/>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
  </objectgroup>
  <imagelayer name="1 bg" visible="0">
   <image source="../App/assets/scenes/1.png" width="1100" height="660"/>
@@ -218,12 +252,14 @@
   <object id="29" name="chandelier" type="AnimatedArea" gid="15" x="357" y="207" width="647" height="207">
    <properties>
     <property name="description" value="A chandelier. Moving slightly in the draft from the window"/>
+    <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="0"/>
    </properties>
   </object>
   <object id="47" name="painting1_frame" type="Area" x="504" y="393.333" width="130.667" height="160">
    <properties>
     <property name="description" value="A nice frame"/>
+    <property name="stateless" type="bool" value="true"/>
     <property name="z" type="int" value="-1"/>
    </properties>
   </object>
@@ -236,6 +272,7 @@
   <object id="48" name="painting2_frame" type="Area" x="717.333" y="342.667" width="130.667" height="218.667">
    <properties>
     <property name="description" value="A nice picture frame"/>
+    <property name="stateless" type="bool" value="true"/>
     <property name="z" type="int" value="-1"/>
    </properties>
   </object>
@@ -245,66 +282,86 @@
     <property name="tileId" value="2"/>
    </properties>
   </object>
-  <object id="32" name="exit_up" type="Area" x="553.333" y="193.333" width="273.333" height="100"/>
+  <object id="32" name="exit_up" type="Area" x="553.333" y="193.333" width="273.333" height="100">
+   <properties>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
   <object id="33" name="barrel" type="Area" x="874.667" y="472" width="141.333" height="184">
    <properties>
     <property name="description" value="A red barrel with a warning sign"/>
+    <property name="stateless" type="bool" value="true"/>
    </properties>
   </object>
   <object id="34" name="box2" type="Area" x="890.667" y="333.333" width="126.667" height="130.667">
    <properties>
     <property name="description" value="Yeah. So. This is a box"/>
+    <property name="stateless" type="bool" value="true"/>
    </properties>
   </object>
   <object id="35" name="box1" type="Area" x="908" y="225.333" width="109.333" height="102.667">
    <properties>
     <property name="description" value="The one thing almost every game has. The BOX"/>
+    <property name="stateless" type="bool" value="true"/>
    </properties>
   </object>
   <object id="36" name="rope1" type="Area" x="268" y="296" width="28" height="361.333">
    <properties>
     <property name="description" value="The rope from downstairs. It's tied to the hatch"/>
+    <property name="stateless" type="bool" value="true"/>
    </properties>
   </object>
   <object id="38" name="rope2" type="Area" x="276" y="296" width="121.333" height="50.6667">
    <properties>
     <property name="description" value="The rope from downstairs. It's tied to the hatch"/>
+    <property name="stateless" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="39" name="exit_down" type="Area" x="341.333" y="565.333" width="238.667" height="94.6667"/>
+  <object id="39" name="exit_down" type="Area" x="341.333" y="565.333" width="238.667" height="94.6667">
+   <properties>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
   <object id="40" name="rope3" type="Area" x="364" y="321.333" width="33.3333" height="257.333">
    <properties>
     <property name="description" value="The rope from downstairs. It's tied to the hatch"/>
+    <property name="stateless" type="bool" value="true"/>
    </properties>
   </object>
   <object id="42" name="box3" type="Area" x="93.3333" y="565.333" width="160" height="94.6667">
    <properties>
     <property name="description" value="A nice cardboard box"/>
+    <property name="stateless" type="bool" value="true"/>
    </properties>
   </object>
   <object id="43" name="window" type="Area" x="84" y="357.333" width="113.333" height="161.333">
    <properties>
     <property name="description" value="The night is beautiful. The moon is very bright"/>
+    <property name="stateless" type="bool" value="true"/>
     <property name="z" type="int" value="-1"/>
    </properties>
   </object>
   <object id="44" name="canister" type="Area" x="1037.33" y="557.333" width="64" height="102.667">
    <properties>
     <property name="description" value="A worn blue canister"/>
+    <property name="stateless" type="bool" value="true"/>
    </properties>
   </object>
   <object id="45" name="box4" type="Area" x="813.333" y="577.333" width="64" height="84">
    <properties>
     <property name="description" value="What have we here. An empty box. Quite useless"/>
+    <property name="stateless" type="bool" value="true"/>
    </properties>
   </object>
   <object id="46" name="plastic_container" type="Area" x="745.333" y="625.333" width="44" height="34.6667">
    <properties>
     <property name="description" value="A plastic bottle of some kind. Not of any use"/>
+    <property name="stateless" type="bool" value="true"/>
    </properties>
   </object>
   <object id="51" name="ladder_drop" type="Area" x="598" y="246" width="221.333" height="416">
    <properties>
+    <property name="stateless" type="bool" value="true"/>
     <property name="z" type="int" value="-2"/>
    </properties>
   </object>
@@ -409,9 +466,19 @@
  </imagelayer>
  <objectgroup draworder="index" name="2">
   <object id="75" name="lift" type="AnimatedArea" gid="38" x="576" y="531" width="173" height="531"/>
+  <object id="94" name="exit_up" type="Area" x="618.666" y="6.667" width="132" height="50.6663">
+   <properties>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
   <object id="76" name="bottle_green" type="Object" gid="39" x="575" y="721" width="78" height="154">
    <properties>
     <property name="tileId" value="4"/>
+   </properties>
+  </object>
+  <object id="80" name="exit_down" type="Area" x="729.333" y="538.667" width="173.333" height="105.333">
+   <properties>
+    <property name="stateless" type="bool" value="true"/>
    </properties>
   </object>
   <object id="77" name="ladder_top" type="Object" gid="40" x="803" y="636" width="90" height="61">
@@ -419,35 +486,68 @@
     <property name="clickable" type="bool" value="false"/>
     <property name="draggable" type="bool" value="false"/>
     <property name="locked" type="bool" value="true"/>
-    <property name="z" type="int" value="-1"/>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="tileId" value="5"/>
+    <property name="z" type="int" value="0"/>
    </properties>
   </object>
   <object id="78" name="cabinet_door" type="Object" gid="42" x="838" y="391" width="163" height="168">
    <properties>
+    <property name="autoInventory" type="bool" value="false"/>
+    <property name="draggable" type="bool" value="false"/>
     <property name="tileId" value="7"/>
    </properties>
   </object>
-  <object id="80" name="exit_down" type="Area" x="729.333" y="538.667" width="173.333" height="105.333"/>
-  <object id="81" name="button_up_small" gid="43" x="754.667" y="391.667" width="9" height="10">
+  <object id="81" name="button_up_small" type="Object" gid="43" x="754.667" y="391.667" width="9" height="10">
    <properties>
+    <property name="clickable" type="bool" value="false"/>
+    <property name="draggable" type="bool" value="false"/>
+    <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="8"/>
    </properties>
   </object>
   <object id="82" name="button_down_small" type="Object" gid="43" x="754.25" y="403.25" width="9" height="10">
    <properties>
+    <property name="clickable" type="bool" value="false"/>
     <property name="draggable" type="bool" value="false"/>
+    <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="8"/>
    </properties>
   </object>
-  <object id="83" name="socket_small" gid="44" x="775.75" y="400.5" width="6" height="17">
+  <object id="83" name="socket_small" type="Object" gid="44" x="775.75" y="400.5" width="6" height="17">
    <properties>
+    <property name="autoInventory" type="bool" value="false"/>
+    <property name="clickable" type="bool" value="false"/>
+    <property name="draggable" type="bool" value="false"/>
+    <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="9"/>
    </properties>
   </object>
-  <object id="84" name="fuse_small" gid="45" x="776" y="400" width="6" height="16">
+  <object id="84" name="fuse_small" type="Object" gid="45" x="776" y="400" width="6" height="16">
    <properties>
+    <property name="autoInventory" type="bool" value="false"/>
+    <property name="clickable" type="bool" value="false"/>
+    <property name="draggable" type="bool" value="false"/>
+    <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="10"/>
+    <property name="z" type="int" value="1"/>
    </properties>
   </object>
+  <object id="88" name="control_panel_small" type="Area" x="730.091" y="361.455" width="76" height="60">
+   <properties>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="92" name="cabinet_area" type="Area" x="828" y="216" width="178.667" height="178.667">
+   <properties>
+    <property name="z" type="int" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <imagelayer name="3 bg" visible="0">
+  <image source="../App/assets/scenes/3.png" width="1100" height="660"/>
+ </imagelayer>
+ <objectgroup name="3" visible="0">
+  <object id="91" name="lift_3" type="AnimatedArea" gid="46" x="607" y="281.667" width="179" height="142" visible="0"/>
  </objectgroup>
 </map>

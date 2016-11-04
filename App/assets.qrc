@@ -999,5 +999,10 @@
         <file>assets/scenes/2_fg_shadow.png</file>
         <file>assets/scenes/2_darkness_overlay_left.png</file>
         <file>assets/scenes/2.png</file>
+        <file>assets/scenes/lift_panel/lift_panel.png</file>
+        <file>assets/scenes/medicine_cabinet/fg_shadow.png</file>
+        <file>assets/scenes/medicine_cabinet/notch.png</file>
+        <file>assets/scenes/3_fg_shadow.png</file>
+        <file>assets/scenes/3.png</file>
     </qresource>
 </RCC>

@@ -1,5 +1,7 @@
 import QtQuick 2.0
+
 import Qak 1.0
+import Qak.QtQuick 2.0
 
 import "."
 
@@ -82,7 +84,7 @@ Item {
 
             opacity: 0
             Behavior on opacity {
-                NumberAnimation { duration: 1500 }
+                NumberAnimation { duration: 1000 }
             }
         }
 
@@ -107,16 +109,40 @@ Item {
             visible: opacity > 0
             opacity: menuLoader.opacity < 1 && gameLoader.opacity < 1 ? 1 : 0
             Behavior on opacity {
-                NumberAnimation { duration: 500 }
+                NumberAnimation { duration: 00 }
             }
             readonly property bool fullyVisible: opacity >= 1
 
             anchors { fill: parent }
             color: colors.black
+
             Image {
-                anchors { centerIn: parent }
+                id: lsImage
+                x: parent.halfWidth - halfWidth; y: parent.halfHeight - halfHeight
                 source: App.getAsset('load.png')
+
+                SequentialAnimation on y {
+                    loops: Animation.Infinite
+
+                    paused: running && App.paused && !loadingScreen.visible
+
+                    running: true
+
+                    // Move from minHeight to maxHeight in 300ms, using the OutExpo easing function
+                    NumberAnimation {
+                        from: lsImage.y; to: lsImage.y - 30
+                        easing.type: Easing.InCubic; duration: 500
+                    }
+
+                    // Then move back to minHeight in 1 second, using the OutBounce easing function
+                    NumberAnimation {
+                        from: lsImage.y - 30; to: lsImage.y
+                        easing.type: Easing.OutCubic; duration: 500
+                    }
+
+                }
             }
+
         }
 
         EditorOverlay {

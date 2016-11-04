@@ -11,7 +11,20 @@ Item {
     property string name: ""
     property string description: ""
 
+    property alias store: store
+    property bool stateless: false
+
     signal clicked(variant mouse)
+
+
+    function save() {
+        if(!stateless)
+            store.save()
+    }
+
+    function load() {
+        store.load()
+    }
 
     MouseArea {
         id: rect
@@ -42,8 +55,8 @@ Item {
         property alias description: area.description
     }
 
-    Component.onCompleted: store.load()
-    Component.onDestruction: store.save()
+    Component.onCompleted: load()
+    Component.onDestruction: save()
 
     onClicked: {
         if(description !== "")

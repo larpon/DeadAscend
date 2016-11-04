@@ -9,11 +9,16 @@ import ".."
 Base {
     id: scene
 
+    ready: store.isLoaded
+
+    property bool bucketPatched: false
+
     Store {
         id: store
         name: "level"+sceneNumber
 
         property alias lightOn: aSwitch.active
+        property alias bucketPatched: scene.bucketPatched
     }
 
     Component.onCompleted: {
@@ -223,20 +228,18 @@ Base {
         width: 65; height: 191
 
         running: false
-
-        run: false
-
-        onRestarted: run = true
+        run: waterRunAnimation.run || (waterBucketRunAnimation.run && !bucketPatched)
 
         onRunChanged: {
             if(run) {
                 running = true
-
-                game.setText("There's a hole in the bucket. You need to patch the bucket somehow")
-
+                setActiveSequence('run')
             } else {
+                running = true
                 setActiveSequence('stop')
             }
+
+
         }
 
         name: 'pool'
@@ -384,18 +387,15 @@ Base {
                     x: bucket.x,
                     y: bucket.y,
                     z: bucket.z,
-                    width: bucket.width,
-                    height: bucket.height,
-                    at: bucket.at,
-                    itemSource: App.getAsset('sprites/bucket/bucket_full.png'),
-                    state: bucket.state,
-                    acceptDrops: false
+                    description: "The bucket is patched. No holes!",
+                    itemSource: App.getAsset('sprites/bucket/bucket_full.png')
                 }
 
                 game.spawnObject(object,function(o){
                     game.inventory.addAnimated(o)
                     blacklistObject(bucket.name)
                     destroyObject(bucket.name)
+                    scene.bucketPatched = true
                 })
 
                 setText('A bucket full of water. It\'s pretty heavy!')
@@ -478,33 +478,6 @@ Base {
         width: 112; height: 54
 
         onClicked: game.setText('The flourescent lights humms faintly - casting a grim light in the room...','Some flies are having a party here as well')
-    }
-
-    Area {
-        x: 189; y: 180
-        width: 95; height: 124
-
-        name: 'crack'
-
-        onClicked: game.setText('Just another crack in the wall..')
-    }
-
-    Area {
-        x: 857; y: 134
-        width: 100; height: 149
-
-        name: 'crack2'
-
-        onClicked: game.setText('A crack in the wall reveals the bare bricks. Something must have hit it hard')
-    }
-
-    Area {
-        x: 268; y: 266
-        width: 123; height: 125
-
-        name: 'wooden_planks'
-
-        onClicked: game.setText('Some wooden planks')
     }
 
     Object {
@@ -725,6 +698,7 @@ Base {
 
             o.x = x
             o.y = y+13
+
         }
     }
 
@@ -738,11 +712,17 @@ Base {
             if(o.name === "bucket_patched") {
                 waterBucketFillAnimation.restart()
                 o.locked = true
-            } else
-                waterPoolAnimation.restart()
-        } else
-            waterPoolAnimation.run = false
+            } else {
+                if(!bucketPatched)
+                    game.setText("There's a hole in the bucket. You need to patch the bucket somehow")
+            }
+        }
 
+    }
+
+    onObjectReady: {
+        if(object.name === "bucket" && !object.inInventory)
+            resolveBucketState()
     }
 
     onObjectDropped: {
@@ -777,6 +757,8 @@ Base {
         if(object.name === "bucket" || object.name === "bucket_patched") {
             core.sounds.play("bucket_put")
             faucetHandle.resolveState()
+
+            object.dump()
         }
     }
 

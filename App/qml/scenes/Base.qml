@@ -14,12 +14,16 @@ Item {
     paused: App.paused
     onPausedChanged: App.debug('Scene',sceneNumber,paused ? 'paused' : 'continued')
 
+    property bool showForegroundShadow: true
+
     readonly property string sceneNumber: game.currentScene
 
     default property alias content: canvas.data
     property alias canvas: canvas
 
+    property bool ready: false
 
+    signal objectReady(var object)
     signal objectDragged(var object)
     signal objectDropped(var object)
     signal objectCombined(var object, var otherObject)
@@ -35,6 +39,7 @@ Item {
 
     Connections {
         target: game
+        onObjectReady: { App.debug('Object ready',object.name); objectReady(object)}
         onObjectDropped: { App.debug('Object dropped',object.name); objectDropped(object)}
         onObjectClicked: { App.debug('Object clicked',object.name); objectClicked(object)}
         onObjectTravelingToInventory: { App.debug('Object traveling to inventory',object.name); objectTravelingToInventory(object) }
@@ -62,13 +67,19 @@ Item {
     Image {
         id: foreground
 
+        visible: opacity > 0
+        opacity: showForegroundShadow ? 1 : 0
+        Behavior on opacity {
+            NumberAnimation { duration: 600 }
+        }
+
         anchors { fill: parent }
 
         fillMode: Image.PreserveAspectFit
         source: App.getAsset('scenes/'+sceneNumber+'_fg_shadow.png')
 
         SequentialAnimation {
-            running: true
+            running: showForegroundShadow
             loops: Animation.Infinite
 
             paused: running && scene.paused
@@ -77,6 +88,20 @@ Item {
             NumberAnimation { target: foreground; property: "opacity"; from: 0.9; to: 1; duration: 800 }
         }
 
+    }
+
+    Rectangle {
+        id: fader
+
+        anchors { fill: parent }
+
+        color: core.colors.black
+
+        opacity: ready ? 0 : 1
+
+        Behavior on opacity {
+            NumberAnimation { duration: 1000 }
+        }
     }
 
 }

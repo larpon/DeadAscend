@@ -1,21 +1,22 @@
 import QtQuick 2.0
 
 import Qak 1.0
+import Qak.Tools 1.0
 
 import "."
 
 Entity {
     id: root
 
-    //x: 0; y: 0
-    //width: inInventory ? invImage.width : image.width
-    //height: inInventory ? invImage.height : image.height
+    width: image.width
+    height: image.height
 
     clickable: !mover.moving
     draggable: !mover.moving
     source: itemSource
 
     property alias store: store
+    property bool stateless: false
 
     property bool ready: store.isLoaded
     property bool autoInventory: true
@@ -34,6 +35,11 @@ Entity {
     property alias keys: dropSpot.keys
 
     Drag.keys: [ 'inventory', name ]
+
+    onReadyChanged: {
+        if(ready)
+            game.objectReady(root)
+    }
 
     onDragStarted: {
         if(at === "dragged") // Panic click prevention
@@ -116,8 +122,17 @@ Entity {
 
     }
 
-    Component.onCompleted: store.load()
-    Component.onDestruction: store.save()
+    Component.onCompleted: load()
+    Component.onDestruction: save()
+
+    function save() {
+        if(!stateless)
+            store.save()
+    }
+
+    function load() {
+        store.load()
+    }
 
     function guessIcon(path) {
         var basename = path.split(/[\\/]/).pop()
@@ -147,7 +162,8 @@ Entity {
         fillMode: Image.PreserveAspectFit
         source: App.getAsset('inv_slot.png')
 
-        width: 117
+        width: sourceSize.width
+        height: sourceSize.height
 
         Image {
             id: iconImage
@@ -156,6 +172,7 @@ Entity {
             source: root.adaptiveSource
 
             width: (inInventory && fitInventory) ? 96 : sourceSize.width
+            height: (inInventory && fitInventory) ? 96 : sourceSize.height
         }
     }
 
@@ -186,6 +203,14 @@ Entity {
         onDropped: {
             drop.accept()
             game.objectCombined(root,drag.source)
+        }
+    }
+
+    function dump() {
+        console.log(name)
+        for(var i in root) {
+            if(!Aid.isFunction(root[i]))
+                console.log(i,':',root[i])
         }
     }
 
