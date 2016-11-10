@@ -25,12 +25,16 @@
                     {
                      "acceptDrops":true,
                      "combines":"[ \"bubblegum\" ]",
+                     "soundMap":"{\n\t\"onDragged\":\"generic\",\n\t\"onReturned\":\"generic\",\n\t\"onAddedToInventory\":\"generic\",\n\t\"onDropped\":\"generic\"\n}",
+                     "sounds":"{\n\t\"generic\":\"sounds\/bucket_put.wav\"\n}",
                      "tileId":"0"
                     },
                  "propertytypes":
                     {
                      "acceptDrops":"bool",
                      "combines":"string",
+                     "soundMap":"string",
+                     "sounds":"string",
                      "tileId":"string"
                     },
                  "rotation":0,
@@ -284,12 +288,16 @@
                     {
                      "acceptDrops":true,
                      "combines":"[ \"bucket\" ]",
+                     "soundMap":"{\n\t\"onDragged\":\"generic\",\n\t\"onReturned\":\"generic\",\n\t\"onAddedToInventory\":\"generic\",\n\t\"onDropped\":\"generic\"\n}",
+                     "sounds":"{\n\t\"generic\":\"sounds\/juicy_gum.wav\"\n}",
                      "tileId":"8"
                     },
                  "propertytypes":
                     {
                      "acceptDrops":"bool",
                      "combines":"string",
+                     "soundMap":"string",
+                     "sounds":"string",
                      "tileId":"string"
                     },
                  "rotation":0,
@@ -1222,7 +1230,7 @@
          "name":"2 bg",
          "opacity":1,
          "type":"imagelayer",
-         "visible":true,
+         "visible":false,
          "width":0,
          "x":0,
          "y":0
@@ -1243,25 +1251,6 @@
                  "width":173,
                  "x":576,
                  "y":531
-                }, 
-                {
-                 "height":50.6663333333333,
-                 "id":94,
-                 "name":"exit_up",
-                 "properties":
-                    {
-                     "stateless":true
-                    },
-                 "propertytypes":
-                    {
-                     "stateless":"bool"
-                    },
-                 "rotation":0,
-                 "type":"Area",
-                 "visible":true,
-                 "width":131.999666666667,
-                 "x":618.666333333333,
-                 "y":6.66700000000007
                 }, 
                 {
                  "gid":39,
@@ -1336,7 +1325,7 @@
                  "gid":42,
                  "height":168,
                  "id":78,
-                 "name":"cabinet_door",
+                 "name":"cabinet_door_up",
                  "properties":
                     {
                      "autoInventory":false,
@@ -1482,11 +1471,11 @@
                  "type":"Area",
                  "visible":true,
                  "width":76,
-                 "x":730.090909090909,
-                 "y":361.454545454545
+                 "x":730.091,
+                 "y":361.455
                 }, 
                 {
-                 "height":178.666666666667,
+                 "height":178.667,
                  "id":92,
                  "name":"cabinet_area",
                  "properties":
@@ -1500,13 +1489,37 @@
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":178.666666666667,
+                 "width":178.667,
                  "x":828,
                  "y":216
+                }, 
+                {
+                 "gid":46,
+                 "height":132,
+                 "id":95,
+                 "name":"cabinet_door_down",
+                 "properties":
+                    {
+                     "autoInventory":false,
+                     "description":"The door from the medicine cabinet.",
+                     "draggable":false
+                    },
+                 "propertytypes":
+                    {
+                     "autoInventory":"bool",
+                     "description":"string",
+                     "draggable":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":92,
+                 "x":882,
+                 "y":555.333
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "width":0,
          "x":0,
          "y":0
@@ -1517,18 +1530,18 @@
          "name":"3 bg",
          "opacity":1,
          "type":"imagelayer",
-         "visible":false,
+         "visible":true,
          "width":0,
          "x":0,
          "y":0
         }, 
         {
-         "draworder":"topdown",
-         "height":1,
+         "draworder":"index",
+         "height":0,
          "name":"3",
          "objects":[
                 {
-                 "gid":46,
+                 "gid":47,
                  "height":142,
                  "id":91,
                  "name":"lift_3",
@@ -1537,16 +1550,176 @@
                  "visible":false,
                  "width":179,
                  "x":607,
-                 "y":281.666666666667
+                 "y":281.667
+                }, 
+                {
+                 "gid":48,
+                 "height":257,
+                 "id":97,
+                 "name":"glass_cage_base",
+                 "properties":
+                    {
+                     "stateless":true,
+                     "tileId":"1",
+                     "z":-1
+                    },
+                 "propertytypes":
+                    {
+                     "stateless":"bool",
+                     "tileId":"string",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":249,
+                 "x":340,
+                 "y":598.666666666667
+                }, 
+                {
+                 "gid":51,
+                 "height":72.3333333333334,
+                 "id":102,
+                 "name":"hay1",
+                 "properties":
+                    {
+                     "stateless":true,
+                     "tileId":"4"
+                    },
+                 "propertytypes":
+                    {
+                     "stateless":"bool",
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":144.333333333333,
+                 "x":413,
+                 "y":464.333333333333
+                }, 
+                {
+                 "gid":51,
+                 "height":97.6666666666666,
+                 "id":101,
+                 "name":"hay2",
+                 "properties":
+                    {
+                     "stateless":true,
+                     "tileId":"4"
+                    },
+                 "propertytypes":
+                    {
+                     "stateless":"bool",
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":169.666666666667,
+                 "x":374.333333333333,
+                 "y":524.333333333333
+                }, 
+                {
+                 "gid":51,
+                 "height":72.3333333333334,
+                 "id":103,
+                 "name":"hay3",
+                 "properties":
+                    {
+                     "stateless":true,
+                     "tileId":"4"
+                    },
+                 "propertytypes":
+                    {
+                     "stateless":"bool",
+                     "tileId":"string"
+                    },
+                 "rotation":11.8785267549219,
+                 "type":"Area",
+                 "visible":true,
+                 "width":144.333333333333,
+                 "x":352.434241777663,
+                 "y":540.704265083403
+                }, 
+                {
+                 "gid":50,
+                 "height":79,
+                 "id":99,
+                 "name":"hamster_box",
+                 "properties":
+                    {
+                     "description":"House of the living critter",
+                     "stateless":true,
+                     "tileId":"3"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool",
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":121,
+                 "x":470.666666666667,
+                 "y":387
+                }, 
+                {
+                 "gid":52,
+                 "height":129,
+                 "id":104,
+                 "name":"hamster_peek",
+                 "properties":
+                    {
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"AnimatedArea",
+                 "visible":true,
+                 "width":116,
+                 "x":418,
+                 "y":478.666666666667
+                }, 
+                {
+                 "gid":49,
+                 "height":379,
+                 "id":98,
+                 "name":"glass_cage",
+                 "properties":
+                    {
+                     "description":"[\n\t\"There's a hamster living here! Hey little buddy!\",\n\t\"The glass seem to be tempered. You need a serious tool to get through this\"\n]",
+                     "stateless":true,
+                     "tileId":"2",
+                     "z":4
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool",
+                     "tileId":"string",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":265,
+                 "x":334.666666666667,
+                 "y":601
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
-         "width":1,
+         "visible":true,
+         "width":0,
          "x":0,
          "y":0
         }],
- "nextobjectid":95,
+ "nextobjectid":105,
  "orientation":"orthogonal",
  "renderorder":"left-up",
  "tileheight":660,
@@ -1719,13 +1892,17 @@
          "margin":0,
          "name":"2",
          "spacing":0,
-         "tilecount":7,
+         "tilecount":8,
          "tileheight":531,
          "tiles":
             {
              "10":
                 {
                  "image":"..\/sprites\/fuse\/fuse_socket_filled.png"
+                },
+             "11":
+                {
+                 "image":"..\/sprites\/medicine_cabinet\/door_down.png"
                 },
              "3":
                 {
@@ -1756,20 +1933,40 @@
         }, 
         {
          "columns":0,
-         "firstgid":46,
+         "firstgid":47,
          "margin":0,
          "name":"3",
          "spacing":0,
-         "tilecount":1,
-         "tileheight":142,
+         "tilecount":6,
+         "tileheight":379,
          "tiles":
             {
              "0":
                 {
                  "image":"..\/sprites\/lift\/operate_2\/0001.png"
+                },
+             "1":
+                {
+                 "image":"..\/sprites\/glass_cage\/glass_cage_base.png"
+                },
+             "2":
+                {
+                 "image":"..\/sprites\/glass_cage\/glass_cage.png"
+                },
+             "3":
+                {
+                 "image":"..\/sprites\/hamster_box\/hamster_box.png"
+                },
+             "4":
+                {
+                 "image":"..\/sprites\/hay\/hay.png"
+                },
+             "5":
+                {
+                 "image":"..\/sprites\/hamster\/moves\/peek\/0001.png"
                 }
             },
-         "tilewidth":179
+         "tilewidth":265
         }],
  "tilewidth":1100,
  "version":1,

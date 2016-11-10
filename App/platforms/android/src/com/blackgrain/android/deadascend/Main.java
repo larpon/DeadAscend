@@ -1,4 +1,4 @@
-package com.bitkompot.android.hammerbees;
+package com.blackgrain.android.deadascend;
 
 import org.qtproject.qt5.android.bindings.QtApplication;
 import org.qtproject.qt5.android.bindings.QtActivity;
@@ -8,9 +8,7 @@ import android.os.Bundle;
 
 import android.view.WindowManager;
 
-import org.dreamdev.QtAdMob.QtAdMobActivity;
-
-public class Main extends QtAdMobActivity {
+public class Main extends QtActivity {
 
     /** Called when the activity is first created. */
 

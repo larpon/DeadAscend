@@ -36,6 +36,10 @@ Item {
             add('add',App.getAsset('sounds/generic_add.wav'))
             add('move',App.getAsset('sounds/generic_move.wav'))
             add('tick',App.getAsset('sounds/generic_tick.wav'))
+            add('tick_soft',App.getAsset('sounds/inventory_01.wav'))
+            add('tap',App.getAsset('sounds/key_tap.wav'))
+            // NOTE Added globally so it plays between scene loads!
+            add('lift_motor',App.getAsset('sounds/lift_motor_01.wav'))
         }
     }
 
@@ -166,6 +170,19 @@ Item {
         backQueue.push(func)
         var t = backQueue
         backQueue = t
+    }
+
+    Store {
+        id: settings
+        name: "core"
+    }
+
+    function reset(type) {
+        type = type || ""
+        if(type === "") {
+            settings.clearAll()
+            Qak.resource.clearDataPath()
+        }
     }
 
     FocusScope {

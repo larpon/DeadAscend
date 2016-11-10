@@ -50,7 +50,7 @@ android: {
     DISTFILES += \
         $$ANDROID_PACKAGE_SOURCE_DIR/AndroidManifest.xml \
         $$ANDROID_PACKAGE_SOURCE_DIR/build.gradle \
-        $$ANDROID_PACKAGE_SOURCE_DIR/src/com/bitkompot/android/hammerbees/Main.java \
+        $$ANDROID_PACKAGE_SOURCE_DIR/src/com/blackgrain/android/deadascend/Main.java \
         $$ANDROID_PACKAGE_SOURCE_DIR/res/values/apptheme.xml \
         $$ANDROID_PACKAGE_SOURCE_DIR/res/values/strings.xml \
         $$ANDROID_PACKAGE_SOURCE_DIR/res/drawable/splash.xml

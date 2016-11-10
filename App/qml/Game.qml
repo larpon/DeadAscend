@@ -54,6 +54,7 @@ Item {
                     return
 
                 if('name' in object && object.name === name) {
+                    found = true
                     fObject = object
                 }
             })
@@ -63,6 +64,23 @@ Item {
 
     function isObjectDynamic(name) {
         return (name in dynamicLoaded)
+    }
+
+    function isObjectStatic(name) {
+        var found = false
+        var fObject
+        if(scene && 'canvas' in scene) {
+            Aid.loopChildren(scene.canvas,function(object) {
+                if(found)
+                    return
+
+                if('name' in object && object.name === name) {
+                    found = true
+                    fObject = object
+                }
+            })
+        }
+        return found
     }
 
     function destroyObject(name) {
@@ -229,11 +247,22 @@ Item {
 
             if(!('__read' in object)) {
 
-                if('type' in object) {
-                    if(object.type !== "Area") {
-                        // NOTE FIX tiled coordinates are origin Bottom Left
-                        object.y = object.y-object.height
+                if('properties' in object) {
+                    Aid.extend(object,object.properties)
+                    delete object.properties
+                    delete object.propertytypes
+                }
 
+                if('type' in object) {
+
+                    if(object.type !== "Area") {
+                        // NOTE FIX tileset - tiled coordinates are origin Bottom Left
+                        object.y = object.y-object.height
+                    } else {
+                        // NOTE fix areas using tileset images - ah maaan
+                        if("tileId" in object) {
+                            object.y = object.y-object.height
+                        }
                     }
 
                     if(object.type === "Object") {
@@ -242,11 +271,6 @@ Item {
                     }
                 }
 
-                if('properties' in object) {
-                    Aid.extend(object,object.properties)
-                    delete object.properties
-                    delete object.propertytypes
-                }
 
                 if('combines' in object) {
                     object.keys = JSON.parse(object.combines)
@@ -261,6 +285,24 @@ Item {
                 if("ellipse" in object) {
                     delete object.ellipse
                 }
+
+                if("sounds" in object && !Aid.isObject(object.sounds)) {
+                    var sounds = JSON.parse(object.sounds)
+                    for(var tag in sounds) {
+                        sounds[tag] = App.getAsset(sounds[tag])
+                    }
+
+                    object.sounds = sounds
+                }
+
+                if("soundMap" in object && !Aid.isObject(object.soundMap)) {
+                    object.soundMap = JSON.parse(object.soundMap)
+                }
+
+                if("description" in object && Aid.startsWith(object.description,"[\n")) {
+                    object.description = JSON.parse(object.description)
+                }
+
                 object.__read = true
             }
         }
@@ -278,9 +320,11 @@ Item {
         Aid.loopChildren(scene.canvas,function(object) {
             if('name' in object) {
                 if(isBlacklisted(object.name)) {
-                    App.debug('Object',object.name,'is blacklisted. Skipping...')
+                    App.debug('Object',object.name,'is blacklisted. Hidding...')
+                    object.visible = false
                     return
                 }
+
                 staticObjects[object.name] = object
             }
         })
@@ -306,11 +350,10 @@ Item {
             }
         }
 
-
         // NOTE go through inventory and spawn any objects from other scenes
         var ic = inventory.contents
         for(i in ic) {
-            object = ic[i]
+            var object = ic[i]
 
             if(isBlacklisted(object.name)) {
                 App.debug('Object',object.name,'is blacklisted. Skipping...')
@@ -517,7 +560,7 @@ Item {
         property bool show: false
         readonly property bool _show: show && !paused
 
-        on_ShowChanged: core.sounds.play('move')
+        on_ShowChanged: core.sounds.play('tick_soft')
 
         anchors {
             horizontalCenter: parent.horizontalCenter
@@ -740,12 +783,17 @@ Item {
     }
 
     function combineBucketWithGum(bucket,gum) {
+
+        gum.play('generic')
+
         var object = {
             name: "bucket_patched",
             type: "Object",
             x: bucket.x,
             y: bucket.y,
             z: bucket.z,
+            sounds: bucket.sounds,
+            soundMap: bucket.soundMap,
             description: "The bucket is patched. No holes!",
             scene: currentScene,
             itemSource: bucket.itemSource,
@@ -765,7 +813,6 @@ Item {
                 game.inventory.add(o)
         })
 
-        core.sounds.play('gum')
         setText('There we go. A patched bucket!')
     }
 }

@@ -20,12 +20,20 @@ Base {
 
     }
 
+    Connections {
+        target: core.sounds
+        onLoaded: {
+            if(tag === "hum")
+                core.sounds.play('hum',core.sounds.infinite)
+        }
+    }
+
     Component.onCompleted: {
         store.load()
         showExit()
 
         var sfx = core.sounds
-        //sfx.add('level'+sceneNumber,'switch',App.getAsset('sounds/lamp_switch_01.wav'))
+        sfx.add('level'+sceneNumber,'hum',App.getAsset('sounds/low_machine_hum.wav'))
     }
 
     Component.onDestruction: {
@@ -110,6 +118,7 @@ Base {
         }
 
         function down() {
+            core.sounds.play('lift_motor')
             changeLevel = true
             game.setText("Going down!")
             setActiveSequence("go_down")
@@ -150,6 +159,83 @@ Base {
             //game.goToScene("4")
         }
 
+    }
+
+    /**
+      peek 1-4
+      peek-sniff 5 - 11
+      peek-mid 12 - 23
+
+      peek-bl 24 -32
+
+      mid-eat 33 - 40
+      bl-sniff 41 - 47
+      bl-mid-bl 48 - 67
+
+      bl-hide 68 - 79
+      */
+    AnimatedArea {
+
+        id: hamster
+
+        clickable: true
+        name: 'hamster'
+
+        run: true
+        paused: !visible || (scene.paused)
+
+        source: App.getAsset("sprites/rope/dangle/0001.png")
+
+        defaultFrameDelay: 150
+
+        sequences: [
+            {
+                name: "dangle",
+                frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+                to: { "rdangle":1}
+            },
+            {
+                name: "rdangle",
+                frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+                to: { "dangle":1},
+                reverse: true
+            }
+        ]
+
+        onClicked: {
+            hatch.state = "open then close"
+            game.setText('Gravity forces the hatch to close again','Find a way to keep the hatch open')
+        }
+
+        DropSpot {
+            anchors { fill: parent }
+
+            keys: [ "bucket", "bucket_patched", "bucket_full" ]
+
+            name: "rope_dangle"
+
+            onDropped: {
+                drop.accept()
+
+                var o = drag.source
+
+                onRope = o.name
+                if(o.name === "bucket_full") {
+                    rope_dangle.run = false
+                    rope_dangle_water.run = true
+                    game.destroyObject(onRope)
+                    game.blacklistObject(onRope)
+                    hatch.state = "open"
+                } else {
+                    game.destroyObject(onRope)
+                    rope_dangle.run = false
+                    rope_dangle_bucket.run = true
+
+                    hatch.state = "open then close"
+                    game.setText('The bucket is not heavy enough to keep the hatch open. Make it heavier')
+                }
+            }
+        }
     }
 
 

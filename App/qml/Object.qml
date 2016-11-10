@@ -21,9 +21,13 @@ Entity {
     property bool ready: store.isLoaded
     property bool autoInventory: true
     property bool acceptDrops: false
+    property bool useFallbackSounds: true
 
     property string itemSource: ''
     property string iconSource: guessIcon(itemSource)
+
+    property var sounds: ({})
+    property var soundMap: ({})
 
     property string name: ""
     property string description: ""
@@ -49,6 +53,7 @@ Entity {
         _z = z
         z = 1
         game.objectDragged(root)
+        play('onDragged')
     }
 
     /*
@@ -65,12 +70,28 @@ Entity {
         z = _z
         scene = game.currentScene
         game.objectDropped(root)
+        play('onDropped')
     }
 
     onDragReturned: {
         at = _at
         z = _z
         game.objectReturned(root)
+        play('onReturned')
+    }
+
+    function play(tag) {
+        if(tag in soundMap)
+            tag = soundMap[tag]
+
+        if(tag in sounds)
+            core.sounds.play(tag,"object/"+name)
+        else {
+            if(core.sounds.has(tag))
+                core.sounds.play(tag)
+            else if(useFallbackSounds)
+                core.sounds.play('add')
+        }
     }
 
     function removeFromInventory() {
@@ -83,14 +104,14 @@ Entity {
     function addToInventory() {
         if(!game.inventory.has(root)) {
             dragReturnAnimation.complete()
+            game.objectTravelingToInventory(root)
             mover.duration = 500
             game.inventory.addAnimated(root)
-            game.objectTravelingToInventory(root)
         }
     }
 
-    property bool inInventory: at === 'inventory'
     property bool fitInventory: false
+    property bool inInventory: at === 'inventory'
     onInInventoryChanged: {
         if(inInventory) {
             source = iconSource
@@ -119,11 +140,24 @@ Entity {
         property alias itemSource: root.itemSource
         property alias acceptDrops: root.acceptDrops
         property alias keys: root.keys
+        property alias sounds: root.sounds
+        property alias soundMap: root.soundMap
 
     }
 
-    Component.onCompleted: load()
-    Component.onDestruction: save()
+    Component.onCompleted: {
+        load()
+        if(Aid.objectSize(sounds) > 0 && name !== "") {
+            var sfx = core.sounds
+            for(var tag in sounds) {
+                sfx.add("object/"+name,tag,sounds[tag])
+            }
+        }
+    }
+    Component.onDestruction: {
+        core.sounds.clear("object/"+name)
+        save()
+    }
 
     function save() {
         if(!stateless)
@@ -189,10 +223,17 @@ Entity {
     onClicked: {
         if(!inInventory && autoInventory)
             addToInventory()
+        play('onClicked')
         game.objectClicked(root)
 
-        if(description !== "")
+        autoDescription()
+    }
+
+    function autoDescription() {
+        if(Aid.isString(description) && description !== "")
             game.setText(description)
+        if(Aid.isArray(description) && description.length > 0)
+            game.setText.apply(this, description)
     }
 
     DropSpot {

@@ -12,6 +12,7 @@ Base {
     ready: store.isLoaded
 
     property bool bucketPatched: false
+    property string onRope: ""
 
     Store {
         id: store
@@ -19,6 +20,7 @@ Base {
 
         property alias lightOn: aSwitch.active
         property alias bucketPatched: scene.bucketPatched
+        property alias onRope: scene.onRope
     }
 
     Component.onCompleted: {
@@ -38,8 +40,6 @@ Base {
         sfx.add('level'+sceneNumber,'hatch_open',App.getAsset('sounds/hatch_open.wav'))
         sfx.add('level'+sceneNumber,'hatch_close',App.getAsset('sounds/hatch_close.wav'))
         sfx.add('level'+sceneNumber,'water_run_loop',App.getAsset('sounds/water_run_loop_01.wav'))
-        sfx.add('level'+sceneNumber,'bucket_put',App.getAsset('sounds/bucket_put.wav'))
-        sfx.add('level'+sceneNumber,'gum',App.getAsset('sounds/juicy_gum.wav'))
     }
 
     Component.onDestruction: {
@@ -67,7 +67,6 @@ Base {
         }
     }
 
-    property string onRope: ""
 
     AnimatedArea {
 
@@ -387,6 +386,8 @@ Base {
                     x: bucket.x,
                     y: bucket.y,
                     z: bucket.z,
+                    sounds: bucket.sounds,
+                    soundMap: bucket.soundMap,
                     description: "The bucket is patched. No holes!",
                     itemSource: App.getAsset('sprites/bucket/bucket_full.png')
                 }
@@ -489,6 +490,7 @@ Base {
         name: 'parasol_base'
 
         Behavior on x {
+            id: parasolBaseXBehaviour
             NumberAnimation { duration: 1400 }
         }
 
@@ -501,8 +503,10 @@ Base {
         }
 
         onClicked: {
-            core.sounds.play('heavy_drag')
-            state === "over" ? state = "moved" : state = "over"
+            if(!parasolBaseXBehaviour.animation.running) {
+                core.sounds.play('heavy_drag')
+                state === "over" ? state = "moved" : state = "over"
+            }
         }
 
     }
@@ -727,7 +731,6 @@ Base {
 
     onObjectDropped: {
         if(object.name === "bucket" || object.name === "bucket_patched") {
-            core.sounds.play("bucket_put")
             faucetHandle.resolveState()
 
         }
@@ -741,21 +744,18 @@ Base {
 
     onObjectDragged: {
         if(object.name === "bucket" || object.name === "bucket_patched") {
-            core.sounds.play("bucket_put")
             faucetHandle.resolveState()
         }
     }
 
     onObjectReturned: {
         if((object.name === "bucket" || object.name === "bucket_patched") && object.at === "faucet") {
-            core.sounds.play("bucket_put")
             faucetHandle.resolveState()
         }
     }
 
     onObjectAddedToInventory: {
         if(object.name === "bucket" || object.name === "bucket_patched") {
-            core.sounds.play("bucket_put")
             faucetHandle.resolveState()
 
             object.dump()
@@ -764,7 +764,6 @@ Base {
 
     onObjectRemovedFromInventory: {
         if(object.name === "bucket" || object.name === "bucket_patched") {
-            core.sounds.play("bucket_put")
             faucetHandle.resolveState()
         }
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="95">
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="105">
  <tileset firstgid="1" name="0" tilewidth="155" tileheight="191" tilecount="14" columns="0">
   <tile id="0">
    <image width="74" height="97" source="../App/assets/sprites/bucket/bucket_empty.png"/>
@@ -106,7 +106,7 @@
    <image width="87" height="35" source="../App/assets/sprites/ladder/assembled_rung_6.png"/>
   </tile>
  </tileset>
- <tileset firstgid="35" name="2" tilewidth="173" tileheight="531" tilecount="7" columns="0">
+ <tileset firstgid="35" name="2" tilewidth="173" tileheight="531" tilecount="8" columns="0">
   <tile id="3">
    <image width="173" height="531" source="../App/assets/sprites/lift/operate_1/0001.png"/>
   </tile>
@@ -128,10 +128,28 @@
   <tile id="10">
    <image width="6" height="16" source="../App/assets/sprites/fuse/fuse_socket_filled.png"/>
   </tile>
+  <tile id="11">
+   <image width="92" height="132" source="../App/assets/sprites/medicine_cabinet/door_down.png"/>
+  </tile>
  </tileset>
- <tileset firstgid="46" name="3" tilewidth="179" tileheight="142" tilecount="1" columns="0">
+ <tileset firstgid="47" name="3" tilewidth="265" tileheight="379" tilecount="6" columns="0">
   <tile id="0">
    <image width="179" height="142" source="../App/assets/sprites/lift/operate_2/0001.png"/>
+  </tile>
+  <tile id="1">
+   <image width="249" height="257" source="../App/assets/sprites/glass_cage/glass_cage_base.png"/>
+  </tile>
+  <tile id="2">
+   <image width="265" height="379" source="../App/assets/sprites/glass_cage/glass_cage.png"/>
+  </tile>
+  <tile id="3">
+   <image width="121" height="79" source="../App/assets/sprites/hamster_box/hamster_box.png"/>
+  </tile>
+  <tile id="4">
+   <image width="175" height="87" source="../App/assets/sprites/hay/hay.png"/>
+  </tile>
+  <tile id="5">
+   <image width="116" height="129" source="../App/assets/sprites/hamster/moves/peek/0001.png"/>
   </tile>
  </tileset>
  <imagelayer name="0 bg" visible="0">
@@ -142,6 +160,15 @@
    <properties>
     <property name="acceptDrops" type="bool" value="true"/>
     <property name="combines" value="[ &quot;bubblegum&quot; ]"/>
+    <property name="soundMap">{
+	&quot;onDragged&quot;:&quot;generic&quot;,
+	&quot;onReturned&quot;:&quot;generic&quot;,
+	&quot;onAddedToInventory&quot;:&quot;generic&quot;,
+	&quot;onDropped&quot;:&quot;generic&quot;
+}</property>
+    <property name="sounds">{
+	&quot;generic&quot;:&quot;sounds/bucket_put.wav&quot;
+}</property>
     <property name="tileId" value="0"/>
    </properties>
   </object>
@@ -214,6 +241,15 @@
    <properties>
     <property name="acceptDrops" type="bool" value="true"/>
     <property name="combines" value="[ &quot;bucket&quot; ]"/>
+    <property name="soundMap">{
+	&quot;onDragged&quot;:&quot;generic&quot;,
+	&quot;onReturned&quot;:&quot;generic&quot;,
+	&quot;onAddedToInventory&quot;:&quot;generic&quot;,
+	&quot;onDropped&quot;:&quot;generic&quot;
+}</property>
+    <property name="sounds">{
+	&quot;generic&quot;:&quot;sounds/juicy_gum.wav&quot;
+}</property>
     <property name="tileId" value="8"/>
    </properties>
   </object>
@@ -461,16 +497,11 @@
    </properties>
   </object>
  </objectgroup>
- <imagelayer name="2 bg">
+ <imagelayer name="2 bg" visible="0">
   <image source="../App/assets/scenes/2.png" width="1100" height="660"/>
  </imagelayer>
- <objectgroup draworder="index" name="2">
+ <objectgroup draworder="index" name="2" visible="0">
   <object id="75" name="lift" type="AnimatedArea" gid="38" x="576" y="531" width="173" height="531"/>
-  <object id="94" name="exit_up" type="Area" x="618.666" y="6.667" width="132" height="50.6663">
-   <properties>
-    <property name="stateless" type="bool" value="true"/>
-   </properties>
-  </object>
   <object id="76" name="bottle_green" type="Object" gid="39" x="575" y="721" width="78" height="154">
    <properties>
     <property name="tileId" value="4"/>
@@ -491,7 +522,7 @@
     <property name="z" type="int" value="0"/>
    </properties>
   </object>
-  <object id="78" name="cabinet_door" type="Object" gid="42" x="838" y="391" width="163" height="168">
+  <object id="78" name="cabinet_door_up" type="Object" gid="42" x="838" y="391" width="163" height="168">
    <properties>
     <property name="autoInventory" type="bool" value="false"/>
     <property name="draggable" type="bool" value="false"/>
@@ -543,11 +574,66 @@
     <property name="z" type="int" value="1"/>
    </properties>
   </object>
+  <object id="95" name="cabinet_door_down" type="Object" gid="46" x="882" y="555.333" width="92" height="132">
+   <properties>
+    <property name="autoInventory" type="bool" value="false"/>
+    <property name="description" value="The door from the medicine cabinet."/>
+    <property name="draggable" type="bool" value="false"/>
+   </properties>
+  </object>
  </objectgroup>
- <imagelayer name="3 bg" visible="0">
+ <imagelayer name="3 bg">
   <image source="../App/assets/scenes/3.png" width="1100" height="660"/>
  </imagelayer>
- <objectgroup name="3" visible="0">
-  <object id="91" name="lift_3" type="AnimatedArea" gid="46" x="607" y="281.667" width="179" height="142" visible="0"/>
+ <objectgroup draworder="index" name="3">
+  <object id="91" name="lift_3" type="AnimatedArea" gid="47" x="607" y="281.667" width="179" height="142" visible="0"/>
+  <object id="97" name="glass_cage_base" type="Area" gid="48" x="340" y="598.667" width="249" height="257">
+   <properties>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="tileId" value="1"/>
+    <property name="z" type="int" value="-1"/>
+   </properties>
+  </object>
+  <object id="102" name="hay1" type="Area" gid="51" x="413" y="464.333" width="144.333" height="72.3333">
+   <properties>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="tileId" value="4"/>
+   </properties>
+  </object>
+  <object id="101" name="hay2" type="Area" gid="51" x="374.333" y="524.333" width="169.667" height="97.6667">
+   <properties>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="tileId" value="4"/>
+   </properties>
+  </object>
+  <object id="103" name="hay3" type="Area" gid="51" x="352.434" y="540.704" width="144.333" height="72.3333" rotation="11.8785">
+   <properties>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="tileId" value="4"/>
+   </properties>
+  </object>
+  <object id="99" name="hamster_box" type="Area" gid="50" x="470.667" y="387" width="121" height="79">
+   <properties>
+    <property name="description" value="House of the living critter"/>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="tileId" value="3"/>
+   </properties>
+  </object>
+  <object id="104" name="hamster_peek" type="AnimatedArea" gid="52" x="418" y="478.667" width="116" height="129">
+   <properties>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="98" name="glass_cage" type="Area" gid="49" x="334.667" y="601" width="265" height="379">
+   <properties>
+    <property name="description">[
+	&quot;There's a hamster living here! Hey little buddy!&quot;,
+	&quot;The glass seem to be tempered. You need a serious tool to get through this&quot;
+]</property>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="tileId" value="2"/>
+    <property name="z" type="int" value="4"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

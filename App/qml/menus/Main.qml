@@ -106,6 +106,13 @@ Item {
                     text: qsTr("About")
                 }
 
+                TextButton {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    allUppercase: true
+                    text: qsTr("Reset")
+                    onClicked: core.reset()
+                }
+
             }
         }
     }

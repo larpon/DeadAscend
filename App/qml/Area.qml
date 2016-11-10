@@ -1,6 +1,10 @@
 import QtQuick 2.0
 
 import Qak 1.0
+import Qak.Tools 1.0
+import Qak.QtQuick 2.0
+
+import "."
 
 Item {
     id: area
@@ -9,7 +13,9 @@ Item {
     property bool ready: store.isLoaded
 
     property string name: ""
-    property string description: ""
+    property var description: ""
+
+    property string itemSource: ""
 
     property alias store: store
     property bool stateless: false
@@ -18,12 +24,18 @@ Item {
 
 
     function save() {
-        if(!stateless)
+        if(!stateless && name !== "")
             store.save()
     }
 
     function load() {
         store.load()
+    }
+
+    Image {
+        visible: itemSource !== ""
+        anchors { fill: parent }
+        source: itemSource
     }
 
     MouseArea {
@@ -59,9 +71,14 @@ Item {
     Component.onDestruction: save()
 
     onClicked: {
-        if(description !== "")
-            game.setText(description)
+        autoDescription()
     }
 
+    function autoDescription() {
+        if(Aid.isString(description) && description !== "")
+            game.setText(description)
+        if(Aid.isArray(description) && description.length > 0)
+            game.setText.apply(this, description)
+    }
 }
 

@@ -16,20 +16,48 @@ Base {
 
     readonly property string type: game.scene2type
     property bool fuseDropped: false
+    property bool cabinetOpened: false
+    property bool emptyCannulaTaken: false
 
     Store {
         id: store
         name: "level"+sceneNumber
 
         property alias fuseDropped: scene.fuseDropped
+        property alias cabinetOpened: scene.cabinetOpened
+        property alias emptyCannulaTaken: scene.emptyCannulaTaken
+    }
+
+
+    Component {
+        id: objectComponent
+        Object {
+
+        }
     }
 
     Component.onCompleted: {
         store.load()
+
+        if(!emptyCannulaTaken) {
+            var object = {
+                name: "cannula",
+                x: 160,
+                y: 300,
+                itemSource: App.getAsset("sprites/cannula/cannula_empty.png"),
+                description: "An empty cannula. Not very helpful when empty...",
+                at: sceneNumber
+
+            }
+
+            incubator.now(objectComponent, cannulaSpawn, object, function(o){})
+
+        }
+
         showExit()
 
         var sfx = core.sounds
-        //sfx.add('level'+sceneNumber,'switch',App.getAsset('sounds/lamp_switch_01.wav'))
+        //sfx.add('level'+sceneNumber,'lift_motor',App.getAsset('sounds/lift_motor_01.wav'))
     }
 
     Component.onDestruction: {
@@ -48,7 +76,11 @@ Base {
         z: -10
         onClicked: {
             var a = [
-                'Test'
+                'Not very interesting',
+                'Not of any use',
+                'It\'s cold in here',
+                'I wonder where everybody is?',
+                'There\'s faint sounds of mumbling zombies'
             ]
             game.setText(Aid.randomFromArray(a))
         }
@@ -61,6 +93,7 @@ Base {
 
         name: 'lift'
 
+        clickable: true
         visible: true
         run: false
         paused: !visible || (scene.paused)
@@ -117,6 +150,7 @@ Base {
                 game.setText("It seems like it need a fuse to work")
                 return
             }
+            core.sounds.play('lift_motor')
             changeLevel = true
             game.setText("Going up!")
             setActiveSequence("go_up")
@@ -127,6 +161,7 @@ Base {
                 game.setText("It seems like it need a fuse to work")
                 return
             }
+            core.sounds.play('lift_motor')
             game.setText("Going down!")
             setActiveSequence("go_down")
         }
@@ -136,6 +171,16 @@ Base {
                 setActiveSequence("go_down")
             }
         }
+
+        onClicked: {
+            if(!fuseDropped) {
+                core.sounds.play('tick')
+                game.setText("This lift could get you further up. But it's not working?")
+                return
+            }
+            lift.up()
+        }
+
     }
 
     Area {
@@ -143,19 +188,6 @@ Base {
         name: "exit_down"
 
         onClicked: game.goToScene("1")
-    }
-
-    Area {
-
-        name: "exit_up"
-
-        onClicked: {
-            if(!fuseDropped) {
-                game.setText("This is where you get to the next floor. The lift could be useful")
-                return
-            }
-            lift.up()
-        }
     }
 
     Area {
@@ -180,6 +212,24 @@ Base {
         onClicked: {
             state === "on" ? state = "off" : state = "on"
         }
+    }
+
+    Object {
+        id: cabinetDoorUp
+
+        stateless: true
+        visible: !cabinetOpened
+
+        name: "cabinet_door_up"
+    }
+
+    Object {
+        id: cabinetDoorDown
+
+        stateless: true
+        visible: cabinetOpened
+
+        name: "cabinet_door_down"
     }
 
     Object {
@@ -277,7 +327,7 @@ Base {
                     drop.accept()
 
                     fuseDropped = true
-
+                    core.sounds.play('tick_soft')
                     game.setText("It fits perfectly!")
                     var o = drag.source
                     blacklistObject(o.name)
@@ -307,6 +357,7 @@ Base {
                 name: "lift_up"
 
                 onClicked: {
+                    core.sounds.play('tick_soft')
                     if(!fuseDropped) {
                         game.setText("It seems like it need a fuse to work")
                         return
@@ -331,6 +382,7 @@ Base {
                 name: "lift_down"
 
                 onClicked: {
+                    core.sounds.play('tick_soft')
                     if(!fuseDropped) {
                         game.setText("It seems like it need a fuse to work")
                         return
@@ -357,18 +409,19 @@ Base {
         visible: opacity > 0
         opacity: show ? 1 : 0
         Behavior on opacity {
-            NumberAnimation { duration: 1000 }
+            NumberAnimation { duration: 250 }
+        }
+
+
+        Rectangle {
+            anchors { fill: parent }
+            color: core.colors.black
+            opacity: 0.8
         }
 
         MouseArea {
             anchors { fill: parent }
             onClicked: cabinetArea.state = "off"
-        }
-
-        Rectangle {
-            anchors { fill: parent }
-            color: core.colors.black
-            opacity: 0.7
         }
 
         Image {
@@ -392,13 +445,94 @@ Base {
             width: sourceSize.width; height: sourceSize.height
             source: App.getAsset('scenes/medicine_cabinet/notch.png')
 
-            Image {
+            Item {
+                id: cannulaSpawn
+                anchors { fill: parent }
+            }
+
+            Area {
                 anchors { centerIn: parent }
-                fillMode: Image.PreserveAspectFit
-                width: sourceSize.width; height: sourceSize.height
-                source: App.getAsset('sprites/medicine_cabinet/door.png')
+                width: cabinetDoor.width; height: cabinetDoor.height
+                stateless: true
+                visible: !cabinetOpened
+
+                description: "The cabinet door is locked. Cabinets always hold useful stuff!"
+
+                Image {
+                    id: cabinetDoor
+                    anchors { centerIn: parent }
+                    fillMode: Image.PreserveAspectFit
+                    width: sourceSize.width; height: sourceSize.height
+                    source: App.getAsset('sprites/medicine_cabinet/door.png')
+
+
+                    Area {
+                        anchors.right: parent.right
+                        anchors.verticalCenter: parent.verticalCenter
+                        anchors.rightMargin: 23
+                        width: 40; height: 70
+                        stateless: true
+
+                        description: "A keyhole"
+
+                    }
+
+                }
+            }
+
+
+            Area {
+
+                x: 38; y: parent.halfHeight - halfHeight
+                width: hinge.width; height: hinge.height
+                stateless: true
+
+                description: [ "A hinge holding the door", "If there's no keys to be found - maybe this can be removed somehow" ]
+
+                Image {
+                    id: hinge
+
+                    fillMode: Image.PreserveAspectFit
+                    width: 66; height: 169
+                    source: App.getAsset('sprites/medicine_cabinet/hinge.png')
+
+                    Area {
+                        x: 32; y: 18
+                        width: topScrewImage.width; height: topScrewImage.height
+                        stateless: true
+
+                        description: "A mighty fine screw"
+
+                        Image {
+                            id: topScrewImage
+
+                            fillMode: Image.PreserveAspectFit
+                            width: sourceSize.width; height: sourceSize.height
+                            source: App.getAsset('sprites/medicine_cabinet/screw_top.png')
+                        }
+                    }
+
+                    Area {
+                        x: 36; y: parent.height - 46
+                        width: bottomScrewImage.width; height: bottomScrewImage.height
+                        stateless: true
+
+                        description: "A mighty fine screw"
+
+                        Image {
+                            id: bottomScrewImage
+                            fillMode: Image.PreserveAspectFit
+                            width: sourceSize.width; height: sourceSize.height
+                            source: App.getAsset('sprites/medicine_cabinet/screw_bottom.png')
+
+                        }
+                    }
+
+                }
+
 
             }
+
 
             Image {
                 anchors { fill: parent }
@@ -426,6 +560,8 @@ Base {
     }
 
     onObjectAddedToInventory: {
+        if(object.name === "cannula")
+            scene.emptyCannulaTaken = true
     }
 
     onObjectRemovedFromInventory: {

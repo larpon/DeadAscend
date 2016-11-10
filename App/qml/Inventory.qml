@@ -127,6 +127,7 @@ ObjectStore {
             object.at = root.name
             arrange()
             game.objectAddedToInventory(object)
+            object.play('onAddedToInventory')
         }
     }
 
@@ -134,6 +135,7 @@ ObjectStore {
         object.parent = game.scene.canvas
         arrange()
         game.objectRemovedFromInventory(root)
+        object.play('onRemovedFromInventory')
     }
 
     function addAnimated(obj) {

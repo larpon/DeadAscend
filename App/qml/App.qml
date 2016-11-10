@@ -23,7 +23,14 @@ QtObject {
 
     function getAsset(path) {
 
-        path = Qak.resource.url(path)
+        if(path === "")
+            return path
+
+        if(Qak.platform.os === "android") {
+            // TODO
+            path = 'qrc:///'+Qak.resource.prefix+path
+        } else
+            path = Qak.resource.url(path)
 
         //if(!Qak.resource.exists(path))
         //    warn('App','getAsset','couldn\'t locate',path)

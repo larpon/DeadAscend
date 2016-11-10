@@ -41,7 +41,13 @@ Base {
         z: -10
         onClicked: {
             var a = [
-                'Test'
+                'Interesting surface',
+                'Not interesting',
+                'Not of any use',
+                'The room is very cold',
+                'Where is everybody?',
+                'There\'s sounds of mumbling zombies',
+                'Did you hear that?'
             ]
             game.setText(Aid.randomFromArray(a))
         }
@@ -209,6 +215,7 @@ Base {
 
         visible: state === "up"
 
+        clickable: false
         draggable: false
         autoInventory: false
 
@@ -221,6 +228,7 @@ Base {
 
         visible: state === "up"
 
+        clickable: false
         draggable: false
         autoInventory: false
 
@@ -233,6 +241,7 @@ Base {
 
         visible: state === "up"
 
+        clickable: false
         draggable: false
         autoInventory: false
 
@@ -244,6 +253,7 @@ Base {
 
         visible: state === "up"
 
+        clickable: false
         draggable: false
         autoInventory: false
 
@@ -255,6 +265,7 @@ Base {
 
         visible: state === "up"
 
+        clickable: false
         draggable: false
         autoInventory: false
 
@@ -266,12 +277,14 @@ Base {
 
         visible: state === "up"
 
+        clickable: false
         draggable: false
         autoInventory: false
 
         name: 'assembled_rung_6'
         itemSource: App.getAsset('sprites/ladder/'+name+'.png')
     }
+
 
     onObjectDropped: {
     }

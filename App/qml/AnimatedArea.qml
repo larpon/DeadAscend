@@ -1,6 +1,7 @@
 import QtQuick 2.0
 
 import Qak 1.0
+import Qak.Tools 1.0
 
 ImageAnimation {
     id: area
@@ -43,7 +44,13 @@ ImageAnimation {
     Component.onDestruction: save()
 
     onClicked: {
-        if(description !== "")
+        autoDescription()
+    }
+
+    function autoDescription() {
+        if(Aid.isString(description) && description !== "")
             game.setText(description)
+        if(Aid.isArray(description) && description.length > 0)
+            game.setText.apply(this, description)
     }
 }
