@@ -1574,11 +1574,11 @@
                  "visible":true,
                  "width":249,
                  "x":340,
-                 "y":598.666666666667
+                 "y":598.667
                 }, 
                 {
                  "gid":51,
-                 "height":72.3333333333334,
+                 "height":72.3333,
                  "id":102,
                  "name":"hay1",
                  "properties":
@@ -1594,13 +1594,13 @@
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":144.333333333333,
+                 "width":144.333,
                  "x":413,
-                 "y":464.333333333333
+                 "y":464.333
                 }, 
                 {
                  "gid":51,
-                 "height":97.6666666666666,
+                 "height":97.6667,
                  "id":101,
                  "name":"hay2",
                  "properties":
@@ -1616,13 +1616,13 @@
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":169.666666666667,
-                 "x":374.333333333333,
-                 "y":524.333333333333
+                 "width":169.667,
+                 "x":374.333,
+                 "y":524.333
                 }, 
                 {
                  "gid":51,
-                 "height":72.3333333333334,
+                 "height":72.3333,
                  "id":103,
                  "name":"hay3",
                  "properties":
@@ -1635,12 +1635,12 @@
                      "stateless":"bool",
                      "tileId":"string"
                     },
-                 "rotation":11.8785267549219,
+                 "rotation":11.8785,
                  "type":"Area",
                  "visible":true,
-                 "width":144.333333333333,
-                 "x":352.434241777663,
-                 "y":540.704265083403
+                 "width":144.333,
+                 "x":352.434,
+                 "y":540.704
                 }, 
                 {
                  "gid":50,
@@ -1651,40 +1651,44 @@
                     {
                      "description":"House of the living critter",
                      "stateless":true,
-                     "tileId":"3"
+                     "tileId":"3",
+                     "z":1
                     },
                  "propertytypes":
                     {
                      "description":"string",
                      "stateless":"bool",
-                     "tileId":"string"
+                     "tileId":"string",
+                     "z":"int"
                     },
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
                  "width":121,
-                 "x":470.666666666667,
+                 "x":470.667,
                  "y":387
                 }, 
                 {
-                 "gid":52,
+                 "gid":53,
                  "height":129,
-                 "id":104,
-                 "name":"hamster_peek",
+                 "id":105,
+                 "name":"hamster",
                  "properties":
                     {
-                     "stateless":true
+                     "tileId":"6",
+                     "z":3
                     },
                  "propertytypes":
                     {
-                     "stateless":"bool"
+                     "tileId":"string",
+                     "z":"int"
                     },
                  "rotation":0,
                  "type":"AnimatedArea",
                  "visible":true,
                  "width":116,
-                 "x":418,
-                 "y":478.666666666667
+                 "x":420.667,
+                 "y":481.333
                 }, 
                 {
                  "gid":49,
@@ -1707,9 +1711,9 @@
                     },
                  "rotation":0,
                  "type":"Area",
-                 "visible":true,
+                 "visible":false,
                  "width":265,
-                 "x":334.666666666667,
+                 "x":334.667,
                  "y":601
                 }],
          "opacity":1,
@@ -1719,7 +1723,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":105,
+ "nextobjectid":106,
  "orientation":"orthogonal",
  "renderorder":"left-up",
  "tileheight":660,
@@ -1961,9 +1965,9 @@
                 {
                  "image":"..\/sprites\/hay\/hay.png"
                 },
-             "5":
+             "6":
                 {
-                 "image":"..\/sprites\/hamster\/moves\/peek\/0001.png"
+                 "image":"..\/sprites\/hamster\/moves\/0001.png"
                 }
             },
          "tilewidth":265

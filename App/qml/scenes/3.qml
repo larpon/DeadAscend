@@ -34,6 +34,7 @@ Base {
 
         var sfx = core.sounds
         sfx.add('level'+sceneNumber,'hum',App.getAsset('sounds/low_machine_hum.wav'))
+        sfx.add('level'+sceneNumber,'scribble',App.getAsset('sounds/scribble.wav'))
     }
 
     Component.onDestruction: {
@@ -50,9 +51,14 @@ Base {
         z: -10
         onClicked: {
             var a = [
-                'Test 3'
+                'Nah. Not really interesting',
+                'Not of any use',
+                'It\'s actually a bit warm in here',
+                'The machines are humming quite a lot'
             ]
             game.setText(Aid.randomFromArray(a))
+
+            hamster.goalSequence = "bl-mid-bl"
         }
     }
 
@@ -137,8 +143,8 @@ Base {
     }
 
     Area {
-        x: 50; y: 275
-        width: 61; height: 54
+        x: 815; y: 149
+        width: 52; height: 48
 
         stateless: true
 
@@ -161,7 +167,7 @@ Base {
 
     }
 
-    /**
+    /** TODO optimize - many frames are the same - use the power of sequences
       peek 1-4
       peek-sniff 5 - 11
       peek-mid 12 - 23
@@ -173,6 +179,7 @@ Base {
       bl-mid-bl 48 - 67
 
       bl-hide 68 - 79
+      bl-circle 80 - 99
       */
     AnimatedArea {
 
@@ -181,59 +188,108 @@ Base {
         clickable: true
         name: 'hamster'
 
+        stateless: true
+
         run: true
         paused: !visible || (scene.paused)
 
-        source: App.getAsset("sprites/rope/dangle/0001.png")
+        source: App.getAsset("sprites/hamster/moves/0001.png")
 
         defaultFrameDelay: 150
 
         sequences: [
             {
-                name: "dangle",
-                frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
-                to: { "rdangle":1}
+                name: "hide", // Starting point
+                frames: [1],
+                to: { "peek":1, "hide": 1 },
+                duration: 1000
             },
             {
-                name: "rdangle",
-                frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
-                to: { "dangle":1},
+                name: "peek",
+                frames: [1,2,3,4],
+                to: { "peek-r":1, "peek-sniff": 1, "peek-bl":1 },
+                duration: 1400
+            },
+            {
+                name: "peek-r",
+                frames: [1,2,3,4],
+                to: { "hide":1 },
                 reverse: true
+            },
+            {
+                name: "peek-sniff",
+                frames: [5,6,7,8,9,10,11],
+                to: { "peek-r":1, "peek-sniff": 1 }
+            },
+            {
+                name: "peek-mid", // Path to end state
+                frames: [12,13,14,15,16,17,18,19,20,21,22,23],
+                to: { "mid-eat":1 }
+            },
+            {
+                name: "mid-eat", // End eat state
+                frames: [33,34,35,36,37,38,39,40],
+                to: { "mid-eat":1 }
+            },
+            {
+                name: "bl", // starting state for all bl
+                frames: [32],
+                to: { "bl-sniff":1, "bl-mid-bl":1, "bl-hide":1, "bl-circle":1 },
+                duration: 2400
+            },
+            {
+                name: "peek-bl", // path to bl state
+                frames: [24,25,26,27,28,29,30,31,32],
+                to: { "bl":1 }
+            },
+            {
+                name: "bl-sniff",
+                frames: [41,42,43,44,45,46,47],
+                to: { "bl":1 }
+            },
+            {
+                name: "bl-mid-bl",
+                frames: [48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67],
+                to: { "bl":1 }
+            },
+            {
+                name: "bl-hide",
+                frames: [68,69,70,71,72,73,74,75,76,77,78,79],
+                to: { "peek":1 }
+            },
+            {
+                name: "bl-circle",
+                frames: [80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99],
+                to: { "bl":1 }
             }
         ]
 
+        onSequenceChanged: {
+            if(!sequence)
+                return
+            var n = sequence.name
+            if(n === "bl" || n === "peek-bl" || n === "bl-mid-bl" || n === "bl-hide")
+                core.sounds.play("scribble")
+            if(n === "bl-circle")
+                core.sounds.play("scribble",2)
+        }
+
         onClicked: {
-            hatch.state = "open then close"
-            game.setText('Gravity forces the hatch to close again','Find a way to keep the hatch open')
+            game.setText('Such a cute little critter')
         }
 
         DropSpot {
             anchors { fill: parent }
 
-            keys: [ "bucket", "bucket_patched", "bucket_full" ]
+            keys: [ "cannula" ]
 
-            name: "rope_dangle"
+            name: "hamster_drop"
 
             onDropped: {
-                drop.accept()
+                //drop.accept()
 
-                var o = drag.source
+                //var o = drag.source
 
-                onRope = o.name
-                if(o.name === "bucket_full") {
-                    rope_dangle.run = false
-                    rope_dangle_water.run = true
-                    game.destroyObject(onRope)
-                    game.blacklistObject(onRope)
-                    hatch.state = "open"
-                } else {
-                    game.destroyObject(onRope)
-                    rope_dangle.run = false
-                    rope_dangle_bucket.run = true
-
-                    hatch.state = "open then close"
-                    game.setText('The bucket is not heavy enough to keep the hatch open. Make it heavier')
-                }
             }
         }
     }

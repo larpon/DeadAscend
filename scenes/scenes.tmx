@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="105">
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="106">
  <tileset firstgid="1" name="0" tilewidth="155" tileheight="191" tilecount="14" columns="0">
   <tile id="0">
    <image width="74" height="97" source="../App/assets/sprites/bucket/bucket_empty.png"/>
@@ -148,8 +148,8 @@
   <tile id="4">
    <image width="175" height="87" source="../App/assets/sprites/hay/hay.png"/>
   </tile>
-  <tile id="5">
-   <image width="116" height="129" source="../App/assets/sprites/hamster/moves/peek/0001.png"/>
+  <tile id="6">
+   <image width="116" height="129" source="../App/assets/sprites/hamster/moves/0001.png"/>
   </tile>
  </tileset>
  <imagelayer name="0 bg" visible="0">
@@ -617,14 +617,16 @@
     <property name="description" value="House of the living critter"/>
     <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="3"/>
+    <property name="z" type="int" value="1"/>
    </properties>
   </object>
-  <object id="104" name="hamster_peek" type="AnimatedArea" gid="52" x="418" y="478.667" width="116" height="129">
+  <object id="105" name="hamster" type="AnimatedArea" gid="53" x="420.667" y="481.333" width="116" height="129">
    <properties>
-    <property name="stateless" type="bool" value="true"/>
+    <property name="tileId" value="6"/>
+    <property name="z" type="int" value="3"/>
    </properties>
   </object>
-  <object id="98" name="glass_cage" type="Area" gid="49" x="334.667" y="601" width="265" height="379">
+  <object id="98" name="glass_cage" type="Area" gid="49" x="334.667" y="601" width="265" height="379" visible="0">
    <properties>
     <property name="description">[
 	&quot;There's a hamster living here! Hey little buddy!&quot;,
