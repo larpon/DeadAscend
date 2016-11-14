@@ -10,7 +10,7 @@ import "."
 Base {
     id: scene
 
-    ready: store.isLoaded
+    ready: store.isLoaded && lift.balanced
 
     anchors { fill: parent }
 
@@ -18,6 +18,7 @@ Base {
     property bool fuseDropped: false
     property bool cabinetOpened: false
     property bool emptyCannulaTaken: false
+    property int coinsUsed: 0
 
     Store {
         id: store
@@ -26,6 +27,7 @@ Base {
         property alias fuseDropped: scene.fuseDropped
         property alias cabinetOpened: scene.cabinetOpened
         property alias emptyCannulaTaken: scene.emptyCannulaTaken
+        property alias coinsUsed: scene.coinsUsed
     }
 
 
@@ -214,7 +216,7 @@ Base {
         }
     }
 
-    Object {
+    Area {
         id: cabinetDoorUp
 
         stateless: true
@@ -223,7 +225,7 @@ Base {
         name: "cabinet_door_up"
     }
 
-    Object {
+    Area {
         id: cabinetDoorDown
 
         stateless: true
@@ -478,6 +480,36 @@ Base {
                     }
 
                 }
+
+                SequentialAnimation {
+                    id: doorFallAnimation
+                    running: false
+
+                    ParallelAnimation {
+                        NumberAnimation {
+                            target: cabinetDoor
+                            property: "y"
+                            duration: 700
+                            easing.type: Easing.InOutQuad
+                            to: 2000
+                        }
+
+                        NumberAnimation {
+                            target: cabinetDoorUp
+                            property: "y"
+                            duration: 700
+                            easing.type: Easing.InOutQuad
+                            to: 2000
+                        }
+                    }
+
+
+                    ScriptAction {
+                        script: {
+                            cabinetOpened = true
+                        }
+                    }
+                }
             }
 
 
@@ -486,6 +518,8 @@ Base {
                 x: 38; y: parent.halfHeight - halfHeight
                 width: hinge.width; height: hinge.height
                 stateless: true
+
+                visible: coinsUsed <= 1
 
                 description: [ "A hinge holding the door", "If there's no keys to be found - maybe this can be removed somehow" ]
 
@@ -499,6 +533,8 @@ Base {
                     Area {
                         x: 32; y: 18
                         width: topScrewImage.width; height: topScrewImage.height
+
+                        visible: coinsUsed <= 0
                         stateless: true
 
                         description: "A mighty fine screw"
@@ -515,6 +551,8 @@ Base {
                     Area {
                         x: 36; y: parent.height - 46
                         width: bottomScrewImage.width; height: bottomScrewImage.height
+
+                        visible: coinsUsed <= 1
                         stateless: true
 
                         description: "A mighty fine screw"
@@ -528,9 +566,51 @@ Base {
                         }
                     }
 
+                    SequentialAnimation {
+                        id: hingeFallAnimation
+                        running: false
+                        NumberAnimation {
+                            target: hinge
+                            property: "y"
+                            duration: 700
+                            easing.type: Easing.InOutQuad
+                            to: 2000
+                        }
+
+                        ScriptAction {
+                            script: {
+                                doorFallAnimation.running = true
+                            }
+                        }
+                    }
+
                 }
 
+                DropSpot {
+                    anchors { fill: parent }
+                    keys: [ "coin" ]
 
+                    name: "coin_drop"
+
+                    enabled: coinsUsed <= 1
+
+                    onDropped: {
+
+                        core.sounds.play('tick_soft')
+                        game.setText("That's "+coinsUsed === 0 ? 'one':'both' +" screw down!")
+
+                        coinsUsed++
+
+                        if(coinsUsed > 1) {
+                            hingeFallAnimation.running = true
+                            drop.accept()
+                            var o = drag.source
+                            blacklistObject(o.name)
+                            destroyObject(o.name)
+                            game.setText("Off you go hinge!")
+                        }
+                    }
+                }
             }
 
 

@@ -1230,7 +1230,7 @@
          "name":"2 bg",
          "opacity":1,
          "type":"imagelayer",
-         "visible":false,
+         "visible":true,
          "width":0,
          "x":0,
          "y":0
@@ -1328,18 +1328,14 @@
                  "name":"cabinet_door_up",
                  "properties":
                     {
-                     "autoInventory":false,
-                     "draggable":false,
                      "tileId":"7"
                     },
                  "propertytypes":
                     {
-                     "autoInventory":"bool",
-                     "draggable":"bool",
                      "tileId":"string"
                     },
                  "rotation":0,
-                 "type":"Object",
+                 "type":"Area",
                  "visible":true,
                  "width":163,
                  "x":838,
@@ -1500,18 +1496,16 @@
                  "name":"cabinet_door_down",
                  "properties":
                     {
-                     "autoInventory":false,
                      "description":"The door from the medicine cabinet.",
-                     "draggable":false
+                     "tileId":"11"
                     },
                  "propertytypes":
                     {
-                     "autoInventory":"bool",
                      "description":"string",
-                     "draggable":"bool"
+                     "tileId":"string"
                     },
                  "rotation":0,
-                 "type":"Object",
+                 "type":"Area",
                  "visible":true,
                  "width":92,
                  "x":882,
@@ -1519,7 +1513,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "width":0,
          "x":0,
          "y":0
@@ -1530,7 +1524,7 @@
          "name":"3 bg",
          "opacity":1,
          "type":"imagelayer",
-         "visible":true,
+         "visible":false,
          "width":0,
          "x":0,
          "y":0
@@ -2015,7 +2009,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "width":0,
          "x":0,
          "y":0

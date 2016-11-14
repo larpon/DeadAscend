@@ -264,6 +264,10 @@ Base {
             }
         }
 
+        onClicked: {
+            game.setText("He's dead Jim")
+        }
+
     }
 
     AnimatedArea {

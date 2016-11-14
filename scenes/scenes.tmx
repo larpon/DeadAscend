@@ -518,10 +518,10 @@
    </properties>
   </object>
  </objectgroup>
- <imagelayer name="2 bg" visible="0">
+ <imagelayer name="2 bg">
   <image source="../App/assets/scenes/2.png" width="1100" height="660"/>
  </imagelayer>
- <objectgroup draworder="index" name="2" visible="0">
+ <objectgroup draworder="index" name="2">
   <object id="75" name="lift" type="AnimatedArea" gid="38" x="576" y="531" width="173" height="531"/>
   <object id="76" name="bottle_green" type="Object" gid="39" x="575" y="721" width="78" height="154">
    <properties>
@@ -543,10 +543,8 @@
     <property name="z" type="int" value="0"/>
    </properties>
   </object>
-  <object id="78" name="cabinet_door_up" type="Object" gid="42" x="838" y="391" width="163" height="168">
+  <object id="78" name="cabinet_door_up" type="Area" gid="42" x="838" y="391" width="163" height="168">
    <properties>
-    <property name="autoInventory" type="bool" value="false"/>
-    <property name="draggable" type="bool" value="false"/>
     <property name="tileId" value="7"/>
    </properties>
   </object>
@@ -595,18 +593,17 @@
     <property name="z" type="int" value="1"/>
    </properties>
   </object>
-  <object id="95" name="cabinet_door_down" type="Object" gid="46" x="882" y="555.333" width="92" height="132">
+  <object id="95" name="cabinet_door_down" type="Area" gid="46" x="882" y="555.333" width="92" height="132">
    <properties>
-    <property name="autoInventory" type="bool" value="false"/>
     <property name="description" value="The door from the medicine cabinet."/>
-    <property name="draggable" type="bool" value="false"/>
+    <property name="tileId" value="11"/>
    </properties>
   </object>
  </objectgroup>
- <imagelayer name="3 bg">
+ <imagelayer name="3 bg" visible="0">
   <image source="../App/assets/scenes/3.png" width="1100" height="660"/>
  </imagelayer>
- <objectgroup draworder="index" name="3">
+ <objectgroup draworder="index" name="3" visible="0">
   <object id="91" name="lift_3" type="AnimatedArea" gid="47" x="607" y="281.667" width="179" height="142" visible="0"/>
   <object id="97" name="glass_cage_base" type="Area" gid="48" x="340" y="598.667" width="249" height="257">
    <properties>
