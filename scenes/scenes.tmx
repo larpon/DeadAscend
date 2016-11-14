@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="106">
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="107">
  <tileset firstgid="1" name="0" tilewidth="155" tileheight="191" tilecount="14" columns="0">
   <tile id="0">
    <image width="74" height="97" source="../App/assets/sprites/bucket/bucket_empty.png"/>
@@ -132,7 +132,7 @@
    <image width="92" height="132" source="../App/assets/sprites/medicine_cabinet/door_down.png"/>
   </tile>
  </tileset>
- <tileset firstgid="47" name="3" tilewidth="265" tileheight="379" tilecount="6" columns="0">
+ <tileset firstgid="47" name="3" tilewidth="265" tileheight="379" tilecount="7" columns="0">
   <tile id="0">
    <image width="179" height="142" source="../App/assets/sprites/lift/operate_2/0001.png"/>
   </tile>
@@ -150,6 +150,9 @@
   </tile>
   <tile id="6">
    <image width="116" height="129" source="../App/assets/sprites/hamster/moves/0001.png"/>
+  </tile>
+  <tile id="7">
+   <image width="199" height="220" source="../App/assets/sprites/zombies/sitting_zombie/0001.png"/>
   </tile>
  </tileset>
  <imagelayer name="0 bg" visible="0">
@@ -635,6 +638,11 @@
     <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="2"/>
     <property name="z" type="int" value="4"/>
+   </properties>
+  </object>
+  <object id="106" name="zombie_sitting" type="AnimatedArea" gid="54" x="93" y="338" width="199" height="220">
+   <properties>
+    <property name="tileId" value="7"/>
    </properties>
   </object>
  </objectgroup>

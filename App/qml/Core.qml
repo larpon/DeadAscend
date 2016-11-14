@@ -11,6 +11,7 @@ Item {
     property alias modes: modes
     property alias colors: colors
     property alias fonts: fonts
+    property alias viewport: view.viewport
 
     Component.onCompleted: onBack(function(){ modes.set('quit') })
 
@@ -69,6 +70,7 @@ Item {
     }
 
     View {
+        id: view
         anchors { fill: parent }
 
         mattes: true

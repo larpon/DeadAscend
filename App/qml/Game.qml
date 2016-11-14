@@ -179,6 +179,7 @@ Item {
 
         Mode {
             name: 'in-game'
+            //onEnter: sceneLoader.opacity = 0.000001 // shader experiment
             onEnter: sceneLoader.opacity = 1
             onLeave: sceneLoader.opacity = 0
         }
@@ -496,6 +497,11 @@ Item {
         }
     }
 
+//    Rectangle {
+//        anchors { fill: parent }
+//        color: "black"
+//    }
+
     Loader {
         id: sceneLoader
         anchors { fill: parent }
@@ -512,6 +518,115 @@ Item {
         }
 
     }
+
+
+//    MouseArea {
+//        id: glslm
+//        anchors { fill: parent }
+//        hoverEnabled: true
+
+//        property var screenCoords: mapToItem(core,mouseX,mouseY)
+//        propagateComposedEvents: true
+//    }
+
+
+//    ShaderEffectSource {
+//        id: theSource
+//        sourceItem: sceneLoader
+//    }
+
+//    ShaderEffect {
+//        id: glsl
+//        //https://www.shadertoy.com/view/Mlt3Df
+//        //https://github.com/bh/cool-old-term/blob/master/app/PreprocessedTerminal.qml#L362
+//        //http://stackoverflow.com/questions/40515921/qt-qml-spotlights-effect/
+//        width: sceneLoader.width
+//        height: sceneLoader.height
+//        property var source: theSource
+//        property real radius: 0.25
+//        property size mouse: Qt.size(glslm.screenCoords.x,core.height-glslm.screenCoords.y)
+//        property size resolution: Qt.size(core.width, core.height)
+//        onLogChanged: console.log('Shader',log)
+//        fragmentShader: "
+//            uniform highp float radius;
+//            uniform sampler2D source;
+//            uniform highp vec2 mouse;
+//            varying highp vec2 qt_TexCoord0;
+//            uniform lowp float qt_Opacity;
+//            uniform highp vec2 resolution;
+
+//            void main() {
+
+//                mediump float vecLength = length( ( gl_FragCoord.xy / resolution.x ) - ( mouse.xy / resolution.x ) );
+
+//                if( vecLength <= radius )
+//                {
+//                    gl_FragColor = texture2D( source, qt_TexCoord0.xy ) * smoothstep( radius, 0.0, vecLength );
+//                }
+//                else
+//                {
+//                   gl_FragColor = vec4( 0.0, 0.0, 0.0, 1.0 );
+//                }
+
+//            }
+//        "
+
+//        Item {
+//            id: wobbleSlider
+//            anchors.left: parent.left
+//            anchors.right: parent.right
+//            anchors.top: parent.top
+//            height: 40
+//            property real value: bar.x / (foo.width - bar.width)
+//            Item {
+//                id: foo
+//                width: parent.width - 4
+//                height: 6
+//                anchors.centerIn: parent
+
+//                Rectangle {
+//                    height: parent.height
+//                    anchors.left: parent.left
+//                    anchors.right: bar.horizontalCenter
+//                    color: "blue"
+//                    radius: 3
+//                }
+//                Rectangle {
+//                    height: parent.height
+//                    anchors.left: bar.horizontalCenter
+//                    anchors.right: parent.right
+//                    color: "gray"
+//                    radius: 3
+//                }
+//                Rectangle {
+//                    anchors.fill: parent
+//                    color: "transparent"
+//                    radius: 3
+//                    border.width: 2
+//                    border.color: "black"
+//                }
+
+//                Rectangle {
+//                    id: bar
+//                    x: parent.width/20
+//                    y: -7
+//                    width: 20
+//                    height: 20
+//                    radius: 15
+//                    color: "white"
+//                    border.width: 2
+//                    border.color: "black"
+//                    MouseArea {
+//                        anchors.fill: parent
+//                        drag.target: parent
+//                        drag.axis: Drag.XAxis
+//                        drag.minimumX: 0
+//                        drag.maximumX: foo.width - parent.width
+//                    }
+//                }
+//            }
+//        }
+//    }
 
     Image {
         anchors {

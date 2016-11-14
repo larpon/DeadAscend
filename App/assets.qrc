@@ -814,31 +814,6 @@
         <file>assets/sprites/zombies/intro_zombie_01_hair/0009.png</file>
         <file>assets/sprites/zombies/intro_zombie_01_hair/0010.png</file>
         <file>assets/sprites/zombies/intro_zombie_01_hair/0011.png</file>
-        <file>assets/sprites/zombies/sitting_zombie/ticks/01/0001.png</file>
-        <file>assets/sprites/zombies/sitting_zombie/ticks/01/0002.png</file>
-        <file>assets/sprites/zombies/sitting_zombie/ticks/01/0003.png</file>
-        <file>assets/sprites/zombies/sitting_zombie/ticks/01/0004.png</file>
-        <file>assets/sprites/zombies/sitting_zombie/ticks/01/0005.png</file>
-        <file>assets/sprites/zombies/sitting_zombie/ticks/02/0001.png</file>
-        <file>assets/sprites/zombies/sitting_zombie/ticks/02/0002.png</file>
-        <file>assets/sprites/zombies/sitting_zombie/ticks/02/0003.png</file>
-        <file>assets/sprites/zombies/sitting_zombie/ticks/02/0004.png</file>
-        <file>assets/sprites/zombies/sitting_zombie/ticks/02/0005.png</file>
-        <file>assets/sprites/zombies/sitting_zombie/ticks/02/0006.png</file>
-        <file>assets/sprites/zombies/sitting_zombie/tilt/ticks/01/0001.png</file>
-        <file>assets/sprites/zombies/sitting_zombie/tilt/ticks/01/0002.png</file>
-        <file>assets/sprites/zombies/sitting_zombie/tilt/ticks/01/0003.png</file>
-        <file>assets/sprites/zombies/sitting_zombie/tilt/ticks/01/0004.png</file>
-        <file>assets/sprites/zombies/sitting_zombie/tilt/ticks/01/0005.png</file>
-        <file>assets/sprites/zombies/sitting_zombie/tilt/ticks/01/0006.png</file>
-        <file>assets/sprites/zombies/sitting_zombie/tilt/0001.png</file>
-        <file>assets/sprites/zombies/sitting_zombie/tilt/0002.png</file>
-        <file>assets/sprites/zombies/sitting_zombie/tilt/0003.png</file>
-        <file>assets/sprites/zombies/sitting_zombie/tilt/0004.png</file>
-        <file>assets/sprites/zombies/sitting_zombie/tilt/0005.png</file>
-        <file>assets/sprites/zombies/sitting_zombie/tilt/0006.png</file>
-        <file>assets/sprites/zombies/sitting_zombie/tilt/0007.png</file>
-        <file>assets/sprites/zombies/sitting_zombie/tilt/0008.png</file>
         <file>assets/sprites/zombies/intro_zombie_01.png</file>
         <file>assets/sprites/zombies/intro_zombie_02.png</file>
         <file>assets/scenes/0_darkness.png</file>
@@ -1004,5 +979,36 @@
         <file>assets/sprites/hamster/moves/0002.png</file>
         <file>assets/sprites/hamster/moves/0001.png</file>
         <file>assets/sprites/hamster/moves/0003.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0031.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0030.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0029.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0028.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0027.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0026.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0025.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0024.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0023.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0022.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0021.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0020.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0019.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0018.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0017.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0016.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0015.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0014.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0013.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0012.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0011.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0010.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0009.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0008.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0007.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0006.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0002.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0001.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0005.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0004.png</file>
+        <file>assets/sprites/zombies/sitting_zombie/0003.png</file>
     </qresource>
 </RCC>

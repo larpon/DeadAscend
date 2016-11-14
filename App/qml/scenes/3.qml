@@ -35,6 +35,9 @@ Base {
         var sfx = core.sounds
         sfx.add('level'+sceneNumber,'hum',App.getAsset('sounds/low_machine_hum.wav'))
         sfx.add('level'+sceneNumber,'scribble',App.getAsset('sounds/scribble.wav'))
+        sfx.add('level'+sceneNumber,'zombie_moan_1',App.getAsset('sounds/zombie_moan_01.wav'))
+        sfx.add('level'+sceneNumber,'zombie_moan_2',App.getAsset('sounds/zombie_moan_02.wav'))
+        sfx.add('level'+sceneNumber,'zombie_moan_3',App.getAsset('sounds/zombie_moan_03.wav'))
     }
 
     Component.onDestruction: {
@@ -57,9 +60,62 @@ Base {
                 'The machines are humming quite a lot'
             ]
             game.setText(Aid.randomFromArray(a))
-
-            hamster.goalSequence = "bl-mid-bl"
         }
+    }
+
+    AnimatedArea {
+
+        id: zombieSitting
+
+        clickable: true
+        name: 'zombie_sitting'
+
+        stateless: true
+
+        run: true
+        paused: !visible || (scene.paused)
+
+        source: App.getAsset("sprites/zombie/ticks/0001.png")
+
+        defaultFrameDelay: 100
+
+        sequences: [
+            {
+                name: "tick1",
+                frames: [1,2,3,4,5,4,3,2,1],
+                to: { "tick1":1, "tick2": 1 }
+            },
+            {
+                name: "tick2",
+                frames: [6,7,8,9,10,11,10,9,8,7,6],
+                to: { "tick1":1, "tick2": 1 }
+            },
+            {
+                name: "tilt",
+                frames: [12,13,14,15,16,17,18,19,20,21,22,23,24,25],
+                to: { "tilt_tick":1 }
+            },
+            {
+                name: "tilt_tick",
+                frames: [26,27,28,29,30,31],
+                to: { "tilt_tick":1 },
+                duration: 80
+            }
+        ]
+
+        onFrame: {
+            if(frame === 5) {
+                core.sounds.play('zombie_moan_1')
+            }
+            if(frame === 11) {
+                core.sounds.play('zombie_moan_3')
+            }
+        }
+
+        onClicked: {
+            core.sounds.play('zombie_moan_1')
+        }
+
     }
 
     AnimatedArea {
@@ -195,7 +251,7 @@ Base {
 
         source: App.getAsset("sprites/hamster/moves/0001.png")
 
-        defaultFrameDelay: 150
+        defaultFrameDelay: 100
 
         sequences: [
             {

@@ -1715,6 +1715,26 @@
                  "width":265,
                  "x":334.667,
                  "y":601
+                }, 
+                {
+                 "gid":54,
+                 "height":220,
+                 "id":106,
+                 "name":"zombie_sitting",
+                 "properties":
+                    {
+                     "tileId":"7"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"AnimatedArea",
+                 "visible":true,
+                 "width":199,
+                 "x":93,
+                 "y":338
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1723,7 +1743,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":106,
+ "nextobjectid":107,
  "orientation":"orthogonal",
  "renderorder":"left-up",
  "tileheight":660,
@@ -1941,7 +1961,7 @@
          "margin":0,
          "name":"3",
          "spacing":0,
-         "tilecount":6,
+         "tilecount":7,
          "tileheight":379,
          "tiles":
             {
@@ -1968,6 +1988,10 @@
              "6":
                 {
                  "image":"..\/sprites\/hamster\/moves\/0001.png"
+                },
+             "7":
+                {
+                 "image":"..\/sprites\/zombies\/sitting_zombie\/0001.png"
                 }
             },
          "tilewidth":265
