@@ -505,7 +505,7 @@
                  "name":"painting1",
                  "properties":
                     {
-                     "description":"A painting of a cardboard box",
+                     "description":"It has the number 099 on the backside",
                      "tileId":"1"
                     },
                  "propertytypes":
@@ -550,7 +550,7 @@
                  "name":"painting2",
                  "properties":
                     {
-                     "description":"A painting of some man. Could be a self-portrait",
+                     "description":"It has the number 318 on the backside",
                      "tileId":"2"
                     },
                  "propertytypes":
@@ -1230,7 +1230,7 @@
          "name":"2 bg",
          "opacity":1,
          "type":"imagelayer",
-         "visible":true,
+         "visible":false,
          "width":0,
          "x":0,
          "y":0
@@ -1513,7 +1513,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "width":0,
          "x":0,
          "y":0
@@ -2006,6 +2006,17 @@
                  "width":205.332666666667,
                  "x":70.6670000000001,
                  "y":355.3335
+                }, 
+                {
+                 "height":122.666666666667,
+                 "id":127,
+                 "name":"exit_up_3",
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":229.333333333333,
+                 "x":332,
+                 "y":4
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -2013,8 +2024,303 @@
          "width":0,
          "x":0,
          "y":0
+        }, 
+        {
+         "height":1,
+         "image":"4.png",
+         "name":"4 bg",
+         "opacity":1,
+         "type":"imagelayer",
+         "visible":true,
+         "width":1,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"index",
+         "height":1,
+         "name":"4",
+         "objects":[
+                {
+                 "height":93.3333333333334,
+                 "id":128,
+                 "name":"exit_down_4",
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":292,
+                 "x":780,
+                 "y":310.666666666667
+                }, 
+                {
+                 "gid":61,
+                 "height":222,
+                 "id":130,
+                 "name":"elevator_door_4",
+                 "properties":
+                    {
+                     "tileId":"0"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"AnimatedArea",
+                 "visible":true,
+                 "width":93,
+                 "x":607.333333333333,
+                 "y":493.666666666667
+                }, 
+                {
+                 "gid":62,
+                 "height":47,
+                 "id":132,
+                 "name":"clock_arms",
+                 "properties":
+                    {
+                     "z":-1
+                    },
+                 "propertytypes":
+                    {
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"AnimatedArea",
+                 "visible":true,
+                 "width":47,
+                 "x":663.666666666667,
+                 "y":205.666666666667
+                }, 
+                {
+                 "height":85.3333333333333,
+                 "id":133,
+                 "name":"clock",
+                 "properties":
+                    {
+                     "description":"A clock - it's broken. Very broken"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":92,
+                 "x":624,
+                 "y":121.333333333333
+                }, 
+                {
+                 "height":274.666666666667,
+                 "id":135,
+                 "name":"painting3_frame",
+                 "properties":
+                    {
+                     "description":"Frame for a painting",
+                     "stateless":true,
+                     "z":-1
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":132,
+                 "x":930.666666666667,
+                 "y":22.6666666666667
+                }, 
+                {
+                 "gid":63,
+                 "height":232,
+                 "id":134,
+                 "name":"painting3",
+                 "properties":
+                    {
+                     "description":"It has the number 563 on the backside",
+                     "tileId":"2"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":114,
+                 "x":933.666666666667,
+                 "y":277.333333333333
+                }, 
+                {
+                 "gid":64,
+                 "height":146,
+                 "id":137,
+                 "name":"sacks",
+                 "properties":
+                    {
+                     "description":"Some sacks of grain",
+                     "stateless":true,
+                     "tileId":"3"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool",
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":162,
+                 "x":721.666666666667,
+                 "y":502.333333333333
+                }, 
+                {
+                 "gid":65,
+                 "height":60,
+                 "id":138,
+                 "name":"open_sack",
+                 "properties":
+                    {
+                     "description":"An open sack of grain",
+                     "stateless":true,
+                     "tileId":"4",
+                     "z":-1
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool",
+                     "tileId":"string",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":184,
+                 "x":714.666666666667,
+                 "y":568.666666666667
+                }, 
+                {
+                 "gid":66,
+                 "height":57,
+                 "id":139,
+                 "name":"grain",
+                 "properties":
+                    {
+                     "tileId":"5"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":108,
+                 "x":864.666666666667,
+                 "y":582.666666666667
+                }, 
+                {
+                 "gid":67,
+                 "height":25,
+                 "id":140,
+                 "name":"loose_grain",
+                 "properties":
+                    {
+                     "stateless":true,
+                     "tileId":"6"
+                    },
+                 "propertytypes":
+                    {
+                     "stateless":"bool",
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":213,
+                 "x":814,
+                 "y":592
+                }, 
+                {
+                 "height":166.666666666667,
+                 "id":142,
+                 "name":"blood",
+                 "properties":
+                    {
+                     "description":"[\n\t\"Looks like splattered blood\",\n\t\"There's also holes from what looks like shotgun bullets\"\n]",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":77.3333333333333,
+                 "x":437.333333333333,
+                 "y":101.333333333333
+                }, 
+                {
+                 "gid":68,
+                 "height":242,
+                 "id":143,
+                 "name":"treadmill_generator",
+                 "properties":
+                    {
+                     "stateless":true,
+                     "tileId":"7",
+                     "z":-1
+                    },
+                 "propertytypes":
+                    {
+                     "stateless":"bool",
+                     "tileId":"string",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":263,
+                 "x":178.333333333333,
+                 "y":573
+                }, 
+                {
+                 "gid":69,
+                 "height":264,
+                 "id":144,
+                 "name":"treadmill",
+                 "properties":
+                    {
+                     "tileId":"8"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"AnimatedArea",
+                 "visible":true,
+                 "width":233,
+                 "x":78.6666666666667,
+                 "y":504
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "width":1,
+         "x":0,
+         "y":0
         }],
- "nextobjectid":127,
+ "nextobjectid":145,
  "orientation":"orthogonal",
  "renderorder":"left-up",
  "tileheight":660,
@@ -2290,6 +2596,55 @@
                 }
             },
          "tilewidth":377
+        }, 
+        {
+         "columns":0,
+         "firstgid":61,
+         "margin":0,
+         "name":"4",
+         "spacing":0,
+         "tilecount":9,
+         "tileheight":264,
+         "tiles":
+            {
+             "0":
+                {
+                 "image":"..\/sprites\/elevator_assets\/doors\/floor_4\/move\/0001.png"
+                },
+             "1":
+                {
+                 "image":"..\/sprites\/clock\/broken_arms\/0001.png"
+                },
+             "2":
+                {
+                 "image":"..\/sprites\/paintings\/painting_03.png"
+                },
+             "3":
+                {
+                 "image":"..\/sprites\/sacks\/sacks.png"
+                },
+             "4":
+                {
+                 "image":"..\/sprites\/sacks\/open_sack.png"
+                },
+             "5":
+                {
+                 "image":"..\/sprites\/grain\/pile.png"
+                },
+             "6":
+                {
+                 "image":"..\/sprites\/grain\/loose.png"
+                },
+             "7":
+                {
+                 "image":"..\/sprites\/treadmill\/generator.png"
+                },
+             "8":
+                {
+                 "image":"..\/sprites\/treadmill\/move\/01.png"
+                }
+            },
+         "tilewidth":263
         }],
  "tilewidth":1100,
  "version":1,

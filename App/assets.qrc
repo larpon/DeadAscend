@@ -1011,5 +1011,7 @@
         <file>assets/sprites/zombies/sitting_zombie/tilt/tick/0001.png</file>
         <file>assets/sprites/coin/coin_icon.png</file>
         <file>assets/scenes/whiteboard/whiteboard.png</file>
+        <file>assets/scenes/4.png</file>
+        <file>assets/scenes/4_fg_shadow.png</file>
     </qresource>
 </RCC>

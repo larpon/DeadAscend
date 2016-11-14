@@ -358,28 +358,13 @@ Base {
         onClicked: lift.down()
     }
 
-
     Area {
-        x: 815; y: 149
-        width: 52; height: 48
-
-        stateless: true
-
-        name: "exit_down_3"
-
-        onClicked: lift.down()
-    }
-
-    Area {
-        x: 0; y: 0
-        width: 10; height: 10
-
         stateless: true
 
         name: "exit_up_3"
 
         onClicked: {
-            //game.goToScene("4")
+            game.goToScene("4")
         }
 
     }

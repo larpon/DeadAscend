@@ -25,5 +25,6 @@
         <file>qml/Statistics.qml</file>
         <file>qml/scenes/2.qml</file>
         <file>qml/scenes/3.qml</file>
+        <file>qml/scenes/4.qml</file>
     </qresource>
 </RCC>
