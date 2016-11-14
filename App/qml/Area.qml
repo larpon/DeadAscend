@@ -9,6 +9,7 @@ import "."
 Item {
     id: area
 
+    property bool clickable: true
     property bool round: false
     property bool ready: store.isLoaded
 
@@ -41,7 +42,7 @@ Item {
     MouseArea {
         id: rect
         anchors { fill: parent }
-        enabled: !round
+        enabled: clickable && !round
 
         onClicked: area.clicked(mouse)
     }
@@ -49,12 +50,12 @@ Item {
     RoundMouseArea {
         id: rnd
         anchors { fill: parent }
-        enabled: round
+        enabled: clickable && round
 
         onClicked: area.clicked(mouse)
     }
 
-    DebugVisual { enabled: rect.enabled }
+    DebugVisual { enabled: clickable && (rect.enabled || rnd.enabled) }
 
     Store {
         id: store

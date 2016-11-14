@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="107">
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="127">
  <tileset firstgid="1" name="0" tilewidth="155" tileheight="191" tilecount="14" columns="0">
   <tile id="0">
    <image width="74" height="97" source="../App/assets/sprites/bucket/bucket_empty.png"/>
@@ -132,7 +132,7 @@
    <image width="92" height="132" source="../App/assets/sprites/medicine_cabinet/door_down.png"/>
   </tile>
  </tileset>
- <tileset firstgid="47" name="3" tilewidth="265" tileheight="379" tilecount="7" columns="0">
+ <tileset firstgid="47" name="3" tilewidth="377" tileheight="430" tilecount="13" columns="0">
   <tile id="0">
    <image width="179" height="142" source="../App/assets/sprites/lift/operate_2/0001.png"/>
   </tile>
@@ -153,6 +153,24 @@
   </tile>
   <tile id="7">
    <image width="199" height="220" source="../App/assets/sprites/zombies/sitting_zombie/0001.png"/>
+  </tile>
+  <tile id="8">
+   <image width="62" height="38" source="../App/assets/sprites/hammer/hammer.png"/>
+  </tile>
+  <tile id="9">
+   <image width="296" height="220" source="../App/assets/sprites/zombies/sitting_zombie/tilt/0001.png"/>
+  </tile>
+  <tile id="10">
+   <image width="226" height="220" source="../App/assets/sprites/zombies/sitting_zombie/tilt/tick/0001.png"/>
+  </tile>
+  <tile id="11">
+   <image width="265" height="379" source="../App/assets/sprites/glass_cage/glass_cage_smashed_BG.png"/>
+  </tile>
+  <tile id="12">
+   <image width="265" height="379" source="../App/assets/sprites/glass_cage/glass_cage_smashed_FG.png"/>
+  </tile>
+  <tile id="13">
+   <image width="377" height="430" source="../App/assets/sprites/glass_cage/smash/0001.png"/>
   </tile>
  </tileset>
  <imagelayer name="0 bg" visible="0">
@@ -643,6 +661,74 @@
   <object id="106" name="zombie_sitting" type="AnimatedArea" gid="54" x="93" y="338" width="199" height="220">
    <properties>
     <property name="tileId" value="7"/>
+   </properties>
+  </object>
+  <object id="119" name="workbench_area" type="Area" x="873.333" y="196" width="222.667" height="154.667">
+   <properties>
+    <property name="description" value="Looks like a sparse workbench"/>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="z" type="int" value="-1"/>
+   </properties>
+  </object>
+  <object id="107" name="hammer" type="Object" gid="55" x="911.667" y="241.667" width="62" height="38">
+   <properties>
+    <property name="tileId" value="8"/>
+   </properties>
+  </object>
+  <object id="109" name="zombie_tilting" type="AnimatedArea" gid="56" x="-2.66667" y="338" width="296" height="220"/>
+  <object id="110" name="zombie_tilted" type="AnimatedArea" gid="57" x="8.33333" y="351.333" width="226" height="220"/>
+  <object id="111" name="glass_cage_smashed_BG" type="Area" gid="58" x="336.5" y="602.333" width="265" height="379">
+   <properties>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="tileId" value="11"/>
+    <property name="z" type="int" value="-2"/>
+   </properties>
+  </object>
+  <object id="112" name="glass_cage_smashed_FG" type="Area" gid="59" x="336.833" y="600.667" width="265" height="379">
+   <properties>
+    <property name="tileId" value="12"/>
+    <property name="z" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="113" name="cage_smash" type="AnimatedArea" gid="60" x="264" y="701.667" width="377" height="430"/>
+  <object id="116" name="whiteboard_area" type="Area" x="1009.33" y="74.6667" width="109.333" height="148"/>
+  <object id="117" name="picture_area" type="Area" x="-6.66667" y="20" width="265.333" height="166.667">
+   <properties>
+    <property name="description" value="..."/>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="z" type="int" value="-1"/>
+   </properties>
+  </object>
+  <object id="118" name="lift_panel_area" type="Area" x="812" y="144" width="53.3333" height="52"/>
+  <object id="120" name="green_machine_area" type="Area" x="784" y="404" width="177.333" height="141.333">
+   <properties>
+    <property name="description" value="A weird looking machine - in the color of green"/>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="122" name="blue_machine_4_area" type="Area" x="694" y="426.667" width="93.333" height="232">
+   <properties>
+    <property name="description" value="Fourth of these weird blue machines"/>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="123" name="blue_machine_3_area" type="Area" x="600" y="292" width="122.666" height="161.333">
+   <properties>
+    <property name="description" value="Third of these weird blue machines"/>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="125" name="blue_machine_2_area" type="Area" x="313.334" y="240.667" width="177.333" height="184">
+   <properties>
+    <property name="description" value="Second of these weird blue machines"/>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="z" type="int" value="-5"/>
+   </properties>
+  </object>
+  <object id="126" name="blue_machine_1_area" type="Area" x="70.667" y="355.333" width="205.333" height="304">
+   <properties>
+    <property name="description" value="First of these weird blue machines"/>
+    <property name="stateless" type="bool" value="true"/>
    </properties>
   </object>
  </objectgroup>

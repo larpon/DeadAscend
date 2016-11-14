@@ -1735,6 +1735,283 @@
                  "width":199,
                  "x":93,
                  "y":338
+                }, 
+                {
+                 "height":154.666666666667,
+                 "id":119,
+                 "name":"workbench_area",
+                 "properties":
+                    {
+                     "description":"Looks like a sparse workbench",
+                     "stateless":true,
+                     "z":-1
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":222.666666666667,
+                 "x":873.333333333333,
+                 "y":196
+                }, 
+                {
+                 "gid":55,
+                 "height":38,
+                 "id":107,
+                 "name":"hammer",
+                 "properties":
+                    {
+                     "tileId":"8"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":62,
+                 "x":911.667,
+                 "y":241.667
+                }, 
+                {
+                 "gid":56,
+                 "height":220,
+                 "id":109,
+                 "name":"zombie_tilting",
+                 "rotation":0,
+                 "type":"AnimatedArea",
+                 "visible":true,
+                 "width":296,
+                 "x":-2.66667,
+                 "y":338
+                }, 
+                {
+                 "gid":57,
+                 "height":220,
+                 "id":110,
+                 "name":"zombie_tilted",
+                 "rotation":0,
+                 "type":"AnimatedArea",
+                 "visible":true,
+                 "width":226,
+                 "x":8.33333,
+                 "y":351.333
+                }, 
+                {
+                 "gid":58,
+                 "height":379,
+                 "id":111,
+                 "name":"glass_cage_smashed_BG",
+                 "properties":
+                    {
+                     "stateless":true,
+                     "tileId":"11",
+                     "z":-2
+                    },
+                 "propertytypes":
+                    {
+                     "stateless":"bool",
+                     "tileId":"string",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":265,
+                 "x":336.5,
+                 "y":602.333
+                }, 
+                {
+                 "gid":59,
+                 "height":379,
+                 "id":112,
+                 "name":"glass_cage_smashed_FG",
+                 "properties":
+                    {
+                     "tileId":"12",
+                     "z":2
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":265,
+                 "x":336.833,
+                 "y":600.667
+                }, 
+                {
+                 "gid":60,
+                 "height":430,
+                 "id":113,
+                 "name":"cage_smash",
+                 "rotation":0,
+                 "type":"AnimatedArea",
+                 "visible":true,
+                 "width":377,
+                 "x":264,
+                 "y":701.667
+                }, 
+                {
+                 "height":148,
+                 "id":116,
+                 "name":"whiteboard_area",
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":109.333333333333,
+                 "x":1009.33333333333,
+                 "y":74.6666666666667
+                }, 
+                {
+                 "height":166.666666666667,
+                 "id":117,
+                 "name":"picture_area",
+                 "properties":
+                    {
+                     "description":"...",
+                     "stateless":true,
+                     "z":-1
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":265.333333333333,
+                 "x":-6.66666666666667,
+                 "y":20
+                }, 
+                {
+                 "height":52,
+                 "id":118,
+                 "name":"lift_panel_area",
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":53.3333333333333,
+                 "x":812,
+                 "y":144
+                }, 
+                {
+                 "height":141.333333333333,
+                 "id":120,
+                 "name":"green_machine_area",
+                 "properties":
+                    {
+                     "description":"A weird looking machine - in the color of green",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":177.333333333333,
+                 "x":784,
+                 "y":404
+                }, 
+                {
+                 "height":231.999666666667,
+                 "id":122,
+                 "name":"blue_machine_4_area",
+                 "properties":
+                    {
+                     "description":"Fourth of these weird blue machines",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":93.333,
+                 "x":694.000166666667,
+                 "y":426.666833333333
+                }, 
+                {
+                 "height":161.333333333333,
+                 "id":123,
+                 "name":"blue_machine_3_area",
+                 "properties":
+                    {
+                     "description":"Third of these weird blue machines",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":122.666333333333,
+                 "x":600.000166666667,
+                 "y":292
+                }, 
+                {
+                 "height":183.999666666667,
+                 "id":125,
+                 "name":"blue_machine_2_area",
+                 "properties":
+                    {
+                     "description":"Second of these weird blue machines",
+                     "stateless":true,
+                     "z":-5
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":177.332666666667,
+                 "x":313.333666666667,
+                 "y":240.666833333333
+                }, 
+                {
+                 "height":303.999666666667,
+                 "id":126,
+                 "name":"blue_machine_1_area",
+                 "properties":
+                    {
+                     "description":"First of these weird blue machines",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":205.332666666667,
+                 "x":70.6670000000001,
+                 "y":355.3335
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1743,7 +2020,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":107,
+ "nextobjectid":127,
  "orientation":"orthogonal",
  "renderorder":"left-up",
  "tileheight":660,
@@ -1961,8 +2238,8 @@
          "margin":0,
          "name":"3",
          "spacing":0,
-         "tilecount":7,
-         "tileheight":379,
+         "tilecount":13,
+         "tileheight":430,
          "tiles":
             {
              "0":
@@ -1972,6 +2249,22 @@
              "1":
                 {
                  "image":"..\/sprites\/glass_cage\/glass_cage_base.png"
+                },
+             "10":
+                {
+                 "image":"..\/sprites\/zombies\/sitting_zombie\/tilt\/tick\/0001.png"
+                },
+             "11":
+                {
+                 "image":"..\/sprites\/glass_cage\/glass_cage_smashed_BG.png"
+                },
+             "12":
+                {
+                 "image":"..\/sprites\/glass_cage\/glass_cage_smashed_FG.png"
+                },
+             "13":
+                {
+                 "image":"..\/sprites\/glass_cage\/smash\/0001.png"
                 },
              "2":
                 {
@@ -1992,9 +2285,17 @@
              "7":
                 {
                  "image":"..\/sprites\/zombies\/sitting_zombie\/0001.png"
+                },
+             "8":
+                {
+                 "image":"..\/sprites\/hammer\/hammer.png"
+                },
+             "9":
+                {
+                 "image":"..\/sprites\/zombies\/sitting_zombie\/tilt\/0001.png"
                 }
             },
-         "tilewidth":265
+         "tilewidth":377
         }],
  "tilewidth":1100,
  "version":1,

@@ -10,15 +10,33 @@ import "."
 Base {
     id: scene
 
-    ready: store.isLoaded
+    ready: store.isLoaded && hamster.ready && cageSmash.ready
+
+    onReadyChanged: {
+
+        if(cageHit) {
+            hamster.setActiveSequence('cs-hide')
+            cageSmash.setActiveSequence('smashed')
+        }
+
+    }
 
     anchors { fill: parent }
+
+    property bool zombieHit: false
+    property bool cageHit: false
+    property bool hamsterCalm: false
 
     Store {
         id: store
         name: "level"+sceneNumber
 
+        property alias zombieHit: scene.zombieHit
+        property alias cageHit: scene.cageHit
+        property alias hamsterCalm: scene.hamsterCalm
+
     }
+
 
     Connections {
         target: core.sounds
@@ -38,6 +56,9 @@ Base {
         sfx.add('level'+sceneNumber,'zombie_moan_1',App.getAsset('sounds/zombie_moan_01.wav'))
         sfx.add('level'+sceneNumber,'zombie_moan_2',App.getAsset('sounds/zombie_moan_02.wav'))
         sfx.add('level'+sceneNumber,'zombie_moan_3',App.getAsset('sounds/zombie_moan_03.wav'))
+        sfx.add('level'+sceneNumber,'crack_smash',App.getAsset('sounds/crack_smash.wav'))
+        sfx.add('level'+sceneNumber,'glass_smash',App.getAsset('sounds/glass_smash.wav'))
+        sfx.add('level'+sceneNumber,'coin_drop',App.getAsset('sounds/coin_drop.wav'))
     }
 
     Component.onDestruction: {
@@ -67,45 +88,46 @@ Base {
 
         id: zombieSitting
 
-        clickable: true
+        clickable: run
         name: 'zombie_sitting'
 
         stateless: true
 
-        run: true
+        run: !zombieHit
         paused: !visible || (scene.paused)
 
-        source: App.getAsset("sprites/zombie/ticks/0001.png")
+        source: App.getAsset("sprites/zombies/sitting_zombie/0001.png")
 
         defaultFrameDelay: 100
 
         sequences: [
             {
+                name: "tick1s",
+                frames: [1],
+                to: { "tick1s":1, "tick1": 1 },
+                duration: 2000
+            },
+            {
                 name: "tick1",
                 frames: [1,2,3,4,5,4,3,2,1],
-                to: { "tick1":1, "tick2": 1 }
+                to: { "tick1s":1, "tick2s": 1 }
+            },
+            {
+                name: "tick2s",
+                frames: [6],
+                to: { "tick2s":1, "tick2": 1, "tick1":1 },
+                duration: 2000
             },
             {
                 name: "tick2",
                 frames: [6,7,8,9,10,11,10,9,8,7,6],
-                to: { "tick1":1, "tick2": 1 }
-            },
-            {
-                name: "tilt",
-                frames: [12,13,14,15,16,17,18,19,20,21,22,23,24,25],
-                to: { "tilt_tick":1 }
-            },
-            {
-                name: "tilt_tick",
-                frames: [26,27,28,29,30,31],
-                to: { "tilt_tick":1 },
-                duration: 80
+                to: { "tick2s": 1 }
             }
         ]
 
         onFrame: {
             if(frame === 5) {
-                core.sounds.play('zombie_moan_1')
+                core.sounds.playRandom(['zombie_moan_1','zombie_moan_2'])
             }
             if(frame === 11) {
                 core.sounds.play('zombie_moan_3')
@@ -113,7 +135,133 @@ Base {
         }
 
         onClicked: {
-            core.sounds.play('zombie_moan_1')
+            core.sounds.playRandom(['zombie_moan_1','zombie_moan_2'])
+        }
+
+        DropSpot {
+            anchors { fill: parent }
+
+            keys: [ "hammer" ]
+
+            name: "zombie_drop"
+
+            onDropped: {
+
+                core.sounds.play('zombie_moan_2')
+                core.sounds.play('crack_smash')
+                zombieTilting.run = true
+                zombieSitting.visible = false
+
+                if(!game.getObject("coin")) {
+                    var object = {
+                        name: "coin",
+                        type: "Object",
+                        scene: sceneNumber,
+                        x: 190,
+                        y: 300,
+                        itemSource: App.getAsset('sprites/coin/coin.png')
+                    }
+
+                    game.spawnObject(object,function(o){
+                        core.sounds.play('coin_drop')
+                        o.moveTo(60,360)
+                    })
+
+                }
+
+                if(cageHit) {
+                    drop.accept()
+                    var o = drag.source
+
+                    blacklistObject(o.name)
+                    destroyObject(o.name)
+
+                    game.setText("The hammer broke in two. No need to carry that around any more")
+
+                }
+
+            }
+        }
+
+    }
+
+    AnimatedArea {
+
+        id: zombieTilting
+
+        clickable: false
+        name: 'zombie_tilting'
+
+        stateless: true
+
+        run: false
+        paused: !visible || (scene.paused)
+
+        source: App.getAsset("sprites/zombies/sitting_zombie/tilt/0001.png")
+
+        defaultFrameDelay: 100
+
+        sequences: [
+            {
+                name: "tilt",
+                frames: [1,2,3,4,5,6,7,8]
+            }
+        ]
+
+        onFrame: {
+            if(frame === 8) {
+                // TODO
+                zombieHit = true
+            }
+        }
+
+    }
+
+    AnimatedArea {
+
+        id: zombieTilted
+
+        clickable: run
+        name: 'zombie_tilted'
+
+        stateless: true
+
+        run: zombieHit
+        paused: !visible || (scene.paused)
+
+        source: App.getAsset("sprites/zombies/sitting_zombie/tilt/tick/0001.png")
+
+        defaultFrameDelay: 100
+
+        sequences: [
+            {
+                name: "tick",
+                frames: [1,2,3,4,5,6,7,8,9,10,11,12],
+                to: { 'wait':1 },
+                duration: 100
+            },
+            {
+                name: "wait",
+                frames: [12],
+                to: { 'wait':1, 'tick':1 },
+                duration: 10000
+            }
+
+        ]
+
+        onFrame: {
+            if(frame === 1) {
+                core.sounds.play('zombie_moan_3')
+            }
+        }
+
+        onSequenceChanged: {
+            if(!sequence)
+                return
+
+            if(sequence.name === "wait") {
+                sequence.duration = Aid.randomRangeInt(10000,30000)
+            }
         }
 
     }
@@ -199,6 +347,15 @@ Base {
     }
 
     Area {
+        stateless: true
+
+        name: "lift_panel_area"
+
+        onClicked: lift.down()
+    }
+
+
+    Area {
         x: 815; y: 149
         width: 52; height: 48
 
@@ -257,14 +414,19 @@ Base {
             {
                 name: "hide", // Starting point
                 frames: [1],
-                to: { "peek":1, "hide": 1 },
+                to: { "peek":1, "hide": 1, 'cs-hide':0 },
                 duration: 1000
             },
             {
                 name: "peek",
                 frames: [1,2,3,4],
-                to: { "peek-r":1, "peek-sniff": 1, "peek-bl":1 },
-                duration: 1400
+                to: { "peek-out":1 }
+            },
+            {
+                name: "peek-out",
+                frames: [4],
+                duration: 800,
+                to: { "peek-out":5, "peek-r":1, "peek-sniff": 1, "peek-bl":1 }
             },
             {
                 name: "peek-r",
@@ -290,8 +452,8 @@ Base {
             {
                 name: "bl", // starting state for all bl
                 frames: [32],
-                to: { "bl-sniff":1, "bl-mid-bl":1, "bl-hide":1, "bl-circle":1 },
-                duration: 2400
+                to: { "bl":2, "bl-sniff":1, "bl-mid-bl":1, "bl-hide":1, "bl-circle":1 },
+                duration: 800
             },
             {
                 name: "peek-bl", // path to bl state
@@ -311,12 +473,35 @@ Base {
             {
                 name: "bl-hide",
                 frames: [68,69,70,71,72,73,74,75,76,77,78,79],
-                to: { "peek":1 }
+                to: { "hide":1 }
             },
             {
                 name: "bl-circle",
                 frames: [80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99],
                 to: { "bl":1 }
+            },
+            {
+                name: "cs-hide", // Cage smashed Starting point
+                frames: [1],
+                to: { "cs-peek":1, "cs-hide": 1 },
+                duration: 1000
+            },
+            {
+                name: "cs-peek",
+                frames: [1,2,3,4],
+                to: { "cs-peek-r":1, "cs-peek-sniff": 1 },
+                duration: 400
+            },
+            {
+                name: "cs-peek-r",
+                frames: [1,2,3,4],
+                to: { "cs-hide":1 },
+                reverse: true
+            },
+            {
+                name: "cs-peek-sniff",
+                frames: [5,6,7,8,9,10,11],
+                to: { "cs-peek-r":1, "cs-peek-sniff": 1 }
             }
         ]
 
@@ -328,10 +513,15 @@ Base {
                 core.sounds.play("scribble")
             if(n === "bl-circle")
                 core.sounds.play("scribble",2)
+            App.debug('Hamster in sequence',sequence.name)
         }
 
         onClicked: {
-            game.setText('Such a cute little critter')
+            if(cageHit) {
+                hamster.goalSequence = 'cs-hide'
+                game.setText("It's scared now the glass is smashed. Maybe it can be lured out of hiding")
+            } else
+                game.setText('Such a cute little critter')
         }
 
         DropSpot {
@@ -342,15 +532,190 @@ Base {
             name: "hamster_drop"
 
             onDropped: {
-                //drop.accept()
+                if(cageHit) {
+                    //drop.accept()
 
-                //var o = drag.source
+                    //var o = drag.source
+                }
+            }
+        }
+
+    }
+
+    Area {
+        id: glassCage
+        x: 0; y: 0
+        width: 10; height: 10
+
+        visible: !cageHit
+
+        name: "glass_cage"
+
+        onClicked: {
+            hamster.goalSequence = 'hide'
+            game.setText("The hamster looks pretty scared")
+            core.sounds.play("add")
+        }
+
+        DropSpot {
+            anchors { fill: parent }
+
+            keys: [ "hammer" ]
+
+            name: "cage_drop"
+
+            onDropped: {
+
+                if(zombieHit) {
+                    drop.accept()
+                    var o = drag.source
+
+                    blacklistObject(o.name)
+                    destroyObject(o.name)
+
+                    game.setText("The hammer broke in two. No need to carry that around any more")
+
+                }
+
+                core.sounds.play('glass_smash')
+                cageSmash.setActiveSequence("smash")
+                cageSmash.run = true
+                glassCage.visible = false
+                hamster.goalSequence = 'cs-hide'
+
 
             }
         }
     }
 
+    Area {
+        x: 0; y: 0
+        width: 10; height: 10
 
+        clickable: false
+
+        visible: !glassCage.visible || cageHit
+
+        name: "glass_cage_smashed_BG"
+
+    }
+
+    Area {
+        x: 0; y: 0
+        width: 10; height: 10
+
+        clickable: false
+
+        visible: !glassCage.visible || cageHit
+
+        name: "glass_cage_smashed_FG"
+
+    }
+
+    AnimatedArea {
+
+        id: cageSmash
+
+        //clickable: true
+        name: 'cage_smash'
+
+        visible: running || cageHit
+
+        stateless: true
+
+        run: false
+        paused: !visible || (scene.paused)
+
+        source: App.getAsset("sprites/glass_cage/smash/0001.png")
+
+        defaultFrameDelay: 100
+
+        sequences: [
+            {
+                name: "smashed",
+                frames: [20]
+            },
+            {
+                name: "smash",
+                frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+                to: { "smashed": 1 }
+            }
+        ]
+
+        onFrame: {
+            if(frame === 20) {
+                cageHit = true
+            }
+        }
+
+    }
+
+
+
+    Area {
+        id: whiteboardArea
+
+        name: "whiteboard_area"
+
+        onClicked: {
+            state === "on" ? state = "off" : state = "on"
+        }
+    }
+
+    Item {
+        id: whiteboardScene
+        anchors { fill: parent }
+        z: 22
+
+        property bool show: whiteboardArea.state === "on"
+
+        visible: opacity > 0
+        opacity: show ? 1 : 0
+        Behavior on opacity {
+            NumberAnimation { duration: 250 }
+        }
+
+
+        Rectangle {
+            anchors { fill: parent }
+            color: core.colors.black
+            opacity: 0.8
+        }
+
+        MouseArea {
+            anchors { fill: parent }
+            onClicked: whiteboardArea.state = "off"
+        }
+
+        Image {
+            anchors {
+                top: parent.top
+                right: parent.right
+            }
+            fillMode: Image.PreserveAspectFit
+            width: sourceSize.width; height: sourceSize.height
+            source: App.getAsset('back_button.png')
+
+            MouseArea {
+                anchors { fill: parent }
+                onClicked: whiteboardArea.state = "off"
+            }
+        }
+
+        Image {
+            anchors { centerIn: parent }
+            fillMode: Image.PreserveAspectFit
+            width: sourceSize.width; height: sourceSize.height
+            source: App.getAsset('scenes/whiteboard/whiteboard.png')
+
+            MouseArea {
+                anchors { fill: parent }
+                onClicked: game.setText("The drawing on the whiteboard is faded - but can still be made out","It looks like a sketch, depicting something involving a syringe and a hamster?")
+            }
+        }
+
+
+    }
 
     onObjectDropped: {
     }

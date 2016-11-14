@@ -714,6 +714,8 @@ Item {
         messages.show = false
         for (var i = 0; i < arguments.length; i++) {
             var wc = arguments[i].split(' ').length;
+            if(wc <= 1)
+                wc = 3
             messages.queue.push( {
                                     'show': Math.round((wc/wpm)*60*1000),
                                     'msg':arguments[i]

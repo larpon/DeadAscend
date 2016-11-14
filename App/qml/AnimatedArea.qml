@@ -11,7 +11,7 @@ ImageAnimation {
     visible: running
     running: run
 
-    property bool ready: store.isLoaded
+    property bool ready: store.isLoaded && balanced
 
     property bool run: false
     property string name: ""
