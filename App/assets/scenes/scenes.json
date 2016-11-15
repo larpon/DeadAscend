@@ -2215,10 +2215,12 @@
                  "name":"grain",
                  "properties":
                     {
+                     "description":"A small pile of grain",
                      "tileId":"5"
                     },
                  "propertytypes":
                     {
+                     "description":"string",
                      "tileId":"string"
                     },
                  "rotation":0,
@@ -2364,8 +2366,8 @@
                  "type":"Area",
                  "visible":true,
                  "width":199,
-                 "x":335.666666666667,
-                 "y":590.333333333333
+                 "x":335.667,
+                 "y":590.333
                 }, 
                 {
                  "gid":72,
@@ -2374,11 +2376,13 @@
                  "name":"cable_generator",
                  "properties":
                     {
+                     "description":"A pretty thick power cable. It fits nicely in one end to the elevator motor battery",
                      "tileId":"11",
                      "z":1
                     },
                  "propertytypes":
                     {
+                     "description":"string",
                      "tileId":"string",
                      "z":"int"
                     },
@@ -2386,8 +2390,8 @@
                  "type":"Object",
                  "visible":true,
                  "width":186,
-                 "x":416.333333333333,
-                 "y":609.333333333333
+                 "x":416.333,
+                 "y":609.333
                 }, 
                 {
                  "gid":80,
@@ -2410,7 +2414,7 @@
                  "type":"Area",
                  "visible":true,
                  "width":122,
-                 "x":37.6666666666667,
+                 "x":37.6667,
                  "y":550
                 }, 
                 {
@@ -2434,8 +2438,8 @@
                  "type":"Area",
                  "visible":true,
                  "width":184,
-                 "x":82.6666666666667,
-                 "y":612.666666666667
+                 "x":82.6667,
+                 "y":612.667
                 }, 
                 {
                  "gid":75,
@@ -2459,7 +2463,7 @@
                  "visible":true,
                  "width":158,
                  "x":77,
-                 "y":420.666666666667
+                 "y":420.667
                 }, 
                 {
                  "gid":76,
@@ -2483,7 +2487,7 @@
                  "visible":true,
                  "width":169,
                  "x":-28,
-                 "y":597.666666666667
+                 "y":597.667
                 }, 
                 {
                  "gid":77,
@@ -2506,7 +2510,7 @@
                  "type":"Area",
                  "visible":true,
                  "width":169,
-                 "x":182.666666666667,
+                 "x":182.667,
                  "y":623
                 }, 
                 {
@@ -2530,7 +2534,7 @@
                  "type":"Area",
                  "visible":true,
                  "width":200,
-                 "x":38.6666666666667,
+                 "x":38.6667,
                  "y":646
                 }, 
                 {
@@ -2556,8 +2560,8 @@
                  "type":"Area",
                  "visible":true,
                  "width":197,
-                 "x":212.666666666667,
-                 "y":665.333333333333
+                 "x":212.667,
+                 "y":665.333
                 }, 
                 {
                  "height":224,
@@ -2579,8 +2583,28 @@
                  "type":"Area",
                  "visible":true,
                  "width":168,
-                 "x":329.333333333333,
+                 "x":329.333,
                  "y":300
+                }, 
+                {
+                 "gid":81,
+                 "height":129,
+                 "id":159,
+                 "name":"cable_treadmill",
+                 "properties":
+                    {
+                     "tileId":"20"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":122,
+                 "x":327,
+                 "y":514.667
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -2589,7 +2613,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":158,
+ "nextobjectid":160,
  "orientation":"orthogonal",
  "renderorder":"left-up",
  "tileheight":660,
@@ -2872,7 +2896,7 @@
          "margin":0,
          "name":"4",
          "spacing":0,
-         "tilecount":19,
+         "tilecount":20,
          "tileheight":359,
          "tiles":
             {
@@ -2927,6 +2951,10 @@
              "2":
                 {
                  "image":"..\/sprites\/paintings\/painting_03.png"
+                },
+             "20":
+                {
+                 "image":"..\/sprites\/cables\/cable_motor-treadmill_generator.png"
                 },
              "3":
                 {

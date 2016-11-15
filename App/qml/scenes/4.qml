@@ -29,6 +29,10 @@ Base {
         property bool popBaseRemoved: false
         property bool popTopRemoved: false
         property bool scooterRemoved: false
+
+        property bool cableConnected: false
+
+        property bool treadmillRunning: false
     }
 
 
@@ -100,6 +104,15 @@ Base {
         ]
 
 
+    }
+
+    Area {
+        stateless: true
+
+        visible: store.cableConnected
+        name: "cable_treadmill"
+
+        onClicked: game.setText("It's now connecting the treadmill with the battery - good thinking!")
     }
 
     AnimatedArea {
@@ -233,6 +246,7 @@ Base {
 
         name: "elevator_door_4"
 
+        clickable: true
         stateless: true
 
         visible: true
@@ -265,6 +279,34 @@ Base {
             },
         ]
 
+        onClicked: {
+            if(store.treadmillRunning) {
+                // showElevatorPanel = true
+            } else
+                game.setText("The elevator needs power to operate.")
+        }
+    }
+
+    DropSpot {
+        x: 144; y: 296
+        width: 341; height: 213
+        keys: [ 'cable_generator' ]
+
+        name: "cable_drop"
+
+        enabled: store.scooterRemoved && !store.treadmillRunning
+
+        onDropped: {
+            drop.accept()
+
+            core.sounds.play("tick_soft")
+            game.setText("It's now connecting the treadmill with the battery - good thinking!")
+
+            store.cableConnected = true
+            var o = drag.source
+            blacklistObject(o.name)
+            destroyObject(o.name)
+        }
 
     }
 

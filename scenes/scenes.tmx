@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="158">
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="160">
  <tileset firstgid="1" name="0" tilewidth="155" tileheight="191" tilecount="14" columns="0">
   <tile id="0">
    <image width="74" height="97" source="../App/assets/sprites/bucket/bucket_empty.png"/>
@@ -173,7 +173,7 @@
    <image width="377" height="430" source="../App/assets/sprites/glass_cage/smash/0001.png"/>
   </tile>
  </tileset>
- <tileset firstgid="61" name="4" tilewidth="263" tileheight="359" tilecount="19" columns="0">
+ <tileset firstgid="61" name="4" tilewidth="263" tileheight="359" tilecount="20" columns="0">
   <tile id="0">
    <image width="93" height="222" source="../App/assets/sprites/elevator_assets/doors/floor_4/move/0001.png"/>
   </tile>
@@ -230,6 +230,9 @@
   </tile>
   <tile id="19">
    <image width="122" height="180" source="../App/assets/sprites/scooter/scooter.png"/>
+  </tile>
+  <tile id="20">
+   <image width="122" height="129" source="../App/assets/sprites/cables/cable_motor-treadmill_generator.png"/>
   </tile>
  </tileset>
  <imagelayer name="0 bg" visible="0">
@@ -840,6 +843,7 @@
   </object>
   <object id="139" name="grain" type="Object" gid="66" x="864.667" y="582.667" width="108" height="57">
    <properties>
+    <property name="description" value="A small pile of grain"/>
     <property name="tileId" value="5"/>
    </properties>
   </object>
@@ -888,6 +892,7 @@
   </object>
   <object id="146" name="cable_generator" type="Object" gid="72" x="416.333" y="609.333" width="186" height="223">
    <properties>
+    <property name="description" value="A pretty thick power cable. It fits nicely in one end to the elevator motor battery"/>
     <property name="tileId" value="11"/>
     <property name="z" type="int" value="1"/>
    </properties>
@@ -947,6 +952,11 @@
     <property name="description" value="It's the electrical motor for the elevator"/>
     <property name="stateless" type="bool" value="true"/>
     <property name="z" type="int" value="-2"/>
+   </properties>
+  </object>
+  <object id="159" name="cable_treadmill" type="Area" gid="81" x="327" y="514.667" width="122" height="129">
+   <properties>
+    <property name="tileId" value="20"/>
    </properties>
   </object>
  </objectgroup>
