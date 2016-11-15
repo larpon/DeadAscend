@@ -59,7 +59,7 @@ Base {
         showExit()
 
         var sfx = core.sounds
-        //sfx.add('level'+sceneNumber,'lift_motor',App.getAsset('sounds/lift_motor_01.wav'))
+        //sfx.add("level"+sceneNumber,"lift_motor",App.getAsset("sounds/lift_motor_01.wav"))
     }
 
     Component.onDestruction: {
@@ -67,9 +67,9 @@ Base {
     }
 
     function showExit() {
-        if(type == 'right') {
-            game.showExit(600,0,2000,'up')
-            game.showExit(700,550,2100,'down')
+        if(type == "right") {
+            game.showExit(600,0,2000,"up")
+            game.showExit(700,550,2100,"down")
         }
     }
 
@@ -78,11 +78,11 @@ Base {
         z: -10
         onClicked: {
             var a = [
-                'Not very interesting',
-                'Not of any use',
-                'It\'s cold in here',
-                'I wonder where everybody is?',
-                'There\'s faint sounds of mumbling zombies'
+                "Not very interesting",
+                "Not of any use",
+                "It's cold in here",
+                "I wonder where everybody is?",
+                "There's faint sounds of mumbling zombies"
             ]
             game.setText(Aid.randomFromArray(a))
         }
@@ -93,7 +93,7 @@ Base {
         x: 0; y: 0
         width: 10; height: 10
 
-        name: 'lift'
+        name: "lift"
 
         clickable: true
         visible: true
@@ -127,12 +127,12 @@ Base {
             {
                 name: "go_up",
                 frames: [1,2,3,4,5,6,7,8,9,10,11,12],
-                to: { 'up':1 }
+                to: { "up":1 }
             },
             {
                 name: "go_down",
                 frames: [1,2,3,4,5,6,7,8,9,10,11,12],
-                to: { 'down':1 },
+                to: { "down":1 },
                 reverse: true
             }
         ]
@@ -152,7 +152,7 @@ Base {
                 game.setText("It seems like it need a fuse to work")
                 return
             }
-            core.sounds.play('lift_motor')
+            core.sounds.play("lift_motor")
             changeLevel = true
             game.setText("Going up!")
             setActiveSequence("go_up")
@@ -163,7 +163,7 @@ Base {
                 game.setText("It seems like it need a fuse to work")
                 return
             }
-            core.sounds.play('lift_motor')
+            core.sounds.play("lift_motor")
             game.setText("Going down!")
             setActiveSequence("go_down")
         }
@@ -176,7 +176,7 @@ Base {
 
         onClicked: {
             if(!fuseDropped) {
-                core.sounds.play('tick')
+                core.sounds.play("tick")
                 game.setText("This lift could get you further up. But it's not working?")
                 return
             }
@@ -253,7 +253,7 @@ Base {
         }
 
         visible: type === "right"
-        source: App.getAsset('scenes/2_darkness_overlay_left.png')
+        source: App.getAsset("scenes/2_darkness_overlay_left.png")
 
     }
 
@@ -261,7 +261,7 @@ Base {
         id: darknessRight
         z: 20
         visible: type === "left"
-        source: App.getAsset('scenes/2_darkness_overlay_right.png')
+        source: App.getAsset("scenes/2_darkness_overlay_right.png")
     }
 
     showForegroundShadow: !panelScene.show && !cabinetScene.show
@@ -297,7 +297,7 @@ Base {
             }
             fillMode: Image.PreserveAspectFit
             width: sourceSize.width; height: sourceSize.height
-            source: App.getAsset('back_button.png')
+            source: App.getAsset("back_button.png")
 
             MouseArea {
                 anchors { fill: parent }
@@ -309,7 +309,7 @@ Base {
             anchors { centerIn: parent }
             fillMode: Image.PreserveAspectFit
             width: sourceSize.width; height: sourceSize.height
-            source: App.getAsset('scenes/lift_panel/lift_panel.png')
+            source: App.getAsset("scenes/lift_panel/lift_panel.png")
 
             MouseArea {
                 anchors { fill: parent }
@@ -329,7 +329,7 @@ Base {
                     drop.accept()
 
                     fuseDropped = true
-                    core.sounds.play('tick_soft')
+                    core.sounds.play("tick_soft")
                     game.setText("It fits perfectly!")
                     var o = drag.source
                     blacklistObject(o.name)
@@ -341,11 +341,11 @@ Base {
                 x: 310; y: 82
                 fillMode: Image.PreserveAspectFit
                 width: sourceSize.width; height: sourceSize.height
-                source: App.getAsset('sprites/fuse/zoom.png')
+                source: App.getAsset("sprites/fuse/zoom.png")
                 visible: fuseDropped
                 MouseArea {
                     anchors { fill: parent }
-                    onClicked: game.setText('It fits perfectly in the socket!')
+                    onClicked: game.setText("It fits perfectly in the socket!")
                 }
             }
 
@@ -359,7 +359,7 @@ Base {
                 name: "lift_up"
 
                 onClicked: {
-                    core.sounds.play('tick_soft')
+                    core.sounds.play("tick_soft")
                     if(!fuseDropped) {
                         game.setText("It seems like it need a fuse to work")
                         return
@@ -384,7 +384,7 @@ Base {
                 name: "lift_down"
 
                 onClicked: {
-                    core.sounds.play('tick_soft')
+                    core.sounds.play("tick_soft")
                     if(!fuseDropped) {
                         game.setText("It seems like it need a fuse to work")
                         return
@@ -433,7 +433,7 @@ Base {
             }
             fillMode: Image.PreserveAspectFit
             width: sourceSize.width; height: sourceSize.height
-            source: App.getAsset('back_button.png')
+            source: App.getAsset("back_button.png")
 
             MouseArea {
                 anchors { fill: parent }
@@ -445,7 +445,7 @@ Base {
             anchors { centerIn: parent }
             fillMode: Image.PreserveAspectFit
             width: sourceSize.width; height: sourceSize.height
-            source: App.getAsset('scenes/medicine_cabinet/notch.png')
+            source: App.getAsset("scenes/medicine_cabinet/notch.png")
 
             Item {
                 id: cannulaSpawn
@@ -465,7 +465,7 @@ Base {
                     anchors { centerIn: parent }
                     fillMode: Image.PreserveAspectFit
                     width: sourceSize.width; height: sourceSize.height
-                    source: App.getAsset('sprites/medicine_cabinet/door.png')
+                    source: App.getAsset("sprites/medicine_cabinet/door.png")
 
 
                     Area {
@@ -528,7 +528,7 @@ Base {
 
                     fillMode: Image.PreserveAspectFit
                     width: 66; height: 169
-                    source: App.getAsset('sprites/medicine_cabinet/hinge.png')
+                    source: App.getAsset("sprites/medicine_cabinet/hinge.png")
 
                     Area {
                         x: 32; y: 18
@@ -544,7 +544,7 @@ Base {
 
                             fillMode: Image.PreserveAspectFit
                             width: sourceSize.width; height: sourceSize.height
-                            source: App.getAsset('sprites/medicine_cabinet/screw_top.png')
+                            source: App.getAsset("sprites/medicine_cabinet/screw_top.png")
                         }
                     }
 
@@ -561,7 +561,7 @@ Base {
                             id: bottomScrewImage
                             fillMode: Image.PreserveAspectFit
                             width: sourceSize.width; height: sourceSize.height
-                            source: App.getAsset('sprites/medicine_cabinet/screw_bottom.png')
+                            source: App.getAsset("sprites/medicine_cabinet/screw_bottom.png")
 
                         }
                     }
@@ -596,8 +596,8 @@ Base {
 
                     onDropped: {
 
-                        core.sounds.play('tick_soft')
-                        game.setText("That's "+coinsUsed === 0 ? 'one':'both' +" screw down!")
+                        core.sounds.play("tick_soft")
+                        game.setText("That's "+coinsUsed === 0 ? "one":"both" +" screw down!")
 
                         coinsUsed++
 
@@ -617,7 +617,7 @@ Base {
             Image {
                 anchors { fill: parent }
                 fillMode: Image.PreserveAspectFit
-                source: App.getAsset('scenes/medicine_cabinet/fg_shadow.png')
+                source: App.getAsset("scenes/medicine_cabinet/fg_shadow.png")
             }
 
         }

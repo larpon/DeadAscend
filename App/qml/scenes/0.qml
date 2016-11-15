@@ -27,19 +27,19 @@ Base {
         store.load()
 
         if(!aSwitch.active)
-            game.setText('The room is pitch dark. You\'re likely to get eaten by a zombie. You better find some light somewhere.','TIP: There\'s a switch in here somewhere')
+            game.setText("The room is pitch dark. You're likely to get eaten by a zombie. You better find some light somewhere.","TIP: There's a switch in here somewhere")
         else
             showExit()
 
         var sfx = core.sounds
-        sfx.add('level'+sceneNumber,'switch',App.getAsset('sounds/lamp_switch_01.wav'))
-        sfx.add('level'+sceneNumber,'light_on',App.getAsset('sounds/light_on.wav'))
-        sfx.add('level'+sceneNumber,'drip',App.getAsset('sounds/water_drip_01.wav'))
-        sfx.add('level'+sceneNumber,'squeak',App.getAsset('sounds/faucet_sqeak.wav'))
-        sfx.add('level'+sceneNumber,'heavy_drag',App.getAsset('sounds/heavy_drag.wav'))
-        sfx.add('level'+sceneNumber,'hatch_open',App.getAsset('sounds/hatch_open.wav'))
-        sfx.add('level'+sceneNumber,'hatch_close',App.getAsset('sounds/hatch_close.wav'))
-        sfx.add('level'+sceneNumber,'water_run_loop',App.getAsset('sounds/water_run_loop_01.wav'))
+        sfx.add("level"+sceneNumber,"switch",App.getAsset("sounds/lamp_switch_01.wav"))
+        sfx.add("level"+sceneNumber,"light_on",App.getAsset("sounds/light_on.wav"))
+        sfx.add("level"+sceneNumber,"drip",App.getAsset("sounds/water_drip_01.wav"))
+        sfx.add("level"+sceneNumber,"squeak",App.getAsset("sounds/faucet_sqeak.wav"))
+        sfx.add("level"+sceneNumber,"heavy_drag",App.getAsset("sounds/heavy_drag.wav"))
+        sfx.add("level"+sceneNumber,"hatch_open",App.getAsset("sounds/hatch_open.wav"))
+        sfx.add("level"+sceneNumber,"hatch_close",App.getAsset("sounds/hatch_close.wav"))
+        sfx.add("level"+sceneNumber,"water_run_loop",App.getAsset("sounds/water_run_loop_01.wav"))
     }
 
     Component.onDestruction: {
@@ -47,21 +47,21 @@ Base {
     }
 
     function showExit() {
-        game.showExit(500,0,2000,'up')
+        game.showExit(500,0,2000,"up")
     }
 
     MouseArea {
         anchors { fill: parent }
         onClicked: {
             var a = [
-                'Interesting surface',
-                'Nothing interesting here',
-                'Not of any use',
-                'A creepy room',
-                'A bit greased',
-                'Where is everybody?',
-                'There\'s sounds of mumbling zombies',
-                'Did you hear that?'
+                "Interesting surface",
+                "Nothing interesting here",
+                "Not of any use",
+                "A creepy room",
+                "A bit greased",
+                "Where is everybody?",
+                "There's sounds of mumbling zombies",
+                "Did you hear that?"
             ]
             game.setText(Aid.randomFromArray(a))
         }
@@ -76,7 +76,7 @@ Base {
         width: 65; height: 191
 
         clickable: true
-        name: 'rope_dangle'
+        name: "rope_dangle"
 
         run: true
         paused: !visible || (scene.paused)
@@ -101,7 +101,7 @@ Base {
 
         onClicked: {
             hatch.state = "open then close"
-            game.setText('Gravity forces the hatch to close again','Find a way to keep the hatch open')
+            game.setText("Gravity forces the hatch to close again","Find a way to keep the hatch open")
         }
 
         DropSpot {
@@ -129,7 +129,7 @@ Base {
                     rope_dangle_bucket.run = true
 
                     hatch.state = "open then close"
-                    game.setText('The bucket is not heavy enough to keep the hatch open. Make it heavier')
+                    game.setText("The bucket is not heavy enough to keep the hatch open. Make it heavier")
                 }
             }
         }
@@ -150,7 +150,7 @@ Base {
 
         defaultFrameDelay: 150
 
-        name: 'rope_dangle_bucket'
+        name: "rope_dangle_bucket"
 
         sequences: [
             {
@@ -172,7 +172,7 @@ Base {
             var object = {
                 name: onRope,
                 type: "Object",
-                itemSource: App.getAsset('sprites/bucket/bucket_empty.png')
+                itemSource: App.getAsset("sprites/bucket/bucket_empty.png")
             }
 
             game.spawnObject(object,function(o){
@@ -192,7 +192,7 @@ Base {
         x: 494; y: 107
         width: 65; height: 191
 
-        name: 'rope_dangle_water'
+        name: "rope_dangle_water"
 
         clickable: true
         run: false
@@ -232,16 +232,16 @@ Base {
         onRunChanged: {
             if(run) {
                 running = true
-                setActiveSequence('run')
+                setActiveSequence("run")
             } else {
                 running = true
-                setActiveSequence('stop')
+                setActiveSequence("stop")
             }
 
 
         }
 
-        name: 'pool'
+        name: "pool"
 
         paused: !visible || scene.paused
 
@@ -252,12 +252,12 @@ Base {
             {
                 name: "run",
                 frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
-                to: { 'loop': 1}
+                to: { "loop": 1}
             },
             {
                 name: "loop",
                 frames: [15,16,17,18,17,16,15],
-                to: { 'loop': 1}
+                to: { "loop": 1}
             },
             {
                 name: "stop",
@@ -281,7 +281,7 @@ Base {
         }
 
         run: true
-        name: 'drip'
+        name: "drip"
 
         paused: !visible || scene.paused
 
@@ -304,8 +304,8 @@ Base {
         ]
 
         onFrame: {
-            if(sequenceName === 'drip' && frame === 4)
-                core.sounds.play('drip')
+            if(sequenceName === "drip" && frame === 4)
+                core.sounds.play("drip")
         }
     }
 
@@ -325,7 +325,7 @@ Base {
 
         run: false
 
-        name: 'bucket_run'
+        name: "bucket_run"
 
         paused: !visible || scene.paused
 
@@ -350,7 +350,7 @@ Base {
         width: 65; height: 191
 
         run: false
-        name: 'bucket_fill'
+        name: "bucket_fill"
 
         paused: !visible || scene.paused
 
@@ -378,7 +378,7 @@ Base {
 
                 faucetHandle.state = "off"
 
-                var bucket = game.getObject('bucket_patched')
+                var bucket = game.getObject("bucket_patched")
                 bucket.locked = false
                 var object = {
                     name: "bucket_full",
@@ -389,7 +389,7 @@ Base {
                     sounds: bucket.sounds,
                     soundMap: bucket.soundMap,
                     description: "The bucket is patched. No holes!",
-                    itemSource: App.getAsset('sprites/bucket/bucket_full.png')
+                    itemSource: App.getAsset("sprites/bucket/bucket_full.png")
                 }
 
                 game.spawnObject(object,function(o){
@@ -399,7 +399,7 @@ Base {
                     scene.bucketPatched = true
                 })
 
-                setText('A bucket full of water. It\'s pretty heavy!')
+                setText("A bucket full of water. It's pretty heavy!")
             }
         }
     }
@@ -421,7 +421,7 @@ Base {
         }
 
         run: false
-        name: 'run'
+        name: "run"
 
         paused: !visible || scene.paused
 
@@ -450,17 +450,17 @@ Base {
 
         onClicked: {
             state === "off" ? state = "on" : state = "off"
-            core.sounds.play('squeak')
+            core.sounds.play("squeak")
         }
 
         onStateChanged: resolveState()
 
         function resolveState() {
             if(state === "on") {
-                core.sounds.play('water_run_loop',core.sounds.infinite)
+                core.sounds.play("water_run_loop",core.sounds.infinite)
                 waterRunAnimation.run = true
             } else {
-                core.sounds.stop('water_run_loop')
+                core.sounds.stop("water_run_loop")
                 waterDripAnimation.run = true
             }
             resolveBucketState()
@@ -473,12 +473,12 @@ Base {
     Area {
         id: fliesAndLight
 
-        name: 'light'
+        name: "light"
 
         x: 52; y: 104
         width: 112; height: 54
 
-        onClicked: game.setText('The flourescent lights humms faintly - casting a grim light in the room...','Some flies are having a party here as well')
+        onClicked: game.setText("The flourescent lights humms faintly - casting a grim light in the room...","Some flies are having a party here as well")
     }
 
     Object {
@@ -487,7 +487,7 @@ Base {
         draggable: false
         autoInventory: false
 
-        name: 'parasol_base'
+        name: "parasol_base"
 
         Behavior on x {
             id: parasolBaseXBehaviour
@@ -504,7 +504,7 @@ Base {
 
         onClicked: {
             if(!parasolBaseXBehaviour.animation.running) {
-                core.sounds.play('heavy_drag')
+                core.sounds.play("heavy_drag")
                 state === "over" ? state = "moved" : state = "over"
             }
         }
@@ -597,9 +597,9 @@ Base {
 
         clickable: true
         visible: true
-        name: 'hatch'
+        name: "hatch"
 
-        state: 'closed'
+        state: "closed"
 
         onStateChanged: {
             setActiveSequence(state)
@@ -634,9 +634,9 @@ Base {
                 return
 
             if(sequence.name === "open" || sequence.name === "open then close")
-                core.sounds.play('hatch_open')
+                core.sounds.play("hatch_open")
             if(sequence.name === "closed")
-                core.sounds.play('hatch_close')
+                core.sounds.play("hatch_close")
 
             if(sequence.name !== state)
                 state = sequence.name
@@ -658,12 +658,12 @@ Base {
         anchors { fill: parent }
 
         fillMode: Image.PreserveAspectFit
-        source: App.getAsset('scenes/0_darkness.png')
+        source: App.getAsset("scenes/0_darkness.png")
 
         MouseArea {
             enabled: parent.visible
             anchors { fill: parent }
-            onClicked: game.setText('It\'s too dark to do anything. Better find some light somewhere')
+            onClicked: game.setText("It's too dark to do anything. Better find some light somewhere")
         }
     }
 
@@ -672,20 +672,20 @@ Base {
         z: active ? 0 : 10
         x: 1000; y: 303
 
-        name: 'switch'
+        name: "switch"
 
         onActiveChanged: {
-            core.sounds.play('switch')
+            core.sounds.play("switch")
             if(active) {
-                game.setText('Lights on')
-                core.sounds.play('light_on')
+                game.setText("Lights on")
+                core.sounds.play("light_on")
                 showExit()
             } else
-                game.setText('Lights out')
+                game.setText("Lights out")
         }
 
-        onSource: App.getAsset('sprites/buttons/button_01/button_01_down.png')
-        offSource: App.getAsset('sprites/buttons/button_01/button_01_up.png')
+        onSource: App.getAsset("sprites/buttons/button_01/button_01_down.png")
+        offSource: App.getAsset("sprites/buttons/button_01/button_01_up.png")
     }
 
     DropSpot {
@@ -707,9 +707,9 @@ Base {
     }
 
     function resolveBucketState() {
-        var o = game.getObject('bucket')
+        var o = game.getObject("bucket")
         if(!o)
-            o = game.getObject('bucket_patched')
+            o = game.getObject("bucket_patched")
 
         if(o && o.at === "faucet" && faucetHandle.state === "on") {
             waterBucketRunAnimation.run = true

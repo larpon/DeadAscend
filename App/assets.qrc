@@ -47,7 +47,6 @@
         <file>assets/sprites/buttons/button_01/button_01_up.png</file>
         <file>assets/sprites/buttons/button_02/button_02.png</file>
         <file>assets/sprites/buttons/button_03/button_03.png</file>
-        <file>assets/sprites/cables/cable_icon.png</file>
         <file>assets/sprites/cables/cable_motor-generator.png</file>
         <file>assets/sprites/cables/cable_motor-treadmill_generator.png</file>
         <file>assets/sprites/cannula/cannula_empty.png</file>
@@ -1013,5 +1012,6 @@
         <file>assets/scenes/whiteboard/whiteboard.png</file>
         <file>assets/scenes/4.png</file>
         <file>assets/scenes/4_fg_shadow.png</file>
+        <file>assets/sprites/cables/cable_motor_generator_icon.png</file>
     </qresource>
 </RCC>

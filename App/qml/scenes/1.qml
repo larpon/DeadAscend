@@ -24,7 +24,7 @@ Base {
         showExit()
 
         var sfx = core.sounds
-        //sfx.add('level'+sceneNumber,'switch',App.getAsset('sounds/lamp_switch_01.wav'))
+        //sfx.add("level"+sceneNumber,"switch",App.getAsset("sounds/lamp_switch_01.wav"))
     }
 
     Component.onDestruction: {
@@ -32,8 +32,8 @@ Base {
     }
 
     function showExit() {
-        game.showExit(600,150,2000,'up')
-        game.showExit(400,550,2100,'up')
+        game.showExit(600,150,2000,"up")
+        game.showExit(400,550,2100,"up")
     }
 
     MouseArea {
@@ -41,13 +41,13 @@ Base {
         z: -10
         onClicked: {
             var a = [
-                'Interesting surface',
-                'Not interesting',
-                'Not of any use',
-                'The room is very cold',
-                'Where is everybody?',
-                'There\'s sounds of mumbling zombies',
-                'Did you hear that?'
+                "Interesting surface",
+                "Not interesting",
+                "Not of any use",
+                "The room is very cold",
+                "Where is everybody?",
+                "There's sounds of mumbling zombies",
+                "Did you hear that?"
             ]
             game.setText(Aid.randomFromArray(a))
         }
@@ -58,7 +58,7 @@ Base {
         x: 0; y: 0
         width: 10; height: 10
 
-        name: 'chandelier'
+        name: "chandelier"
 
         run: true
         paused: !visible || (scene.paused)
@@ -127,17 +127,17 @@ Base {
 
                 var so
                 if(o.name === "rail_1" || o.name === "rail_2") {
-                    so = game.getObject('assembled_'+o.name)
+                    so = game.getObject("assembled_"+o.name)
                     so.state = "up"
                     blacklistObject(o.name)
                     destroyObject(o.name)
                 } else { // The rungs
 
-                    var ar1 = game.getObject('assembled_rail_1')
-                    var ar2 = game.getObject('assembled_rail_2')
+                    var ar1 = game.getObject("assembled_rail_1")
+                    var ar2 = game.getObject("assembled_rail_2")
 
                     if(ar1.state === "up" && ar2.state === "up") {
-                        so = game.getObject('assembled_'+o.name)
+                        so = game.getObject("assembled_"+o.name)
                         so.state = "up"
                         blacklistObject(o.name)
                         destroyObject(o.name)
@@ -151,7 +151,7 @@ Base {
                 }
 
                 if(isLadderBuilt()) {
-                    game.showExit(600,150,2000,'up')
+                    game.showExit(600,150,2000,"up")
                     game.setText("YES! Finally we can proceed upwards")
                 }
 
@@ -161,14 +161,14 @@ Base {
     }
 
     function isLadderBuilt() {
-        var ar1 = game.getObject('assembled_rail_1')
-        var ar2 = game.getObject('assembled_rail_2')
-        var r1 = game.getObject('assembled_rung_1')
-        var r2 = game.getObject('assembled_rung_2')
-        var r3 = game.getObject('assembled_rung_3')
-        var r4 = game.getObject('assembled_rung_4')
-        var r5 = game.getObject('assembled_rung_5')
-        var r6 = game.getObject('assembled_rung_5')
+        var ar1 = game.getObject("assembled_rail_1")
+        var ar2 = game.getObject("assembled_rail_2")
+        var r1 = game.getObject("assembled_rung_1")
+        var r2 = game.getObject("assembled_rung_2")
+        var r3 = game.getObject("assembled_rung_3")
+        var r4 = game.getObject("assembled_rung_4")
+        var r5 = game.getObject("assembled_rung_5")
+        var r6 = game.getObject("assembled_rung_5")
         var all = [ar1,ar2,r1,r2,r3,r4,r5,r6]
         var allTrue = false
         if(ar1 && ar2 && r1 && r2 && r3 && r4 && r5 && r6) {
@@ -193,8 +193,8 @@ Base {
         draggable: false
         autoInventory: false
 
-        name: 'assembled_rail_1'
-        itemSource: App.getAsset('sprites/ladder/'+name+'.png')
+        name: "assembled_rail_1"
+        itemSource: App.getAsset("sprites/ladder/"+name+".png")
     }
 
     Object {
@@ -206,8 +206,8 @@ Base {
         draggable: false
         autoInventory: false
 
-        name: 'assembled_rail_2'
-        itemSource: App.getAsset('sprites/ladder/'+name+'.png')
+        name: "assembled_rail_2"
+        itemSource: App.getAsset("sprites/ladder/"+name+".png")
     }
 
     Object {
@@ -219,8 +219,8 @@ Base {
         draggable: false
         autoInventory: false
 
-        name: 'assembled_rung_1'
-        itemSource: App.getAsset('sprites/ladder/'+name+'.png')
+        name: "assembled_rung_1"
+        itemSource: App.getAsset("sprites/ladder/"+name+".png")
     }
 
     Object {
@@ -232,8 +232,8 @@ Base {
         draggable: false
         autoInventory: false
 
-        name: 'assembled_rung_2'
-        itemSource: App.getAsset('sprites/ladder/'+name+'.png')
+        name: "assembled_rung_2"
+        itemSource: App.getAsset("sprites/ladder/"+name+".png")
     }
 
     Object {
@@ -245,8 +245,8 @@ Base {
         draggable: false
         autoInventory: false
 
-        name: 'assembled_rung_3'
-        itemSource: App.getAsset('sprites/ladder/'+name+'.png')
+        name: "assembled_rung_3"
+        itemSource: App.getAsset("sprites/ladder/"+name+".png")
     }
     Object {
         x: 0; y: 0; z: visible ? 3 : -3
@@ -257,8 +257,8 @@ Base {
         draggable: false
         autoInventory: false
 
-        name: 'assembled_rung_4'
-        itemSource: App.getAsset('sprites/ladder/'+name+'.png')
+        name: "assembled_rung_4"
+        itemSource: App.getAsset("sprites/ladder/"+name+".png")
     }
     Object {
         x: 0; y: 0; z: visible ? 3 : -3
@@ -269,8 +269,8 @@ Base {
         draggable: false
         autoInventory: false
 
-        name: 'assembled_rung_5'
-        itemSource: App.getAsset('sprites/ladder/'+name+'.png')
+        name: "assembled_rung_5"
+        itemSource: App.getAsset("sprites/ladder/"+name+".png")
     }
     Object {
         x: 0; y: 0; z: visible ? 3 : -3
@@ -281,8 +281,8 @@ Base {
         draggable: false
         autoInventory: false
 
-        name: 'assembled_rung_6'
-        itemSource: App.getAsset('sprites/ladder/'+name+'.png')
+        name: "assembled_rung_6"
+        itemSource: App.getAsset("sprites/ladder/"+name+".png")
     }
 
 

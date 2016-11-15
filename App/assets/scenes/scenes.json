@@ -1731,7 +1731,7 @@
                  "y":338
                 }, 
                 {
-                 "height":154.666666666667,
+                 "height":154.667,
                  "id":119,
                  "name":"workbench_area",
                  "properties":
@@ -1749,8 +1749,8 @@
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":222.666666666667,
-                 "x":873.333333333333,
+                 "width":222.667,
+                 "x":873.333,
                  "y":196
                 }, 
                 {
@@ -1862,12 +1862,12 @@
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":109.333333333333,
-                 "x":1009.33333333333,
-                 "y":74.6666666666667
+                 "width":109.333,
+                 "x":1009.33,
+                 "y":74.6667
                 }, 
                 {
-                 "height":166.666666666667,
+                 "height":166.667,
                  "id":117,
                  "name":"picture_area",
                  "properties":
@@ -1885,8 +1885,8 @@
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":265.333333333333,
-                 "x":-6.66666666666667,
+                 "width":265.333,
+                 "x":-6.66667,
                  "y":20
                 }, 
                 {
@@ -1896,12 +1896,12 @@
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":53.3333333333333,
+                 "width":53.3333,
                  "x":812,
                  "y":144
                 }, 
                 {
-                 "height":141.333333333333,
+                 "height":141.333,
                  "id":120,
                  "name":"green_machine_area",
                  "properties":
@@ -1917,12 +1917,12 @@
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":177.333333333333,
+                 "width":177.333,
                  "x":784,
                  "y":404
                 }, 
                 {
-                 "height":231.999666666667,
+                 "height":232,
                  "id":122,
                  "name":"blue_machine_4_area",
                  "properties":
@@ -1939,11 +1939,11 @@
                  "type":"Area",
                  "visible":true,
                  "width":93.333,
-                 "x":694.000166666667,
-                 "y":426.666833333333
+                 "x":694,
+                 "y":426.667
                 }, 
                 {
-                 "height":161.333333333333,
+                 "height":161.333,
                  "id":123,
                  "name":"blue_machine_3_area",
                  "properties":
@@ -1959,12 +1959,12 @@
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":122.666333333333,
-                 "x":600.000166666667,
+                 "width":122.666,
+                 "x":600,
                  "y":292
                 }, 
                 {
-                 "height":183.999666666667,
+                 "height":184,
                  "id":125,
                  "name":"blue_machine_2_area",
                  "properties":
@@ -1982,12 +1982,12 @@
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":177.332666666667,
-                 "x":313.333666666667,
-                 "y":240.666833333333
+                 "width":177.333,
+                 "x":313.334,
+                 "y":240.667
                 }, 
                 {
-                 "height":303.999666666667,
+                 "height":304,
                  "id":126,
                  "name":"blue_machine_1_area",
                  "properties":
@@ -2003,18 +2003,18 @@
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":205.332666666667,
-                 "x":70.6670000000001,
-                 "y":355.3335
+                 "width":205.333,
+                 "x":70.667,
+                 "y":355.333
                 }, 
                 {
-                 "height":122.666666666667,
+                 "height":122.667,
                  "id":127,
                  "name":"exit_up_3",
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":229.333333333333,
+                 "width":229.333,
                  "x":332,
                  "y":4
                 }],
@@ -2026,23 +2026,23 @@
          "y":0
         }, 
         {
-         "height":1,
+         "height":0,
          "image":"4.png",
          "name":"4 bg",
          "opacity":1,
          "type":"imagelayer",
          "visible":true,
-         "width":1,
+         "width":0,
          "x":0,
          "y":0
         }, 
         {
          "draworder":"index",
-         "height":1,
+         "height":0,
          "name":"4",
          "objects":[
                 {
-                 "height":93.3333333333334,
+                 "height":93.3333,
                  "id":128,
                  "name":"exit_down_4",
                  "rotation":0,
@@ -2050,7 +2050,7 @@
                  "visible":true,
                  "width":292,
                  "x":780,
-                 "y":310.666666666667
+                 "y":310.667
                 }, 
                 {
                  "gid":61,
@@ -2069,8 +2069,8 @@
                  "type":"AnimatedArea",
                  "visible":true,
                  "width":93,
-                 "x":607.333333333333,
-                 "y":493.666666666667
+                 "x":607.333,
+                 "y":493.667
                 }, 
                 {
                  "gid":62,
@@ -2089,30 +2089,32 @@
                  "type":"AnimatedArea",
                  "visible":true,
                  "width":47,
-                 "x":663.666666666667,
-                 "y":205.666666666667
+                 "x":663.667,
+                 "y":205.667
                 }, 
                 {
-                 "height":85.3333333333333,
+                 "height":85.3333,
                  "id":133,
                  "name":"clock",
                  "properties":
                     {
-                     "description":"A clock - it's broken. Very broken"
+                     "description":"A clock - it's broken. Very broken",
+                     "stateless":true
                     },
                  "propertytypes":
                     {
-                     "description":"string"
+                     "description":"string",
+                     "stateless":"bool"
                     },
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
                  "width":92,
                  "x":624,
-                 "y":121.333333333333
+                 "y":121.333
                 }, 
                 {
-                 "height":274.666666666667,
+                 "height":274.667,
                  "id":135,
                  "name":"painting3_frame",
                  "properties":
@@ -2131,8 +2133,8 @@
                  "type":"Area",
                  "visible":true,
                  "width":132,
-                 "x":930.666666666667,
-                 "y":22.6666666666667
+                 "x":930.667,
+                 "y":22.6667
                 }, 
                 {
                  "gid":63,
@@ -2153,8 +2155,8 @@
                  "type":"Object",
                  "visible":true,
                  "width":114,
-                 "x":933.666666666667,
-                 "y":277.333333333333
+                 "x":933.667,
+                 "y":277.333
                 }, 
                 {
                  "gid":64,
@@ -2177,8 +2179,8 @@
                  "type":"Area",
                  "visible":true,
                  "width":162,
-                 "x":721.666666666667,
-                 "y":502.333333333333
+                 "x":721.667,
+                 "y":502.333
                 }, 
                 {
                  "gid":65,
@@ -2203,8 +2205,8 @@
                  "type":"Area",
                  "visible":true,
                  "width":184,
-                 "x":714.666666666667,
-                 "y":568.666666666667
+                 "x":714.667,
+                 "y":568.667
                 }, 
                 {
                  "gid":66,
@@ -2223,8 +2225,8 @@
                  "type":"Object",
                  "visible":true,
                  "width":108,
-                 "x":864.666666666667,
-                 "y":582.666666666667
+                 "x":864.667,
+                 "y":582.667
                 }, 
                 {
                  "gid":67,
@@ -2249,12 +2251,12 @@
                  "y":592
                 }, 
                 {
-                 "height":166.666666666667,
+                 "height":166.667,
                  "id":142,
                  "name":"blood",
                  "properties":
                     {
-                     "description":"[\n\t\"Looks like splattered blood\",\n\t\"There's also holes from what looks like shotgun bullets\"\n]",
+                     "description":"[\n\t\"Looks like splattered blood\",\n\t\"There's also holes from what looks like shotgun bullet holes\"\n]",
                      "stateless":true
                     },
                  "propertytypes":
@@ -2265,9 +2267,9 @@
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":77.3333333333333,
-                 "x":437.333333333333,
-                 "y":101.333333333333
+                 "width":77.3333,
+                 "x":437.333,
+                 "y":101.333
                 }, 
                 {
                  "gid":68,
@@ -2276,12 +2278,14 @@
                  "name":"treadmill_generator",
                  "properties":
                     {
+                     "clickable":false,
                      "stateless":true,
                      "tileId":"7",
                      "z":-1
                     },
                  "propertytypes":
                     {
+                     "clickable":"bool",
                      "stateless":"bool",
                      "tileId":"string",
                      "z":"int"
@@ -2290,7 +2294,7 @@
                  "type":"Area",
                  "visible":true,
                  "width":263,
-                 "x":178.333333333333,
+                 "x":178.333,
                  "y":573
                 }, 
                 {
@@ -2310,17 +2314,282 @@
                  "type":"AnimatedArea",
                  "visible":true,
                  "width":233,
-                 "x":78.6666666666667,
+                 "x":78.6667,
                  "y":504
+                }, 
+                {
+                 "gid":71,
+                 "height":155,
+                 "id":145,
+                 "name":"generator",
+                 "properties":
+                    {
+                     "description":"A visually pleasing generator - sadly it's broken",
+                     "stateless":true,
+                     "tileId":"10"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool",
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":157,
+                 "x":487,
+                 "y":599
+                }, 
+                {
+                 "gid":73,
+                 "height":298,
+                 "id":147,
+                 "name":"elevator_motor",
+                 "properties":
+                    {
+                     "clickable":false,
+                     "stateless":true,
+                     "tileId":"12",
+                     "z":-1
+                    },
+                 "propertytypes":
+                    {
+                     "clickable":"bool",
+                     "stateless":"bool",
+                     "tileId":"string",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":199,
+                 "x":335.666666666667,
+                 "y":590.333333333333
+                }, 
+                {
+                 "gid":72,
+                 "height":223,
+                 "id":146,
+                 "name":"cable_generator",
+                 "properties":
+                    {
+                     "tileId":"11",
+                     "z":1
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":186,
+                 "x":416.333333333333,
+                 "y":609.333333333333
+                }, 
+                {
+                 "gid":80,
+                 "height":180,
+                 "id":156,
+                 "name":"scooter",
+                 "properties":
+                    {
+                     "description":"Oh my. What a nice little scooter",
+                     "stateless":true,
+                     "tileId":"19"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool",
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":122,
+                 "x":37.6666666666667,
+                 "y":550
+                }, 
+                {
+                 "gid":74,
+                 "height":269,
+                 "id":148,
+                 "name":"popcorn_machine_base",
+                 "properties":
+                    {
+                     "description":"POP, POP no more... pop... corn. Eeer",
+                     "stateless":true,
+                     "tileId":"13"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool",
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":184,
+                 "x":82.6666666666667,
+                 "y":612.666666666667
+                }, 
+                {
+                 "gid":75,
+                 "height":149,
+                 "id":149,
+                 "name":"popcorn_machine_top",
+                 "properties":
+                    {
+                     "decsription":"Pretty heavy glass this is made of!",
+                     "stateless":true,
+                     "tileId":"14"
+                    },
+                 "propertytypes":
+                    {
+                     "decsription":"string",
+                     "stateless":"bool",
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":158,
+                 "x":77,
+                 "y":420.666666666667
+                }, 
+                {
+                 "gid":76,
+                 "height":359,
+                 "id":151,
+                 "name":"ski_left",
+                 "properties":
+                    {
+                     "description":"This is useless. There's not even snow outside",
+                     "stateless":true,
+                     "tileId":"15"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool",
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":169,
+                 "x":-28,
+                 "y":597.666666666667
+                }, 
+                {
+                 "gid":77,
+                 "height":359,
+                 "id":152,
+                 "name":"ski_right",
+                 "properties":
+                    {
+                     "description":"Go find a piste - maybe in Italy",
+                     "stateless":true,
+                     "tileId":"16"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool",
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":169,
+                 "x":182.666666666667,
+                 "y":623
+                }, 
+                {
+                 "gid":78,
+                 "height":220,
+                 "id":153,
+                 "name":"rocking_horse",
+                 "properties":
+                    {
+                     "description":"Rock-on brother!",
+                     "stateless":true,
+                     "tileId":"17"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool",
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":200,
+                 "x":38.6666666666667,
+                 "y":646
+                }, 
+                {
+                 "gid":79,
+                 "height":209,
+                 "id":154,
+                 "name":"beach_ball",
+                 "properties":
+                    {
+                     "description":"Fun in the summer - useless during zombie apocalypses",
+                     "round":true,
+                     "stateless":true,
+                     "tileId":"18"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "round":"bool",
+                     "stateless":"bool",
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":197,
+                 "x":212.666666666667,
+                 "y":665.333333333333
+                }, 
+                {
+                 "height":224,
+                 "id":157,
+                 "name":"elevator_motor_desc",
+                 "properties":
+                    {
+                     "description":"It's the electrical motor for the elevator",
+                     "stateless":true,
+                     "z":-2
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":168,
+                 "x":329.333333333333,
+                 "y":300
                 }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
-         "width":1,
+         "width":0,
          "x":0,
          "y":0
         }],
- "nextobjectid":145,
+ "nextobjectid":158,
  "orientation":"orthogonal",
  "renderorder":"left-up",
  "tileheight":660,
@@ -2603,8 +2872,8 @@
          "margin":0,
          "name":"4",
          "spacing":0,
-         "tilecount":9,
-         "tileheight":264,
+         "tilecount":19,
+         "tileheight":359,
          "tiles":
             {
              "0":
@@ -2614,6 +2883,46 @@
              "1":
                 {
                  "image":"..\/sprites\/clock\/broken_arms\/0001.png"
+                },
+             "10":
+                {
+                 "image":"..\/sprites\/generator\/generator.png"
+                },
+             "11":
+                {
+                 "image":"..\/sprites\/cables\/cable_motor-generator.png"
+                },
+             "12":
+                {
+                 "image":"..\/sprites\/elevator_assets\/motor\/elevator_motor.png"
+                },
+             "13":
+                {
+                 "image":"..\/sprites\/popcorn_machine\/base.png"
+                },
+             "14":
+                {
+                 "image":"..\/sprites\/popcorn_machine\/top.png"
+                },
+             "15":
+                {
+                 "image":"..\/sprites\/skies\/ski_left.png"
+                },
+             "16":
+                {
+                 "image":"..\/sprites\/skies\/ski_right.png"
+                },
+             "17":
+                {
+                 "image":"..\/sprites\/rocking_horse\/rocking_horse.png"
+                },
+             "18":
+                {
+                 "image":"..\/sprites\/beach_ball\/beach_ball.png"
+                },
+             "19":
+                {
+                 "image":"..\/sprites\/scooter\/scooter.png"
                 },
              "2":
                 {

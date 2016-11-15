@@ -15,8 +15,8 @@ Base {
     onReadyChanged: {
 
         if(cageHit) {
-            hamster.setActiveSequence('cs-hide')
-            cageSmash.setActiveSequence('smashed')
+            hamster.setActiveSequence("cs-hide")
+            cageSmash.setActiveSequence("smashed")
         }
 
     }
@@ -42,7 +42,7 @@ Base {
         target: core.sounds
         onLoaded: {
             if(tag === "hum")
-                core.sounds.play('hum',core.sounds.infinite)
+                core.sounds.play("hum",core.sounds.infinite)
         }
     }
 
@@ -51,14 +51,14 @@ Base {
         showExit()
 
         var sfx = core.sounds
-        sfx.add('level'+sceneNumber,'hum',App.getAsset('sounds/low_machine_hum.wav'))
-        sfx.add('level'+sceneNumber,'scribble',App.getAsset('sounds/scribble.wav'))
-        sfx.add('level'+sceneNumber,'zombie_moan_1',App.getAsset('sounds/zombie_moan_01.wav'))
-        sfx.add('level'+sceneNumber,'zombie_moan_2',App.getAsset('sounds/zombie_moan_02.wav'))
-        sfx.add('level'+sceneNumber,'zombie_moan_3',App.getAsset('sounds/zombie_moan_03.wav'))
-        sfx.add('level'+sceneNumber,'crack_smash',App.getAsset('sounds/crack_smash.wav'))
-        sfx.add('level'+sceneNumber,'glass_smash',App.getAsset('sounds/glass_smash.wav'))
-        sfx.add('level'+sceneNumber,'coin_drop',App.getAsset('sounds/coin_drop.wav'))
+        sfx.add("level"+sceneNumber,"hum",App.getAsset("sounds/low_machine_hum.wav"))
+        sfx.add("level"+sceneNumber,"scribble",App.getAsset("sounds/scribble.wav"))
+        sfx.add("level"+sceneNumber,"zombie_moan_1",App.getAsset("sounds/zombie_moan_01.wav"))
+        sfx.add("level"+sceneNumber,"zombie_moan_2",App.getAsset("sounds/zombie_moan_02.wav"))
+        sfx.add("level"+sceneNumber,"zombie_moan_3",App.getAsset("sounds/zombie_moan_03.wav"))
+        sfx.add("level"+sceneNumber,"crack_smash",App.getAsset("sounds/crack_smash.wav"))
+        sfx.add("level"+sceneNumber,"glass_smash",App.getAsset("sounds/glass_smash.wav"))
+        sfx.add("level"+sceneNumber,"coin_drop",App.getAsset("sounds/coin_drop.wav"))
     }
 
     Component.onDestruction: {
@@ -66,8 +66,8 @@ Base {
     }
 
     function showExit() {
-        game.showExit(600,100,2000,'down')
-        game.showExit(400,10,2100,'up')
+        game.showExit(600,100,2000,"down")
+        game.showExit(400,10,2100,"up")
     }
 
     MouseArea {
@@ -75,10 +75,10 @@ Base {
         z: -10
         onClicked: {
             var a = [
-                'Nah. Not really interesting',
-                'Not of any use',
-                'It\'s actually a bit warm in here',
-                'The machines are humming quite a lot'
+                "Nah. Not really interesting",
+                "Not of any use",
+                "It's actually a bit warm in here",
+                "The machines are humming quite a lot"
             ]
             game.setText(Aid.randomFromArray(a))
         }
@@ -89,7 +89,7 @@ Base {
         id: zombieSitting
 
         clickable: run
-        name: 'zombie_sitting'
+        name: "zombie_sitting"
 
         stateless: true
 
@@ -127,15 +127,15 @@ Base {
 
         onFrame: {
             if(frame === 5) {
-                core.sounds.playRandom(['zombie_moan_1','zombie_moan_2'])
+                core.sounds.playRandom(["zombie_moan_1","zombie_moan_2"])
             }
             if(frame === 11) {
-                core.sounds.play('zombie_moan_3')
+                core.sounds.play("zombie_moan_3")
             }
         }
 
         onClicked: {
-            core.sounds.playRandom(['zombie_moan_1','zombie_moan_2'])
+            core.sounds.playRandom(["zombie_moan_1","zombie_moan_2"])
         }
 
         DropSpot {
@@ -147,8 +147,8 @@ Base {
 
             onDropped: {
 
-                core.sounds.play('zombie_moan_2')
-                core.sounds.play('crack_smash')
+                core.sounds.play("zombie_moan_2")
+                core.sounds.play("crack_smash")
                 zombieTilting.run = true
                 zombieSitting.visible = false
 
@@ -159,11 +159,11 @@ Base {
                         scene: sceneNumber,
                         x: 190,
                         y: 300,
-                        itemSource: App.getAsset('sprites/coin/coin.png')
+                        itemSource: App.getAsset("sprites/coin/coin.png")
                     }
 
                     game.spawnObject(object,function(o){
-                        core.sounds.play('coin_drop')
+                        core.sounds.play("coin_drop")
                         o.moveTo(60,360)
                     })
 
@@ -190,7 +190,7 @@ Base {
         id: zombieTilting
 
         clickable: false
-        name: 'zombie_tilting'
+        name: "zombie_tilting"
 
         stateless: true
 
@@ -222,7 +222,7 @@ Base {
         id: zombieTilted
 
         clickable: run
-        name: 'zombie_tilted'
+        name: "zombie_tilted"
 
         stateless: true
 
@@ -237,13 +237,13 @@ Base {
             {
                 name: "tick",
                 frames: [1,2,3,4,5,6,7,8,9,10,11,12],
-                to: { 'wait':1 },
+                to: { "wait":1 },
                 duration: 100
             },
             {
                 name: "wait",
                 frames: [12],
-                to: { 'wait':1, 'tick':1 },
+                to: { "wait":1, "tick":1 },
                 duration: 10000
             }
 
@@ -251,7 +251,7 @@ Base {
 
         onFrame: {
             if(frame === 1) {
-                core.sounds.play('zombie_moan_3')
+                core.sounds.play("zombie_moan_3")
             }
         }
 
@@ -275,7 +275,7 @@ Base {
         x: 0; y: 0
         width: 10; height: 10
 
-        name: 'lift_3'
+        name: "lift_3"
 
         visible: true
         run: false
@@ -304,7 +304,7 @@ Base {
             {
                 name: "go_up",
                 frames: [1,2,3,4,5,6],
-                to: { 'up':1 },
+                to: { "up":1 },
                 reverse: true
             },
             {
@@ -314,7 +314,7 @@ Base {
             {
                 name: "go_down",
                 frames: [1,2,3,4,5,6],
-                to: { 'down':1 }
+                to: { "down":1 }
             }
         ]
 
@@ -332,7 +332,7 @@ Base {
         }
 
         function down() {
-            core.sounds.play('lift_motor')
+            core.sounds.play("lift_motor")
             changeLevel = true
             game.setText("Going down!")
             setActiveSequence("go_down")
@@ -388,7 +388,7 @@ Base {
         id: hamster
 
         clickable: true
-        name: 'hamster'
+        name: "hamster"
 
         stateless: true
 
@@ -403,7 +403,7 @@ Base {
             {
                 name: "hide", // Starting point
                 frames: [1],
-                to: { "peek":1, "hide": 1, 'cs-hide':0 },
+                to: { "peek":1, "hide": 1, "cs-hide":0 },
                 duration: 1000
             },
             {
@@ -502,15 +502,15 @@ Base {
                 core.sounds.play("scribble")
             if(n === "bl-circle")
                 core.sounds.play("scribble",2)
-            App.debug('Hamster in sequence',sequence.name)
+            App.debug("Hamster in sequence",sequence.name)
         }
 
         onClicked: {
             if(cageHit) {
-                hamster.goalSequence = 'cs-hide'
+                hamster.goalSequence = "cs-hide"
                 game.setText("It's scared now the glass is smashed. Maybe it can be lured out of hiding")
             } else
-                game.setText('Such a cute little critter')
+                game.setText("Such a cute little critter")
         }
 
         DropSpot {
@@ -541,7 +541,7 @@ Base {
         name: "glass_cage"
 
         onClicked: {
-            hamster.goalSequence = 'hide'
+            hamster.goalSequence = "hide"
             game.setText("The hamster looks pretty scared")
             core.sounds.play("add")
         }
@@ -566,11 +566,11 @@ Base {
 
                 }
 
-                core.sounds.play('glass_smash')
+                core.sounds.play("glass_smash")
                 cageSmash.setActiveSequence("smash")
                 cageSmash.run = true
                 glassCage.visible = false
-                hamster.goalSequence = 'cs-hide'
+                hamster.goalSequence = "cs-hide"
 
 
             }
@@ -606,7 +606,7 @@ Base {
         id: cageSmash
 
         //clickable: true
-        name: 'cage_smash'
+        name: "cage_smash"
 
         visible: running || cageHit
 
@@ -683,7 +683,7 @@ Base {
             }
             fillMode: Image.PreserveAspectFit
             width: sourceSize.width; height: sourceSize.height
-            source: App.getAsset('back_button.png')
+            source: App.getAsset("back_button.png")
 
             MouseArea {
                 anchors { fill: parent }
@@ -695,7 +695,7 @@ Base {
             anchors { centerIn: parent }
             fillMode: Image.PreserveAspectFit
             width: sourceSize.width; height: sourceSize.height
-            source: App.getAsset('scenes/whiteboard/whiteboard.png')
+            source: App.getAsset("scenes/whiteboard/whiteboard.png")
 
             MouseArea {
                 anchors { fill: parent }

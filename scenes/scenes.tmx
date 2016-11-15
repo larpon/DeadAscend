@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="145">
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="158">
  <tileset firstgid="1" name="0" tilewidth="155" tileheight="191" tilecount="14" columns="0">
   <tile id="0">
    <image width="74" height="97" source="../App/assets/sprites/bucket/bucket_empty.png"/>
@@ -173,7 +173,7 @@
    <image width="377" height="430" source="../App/assets/sprites/glass_cage/smash/0001.png"/>
   </tile>
  </tileset>
- <tileset firstgid="61" name="4" tilewidth="263" tileheight="264" tilecount="9" columns="0">
+ <tileset firstgid="61" name="4" tilewidth="263" tileheight="359" tilecount="19" columns="0">
   <tile id="0">
    <image width="93" height="222" source="../App/assets/sprites/elevator_assets/doors/floor_4/move/0001.png"/>
   </tile>
@@ -200,6 +200,36 @@
   </tile>
   <tile id="8">
    <image width="233" height="264" source="../App/assets/sprites/treadmill/move/01.png"/>
+  </tile>
+  <tile id="10">
+   <image width="157" height="155" source="../App/assets/sprites/generator/generator.png"/>
+  </tile>
+  <tile id="11">
+   <image width="186" height="223" source="../App/assets/sprites/cables/cable_motor-generator.png"/>
+  </tile>
+  <tile id="12">
+   <image width="199" height="298" source="../App/assets/sprites/elevator_assets/motor/elevator_motor.png"/>
+  </tile>
+  <tile id="13">
+   <image width="184" height="269" source="../App/assets/sprites/popcorn_machine/base.png"/>
+  </tile>
+  <tile id="14">
+   <image width="158" height="149" source="../App/assets/sprites/popcorn_machine/top.png"/>
+  </tile>
+  <tile id="15">
+   <image width="169" height="359" source="../App/assets/sprites/skies/ski_left.png"/>
+  </tile>
+  <tile id="16">
+   <image width="169" height="359" source="../App/assets/sprites/skies/ski_right.png"/>
+  </tile>
+  <tile id="17">
+   <image width="200" height="220" source="../App/assets/sprites/rocking_horse/rocking_horse.png"/>
+  </tile>
+  <tile id="18">
+   <image width="197" height="209" source="../App/assets/sprites/beach_ball/beach_ball.png"/>
+  </tile>
+  <tile id="19">
+   <image width="122" height="180" source="../App/assets/sprites/scooter/scooter.png"/>
   </tile>
  </tileset>
  <imagelayer name="0 bg" visible="0">
@@ -777,6 +807,7 @@
   <object id="133" name="clock" type="Area" x="624" y="121.333" width="92" height="85.3333">
    <properties>
     <property name="description" value="A clock - it's broken. Very broken"/>
+    <property name="stateless" type="bool" value="true"/>
    </properties>
   </object>
   <object id="135" name="painting3_frame" type="Area" x="930.667" y="22.6667" width="132" height="274.667">
@@ -822,13 +853,14 @@
    <properties>
     <property name="description">[
 	&quot;Looks like splattered blood&quot;,
-	&quot;There's also holes from what looks like shotgun bullets&quot;
+	&quot;There's also holes from what looks like shotgun bullet holes&quot;
 ]</property>
     <property name="stateless" type="bool" value="true"/>
    </properties>
   </object>
   <object id="143" name="treadmill_generator" type="Area" gid="68" x="178.333" y="573" width="263" height="242">
    <properties>
+    <property name="clickable" type="bool" value="false"/>
     <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="7"/>
     <property name="z" type="int" value="-1"/>
@@ -837,6 +869,84 @@
   <object id="144" name="treadmill" type="AnimatedArea" gid="69" x="78.6667" y="504" width="233" height="264">
    <properties>
     <property name="tileId" value="8"/>
+   </properties>
+  </object>
+  <object id="145" name="generator" type="Area" gid="71" x="487" y="599" width="157" height="155">
+   <properties>
+    <property name="description" value="A visually pleasing generator - sadly it's broken"/>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="tileId" value="10"/>
+   </properties>
+  </object>
+  <object id="147" name="elevator_motor" type="Area" gid="73" x="335.667" y="590.333" width="199" height="298">
+   <properties>
+    <property name="clickable" type="bool" value="false"/>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="tileId" value="12"/>
+    <property name="z" type="int" value="-1"/>
+   </properties>
+  </object>
+  <object id="146" name="cable_generator" type="Object" gid="72" x="416.333" y="609.333" width="186" height="223">
+   <properties>
+    <property name="tileId" value="11"/>
+    <property name="z" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="156" name="scooter" type="Area" gid="80" x="37.6667" y="550" width="122" height="180">
+   <properties>
+    <property name="description" value="Oh my. What a nice little scooter"/>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="tileId" value="19"/>
+   </properties>
+  </object>
+  <object id="148" name="popcorn_machine_base" type="Area" gid="74" x="82.6667" y="612.667" width="184" height="269">
+   <properties>
+    <property name="description" value="POP, POP no more... pop... corn. Eeer"/>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="tileId" value="13"/>
+   </properties>
+  </object>
+  <object id="149" name="popcorn_machine_top" type="Area" gid="75" x="77" y="420.667" width="158" height="149">
+   <properties>
+    <property name="decsription" value="Pretty heavy glass this is made of!"/>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="tileId" value="14"/>
+   </properties>
+  </object>
+  <object id="151" name="ski_left" type="Area" gid="76" x="-28" y="597.667" width="169" height="359">
+   <properties>
+    <property name="description" value="This is useless. There's not even snow outside"/>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="tileId" value="15"/>
+   </properties>
+  </object>
+  <object id="152" name="ski_right" type="Area" gid="77" x="182.667" y="623" width="169" height="359">
+   <properties>
+    <property name="description" value="Go find a piste - maybe in Italy"/>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="tileId" value="16"/>
+   </properties>
+  </object>
+  <object id="153" name="rocking_horse" type="Area" gid="78" x="38.6667" y="646" width="200" height="220">
+   <properties>
+    <property name="description" value="Rock-on brother!"/>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="tileId" value="17"/>
+   </properties>
+  </object>
+  <object id="154" name="beach_ball" type="Area" gid="79" x="212.667" y="665.333" width="197" height="209">
+   <properties>
+    <property name="description" value="Fun in the summer - useless during zombie apocalypses"/>
+    <property name="round" type="bool" value="true"/>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="tileId" value="18"/>
+   </properties>
+  </object>
+  <object id="157" name="elevator_motor_desc" type="Area" x="329.333" y="300" width="168" height="224">
+   <properties>
+    <property name="description" value="It's the electrical motor for the elevator"/>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="z" type="int" value="-2"/>
    </properties>
   </object>
  </objectgroup>

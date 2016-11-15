@@ -6,10 +6,10 @@ import Qak.QtQuick 2.0
 
 import "."
 
-Item {
+Entity {
     id: area
 
-    property bool clickable: true
+    clickable: true
     property bool round: false
     property bool ready: store.isLoaded
 
@@ -20,9 +20,6 @@ Item {
 
     property alias store: store
     property bool stateless: false
-
-    signal clicked(variant mouse)
-
 
     function save() {
         if(!stateless && name !== "")
