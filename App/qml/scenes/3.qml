@@ -26,6 +26,7 @@ Base {
     property bool zombieHit: false
     property bool cageHit: false
     property bool hamsterCalm: false
+    property bool hamsterIsZombie: false
 
     Store {
         id: store
@@ -34,6 +35,7 @@ Base {
         property alias zombieHit: scene.zombieHit
         property alias cageHit: scene.cageHit
         property alias hamsterCalm: scene.hamsterCalm
+        property alias hamsterIsZombie: scene.hamsterIsZombie
 
     }
 
@@ -159,7 +161,8 @@ Base {
                         scene: sceneNumber,
                         x: 190,
                         y: 300,
-                        itemSource: App.getAsset("sprites/coin/coin.png")
+                        itemSource: App.getAsset("sprites/coin/coin.png"),
+                        scene: sceneNumber
                     }
 
                     game.spawnObject(object,function(o){
@@ -268,6 +271,35 @@ Base {
             game.setText("He's dead Jim")
         }
 
+        DropSpot {
+            anchors { fill: parent }
+
+            keys: [ "cannula" ]
+
+            name: "zombie_tilted_drop"
+
+            onDropped: {
+
+                var o = drag.source
+
+                var object = {
+                    name: "cannula_full",
+                    type: "Object",
+                    itemSource: App.getAsset("sprites/cannula/cannula_full.png"),
+                    description: "It's full of infested zombie blood",
+                    scene: sceneNumber
+                }
+
+                game.spawnObject(object,function(o){
+                    game.inventory.add(o)
+                })
+
+                drop.accept()
+                blacklistObject(o.name)
+                destroyObject(o.name)
+            }
+        }
+
     }
 
     AnimatedArea {
@@ -369,6 +401,15 @@ Base {
 
     }
 
+    Area {
+        x: 464; y: 395; z: hamster.z - 1
+        width: 28; height: 22
+
+        visible: hamsterCalm
+
+        itemSource: App.getAsset("sprites/grain/pile_small.png")
+    }
+
     /** TODO optimize - many frames are the same - use the power of sequences
       peek 1-4
       peek-sniff 5 - 11
@@ -392,6 +433,7 @@ Base {
 
         stateless: true
 
+        visible: !hamsterIsZombie
         run: true
         paused: !visible || (scene.paused)
 
@@ -436,7 +478,13 @@ Base {
             {
                 name: "mid-eat", // End eat state
                 frames: [33,34,35,36,37,38,39,40],
-                to: { "mid-eat":1 }
+                to: { "mid-eat-pause":2, "mid-eat":1 }
+            },
+            {
+                name: "mid-eat-pause",
+                frames: [40],
+                to: { "mid-eat":1 },
+                duration: 2500
             },
             {
                 name: "bl", // starting state for all bl
@@ -506,29 +554,67 @@ Base {
         }
 
         onClicked: {
-            if(cageHit) {
+            if(hamsterCalm) {
+                game.setText("The little critter is really calm now. Eating away","Unfortunately it's too small to drive the treadmill upstairs")
+            } else if(cageHit) {
                 hamster.goalSequence = "cs-hide"
                 game.setText("It's scared now the glass is smashed. Maybe it can be lured out of hiding")
             } else
                 game.setText("Such a cute little critter")
         }
 
-        DropSpot {
-            anchors { fill: parent }
-
-            keys: [ "cannula" ]
-
-            name: "hamster_drop"
-
-            onDropped: {
-                if(cageHit) {
-                    //drop.accept()
-
-                    //var o = drag.source
-                }
+        Connections {
+            target: scene
+            onReadyChanged: {
+                if(hamsterCalm)
+                    hamster.setActiveSequence("mid-eat")
             }
         }
 
+    }
+
+    DropSpot {
+        x: 400; y: 400
+        width: 118; height: 126
+
+        keys: [ "cannula_full", "grain" ]
+
+        name: "hamster_drop"
+
+        onDropped: {
+            if(cageHit) {
+                var o = drag.source
+
+                App.debug('DROPPED',o.name)
+
+                if(!hamsterCalm && o.name === "grain") {
+                    hamster.jumpTo('peek-mid')
+                    hamsterCalm = true
+                    drop.accept()
+                    blacklistObject(o.name)
+                    destroyObject(o.name)
+                }
+
+                if(hamsterCalm && o.name === "cannula_full") {
+                    var object = {
+                        name: "zombie_hamster",
+                        type: "Object",
+                        x: 400,
+                        y: 398,
+                        z: hamster.z,
+                        itemSource: App.getAsset("sprites/hamster/big_zombie.png"),
+                        description: "... OK. So this is a zombie hamster. It looks pretty strong - but it's hideous",
+                        scene: sceneNumber
+                    }
+                    game.spawnObject(object)
+                    scene.hamsterIsZombie = true
+                    drop.accept()
+                    blacklistObject(o.name)
+                    destroyObject(o.name)
+                }
+
+            }
+        }
     }
 
     Area {
@@ -638,8 +724,6 @@ Base {
         }
 
     }
-
-
 
     Area {
         id: whiteboardArea

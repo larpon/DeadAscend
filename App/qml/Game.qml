@@ -42,6 +42,8 @@ Item {
 
     property string scene2type: "right"
 
+    property alias elevatorPanel: elevatorPanel
+
     function getObject(name) {
         if(name in dynamicLoaded)
             return dynamicLoaded[name]
@@ -519,6 +521,76 @@ Item {
 
     }
 
+
+    Entity {
+        id: elevatorPanel
+
+        anchors { fill: parent }
+
+        property bool show: false
+
+        visible: opacity > 0
+        opacity: show ? 1 : 0
+        Behavior on opacity {
+            NumberAnimation { duration: 250 }
+        }
+
+
+        Rectangle {
+            anchors { fill: parent }
+            color: core.colors.black
+            opacity: 0.8
+        }
+
+        MouseArea {
+            anchors { fill: parent }
+            onClicked: elevatorPanel.show = false
+        }
+
+        Image {
+            anchors {
+                top: parent.top
+                right: parent.right
+            }
+            fillMode: Image.PreserveAspectFit
+            width: sourceSize.width; height: sourceSize.height
+            source: App.getAsset("back_button.png")
+
+            MouseArea {
+                anchors { fill: parent }
+                onClicked: elevatorPanel.show = false
+            }
+        }
+
+        Image {
+            anchors { centerIn: parent }
+            fillMode: Image.PreserveAspectFit
+            width: sourceSize.width; height: sourceSize.height
+            source: App.getAsset("scenes/elevator_panel/elevator_panel.png")
+
+
+            DropSpot {
+                anchors { fill: parent }
+                keys: [ "button_6" ]
+
+                name: "button_drop"
+
+                onDropped: {
+
+                }
+            }
+
+
+
+            Image {
+                anchors { fill: parent }
+                fillMode: Image.PreserveAspectFit
+                source: App.getAsset("scenes/elevator_panel/fg_shadow.png")
+            }
+
+        }
+
+    }
 
 //    MouseArea {
 //        id: glslm

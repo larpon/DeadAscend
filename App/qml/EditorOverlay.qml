@@ -29,9 +29,18 @@ Rectangle {
                                            "dynamicRect");
     }
 
+    Text {
+        id: infoText
+        anchors { left: parent.left; top: parent.top }
+        text: "m: "+Math.round(mouseArea.mouseX)+","+Math.round(mouseArea.mouseY)
+    }
+
     MouseArea {
+        id: mouseArea
         anchors { fill: parent }
         enabled: editMode.enabled
+
+        hoverEnabled: true
 
         onPressed: {
             outputWindow.visible = false

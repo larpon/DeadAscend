@@ -10,10 +10,13 @@ import "."
 Base {
     id: scene
 
-    ready: store.isLoaded && elevatorDoor.ready
+    ready: store.isLoaded && elevatorDoor.ready && treadmill.ready
 
     onReadyChanged: {
-
+        if(store.treadmillRunning) {
+            treadmill.setActiveSequence('run')
+            treadmill.run = true
+        }
     }
 
     anchors { fill: parent }
@@ -116,7 +119,7 @@ Base {
     }
 
     AnimatedArea {
-
+        id: treadmill
         name: "treadmill"
 
         clickable: true
@@ -149,6 +152,46 @@ Base {
                 game.setText("Maybe this treadmill could actually power the elevator","It's just a matter of finding something powerfull enough to run it")
             } else
                 game.setText("It can't move with all this junk in front of it")
+        }
+
+        DropSpot {
+
+            enabled: !store.treadmillRunning
+            anchors { fill: parent }
+
+            keys: [ "zombie_hamster" ]
+
+            name: "treadmill_drop"
+
+            onDropped: {
+                store.treadmillRunning = true
+                treadmill.setActiveSequence('run')
+                treadmill.run = true
+                drop.accept()
+                blacklistObject(o.name)
+                destroyObject(o.name)
+            }
+        }
+
+        AnimatedArea {
+            x: 10; y: 110
+            width: 144; height: 126
+            run: store.treadmillRunning
+            paused: !visible || (scene.paused)
+
+            rotation: 10
+
+            defaultFrameDelay: 40
+
+            source: App.getAsset("sprites/hamster/zombie_hamster_run/0001.png")
+
+            sequences: [
+                {
+                    name: "run",
+                    frames: [1,2,3,4,5,6,7,8,9,10,11,12],
+                    to: { "run":1 }
+                }
+            ]
         }
 
     }
@@ -280,8 +323,9 @@ Base {
         ]
 
         onClicked: {
-            if(store.treadmillRunning) {
-                // showElevatorPanel = true
+            if(store.treadmillRunning && store.cableConnected) {
+                setActiveSequence('open')
+                game.elevatorPanel.show = true
             } else
                 game.setText("The elevator needs power to operate.")
         }
@@ -294,7 +338,7 @@ Base {
 
         name: "cable_drop"
 
-        enabled: store.scooterRemoved && !store.treadmillRunning
+        enabled: store.scooterRemoved && !(store.treadmillRunning && store.cableConnected)
 
         onDropped: {
             drop.accept()

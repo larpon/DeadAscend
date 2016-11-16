@@ -14,6 +14,8 @@ Item {
     paused: App.paused
     onPausedChanged: App.debug('Scene',sceneNumber,paused ? 'paused' : 'continued')
 
+    Component.onCompleted: game.elevatorPanel.show = false
+
     property bool showForegroundShadow: true
 
     readonly property string sceneNumber: game.currentScene

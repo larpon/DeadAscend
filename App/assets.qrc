@@ -1013,5 +1013,7 @@
         <file>assets/scenes/4.png</file>
         <file>assets/scenes/4_fg_shadow.png</file>
         <file>assets/sprites/cables/cable_motor-generator_icon.png</file>
+        <file>assets/scenes/elevator_panel/fg_shadow.png</file>
+        <file>assets/scenes/elevator_panel/elevator_panel.png</file>
     </qresource>
 </RCC>

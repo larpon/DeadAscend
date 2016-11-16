@@ -18,7 +18,7 @@ ImageAnimation {
     property string description: ""
 
     property alias store: store
-    property bool stateless: false
+    property bool stateless: name == ""
 
     function save() {
         if(!stateless)

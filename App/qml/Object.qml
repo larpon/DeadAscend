@@ -16,7 +16,7 @@ Entity {
     source: itemSource
 
     property alias store: store
-    property bool stateless: false
+    property bool stateless: name == ""
 
     property bool ready: store.isLoaded
     property bool autoInventory: true
@@ -51,7 +51,7 @@ Entity {
         _at = at
         at = "dragged"
         _z = z
-        z = 1
+        z = 100
         game.objectDragged(root)
         play('onDragged')
     }
@@ -103,6 +103,7 @@ Entity {
 
     function addToInventory() {
         if(!game.inventory.has(root)) {
+            scene = ""
             dragReturnAnimation.complete()
             game.objectTravelingToInventory(root)
             mover.duration = 500

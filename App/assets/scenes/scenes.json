@@ -1524,7 +1524,7 @@
          "name":"3 bg",
          "opacity":1,
          "type":"imagelayer",
-         "visible":false,
+         "visible":true,
          "width":0,
          "x":0,
          "y":0
@@ -2020,7 +2020,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "width":0,
          "x":0,
          "y":0
@@ -2031,7 +2031,7 @@
          "name":"4 bg",
          "opacity":1,
          "type":"imagelayer",
-         "visible":true,
+         "visible":false,
          "width":0,
          "x":0,
          "y":0
@@ -2608,12 +2608,12 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "width":0,
          "x":0,
          "y":0
         }],
- "nextobjectid":160,
+ "nextobjectid":161,
  "orientation":"orthogonal",
  "renderorder":"left-up",
  "tileheight":660,

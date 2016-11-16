@@ -19,7 +19,7 @@ Entity {
     property string itemSource: ""
 
     property alias store: store
-    property bool stateless: false
+    property bool stateless: name == ""
 
     function save() {
         if(!stateless && name !== "")
