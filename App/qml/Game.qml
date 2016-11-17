@@ -535,7 +535,6 @@ Item {
             NumberAnimation { duration: 250 }
         }
 
-
         Rectangle {
             anchors { fill: parent }
             color: core.colors.black

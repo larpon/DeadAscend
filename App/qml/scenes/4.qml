@@ -16,7 +16,11 @@ Base {
         if(store.treadmillRunning) {
             treadmill.setActiveSequence('run')
             treadmill.run = true
+
+            elevatorDoor.setActiveSequence('opened-wait-close')
         }
+
+
     }
 
     anchors { fill: parent }
@@ -146,7 +150,9 @@ Base {
         ]
 
         onClicked: {
-            if(store.scooterRemoved) {
+            if(store.treadmillRunning) {
+                game.setText("The elevator is now: Zombie Hamster Powered...","That's... really...","... really... weird")
+            } else if(store.scooterRemoved) {
                 setActiveSequence("single spin")
                 running = true
                 game.setText("Maybe this treadmill could actually power the elevator","It's just a matter of finding something powerfull enough to run it")
@@ -311,10 +317,22 @@ Base {
                 to: { "opened":1 }
             },
             {
+                name: "open-show-panel",
+                frames: [1,2,3,4],
+                to: { "opened":1 }
+            },
+            {
                 name: "close",
                 frames: [1,2,3,4],
                 reverse: true,
                 to: { "closed":1 }
+            },
+            {
+                name: "opened-wait-close",
+                frames: [4],
+                reverse: true,
+                to: { "close":1 },
+                duration: 1000
             },
             {
                 name: "opened",
@@ -324,10 +342,15 @@ Base {
 
         onClicked: {
             if(store.treadmillRunning && store.cableConnected) {
-                setActiveSequence('open')
-                game.elevatorPanel.show = true
+                setActiveSequence("open-show-panel")
             } else
                 game.setText("The elevator needs power to operate.")
+        }
+
+        onFrame: {
+            App.debug(sequenceName, frame )
+            if(sequenceName === "open-show-panel" && frame == 4)
+                game.elevatorPanel.show = true
         }
     }
 
@@ -354,6 +377,16 @@ Base {
 
     }
 
+    Connections {
+        target: game.elevatorPanel
+        onShowChanged: {
+            if(game.elevatorPanel.show) {
+
+            } else {
+                elevatorDoor.setActiveSequence('close')
+            }
+        }
+    }
 
     onObjectDropped: {
     }
