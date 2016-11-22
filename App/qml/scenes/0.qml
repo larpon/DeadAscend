@@ -512,6 +512,19 @@ Base {
     }
 
 
+    Area {
+        id: sewerGrate
+
+        name: "sewer_grate"
+        stateless: true
+
+        onClicked: {
+            game.setText("There's something small, round and red lying on the edge of the sleeve assembly","It's too far down to reach")
+        }
+
+    }
+
+
     ImageAnimation {
 
         x: 98; y: 110

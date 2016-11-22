@@ -427,6 +427,17 @@
                  "width":190.667,
                  "x":257.333,
                  "y":469.333
+                }, 
+                {
+                 "height":38.6666666666667,
+                 "id":161,
+                 "name":"sewer_grate",
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":118.666666666667,
+                 "x":717.333333333333,
+                 "y":421.333333333333
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1524,7 +1535,7 @@
          "name":"3 bg",
          "opacity":1,
          "type":"imagelayer",
-         "visible":true,
+         "visible":false,
          "width":0,
          "x":0,
          "y":0
@@ -2020,7 +2031,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "width":0,
          "x":0,
          "y":0
@@ -2612,8 +2623,192 @@
          "width":0,
          "x":0,
          "y":0
+        }, 
+        {
+         "height":0,
+         "image":"5.png",
+         "name":"5 bg",
+         "opacity":1,
+         "type":"imagelayer",
+         "visible":false,
+         "width":0,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"index",
+         "height":1,
+         "name":"5",
+         "objects":[
+                {
+                 "gid":82,
+                 "height":168,
+                 "id":162,
+                 "name":"elevator_door_5",
+                 "rotation":0,
+                 "type":"AnimatedArea",
+                 "visible":true,
+                 "width":130,
+                 "x":412.333333333333,
+                 "y":425.333333333333
+                }, 
+                {
+                 "gid":83,
+                 "height":69,
+                 "id":163,
+                 "name":"vent_l",
+                 "rotation":0,
+                 "type":"AnimatedArea",
+                 "visible":true,
+                 "width":73,
+                 "x":293.333333333333,
+                 "y":194
+                }, 
+                {
+                 "gid":84,
+                 "height":69,
+                 "id":164,
+                 "name":"vent_r",
+                 "rotation":0,
+                 "type":"AnimatedArea",
+                 "visible":true,
+                 "width":73,
+                 "x":588,
+                 "y":192.666666666667
+                }, 
+                {
+                 "gid":85,
+                 "height":78,
+                 "id":165,
+                 "name":"lever_ll",
+                 "rotation":0,
+                 "type":"AnimatedArea",
+                 "visible":true,
+                 "width":62,
+                 "x":202.333333333333,
+                 "y":503
+                }, 
+                {
+                 "gid":86,
+                 "height":68,
+                 "id":166,
+                 "name":"lever_lr",
+                 "rotation":0,
+                 "type":"AnimatedArea",
+                 "visible":true,
+                 "width":54,
+                 "x":266.333333333333,
+                 "y":456.666666666667
+                }, 
+                {
+                 "gid":87,
+                 "height":58,
+                 "id":167,
+                 "name":"lever_rl",
+                 "rotation":0,
+                 "type":"AnimatedArea",
+                 "visible":true,
+                 "width":46,
+                 "x":695.666666666667,
+                 "y":391.666666666667
+                }, 
+                {
+                 "gid":88,
+                 "height":68,
+                 "id":168,
+                 "name":"lever_rr",
+                 "rotation":0,
+                 "type":"AnimatedArea",
+                 "visible":true,
+                 "width":54,
+                 "x":734.333333333333,
+                 "y":440.666666666667
+                }, 
+                {
+                 "gid":89,
+                 "height":177,
+                 "id":169,
+                 "name":"flask_mixer_small",
+                 "properties":
+                    {
+                     "tileId":"7"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":77,
+                 "x":42,
+                 "y":649.333333333333
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":false,
+         "width":1,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "height":0,
+         "image":"6.png",
+         "name":"6 bg",
+         "opacity":1,
+         "type":"imagelayer",
+         "visible":true,
+         "width":0,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"index",
+         "height":1,
+         "name":"6",
+         "objects":[
+                {
+                 "gid":90,
+                 "height":242,
+                 "id":170,
+                 "name":"elevator_door_6",
+                 "rotation":0,
+                 "type":"AnimatedArea",
+                 "visible":true,
+                 "width":108,
+                 "x":568.666666666667,
+                 "y":353
+                }, 
+                {
+                 "height":233.333333333333,
+                 "id":171,
+                 "name":"office_area",
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":96,
+                 "x":820,
+                 "y":202.666666666667
+                }, 
+                {
+                 "height":46.6666666666667,
+                 "id":172,
+                 "name":"keypad_area",
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":37.3333333333334,
+                 "x":925.333333333333,
+                 "y":330.666666666667
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "width":1,
+         "x":0,
+         "y":0
         }],
- "nextobjectid":161,
+ "nextobjectid":173,
  "orientation":"orthogonal",
  "renderorder":"left-up",
  "tileheight":660,
@@ -2982,6 +3177,68 @@
                 }
             },
          "tilewidth":263
+        }, 
+        {
+         "columns":0,
+         "firstgid":82,
+         "margin":0,
+         "name":"5",
+         "spacing":0,
+         "tilecount":8,
+         "tileheight":177,
+         "tiles":
+            {
+             "0":
+                {
+                 "image":"..\/sprites\/elevator_assets\/doors\/floor_5\/move\/0001.png"
+                },
+             "1":
+                {
+                 "image":"..\/sprites\/ventilator\/wing_1\/l\/1.png"
+                },
+             "2":
+                {
+                 "image":"..\/sprites\/ventilator\/wing_1\/r\/1.png"
+                },
+             "3":
+                {
+                 "image":"..\/sprites\/levers\/LL\/0001.png"
+                },
+             "4":
+                {
+                 "image":"..\/sprites\/levers\/LR\/0001.png"
+                },
+             "5":
+                {
+                 "image":"..\/sprites\/levers\/RL\/0001.png"
+                },
+             "6":
+                {
+                 "image":"..\/sprites\/levers\/RR\/0001.png"
+                },
+             "7":
+                {
+                 "image":"..\/sprites\/flask_mixer\/flask_mixer.png"
+                }
+            },
+         "tilewidth":130
+        }, 
+        {
+         "columns":0,
+         "firstgid":90,
+         "margin":0,
+         "name":"6",
+         "spacing":0,
+         "tilecount":1,
+         "tileheight":242,
+         "tiles":
+            {
+             "0":
+                {
+                 "image":"..\/sprites\/elevator_assets\/doors\/floor_6\/move\/0001.png"
+                }
+            },
+         "tilewidth":108
         }],
  "tilewidth":1100,
  "version":1,

@@ -19,6 +19,9 @@ Base {
             cageSmash.setActiveSequence("smashed")
         }
 
+        if(hamsterIsZombie)
+            hamster.running = false
+
     }
 
     anchors { fill: parent }
@@ -435,7 +438,7 @@ Base {
 
         visible: !hamsterIsZombie
         run: true
-        paused: !visible || (scene.paused)
+        paused: !visible || (scene.paused) || hamsterIsZombie
 
         source: App.getAsset("sprites/hamster/moves/0001.png")
 
@@ -568,6 +571,10 @@ Base {
             onReadyChanged: {
                 if(hamsterCalm)
                     hamster.setActiveSequence("mid-eat")
+
+                if(hamsterIsZombie) {
+                    hamster.stop()
+                }
             }
         }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="161">
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="173">
  <tileset firstgid="1" name="0" tilewidth="155" tileheight="191" tilecount="14" columns="0">
   <tile id="0">
    <image width="74" height="97" source="../App/assets/sprites/bucket/bucket_empty.png"/>
@@ -235,6 +235,37 @@
    <image width="122" height="129" source="../App/assets/sprites/cables/cable_motor-treadmill_generator.png"/>
   </tile>
  </tileset>
+ <tileset firstgid="82" name="5" tilewidth="130" tileheight="177" tilecount="8" columns="0">
+  <tile id="0">
+   <image width="130" height="168" source="../App/assets/sprites/elevator_assets/doors/floor_5/move/0001.png"/>
+  </tile>
+  <tile id="1">
+   <image width="73" height="69" source="../App/assets/sprites/ventilator/wing_1/l/1.png"/>
+  </tile>
+  <tile id="2">
+   <image width="73" height="69" source="../App/assets/sprites/ventilator/wing_1/r/1.png"/>
+  </tile>
+  <tile id="3">
+   <image width="62" height="78" source="../App/assets/sprites/levers/LL/0001.png"/>
+  </tile>
+  <tile id="4">
+   <image width="54" height="68" source="../App/assets/sprites/levers/LR/0001.png"/>
+  </tile>
+  <tile id="5">
+   <image width="46" height="58" source="../App/assets/sprites/levers/RL/0001.png"/>
+  </tile>
+  <tile id="6">
+   <image width="54" height="68" source="../App/assets/sprites/levers/RR/0001.png"/>
+  </tile>
+  <tile id="7">
+   <image width="77" height="177" source="../App/assets/sprites/flask_mixer/flask_mixer.png"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="90" name="6" tilewidth="108" tileheight="242" tilecount="1" columns="0">
+  <tile id="0">
+   <image width="108" height="242" source="../App/assets/sprites/elevator_assets/doors/floor_6/move/0001.png"/>
+  </tile>
+ </tileset>
  <imagelayer name="0 bg" visible="0">
   <image source="../App/assets/scenes/0.png" width="1100" height="660"/>
  </imagelayer>
@@ -363,6 +394,7 @@
     <property name="stateless" type="bool" value="true"/>
    </properties>
   </object>
+  <object id="161" name="sewer_grate" type="Area" x="717.333" y="421.333" width="118.667" height="38.6667"/>
  </objectgroup>
  <imagelayer name="1 bg" visible="0">
   <image source="../App/assets/scenes/1.png" width="1100" height="660"/>
@@ -792,10 +824,10 @@
   </object>
   <object id="127" name="exit_up_3" type="Area" x="332" y="4" width="229.333" height="122.667"/>
  </objectgroup>
- <imagelayer name="4 bg">
+ <imagelayer name="4 bg" visible="0">
   <image source="../App/assets/scenes/4.png" width="1100" height="660"/>
  </imagelayer>
- <objectgroup draworder="index" name="4">
+ <objectgroup draworder="index" name="4" visible="0">
   <object id="128" name="exit_down_4" type="Area" x="780" y="310.667" width="292" height="93.3333"/>
   <object id="130" name="elevator_door_4" type="AnimatedArea" gid="61" x="607.333" y="493.667" width="93" height="222">
    <properties>
@@ -959,5 +991,30 @@
     <property name="tileId" value="20"/>
    </properties>
   </object>
+ </objectgroup>
+ <imagelayer name="5 bg" visible="0">
+  <image source="../App/assets/scenes/5.png" width="1100" height="660"/>
+ </imagelayer>
+ <objectgroup draworder="index" name="5" visible="0">
+  <object id="162" name="elevator_door_5" type="AnimatedArea" gid="82" x="412.333" y="425.333" width="130" height="168"/>
+  <object id="163" name="vent_l" type="AnimatedArea" gid="83" x="293.333" y="194" width="73" height="69"/>
+  <object id="164" name="vent_r" type="AnimatedArea" gid="84" x="588" y="192.667" width="73" height="69"/>
+  <object id="165" name="lever_ll" type="AnimatedArea" gid="85" x="202.333" y="503" width="62" height="78"/>
+  <object id="166" name="lever_lr" type="AnimatedArea" gid="86" x="266.333" y="456.667" width="54" height="68"/>
+  <object id="167" name="lever_rl" type="AnimatedArea" gid="87" x="695.667" y="391.667" width="46" height="58"/>
+  <object id="168" name="lever_rr" type="AnimatedArea" gid="88" x="734.333" y="440.667" width="54" height="68"/>
+  <object id="169" name="flask_mixer_small" type="Area" gid="89" x="42" y="649.333" width="77" height="177">
+   <properties>
+    <property name="tileId" value="7"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <imagelayer name="6 bg">
+  <image source="../App/assets/scenes/6.png" width="1100" height="660"/>
+ </imagelayer>
+ <objectgroup draworder="index" name="6">
+  <object id="170" name="elevator_door_6" type="AnimatedArea" gid="90" x="568.667" y="353" width="108" height="242"/>
+  <object id="171" name="office_area" type="Area" x="820" y="202.667" width="96" height="233.333"/>
+  <object id="172" name="keypad_area" type="Area" x="925.333" y="330.667" width="37.3333" height="46.6667"/>
  </objectgroup>
 </map>

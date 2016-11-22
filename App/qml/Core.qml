@@ -113,7 +113,7 @@ Item {
             id: loadingScreen
 
             visible: opacity > 0
-            opacity: menuLoader.opacity < 1 && gameLoader.opacity < 1 ? 1 : 0
+            opacity: menuLoader.opacity < 1 && gameLoader.opacity < 1 && (gameLoader.item && gameLoader.item.ready) ? 1 : 0
             Behavior on opacity {
                 NumberAnimation { duration: 00 }
             }
@@ -151,6 +151,7 @@ Item {
 
         }
 
+        // TODO Remove on release
         EditorOverlay {
             id: editMode
             anchors { fill: parent }

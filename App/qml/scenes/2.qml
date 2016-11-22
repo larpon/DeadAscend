@@ -107,7 +107,7 @@ Base {
         readonly property bool isUp: state === "up"
         property bool changeLevel: false
 
-        state: "up"
+        state: "down"
         onSequenceChanged: {
             if(!sequence)
                 return
@@ -255,6 +255,11 @@ Base {
         visible: type === "right"
         source: App.getAsset("scenes/2_darkness_overlay_left.png")
 
+        MouseArea {
+            anchors { fill: parent }
+            onClicked: game.setText("It's hard to make out what is behind the wall")
+        }
+
     }
 
     Image {
@@ -262,6 +267,11 @@ Base {
         z: 20
         visible: type === "left"
         source: App.getAsset("scenes/2_darkness_overlay_right.png")
+
+        MouseArea {
+            anchors { fill: parent }
+            onClicked: game.setText("The lift must be on the other side of this wall")
+        }
     }
 
     showForegroundShadow: !panelScene.show && !cabinetScene.show

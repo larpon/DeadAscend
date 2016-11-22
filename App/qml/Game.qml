@@ -16,6 +16,8 @@ Item {
 
     property bool userPaused: false
 
+    property bool ready: (scene && scene.ready)
+
     visible: opacity > 0
     opacity: o(game.parent)
     Behavior on opacity {
@@ -41,6 +43,12 @@ Item {
     property var staticObjects: ({})
 
     property string scene2type: "right"
+    property int flaskMixerBlueLevel: 0
+    property int flaskMixerPurpleLevel: 0
+    property int flaskMixerGreenLevel: 0
+    property int flaskMixerRedLevel: 0
+    readonly property bool flasksFilled: flaskMixerBlueLevel > 0 && flaskMixerPurpleLevel > 0 && flaskMixerGreenLevel > 0 && flaskMixerRedLevel > 0
+    readonly property bool flasksCorrect: flaskMixerBlueLevel == 3 && flaskMixerPurpleLevel == 7 && flaskMixerGreenLevel == 5 && flaskMixerRedLevel == 2
 
     property alias elevatorPanel: elevatorPanel
 
@@ -173,6 +181,11 @@ Item {
         property alias objectBlacklist: game.objectBlacklist
         property alias objectSpawnlist: game.objectSpawnlist
         property alias scene2type: game.scene2type
+
+        property alias flaskMixerBlueLevel: game.flaskMixerBlueLevel
+        property alias flaskMixerPurpleLevel: game.flaskMixerPurpleLevel
+        property alias flaskMixerGreenLevel: game.flaskMixerGreenLevel
+        property alias flaskMixerRedLevel: game.flaskMixerRedLevel
 
     }
 
@@ -567,10 +580,69 @@ Item {
             width: sourceSize.width; height: sourceSize.height
             source: App.getAsset("scenes/elevator_panel/elevator_panel.png")
 
+            Image {
+                x: 400; y: 58
+                width: 88; height: 66
+                fillMode: Image.PreserveAspectFit
+                //width: sourceSize.width; height: sourceSize.height
+                source: App.getAsset("sprites/buttons/button_03/button_03.png")
+
+                MouseArea {
+                    anchors { fill: parent }
+                    onClicked: {
+                        // play click sound
+                        if(currentScene != "4") {
+                            elevatorPanel.show = false
+                            goToScene("4")
+                        } else
+                            setText("You're already at this floor")
+                    }
+                }
+            }
+
+            Image {
+                x: 516; y: 385
+                width: 88; height: 66
+                fillMode: Image.PreserveAspectFit
+                //width: sourceSize.width; height: sourceSize.height
+                source: App.getAsset("sprites/buttons/button_03/button_03.png")
+
+                MouseArea {
+                    anchors { fill: parent }
+                    onClicked: {
+                        // play click sound
+                        if(currentScene != "5") {
+                            elevatorPanel.show = false
+                            goToScene("5")
+                        } else
+                            setText("You're already at this floor")
+                    }
+                }
+            }
+
+            Image {
+                x: 516; y: 285
+                width: 88; height: 66
+                fillMode: Image.PreserveAspectFit
+                //width: sourceSize.width; height: sourceSize.height
+                source: App.getAsset("sprites/buttons/button_03/button_03.png")
+
+                MouseArea {
+                    anchors { fill: parent }
+                    onClicked: {
+                        // play click sound
+                        if(currentScene != "6") {
+                            elevatorPanel.show = false
+                            goToScene("6")
+                        } else
+                            setText("You're already at this floor")
+                    }
+                }
+            }
 
             DropSpot {
                 anchors { fill: parent }
-                keys: [ "button_6" ]
+                keys: [ "button_7" ]
 
                 name: "button_drop"
 
@@ -578,8 +650,6 @@ Item {
 
                 }
             }
-
-
 
             Image {
                 anchors { fill: parent }
