@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="173">
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="183">
  <tileset firstgid="1" name="0" tilewidth="155" tileheight="191" tilecount="14" columns="0">
   <tile id="0">
    <image width="74" height="97" source="../App/assets/sprites/bucket/bucket_empty.png"/>
@@ -261,9 +261,33 @@
    <image width="77" height="177" source="../App/assets/sprites/flask_mixer/flask_mixer.png"/>
   </tile>
  </tileset>
- <tileset firstgid="90" name="6" tilewidth="108" tileheight="242" tilecount="1" columns="0">
+ <tileset firstgid="90" name="6" tilewidth="195" tileheight="242" tilecount="9" columns="0">
   <tile id="0">
    <image width="108" height="242" source="../App/assets/sprites/elevator_assets/doors/floor_6/move/0001.png"/>
+  </tile>
+  <tile id="1">
+   <image width="165" height="129" source="../App/assets/sprites/pipes/purple.png"/>
+  </tile>
+  <tile id="2">
+   <image width="175" height="137" source="../App/assets/sprites/pipes/green.png"/>
+  </tile>
+  <tile id="3">
+   <image width="190" height="148" source="../App/assets/sprites/pipes/blue.png"/>
+  </tile>
+  <tile id="4">
+   <image width="195" height="152" source="../App/assets/sprites/pipes/wine_red.png"/>
+  </tile>
+  <tile id="5">
+   <image width="49" height="97" source="../App/assets/sprites/bottles/glass_bottle/purple.png"/>
+  </tile>
+  <tile id="6">
+   <image width="90" height="49" source="../App/assets/sprites/rope/pile/pile.png"/>
+  </tile>
+  <tile id="7">
+   <image width="142" height="146" source="../App/assets/sprites/ventilator/case.png"/>
+  </tile>
+  <tile id="8">
+   <image width="58" height="66" source="../App/assets/sprites/ventilator/wing_2/1.png"/>
   </tile>
  </tileset>
  <imagelayer name="0 bg" visible="0">
@@ -1016,5 +1040,47 @@
   <object id="170" name="elevator_door_6" type="AnimatedArea" gid="90" x="568.667" y="353" width="108" height="242"/>
   <object id="171" name="office_area" type="Area" x="820" y="202.667" width="96" height="233.333"/>
   <object id="172" name="keypad_area" type="Area" x="925.333" y="330.667" width="37.3333" height="46.6667"/>
+  <object id="173" name="purple_pipe" type="Area" gid="91" x="-2" y="429.333" width="165" height="129">
+   <properties>
+    <property name="tileId" value="1"/>
+   </properties>
+  </object>
+  <object id="174" name="green_pipe" type="Area" gid="92" x="198.333" y="353.333" width="175" height="137">
+   <properties>
+    <property name="tileId" value="2"/>
+   </properties>
+  </object>
+  <object id="175" name="blue_pipe" type="Area" gid="93" x="526.333" y="535.333" width="190" height="148">
+   <properties>
+    <property name="tileId" value="3"/>
+   </properties>
+  </object>
+  <object id="176" name="red_pipe" type="Area" gid="94" x="319" y="630.667" width="195" height="152">
+   <properties>
+    <property name="tileId" value="4"/>
+   </properties>
+  </object>
+  <object id="177" name="bottle_purple" type="Object" gid="95" x="400" y="288" width="49" height="97">
+   <properties>
+    <property name="tileId" value="5"/>
+   </properties>
+  </object>
+  <object id="178" name="rope" type="Object" gid="96" x="157.667" y="136" width="90" height="49">
+   <properties>
+    <property name="tileId" value="6"/>
+   </properties>
+  </object>
+  <object id="181" name="ventilator_wing" type="AnimatedArea" gid="98" x="92.3333" y="246.333" width="58" height="66">
+   <properties>
+    <property name="z" type="int" value="-1"/>
+   </properties>
+  </object>
+  <object id="180" name="ventilator" type="Area" gid="97" x="25" y="274.333" width="142" height="146">
+   <properties>
+    <property name="description" value="A ventilator. Spreading cool air in the room - it's bolted to the floor"/>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="tileId" value="7"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

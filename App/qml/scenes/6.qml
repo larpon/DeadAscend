@@ -138,6 +138,34 @@ Base {
         onClicked: state === "on" ? state = "off" : state = "on"
     }
 
+    Area {
+        stateless: true
+
+        name: "blue_pipe"
+
+    }
+
+    Area {
+        stateless: true
+
+        name: "purple_pipe"
+
+    }
+
+    Area {
+        stateless: true
+
+        name: "red_pipe"
+
+    }
+
+    Area {
+        stateless: true
+
+        name: "green_pipe"
+
+    }
+
     Connections {
         target: game.elevatorPanel
         onShowChanged: {
@@ -147,6 +175,29 @@ Base {
                 elevatorDoor.setActiveSequence('close')
             }
         }
+    }
+
+    AnimatedArea {
+
+        name: "ventilator_wing"
+
+        stateless: true
+
+        visible: true
+        run: true
+        paused: !visible || (scene.paused)
+
+        source: App.getAsset("sprites/ventilator/wing_2/1.png")
+
+        defaultFrameDelay: 100
+
+        sequences: [
+            {
+                name: "run",
+                frames: [1,2,3],
+                to: { "run":1 }
+            }
+        ]
     }
 
     Item {

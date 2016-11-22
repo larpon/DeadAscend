@@ -737,6 +737,8 @@ Base {
 
         name: "whiteboard_area"
 
+        stateless: true
+
         onClicked: {
             state === "on" ? state = "off" : state = "on"
         }

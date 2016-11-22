@@ -429,15 +429,15 @@
                  "y":469.333
                 }, 
                 {
-                 "height":38.6666666666667,
+                 "height":38.6667,
                  "id":161,
                  "name":"sewer_grate",
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":118.666666666667,
-                 "x":717.333333333333,
-                 "y":421.333333333333
+                 "width":118.667,
+                 "x":717.333,
+                 "y":421.333
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -2637,7 +2637,7 @@
         }, 
         {
          "draworder":"index",
-         "height":1,
+         "height":0,
          "name":"5",
          "objects":[
                 {
@@ -2649,8 +2649,8 @@
                  "type":"AnimatedArea",
                  "visible":true,
                  "width":130,
-                 "x":412.333333333333,
-                 "y":425.333333333333
+                 "x":412.333,
+                 "y":425.333
                 }, 
                 {
                  "gid":83,
@@ -2661,7 +2661,7 @@
                  "type":"AnimatedArea",
                  "visible":true,
                  "width":73,
-                 "x":293.333333333333,
+                 "x":293.333,
                  "y":194
                 }, 
                 {
@@ -2674,7 +2674,7 @@
                  "visible":true,
                  "width":73,
                  "x":588,
-                 "y":192.666666666667
+                 "y":192.667
                 }, 
                 {
                  "gid":85,
@@ -2685,7 +2685,7 @@
                  "type":"AnimatedArea",
                  "visible":true,
                  "width":62,
-                 "x":202.333333333333,
+                 "x":202.333,
                  "y":503
                 }, 
                 {
@@ -2697,8 +2697,8 @@
                  "type":"AnimatedArea",
                  "visible":true,
                  "width":54,
-                 "x":266.333333333333,
-                 "y":456.666666666667
+                 "x":266.333,
+                 "y":456.667
                 }, 
                 {
                  "gid":87,
@@ -2709,8 +2709,8 @@
                  "type":"AnimatedArea",
                  "visible":true,
                  "width":46,
-                 "x":695.666666666667,
-                 "y":391.666666666667
+                 "x":695.667,
+                 "y":391.667
                 }, 
                 {
                  "gid":88,
@@ -2721,8 +2721,8 @@
                  "type":"AnimatedArea",
                  "visible":true,
                  "width":54,
-                 "x":734.333333333333,
-                 "y":440.666666666667
+                 "x":734.333,
+                 "y":440.667
                 }, 
                 {
                  "gid":89,
@@ -2742,12 +2742,12 @@
                  "visible":true,
                  "width":77,
                  "x":42,
-                 "y":649.333333333333
+                 "y":649.333
                 }],
          "opacity":1,
          "type":"objectgroup",
          "visible":false,
-         "width":1,
+         "width":0,
          "x":0,
          "y":0
         }, 
@@ -2764,7 +2764,7 @@
         }, 
         {
          "draworder":"index",
-         "height":1,
+         "height":0,
          "name":"6",
          "objects":[
                 {
@@ -2776,11 +2776,11 @@
                  "type":"AnimatedArea",
                  "visible":true,
                  "width":108,
-                 "x":568.666666666667,
+                 "x":568.667,
                  "y":353
                 }, 
                 {
-                 "height":233.333333333333,
+                 "height":233.333,
                  "id":171,
                  "name":"office_area",
                  "rotation":0,
@@ -2788,27 +2788,191 @@
                  "visible":true,
                  "width":96,
                  "x":820,
-                 "y":202.666666666667
+                 "y":202.667
                 }, 
                 {
-                 "height":46.6666666666667,
+                 "height":46.6667,
                  "id":172,
                  "name":"keypad_area",
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":37.3333333333334,
-                 "x":925.333333333333,
-                 "y":330.666666666667
+                 "width":37.3333,
+                 "x":925.333,
+                 "y":330.667
+                }, 
+                {
+                 "gid":91,
+                 "height":129,
+                 "id":173,
+                 "name":"purple_pipe",
+                 "properties":
+                    {
+                     "tileId":"1"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":165,
+                 "x":-2,
+                 "y":429.333
+                }, 
+                {
+                 "gid":92,
+                 "height":137,
+                 "id":174,
+                 "name":"green_pipe",
+                 "properties":
+                    {
+                     "tileId":"2"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":175,
+                 "x":198.333,
+                 "y":353.333
+                }, 
+                {
+                 "gid":93,
+                 "height":148,
+                 "id":175,
+                 "name":"blue_pipe",
+                 "properties":
+                    {
+                     "tileId":"3"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":190,
+                 "x":526.333,
+                 "y":535.333
+                }, 
+                {
+                 "gid":94,
+                 "height":152,
+                 "id":176,
+                 "name":"red_pipe",
+                 "properties":
+                    {
+                     "tileId":"4"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":195,
+                 "x":319,
+                 "y":630.667
+                }, 
+                {
+                 "gid":95,
+                 "height":97,
+                 "id":177,
+                 "name":"bottle_purple",
+                 "properties":
+                    {
+                     "tileId":"5"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":49,
+                 "x":400,
+                 "y":288
+                }, 
+                {
+                 "gid":96,
+                 "height":49,
+                 "id":178,
+                 "name":"rope",
+                 "properties":
+                    {
+                     "tileId":"6"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":90,
+                 "x":157.667,
+                 "y":136
+                }, 
+                {
+                 "gid":98,
+                 "height":66,
+                 "id":181,
+                 "name":"ventilator_wing",
+                 "properties":
+                    {
+                     "z":-1
+                    },
+                 "propertytypes":
+                    {
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"AnimatedArea",
+                 "visible":true,
+                 "width":58,
+                 "x":92.3333,
+                 "y":246.333
+                }, 
+                {
+                 "gid":97,
+                 "height":146,
+                 "id":180,
+                 "name":"ventilator",
+                 "properties":
+                    {
+                     "description":"A ventilator. Spreading cool air in the room - it's bolted to the floor",
+                     "stateless":true,
+                     "tileId":"7"
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool",
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":142,
+                 "x":25,
+                 "y":274.333
                 }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
-         "width":1,
+         "width":0,
          "x":0,
          "y":0
         }],
- "nextobjectid":173,
+ "nextobjectid":183,
  "orientation":"orthogonal",
  "renderorder":"left-up",
  "tileheight":660,
@@ -3229,16 +3393,48 @@
          "margin":0,
          "name":"6",
          "spacing":0,
-         "tilecount":1,
+         "tilecount":9,
          "tileheight":242,
          "tiles":
             {
              "0":
                 {
                  "image":"..\/sprites\/elevator_assets\/doors\/floor_6\/move\/0001.png"
+                },
+             "1":
+                {
+                 "image":"..\/sprites\/pipes\/purple.png"
+                },
+             "2":
+                {
+                 "image":"..\/sprites\/pipes\/green.png"
+                },
+             "3":
+                {
+                 "image":"..\/sprites\/pipes\/blue.png"
+                },
+             "4":
+                {
+                 "image":"..\/sprites\/pipes\/wine_red.png"
+                },
+             "5":
+                {
+                 "image":"..\/sprites\/bottles\/glass_bottle\/purple.png"
+                },
+             "6":
+                {
+                 "image":"..\/sprites\/rope\/pile\/pile.png"
+                },
+             "7":
+                {
+                 "image":"..\/sprites\/ventilator\/case.png"
+                },
+             "8":
+                {
+                 "image":"..\/sprites\/ventilator\/wing_2\/1.png"
                 }
             },
-         "tilewidth":108
+         "tilewidth":195
         }],
  "tilewidth":1100,
  "version":1,
