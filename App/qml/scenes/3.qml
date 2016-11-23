@@ -180,7 +180,6 @@ Base {
                     var o = drag.source
 
                     blacklistObject(o.name)
-                    destroyObject(o.name)
 
                     game.setText("The hammer broke in two. No need to carry that around any more")
 
@@ -297,9 +296,10 @@ Base {
                     game.inventory.add(o)
                 })
 
+                game.setText("It's full of infested zombie blood now!")
+
                 drop.accept()
                 blacklistObject(o.name)
-                destroyObject(o.name)
             }
         }
 
@@ -599,7 +599,6 @@ Base {
                     hamsterCalm = true
                     drop.accept()
                     blacklistObject(o.name)
-                    destroyObject(o.name)
                 }
 
                 if(hamsterCalm && o.name === "cannula_full") {
@@ -617,7 +616,6 @@ Base {
                     scene.hamsterIsZombie = true
                     drop.accept()
                     blacklistObject(o.name)
-                    destroyObject(o.name)
                 }
 
             }
@@ -653,7 +651,6 @@ Base {
                     var o = drag.source
 
                     blacklistObject(o.name)
-                    destroyObject(o.name)
 
                     game.setText("The hammer broke in two. No need to carry that around any more")
 
@@ -743,6 +740,8 @@ Base {
             state === "on" ? state = "off" : state = "on"
         }
     }
+
+    showForegroundShadow: !whiteboardScene.show
 
     Item {
         id: whiteboardScene

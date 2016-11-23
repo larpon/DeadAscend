@@ -130,7 +130,6 @@ Base {
                     so = game.getObject("assembled_"+o.name)
                     so.state = "up"
                     blacklistObject(o.name)
-                    destroyObject(o.name)
                 } else { // The rungs
 
                     var ar1 = game.getObject("assembled_rail_1")
@@ -140,7 +139,6 @@ Base {
                         so = game.getObject("assembled_"+o.name)
                         so.state = "up"
                         blacklistObject(o.name)
-                        destroyObject(o.name)
                         game.setText("Another rung in the rail!")
                     }
 

@@ -50,6 +50,7 @@ Item {
 
     readonly property bool flasksFilled: flaskMixerBlueLevel > 0 && flaskMixerPurpleLevel > 0 && flaskMixerGreenLevel > 0 && flaskMixerRedLevel > 0
     readonly property bool flasksCorrect: flaskMixerBlueLevel == 3 && flaskMixerPurpleLevel == 7 && flaskMixerGreenLevel == 5 && flaskMixerRedLevel == 2
+    onFlasksCorrectChanged: if(flasksCorrect) setText("All systems... GO!")
 
     property bool button8dropped: false
 
@@ -107,6 +108,8 @@ Item {
 
     function blacklistObject(name) {
         objectBlacklist[name] = true
+        if(isObjectDynamic(name))
+            destroyObject(name)
     }
 
     function unblacklistObject(name) {
@@ -1087,8 +1090,6 @@ Item {
 
         blacklistObject(bucket.name)
         blacklistObject(gum.name)
-        destroyObject(bucket.name)
-        destroyObject(gum.name)
 
         game.spawnObject(object,function(o){
             if(animate)

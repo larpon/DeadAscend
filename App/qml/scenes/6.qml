@@ -18,10 +18,16 @@ Base {
 
     anchors { fill: parent }
 
+    property bool officeUnlocked: store.keyCombo1 && store.keyCombo2 && store.keyCombo3 && store.keyCombo4
+
     Store {
         id: store
         name: "level"+sceneNumber
 
+        property bool keyCombo1: false
+        property bool keyCombo2: false
+        property bool keyCombo3: false
+        property bool keyCombo4: false
     }
 
 
@@ -30,7 +36,7 @@ Base {
         showExit()
 
         var sfx = core.sounds
-        //sfx.add("level"+sceneNumber,"hum",App.getAsset("sounds/low_machine_hum.wav"))
+        sfx.add("level"+sceneNumber,"pouring",App.getAsset("sounds/pouring.wav"))
 
     }
 
@@ -62,7 +68,7 @@ Base {
 
         name: "elevator_door_6"
 
-        clickable: true
+        clickable: !animating
         stateless: true
 
         visible: true
@@ -118,7 +124,7 @@ Base {
         }
     }
 
-    showForegroundShadow: officeArea.state !== "on"
+    showForegroundShadow: officeArea.state !== "on" && keypadArea !== "on"
 
     Area {
         id: officeArea
@@ -126,7 +132,12 @@ Base {
 
         name: "office_area"
 
-        onClicked: state === "on" ? state = "off" : state = "on"
+        onClicked: {
+            if(scene.officeUnlocked)
+                state === "on" ? state = "off" : state = "on"
+            else
+                game.setText("The door is locked...","The keypad to the right seem to be connected to the door")
+        }
     }
 
     Area {
@@ -143,6 +154,27 @@ Base {
 
         name: "blue_pipe"
 
+        DropSpot {
+            anchors { fill: parent }
+            keys: [ 'bottle_blue' ]
+
+            name: "bottle_blue_drop"
+
+            enabled: game.flaskMixerBlueLevel <= 0
+
+            onDropped: {
+                drop.accept()
+
+                core.sounds.play("pouring")
+                game.setText("The liquid is poured in now")
+
+                game.flaskMixerBlueLevel = 1
+
+                var o = drag.source
+                blacklistObject(o.name)
+            }
+
+        }
     }
 
     Area {
@@ -150,6 +182,27 @@ Base {
 
         name: "purple_pipe"
 
+        DropSpot {
+            anchors { fill: parent }
+            keys: [ 'bottle_purple' ]
+
+            name: "bottle_purple_drop"
+
+            enabled: game.flaskMixerPurpleLevel <= 0
+
+            onDropped: {
+                drop.accept()
+
+                core.sounds.play("pouring")
+                game.setText("All the purple juicy stuff is poured in now")
+
+                game.flaskMixerPurpleLevel = 1
+
+                var o = drag.source
+                blacklistObject(o.name)
+            }
+
+        }
     }
 
     Area {
@@ -157,6 +210,27 @@ Base {
 
         name: "red_pipe"
 
+        DropSpot {
+            anchors { fill: parent }
+            keys: [ 'bottle_red' ]
+
+            name: "bottle_red_drop"
+
+            enabled: game.flaskMixerRedLevel <= 0
+
+            onDropped: {
+                drop.accept()
+
+                core.sounds.play("pouring")
+                game.setText("All the red goo is poured in now")
+
+                game.flaskMixerRedLevel = 1
+
+                var o = drag.source
+                blacklistObject(o.name)
+            }
+
+        }
     }
 
     Area {
@@ -164,6 +238,27 @@ Base {
 
         name: "green_pipe"
 
+        DropSpot {
+            anchors { fill: parent }
+            keys: [ 'bottle_green' ]
+
+            name: "bottle_green_drop"
+
+            enabled: game.flaskMixerGreenLevel <= 0
+
+            onDropped: {
+                drop.accept()
+
+                core.sounds.play("pouring")
+                game.setText("All the contents are poured in")
+
+                game.flaskMixerGreenLevel = 1
+
+                var o = drag.source
+                blacklistObject(o.name)
+            }
+
+        }
     }
 
     Connections {
@@ -207,6 +302,13 @@ Base {
 
         property bool show: keypadArea.state === "on"
 
+        signal keyClicked(string key)
+
+        onKeyClicked: {
+            App.debug(key)
+            game.setText(key);
+        }
+
         visible: opacity > 0
         opacity: show ? 1 : 0
         Behavior on opacity {
@@ -248,7 +350,95 @@ Base {
 
             MouseArea {
                 anchors { fill: parent }
-                //onClicked: game.setText("The drawing on the whiteboard is faded - but can still be made out","It looks like a sketch, depicting something involving a syringe and a hamster?")
+                onClicked: game.setText("A fancy colored keypad")
+            }
+
+            // 1
+            Area {
+                x: 55; y: 70
+                width: 50; height: 50
+                stateless: true
+                onClicked: { keypadScene.keyClicked("1") }
+            }
+
+            // 2
+            Area {
+                x: 125; y: 62
+                width: 60; height: 50
+                stateless: true
+                onClicked: { keypadScene.keyClicked("2") }
+            }
+
+            // 3
+            Area {
+                x: 204; y: 62
+                width: 50; height: 50
+                stateless: true
+                onClicked: { keypadScene.keyClicked("3") }
+            }
+
+            // 4
+            Area {
+                x: 50; y: 145
+                width: 50; height: 50
+                stateless: true
+                onClicked: { keypadScene.keyClicked("4") }
+            }
+
+            // 5
+            Area {
+                x: 120; y: 141
+                width: 58; height: 55
+                stateless: true
+                onClicked: { keypadScene.keyClicked("5") }
+            }
+
+            // 6
+            Area {
+                x: 198; y: 142
+                width: 50; height: 50
+                stateless: true
+                onClicked: { keypadScene.keyClicked("6") }
+            }
+
+            // 7
+            Area {
+                x: 55; y: 230
+                width: 45; height: 45
+                stateless: true
+                onClicked: { keypadScene.keyClicked("7") }
+            }
+
+            // 8
+            Area {
+                x: 126; y: 223
+                width: 50; height: 50
+                stateless: true
+                onClicked: { keypadScene.keyClicked("8") }
+            }
+
+            // 9
+            Area {
+                x: 201; y: 220
+                width: 50; height: 50
+                stateless: true
+                onClicked: { keypadScene.keyClicked("9") }
+            }
+
+            // OK
+            Area {
+                x: 60; y: 310
+                width: 107; height: 59
+                stateless: true
+                onClicked: { keypadScene.keyClicked("OK") }
+            }
+
+            // CLR
+            Area {
+                x: 195; y: 310
+                width: 50; height: 50
+                stateless: true
+                onClicked: { keypadScene.keyClicked("CLR") }
             }
         }
 

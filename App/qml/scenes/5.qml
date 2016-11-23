@@ -69,7 +69,7 @@ Base {
 
         name: "elevator_door_5"
 
-        clickable: true
+        clickable: !animating
         stateless: true
 
         visible: true
@@ -169,13 +169,12 @@ Base {
         ]
     }
 
-
+    // Levers
     AnimatedArea {
-
+        id: leverLL
         name: "lever_ll"
 
         clickable: true
-        stateless: true
 
         visible: true
         run: false
@@ -209,13 +208,11 @@ Base {
         }
     }
 
-
     AnimatedArea {
-
+        id: leverLR
         name: "lever_lr"
 
         clickable: true
-        stateless: true
 
         visible: true
         run: false
@@ -250,11 +247,10 @@ Base {
     }
 
     AnimatedArea {
-
+        id: leverRL
         name: "lever_rl"
 
         clickable: true
-        stateless: true
 
         visible: true
         run: false
@@ -288,13 +284,11 @@ Base {
         }
     }
 
-
     AnimatedArea {
-
+        id: leverRR
         name: "lever_rr"
 
         clickable: true
-        stateless: true
 
         visible: true
         run: false
@@ -326,6 +320,127 @@ Base {
         onClicked: {
             state === "up" ? state = "down" : state = "up"
         }
+    }
+
+    // Coils
+    AnimatedArea {
+
+        name: "coil_bl"
+
+        stateless: true
+
+        visible: run
+        run: game.flasksCorrect && leverLL.state === "down"
+        paused: !visible || (scene.paused)
+
+        defaultFrameDelay: 100
+
+        source: App.getAsset("sprites/coils/bl/0001.png")
+
+        sequences: [
+            {
+                name: "run-loop",
+                frames: [1,2,3,4,5,6,7,8,9,10,11,12],
+                to: { "run-loop":1 }
+            }
+        ]
+    }
+
+    AnimatedArea {
+
+        name: "coil_br"
+
+        stateless: true
+
+        visible: run
+        run: game.flasksCorrect && leverRR.state === "down"
+        paused: !visible || (scene.paused)
+
+        defaultFrameDelay: 150
+
+        source: App.getAsset("sprites/coils/br/0001.png")
+
+        sequences: [
+            {
+                name: "run-loop",
+                frames: [1,2,3,4,5,6,7,8,9,10,11,12],
+                to: { "run-loop":1 }
+            }
+        ]
+    }
+
+    AnimatedArea {
+
+        name: "coil_tr"
+
+        stateless: true
+
+        visible: run
+        run: game.flasksCorrect && leverRL.state === "down"
+        paused: !visible || (scene.paused)
+
+        defaultFrameDelay: 120
+
+        source: App.getAsset("sprites/coils/tr/0001.png")
+
+        sequences: [
+            {
+                name: "run-loop",
+                frames: [1,2,3,4,5,6,7,8,9,10,11,12],
+                to: { "run-loop":1 }
+            }
+        ]
+    }
+
+    AnimatedArea {
+
+        name: "coil_tl"
+
+        stateless: true
+
+        visible: run
+        run: game.flasksCorrect && leverLR.state === "down"
+        paused: !visible || (scene.paused)
+
+        defaultFrameDelay: 90
+
+        source: App.getAsset("sprites/coils/tl/0001.png")
+
+        sequences: [
+            {
+                name: "run-loop",
+                frames: [1,2,3,4,5,6,7,8,9,10,11,12],
+                to: { "run-loop":1 }
+            }
+        ]
+    }
+
+    AnimatedArea {
+
+        name: "coil_lightning"
+
+        stateless: true
+
+        opacity: run ? 1 : 0
+        Behavior on opacity {
+            NumberAnimation { duration: 250 }
+        }
+
+        visible: opacity > 0
+        run: game.flasksCorrect && leverLR.state === "down" && leverLL.state === "down" && leverRL.state === "down" && leverRR.state === "down"
+        paused: !visible || (scene.paused)
+
+        defaultFrameDelay: 90
+
+        source: App.getAsset("sprites/coils/lightning/0001.png")
+
+        sequences: [
+            {
+                name: "run-loop",
+                frames: [1,2,3,4,5,6,7,8,9,10,11,12],
+                to: { "run-loop":1 }
+            }
+        ]
     }
 
     showForegroundShadow: flaskMixerArea.state !== "on"
@@ -391,6 +506,7 @@ Base {
         }
 
         Image {
+            id: flaskMixer
             anchors { centerIn: parent }
             fillMode: Image.PreserveAspectFit
             width: sourceSize.width; height: sourceSize.height
@@ -398,7 +514,61 @@ Base {
 
             MouseArea {
                 anchors { fill: parent }
-                onClicked: game.setText("Hmm... This is not an easy task")
+                onClicked: {
+                    var txt = "Hmm... This is not an easy task... "
+                    txt += game.flasksFilled ? game.flasksCorrect ? "Some of these still need liquid in them" : "I think everything is ready" : "Something still need to be done here"
+
+                    game.setText(txt)
+                }
+            }
+
+            property int vGreen: game.flaskMixerGreenLevel
+            property int vBlue: game.flaskMixerBlueLevel
+            property int vRed: game.flaskMixerRedLevel
+            property int vPurple: game.flaskMixerPurpleLevel
+            function flaskClick(color) {
+
+                if(game.flasksCorrect) {
+                    game.setText("Like the old saying goes...","if it ain't broken...","don't fix it!")
+                    return
+                }
+
+                var l = 0
+                if(color === "green") {
+                    l = game.flaskMixerGreenLevel
+                    if(l > 0) {
+                        vGreen++
+                        l = Aid.oscillate(vGreen,1,7)
+                        game.flaskMixerGreenLevel = l
+                    }
+                }
+
+                if(color === "red") {
+                    l = game.flaskMixerRedLevel
+                    if(l > 0) {
+                        vRed++
+                        l = Aid.oscillate(vRed,1,7)
+                        game.flaskMixerRedLevel = l
+                    }
+                }
+
+                if(color === "blue") {
+                    l = game.flaskMixerBlueLevel
+                    if(l > 0) {
+                        vBlue++
+                        l = Aid.oscillate(vBlue,1,7)
+                        game.flaskMixerBlueLevel = l
+                    }
+                }
+
+                if(color === "purple") {
+                    l = game.flaskMixerPurpleLevel
+                    if(l > 0) {
+                        vPurple++
+                        l = Aid.oscillate(vPurple,1,7)
+                        game.flaskMixerPurpleLevel = l
+                    }
+                }
             }
 
             Image {
@@ -411,7 +581,7 @@ Base {
 
                 MouseArea {
                     anchors { fill: parent }
-                    onClicked: game.setText("It's got a nice blue tint to it")
+                    onClicked: flaskMixer.flaskClick("blue")
                 }
             }
 
@@ -425,7 +595,7 @@ Base {
 
                 MouseArea {
                     anchors { fill: parent }
-                    onClicked: game.setText("It's got a nice green tint to it")
+                    onClicked: flaskMixer.flaskClick("green")
                 }
             }
 
@@ -439,7 +609,7 @@ Base {
 
                 MouseArea {
                     anchors { fill: parent }
-                    onClicked: game.setText("It's got a nice purple tint to it")
+                    onClicked: flaskMixer.flaskClick("purple")
                 }
             }
 
@@ -453,21 +623,29 @@ Base {
 
                 MouseArea {
                     anchors { fill: parent }
-                    onClicked: game.setText("It's got a nice redwine tint to it")
+                    onClicked: flaskMixer.flaskClick("red")
                 }
             }
 
             Image {
+                id: centerLight
                 x: 149; y: 266
                 fillMode: Image.PreserveAspectFit
                 width: sourceSize.width; height: sourceSize.height
                 source: App.getAsset("sprites/flask_mixer_levels/center_"+color+".png")
 
-                property string color: game.flasksFilled ? game.flasksCorrect ? "yellow" : "green" : "red"
+                property string color: game.flasksFilled ? game.flasksCorrect ? "green" : "yellow" : "red"
 
                 MouseArea {
                     anchors { fill: parent }
-                    onClicked: game.setText("It's got a nice green tint to it")
+                    onClicked: {
+                        if(centerLight.color === "green")
+                            game.setText("Nice green glow. I think everything is ready")
+                        if(centerLight.color === "yellow")
+                            game.setText("It's got a nice yellow tint to it. There's more work to be done here")
+                        if(centerLight.color === "red")
+                            game.setText("It's red. Indicating that something is not in it's right state")
+                    }
                 }
             }
         }

@@ -120,7 +120,6 @@ Base {
                 if(o.name === "bucket_full") {
                     rope_dangle.run = false
                     rope_dangle_water.run = true
-                    game.destroyObject(onRope)
                     game.blacklistObject(onRope)
                     hatch.state = "open"
                 } else {
@@ -227,13 +226,17 @@ Base {
         width: 65; height: 191
 
         running: false
-        run: waterRunAnimation.run || (waterBucketRunAnimation.run && !bucketPatched)
+        run: waterRunAnimation.run || waterBucketRunAnimation.run
 
         onRunChanged: {
             if(run) {
+                if(!bucketPatched)
+                    return
                 running = true
                 setActiveSequence("run")
             } else {
+                if(bucketPatched)
+                    return
                 running = true
                 setActiveSequence("stop")
             }
@@ -395,7 +398,6 @@ Base {
                 game.spawnObject(object,function(o){
                     game.inventory.addAnimated(o)
                     blacklistObject(bucket.name)
-                    destroyObject(bucket.name)
                     scene.bucketPatched = true
                 })
 

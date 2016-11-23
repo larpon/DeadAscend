@@ -71,6 +71,10 @@ Base {
             game.showExit(600,0,2000,"up")
             game.showExit(700,550,2100,"down")
         }
+
+        if(type == "left") {
+            game.showExit(150,210,2100,"down")
+        }
     }
 
     MouseArea {
@@ -87,6 +91,53 @@ Base {
             game.setText(Aid.randomFromArray(a))
         }
     }
+
+    // RIGHT SIDE
+
+
+    AnimatedArea {
+
+        name: "rope_dangle_window"
+
+        stateless: true
+        clickable: true
+        visible: type === "left"
+        run: visible
+        paused: !visible || (scene.paused)
+
+        source: App.getAsset("sprites/rope/window_dangle/01/0001.png")
+
+        defaultFrameDelay: 150
+
+        sequences: [
+            {
+                name: "dangle",
+                frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],
+                to: { "out": 1 }
+            },
+            {
+                name: "out",
+                frames: [18,17,16,15,16,17,18,19],
+                to: { "back": 1 }
+            },
+            {
+                name: "back",
+                frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],
+                reverse: true,
+                to: { "dangle": 1 }
+            }
+        ]
+
+        onClicked: {
+            game.goToScene("7")
+            game.scene2type = "right"
+        }
+
+    }
+
+
+
+    // LEFT SIDE
 
     AnimatedArea {
         id: lift
@@ -265,6 +316,15 @@ Base {
     Image {
         id: darknessRight
         z: 20
+
+        anchors {
+            left: parent.horizontalCenter
+            top: parent.top
+            bottom: parent.bottom
+            right: parent.right
+            leftMargin: -20
+        }
+
         visible: type === "left"
         source: App.getAsset("scenes/2_darkness_overlay_right.png")
 
@@ -343,7 +403,6 @@ Base {
                     game.setText("It fits perfectly!")
                     var o = drag.source
                     blacklistObject(o.name)
-                    destroyObject(o.name)
                 }
             }
 
@@ -616,7 +675,6 @@ Base {
                             drop.accept()
                             var o = drag.source
                             blacklistObject(o.name)
-                            destroyObject(o.name)
                             game.setText("Off you go hinge!")
                         }
                     }
@@ -652,6 +710,11 @@ Base {
     onObjectAddedToInventory: {
         if(object.name === "cannula")
             scene.emptyCannulaTaken = true
+
+        if(object.name === "charging_paper_r") {
+            object.itemSource = App.getAsset("sprites/charging_paper/charging_paper_R.png")
+        }
+
     }
 
     onObjectRemovedFromInventory: {

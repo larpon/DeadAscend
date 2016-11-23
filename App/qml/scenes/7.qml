@@ -22,6 +22,8 @@ Base {
         id: store
         name: "level"+sceneNumber
 
+        property bool ropeTied: false
+
     }
 
 
@@ -62,7 +64,7 @@ Base {
 
         name: "elevator_door_7"
 
-        clickable: true
+        clickable: !animating
         stateless: true
 
         visible: true
@@ -132,7 +134,59 @@ Base {
     Area {
         name: "window"
         stateless: true
+        onClicked: maybeGoTo2()
     }
+
+    Area {
+        name: "hook"
+        stateless: true
+        onClicked: maybeGoTo2()
+    }
+
+    Area {
+        name: "exit_to_2_left"
+        stateless: true
+
+        DropSpot {
+            anchors { fill: parent }
+            keys: [ 'rope' ]
+
+            name: "rope_drop"
+
+            enabled: !store.ropeTied
+
+            onDropped: {
+                drop.accept()
+
+                //core.sounds.play("pouring")
+                game.setText("Brilliant. The rope is firmly tied to the hook")
+
+                store.ropeTied = true
+
+                var o = drag.source
+                blacklistObject(o.name)
+            }
+
+        }
+
+        onClicked: maybeGoTo2()
+    }
+
+    function maybeGoTo2() {
+        if(store.ropeTied) {
+            game.scene2type = "left"
+            game.goToScene("2")
+        } else
+            game.setText("Hmm... If we tied something to the hook...","...")
+    }
+
+    Area {
+        name: "rope_tied"
+        stateless: true
+        visible: store.ropeTied
+        onClicked: maybeGoTo2()
+    }
+
 
     AnimatedArea {
 

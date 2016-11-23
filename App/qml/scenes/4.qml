@@ -175,7 +175,6 @@ Base {
                 treadmill.run = true
                 drop.accept()
                 blacklistObject(o.name)
-                destroyObject(o.name)
             }
         }
 
@@ -295,7 +294,7 @@ Base {
 
         name: "elevator_door_4"
 
-        clickable: true
+        clickable: !animating
         stateless: true
 
         visible: true
@@ -372,7 +371,6 @@ Base {
             store.cableConnected = true
             var o = drag.source
             blacklistObject(o.name)
-            destroyObject(o.name)
         }
 
     }
