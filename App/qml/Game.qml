@@ -47,8 +47,11 @@ Item {
     property int flaskMixerPurpleLevel: 0
     property int flaskMixerGreenLevel: 0
     property int flaskMixerRedLevel: 0
+
     readonly property bool flasksFilled: flaskMixerBlueLevel > 0 && flaskMixerPurpleLevel > 0 && flaskMixerGreenLevel > 0 && flaskMixerRedLevel > 0
     readonly property bool flasksCorrect: flaskMixerBlueLevel == 3 && flaskMixerPurpleLevel == 7 && flaskMixerGreenLevel == 5 && flaskMixerRedLevel == 2
+
+    property bool button8dropped: false
 
     property alias elevatorPanel: elevatorPanel
 
@@ -186,6 +189,8 @@ Item {
         property alias flaskMixerPurpleLevel: game.flaskMixerPurpleLevel
         property alias flaskMixerGreenLevel: game.flaskMixerGreenLevel
         property alias flaskMixerRedLevel: game.flaskMixerRedLevel
+
+        property alias button8dropped: game.button8dropped
 
     }
 
@@ -581,7 +586,7 @@ Item {
             source: App.getAsset("scenes/elevator_panel/elevator_panel.png")
 
             Image {
-                x: 400; y: 58
+                x: 516; y: 385
                 width: 88; height: 66
                 fillMode: Image.PreserveAspectFit
                 //width: sourceSize.width; height: sourceSize.height
@@ -601,7 +606,7 @@ Item {
             }
 
             Image {
-                x: 516; y: 385
+                x: 510; y: 295
                 width: 88; height: 66
                 fillMode: Image.PreserveAspectFit
                 //width: sourceSize.width; height: sourceSize.height
@@ -621,7 +626,7 @@ Item {
             }
 
             Image {
-                x: 516; y: 285
+                x: 510; y: 215
                 width: 88; height: 66
                 fillMode: Image.PreserveAspectFit
                 //width: sourceSize.width; height: sourceSize.height
@@ -640,9 +645,30 @@ Item {
                 }
             }
 
+            Image {
+                x: 501; y: 135
+                width: 88; height: 66
+                fillMode: Image.PreserveAspectFit
+                //width: sourceSize.width; height: sourceSize.height
+                source: App.getAsset("sprites/buttons/button_03/button_03.png")
+
+                MouseArea {
+                    anchors { fill: parent }
+                    onClicked: {
+                        // play click sound
+                        if(currentScene != "7") {
+                            elevatorPanel.show = false
+                            goToScene("7")
+                        } else
+                            setText("You're already at this floor")
+                    }
+                }
+            }
+
+
             DropSpot {
                 anchors { fill: parent }
-                keys: [ "button_7" ]
+                keys: [ "button_8" ]
 
                 name: "button_drop"
 

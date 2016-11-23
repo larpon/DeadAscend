@@ -57,6 +57,7 @@ Item {
         fillMode: Image.PreserveAspectFit
         source: App.getAsset('scenes/'+sceneNumber+'.png')
 
+        cache: false
     }
 
     Item {
@@ -74,6 +75,8 @@ Item {
         Behavior on opacity {
             NumberAnimation { duration: 600 }
         }
+
+        cache: false
 
         anchors { fill: parent }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="183">
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="194">
  <tileset firstgid="1" name="0" tilewidth="155" tileheight="191" tilecount="14" columns="0">
   <tile id="0">
    <image width="74" height="97" source="../App/assets/sprites/bucket/bucket_empty.png"/>
@@ -288,6 +288,17 @@
   </tile>
   <tile id="8">
    <image width="58" height="66" source="../App/assets/sprites/ventilator/wing_2/1.png"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="99" name="7" tilewidth="270" tileheight="362" tilecount="3" columns="0">
+  <tile id="0">
+   <image width="270" height="362" source="../App/assets/sprites/elevator_assets/doors/floor_7/move/0001.png"/>
+  </tile>
+  <tile id="1">
+   <image width="157" height="253" source="../App/assets/sprites/paintings/painting_04.png"/>
+  </tile>
+  <tile id="2">
+   <image width="168" height="265" source="../App/assets/sprites/curtains/flutter/0001.png"/>
   </tile>
  </tileset>
  <imagelayer name="0 bg" visible="0">
@@ -1033,10 +1044,10 @@
    </properties>
   </object>
  </objectgroup>
- <imagelayer name="6 bg">
+ <imagelayer name="6 bg" visible="0">
   <image source="../App/assets/scenes/6.png" width="1100" height="660"/>
  </imagelayer>
- <objectgroup draworder="index" name="6">
+ <objectgroup draworder="index" name="6" visible="0">
   <object id="170" name="elevator_door_6" type="AnimatedArea" gid="90" x="568.667" y="353" width="108" height="242"/>
   <object id="171" name="office_area" type="Area" x="820" y="202.667" width="96" height="233.333"/>
   <object id="172" name="keypad_area" type="Area" x="925.333" y="330.667" width="37.3333" height="46.6667"/>
@@ -1080,6 +1091,50 @@
     <property name="description" value="A ventilator. Spreading cool air in the room - it's bolted to the floor"/>
     <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="7"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <imagelayer name="7 bg">
+  <image source="../App/assets/scenes/7.png" width="1100" height="660"/>
+ </imagelayer>
+ <objectgroup draworder="index" name="7">
+  <object id="183" name="elevator_door_7" type="AnimatedArea" gid="99" x="22.3333" y="661" width="270" height="362"/>
+  <object id="185" name="painting4_frame" type="Area" x="442.667" y="141.333" width="216" height="293.333">
+   <properties>
+    <property name="description" value="A nice frame"/>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="z" type="int" value="-1"/>
+   </properties>
+  </object>
+  <object id="184" name="painting4" type="Object" gid="100" x="474" y="411.333" width="157" height="253">
+   <properties>
+    <property name="tileId" value="1"/>
+   </properties>
+  </object>
+  <object id="186" name="window" type="Area" x="905.333" y="164" width="160" height="201.333"/>
+  <object id="188" name="curtains" type="AnimatedArea" gid="101" x="801.333" y="389.333" width="168" height="265"/>
+  <object id="189" name="lampshade" type="Area" x="682.667" y="244" width="120" height="124">
+   <properties>
+    <property name="description" value="An old golden lampshade. Nothing you should carry around"/>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="190" name="box_1_7" type="Area" x="708" y="372" width="124" height="181.333">
+   <properties>
+    <property name="description" value="And this is a box. This one stands out because it has stickers on it. But it's still useless"/>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="191" name="box_2_7" type="Area" x="732" y="560" width="146.667" height="104">
+   <properties>
+    <property name="description" value="*sigh* ... a box"/>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="193" name="hook" type="Area" x="952" y="382.667" width="74.6667" height="65.3333">
+   <properties>
+    <property name="description" value="A hook of some sort. You could tie something to it"/>
+    <property name="stateless" type="bool" value="true"/>
    </properties>
   </object>
  </objectgroup>

@@ -28,5 +28,6 @@
         <file>qml/scenes/4.qml</file>
         <file>qml/scenes/5.qml</file>
         <file>qml/scenes/6.qml</file>
+        <file>qml/scenes/7.qml</file>
     </qresource>
 </RCC>

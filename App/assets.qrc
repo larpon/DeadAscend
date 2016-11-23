@@ -1027,5 +1027,7 @@
         <file>assets/scenes/tutorial_fg_shadow.png</file>
         <file>assets/scenes/tutorial.png</file>
         <file>assets/scenes/keypad/keypad.png</file>
+        <file>assets/scenes/7.png</file>
+        <file>assets/scenes/7_fg_shadow.png</file>
     </qresource>
 </RCC>

@@ -2757,7 +2757,7 @@
          "name":"6 bg",
          "opacity":1,
          "type":"imagelayer",
-         "visible":true,
+         "visible":false,
          "width":0,
          "x":0,
          "y":0
@@ -2967,12 +2967,197 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
+         "visible":false,
+         "width":0,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "height":0,
+         "image":"7.png",
+         "name":"7 bg",
+         "opacity":1,
+         "type":"imagelayer",
          "visible":true,
          "width":0,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"index",
+         "height":1,
+         "name":"7",
+         "objects":[
+                {
+                 "gid":99,
+                 "height":362,
+                 "id":183,
+                 "name":"elevator_door_7",
+                 "rotation":0,
+                 "type":"AnimatedArea",
+                 "visible":true,
+                 "width":270,
+                 "x":22.3333333333333,
+                 "y":661
+                }, 
+                {
+                 "height":293.333333333333,
+                 "id":185,
+                 "name":"painting4_frame",
+                 "properties":
+                    {
+                     "description":"A nice frame",
+                     "stateless":true,
+                     "z":-1
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":216,
+                 "x":442.666666666667,
+                 "y":141.333333333333
+                }, 
+                {
+                 "gid":100,
+                 "height":253,
+                 "id":184,
+                 "name":"painting4",
+                 "properties":
+                    {
+                     "tileId":"1"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":157,
+                 "x":474,
+                 "y":411.333333333333
+                }, 
+                {
+                 "height":201.333333333333,
+                 "id":186,
+                 "name":"window",
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":160,
+                 "x":905.333333333333,
+                 "y":164
+                }, 
+                {
+                 "gid":101,
+                 "height":265,
+                 "id":188,
+                 "name":"curtains",
+                 "rotation":0,
+                 "type":"AnimatedArea",
+                 "visible":true,
+                 "width":168,
+                 "x":801.333333333333,
+                 "y":389.333333333333
+                }, 
+                {
+                 "height":124,
+                 "id":189,
+                 "name":"lampshade",
+                 "properties":
+                    {
+                     "description":"An old golden lampshade. Nothing you should carry around",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":120,
+                 "x":682.666666666667,
+                 "y":244
+                }, 
+                {
+                 "height":181.333333333333,
+                 "id":190,
+                 "name":"box_1_7",
+                 "properties":
+                    {
+                     "description":"And this is a box. This one stands out because it has stickers on it. But it's still useless",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":124,
+                 "x":708,
+                 "y":372
+                }, 
+                {
+                 "height":104,
+                 "id":191,
+                 "name":"box_2_7",
+                 "properties":
+                    {
+                     "description":"*sigh* ... a box",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":146.666666666667,
+                 "x":732,
+                 "y":560
+                }, 
+                {
+                 "height":65.3333333333334,
+                 "id":193,
+                 "name":"hook",
+                 "properties":
+                    {
+                     "description":"A hook of some sort. You could tie something to it",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":74.6666666666665,
+                 "x":952,
+                 "y":382.666666666667
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "width":1,
+         "x":0,
+         "y":0
         }],
- "nextobjectid":183,
+ "nextobjectid":194,
  "orientation":"orthogonal",
  "renderorder":"left-up",
  "tileheight":660,
@@ -3435,6 +3620,31 @@
                 }
             },
          "tilewidth":195
+        }, 
+        {
+         "columns":0,
+         "firstgid":99,
+         "margin":0,
+         "name":"7",
+         "spacing":0,
+         "tilecount":3,
+         "tileheight":362,
+         "tiles":
+            {
+             "0":
+                {
+                 "image":"..\/sprites\/elevator_assets\/doors\/floor_7\/move\/0001.png"
+                },
+             "1":
+                {
+                 "image":"..\/sprites\/paintings\/painting_04.png"
+                },
+             "2":
+                {
+                 "image":"..\/sprites\/curtains\/flutter\/0001.png"
+                }
+            },
+         "tilewidth":270
         }],
  "tilewidth":1100,
  "version":1,

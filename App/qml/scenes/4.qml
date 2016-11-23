@@ -58,7 +58,7 @@ Base {
 
     function showExit() {
         game.showExit(888,300,2000,"down")
-        //game.showExit(400,10,2100,"up")
+        game.showExit(560,280,2100,"up")
     }
 
     MouseArea {
