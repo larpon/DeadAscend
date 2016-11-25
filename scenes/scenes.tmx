@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="211">
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="212">
  <tileset firstgid="1" name="0" tilewidth="155" tileheight="191" tilecount="14" columns="0">
   <tile id="0">
    <image width="74" height="97" source="../App/assets/sprites/bucket/bucket_empty.png"/>
@@ -1136,6 +1136,11 @@
   <object id="208" name="coil_tl" type="AnimatedArea" gid="96" x="420" y="546" width="48" height="84"/>
   <object id="209" name="coil_tr" type="AnimatedArea" gid="97" x="499" y="536" width="51" height="72"/>
   <object id="210" name="coil_lightning" type="AnimatedArea" gid="98" x="386" y="649.667" width="204" height="215"/>
+  <object id="211" name="fuel_cell_charger" type="Area" x="394.667" y="509.333" width="180" height="153.333">
+   <properties>
+    <property name="description" value="It look like a charging mechanism of some sort"/>
+   </properties>
+  </object>
  </objectgroup>
  <imagelayer name="6 bg" visible="0">
   <image source="../App/assets/scenes/6.png" width="1100" height="660"/>

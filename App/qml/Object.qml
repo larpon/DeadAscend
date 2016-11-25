@@ -20,6 +20,7 @@ Entity {
 
     property bool ready: store.isLoaded
     property bool autoInventory: true
+    property bool hideInventoryOnDrag: false
     property bool acceptDrops: false
     property bool useFallbackSounds: true
 
@@ -52,8 +53,14 @@ Entity {
         at = "dragged"
         _z = z
         z = 100
+
         game.objectDragged(root)
         play('onDragged')
+
+        if(hideInventoryOnDrag && _at === "inventory") {
+            game.inventory.show = false
+        }
+
     }
 
     /*
@@ -143,6 +150,7 @@ Entity {
         property alias keys: root.keys
         property alias sounds: root.sounds
         property alias soundMap: root.soundMap
+        //property alias hideInventoryOnDrag: root.hideInventoryOnDrag
 
     }
 

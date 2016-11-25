@@ -48,8 +48,10 @@ Item {
     property int flaskMixerGreenLevel: 0
     property int flaskMixerRedLevel: 0
 
+    property bool fuelCellCharged: false
+
     readonly property bool flasksFilled: flaskMixerBlueLevel > 0 && flaskMixerPurpleLevel > 0 && flaskMixerGreenLevel > 0 && flaskMixerRedLevel > 0
-    readonly property bool flasksCorrect: flaskMixerBlueLevel == 3 && flaskMixerPurpleLevel == 7 && flaskMixerGreenLevel == 5 && flaskMixerRedLevel == 2
+    readonly property bool flasksCorrect: flaskMixerBlueLevel == 7 && flaskMixerPurpleLevel == 1 && flaskMixerGreenLevel == 1 && flaskMixerRedLevel == 4
     onFlasksCorrectChanged: if(flasksCorrect) setText("All systems... GO!")
 
     property bool button8dropped: false
@@ -194,6 +196,8 @@ Item {
         property alias flaskMixerRedLevel: game.flaskMixerRedLevel
 
         property alias button8dropped: game.button8dropped
+
+        property alias fuelCellCharged: game.fuelCellCharged
 
     }
 
@@ -598,7 +602,7 @@ Item {
                 MouseArea {
                     anchors { fill: parent }
                     onClicked: {
-                        // play click sound
+                        core.sounds.play('tap')
                         if(currentScene != "4") {
                             elevatorPanel.show = false
                             goToScene("4")
@@ -618,7 +622,7 @@ Item {
                 MouseArea {
                     anchors { fill: parent }
                     onClicked: {
-                        // play click sound
+                        core.sounds.play('tap')
                         if(currentScene != "5") {
                             elevatorPanel.show = false
                             goToScene("5")
@@ -638,7 +642,7 @@ Item {
                 MouseArea {
                     anchors { fill: parent }
                     onClicked: {
-                        // play click sound
+                        core.sounds.play('tap')
                         if(currentScene != "6") {
                             elevatorPanel.show = false
                             goToScene("6")
@@ -658,7 +662,7 @@ Item {
                 MouseArea {
                     anchors { fill: parent }
                     onClicked: {
-                        // play click sound
+                        core.sounds.play('tap')
                         if(currentScene != "7") {
                             elevatorPanel.show = false
                             goToScene("7")

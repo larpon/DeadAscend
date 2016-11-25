@@ -22,6 +22,7 @@ Item {
 
     default property alias content: canvas.data
     property alias canvas: canvas
+    property alias sounds: core.sounds
 
     property bool ready: false
 

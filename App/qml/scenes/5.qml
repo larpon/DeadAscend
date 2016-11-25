@@ -323,6 +323,42 @@ Base {
     }
 
     // Coils
+    Area {
+        id: fuelCellCharger
+        name: "fuel_cell_charger"
+
+        DropSpot {
+            anchors { fill: parent }
+
+            keys: [ "fuel_cell" ]
+
+            name: "fuel_cell_drop"
+
+            onDropped: {
+
+                if(coilLightning.run) {
+                    game.setText("Maybe you should turn off the machinery first")
+                    return
+                }
+
+                if(game.fuelCellCharged) {
+                    game.setText("It's already fully charged and ready to go")
+                    return
+                }
+
+                drop.accept()
+
+                var o = drag.source
+                o.x = fuelCellCharger.x+o.halfWidth
+                o.y = fuelCellCharger.y
+            }
+        }
+
+    }
+
+
+
+
     AnimatedArea {
 
         name: "coil_bl"
@@ -416,7 +452,7 @@ Base {
     }
 
     AnimatedArea {
-
+        id: coilLightning
         name: "coil_lightning"
 
         stateless: true
@@ -441,6 +477,55 @@ Base {
                 to: { "run-loop":1 }
             }
         ]
+
+        onRunChanged: {
+            if(run && !game.fuelCellCharged) {
+                var fc = game.getObject('fuel_cell')
+                if(fc && fc.at === "fuel_cell_drop") {
+                    fc.z = -1
+                    game.setText("It's charging...","...","...")
+                    giveFuelCellBackTimer.start()
+                }
+            }
+
+            if(run && game.fuelCellCharged) {
+                var fc = game.getObject('fuel_cell')
+                if(fc && fc.at === "fuel_cell_drop") {
+                    fc.z = -1
+                    // NOTE setting 'leverLL.state = "up"' here will yield statemachine error: <Unknown File>: QML StateGroup: Can't apply a state change as part of a state definition.
+                    // Instead we set it later via a Timer
+                    setFuelCellBackTimer.start()
+                    game.setText("The fuel cell has already finished charging")
+                }
+            }
+        }
+
+        Timer {
+            id: giveFuelCellBackTimer
+            interval: 3500
+            onTriggered: {
+                var fc = game.getObject('fuel_cell')
+                if(fc && fc.at === "fuel_cell_drop") {
+                    fc.z = 0
+                    game.fuelCellCharged = true
+                    leverLL.state = "up"
+                    game.setText("charged!")
+                }
+            }
+        }
+
+        Timer {
+            id: setFuelCellBackTimer
+            interval: 200
+            onTriggered: {
+                var fc = game.getObject('fuel_cell')
+                if(fc && fc.at === "fuel_cell_drop") {
+                    fc.z = 0
+                    leverLL.state = "up"
+                }
+            }
+        }
+
     }
 
     showForegroundShadow: flaskMixerArea.state !== "on"
@@ -655,12 +740,16 @@ Base {
 
 
     onObjectDropped: {
+        if(object.name === "fuel_cell")
+            object.hideInventoryOnDrag = false
     }
 
     onObjectTravelingToInventory: {
     }
 
     onObjectDragged: {
+        if(object.name === "fuel_cell")
+            object.hideInventoryOnDrag = true
     }
 
     onObjectReturned: {

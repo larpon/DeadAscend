@@ -164,8 +164,7 @@ Base {
                         scene: sceneNumber,
                         x: 190,
                         y: 300,
-                        itemSource: App.getAsset("sprites/coin/coin.png"),
-                        scene: sceneNumber
+                        itemSource: App.getAsset("sprites/coin/coin.png")
                     }
 
                     game.spawnObject(object,function(o){

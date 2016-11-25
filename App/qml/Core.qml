@@ -41,6 +41,11 @@ Item {
             add('tap',App.getAsset('sounds/key_tap.wav'))
             // NOTE Added globally so it plays between scene loads!
             add('lift_motor',App.getAsset('sounds/lift_motor_01.wav'))
+
+            add('elevator_open',App.getAsset('sounds/elevator_doors_open.wav'))
+            add('elevator_close',App.getAsset('sounds/elevator_doors_close.wav'))
+            add('ding',App.getAsset('sounds/ding_01.wav'))
+
         }
     }
 
