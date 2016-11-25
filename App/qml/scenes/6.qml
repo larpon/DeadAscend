@@ -700,6 +700,16 @@ Base {
 
                 onClicked: {
                     core.sounds.play("radio_seek")
+
+                    if(!game.helpCalled) {
+                        if(game.fuelCellConnected) {
+                            game.helpCalled = true
+                            game.setText("YES! THERE'S OTHER SURVIVORS ON THE RADIO","HALLO!? CAN YOU HEAR ME!?","radio: *Loud and clear, over*",
+                            "COME GET ME AT THE TOWER","radio: *We're sending a chopper, over*","AWESOME!, OVER!","...","Woohoo - they are coming for me!","I'll better hurry to the roof and wait for the chopper")
+                        } else
+                            game.setText("There's only noise...","The indicator for \"LONG RANGE\" is off","You'd need a powered antenna to call for help","More problems than solutions I guess")
+                    } else
+                        game.setText("Help is on the way - I better get to the roof!")
                 }
             }
 

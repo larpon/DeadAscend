@@ -49,6 +49,9 @@ Item {
     property int flaskMixerRedLevel: 0
 
     property bool fuelCellCharged: false
+    property bool fuelCellConnected: false
+
+    property bool helpCalled: false
 
     readonly property bool flasksFilled: flaskMixerBlueLevel > 0 && flaskMixerPurpleLevel > 0 && flaskMixerGreenLevel > 0 && flaskMixerRedLevel > 0
     readonly property bool flasksCorrect: flaskMixerBlueLevel == 7 && flaskMixerPurpleLevel == 1 && flaskMixerGreenLevel == 1 && flaskMixerRedLevel == 4
@@ -198,6 +201,9 @@ Item {
         property alias button8dropped: game.button8dropped
 
         property alias fuelCellCharged: game.fuelCellCharged
+        property alias fuelCellConnected: game.fuelCellConnected
+
+        property alias helpCalled: game.helpCalled
 
     }
 
@@ -592,6 +598,18 @@ Item {
             width: sourceSize.width; height: sourceSize.height
             source: App.getAsset("scenes/elevator_panel/elevator_panel.png")
 
+            MouseArea {
+                anchors { fill: parent }
+                onClicked: {
+                    core.sounds.play('tick')
+                    var a = [
+                        "It's clear that the panel is almost completly broken",
+                        "Luckily the elevator still works - thanks to Mr. Hamster"
+                    ]
+                    game.setText(Aid.randomFromArray(a))
+                }
+            }
+
             Image {
                 x: 516; y: 385
                 width: 88; height: 66
@@ -672,15 +690,55 @@ Item {
                 }
             }
 
+            Area {
+                stateless: true
+                description: [ "This particular socket is special", "It's clear that a button is missing above all the other buttons" ]
+                x: 501; y: 60
+                width: 88; height: 66
+
+                visible: !button8dropped
+            }
+
+            Image {
+                x: 501; y: 60
+                width: 88; height: 66
+
+                visible: button8dropped
+
+                fillMode: Image.PreserveAspectFit
+
+                source: App.getAsset("sprites/buttons/button_03/button_03.png")
+
+                MouseArea {
+                    anchors { fill: parent }
+                    onClicked: {
+                        core.sounds.play('tap')
+                        if(currentScene != "8") {
+                            elevatorPanel.show = false
+                            goToScene("8")
+                        } else
+                            setText("You're already at this floor")
+                    }
+                }
+            }
+
 
             DropSpot {
                 anchors { fill: parent }
+
                 keys: [ "button_8" ]
 
                 name: "button_drop"
 
-                onDropped: {
+                enabled: !button8dropped
 
+                onDropped: {
+                    drop.accept()
+
+                    blacklistObject(drag.source.name)
+                    button8dropped = true
+
+                    setText("Miraculously - it fits. Must be your lucky day!")
                 }
             }
 

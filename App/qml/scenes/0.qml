@@ -521,88 +521,177 @@ Base {
         stateless: true
 
         onClicked: {
-            game.setText("There's something small, round and red lying on the edge of the sleeve assembly","It's too far down to reach")
+            game.setText("There's something small, round and red lying on the edge of the sleeve assembly","It's too far down to reach by hand")
         }
 
+
+        DropSpot {
+            anchors { fill: parent }
+
+            keys: [ "flypaper" ]
+
+            name: "flypaper_drop"
+
+            onDropped: {
+
+                if(!game.getObject("button_8")) {
+                    drop.accept()
+
+                    var object = {
+                        name: "button_8",
+                        type: "Object",
+                        scene: sceneNumber,
+                        itemSource: App.getAsset("sprites/buttons/button_03/button_03.png")
+                    }
+
+                    game.spawnObject(object,function(o){
+                        game.inventory.add(o)
+                        game.inventory.show = true
+                    })
+
+                    game.setText("Got it! It's a red button!?")
+
+                    game.blacklistObject(drag.source.name)
+
+                }
+
+            }
+        }
     }
 
+    Item {
+        x: 98; y: 110; z: 1
 
-    ImageAnimation {
+        ImageAnimation {
 
-        x: 98; y: 110
-        width: 17; height: 15
+            x: 1; y: 5
+            width: 17; height: 15
 
-        paused: (scene.paused)
+            paused: !visible || (scene.paused)
 
-        source: App.getAsset("sprites/flies/cycle_3/0001.png")
+            source: App.getAsset("sprites/flies/cycle_3/0001.png")
 
-        defaultFrameDelay: 80
+            defaultFrameDelay: 80
 
-        sequences: [
-            {
-                name: "buzz",
-                frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
-                to: { "rbuzz":1}
-            },
-            {
-                name: "rbuzz",
-                frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
-                to: { "buzz":1},
-                reverse: true
-            }
-        ]
-    }
+            sequences: [
+                {
+                    name: "buzz",
+                    frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+                    to: { "rbuzz":1}
+                },
+                {
+                    name: "rbuzz",
+                    frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+                    to: { "buzz":1},
+                    reverse: true
+                }
+            ]
+        }
 
-    ImageAnimation {
+        ImageAnimation {
 
-        x: 98; y: 110
-        width: 21; height: 5
+            x: 12; y: 6
+            width: 21; height: 5
 
-        paused: (scene.paused)
+            paused: !visible || (scene.paused)
 
-        source: App.getAsset("sprites/flies/cycle_2/0001.png")
+            source: App.getAsset("sprites/flies/cycle_2/0001.png")
 
-        defaultFrameDelay: 70
+            defaultFrameDelay: 70
 
-        sequences: [
-            {
-                name: "buzz",
-                frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
-                to: { "rbuzz":1}
-            },
-            {
-                name: "rbuzz",
-                frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
-                to: { "buzz":1},
-                reverse: true
-            }
-        ]
-    }
+            sequences: [
+                {
+                    name: "buzz",
+                    frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+                    to: { "rbuzz":1}
+                },
+                {
+                    name: "rbuzz",
+                    frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+                    to: { "buzz":1},
+                    reverse: true
+                }
+            ]
+        }
 
-    ImageAnimation {
+        ImageAnimation {
 
-        x: 98; y: 110
-        width: 17; height: 13
+            x: 0; y: 0
+            width: 17; height: 13
 
-        paused: (scene.paused)
+            paused: !visible || (scene.paused)
 
-        source: App.getAsset("sprites/flies/cycle_1/0001.png")
+            source: App.getAsset("sprites/flies/cycle_1/0001.png")
 
-        defaultFrameDelay: 100
+            defaultFrameDelay: 100
 
-        sequences: [
-            {
-                name: "buzz",
-                frames: [1,2,3,4,5,6,7,8,9,10,11,12],
-                to: { "rbuzz":1}
-            },
-            {
-                name: "rbuzz",
-                frames: [1,2,3,4,5,6,7,8,9,10,11,12],
-                to: { "buzz":1},
-                reverse: true
-            }
-        ]
+            sequences: [
+                {
+                    name: "buzz",
+                    frames: [1,2,3,4,5,6,7,8,9,10,11,12],
+                    to: { "rbuzz":1}
+                },
+                {
+                    name: "rbuzz",
+                    frames: [1,2,3,4,5,6,7,8,9,10,11,12],
+                    to: { "buzz":1},
+                    reverse: true
+                }
+            ]
+        }
+
+        ImageAnimation {
+
+            x: 12; y: 16
+            width: 21; height: 5
+
+            paused: !visible || (scene.paused)
+
+            source: App.getAsset("sprites/flies/cycle_2/0001.png")
+
+            defaultFrameDelay: 100
+
+            sequences: [
+                {
+                    name: "buzz",
+                    frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+                    to: { "rbuzz":1}
+                },
+                {
+                    name: "rbuzz",
+                    frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+                    to: { "buzz":1},
+                    reverse: true
+                }
+            ]
+        }
+
+        ImageAnimation {
+
+            x: 0; y: 6
+            width: 17; height: 13
+
+            paused: !visible || (scene.paused)
+
+            source: App.getAsset("sprites/flies/cycle_1/0001.png")
+
+            defaultFrameDelay: 140
+
+            sequences: [
+                {
+                    name: "buzz",
+                    frames: [1,2,3,4,5,6,7,8,9,10,11,12],
+                    to: { "rbuzz":1}
+                },
+                {
+                    name: "rbuzz",
+                    frames: [1,2,3,4,5,6,7,8,9,10,11,12],
+                    to: { "buzz":1},
+                    reverse: true
+                }
+            ]
+        }
+
     }
 
     AnimatedArea {

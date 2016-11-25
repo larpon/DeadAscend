@@ -1708,6 +1708,46 @@
                  "width":45.3337,
                  "x":1012.67,
                  "y":420
+                }, 
+                {
+                 "gid":51,
+                 "height":147,
+                 "id":212,
+                 "name":"flypaper",
+                 "properties":
+                    {
+                     "tileId":"16"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":20,
+                 "x":103.333333333333,
+                 "y":183.666666666667
+                }, 
+                {
+                 "gid":52,
+                 "height":113,
+                 "id":213,
+                 "name":"shutgun",
+                 "properties":
+                    {
+                     "tileId":"17"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":140,
+                 "x":148.666666666667,
+                 "y":637.333333333333
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1733,7 +1773,7 @@
          "name":"3",
          "objects":[
                 {
-                 "gid":51,
+                 "gid":53,
                  "height":142,
                  "id":91,
                  "name":"lift_3",
@@ -1745,7 +1785,7 @@
                  "y":281.667
                 }, 
                 {
-                 "gid":52,
+                 "gid":54,
                  "height":257,
                  "id":97,
                  "name":"glass_cage_base",
@@ -1769,7 +1809,7 @@
                  "y":598.667
                 }, 
                 {
-                 "gid":55,
+                 "gid":57,
                  "height":72.3333,
                  "id":102,
                  "name":"hay1",
@@ -1791,7 +1831,7 @@
                  "y":464.333
                 }, 
                 {
-                 "gid":55,
+                 "gid":57,
                  "height":97.6667,
                  "id":101,
                  "name":"hay2",
@@ -1813,7 +1853,7 @@
                  "y":524.333
                 }, 
                 {
-                 "gid":55,
+                 "gid":57,
                  "height":72.3333,
                  "id":103,
                  "name":"hay3",
@@ -1835,7 +1875,7 @@
                  "y":540.704
                 }, 
                 {
-                 "gid":54,
+                 "gid":56,
                  "height":79,
                  "id":99,
                  "name":"hamster_box",
@@ -1861,7 +1901,7 @@
                  "y":387
                 }, 
                 {
-                 "gid":57,
+                 "gid":59,
                  "height":129,
                  "id":105,
                  "name":"hamster",
@@ -1883,7 +1923,7 @@
                  "y":481.333
                 }, 
                 {
-                 "gid":53,
+                 "gid":55,
                  "height":379,
                  "id":98,
                  "name":"glass_cage",
@@ -1909,7 +1949,7 @@
                  "y":601
                 }, 
                 {
-                 "gid":58,
+                 "gid":60,
                  "height":220,
                  "id":106,
                  "name":"zombie_sitting",
@@ -1952,7 +1992,7 @@
                  "y":196
                 }, 
                 {
-                 "gid":59,
+                 "gid":61,
                  "height":38,
                  "id":107,
                  "name":"hammer",
@@ -1972,7 +2012,7 @@
                  "y":241.667
                 }, 
                 {
-                 "gid":60,
+                 "gid":62,
                  "height":220,
                  "id":109,
                  "name":"zombie_tilting",
@@ -1984,7 +2024,7 @@
                  "y":338
                 }, 
                 {
-                 "gid":61,
+                 "gid":63,
                  "height":220,
                  "id":110,
                  "name":"zombie_tilted",
@@ -1996,7 +2036,7 @@
                  "y":351.333
                 }, 
                 {
-                 "gid":62,
+                 "gid":64,
                  "height":379,
                  "id":111,
                  "name":"glass_cage_smashed_BG",
@@ -2020,7 +2060,7 @@
                  "y":602.333
                 }, 
                 {
-                 "gid":63,
+                 "gid":65,
                  "height":379,
                  "id":112,
                  "name":"glass_cage_smashed_FG",
@@ -2042,7 +2082,7 @@
                  "y":600.667
                 }, 
                 {
-                 "gid":64,
+                 "gid":66,
                  "height":430,
                  "id":113,
                  "name":"cage_smash",
@@ -2251,7 +2291,7 @@
                  "y":310.667
                 }, 
                 {
-                 "gid":65,
+                 "gid":67,
                  "height":222,
                  "id":130,
                  "name":"elevator_door_4",
@@ -2271,7 +2311,7 @@
                  "y":493.667
                 }, 
                 {
-                 "gid":66,
+                 "gid":68,
                  "height":47,
                  "id":132,
                  "name":"clock_arms",
@@ -2335,7 +2375,7 @@
                  "y":22.6667
                 }, 
                 {
-                 "gid":67,
+                 "gid":69,
                  "height":232,
                  "id":134,
                  "name":"painting3",
@@ -2357,7 +2397,7 @@
                  "y":277.333
                 }, 
                 {
-                 "gid":68,
+                 "gid":70,
                  "height":146,
                  "id":137,
                  "name":"sacks",
@@ -2381,7 +2421,7 @@
                  "y":502.333
                 }, 
                 {
-                 "gid":69,
+                 "gid":71,
                  "height":60,
                  "id":138,
                  "name":"open_sack",
@@ -2407,7 +2447,7 @@
                  "y":568.667
                 }, 
                 {
-                 "gid":70,
+                 "gid":72,
                  "height":57,
                  "id":139,
                  "name":"grain",
@@ -2429,7 +2469,7 @@
                  "y":582.667
                 }, 
                 {
-                 "gid":71,
+                 "gid":73,
                  "height":25,
                  "id":140,
                  "name":"loose_grain",
@@ -2472,7 +2512,7 @@
                  "y":101.333
                 }, 
                 {
-                 "gid":72,
+                 "gid":74,
                  "height":242,
                  "id":143,
                  "name":"treadmill_generator",
@@ -2498,7 +2538,7 @@
                  "y":573
                 }, 
                 {
-                 "gid":73,
+                 "gid":75,
                  "height":264,
                  "id":144,
                  "name":"treadmill",
@@ -2518,7 +2558,7 @@
                  "y":504
                 }, 
                 {
-                 "gid":75,
+                 "gid":77,
                  "height":155,
                  "id":145,
                  "name":"generator",
@@ -2542,7 +2582,7 @@
                  "y":599
                 }, 
                 {
-                 "gid":77,
+                 "gid":79,
                  "height":298,
                  "id":147,
                  "name":"elevator_motor",
@@ -2568,7 +2608,7 @@
                  "y":590.333
                 }, 
                 {
-                 "gid":76,
+                 "gid":78,
                  "height":223,
                  "id":146,
                  "name":"cable_generator",
@@ -2592,7 +2632,7 @@
                  "y":609.333
                 }, 
                 {
-                 "gid":84,
+                 "gid":86,
                  "height":180,
                  "id":156,
                  "name":"scooter",
@@ -2616,7 +2656,7 @@
                  "y":550
                 }, 
                 {
-                 "gid":78,
+                 "gid":80,
                  "height":269,
                  "id":148,
                  "name":"popcorn_machine_base",
@@ -2640,7 +2680,7 @@
                  "y":612.667
                 }, 
                 {
-                 "gid":79,
+                 "gid":81,
                  "height":149,
                  "id":149,
                  "name":"popcorn_machine_top",
@@ -2664,7 +2704,7 @@
                  "y":420.667
                 }, 
                 {
-                 "gid":80,
+                 "gid":82,
                  "height":359,
                  "id":151,
                  "name":"ski_left",
@@ -2688,7 +2728,7 @@
                  "y":597.667
                 }, 
                 {
-                 "gid":81,
+                 "gid":83,
                  "height":359,
                  "id":152,
                  "name":"ski_right",
@@ -2712,7 +2752,7 @@
                  "y":623
                 }, 
                 {
-                 "gid":82,
+                 "gid":84,
                  "height":220,
                  "id":153,
                  "name":"rocking_horse",
@@ -2736,7 +2776,7 @@
                  "y":646
                 }, 
                 {
-                 "gid":83,
+                 "gid":85,
                  "height":209,
                  "id":154,
                  "name":"beach_ball",
@@ -2785,7 +2825,7 @@
                  "y":300
                 }, 
                 {
-                 "gid":85,
+                 "gid":87,
                  "height":129,
                  "id":159,
                  "name":"cable_treadmill",
@@ -2817,7 +2857,7 @@
          "name":"5 bg",
          "opacity":1,
          "type":"imagelayer",
-         "visible":true,
+         "visible":false,
          "width":0,
          "x":0,
          "y":0
@@ -2828,7 +2868,7 @@
          "name":"5",
          "objects":[
                 {
-                 "gid":86,
+                 "gid":88,
                  "height":168,
                  "id":162,
                  "name":"elevator_door_5",
@@ -2840,7 +2880,7 @@
                  "y":425.333
                 }, 
                 {
-                 "gid":87,
+                 "gid":89,
                  "height":69,
                  "id":163,
                  "name":"vent_l",
@@ -2852,7 +2892,7 @@
                  "y":194
                 }, 
                 {
-                 "gid":88,
+                 "gid":90,
                  "height":69,
                  "id":164,
                  "name":"vent_r",
@@ -2864,7 +2904,7 @@
                  "y":192.667
                 }, 
                 {
-                 "gid":89,
+                 "gid":91,
                  "height":78,
                  "id":165,
                  "name":"lever_ll",
@@ -2876,7 +2916,7 @@
                  "y":503
                 }, 
                 {
-                 "gid":90,
+                 "gid":92,
                  "height":68,
                  "id":166,
                  "name":"lever_lr",
@@ -2888,7 +2928,7 @@
                  "y":456.667
                 }, 
                 {
-                 "gid":91,
+                 "gid":93,
                  "height":58,
                  "id":167,
                  "name":"lever_rl",
@@ -2900,7 +2940,7 @@
                  "y":391.667
                 }, 
                 {
-                 "gid":92,
+                 "gid":94,
                  "height":68,
                  "id":168,
                  "name":"lever_rr",
@@ -2912,7 +2952,7 @@
                  "y":440.667
                 }, 
                 {
-                 "gid":93,
+                 "gid":95,
                  "height":177,
                  "id":169,
                  "name":"flask_mixer_small",
@@ -2932,7 +2972,7 @@
                  "y":649.333
                 }, 
                 {
-                 "gid":94,
+                 "gid":96,
                  "height":68,
                  "id":206,
                  "name":"coil_bl",
@@ -2944,7 +2984,7 @@
                  "y":602
                 }, 
                 {
-                 "gid":95,
+                 "gid":97,
                  "height":70,
                  "id":207,
                  "name":"coil_br",
@@ -2956,7 +2996,7 @@
                  "y":604.333
                 }, 
                 {
-                 "gid":96,
+                 "gid":98,
                  "height":84,
                  "id":208,
                  "name":"coil_tl",
@@ -2968,7 +3008,7 @@
                  "y":546
                 }, 
                 {
-                 "gid":97,
+                 "gid":99,
                  "height":72,
                  "id":209,
                  "name":"coil_tr",
@@ -2980,7 +3020,7 @@
                  "y":536
                 }, 
                 {
-                 "gid":98,
+                 "gid":100,
                  "height":215,
                  "id":210,
                  "name":"coil_lightning",
@@ -2992,7 +3032,7 @@
                  "y":649.667
                 }, 
                 {
-                 "height":153.333333333333,
+                 "height":153.333,
                  "id":211,
                  "name":"fuel_cell_charger",
                  "properties":
@@ -3007,12 +3047,12 @@
                  "type":"Area",
                  "visible":true,
                  "width":180,
-                 "x":394.666666666667,
-                 "y":509.333333333333
+                 "x":394.667,
+                 "y":509.333
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "width":0,
          "x":0,
          "y":0
@@ -3034,7 +3074,7 @@
          "name":"6",
          "objects":[
                 {
-                 "gid":99,
+                 "gid":101,
                  "height":242,
                  "id":170,
                  "name":"elevator_door_6",
@@ -3068,7 +3108,7 @@
                  "y":330.667
                 }, 
                 {
-                 "gid":100,
+                 "gid":102,
                  "height":129,
                  "id":173,
                  "name":"purple_pipe",
@@ -3088,7 +3128,7 @@
                  "y":429.333
                 }, 
                 {
-                 "gid":101,
+                 "gid":103,
                  "height":137,
                  "id":174,
                  "name":"green_pipe",
@@ -3108,7 +3148,7 @@
                  "y":353.333
                 }, 
                 {
-                 "gid":102,
+                 "gid":104,
                  "height":148,
                  "id":175,
                  "name":"blue_pipe",
@@ -3128,7 +3168,7 @@
                  "y":535.333
                 }, 
                 {
-                 "gid":103,
+                 "gid":105,
                  "height":152,
                  "id":176,
                  "name":"red_pipe",
@@ -3148,7 +3188,7 @@
                  "y":630.667
                 }, 
                 {
-                 "gid":104,
+                 "gid":106,
                  "height":97,
                  "id":177,
                  "name":"bottle_purple",
@@ -3168,7 +3208,7 @@
                  "y":288
                 }, 
                 {
-                 "gid":105,
+                 "gid":107,
                  "height":49,
                  "id":178,
                  "name":"rope",
@@ -3188,7 +3228,7 @@
                  "y":136
                 }, 
                 {
-                 "gid":107,
+                 "gid":109,
                  "height":66,
                  "id":181,
                  "name":"ventilator_wing",
@@ -3208,7 +3248,7 @@
                  "y":246.333
                 }, 
                 {
-                 "gid":106,
+                 "gid":108,
                  "height":146,
                  "id":180,
                  "name":"ventilator",
@@ -3255,7 +3295,7 @@
          "name":"7",
          "objects":[
                 {
-                 "gid":108,
+                 "gid":110,
                  "height":362,
                  "id":183,
                  "name":"elevator_door_7",
@@ -3290,7 +3330,7 @@
                  "y":141.333
                 }, 
                 {
-                 "gid":109,
+                 "gid":111,
                  "height":253,
                  "id":184,
                  "name":"painting4",
@@ -3323,7 +3363,7 @@
                  "y":164
                 }, 
                 {
-                 "gid":110,
+                 "gid":112,
                  "height":265,
                  "id":188,
                  "name":"curtains",
@@ -3421,7 +3461,7 @@
                  "y":382.667
                 }, 
                 {
-                 "gid":111,
+                 "gid":113,
                  "height":154,
                  "id":194,
                  "name":"bottle_red",
@@ -3441,7 +3481,7 @@
                  "y":727.421
                 }, 
                 {
-                 "gid":112,
+                 "gid":114,
                  "height":160,
                  "id":195,
                  "name":"rope_tied",
@@ -3477,8 +3517,143 @@
          "width":0,
          "x":0,
          "y":0
+        }, 
+        {
+         "height":0,
+         "image":"8.png",
+         "name":"8 bg",
+         "opacity":1,
+         "type":"imagelayer",
+         "visible":true,
+         "width":0,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"index",
+         "height":1,
+         "name":"8",
+         "objects":[
+                {
+                 "gid":115,
+                 "height":571,
+                 "id":215,
+                 "name":"casing",
+                 "properties":
+                    {
+                     "tileId":"0"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":409,
+                 "x":316,
+                 "y":579.666666666667
+                }, 
+                {
+                 "gid":116,
+                 "height":298,
+                 "id":216,
+                 "name":"casing_inside",
+                 "properties":
+                    {
+                     "tileId":"1"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":135,
+                 "x":533,
+                 "y":549
+                }, 
+                {
+                 "gid":117,
+                 "height":313,
+                 "id":217,
+                 "name":"elevator_door_8",
+                 "rotation":0,
+                 "type":"AnimatedArea",
+                 "visible":true,
+                 "width":147,
+                 "x":531,
+                 "y":562.666666666667
+                }, 
+                {
+                 "gid":118,
+                 "height":149,
+                 "id":218,
+                 "name":"satelite_dish",
+                 "properties":
+                    {
+                     "tileId":"3"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":180,
+                 "x":168.666666666667,
+                 "y":199.333333333333
+                }, 
+                {
+                 "gid":119,
+                 "height":42,
+                 "id":219,
+                 "name":"satelite_box",
+                 "properties":
+                    {
+                     "tileId":"4"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":66,
+                 "x":352.333333333333,
+                 "y":199.666666666667
+                }, 
+                {
+                 "gid":120,
+                 "height":41,
+                 "id":221,
+                 "name":"satelite_fuel_cell",
+                 "properties":
+                    {
+                     "tileId":"5"
+                    },
+                 "propertytypes":
+                    {
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":52,
+                 "x":402,
+                 "y":200
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "width":1,
+         "x":0,
+         "y":0
         }],
- "nextobjectid":212,
+ "nextobjectid":222,
  "orientation":"orthogonal",
  "renderorder":"left-up",
  "tileheight":660,
@@ -3651,7 +3826,7 @@
          "margin":0,
          "name":"2",
          "spacing":0,
-         "tilecount":12,
+         "tilecount":14,
          "tileheight":531,
          "tiles":
             {
@@ -3678,6 +3853,14 @@
              "15":
                 {
                  "image":"..\/sprites\/bottles\/glass_bottle\/blue.png"
+                },
+             "16":
+                {
+                 "image":"..\/sprites\/flypaper\/flypaper.png"
+                },
+             "17":
+                {
+                 "image":"..\/sprites\/shotgun\/shotgun.png"
                 },
              "3":
                 {
@@ -3708,7 +3891,7 @@
         }, 
         {
          "columns":0,
-         "firstgid":51,
+         "firstgid":53,
          "margin":0,
          "name":"3",
          "spacing":0,
@@ -3773,7 +3956,7 @@
         }, 
         {
          "columns":0,
-         "firstgid":65,
+         "firstgid":67,
          "margin":0,
          "name":"4",
          "spacing":0,
@@ -3866,7 +4049,7 @@
         }, 
         {
          "columns":0,
-         "firstgid":86,
+         "firstgid":88,
          "margin":0,
          "name":"5",
          "spacing":0,
@@ -3931,7 +4114,7 @@
         }, 
         {
          "columns":0,
-         "firstgid":99,
+         "firstgid":101,
          "margin":0,
          "name":"6",
          "spacing":0,
@@ -3980,7 +4163,7 @@
         }, 
         {
          "columns":0,
-         "firstgid":108,
+         "firstgid":110,
          "margin":0,
          "name":"7",
          "spacing":0,
@@ -4010,6 +4193,43 @@
                 }
             },
          "tilewidth":270
+        }, 
+        {
+         "columns":0,
+         "firstgid":115,
+         "margin":0,
+         "name":"8",
+         "spacing":0,
+         "tilecount":6,
+         "tileheight":571,
+         "tiles":
+            {
+             "0":
+                {
+                 "image":"..\/sprites\/scene8\/elevator.png"
+                },
+             "1":
+                {
+                 "image":"..\/sprites\/scene8\/inside.png"
+                },
+             "2":
+                {
+                 "image":"..\/sprites\/elevator_assets\/doors\/floor_8\/move\/0001.png"
+                },
+             "3":
+                {
+                 "image":"..\/sprites\/satellite\/dish.png"
+                },
+             "4":
+                {
+                 "image":"..\/sprites\/satellite\/box.png"
+                },
+             "5":
+                {
+                 "image":"..\/sprites\/fuel_cell\/fuel_cell_small.png"
+                }
+            },
+         "tilewidth":409
         }],
  "tilewidth":1100,
  "version":1,

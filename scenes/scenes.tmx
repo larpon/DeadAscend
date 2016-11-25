@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="212">
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="222">
  <tileset firstgid="1" name="0" tilewidth="155" tileheight="191" tilecount="14" columns="0">
   <tile id="0">
    <image width="74" height="97" source="../App/assets/sprites/bucket/bucket_empty.png"/>
@@ -106,7 +106,7 @@
    <image width="87" height="35" source="../App/assets/sprites/ladder/assembled_rung_6.png"/>
   </tile>
  </tileset>
- <tileset firstgid="35" name="2" tilewidth="209" tileheight="531" tilecount="12" columns="0">
+ <tileset firstgid="35" name="2" tilewidth="209" tileheight="531" tilecount="14" columns="0">
   <tile id="3">
    <image width="173" height="531" source="../App/assets/sprites/lift/operate_1/0001.png"/>
   </tile>
@@ -143,8 +143,14 @@
   <tile id="15">
    <image width="78" height="154" source="../App/assets/sprites/bottles/glass_bottle/blue.png"/>
   </tile>
+  <tile id="16">
+   <image width="20" height="147" source="../App/assets/sprites/flypaper/flypaper.png"/>
+  </tile>
+  <tile id="17">
+   <image width="140" height="113" source="../App/assets/sprites/shotgun/shotgun.png"/>
+  </tile>
  </tileset>
- <tileset firstgid="51" name="3" tilewidth="377" tileheight="430" tilecount="13" columns="0">
+ <tileset firstgid="53" name="3" tilewidth="377" tileheight="430" tilecount="13" columns="0">
   <tile id="0">
    <image width="179" height="142" source="../App/assets/sprites/lift/operate_2/0001.png"/>
   </tile>
@@ -185,7 +191,7 @@
    <image width="377" height="430" source="../App/assets/sprites/glass_cage/smash/0001.png"/>
   </tile>
  </tileset>
- <tileset firstgid="65" name="4" tilewidth="263" tileheight="359" tilecount="20" columns="0">
+ <tileset firstgid="67" name="4" tilewidth="263" tileheight="359" tilecount="20" columns="0">
   <tile id="0">
    <image width="93" height="222" source="../App/assets/sprites/elevator_assets/doors/floor_4/move/0001.png"/>
   </tile>
@@ -247,7 +253,7 @@
    <image width="122" height="129" source="../App/assets/sprites/cables/cable_motor-treadmill_generator.png"/>
   </tile>
  </tileset>
- <tileset firstgid="86" name="5" tilewidth="204" tileheight="215" tilecount="13" columns="0">
+ <tileset firstgid="88" name="5" tilewidth="204" tileheight="215" tilecount="13" columns="0">
   <tile id="0">
    <image width="130" height="168" source="../App/assets/sprites/elevator_assets/doors/floor_5/move/0001.png"/>
   </tile>
@@ -288,7 +294,7 @@
    <image width="204" height="215" source="../App/assets/sprites/coils/lightning/0001.png"/>
   </tile>
  </tileset>
- <tileset firstgid="99" name="6" tilewidth="195" tileheight="242" tilecount="9" columns="0">
+ <tileset firstgid="101" name="6" tilewidth="195" tileheight="242" tilecount="9" columns="0">
   <tile id="0">
    <image width="108" height="242" source="../App/assets/sprites/elevator_assets/doors/floor_6/move/0001.png"/>
   </tile>
@@ -317,7 +323,7 @@
    <image width="58" height="66" source="../App/assets/sprites/ventilator/wing_2/1.png"/>
   </tile>
  </tileset>
- <tileset firstgid="108" name="7" tilewidth="270" tileheight="362" tilecount="5" columns="0">
+ <tileset firstgid="110" name="7" tilewidth="270" tileheight="362" tilecount="5" columns="0">
   <tile id="0">
    <image width="270" height="362" source="../App/assets/sprites/elevator_assets/doors/floor_7/move/0001.png"/>
   </tile>
@@ -332,6 +338,26 @@
   </tile>
   <tile id="4">
    <image width="55" height="160" source="../App/assets/sprites/rope/window_tied/tied.png"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="115" name="8" tilewidth="409" tileheight="571" tilecount="6" columns="0">
+  <tile id="0">
+   <image width="409" height="571" source="../App/assets/sprites/scene8/elevator.png"/>
+  </tile>
+  <tile id="1">
+   <image width="135" height="298" source="../App/assets/sprites/scene8/inside.png"/>
+  </tile>
+  <tile id="2">
+   <image width="147" height="313" source="../App/assets/sprites/elevator_assets/doors/floor_8/move/0001.png"/>
+  </tile>
+  <tile id="3">
+   <image width="180" height="149" source="../App/assets/sprites/satellite/dish.png"/>
+  </tile>
+  <tile id="4">
+   <image width="66" height="42" source="../App/assets/sprites/satellite/box.png"/>
+  </tile>
+  <tile id="5">
+   <image width="52" height="41" source="../App/assets/sprites/fuel_cell/fuel_cell_small.png"/>
   </tile>
  </tileset>
  <imagelayer name="0 bg" visible="0">
@@ -816,38 +842,48 @@
     <property name="stateless" type="bool" value="true"/>
    </properties>
   </object>
+  <object id="212" name="flypaper" type="Object" gid="51" x="103.333" y="183.667" width="20" height="147">
+   <properties>
+    <property name="tileId" value="16"/>
+   </properties>
+  </object>
+  <object id="213" name="shutgun" type="Object" gid="52" x="148.667" y="637.333" width="140" height="113">
+   <properties>
+    <property name="tileId" value="17"/>
+   </properties>
+  </object>
  </objectgroup>
  <imagelayer name="3 bg" visible="0">
   <image source="../App/assets/scenes/3.png" width="1100" height="660"/>
  </imagelayer>
  <objectgroup draworder="index" name="3" visible="0">
-  <object id="91" name="lift_3" type="AnimatedArea" gid="51" x="607" y="281.667" width="179" height="142" visible="0"/>
-  <object id="97" name="glass_cage_base" type="Area" gid="52" x="340" y="598.667" width="249" height="257">
+  <object id="91" name="lift_3" type="AnimatedArea" gid="53" x="607" y="281.667" width="179" height="142" visible="0"/>
+  <object id="97" name="glass_cage_base" type="Area" gid="54" x="340" y="598.667" width="249" height="257">
    <properties>
     <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="1"/>
     <property name="z" type="int" value="-1"/>
    </properties>
   </object>
-  <object id="102" name="hay1" type="Area" gid="55" x="413" y="464.333" width="144.333" height="72.3333">
+  <object id="102" name="hay1" type="Area" gid="57" x="413" y="464.333" width="144.333" height="72.3333">
    <properties>
     <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="4"/>
    </properties>
   </object>
-  <object id="101" name="hay2" type="Area" gid="55" x="374.333" y="524.333" width="169.667" height="97.6667">
+  <object id="101" name="hay2" type="Area" gid="57" x="374.333" y="524.333" width="169.667" height="97.6667">
    <properties>
     <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="4"/>
    </properties>
   </object>
-  <object id="103" name="hay3" type="Area" gid="55" x="352.434" y="540.704" width="144.333" height="72.3333" rotation="11.8785">
+  <object id="103" name="hay3" type="Area" gid="57" x="352.434" y="540.704" width="144.333" height="72.3333" rotation="11.8785">
    <properties>
     <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="4"/>
    </properties>
   </object>
-  <object id="99" name="hamster_box" type="Area" gid="54" x="470.667" y="387" width="121" height="79">
+  <object id="99" name="hamster_box" type="Area" gid="56" x="470.667" y="387" width="121" height="79">
    <properties>
     <property name="description" value="House of the living critter"/>
     <property name="stateless" type="bool" value="true"/>
@@ -855,13 +891,13 @@
     <property name="z" type="int" value="1"/>
    </properties>
   </object>
-  <object id="105" name="hamster" type="AnimatedArea" gid="57" x="420.667" y="481.333" width="116" height="129">
+  <object id="105" name="hamster" type="AnimatedArea" gid="59" x="420.667" y="481.333" width="116" height="129">
    <properties>
     <property name="tileId" value="6"/>
     <property name="z" type="int" value="3"/>
    </properties>
   </object>
-  <object id="98" name="glass_cage" type="Area" gid="53" x="334.667" y="601" width="265" height="379" visible="0">
+  <object id="98" name="glass_cage" type="Area" gid="55" x="334.667" y="601" width="265" height="379" visible="0">
    <properties>
     <property name="description">[
 	&quot;There's a hamster living here! Hey little buddy!&quot;,
@@ -872,7 +908,7 @@
     <property name="z" type="int" value="4"/>
    </properties>
   </object>
-  <object id="106" name="zombie_sitting" type="AnimatedArea" gid="58" x="93" y="338" width="199" height="220">
+  <object id="106" name="zombie_sitting" type="AnimatedArea" gid="60" x="93" y="338" width="199" height="220">
    <properties>
     <property name="tileId" value="7"/>
    </properties>
@@ -884,27 +920,27 @@
     <property name="z" type="int" value="-1"/>
    </properties>
   </object>
-  <object id="107" name="hammer" type="Object" gid="59" x="911.667" y="241.667" width="62" height="38">
+  <object id="107" name="hammer" type="Object" gid="61" x="911.667" y="241.667" width="62" height="38">
    <properties>
     <property name="tileId" value="8"/>
    </properties>
   </object>
-  <object id="109" name="zombie_tilting" type="AnimatedArea" gid="60" x="-2.66667" y="338" width="296" height="220"/>
-  <object id="110" name="zombie_tilted" type="AnimatedArea" gid="61" x="8.33333" y="351.333" width="226" height="220"/>
-  <object id="111" name="glass_cage_smashed_BG" type="Area" gid="62" x="336.5" y="602.333" width="265" height="379">
+  <object id="109" name="zombie_tilting" type="AnimatedArea" gid="62" x="-2.66667" y="338" width="296" height="220"/>
+  <object id="110" name="zombie_tilted" type="AnimatedArea" gid="63" x="8.33333" y="351.333" width="226" height="220"/>
+  <object id="111" name="glass_cage_smashed_BG" type="Area" gid="64" x="336.5" y="602.333" width="265" height="379">
    <properties>
     <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="11"/>
     <property name="z" type="int" value="-2"/>
    </properties>
   </object>
-  <object id="112" name="glass_cage_smashed_FG" type="Area" gid="63" x="336.833" y="600.667" width="265" height="379">
+  <object id="112" name="glass_cage_smashed_FG" type="Area" gid="65" x="336.833" y="600.667" width="265" height="379">
    <properties>
     <property name="tileId" value="12"/>
     <property name="z" type="int" value="2"/>
    </properties>
   </object>
-  <object id="113" name="cage_smash" type="AnimatedArea" gid="64" x="264" y="701.667" width="377" height="430"/>
+  <object id="113" name="cage_smash" type="AnimatedArea" gid="66" x="264" y="701.667" width="377" height="430"/>
   <object id="116" name="whiteboard_area" type="Area" x="1009.33" y="74.6667" width="109.333" height="148"/>
   <object id="117" name="picture_area" type="Area" x="-6.66667" y="20" width="265.333" height="166.667">
    <properties>
@@ -952,12 +988,12 @@
  </imagelayer>
  <objectgroup draworder="index" name="4" visible="0">
   <object id="128" name="exit_down_4" type="Area" x="780" y="310.667" width="292" height="93.3333"/>
-  <object id="130" name="elevator_door_4" type="AnimatedArea" gid="65" x="607.333" y="493.667" width="93" height="222">
+  <object id="130" name="elevator_door_4" type="AnimatedArea" gid="67" x="607.333" y="493.667" width="93" height="222">
    <properties>
     <property name="tileId" value="0"/>
    </properties>
   </object>
-  <object id="132" name="clock_arms" type="AnimatedArea" gid="66" x="663.667" y="205.667" width="47" height="47">
+  <object id="132" name="clock_arms" type="AnimatedArea" gid="68" x="663.667" y="205.667" width="47" height="47">
    <properties>
     <property name="z" type="int" value="-1"/>
    </properties>
@@ -975,20 +1011,20 @@
     <property name="z" type="int" value="-1"/>
    </properties>
   </object>
-  <object id="134" name="painting3" type="Object" gid="67" x="933.667" y="277.333" width="114" height="232">
+  <object id="134" name="painting3" type="Object" gid="69" x="933.667" y="277.333" width="114" height="232">
    <properties>
     <property name="description" value="It has the number 563 on the backside"/>
     <property name="tileId" value="2"/>
    </properties>
   </object>
-  <object id="137" name="sacks" type="Area" gid="68" x="721.667" y="502.333" width="162" height="146">
+  <object id="137" name="sacks" type="Area" gid="70" x="721.667" y="502.333" width="162" height="146">
    <properties>
     <property name="description" value="Some sacks of grain"/>
     <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="3"/>
    </properties>
   </object>
-  <object id="138" name="open_sack" type="Area" gid="69" x="714.667" y="568.667" width="184" height="60">
+  <object id="138" name="open_sack" type="Area" gid="71" x="714.667" y="568.667" width="184" height="60">
    <properties>
     <property name="description" value="An open sack of grain"/>
     <property name="stateless" type="bool" value="true"/>
@@ -996,13 +1032,13 @@
     <property name="z" type="int" value="-1"/>
    </properties>
   </object>
-  <object id="139" name="grain" type="Object" gid="70" x="864.667" y="582.667" width="108" height="57">
+  <object id="139" name="grain" type="Object" gid="72" x="864.667" y="582.667" width="108" height="57">
    <properties>
     <property name="description" value="A small pile of grain"/>
     <property name="tileId" value="5"/>
    </properties>
   </object>
-  <object id="140" name="loose_grain" type="Area" gid="71" x="814" y="592" width="213" height="25">
+  <object id="140" name="loose_grain" type="Area" gid="73" x="814" y="592" width="213" height="25">
    <properties>
     <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="6"/>
@@ -1017,7 +1053,7 @@
     <property name="stateless" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="143" name="treadmill_generator" type="Area" gid="72" x="178.333" y="573" width="263" height="242">
+  <object id="143" name="treadmill_generator" type="Area" gid="74" x="178.333" y="573" width="263" height="242">
    <properties>
     <property name="clickable" type="bool" value="false"/>
     <property name="stateless" type="bool" value="true"/>
@@ -1025,19 +1061,19 @@
     <property name="z" type="int" value="-1"/>
    </properties>
   </object>
-  <object id="144" name="treadmill" type="AnimatedArea" gid="73" x="78.6667" y="504" width="233" height="264">
+  <object id="144" name="treadmill" type="AnimatedArea" gid="75" x="78.6667" y="504" width="233" height="264">
    <properties>
     <property name="tileId" value="8"/>
    </properties>
   </object>
-  <object id="145" name="generator" type="Area" gid="75" x="487" y="599" width="157" height="155">
+  <object id="145" name="generator" type="Area" gid="77" x="487" y="599" width="157" height="155">
    <properties>
     <property name="description" value="A visually pleasing generator - sadly it's broken"/>
     <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="10"/>
    </properties>
   </object>
-  <object id="147" name="elevator_motor" type="Area" gid="77" x="335.667" y="590.333" width="199" height="298">
+  <object id="147" name="elevator_motor" type="Area" gid="79" x="335.667" y="590.333" width="199" height="298">
    <properties>
     <property name="clickable" type="bool" value="false"/>
     <property name="stateless" type="bool" value="true"/>
@@ -1045,56 +1081,56 @@
     <property name="z" type="int" value="-1"/>
    </properties>
   </object>
-  <object id="146" name="cable_generator" type="Object" gid="76" x="416.333" y="609.333" width="186" height="223">
+  <object id="146" name="cable_generator" type="Object" gid="78" x="416.333" y="609.333" width="186" height="223">
    <properties>
     <property name="description" value="A pretty thick power cable. It fits nicely in one end to the elevator motor battery"/>
     <property name="tileId" value="11"/>
     <property name="z" type="int" value="1"/>
    </properties>
   </object>
-  <object id="156" name="scooter" type="Area" gid="84" x="37.6667" y="550" width="122" height="180">
+  <object id="156" name="scooter" type="Area" gid="86" x="37.6667" y="550" width="122" height="180">
    <properties>
     <property name="description" value="Oh my. What a nice little scooter"/>
     <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="19"/>
    </properties>
   </object>
-  <object id="148" name="popcorn_machine_base" type="Area" gid="78" x="82.6667" y="612.667" width="184" height="269">
+  <object id="148" name="popcorn_machine_base" type="Area" gid="80" x="82.6667" y="612.667" width="184" height="269">
    <properties>
     <property name="description" value="POP, POP no more... pop... corn. Eeer"/>
     <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="13"/>
    </properties>
   </object>
-  <object id="149" name="popcorn_machine_top" type="Area" gid="79" x="77" y="420.667" width="158" height="149">
+  <object id="149" name="popcorn_machine_top" type="Area" gid="81" x="77" y="420.667" width="158" height="149">
    <properties>
     <property name="decsription" value="Pretty heavy glass this is made of!"/>
     <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="14"/>
    </properties>
   </object>
-  <object id="151" name="ski_left" type="Area" gid="80" x="-28" y="597.667" width="169" height="359">
+  <object id="151" name="ski_left" type="Area" gid="82" x="-28" y="597.667" width="169" height="359">
    <properties>
     <property name="description" value="This is useless. There's not even snow outside"/>
     <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="15"/>
    </properties>
   </object>
-  <object id="152" name="ski_right" type="Area" gid="81" x="182.667" y="623" width="169" height="359">
+  <object id="152" name="ski_right" type="Area" gid="83" x="182.667" y="623" width="169" height="359">
    <properties>
     <property name="description" value="Go find a piste - maybe in Italy"/>
     <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="16"/>
    </properties>
   </object>
-  <object id="153" name="rocking_horse" type="Area" gid="82" x="38.6667" y="646" width="200" height="220">
+  <object id="153" name="rocking_horse" type="Area" gid="84" x="38.6667" y="646" width="200" height="220">
    <properties>
     <property name="description" value="Rock-on brother!"/>
     <property name="stateless" type="bool" value="true"/>
     <property name="tileId" value="17"/>
    </properties>
   </object>
-  <object id="154" name="beach_ball" type="Area" gid="83" x="212.667" y="665.333" width="197" height="209">
+  <object id="154" name="beach_ball" type="Area" gid="85" x="212.667" y="665.333" width="197" height="209">
    <properties>
     <property name="description" value="Fun in the summer - useless during zombie apocalypses"/>
     <property name="round" type="bool" value="true"/>
@@ -1109,33 +1145,33 @@
     <property name="z" type="int" value="-2"/>
    </properties>
   </object>
-  <object id="159" name="cable_treadmill" type="Area" gid="85" x="327" y="514.667" width="122" height="129">
+  <object id="159" name="cable_treadmill" type="Area" gid="87" x="327" y="514.667" width="122" height="129">
    <properties>
     <property name="tileId" value="20"/>
    </properties>
   </object>
  </objectgroup>
- <imagelayer name="5 bg">
+ <imagelayer name="5 bg" visible="0">
   <image source="../App/assets/scenes/5.png" width="1100" height="660"/>
  </imagelayer>
- <objectgroup draworder="index" name="5">
-  <object id="162" name="elevator_door_5" type="AnimatedArea" gid="86" x="412.333" y="425.333" width="130" height="168"/>
-  <object id="163" name="vent_l" type="AnimatedArea" gid="87" x="293.333" y="194" width="73" height="69"/>
-  <object id="164" name="vent_r" type="AnimatedArea" gid="88" x="588" y="192.667" width="73" height="69"/>
-  <object id="165" name="lever_ll" type="AnimatedArea" gid="89" x="202.333" y="503" width="62" height="78"/>
-  <object id="166" name="lever_lr" type="AnimatedArea" gid="90" x="266.333" y="456.667" width="54" height="68"/>
-  <object id="167" name="lever_rl" type="AnimatedArea" gid="91" x="695.667" y="391.667" width="46" height="58"/>
-  <object id="168" name="lever_rr" type="AnimatedArea" gid="92" x="734.333" y="440.667" width="54" height="68"/>
-  <object id="169" name="flask_mixer_small" type="Area" gid="93" x="42" y="649.333" width="77" height="177">
+ <objectgroup draworder="index" name="5" visible="0">
+  <object id="162" name="elevator_door_5" type="AnimatedArea" gid="88" x="412.333" y="425.333" width="130" height="168"/>
+  <object id="163" name="vent_l" type="AnimatedArea" gid="89" x="293.333" y="194" width="73" height="69"/>
+  <object id="164" name="vent_r" type="AnimatedArea" gid="90" x="588" y="192.667" width="73" height="69"/>
+  <object id="165" name="lever_ll" type="AnimatedArea" gid="91" x="202.333" y="503" width="62" height="78"/>
+  <object id="166" name="lever_lr" type="AnimatedArea" gid="92" x="266.333" y="456.667" width="54" height="68"/>
+  <object id="167" name="lever_rl" type="AnimatedArea" gid="93" x="695.667" y="391.667" width="46" height="58"/>
+  <object id="168" name="lever_rr" type="AnimatedArea" gid="94" x="734.333" y="440.667" width="54" height="68"/>
+  <object id="169" name="flask_mixer_small" type="Area" gid="95" x="42" y="649.333" width="77" height="177">
    <properties>
     <property name="tileId" value="7"/>
    </properties>
   </object>
-  <object id="206" name="coil_bl" type="AnimatedArea" gid="94" x="394" y="602" width="52" height="68"/>
-  <object id="207" name="coil_br" type="AnimatedArea" gid="95" x="523" y="604.333" width="50" height="70"/>
-  <object id="208" name="coil_tl" type="AnimatedArea" gid="96" x="420" y="546" width="48" height="84"/>
-  <object id="209" name="coil_tr" type="AnimatedArea" gid="97" x="499" y="536" width="51" height="72"/>
-  <object id="210" name="coil_lightning" type="AnimatedArea" gid="98" x="386" y="649.667" width="204" height="215"/>
+  <object id="206" name="coil_bl" type="AnimatedArea" gid="96" x="394" y="602" width="52" height="68"/>
+  <object id="207" name="coil_br" type="AnimatedArea" gid="97" x="523" y="604.333" width="50" height="70"/>
+  <object id="208" name="coil_tl" type="AnimatedArea" gid="98" x="420" y="546" width="48" height="84"/>
+  <object id="209" name="coil_tr" type="AnimatedArea" gid="99" x="499" y="536" width="51" height="72"/>
+  <object id="210" name="coil_lightning" type="AnimatedArea" gid="100" x="386" y="649.667" width="204" height="215"/>
   <object id="211" name="fuel_cell_charger" type="Area" x="394.667" y="509.333" width="180" height="153.333">
    <properties>
     <property name="description" value="It look like a charging mechanism of some sort"/>
@@ -1146,45 +1182,45 @@
   <image source="../App/assets/scenes/6.png" width="1100" height="660"/>
  </imagelayer>
  <objectgroup draworder="index" name="6" visible="0">
-  <object id="170" name="elevator_door_6" type="AnimatedArea" gid="99" x="568.667" y="353" width="108" height="242"/>
+  <object id="170" name="elevator_door_6" type="AnimatedArea" gid="101" x="568.667" y="353" width="108" height="242"/>
   <object id="171" name="office_area" type="Area" x="820" y="202.667" width="96" height="233.333"/>
   <object id="172" name="keypad_area" type="Area" x="925.333" y="330.667" width="37.3333" height="46.6667"/>
-  <object id="173" name="purple_pipe" type="Area" gid="100" x="-2" y="429.333" width="165" height="129">
+  <object id="173" name="purple_pipe" type="Area" gid="102" x="-2" y="429.333" width="165" height="129">
    <properties>
     <property name="tileId" value="1"/>
    </properties>
   </object>
-  <object id="174" name="green_pipe" type="Area" gid="101" x="198.333" y="353.333" width="175" height="137">
+  <object id="174" name="green_pipe" type="Area" gid="103" x="198.333" y="353.333" width="175" height="137">
    <properties>
     <property name="tileId" value="2"/>
    </properties>
   </object>
-  <object id="175" name="blue_pipe" type="Area" gid="102" x="526.333" y="535.333" width="190" height="148">
+  <object id="175" name="blue_pipe" type="Area" gid="104" x="526.333" y="535.333" width="190" height="148">
    <properties>
     <property name="tileId" value="3"/>
    </properties>
   </object>
-  <object id="176" name="red_pipe" type="Area" gid="103" x="319" y="630.667" width="195" height="152">
+  <object id="176" name="red_pipe" type="Area" gid="105" x="319" y="630.667" width="195" height="152">
    <properties>
     <property name="tileId" value="4"/>
    </properties>
   </object>
-  <object id="177" name="bottle_purple" type="Object" gid="104" x="400" y="288" width="49" height="97">
+  <object id="177" name="bottle_purple" type="Object" gid="106" x="400" y="288" width="49" height="97">
    <properties>
     <property name="tileId" value="5"/>
    </properties>
   </object>
-  <object id="178" name="rope" type="Object" gid="105" x="157.667" y="136" width="90" height="49">
+  <object id="178" name="rope" type="Object" gid="107" x="157.667" y="136" width="90" height="49">
    <properties>
     <property name="tileId" value="6"/>
    </properties>
   </object>
-  <object id="181" name="ventilator_wing" type="AnimatedArea" gid="107" x="92.3333" y="246.333" width="58" height="66">
+  <object id="181" name="ventilator_wing" type="AnimatedArea" gid="109" x="92.3333" y="246.333" width="58" height="66">
    <properties>
     <property name="z" type="int" value="-1"/>
    </properties>
   </object>
-  <object id="180" name="ventilator" type="Area" gid="106" x="25" y="274.333" width="142" height="146">
+  <object id="180" name="ventilator" type="Area" gid="108" x="25" y="274.333" width="142" height="146">
    <properties>
     <property name="description" value="A ventilator. Spreading cool air in the room - it's bolted to the floor"/>
     <property name="stateless" type="bool" value="true"/>
@@ -1196,7 +1232,7 @@
   <image source="../App/assets/scenes/7.png" width="1100" height="660"/>
  </imagelayer>
  <objectgroup draworder="index" name="7" visible="0">
-  <object id="183" name="elevator_door_7" type="AnimatedArea" gid="108" x="22.3333" y="661" width="270" height="362"/>
+  <object id="183" name="elevator_door_7" type="AnimatedArea" gid="110" x="22.3333" y="661" width="270" height="362"/>
   <object id="185" name="painting4_frame" type="Area" x="442.667" y="141.333" width="216" height="293.333">
    <properties>
     <property name="description" value="A nice frame"/>
@@ -1204,14 +1240,14 @@
     <property name="z" type="int" value="-1"/>
    </properties>
   </object>
-  <object id="184" name="painting4" type="Object" gid="109" x="474" y="411.333" width="157" height="253">
+  <object id="184" name="painting4" type="Object" gid="111" x="474" y="411.333" width="157" height="253">
    <properties>
     <property name="description" value="It has the number 037 on the backside"/>
     <property name="tileId" value="1"/>
    </properties>
   </object>
   <object id="186" name="window" type="Area" x="905.333" y="164" width="160" height="201.333"/>
-  <object id="188" name="curtains" type="AnimatedArea" gid="110" x="801.333" y="389.333" width="168" height="265"/>
+  <object id="188" name="curtains" type="AnimatedArea" gid="112" x="801.333" y="389.333" width="168" height="265"/>
   <object id="189" name="lampshade" type="Area" x="682.667" y="244" width="120" height="124">
    <properties>
     <property name="description" value="An old golden lampshade. Nothing you should carry around"/>
@@ -1237,16 +1273,47 @@
     <property name="stateless" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="194" name="bottle_red" type="Object" gid="111" x="693.524" y="727.421" width="78" height="154" rotation="-6.18565">
+  <object id="194" name="bottle_red" type="Object" gid="113" x="693.524" y="727.421" width="78" height="154" rotation="-6.18565">
    <properties>
     <property name="tileId" value="3"/>
    </properties>
   </object>
-  <object id="195" name="rope_tied" type="Area" gid="112" x="969" y="493.333" width="55" height="160">
+  <object id="195" name="rope_tied" type="Area" gid="114" x="969" y="493.333" width="55" height="160">
    <properties>
     <property name="tileId" value="4"/>
    </properties>
   </object>
   <object id="196" name="exit_to_2_left" type="Area" x="908" y="150.667" width="162.667" height="309.333"/>
+ </objectgroup>
+ <imagelayer name="8 bg">
+  <image source="../App/assets/scenes/8.png" width="1100" height="660"/>
+ </imagelayer>
+ <objectgroup draworder="index" name="8">
+  <object id="215" name="casing" type="Area" gid="115" x="316" y="579.667" width="409" height="571">
+   <properties>
+    <property name="tileId" value="0"/>
+   </properties>
+  </object>
+  <object id="216" name="casing_inside" type="Area" gid="116" x="533" y="549" width="135" height="298">
+   <properties>
+    <property name="tileId" value="1"/>
+   </properties>
+  </object>
+  <object id="217" name="elevator_door_8" type="AnimatedArea" gid="117" x="531" y="562.667" width="147" height="313"/>
+  <object id="218" name="satelite_dish" type="Area" gid="118" x="168.667" y="199.333" width="180" height="149">
+   <properties>
+    <property name="tileId" value="3"/>
+   </properties>
+  </object>
+  <object id="219" name="satelite_box" type="Area" gid="119" x="352.333" y="199.667" width="66" height="42">
+   <properties>
+    <property name="tileId" value="4"/>
+   </properties>
+  </object>
+  <object id="221" name="satelite_fuel_cell" type="Area" gid="120" x="402" y="200" width="52" height="41">
+   <properties>
+    <property name="tileId" value="5"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

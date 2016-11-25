@@ -30,6 +30,7 @@ Item {
     SoundBank {
         id: soundEffects
 
+        safePlay: Qak.platform.os === "windows"
         //muted: core.muted
         //volume: volumes.sfx
 

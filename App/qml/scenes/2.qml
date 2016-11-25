@@ -136,6 +136,150 @@ Base {
     }
 
 
+    Item {
+        x: 110; y: 50; z: 1
+
+        visible: hasFlypaper()
+
+        function hasFlypaper() {
+            var fp = game.getObject('flypaper')
+            return (fp !== undefined && !game.isBlacklisted('flypaper') && fp.scene === "2")
+        }
+
+        ImageAnimation {
+
+            x: 1; y: 5
+            width: 17; height: 15
+
+            paused: !visible || (scene.paused)
+
+            source: App.getAsset("sprites/flies/cycle_3/0001.png")
+
+            defaultFrameDelay: 80
+
+            sequences: [
+                {
+                    name: "buzz",
+                    frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+                    to: { "rbuzz":1}
+                },
+                {
+                    name: "rbuzz",
+                    frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+                    to: { "buzz":1},
+                    reverse: true
+                }
+            ]
+        }
+
+        ImageAnimation {
+
+            x: 12; y: 6
+            width: 21; height: 5
+
+            paused: !visible || (scene.paused)
+
+            source: App.getAsset("sprites/flies/cycle_2/0001.png")
+
+            defaultFrameDelay: 70
+
+            sequences: [
+                {
+                    name: "buzz",
+                    frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+                    to: { "rbuzz":1}
+                },
+                {
+                    name: "rbuzz",
+                    frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+                    to: { "buzz":1},
+                    reverse: true
+                }
+            ]
+        }
+
+        ImageAnimation {
+
+            x: 0; y: 0
+            width: 17; height: 13
+
+            paused: !visible || (scene.paused)
+
+            source: App.getAsset("sprites/flies/cycle_1/0001.png")
+
+            defaultFrameDelay: 100
+
+            sequences: [
+                {
+                    name: "buzz",
+                    frames: [1,2,3,4,5,6,7,8,9,10,11,12],
+                    to: { "rbuzz":1}
+                },
+                {
+                    name: "rbuzz",
+                    frames: [1,2,3,4,5,6,7,8,9,10,11,12],
+                    to: { "buzz":1},
+                    reverse: true
+                }
+            ]
+        }
+
+        ImageAnimation {
+
+            x: 12; y: 16
+            width: 21; height: 5
+
+            paused: !visible || (scene.paused)
+
+            source: App.getAsset("sprites/flies/cycle_2/0001.png")
+
+            defaultFrameDelay: 100
+
+            sequences: [
+                {
+                    name: "buzz",
+                    frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+                    to: { "rbuzz":1}
+                },
+                {
+                    name: "rbuzz",
+                    frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+                    to: { "buzz":1},
+                    reverse: true
+                }
+            ]
+        }
+
+        ImageAnimation {
+
+            x: 0; y: 6
+            width: 17; height: 13
+
+            paused: !visible || (scene.paused)
+
+            source: App.getAsset("sprites/flies/cycle_1/0001.png")
+
+            defaultFrameDelay: 140
+
+            sequences: [
+                {
+                    name: "buzz",
+                    frames: [1,2,3,4,5,6,7,8,9,10,11,12],
+                    to: { "rbuzz":1}
+                },
+                {
+                    name: "rbuzz",
+                    frames: [1,2,3,4,5,6,7,8,9,10,11,12],
+                    to: { "buzz":1},
+                    reverse: true
+                }
+            ]
+        }
+
+
+
+    }
+
 
     // LEFT SIDE
 
