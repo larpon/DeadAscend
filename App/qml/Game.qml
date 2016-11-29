@@ -162,6 +162,10 @@ Item {
 
     Component.onDestruction: {
         clearDynamicallyLoaded()
+        save()
+    }
+
+    function save() {
         inventory.save()
         store.save()
     }
@@ -386,6 +390,7 @@ Item {
 
         // NOTE go through inventory and spawn any objects from other scenes
         var ic = inventory.contents
+        //incubator.async = false
         for(i in ic) {
             var object = ic[i]
 
@@ -412,6 +417,7 @@ Item {
                 })
             }
         }
+        //incubator.async = true
 
         // NOTE go through loose objects and spawn
         var os = objectSpawnlist

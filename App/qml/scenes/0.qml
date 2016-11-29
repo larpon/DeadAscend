@@ -72,7 +72,7 @@ Base {
 
         id: rope_dangle
 
-        x: 494; y: 107
+        x: 494; y: 107; z: 1
         width: 65; height: 191
 
         clickable: true
@@ -138,7 +138,7 @@ Base {
 
         id: rope_dangle_bucket
 
-        x: 494; y: 107
+        x: 494; y: 107; z: 1
         width: 65; height: 191
 
         clickable: true
@@ -188,7 +188,7 @@ Base {
 
         id: rope_dangle_water
 
-        x: 494; y: 107
+        x: 494; y: 107; z: 1
         width: 65; height: 191
 
         name: "rope_dangle_water"
@@ -230,7 +230,7 @@ Base {
 
         onRunChanged: {
             if(run) {
-                if(!bucketPatched)
+                if(bucketPatched)
                     return
                 running = true
                 setActiveSequence("run")
@@ -753,6 +753,8 @@ Base {
             if(state === "open")
                 game.goToScene("1")
         }
+
+        description: "A hatch leading upstairs"
     }
 
     Image {
@@ -769,6 +771,13 @@ Base {
             anchors { fill: parent }
             onClicked: game.setText("It's too dark to do anything. Better find some light somewhere")
         }
+    }
+
+    Area {
+        x: 980; y: 280
+        z: aSwitch.active ? 0 : 10
+        width: 80; height: 65
+        onClicked: aSwitch.active = !aSwitch.active
     }
 
     Switch {

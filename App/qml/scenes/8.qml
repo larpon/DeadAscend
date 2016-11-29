@@ -38,6 +38,9 @@ Base {
 
         var sfx = core.sounds
         sfx.add("level"+sceneNumber,"shotgun",App.getAsset("sounds/shotgun_shot_01.wav"))
+        sfx.add("level"+sceneNumber,"zombie_moan_1",App.getAsset("sounds/zombie_moan_01.wav"))
+        sfx.add("level"+sceneNumber,"zombie_moan_2",App.getAsset("sounds/zombie_moan_02.wav"))
+        sfx.add("level"+sceneNumber,"zombie_moan_3",App.getAsset("sounds/zombie_moan_03.wav"))
 
     }
 
@@ -115,6 +118,7 @@ Base {
                     anchors { fill: parent }
                     onClicked: {
                         sounds.play('shotgun')
+                        sounds.play("zombie_moan_3")
                         tt.mover.stop()
                         if(tt.type === "02" || tt.type === "04" )
                             zdie.x = -zwalk.halfWidth

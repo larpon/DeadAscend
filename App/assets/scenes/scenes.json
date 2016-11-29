@@ -12,7 +12,7 @@
          "y":0
         }, 
         {
-         "draworder":"topdown",
+         "draworder":"index",
          "height":0,
          "name":"0",
          "objects":[
@@ -63,6 +63,48 @@
                  "width":19,
                  "x":1000.1,
                  "y":327.985
+                }, 
+                {
+                 "height":73.3333333333333,
+                 "id":225,
+                 "name":"0_junk_2",
+                 "properties":
+                    {
+                     "description":"Some old junk",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":98.6666666666666,
+                 "x":447.333333333333,
+                 "y":216
+                }, 
+                {
+                 "height":242.666333333333,
+                 "id":228,
+                 "name":"0_stairs",
+                 "properties":
+                    {
+                     "description":"The staircase leading to the next floor",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":257.333366666667,
+                 "x":519.999983333333,
+                 "y":156.000166666667
                 }, 
                 {
                  "gid":3,
@@ -130,12 +172,12 @@
                  "y":145.333
                 }, 
                 {
-                 "height":117.333,
+                 "height":289.333,
                  "id":12,
-                 "name":"wooden_planks",
+                 "name":"0_cable_1",
                  "properties":
                     {
-                     "description":"Some old wooden planks",
+                     "description":"A cable. Very standard actually",
                      "stateless":true
                     },
                  "propertytypes":
@@ -146,9 +188,9 @@
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":86.6667,
-                 "x":278.667,
-                 "y":268
+                 "width":18.6667,
+                 "x":1022.667,
+                 "y":0
                 }, 
                 {
                  "height":34.6663,
@@ -364,10 +406,39 @@
                  "y":303
                 }, 
                 {
+                 "height":56,
+                 "id":224,
+                 "name":"0_junk_1",
+                 "properties":
+                    {
+                     "description":"Some junk",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":84.0000333333335,
+                 "x":485.333316666667,
+                 "y":160
+                }, 
+                {
                  "gid":13,
                  "height":191,
                  "id":25,
                  "name":"rope_dangle_water",
+                 "properties":
+                    {
+                     "z":1
+                    },
+                 "propertytypes":
+                    {
+                     "z":"int"
+                    },
                  "rotation":0,
                  "type":"AnimatedArea",
                  "visible":true,
@@ -408,8 +479,61 @@
                  "y":292
                 }, 
                 {
-                 "height":65.3333,
+                 "height":78.6666333333333,
                  "id":86,
+                 "name":"water_puddle2",
+                 "properties":
+                    {
+                     "description":"A puddle of water",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":162.667,
+                 "x":543.999666666667,
+                 "y":551.999666666667
+                }, 
+                {
+                 "height":38.6667,
+                 "id":161,
+                 "name":"sewer_grate",
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":118.667,
+                 "x":717.333,
+                 "y":421.333
+                }, 
+                {
+                 "height":117.333,
+                 "id":222,
+                 "name":"wooden_planks",
+                 "properties":
+                    {
+                     "description":"Some old wooden planks",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":86.6667,
+                 "x":267.333316666667,
+                 "y":266.666833333333
+                }, 
+                {
+                 "height":65.3333,
+                 "id":223,
                  "name":"water_puddle1",
                  "properties":
                     {
@@ -425,19 +549,52 @@
                  "type":"Area",
                  "visible":true,
                  "width":190.667,
-                 "x":257.333,
-                 "y":469.333
+                 "x":256.6665,
+                 "y":470.000016666667
                 }, 
                 {
-                 "height":38.6667,
-                 "id":161,
-                 "name":"sewer_grate",
+                 "height":88,
+                 "id":226,
+                 "name":"0_faucet_area",
+                 "properties":
+                    {
+                     "description":"It's an old faucet. Still working for some unknown reason",
+                     "stateless":true,
+                     "z":-1
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool",
+                     "z":"int"
+                    },
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":118.667,
-                 "x":717.333,
-                 "y":421.333
+                 "width":36,
+                 "x":37.3333333333333,
+                 "y":324
+                }, 
+                {
+                 "height":109.333,
+                 "id":227,
+                 "name":"0_cable_2",
+                 "properties":
+                    {
+                     "description":"A cable",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":18.6667,
+                 "x":82.6666500000001,
+                 "y":0
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -452,7 +609,7 @@
          "name":"1 bg",
          "opacity":1,
          "type":"imagelayer",
-         "visible":false,
+         "visible":true,
          "width":0,
          "x":0,
          "y":0
@@ -1227,10 +1384,33 @@
                  "width":87,
                  "x":690,
                  "y":276
+                }, 
+                {
+                 "height":329.333666666667,
+                 "id":229,
+                 "name":"1_junk_shadows",
+                 "properties":
+                    {
+                     "description":"Nothing hides in this shadow",
+                     "stateless":true,
+                     "z":-1
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":83.9996666666667,
+                 "x":1013.3335,
+                 "y":227.333166666667
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "width":0,
          "x":0,
          "y":0
@@ -1726,8 +1906,8 @@
                  "type":"Object",
                  "visible":true,
                  "width":20,
-                 "x":103.333333333333,
-                 "y":183.666666666667
+                 "x":103.333,
+                 "y":183.667
                 }, 
                 {
                  "gid":52,
@@ -1746,8 +1926,8 @@
                  "type":"Object",
                  "visible":true,
                  "width":140,
-                 "x":148.666666666667,
-                 "y":637.333333333333
+                 "x":148.667,
+                 "y":637.333
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -3524,14 +3704,14 @@
          "name":"8 bg",
          "opacity":1,
          "type":"imagelayer",
-         "visible":true,
+         "visible":false,
          "width":0,
          "x":0,
          "y":0
         }, 
         {
          "draworder":"index",
-         "height":1,
+         "height":0,
          "name":"8",
          "objects":[
                 {
@@ -3552,7 +3732,7 @@
                  "visible":true,
                  "width":409,
                  "x":316,
-                 "y":579.666666666667
+                 "y":579.667
                 }, 
                 {
                  "gid":116,
@@ -3584,7 +3764,7 @@
                  "visible":true,
                  "width":147,
                  "x":531,
-                 "y":562.666666666667
+                 "y":562.667
                 }, 
                 {
                  "gid":118,
@@ -3603,8 +3783,8 @@
                  "type":"Area",
                  "visible":true,
                  "width":180,
-                 "x":168.666666666667,
-                 "y":199.333333333333
+                 "x":168.667,
+                 "y":199.333
                 }, 
                 {
                  "gid":119,
@@ -3623,8 +3803,8 @@
                  "type":"Area",
                  "visible":true,
                  "width":66,
-                 "x":352.333333333333,
-                 "y":199.666666666667
+                 "x":352.333,
+                 "y":199.667
                 }, 
                 {
                  "gid":120,
@@ -3648,12 +3828,12 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
-         "width":1,
+         "visible":false,
+         "width":0,
          "x":0,
          "y":0
         }],
- "nextobjectid":222,
+ "nextobjectid":230,
  "orientation":"orthogonal",
  "renderorder":"left-up",
  "tileheight":660,

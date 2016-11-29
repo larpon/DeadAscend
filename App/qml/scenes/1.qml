@@ -140,12 +140,13 @@ Base {
                         so.state = "up"
                         blacklistObject(o.name)
                         game.setText("Another rung in the rail!")
-                    }
+                    } else {
 
-                    if((ar1.state === "up" && ar2.state !== "up") || (ar1.state !== "up" && ar2.state === "up")) {
-                        game.setText("One more rail should be put up. I think")
-                    } else
-                        game.setText("This could work if there was something to attach to")
+                        if((ar1.state === "up" && ar2.state !== "up") || (ar1.state !== "up" && ar2.state === "up")) {
+                            game.setText("One more rail should be put up. I think")
+                        } else
+                            game.setText("This could work if there was something to attach to")
+                    }
                 }
 
                 if(isLadderBuilt()) {
@@ -154,6 +155,11 @@ Base {
                 }
 
             }
+        }
+
+        onClicked: {
+            if(isLadderBuilt())
+                game.goToScene("2")
         }
 
     }

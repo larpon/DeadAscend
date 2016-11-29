@@ -16,6 +16,11 @@ Item {
 
     Component.onCompleted: game.elevatorPanel.show = false
 
+    Component.onDestruction: {
+        core.sounds.clear('level'+sceneNumber)
+        game.save()
+    }
+
     property bool showForegroundShadow: true
 
     readonly property string sceneNumber: game.currentScene
@@ -35,10 +40,6 @@ Item {
     signal objectTravelingToInventory(var object)
     signal objectAddedToInventory(var object)
     signal objectRemovedFromInventory(var object)
-
-    Component.onDestruction: {
-        core.sounds.clear('level'+sceneNumber)
-    }
 
     Connections {
         target: game
