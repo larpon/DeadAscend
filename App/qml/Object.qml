@@ -37,6 +37,9 @@ Entity {
     property string _at: ""
     property int _z: 0
 
+    onAtChanged: App.debug('Object',name,'at',at)
+    on_AtChanged: App.debug('Object',name,'came from',_at)
+
     property alias keys: dropSpot.keys
 
     Drag.keys: [ 'inventory', name ]
@@ -53,7 +56,6 @@ Entity {
         at = "dragged"
         _z = z
         z = 100
-
         game.objectDragged(root)
         play('onDragged')
 
@@ -68,6 +70,19 @@ Entity {
         z = 0
     }
     */
+
+    signal inventoryDragAccepted(variant mouse, var target)
+
+    onInventoryDragAccepted: {
+        if('name' in target)
+            at = target.name
+        if(at !== 'inventory')
+            removeFromInventory()
+        z = _z
+        scene = game.currentScene
+        game.objectDropped(root)
+        play('onDropped')
+    }
 
     onDragAccepted: {
         if('name' in Drag.target)
@@ -104,6 +119,7 @@ Entity {
     function removeFromInventory() {
         if(game.inventory.has(root)) {
             mover.duration = 0
+            game.inventory.removeVisual(root)
             game.inventory.remove(root)
         }
     }

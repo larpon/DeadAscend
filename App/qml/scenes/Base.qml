@@ -44,12 +44,12 @@ Item {
     Connections {
         target: game
         onObjectReady: { App.debug('Object ready',object.name); objectReady(object)}
-        onObjectDropped: { App.debug('Object dropped',object.name); objectDropped(object)}
+        onObjectDropped: { App.debug('Object',object.name,'dropped at',object.at); objectDropped(object)}
         onObjectClicked: { App.debug('Object clicked',object.name); objectClicked(object)}
         onObjectTravelingToInventory: { App.debug('Object traveling to inventory',object.name); objectTravelingToInventory(object) }
-        onObjectDragged: { App.debug('Object dragged',object.name); objectDragged(object) }
-        onObjectReturned: { App.debug('Object returned',object.name);  objectReturned(object) }
-        onObjectAddedToInventory: { App.debug('Object added to inventory',object.name);  objectAddedToInventory(object) }
+        onObjectDragged: { App.debug('Object',object.name,'dragged from',object.at); objectDragged(object) }
+        onObjectReturned: { App.debug('Object',object.name,'returned from',object.at);  objectReturned(object) }
+        onObjectAddedToInventory: { App.debug('Object',object.name,'added to inventory from',object.at);  objectAddedToInventory(object) }
         onObjectRemovedFromInventory: { App.debug('Object removed from inventory',object.name);  objectRemovedFromInventory(object) }
     }
 

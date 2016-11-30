@@ -1,7 +1,8 @@
-import QtQuick 2.0
+import QtQuick 2.3
+import QtQml.Models 2.2
 
 import Qak 1.0
-import Qak.QtQuick 2.0
+import Qak.QtQuick 2.3
 
 import "."
 
@@ -16,10 +17,130 @@ ObjectStore {
 
     property bool animate: false
 
+    ListModel {
+        id: visualItems
+    }
+
+    DelegateModel {
+        id: visualModel
+        model: visualItems
+        delegate: Entity {
+            id: fakeObject
+            height: 117
+            width: 117
+
+            property string name: key
+            property alias keys: fakeDropSpot.keys
+
+            draggable: true
+
+            clickable: object !== undefined ? object.clickable : false
+            property bool acceptDrops: object !== undefined ? object.acceptDrops : false
+
+            dragger.drag.axis: Drag.YAxis
+            onDragStarted: {
+                dragger.drag.axis = Drag.XandYAxis
+                z = 100
+            }
+            onDragReturn: dragger.drag.axis = Drag.YAxis
+            onDragReturned: {
+                z = 0
+            }
+
+            onDragAccepted: {
+                z = 0
+                if(object !== undefined)
+                    object.inventoryDragAccepted(mouse,Drag.target)
+            }
+
+            Component.onCompleted: {
+                makeConnections()
+            }
+            Drag.source: object
+            Drag.keys: object !== undefined ? object.Drag.keys : ['notcombinable']
+
+            property bool outOfBounds: !dragger.returning && !dragging && (x < listView.contentX || x+width-listView.contentX > listView.width)
+
+            function makeConnections() {
+                dragRejected.connect(object.dragRejected)
+                dragStarted.connect(object.dragStarted)
+                dragged.connect(object.dragged)
+                dragReturn.connect(object.dragReturn)
+                dragEnded.connect(object.dragEnded)
+                dragReturned.connect(object.dragReturned)
+                clicked.connect(object.clicked)
+            }
+
+            Image {
+                anchors { fill: parent }
+                fillMode: Image.PreserveAspectFit
+                source: App.getAsset('inv_slot.png')
+
+                width: sourceSize.width
+                height: sourceSize.height
+
+                visible: opacity > 0
+                opacity: !fakeObject.dragging ? 1 : 0
+                Behavior on opacity {
+                    NumberAnimation { duration: 100 }
+                }
+            }
+
+            Image {
+                anchors { centerIn: parent }
+                fillMode: Image.PreserveAspectFit
+
+                source: object !== undefined ? dragging ? object.itemSource : object.iconSource : ""
+
+                width: sourceSize.width > 100 ? 100 : sourceSize.width
+                height: sourceSize.height > 100 ? 100 : sourceSize.height
+            }
+
+            opacity: outOfBounds ? 0 : 1
+
+            Behavior on opacity {
+                NumberAnimation { duration: 100 }
+            }
+
+            DropSpot {
+                id: fakeDropSpot
+                anchors { fill: parent }
+                enabled: acceptDrops
+                keys: object !== undefined ? object.keys : ['notcombinable']
+                onDropped: {
+                    drop.accept()
+                    game.objectCombined(object,drag.source)
+                }
+            }
+
+        }
+
+    }
+
+
+    Rectangle  {
+        anchors { fill: parent; margins: 10 }
+        color: "#cc000000"
+        radius: 10
+    }
+
+    ListView {
+        id: listView
+        anchors { fill: parent }
+        orientation: ListView.Horizontal
+        spacing: 2
+        model: visualModel
+        snapMode: ListView.SnapToItem
+        displayMarginBeginning: 200
+        displayMarginEnd: 200
+    }
+
+
     Item {
         anchors { fill: parent }
         //color: "#835a41"
         //radius: 40
+        visible: false
 
         Image {
             id: left
@@ -32,10 +153,6 @@ ObjectStore {
 
             source: App.getAsset('button L.png')
 
-            MouseArea {
-                anchors { fill: parent }
-
-            }
         }
 
         Item {
@@ -59,10 +176,6 @@ ObjectStore {
             width: 52
             source: App.getAsset('button R.png')
 
-            MouseArea {
-                anchors { fill: parent }
-
-            }
         }
 
     }
@@ -71,35 +184,33 @@ ObjectStore {
         App.debug('Inventory','added',object.name)
 
         core.sounds.play('add')
-        var m = row.mapFromItem(object.parent,object.x,object.y)
-        object.parent = row
 
         if(animate) {
-            object.x = m.x
-            object.y = m.y
 
             var arr = function(){
+                object.parent = row
                 object.at = root.name
-                arrange()
+                addVisual(object)
                 game.objectAddedToInventory(object)
                 object.mover.stopped.disconnect(arr)
             }
             object.mover.stopped.connect(arr)
 
             var ppos = predictPosition()
-            object.moveTo(ppos.x,0)
+            object.moveTo(ppos.x,ppos.y)
             animate = false
         } else {
             object.x = 0
             object.y = 0
+            object.parent = row
             object.at = root.name
-            arrange()
+            addVisual(object)
             game.objectAddedToInventory(object)
         }
     }
 
     onNotAdded: {
-        App.debug('Inventory','added',object.name)
+        App.debug('Inventory','(not) added',object.name)
 
         core.sounds.play('add')
         var m = row.mapFromItem(object.parent,object.x,object.y)
@@ -112,20 +223,20 @@ ObjectStore {
 
             var arr = function(){
                 object.at = root.name
-                arrange()
+                addVisual(object)
                 game.objectAddedToInventory(object)
                 object.mover.stopped.disconnect(arr)
             }
             object.mover.stopped.connect(arr)
 
             var ppos = predictPosition()
-            object.moveTo(ppos.x,0)
+            object.moveTo(ppos.x,ppos.y)
             animate = false
         } else {
             object.x = 0
             object.y = 0
             object.at = root.name
-            arrange()
+            addVisual(object)
             game.objectAddedToInventory(object)
             object.play('onAddedToInventory')
         }
@@ -133,37 +244,43 @@ ObjectStore {
 
     onRemoved: {
         object.parent = game.scene.canvas
-        arrange()
+        removeVisual(object)
         game.objectRemovedFromInventory(root)
         object.play('onRemovedFromInventory')
     }
+
+    function removeVisual(object) {
+        for (var i=0; i < visualItems.count; i++) {
+            var vo = visualItems.get(i)
+            if(vo.key === object.name) {
+                visualItems.remove(i)
+            }
+        }
+    }
+
+    function addVisual(object) {
+        var found = false
+        for (var i=0; i < visualItems.count; i++) {
+            var vo = visualItems.get(i)
+            if(vo.key === object.name) {
+                found = true
+                App.debug("Inventory","updating",object.name,"visual reference")
+                removeVisual(object)
+                visualItems.insert(i,{ key: object.name, object: object })
+                break
+            }
+        }
+        if(!found)
+            visualItems.append({ key: object.name, object: object })
+    }
+
 
     function addAnimated(obj) {
         animate = true
         add(obj)
     }
 
-    function arrange() {
-
-        var i, c = 0
-        for(i in row.children) {
-            var o = row.children[i]
-            if('name' in o) {
-                o.x = c * 117
-                c++
-            }
-        }
-    }
-
     function predictPosition() {
-
-        var i, c = 0
-        for(i in row.children) {
-            var o = row.children[i]
-            if('name' in o) {
-                c++
-            }
-        }
-        return Qt.point((c * 117) - 117,0)
+        return Qt.point(0,660)
     }
 }

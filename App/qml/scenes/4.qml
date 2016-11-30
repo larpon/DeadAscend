@@ -174,7 +174,8 @@ Base {
                 treadmill.setActiveSequence('run')
                 treadmill.run = true
                 drop.accept()
-                blacklistObject(o.name)
+                var o = drag.source
+                game.blacklistObject(o.name)
             }
         }
 

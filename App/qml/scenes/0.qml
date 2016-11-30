@@ -870,8 +870,6 @@ Base {
     onObjectAddedToInventory: {
         if(object.name === "bucket" || object.name === "bucket_patched") {
             faucetHandle.resolveState()
-
-            object.dump()
         }
     }
 
