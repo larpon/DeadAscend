@@ -116,12 +116,17 @@ Base {
 
         onClicked: {
             setActiveSequence("open-show-panel")
+            sounds.play("ding")
         }
 
         onFrame: {
-            App.debug(sequenceName, frame )
-            if(sequenceName === "open-show-panel" && frame == 5)
+            if(sequenceName === "open-show-panel" && frame == 5) {
                 game.elevatorPanel.show = true
+                sounds.play("elevator_open")
+            }
+            if(sequenceName === "close" && frame == 1) {
+                sounds.play("elevator_close")
+            }
         }
     }
 

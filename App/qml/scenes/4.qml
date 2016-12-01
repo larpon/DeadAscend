@@ -343,14 +343,20 @@ Base {
         onClicked: {
             if(store.treadmillRunning && store.cableConnected) {
                 setActiveSequence("open-show-panel")
+                sounds.play("ding")
             } else
                 game.setText("The elevator needs power to operate.")
         }
 
         onFrame: {
-            App.debug(sequenceName, frame )
-            if(sequenceName === "open-show-panel" && frame == 4)
+            //App.debug(sequenceName, frame )
+            if(sequenceName === "open-show-panel" && frame == 4) {
                 game.elevatorPanel.show = true
+                sounds.play("elevator_open")
+            }
+            if(sequenceName === "close" && frame == 1) {
+                sounds.play("elevator_close")
+            }
         }
     }
 
