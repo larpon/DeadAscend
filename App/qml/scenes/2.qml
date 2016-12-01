@@ -59,7 +59,7 @@ Base {
         showExit()
 
         var sfx = core.sounds
-        //sfx.add("level"+sceneNumber,"lift_motor",App.getAsset("sounds/lift_motor_01.wav"))
+        sfx.add("level"+sceneNumber,"klonk",App.getAsset("sounds/klonk.wav"))
     }
 
     Component.onDestruction: {
@@ -408,6 +408,7 @@ Base {
 
         onClicked: {
             state === "on" ? state = "off" : state = "on"
+            sounds.play("tap")
         }
     }
 
@@ -720,6 +721,7 @@ Base {
                     ScriptAction {
                         script: {
                             cabinetOpened = true
+                            sounds.play("klonk")
                         }
                     }
                 }

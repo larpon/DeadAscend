@@ -64,6 +64,7 @@ Base {
         sfx.add("level"+sceneNumber,"crack_smash",App.getAsset("sounds/crack_smash.wav"))
         sfx.add("level"+sceneNumber,"glass_smash",App.getAsset("sounds/glass_smash.wav"))
         sfx.add("level"+sceneNumber,"coin_drop",App.getAsset("sounds/coin_drop.wav"))
+        sfx.add("level"+sceneNumber,"paper_fiddle",App.getAsset("sounds/paper_fiddle.wav"))
     }
 
     Component.onDestruction: {
@@ -132,15 +133,16 @@ Base {
 
         onFrame: {
             if(frame === 5) {
-                core.sounds.playRandom(["zombie_moan_1","zombie_moan_2"])
+                sounds.playRandom(["zombie_moan_1","zombie_moan_2"])
             }
             if(frame === 11) {
-                core.sounds.play("zombie_moan_3")
+                sounds.play("zombie_moan_3")
             }
         }
 
         onClicked: {
-            core.sounds.playRandom(["zombie_moan_1","zombie_moan_2"])
+            sounds.playRandom(["zombie_moan_1","zombie_moan_2"])
+            game.setText("It's passive...","Only a few live infected cells relieves some muscle ticks","You should take it out of it's missery")
         }
 
         DropSpot {
@@ -156,6 +158,8 @@ Base {
                 core.sounds.play("crack_smash")
                 zombieTilting.run = true
                 zombieSitting.visible = false
+
+                game.setText("Straight in the head")
 
                 if(!game.getObject("coin")) {
                     var object = {
@@ -269,7 +273,7 @@ Base {
         }
 
         onClicked: {
-            game.setText("He's dead Jim")
+            game.setText("He's dead Jim","... or as close as dead as zombies get")
         }
 
         DropSpot {
@@ -394,13 +398,31 @@ Base {
 
     Area {
         stateless: true
-
-        name: "exit_up_3"
-
+        name: "exit_up_3_1"
         onClicked: {
             game.goToScene("4")
         }
-
+    }
+    Area {
+        stateless: true
+        name: "exit_up_3_2"
+        onClicked: {
+            game.goToScene("4")
+        }
+    }
+    Area {
+        stateless: true
+        name: "exit_up_3_3"
+        onClicked: {
+            game.goToScene("4")
+        }
+    }
+    Area {
+        stateless: true
+        name: "exit_up_3_4"
+        onClicked: {
+            game.goToScene("4")
+        }
     }
 
     Area {
@@ -583,7 +605,7 @@ Base {
         x: 400; y: 400
         width: 118; height: 126
 
-        keys: [ "cannula_full", "grain" ]
+        keys: [ "cannula", "cannula_full", "grain" ]
 
         name: "hamster_drop"
 
@@ -615,6 +637,10 @@ Base {
                     scene.hamsterIsZombie = true
                     drop.accept()
                     blacklistObject(o.name)
+                }
+
+                if(hamsterCalm && o.name === "cannula") {
+                    game.setText("Indeed you could inject him with something...","But what?")
                 }
 
             }
@@ -748,6 +774,7 @@ Base {
         z: 22
 
         property bool show: whiteboardArea.state === "on"
+        onShowChanged: sounds.play("paper_fiddle")
 
         visible: opacity > 0
         opacity: show ? 1 : 0

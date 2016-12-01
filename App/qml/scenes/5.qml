@@ -150,6 +150,8 @@ Base {
                 to: { "run-loop":1 }
             }
         ]
+
+        description: "It's a fan pushing cool fresh air into the room"
     }
 
     AnimatedArea {
@@ -172,6 +174,8 @@ Base {
                 to: { "run-loop":1 }
             }
         ]
+
+        description: "It's a fan pushing cool fresh air into the room"
     }
 
     // Levers

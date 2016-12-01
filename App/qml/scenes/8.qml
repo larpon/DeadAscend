@@ -119,6 +119,10 @@ Base {
                     onClicked: {
                         sounds.play('shotgun')
                         sounds.play("zombie_moan_3")
+                        var m = zwalk.mapToItem(scene,mouse.x,mouse.y)
+                        bloodSplat.x = m.x - bloodSplat.halfWidth
+                        bloodSplat.y = m.y - bloodSplat.halfHeight
+                        bloodSplat.jumpTo('pulse')
                         tt.mover.stop()
                         if(tt.type === "02" || tt.type === "04" )
                             zdie.x = -zwalk.halfWidth
@@ -443,6 +447,29 @@ Base {
                 elevatorDoor.setActiveSequence('close')
             }
         }
+    }
+
+
+    AnimatedArea {
+        id: bloodSplat
+        width: 250; height: 250
+
+        clickable: false
+
+        visible: animating
+        run: false
+        paused: (scene.paused)
+
+        source: App.getAsset("sprites/blood/splat/0001.png")
+
+        defaultFrameDelay: 30
+
+        sequences: [
+            {
+                name: "pulse",
+                frames: [1,2,3,4,5,6,7,8,9,9,9,9,8,7,6,5,4,3,2,1]
+            }
+        ]
     }
 
 

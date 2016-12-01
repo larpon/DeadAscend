@@ -129,6 +129,7 @@ Base {
                 if(o.name === "rail_1" || o.name === "rail_2") {
                     so = game.getObject("assembled_"+o.name)
                     so.state = "up"
+                    sounds.play("move")
                     blacklistObject(o.name)
                 } else { // The rungs
 
@@ -138,6 +139,7 @@ Base {
                     if(ar1.state === "up" && ar2.state === "up") {
                         so = game.getObject("assembled_"+o.name)
                         so.state = "up"
+                        sounds.play("move")
                         blacklistObject(o.name)
                         game.setText("Another rung in the rail!")
                     } else {
@@ -158,8 +160,10 @@ Base {
         }
 
         onClicked: {
-            if(isLadderBuilt())
+            if(isLadderBuilt()) {
                 game.goToScene("2")
+                sounds.play("move")
+            }
         }
 
     }

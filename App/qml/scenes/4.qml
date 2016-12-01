@@ -48,12 +48,21 @@ Base {
         showExit()
 
         var sfx = core.sounds
-        //sfx.add("level"+sceneNumber,"hum",App.getAsset("sounds/low_machine_hum.wav"))
+        sfx.add("level"+sceneNumber,"light_drag",App.getAsset("sounds/light_drag_01.wav"))
+        sfx.add("level"+sceneNumber,"rattle_loop",App.getAsset("sounds/rattle_loop.wav"))
 
     }
 
     Component.onDestruction: {
         store.save()
+    }
+
+    Connections {
+        target: sounds
+        onLoaded: {
+            if(tag === "rattle_loop" && store.treadmillRunning)
+                sounds.play("rattle_loop",sounds.infinite)
+        }
     }
 
     function showExit() {
@@ -154,6 +163,7 @@ Base {
                 game.setText("The elevator is now: Zombie Hamster Powered...","That's... really...","... really... weird")
             } else if(store.scooterRemoved) {
                 setActiveSequence("single spin")
+                sounds.play("rattle_loop")
                 running = true
                 game.setText("Maybe this treadmill could actually power the elevator","It's just a matter of finding something powerfull enough to run it")
             } else
@@ -171,6 +181,7 @@ Base {
 
             onDropped: {
                 store.treadmillRunning = true
+                sounds.play("rattle_loop",sounds.infinite)
                 treadmill.setActiveSequence('run')
                 treadmill.run = true
                 drop.accept()
@@ -210,8 +221,10 @@ Base {
         onClicked: {
             if(!store.popBaseRemoved)
                 game.setText("It's stuck behind the popcorn machine")
-            else
+            else {
                 mover.moveTo(-width,y+100)
+                sounds.play("move")
+            }
         }
         mover.onStopped: store.scooterRemoved = true
     }
@@ -223,8 +236,10 @@ Base {
         onClicked: {
             if(!store.popTopRemoved)
                 game.setText("The wheels on this is rusted in place. The glass top is making it too heavy to move.")
-            else
+            else {
                 mover.moveTo(-width,y+100)
+                sounds.play("light_drag")
+            }
         }
         mover.onStopped: store.popBaseRemoved = true
     }
@@ -236,8 +251,10 @@ Base {
         onClicked: {
             if(!store.skiRightRemoved || !store.skiLeftRemoved)
                 game.setText("The skies are in the way")
-            else
+            else {
                 mover.moveTo(x,-height)
+                sounds.play("add")
+            }
         }
         mover.onStopped: store.popTopRemoved = true
     }
@@ -249,8 +266,10 @@ Base {
         onClicked: {
             if(!store.rockingHorseRemoved)
                 game.setText("The rocking horse is in the way")
-            else
+            else {
                 mover.moveTo(-width,y)
+                sounds.play("add")
+            }
         }
         mover.onStopped: store.skiLeftRemoved = true
     }
@@ -262,8 +281,10 @@ Base {
         onClicked: {
             if(!store.beachBallRemoved)
                 game.setText("The beach ball is in the way")
-            else
+            else {
                 mover.moveTo(-width,y+30)
+                sounds.play("add")
+            }
         }
         mover.onStopped: store.skiRightRemoved = true
     }
@@ -274,6 +295,7 @@ Base {
         visible: !store.rockingHorseRemoved
         onClicked: {
             mover.moveTo(-width,y+height)
+            sounds.play("move")
         }
         mover.onStopped: store.rockingHorseRemoved = true
     }
@@ -284,6 +306,7 @@ Base {
         visible: !store.beachBallRemoved
         onClicked: {
             mover.moveTo(-width,scene.height+height)
+            sounds.play("add")
         }
         mover.onStopped: store.beachBallRemoved = true
     }

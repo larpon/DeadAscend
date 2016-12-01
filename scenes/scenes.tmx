@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="230">
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="250">
  <tileset firstgid="1" name="0" tilewidth="155" tileheight="191" tilecount="14" columns="0">
   <tile id="0">
    <image width="74" height="97" source="../App/assets/sprites/bucket/bucket_empty.png"/>
@@ -372,6 +372,7 @@
 	&quot;onDragged&quot;:&quot;generic&quot;,
 	&quot;onReturned&quot;:&quot;generic&quot;,
 	&quot;onAddedToInventory&quot;:&quot;generic&quot;,
+	&quot;onCombined&quot;:&quot;generic&quot;,
 	&quot;onDropped&quot;:&quot;generic&quot;
 }</property>
     <property name="sounds">{
@@ -537,10 +538,10 @@
    </properties>
   </object>
  </objectgroup>
- <imagelayer name="1 bg">
+ <imagelayer name="1 bg" visible="0">
   <image source="../App/assets/scenes/1.png" width="1100" height="660"/>
  </imagelayer>
- <objectgroup draworder="index" name="1">
+ <objectgroup draworder="index" name="1" visible="0">
   <object id="29" name="chandelier" type="AnimatedArea" gid="15" x="357" y="207" width="647" height="207">
    <properties>
     <property name="description" value="A chandelier. Moving slightly in the draft from the window"/>
@@ -767,6 +768,7 @@
   <object id="75" name="lift" type="AnimatedArea" gid="38" x="576" y="531" width="173" height="531"/>
   <object id="76" name="bottle_green" type="Object" gid="39" x="575" y="721" width="78" height="154">
    <properties>
+    <property name="description" value="A glass bottle of green liquid"/>
     <property name="tileId" value="4"/>
    </properties>
   </object>
@@ -863,11 +865,13 @@
   </object>
   <object id="199" name="charging_paper_r" type="Object" gid="49" x="317" y="652" width="58" height="40">
    <properties>
+    <property name="description" value="A piece of paper. It's torn and has blood on it"/>
     <property name="tileId" value="14"/>
    </properties>
   </object>
   <object id="200" name="bottle_blue" type="Object" gid="50" x="89" y="578.333" width="78" height="154">
    <properties>
+    <property name="description" value="A glass bottle of blue liquid"/>
     <property name="tileId" value="15"/>
    </properties>
   </object>
@@ -890,20 +894,41 @@
     <property name="stateless" type="bool" value="true"/>
    </properties>
   </object>
+  <object id="231" name="2_boxes_1_r" type="Area" x="970.666" y="274.666" width="129.334" height="384">
+   <properties>
+    <property name="description" value="Some wooden boxes. They sound empty if you knock on them"/>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
   <object id="205" name="spiderweb_r1" type="Area" x="1012.67" y="420" width="45.3337" height="146.667">
    <properties>
     <property name="description" value="A spiderweb. Not useful though"/>
     <property name="stateless" type="bool" value="true"/>
+    <property name="z" type="int" value="1"/>
    </properties>
   </object>
   <object id="212" name="flypaper" type="Object" gid="51" x="103.333" y="183.667" width="20" height="147">
    <properties>
+    <property name="description" value="Some very, very sticky flypaper"/>
     <property name="tileId" value="16"/>
    </properties>
   </object>
   <object id="213" name="shutgun" type="Object" gid="52" x="148.667" y="637.333" width="140" height="113">
    <properties>
+    <property name="desription" value="WOW - a real and loaded shutgun!"/>
     <property name="tileId" value="17"/>
+   </properties>
+  </object>
+  <object id="230" name="2_lamp_r" type="Area" x="998.666" y="41.3332" width="104" height="64.0003">
+   <properties>
+    <property name="description" value="A light source. It's a wonder the electricity is still working"/>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="232" name="2_boxes_2_r" type="Area" x="903.333" y="526.667" width="197.334" height="134.667">
+   <properties>
+    <property name="description" value="A wooden box. Nothing special about it"/>
+    <property name="stateless" type="bool" value="true"/>
    </properties>
   </object>
  </objectgroup>
@@ -1035,7 +1060,10 @@
     <property name="stateless" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="127" name="exit_up_3" type="Area" x="332" y="4" width="229.333" height="122.667"/>
+  <object id="127" name="exit_up_3_2" type="Area" x="374.667" y="66.6667" width="238.666" height="54.667"/>
+  <object id="233" name="exit_up_3_1" type="Area" x="451.333" y="-5.00017" width="316" height="74.667"/>
+  <object id="234" name="exit_up_3_3" type="Area" x="332" y="117.333" width="217.333" height="56.667"/>
+  <object id="235" name="exit_up_3_4" type="Area" x="287.334" y="167.667" width="199.333" height="70.667"/>
  </objectgroup>
  <imagelayer name="4 bg" visible="0">
   <image source="../App/assets/scenes/4.png" width="1100" height="660"/>
@@ -1204,6 +1232,13 @@
     <property name="tileId" value="20"/>
    </properties>
   </object>
+  <object id="236" name="4_window" type="Area" x="58.6667" y="111.667" width="120.667" height="179.334">
+   <properties>
+    <property name="description" value="The night is still beautiful"/>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="z" type="int" value="-1"/>
+   </properties>
+  </object>
  </objectgroup>
  <imagelayer name="5 bg" visible="0">
   <image source="../App/assets/scenes/5.png" width="1100" height="660"/>
@@ -1231,6 +1266,83 @@
     <property name="description" value="It look like a charging mechanism of some sort"/>
    </properties>
   </object>
+  <object id="237" name="5_vent_pipe_l" type="Area" x="346" y="-1.3335" width="76" height="129.334">
+   <properties>
+    <property name="description" value="It's a pipe for transporting air"/>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="238" name="5_vent_pipe_r" type="Area" x="535.333" y="-2.667" width="76" height="137.334">
+   <properties>
+    <property name="description" value="It's a pipe for transporting air"/>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="239" name="5_blue_machine" type="Area" x="10" y="337.333" width="284" height="326.667">
+   <properties>
+    <property name="description" value="It's a fairly big machine of some sort. Could be some kind of generator"/>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="z" type="int" value="-1"/>
+   </properties>
+  </object>
+  <object id="240" name="5_red_machine" type="Area" x="672.667" y="268.666" width="425.333" height="390.667">
+   <properties>
+    <property name="description" value="Some weird big red machinery"/>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="z" type="int" value="-1"/>
+   </properties>
+  </object>
+  <object id="241" name="5_red_pipe" type="Area" x="922" y="-0.666833" width="117.333" height="406.667">
+   <properties>
+    <property name="description" value="A big wine red hose coming down from the ceiling"/>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="242" name="5_blue_pipe" type="Area" x="783.333" y="-1.3335" width="157.333" height="324.667">
+   <properties>
+    <property name="description" value="A big blue hose coming down from the ceiling"/>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="243" name="5_green_pipe" type="Area" x="113.333" y="-4.3335" width="157.333" height="348.667">
+   <properties>
+    <property name="description" value="A big green hose coming down from the ceiling"/>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="244" name="5_purple_pipe" type="Area" x="23.3335" y="-3.3335" width="117.333" height="386.667">
+   <properties>
+    <property name="description" value="A big purple hose coming down from the ceiling"/>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="245" name="5_boxes_r" type="Area" x="603.333" y="209.666" width="65.333" height="158.667">
+   <properties>
+    <property name="description">[
+	&quot;Oh dear...&quot;,
+	&quot;more boxes&quot;,
+	&quot;*sigh*&quot;
+]</property>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="246" name="5_boxes_l" type="Area" x="279.333" y="200.666" width="75.333" height="152.667">
+   <properties>
+    <property name="description">[
+	&quot;Oh dear...&quot;,
+	&quot;more boxes&quot;,
+	&quot;*sigh*&quot;
+]</property>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="247" name="5_lamp" type="Area" x="793.333" y="95.6665" width="79.333" height="44.667">
+   <properties>
+    <property name="description" value="Another lamp. It's a very consistent lamp design they have in this tower"/>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="z" type="int" value="1"/>
+   </properties>
+  </object>
  </objectgroup>
  <imagelayer name="6 bg" visible="0">
   <image source="../App/assets/scenes/6.png" width="1100" height="660"/>
@@ -1241,26 +1353,31 @@
   <object id="172" name="keypad_area" type="Area" x="925.333" y="330.667" width="37.3333" height="46.6667"/>
   <object id="173" name="purple_pipe" type="Area" gid="102" x="-2" y="429.333" width="165" height="129">
    <properties>
+    <property name="description" value="The mouth of a purple pipe"/>
     <property name="tileId" value="1"/>
    </properties>
   </object>
   <object id="174" name="green_pipe" type="Area" gid="103" x="198.333" y="353.333" width="175" height="137">
    <properties>
+    <property name="description" value="The mouth of a green pipe"/>
     <property name="tileId" value="2"/>
    </properties>
   </object>
   <object id="175" name="blue_pipe" type="Area" gid="104" x="526.333" y="535.333" width="190" height="148">
    <properties>
+    <property name="description" value="The mouth of a blue pipe"/>
     <property name="tileId" value="3"/>
    </properties>
   </object>
   <object id="176" name="red_pipe" type="Area" gid="105" x="319" y="630.667" width="195" height="152">
    <properties>
+    <property name="description" value="The mouth of a wine red pipe"/>
     <property name="tileId" value="4"/>
    </properties>
   </object>
   <object id="177" name="bottle_purple" type="Object" gid="106" x="400" y="288" width="49" height="97">
    <properties>
+    <property name="description" value="A glass bottle of purple liquid"/>
     <property name="tileId" value="5"/>
    </properties>
   </object>
@@ -1281,11 +1398,24 @@
     <property name="tileId" value="7"/>
    </properties>
   </object>
+  <object id="248" name="6_grain_sacks" type="Area" x="346" y="137.333" width="150" height="119.334">
+   <properties>
+    <property name="description" value="Some sacks of grain. I wonder why all this grain is lying around"/>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="z" type="int" value="-1"/>
+   </properties>
+  </object>
+  <object id="249" name="6_whiteboard" type="Area" x="989" y="278.333" width="80" height="75.334">
+   <properties>
+    <property name="description" value="It's a clean, neatly wiped, whiteboard"/>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
  </objectgroup>
- <imagelayer name="7 bg" visible="0">
+ <imagelayer name="7 bg">
   <image source="../App/assets/scenes/7.png" width="1100" height="660"/>
  </imagelayer>
- <objectgroup draworder="index" name="7" visible="0">
+ <objectgroup draworder="index" name="7">
   <object id="183" name="elevator_door_7" type="AnimatedArea" gid="110" x="22.3333" y="661" width="270" height="362"/>
   <object id="185" name="painting4_frame" type="Area" x="442.667" y="141.333" width="216" height="293.333">
    <properties>
@@ -1329,6 +1459,7 @@
   </object>
   <object id="194" name="bottle_red" type="Object" gid="113" x="693.524" y="727.421" width="78" height="154" rotation="-6.18565">
    <properties>
+    <property name="description" value="A glass bottle of red liquid"/>
     <property name="tileId" value="3"/>
    </properties>
   </object>

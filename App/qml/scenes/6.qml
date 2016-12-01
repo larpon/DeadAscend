@@ -34,6 +34,13 @@ Base {
         property bool fuelCellHasSpawned: false
     }
 
+    Connections {
+        target: core.sounds
+        onLoaded: {
+            if(tag === "hum")
+                core.sounds.play("hum",core.sounds.infinite)
+        }
+    }
 
     Component.onCompleted: {
         store.load()
@@ -49,6 +56,7 @@ Base {
         sfx.add("level"+sceneNumber,"radio_seek",App.getAsset("sounds/radio_seek.wav"))
         sfx.add("level"+sceneNumber,"paper_fiddle",App.getAsset("sounds/paper_fiddle.wav"))
 
+        sfx.add("level"+sceneNumber,"hum",App.getAsset("sounds/low_machine_hum.wav"))
     }
 
     Component.onDestruction: {
@@ -172,13 +180,24 @@ Base {
 
         DropSpot {
             anchors { fill: parent }
-            keys: [ "bottle_blue" ]
+            keys: [ "bottle_blue", "bottle_purple", "bottle_green", "bottle_red" ]
 
             name: "bottle_blue_drop"
 
-            enabled: game.flaskMixerBlueLevel <= 0
-
             onDropped: {
+
+                if(game.flaskMixerBlueLevel > 0) {
+                    setText("There's already poured liquid in this")
+                    return
+                }
+
+                var o = drag.source
+
+                if(o.name !== "bottle_blue") {
+                    setText("... better not put "+o.name.replace("bottle_","")+" liquid in a blue pipe")
+                    return
+                }
+
                 drop.accept()
 
                 core.sounds.play("pouring")
@@ -186,7 +205,6 @@ Base {
 
                 game.flaskMixerBlueLevel = 1
 
-                var o = drag.source
                 blacklistObject(o.name)
             }
 
@@ -200,13 +218,24 @@ Base {
 
         DropSpot {
             anchors { fill: parent }
-            keys: [ "bottle_purple" ]
+            keys: [ "bottle_blue", "bottle_purple", "bottle_green", "bottle_red" ]
 
             name: "bottle_purple_drop"
 
-            enabled: game.flaskMixerPurpleLevel <= 0
-
             onDropped: {
+
+                if(game.flaskMixerPurpleLevel > 0) {
+                    setText("There's already poured liquid in this")
+                    return
+                }
+
+                var o = drag.source
+
+                if(o.name !== "bottle_purple") {
+                    setText("... better not put "+o.name.replace("bottle_","")+" liquid in a purple pipe")
+                    return
+                }
+
                 drop.accept()
 
                 core.sounds.play("pouring")
@@ -214,7 +243,6 @@ Base {
 
                 game.flaskMixerPurpleLevel = 1
 
-                var o = drag.source
                 blacklistObject(o.name)
             }
 
@@ -228,13 +256,24 @@ Base {
 
         DropSpot {
             anchors { fill: parent }
-            keys: [ "bottle_red" ]
+            keys: [ "bottle_blue", "bottle_purple", "bottle_green", "bottle_red" ]
 
             name: "bottle_red_drop"
 
-            enabled: game.flaskMixerRedLevel <= 0
-
             onDropped: {
+
+                if(game.flaskMixerRedLevel > 0) {
+                    setText("There's already poured liquid in this")
+                    return
+                }
+
+                var o = drag.source
+
+                if(o.name !== "bottle_red") {
+                    setText("... better not put "+o.name.replace("bottle_","")+" liquid in a red-ish pipe")
+                    return
+                }
+
                 drop.accept()
 
                 core.sounds.play("pouring")
@@ -242,7 +281,6 @@ Base {
 
                 game.flaskMixerRedLevel = 1
 
-                var o = drag.source
                 blacklistObject(o.name)
             }
 
@@ -256,13 +294,24 @@ Base {
 
         DropSpot {
             anchors { fill: parent }
-            keys: [ "bottle_green" ]
+            keys: [ "bottle_blue", "bottle_purple", "bottle_green", "bottle_red" ]
 
             name: "bottle_green_drop"
 
-            enabled: game.flaskMixerGreenLevel <= 0
-
             onDropped: {
+
+                if(game.flaskMixerGreenLevel > 0) {
+                    setText("There's already poured liquid in this")
+                    return
+                }
+
+                var o = drag.source
+
+                if(o.name !== "bottle_green") {
+                    setText("... better not put "+o.name.replace("bottle_","")+" liquid in a green pipe")
+                    return
+                }
+
                 drop.accept()
 
                 core.sounds.play("pouring")
@@ -270,7 +319,6 @@ Base {
 
                 game.flaskMixerGreenLevel = 1
 
-                var o = drag.source
                 blacklistObject(o.name)
             }
 

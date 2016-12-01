@@ -25,7 +25,7 @@
                     {
                      "acceptDrops":true,
                      "combines":"[ \"bubblegum\" ]",
-                     "soundMap":"{\n\t\"onDragged\":\"generic\",\n\t\"onReturned\":\"generic\",\n\t\"onAddedToInventory\":\"generic\",\n\t\"onDropped\":\"generic\"\n}",
+                     "soundMap":"{\n\t\"onDragged\":\"generic\",\n\t\"onReturned\":\"generic\",\n\t\"onAddedToInventory\":\"generic\",\n\t\"onCombined\":\"generic\",\n\t\"onDropped\":\"generic\"\n}",
                      "sounds":"{\n\t\"generic\":\"sounds\/bucket_put.wav\"\n}",
                      "tileId":"0"
                     },
@@ -65,7 +65,7 @@
                  "y":327.985
                 }, 
                 {
-                 "height":73.3333333333333,
+                 "height":73.3333,
                  "id":225,
                  "name":"0_junk_2",
                  "properties":
@@ -81,12 +81,12 @@
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":98.6666666666666,
-                 "x":447.333333333333,
+                 "width":98.6667,
+                 "x":447.333,
                  "y":216
                 }, 
                 {
-                 "height":242.666333333333,
+                 "height":242.666,
                  "id":228,
                  "name":"0_stairs",
                  "properties":
@@ -102,9 +102,9 @@
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":257.333366666667,
-                 "x":519.999983333333,
-                 "y":156.000166666667
+                 "width":257.333,
+                 "x":520,
+                 "y":156
                 }, 
                 {
                  "gid":3,
@@ -189,7 +189,7 @@
                  "type":"Area",
                  "visible":true,
                  "width":18.6667,
-                 "x":1022.667,
+                 "x":1022.67,
                  "y":0
                 }, 
                 {
@@ -422,8 +422,8 @@
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":84.0000333333335,
-                 "x":485.333316666667,
+                 "width":84,
+                 "x":485.333,
                  "y":160
                 }, 
                 {
@@ -479,7 +479,7 @@
                  "y":292
                 }, 
                 {
-                 "height":78.6666333333333,
+                 "height":78.6666,
                  "id":86,
                  "name":"water_puddle2",
                  "properties":
@@ -496,8 +496,8 @@
                  "type":"Area",
                  "visible":true,
                  "width":162.667,
-                 "x":543.999666666667,
-                 "y":551.999666666667
+                 "x":544,
+                 "y":552
                 }, 
                 {
                  "height":38.6667,
@@ -528,8 +528,8 @@
                  "type":"Area",
                  "visible":true,
                  "width":86.6667,
-                 "x":267.333316666667,
-                 "y":266.666833333333
+                 "x":267.333,
+                 "y":266.667
                 }, 
                 {
                  "height":65.3333,
@@ -549,8 +549,8 @@
                  "type":"Area",
                  "visible":true,
                  "width":190.667,
-                 "x":256.6665,
-                 "y":470.000016666667
+                 "x":256.666,
+                 "y":470
                 }, 
                 {
                  "height":88,
@@ -572,7 +572,7 @@
                  "type":"Area",
                  "visible":true,
                  "width":36,
-                 "x":37.3333333333333,
+                 "x":37.3333,
                  "y":324
                 }, 
                 {
@@ -593,7 +593,7 @@
                  "type":"Area",
                  "visible":true,
                  "width":18.6667,
-                 "x":82.6666500000001,
+                 "x":82.6667,
                  "y":0
                 }],
          "opacity":1,
@@ -609,7 +609,7 @@
          "name":"1 bg",
          "opacity":1,
          "type":"imagelayer",
-         "visible":true,
+         "visible":false,
          "width":0,
          "x":0,
          "y":0
@@ -1386,7 +1386,7 @@
                  "y":276
                 }, 
                 {
-                 "height":329.333666666667,
+                 "height":329.334,
                  "id":229,
                  "name":"1_junk_shadows",
                  "properties":
@@ -1404,13 +1404,13 @@
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":83.9996666666667,
-                 "x":1013.3335,
-                 "y":227.333166666667
+                 "width":83.9997,
+                 "x":1013.33,
+                 "y":227.333
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "width":0,
          "x":0,
          "y":0
@@ -1450,10 +1450,12 @@
                  "name":"bottle_green",
                  "properties":
                     {
+                     "description":"A glass bottle of green liquid",
                      "tileId":"4"
                     },
                  "propertytypes":
                     {
+                     "description":"string",
                      "tileId":"string"
                     },
                  "rotation":0,
@@ -1770,10 +1772,12 @@
                  "name":"charging_paper_r",
                  "properties":
                     {
+                     "description":"A piece of paper. It's torn and has blood on it",
                      "tileId":"14"
                     },
                  "propertytypes":
                     {
+                     "description":"string",
                      "tileId":"string"
                     },
                  "rotation":0,
@@ -1790,10 +1794,12 @@
                  "name":"bottle_blue",
                  "properties":
                     {
+                     "description":"A glass bottle of blue liquid",
                      "tileId":"15"
                     },
                  "propertytypes":
                     {
+                     "description":"string",
                      "tileId":"string"
                     },
                  "rotation":0,
@@ -1869,18 +1875,41 @@
                  "y":41.3331
                 }, 
                 {
-                 "height":146.667,
-                 "id":205,
-                 "name":"spiderweb_r1",
+                 "height":384.000333333333,
+                 "id":231,
+                 "name":"2_boxes_1_r",
                  "properties":
                     {
-                     "description":"A spiderweb. Not useful though",
+                     "description":"Some wooden boxes. They sound empty if you knock on them",
                      "stateless":true
                     },
                  "propertytypes":
                     {
                      "description":"string",
                      "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":129.3337,
+                 "x":970.666483333333,
+                 "y":274.6665
+                }, 
+                {
+                 "height":146.667,
+                 "id":205,
+                 "name":"spiderweb_r1",
+                 "properties":
+                    {
+                     "description":"A spiderweb. Not useful though",
+                     "stateless":true,
+                     "z":1
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool",
+                     "z":"int"
                     },
                  "rotation":0,
                  "type":"Area",
@@ -1896,10 +1925,12 @@
                  "name":"flypaper",
                  "properties":
                     {
+                     "description":"Some very, very sticky flypaper",
                      "tileId":"16"
                     },
                  "propertytypes":
                     {
+                     "description":"string",
                      "tileId":"string"
                     },
                  "rotation":0,
@@ -1916,10 +1947,12 @@
                  "name":"shutgun",
                  "properties":
                     {
+                     "desription":"WOW - a real and loaded shutgun!",
                      "tileId":"17"
                     },
                  "propertytypes":
                     {
+                     "desription":"string",
                      "tileId":"string"
                     },
                  "rotation":0,
@@ -1928,6 +1961,48 @@
                  "width":140,
                  "x":148.667,
                  "y":637.333
+                }, 
+                {
+                 "height":64.0003333333333,
+                 "id":230,
+                 "name":"2_lamp_r",
+                 "properties":
+                    {
+                     "description":"A light source. It's a wonder the electricity is still working",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":104.000366666667,
+                 "x":998.666483333333,
+                 "y":41.3331666666666
+                }, 
+                {
+                 "height":134.666666666667,
+                 "id":232,
+                 "name":"2_boxes_2_r",
+                 "properties":
+                    {
+                     "description":"A wooden box. Nothing special about it",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":197.334,
+                 "x":903.333,
+                 "y":526.666666666667
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -2426,15 +2501,48 @@
                  "y":355.333
                 }, 
                 {
-                 "height":122.667,
+                 "height":54.667,
                  "id":127,
-                 "name":"exit_up_3",
+                 "name":"exit_up_3_2",
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":229.333,
-                 "x":332,
-                 "y":4
+                 "width":238.666333333333,
+                 "x":374.666666666667,
+                 "y":66.6666666666667
+                }, 
+                {
+                 "height":74.667,
+                 "id":233,
+                 "name":"exit_up_3_1",
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":316,
+                 "x":451.333333333333,
+                 "y":-5.00016666666662
+                }, 
+                {
+                 "height":56.667,
+                 "id":234,
+                 "name":"exit_up_3_3",
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":217.332666666667,
+                 "x":332.000333333333,
+                 "y":117.333166666667
+                }, 
+                {
+                 "height":70.667,
+                 "id":235,
+                 "name":"exit_up_3_4",
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":199.333,
+                 "x":287.3335,
+                 "y":167.6665
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -3023,6 +3131,29 @@
                  "width":122,
                  "x":327,
                  "y":514.667
+                }, 
+                {
+                 "height":179.333666666667,
+                 "id":236,
+                 "name":"4_window",
+                 "properties":
+                    {
+                     "description":"The night is still beautiful",
+                     "stateless":true,
+                     "z":-1
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":120.666666666667,
+                 "x":58.6666666666667,
+                 "y":111.6665
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -3229,6 +3360,243 @@
                  "width":180,
                  "x":394.667,
                  "y":509.333
+                }, 
+                {
+                 "height":129.333666666667,
+                 "id":237,
+                 "name":"5_vent_pipe_l",
+                 "properties":
+                    {
+                     "description":"It's a pipe for transporting air",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":76,
+                 "x":346,
+                 "y":-1.33349999999999
+                }, 
+                {
+                 "height":137.334,
+                 "id":238,
+                 "name":"5_vent_pipe_r",
+                 "properties":
+                    {
+                     "description":"It's a pipe for transporting air",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":76,
+                 "x":535.333333333333,
+                 "y":-2.66700000000001
+                }, 
+                {
+                 "height":326.667333333333,
+                 "id":239,
+                 "name":"5_blue_machine",
+                 "properties":
+                    {
+                     "description":"It's a fairly big machine of some sort. Could be some kind of generator",
+                     "stateless":true,
+                     "z":-1
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":284,
+                 "x":10,
+                 "y":337.333
+                }, 
+                {
+                 "height":390.667,
+                 "id":240,
+                 "name":"5_red_machine",
+                 "properties":
+                    {
+                     "description":"Some weird big red machinery",
+                     "stateless":true,
+                     "z":-1
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":425.333333333333,
+                 "x":672.666666666667,
+                 "y":268.6665
+                }, 
+                {
+                 "height":406.667,
+                 "id":241,
+                 "name":"5_red_pipe",
+                 "properties":
+                    {
+                     "description":"A big wine red hose coming down from the ceiling",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":117.333,
+                 "x":922.000166666667,
+                 "y":-0.666833333333386
+                }, 
+                {
+                 "height":324.667,
+                 "id":242,
+                 "name":"5_blue_pipe",
+                 "properties":
+                    {
+                     "description":"A big blue hose coming down from the ceiling",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":157.333,
+                 "x":783.3335,
+                 "y":-1.33349999999999
+                }, 
+                {
+                 "height":348.667,
+                 "id":243,
+                 "name":"5_green_pipe",
+                 "properties":
+                    {
+                     "description":"A big green hose coming down from the ceiling",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":157.333,
+                 "x":113.3335,
+                 "y":-4.3335
+                }, 
+                {
+                 "height":386.667,
+                 "id":244,
+                 "name":"5_purple_pipe",
+                 "properties":
+                    {
+                     "description":"A big purple hose coming down from the ceiling",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":117.333,
+                 "x":23.3335,
+                 "y":-3.33349999999999
+                }, 
+                {
+                 "height":158.667,
+                 "id":245,
+                 "name":"5_boxes_r",
+                 "properties":
+                    {
+                     "description":"[\n\t\"Oh dear...\",\n\t\"more boxes\",\n\t\"*sigh*\"\n]",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":65.333,
+                 "x":603.3335,
+                 "y":209.6665
+                }, 
+                {
+                 "height":152.667,
+                 "id":246,
+                 "name":"5_boxes_l",
+                 "properties":
+                    {
+                     "description":"[\n\t\"Oh dear...\",\n\t\"more boxes\",\n\t\"*sigh*\"\n]",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":75.333,
+                 "x":279.3335,
+                 "y":200.6665
+                }, 
+                {
+                 "height":44.667,
+                 "id":247,
+                 "name":"5_lamp",
+                 "properties":
+                    {
+                     "description":"Another lamp. It's a very consistent lamp design they have in this tower",
+                     "stateless":true,
+                     "z":1
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":79.333,
+                 "x":793.3335,
+                 "y":95.6665
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -3294,10 +3662,12 @@
                  "name":"purple_pipe",
                  "properties":
                     {
+                     "description":"The mouth of a purple pipe",
                      "tileId":"1"
                     },
                  "propertytypes":
                     {
+                     "description":"string",
                      "tileId":"string"
                     },
                  "rotation":0,
@@ -3314,10 +3684,12 @@
                  "name":"green_pipe",
                  "properties":
                     {
+                     "description":"The mouth of a green pipe",
                      "tileId":"2"
                     },
                  "propertytypes":
                     {
+                     "description":"string",
                      "tileId":"string"
                     },
                  "rotation":0,
@@ -3334,10 +3706,12 @@
                  "name":"blue_pipe",
                  "properties":
                     {
+                     "description":"The mouth of a blue pipe",
                      "tileId":"3"
                     },
                  "propertytypes":
                     {
+                     "description":"string",
                      "tileId":"string"
                     },
                  "rotation":0,
@@ -3354,10 +3728,12 @@
                  "name":"red_pipe",
                  "properties":
                     {
+                     "description":"The mouth of a wine red pipe",
                      "tileId":"4"
                     },
                  "propertytypes":
                     {
+                     "description":"string",
                      "tileId":"string"
                     },
                  "rotation":0,
@@ -3374,10 +3750,12 @@
                  "name":"bottle_purple",
                  "properties":
                     {
+                     "description":"A glass bottle of purple liquid",
                      "tileId":"5"
                     },
                  "propertytypes":
                     {
+                     "description":"string",
                      "tileId":"string"
                     },
                  "rotation":0,
@@ -3450,6 +3828,50 @@
                  "width":142,
                  "x":25,
                  "y":274.333
+                }, 
+                {
+                 "height":119.334,
+                 "id":248,
+                 "name":"6_grain_sacks",
+                 "properties":
+                    {
+                     "description":"Some sacks of grain. I wonder why all this grain is lying around",
+                     "stateless":true,
+                     "z":-1
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":150,
+                 "x":346,
+                 "y":137.333
+                }, 
+                {
+                 "height":75.334,
+                 "id":249,
+                 "name":"6_whiteboard",
+                 "properties":
+                    {
+                     "description":"It's a clean, neatly wiped, whiteboard",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":80,
+                 "x":989,
+                 "y":278.333
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -3464,7 +3886,7 @@
          "name":"7 bg",
          "opacity":1,
          "type":"imagelayer",
-         "visible":false,
+         "visible":true,
          "width":0,
          "x":0,
          "y":0
@@ -3647,10 +4069,12 @@
                  "name":"bottle_red",
                  "properties":
                     {
+                     "description":"A glass bottle of red liquid",
                      "tileId":"3"
                     },
                  "propertytypes":
                     {
+                     "description":"string",
                      "tileId":"string"
                     },
                  "rotation":-6.18565,
@@ -3693,7 +4117,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "width":0,
          "x":0,
          "y":0
@@ -3833,7 +4257,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":230,
+ "nextobjectid":250,
  "orientation":"orthogonal",
  "renderorder":"left-up",
  "tileheight":660,

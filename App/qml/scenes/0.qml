@@ -521,7 +521,10 @@ Base {
         stateless: true
 
         onClicked: {
-            game.setText("There's something small, round and red lying on the edge of the sleeve assembly","It's too far down to reach by hand")
+            if(!hasObjectExisted("button_8"))
+                game.setText("There's something small, round and red lying on the edge of the sleeve assembly","It's too far down to reach by hand")
+            else
+                game.setText("There's nothing more downthere")
         }
 
 

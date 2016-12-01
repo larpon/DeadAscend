@@ -102,6 +102,10 @@ Item {
         return found
     }
 
+    function hasObjectExisted(name) {
+        return isBlacklisted(name) || getObject(name) !== undefined
+    }
+
     function destroyObject(name) {
         if(name in dynamicLoaded) {
             var o = dynamicLoaded[name]
@@ -1120,10 +1124,7 @@ Item {
             opacity: 1
         }
 
-        incubator.now(exitComponent, game, attrs, function(o){
-
-        })
-
+        incubator.now(exitComponent, game, attrs)
     }
 
     // Global object combinations
@@ -1138,8 +1139,6 @@ Item {
     }
 
     function combineBucketWithGum(bucket,gum) {
-
-        gum.play('generic')
 
         var object = {
             name: "bucket_patched",
