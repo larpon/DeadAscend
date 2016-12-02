@@ -14,22 +14,62 @@ Base {
 
     onReadyChanged: {
 
-        if(game.helpCalled) {
+        if(game.helpCalled && !store.miniGameCompleted) {
             miniGameMode = true
-            elevatorDoor.setActiveSequence('close')
+            //elevatorDoor.setActiveSequence('close')
             game.setText(" "," ","...","Something is wrong","I can feel it","I can hear zombies","A lot of zombies!")
-        } else
-            elevatorDoor.setActiveSequence('opened-wait-close')
+        }
+
+        elevatorDoor.setActiveSequence('close')
     }
 
     anchors { fill: parent }
 
     property bool miniGameMode: false
     property bool miniGamePaused: false
+    property int miniGameZombiesKilled: 0
+
+    onMiniGameZombiesKilledChanged: {
+        if(miniGameZombiesKilled == 1)
+            setText("HA! First blood!")
+        if(miniGameZombiesKilled == 10)
+            setText("Right on!")
+        if(miniGameZombiesKilled == 20)
+            setText("BOOM baby!")
+        if(miniGameZombiesKilled == 40)
+            setText("Out of my way!")
+        if(miniGameZombiesKilled == 60)
+            setText("Oh my...","They keep showing up!")
+        if(miniGameZombiesKilled == 100) {
+            miniGameMode = false
+            store.miniGameCompleted = true
+            setText("Take that you creep!")
+        }
+    }
+
+    Timer {
+        running: store.miniGameCompleted
+        interval: 1000
+        onTriggered: {
+            setText("I can hear the chopper in the distance!")
+        }
+    }
+
+    Timer {
+        id: sendChopperTimer
+        running: store.miniGameCompleted
+        interval: 4000
+        onTriggered: {
+            chopperAnimation.start()
+            sounds.play("chopper_loop",sounds.infinite)
+        }
+    }
 
     Store {
         id: store
         name: "level"+sceneNumber
+
+        property bool miniGameCompleted: false
     }
 
     Component.onCompleted: {
@@ -38,9 +78,13 @@ Base {
 
         var sfx = sounds
         sfx.add("level"+sceneNumber,"shotgun",App.getAsset("sounds/shotgun_shot_01.wav"))
+        sfx.add("level"+sceneNumber,"shotgun_load_1",App.getAsset("sounds/shotgun_load_01.wav"))
+        sfx.add("level"+sceneNumber,"shotgun_load_2",App.getAsset("sounds/shotgun_load_02.wav"))
+        sfx.add("level"+sceneNumber,"shotgun_load_3",App.getAsset("sounds/shotgun_load_03.wav"))
         sfx.add("level"+sceneNumber,"zombie_moan_1",App.getAsset("sounds/zombie_moan_01.wav"))
         sfx.add("level"+sceneNumber,"zombie_moan_2",App.getAsset("sounds/zombie_moan_02.wav"))
         sfx.add("level"+sceneNumber,"zombie_moan_3",App.getAsset("sounds/zombie_moan_03.wav"))
+        sfx.add("level"+sceneNumber,"chopper_loop",App.getAsset("sounds/chopper.wav"))
 
     }
 
@@ -63,7 +107,8 @@ Base {
     onMiniGameModeChanged: {
         if(miniGameMode) {
             zombieSpawnTimer.start()
-        }
+        } else
+            zombieSpawnTimer.stop()
     }
 
     Timer {
@@ -103,6 +148,7 @@ Base {
             signal died()
 
             onDied: {
+                scene.miniGameZombiesKilled++
                 tt.z = -900
             }
 
@@ -261,6 +307,7 @@ Base {
                 }
                 tt.mover.duration = 60000
                 tt.mover.startMoving()
+
             }
 
         }
@@ -279,15 +326,6 @@ Base {
             ]
             game.setText(Aid.randomFromArray(a))
         }
-    }*/
-
-    /*
-    Area {
-        stateless: true
-
-        name: "exit_complete"
-
-        onClicked: game.goToScene("ending")
     }*/
 
     Item {
@@ -437,6 +475,84 @@ Base {
 
     }
 
+    SequentialAnimation {
+        id: chopperAnimation
+        running: false
+
+        NumberAnimation {
+            target: chopperRope
+            property: "x"
+            duration: 6200
+            to: scene.width*0.75
+        }
+
+        ScriptAction {
+            script: {
+                game.showExit(750,100,60*60000,"up")
+            }
+        }
+
+    }
+
+    SequentialAnimation {
+        running: chopperRope.visible
+        loops: Animation.Infinite
+        NumberAnimation {
+            target: chopperRope
+            property: "y"
+            duration: 2200
+            to: -20
+        }
+        NumberAnimation {
+            target: chopperRope
+            property: "y"
+            duration: 2200
+            to: -5
+        }
+    }
+
+    AnimatedArea {
+        id: chopperRope
+        name: "rope_dangle_chopper"
+
+        x: -2*width; y: -10
+        width: 65; height: 176
+
+        stateless: true
+        clickable: true
+        visible: store.miniGameCompleted
+        run: visible
+        paused: !visible || (scene.paused)
+
+        source: App.getAsset("sprites/rope/window_dangle/01/0001.png")
+
+        defaultFrameDelay: 150
+
+        sequences: [
+            {
+                name: "dangle",
+                frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],
+                to: { "out": 1 }
+            },
+            {
+                name: "out",
+                frames: [18,17,16,15,16,17,18,19],
+                to: { "back": 1 }
+            },
+            {
+                name: "back",
+                frames: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],
+                reverse: true,
+                to: { "dangle": 1 }
+            }
+        ]
+
+        onClicked: {
+            //game.goToScene("end")
+            game.setText("The end!")
+        }
+
+    }
 
     Connections {
         target: game.elevatorPanel
@@ -462,12 +578,12 @@ Base {
 
         source: App.getAsset("sprites/blood/splat/0001.png")
 
-        defaultFrameDelay: 30
+        defaultFrameDelay: 20
 
         sequences: [
             {
                 name: "pulse",
-                frames: [1,2,3,4,5,6,7,8,9,9,9,9,8,7,6,5,4,3,2,1]
+                frames: [7,8,9,7,6,5,4,3,2,1]
             }
         ]
     }

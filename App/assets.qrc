@@ -1038,5 +1038,6 @@
         <file>assets/sprites/blood/splat/0008.png</file>
         <file>assets/sprites/blood/splat/0007.png</file>
         <file>assets/sprites/blood/splat/0006.png</file>
+        <file>assets/sounds/chopper.wav</file>
     </qresource>
 </RCC>
