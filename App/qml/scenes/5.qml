@@ -25,10 +25,10 @@ Base {
     }
 
     Connections {
-        target: core.sounds
+        target: sounds
         onLoaded: {
             if(tag === "hum")
-                core.sounds.play("hum",core.sounds.infinite)
+                sounds.play("hum",sounds.infinite)
         }
     }
 
@@ -36,9 +36,16 @@ Base {
         store.load()
         showExit()
 
-        var sfx = core.sounds
+        var sfx = sounds
         sfx.add("level"+sceneNumber,"hum",App.getAsset("sounds/low_machine_hum.wav"))
-
+        sfx.add("level"+sceneNumber,"klonk",App.getAsset("sounds/klonk.wav"))
+        sfx.add("level"+sceneNumber,"power_up",App.getAsset("sounds/power_up_zap.wav"))
+        sfx.add("level"+sceneNumber,"small_zaps_1",App.getAsset("sounds/small_zaps_loop.wav"))
+        sfx.add("level"+sceneNumber,"small_zaps_2",App.getAsset("sounds/small_zaps_loop.wav"))
+        sfx.add("level"+sceneNumber,"small_zaps_3",App.getAsset("sounds/small_zaps_loop.wav"))
+        sfx.add("level"+sceneNumber,"small_zaps_4",App.getAsset("sounds/small_zaps_loop.wav"))
+        sfx.add("level"+sceneNumber,"zap_loop",App.getAsset("sounds/zap_loop.wav"))
+        sfx.add("level"+sceneNumber,"liquid",App.getAsset("sounds/liquid_blop.wav"))
     }
 
     Component.onDestruction: {
@@ -210,6 +217,11 @@ Base {
         onStateChanged: {
             if(state === "up" || state === "down")
                 setActiveSequence(state)
+            if(state === "down") {
+                sounds.play("power_up")
+                sounds.play("small_zaps_1",sounds.infinite)
+            } else
+                sounds.stop("small_zaps_1")
         }
 
         onClicked: {
@@ -248,6 +260,11 @@ Base {
         onStateChanged: {
             if(state === "up" || state === "down")
                 setActiveSequence(state)
+            if(state === "down") {
+                sounds.play("power_up")
+                sounds.play("small_zaps_2",sounds.infinite)
+            } else
+                sounds.stop("small_zaps_2")
         }
 
         onClicked: {
@@ -286,6 +303,11 @@ Base {
         onStateChanged: {
             if(state === "up" || state === "down")
                 setActiveSequence(state)
+            if(state === "down") {
+                sounds.play("power_up")
+                sounds.play("small_zaps_3",sounds.infinite)
+            } else
+                sounds.stop("small_zaps_3")
         }
 
         onClicked: {
@@ -324,6 +346,11 @@ Base {
         onStateChanged: {
             if(state === "up" || state === "down")
                 setActiveSequence(state)
+            if(state === "down") {
+                sounds.play("power_up")
+                sounds.play("small_zaps_4",sounds.infinite)
+            } else
+                sounds.stop("small_zaps_4")
         }
 
         onClicked: {
@@ -492,6 +519,7 @@ Base {
                 var fc = game.getObject('fuel_cell')
                 if(fc && fc.at === "fuel_cell_drop") {
                     fc.z = -1
+                    fc.description = "A half-charged fuel cell"
                     game.setText("It's charging...","...","...")
                     giveFuelCellBackTimer.start()
                 }
@@ -507,6 +535,11 @@ Base {
                     game.setText("The fuel cell has already finished charging")
                 }
             }
+
+            if(run)
+                sounds.play("zap_loop",sounds.infinite)
+            else
+                sounds.stop("zap_loop")
         }
 
         Timer {
@@ -516,6 +549,7 @@ Base {
                 var fc = game.getObject('fuel_cell')
                 if(fc && fc.at === "fuel_cell_drop") {
                     fc.z = 0
+                    fc.description = "A fully charged fuel cell - ready to use"
                     game.fuelCellCharged = true
                     leverLL.state = "up"
                     game.setText("charged!")
@@ -622,10 +656,14 @@ Base {
             property int vPurple: game.flaskMixerPurpleLevel
             function flaskClick(color) {
 
+                sounds.play("tap")
+
                 if(game.flasksCorrect) {
                     game.setText("Like the old saying goes...","if it ain't broken...","don't fix it!")
                     return
                 }
+
+                sounds.play("liquid",2)
 
                 var l = 0
                 if(color === "green") {
@@ -679,6 +717,12 @@ Base {
                 }
             }
 
+            Area {
+                x: 230; y: 230
+                width: 20; height: 20
+                onClicked: flaskMixer.flaskClick("blue")
+            }
+
             Image {
                 x: 70; y: 72
                 fillMode: Image.PreserveAspectFit
@@ -691,6 +735,12 @@ Base {
                     anchors { fill: parent }
                     onClicked: flaskMixer.flaskClick("green")
                 }
+            }
+
+            Area {
+                x: 140; y: 225
+                width: 20; height: 20
+                onClicked: flaskMixer.flaskClick("green")
             }
 
             Image {
@@ -707,6 +757,12 @@ Base {
                 }
             }
 
+            Area {
+                x: 140; y: 380
+                width: 20; height: 20
+                onClicked: flaskMixer.flaskClick("purple")
+            }
+
             Image {
                 x: 250; y: 410
                 fillMode: Image.PreserveAspectFit
@@ -721,6 +777,12 @@ Base {
                 }
             }
 
+            Area {
+                x: 235; y: 375
+                width: 20; height: 20
+                onClicked: flaskMixer.flaskClick("red")
+            }
+
             Image {
                 id: centerLight
                 x: 149; y: 266
@@ -729,12 +791,13 @@ Base {
                 source: App.getAsset("sprites/flask_mixer_levels/center_"+color+".png")
 
                 property string color: game.flasksFilled ? game.flasksCorrect ? "green" : "yellow" : "red"
+                onColorChanged: sounds.play("power_up")
 
                 MouseArea {
                     anchors { fill: parent }
                     onClicked: {
                         if(centerLight.color === "green")
-                            game.setText("Nice green glow. I think everything is ready")
+                            game.setText("Nice green glow. Everything seem to be ready")
                         if(centerLight.color === "yellow")
                             game.setText("It's got a nice yellow tint to it. There's more work to be done here")
                         if(centerLight.color === "red")

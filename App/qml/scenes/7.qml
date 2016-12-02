@@ -31,7 +31,7 @@ Base {
         store.load()
         showExit()
 
-        var sfx = core.sounds
+        var sfx = sounds
         //sfx.add("level"+sceneNumber,"hum",App.getAsset("sounds/low_machine_hum.wav"))
 
     }
@@ -163,7 +163,7 @@ Base {
             onDropped: {
                 drop.accept()
 
-                //core.sounds.play("pouring")
+                //sounds.play("pouring")
                 game.setText("Brilliant. The rope is firmly tied to the hook")
 
                 store.ropeTied = true

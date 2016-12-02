@@ -23,7 +23,7 @@ Base {
         store.load()
         showExit()
 
-        var sfx = core.sounds
+        var sfx = sounds
         //sfx.add("level"+sceneNumber,"switch",App.getAsset("sounds/lamp_switch_01.wav"))
     }
 

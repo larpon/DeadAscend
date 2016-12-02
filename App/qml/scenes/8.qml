@@ -36,7 +36,7 @@ Base {
         store.load()
         showExit()
 
-        var sfx = core.sounds
+        var sfx = sounds
         sfx.add("level"+sceneNumber,"shotgun",App.getAsset("sounds/shotgun_shot_01.wav"))
         sfx.add("level"+sceneNumber,"zombie_moan_1",App.getAsset("sounds/zombie_moan_01.wav"))
         sfx.add("level"+sceneNumber,"zombie_moan_2",App.getAsset("sounds/zombie_moan_02.wav"))
@@ -348,7 +348,7 @@ Base {
 
             onDropped: {
 
-                core.sounds.play("tick")
+                sounds.play("tick")
 
                 if(game.fuelCellCharged) {
                     game.fuelCellConnected = true

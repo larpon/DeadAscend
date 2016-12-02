@@ -32,6 +32,13 @@ ObjectStore {
             property string name: key
             property alias keys: fakeDropSpot.keys
 
+            visible: opacity > 0
+            opacity: outOfBounds ? 0 : 1
+
+            Behavior on opacity {
+                NumberAnimation { duration: 100 }
+            }
+
             draggable: true
 
             clickable: object !== undefined ? object.clickable : false
@@ -94,12 +101,6 @@ ObjectStore {
 
                 width: sourceSize.width > 100 ? 100 : sourceSize.width
                 height: sourceSize.height > 100 ? 100 : sourceSize.height
-            }
-
-            opacity: outOfBounds ? 0 : 1
-
-            Behavior on opacity {
-                NumberAnimation { duration: 100 }
             }
 
             DropSpot {

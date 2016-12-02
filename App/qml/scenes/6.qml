@@ -35,10 +35,10 @@ Base {
     }
 
     Connections {
-        target: core.sounds
+        target: sounds
         onLoaded: {
             if(tag === "hum")
-                core.sounds.play("hum",core.sounds.infinite)
+                sounds.play("hum",sounds.infinite)
         }
     }
 
@@ -46,7 +46,7 @@ Base {
         store.load()
         showExit()
 
-        var sfx = core.sounds
+        var sfx = sounds
         sfx.add("level"+sceneNumber,"pouring",App.getAsset("sounds/pouring.wav"))
         sfx.add("level"+sceneNumber,"key_tap",App.getAsset("sounds/key_tap.wav"))
         sfx.add("level"+sceneNumber,"beep",App.getAsset("sounds/beep.wav"))
@@ -200,7 +200,7 @@ Base {
 
                 drop.accept()
 
-                core.sounds.play("pouring")
+                sounds.play("pouring")
                 game.setText("The liquid is poured in now")
 
                 game.flaskMixerBlueLevel = 1
@@ -238,10 +238,10 @@ Base {
 
                 drop.accept()
 
-                core.sounds.play("pouring")
+                sounds.play("pouring")
                 game.setText("All the purple juicy stuff is poured in now")
 
-                game.flaskMixerPurpleLevel = 1
+                game.flaskMixerPurpleLevel = 2
 
                 blacklistObject(o.name)
             }
@@ -276,7 +276,7 @@ Base {
 
                 drop.accept()
 
-                core.sounds.play("pouring")
+                sounds.play("pouring")
                 game.setText("All the red goo is poured in now")
 
                 game.flaskMixerRedLevel = 1
@@ -314,10 +314,10 @@ Base {
 
                 drop.accept()
 
-                core.sounds.play("pouring")
-                game.setText("All the contents are poured in")
+                sounds.play("pouring")
+                game.setText("...","All the contents are poured in")
 
-                game.flaskMixerGreenLevel = 1
+                game.flaskMixerGreenLevel = 4
 
                 blacklistObject(o.name)
             }
@@ -373,7 +373,7 @@ Base {
 
         onKeyClicked: {
             App.debug(key)
-            core.sounds.play("key_tap")
+            sounds.play("key_tap")
             if(key === "CLR") {
                 buffer = "0000"
             } else if(key === "OK") {
@@ -488,7 +488,7 @@ Base {
                     script: {
                         blinkRedAnimation.indicator.state = "red"
                         game.setText("...","not the right key combination")
-                        core.sounds.play("beep_wrong")
+                        sounds.play("beep_wrong")
                     }
                 }
             }
@@ -502,7 +502,7 @@ Base {
                 ScriptAction {
                     script: {
                         blinkGreenAnimation.indicator.state = "green"
-                        core.sounds.play("beep")
+                        sounds.play("beep")
                     }
                 }
 
@@ -520,7 +520,7 @@ Base {
                     script: {
                         blinkGreenAnimation.indicator.state = "green"
                         if(scene.officeUnlocked) {
-                            core.sounds.play("tick")
+                            sounds.play("tick")
                             game.setText("Open Sesame!")
                         } else
                             game.setText("Green lights are good lights!")
@@ -704,9 +704,9 @@ Base {
 
         onShowChanged: {
             if(show)
-                core.sounds.play("radio_loop",core.sounds.infinite)
+                sounds.play("radio_loop",sounds.infinite)
             else
-                core.sounds.stop("radio_loop")
+                sounds.stop("radio_loop")
         }
 
         visible: opacity > 0
@@ -752,7 +752,7 @@ Base {
                 itemSource: App.getAsset("sprites/radio/radio.png")
 
                 onClicked: {
-                    core.sounds.play("radio_seek")
+                    sounds.play("radio_seek")
 
                     if(!game.helpCalled) {
                         if(game.fuelCellConnected) {
@@ -813,6 +813,7 @@ Base {
                         x: 610,
                         y: 150,
                         scene: sceneNumber,
+                        description: "A fuel cell",
                         itemSource: App.getAsset("sprites/fuel_cell/fuel_cell.png")
                     }
                     game.spawnObject(object,function(o){
@@ -857,7 +858,7 @@ Base {
                     onDropped: {
                         drop.accept()
 
-                        core.sounds.play("paper_fiddle")
+                        sounds.play("paper_fiddle")
                         game.setText("The two pieces fit perfectly together")
 
                         store.chargingPaperRDropped = true
@@ -894,7 +895,7 @@ Base {
                 }
 
                 onClicked: {
-                    core.sounds.play("paper_fiddle")
+                    sounds.play("paper_fiddle")
                     scale = scale > 0.18 ? 0.18 : 1
                     rotation = rotation > 0 ? 0 : 45
                     y = y < 150 ? 150 : -90
@@ -931,6 +932,8 @@ Base {
     }
 
     onObjectDragged: {
+        if(object.name === "bottle_red")
+            object.hideInventoryOnDrag = true
     }
 
     onObjectReturned: {

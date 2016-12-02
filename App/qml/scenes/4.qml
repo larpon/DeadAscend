@@ -47,7 +47,7 @@ Base {
         store.load()
         showExit()
 
-        var sfx = core.sounds
+        var sfx = sounds
         sfx.add("level"+sceneNumber,"light_drag",App.getAsset("sounds/light_drag_01.wav"))
         sfx.add("level"+sceneNumber,"rattle_loop",App.getAsset("sounds/rattle_loop.wav"))
 
@@ -159,8 +159,10 @@ Base {
         ]
 
         onClicked: {
-            if(store.treadmillRunning) {
+            if(store.treadmillRunning && store.cableConnected) {
                 game.setText("The elevator is now: Zombie Hamster Powered...","That's... really...","... really... weird")
+            } else if(store.treadmillRunning && !store.cableConnected) {
+                game.setText("There should be a way to connect the treadmill to the motor somehow")
             } else if(store.scooterRemoved) {
                 setActiveSequence("single spin")
                 sounds.play("rattle_loop")
@@ -395,7 +397,7 @@ Base {
         onDropped: {
             drop.accept()
 
-            core.sounds.play("tick_soft")
+            sounds.play("tick_soft")
             game.setText("It's now connecting the treadmill with the battery - good thinking!")
 
             store.cableConnected = true

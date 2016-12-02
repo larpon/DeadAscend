@@ -17,7 +17,7 @@ Item {
     Component.onCompleted: game.elevatorPanel.show = false
 
     Component.onDestruction: {
-        core.sounds.clear('level'+sceneNumber)
+        sounds.clear('level'+sceneNumber)
         game.save()
     }
 

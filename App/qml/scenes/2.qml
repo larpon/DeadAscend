@@ -58,7 +58,7 @@ Base {
 
         showExit()
 
-        var sfx = core.sounds
+        var sfx = sounds
         sfx.add("level"+sceneNumber,"klonk",App.getAsset("sounds/klonk.wav"))
     }
 
@@ -347,7 +347,7 @@ Base {
                 game.setText("It seems like it need a fuse to work")
                 return
             }
-            core.sounds.play("lift_motor")
+            sounds.play("lift_motor")
             changeLevel = true
             game.setText("Going up!")
             setActiveSequence("go_up")
@@ -358,7 +358,7 @@ Base {
                 game.setText("It seems like it need a fuse to work")
                 return
             }
-            core.sounds.play("lift_motor")
+            sounds.play("lift_motor")
             game.setText("Going down!")
             setActiveSequence("go_down")
         }
@@ -371,7 +371,7 @@ Base {
 
         onClicked: {
             if(!fuseDropped) {
-                core.sounds.play("tick")
+                sounds.play("tick")
                 game.setText("This lift could get you further up. But it's not working?")
                 return
             }
@@ -544,7 +544,7 @@ Base {
                     drop.accept()
 
                     fuseDropped = true
-                    core.sounds.play("tick_soft")
+                    sounds.play("tick_soft")
                     game.setText("It fits perfectly!")
                     var o = drag.source
                     blacklistObject(o.name)
@@ -573,7 +573,7 @@ Base {
                 name: "lift_up"
 
                 onClicked: {
-                    core.sounds.play("tick_soft")
+                    sounds.play("tick_soft")
                     if(!fuseDropped) {
                         game.setText("It seems like it need a fuse to work")
                         return
@@ -598,7 +598,7 @@ Base {
                 name: "lift_down"
 
                 onClicked: {
-                    core.sounds.play("tick_soft")
+                    sounds.play("tick_soft")
                     if(!fuseDropped) {
                         game.setText("It seems like it need a fuse to work")
                         return
@@ -811,7 +811,7 @@ Base {
 
                     onDropped: {
 
-                        core.sounds.play("tick_soft")
+                        sounds.play("tick_soft")
                         game.setText("That's "+coinsUsed === 0 ? "one":"both" +" screw down!")
 
                         coinsUsed++

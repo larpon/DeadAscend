@@ -1140,6 +1140,12 @@ Item {
 
     function combineBucketWithGum(bucket,gum) {
 
+        // NOTE these sounds are loaded by scene 0!
+        // This is because the sounds on the objects e.g. "generic" will be unloaded
+        // This could be fixed by having a "destroyLater" or "blacklistNowDestroyLater" function
+        core.sounds.play("gum")
+        core.sounds.play("bucket")
+
         var object = {
             name: "bucket_patched",
             type: "Object",

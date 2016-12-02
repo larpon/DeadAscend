@@ -761,10 +761,10 @@
    </properties>
   </object>
  </objectgroup>
- <imagelayer name="2 bg" visible="0">
+ <imagelayer name="2 bg">
   <image source="../App/assets/scenes/2.png" width="1100" height="660"/>
  </imagelayer>
- <objectgroup draworder="index" name="2" visible="0">
+ <objectgroup draworder="index" name="2">
   <object id="75" name="lift" type="AnimatedArea" gid="38" x="576" y="531" width="173" height="531"/>
   <object id="76" name="bottle_green" type="Object" gid="39" x="575" y="721" width="78" height="154">
    <properties>
@@ -909,13 +909,13 @@
   </object>
   <object id="212" name="flypaper" type="Object" gid="51" x="103.333" y="183.667" width="20" height="147">
    <properties>
-    <property name="description" value="Some very, very sticky flypaper"/>
+    <property name="description" value="Some very, very sticky and long flypaper"/>
     <property name="tileId" value="16"/>
    </properties>
   </object>
   <object id="213" name="shutgun" type="Object" gid="52" x="148.667" y="637.333" width="140" height="113">
    <properties>
-    <property name="desription" value="WOW - a real and loaded shutgun!"/>
+    <property name="description" value="WOW - a real and loaded shutgun!"/>
     <property name="tileId" value="17"/>
    </properties>
   </object>
@@ -1412,10 +1412,10 @@
    </properties>
   </object>
  </objectgroup>
- <imagelayer name="7 bg">
+ <imagelayer name="7 bg" visible="0">
   <image source="../App/assets/scenes/7.png" width="1100" height="660"/>
  </imagelayer>
- <objectgroup draworder="index" name="7">
+ <objectgroup draworder="index" name="7" visible="0">
   <object id="183" name="elevator_door_7" type="AnimatedArea" gid="110" x="22.3333" y="661" width="270" height="362"/>
   <object id="185" name="painting4_frame" type="Area" x="442.667" y="141.333" width="216" height="293.333">
    <properties>

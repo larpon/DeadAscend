@@ -44,10 +44,10 @@ Base {
 
 
     Connections {
-        target: core.sounds
+        target: sounds
         onLoaded: {
             if(tag === "hum")
-                core.sounds.play("hum",core.sounds.infinite)
+                sounds.play("hum",sounds.infinite)
         }
     }
 
@@ -55,7 +55,7 @@ Base {
         store.load()
         showExit()
 
-        var sfx = core.sounds
+        var sfx = sounds
         sfx.add("level"+sceneNumber,"hum",App.getAsset("sounds/low_machine_hum.wav"))
         sfx.add("level"+sceneNumber,"scribble",App.getAsset("sounds/scribble.wav"))
         sfx.add("level"+sceneNumber,"zombie_moan_1",App.getAsset("sounds/zombie_moan_01.wav"))
@@ -154,8 +154,8 @@ Base {
 
             onDropped: {
 
-                core.sounds.play("zombie_moan_2")
-                core.sounds.play("crack_smash")
+                sounds.play("zombie_moan_2")
+                sounds.play("crack_smash")
                 zombieTilting.run = true
                 zombieSitting.visible = false
 
@@ -172,7 +172,7 @@ Base {
                     }
 
                     game.spawnObject(object,function(o){
-                        core.sounds.play("coin_drop")
+                        sounds.play("coin_drop")
                         o.moveTo(60,360)
                     })
 
@@ -259,7 +259,7 @@ Base {
 
         onFrame: {
             if(frame === 1) {
-                core.sounds.play("zombie_moan_3")
+                sounds.play("zombie_moan_3")
             }
         }
 
@@ -370,7 +370,7 @@ Base {
         }
 
         function down() {
-            core.sounds.play("lift_motor")
+            sounds.play("lift_motor")
             changeLevel = true
             game.setText("Going down!")
             setActiveSequence("go_down")
@@ -571,9 +571,9 @@ Base {
                 return
             var n = sequence.name
             if(n === "bl" || n === "peek-bl" || n === "bl-mid-bl" || n === "bl-hide")
-                core.sounds.play("scribble")
+                sounds.play("scribble")
             if(n === "bl-circle")
-                core.sounds.play("scribble",2)
+                sounds.play("scribble",2)
             App.debug("Hamster in sequence",sequence.name)
         }
 
@@ -659,7 +659,7 @@ Base {
         onClicked: {
             hamster.goalSequence = "hide"
             game.setText("The hamster looks pretty scared")
-            core.sounds.play("add")
+            sounds.play("add")
         }
 
         DropSpot {
@@ -681,7 +681,7 @@ Base {
 
                 }
 
-                core.sounds.play("glass_smash")
+                sounds.play("glass_smash")
                 cageSmash.setActiveSequence("smash")
                 cageSmash.run = true
                 glassCage.visible = false

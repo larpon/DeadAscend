@@ -1421,7 +1421,7 @@
          "name":"2 bg",
          "opacity":1,
          "type":"imagelayer",
-         "visible":false,
+         "visible":true,
          "width":0,
          "x":0,
          "y":0
@@ -1875,7 +1875,7 @@
                  "y":41.3331
                 }, 
                 {
-                 "height":384.000333333333,
+                 "height":384,
                  "id":231,
                  "name":"2_boxes_1_r",
                  "properties":
@@ -1891,9 +1891,9 @@
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":129.3337,
-                 "x":970.666483333333,
-                 "y":274.6665
+                 "width":129.334,
+                 "x":970.666,
+                 "y":274.666
                 }, 
                 {
                  "height":146.667,
@@ -1925,7 +1925,7 @@
                  "name":"flypaper",
                  "properties":
                     {
-                     "description":"Some very, very sticky flypaper",
+                     "description":"Some very, very sticky and long flypaper",
                      "tileId":"16"
                     },
                  "propertytypes":
@@ -1947,12 +1947,12 @@
                  "name":"shutgun",
                  "properties":
                     {
-                     "desription":"WOW - a real and loaded shutgun!",
+                     "description":"WOW - a real and loaded shutgun!",
                      "tileId":"17"
                     },
                  "propertytypes":
                     {
-                     "desription":"string",
+                     "description":"string",
                      "tileId":"string"
                     },
                  "rotation":0,
@@ -1963,7 +1963,7 @@
                  "y":637.333
                 }, 
                 {
-                 "height":64.0003333333333,
+                 "height":64.0003,
                  "id":230,
                  "name":"2_lamp_r",
                  "properties":
@@ -1979,12 +1979,12 @@
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":104.000366666667,
-                 "x":998.666483333333,
-                 "y":41.3331666666666
+                 "width":104,
+                 "x":998.666,
+                 "y":41.3332
                 }, 
                 {
-                 "height":134.666666666667,
+                 "height":134.667,
                  "id":232,
                  "name":"2_boxes_2_r",
                  "properties":
@@ -2002,11 +2002,11 @@
                  "visible":true,
                  "width":197.334,
                  "x":903.333,
-                 "y":526.666666666667
+                 "y":526.667
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "width":0,
          "x":0,
          "y":0
@@ -2507,9 +2507,9 @@
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":238.666333333333,
-                 "x":374.666666666667,
-                 "y":66.6666666666667
+                 "width":238.666,
+                 "x":374.667,
+                 "y":66.6667
                 }, 
                 {
                  "height":74.667,
@@ -2519,8 +2519,8 @@
                  "type":"Area",
                  "visible":true,
                  "width":316,
-                 "x":451.333333333333,
-                 "y":-5.00016666666662
+                 "x":451.333,
+                 "y":-5.00017
                 }, 
                 {
                  "height":56.667,
@@ -2529,9 +2529,9 @@
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":217.332666666667,
-                 "x":332.000333333333,
-                 "y":117.333166666667
+                 "width":217.333,
+                 "x":332,
+                 "y":117.333
                 }, 
                 {
                  "height":70.667,
@@ -2541,8 +2541,8 @@
                  "type":"Area",
                  "visible":true,
                  "width":199.333,
-                 "x":287.3335,
-                 "y":167.6665
+                 "x":287.334,
+                 "y":167.667
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -3133,7 +3133,7 @@
                  "y":514.667
                 }, 
                 {
-                 "height":179.333666666667,
+                 "height":179.334,
                  "id":236,
                  "name":"4_window",
                  "properties":
@@ -3151,9 +3151,9 @@
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":120.666666666667,
-                 "x":58.6666666666667,
-                 "y":111.6665
+                 "width":120.667,
+                 "x":58.6667,
+                 "y":111.667
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -3362,7 +3362,7 @@
                  "y":509.333
                 }, 
                 {
-                 "height":129.333666666667,
+                 "height":129.334,
                  "id":237,
                  "name":"5_vent_pipe_l",
                  "properties":
@@ -3380,7 +3380,7 @@
                  "visible":true,
                  "width":76,
                  "x":346,
-                 "y":-1.33349999999999
+                 "y":-1.3335
                 }, 
                 {
                  "height":137.334,
@@ -3400,11 +3400,11 @@
                  "type":"Area",
                  "visible":true,
                  "width":76,
-                 "x":535.333333333333,
-                 "y":-2.66700000000001
+                 "x":535.333,
+                 "y":-2.667
                 }, 
                 {
-                 "height":326.667333333333,
+                 "height":326.667,
                  "id":239,
                  "name":"5_blue_machine",
                  "properties":
@@ -3445,9 +3445,9 @@
                  "rotation":0,
                  "type":"Area",
                  "visible":true,
-                 "width":425.333333333333,
-                 "x":672.666666666667,
-                 "y":268.6665
+                 "width":425.333,
+                 "x":672.667,
+                 "y":268.666
                 }, 
                 {
                  "height":406.667,
@@ -3467,8 +3467,8 @@
                  "type":"Area",
                  "visible":true,
                  "width":117.333,
-                 "x":922.000166666667,
-                 "y":-0.666833333333386
+                 "x":922,
+                 "y":-0.666833
                 }, 
                 {
                  "height":324.667,
@@ -3488,8 +3488,8 @@
                  "type":"Area",
                  "visible":true,
                  "width":157.333,
-                 "x":783.3335,
-                 "y":-1.33349999999999
+                 "x":783.333,
+                 "y":-1.3335
                 }, 
                 {
                  "height":348.667,
@@ -3509,7 +3509,7 @@
                  "type":"Area",
                  "visible":true,
                  "width":157.333,
-                 "x":113.3335,
+                 "x":113.333,
                  "y":-4.3335
                 }, 
                 {
@@ -3531,7 +3531,7 @@
                  "visible":true,
                  "width":117.333,
                  "x":23.3335,
-                 "y":-3.33349999999999
+                 "y":-3.3335
                 }, 
                 {
                  "height":158.667,
@@ -3551,8 +3551,8 @@
                  "type":"Area",
                  "visible":true,
                  "width":65.333,
-                 "x":603.3335,
-                 "y":209.6665
+                 "x":603.333,
+                 "y":209.666
                 }, 
                 {
                  "height":152.667,
@@ -3572,8 +3572,8 @@
                  "type":"Area",
                  "visible":true,
                  "width":75.333,
-                 "x":279.3335,
-                 "y":200.6665
+                 "x":279.333,
+                 "y":200.666
                 }, 
                 {
                  "height":44.667,
@@ -3595,7 +3595,7 @@
                  "type":"Area",
                  "visible":true,
                  "width":79.333,
-                 "x":793.3335,
+                 "x":793.333,
                  "y":95.6665
                 }],
          "opacity":1,
@@ -3886,7 +3886,7 @@
          "name":"7 bg",
          "opacity":1,
          "type":"imagelayer",
-         "visible":true,
+         "visible":false,
          "width":0,
          "x":0,
          "y":0
@@ -4117,7 +4117,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "width":0,
          "x":0,
          "y":0

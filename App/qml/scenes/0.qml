@@ -31,7 +31,7 @@ Base {
         else
             showExit()
 
-        var sfx = core.sounds
+        var sfx = sounds
         sfx.add("level"+sceneNumber,"switch",App.getAsset("sounds/lamp_switch_01.wav"))
         sfx.add("level"+sceneNumber,"light_on",App.getAsset("sounds/light_on.wav"))
         sfx.add("level"+sceneNumber,"drip",App.getAsset("sounds/water_drip_01.wav"))
@@ -40,6 +40,10 @@ Base {
         sfx.add("level"+sceneNumber,"hatch_open",App.getAsset("sounds/hatch_open.wav"))
         sfx.add("level"+sceneNumber,"hatch_close",App.getAsset("sounds/hatch_close.wav"))
         sfx.add("level"+sceneNumber,"water_run_loop",App.getAsset("sounds/water_run_loop_01.wav"))
+
+        // NOTE For combining gum and bucket
+        sfx.add("level"+sceneNumber,"gum",App.getAsset("sounds/juicy_gum.wav"))
+        sfx.add("level"+sceneNumber,"bucket",App.getAsset("sounds/bucket_put.wav"))
     }
 
     Component.onDestruction: {
@@ -308,7 +312,7 @@ Base {
 
         onFrame: {
             if(sequenceName === "drip" && frame === 4)
-                core.sounds.play("drip")
+                sounds.play("drip")
         }
     }
 
@@ -452,17 +456,17 @@ Base {
 
         onClicked: {
             state === "off" ? state = "on" : state = "off"
-            core.sounds.play("squeak")
+            sounds.play("squeak")
         }
 
         onStateChanged: resolveState()
 
         function resolveState() {
             if(state === "on") {
-                core.sounds.play("water_run_loop",core.sounds.infinite)
+                sounds.play("water_run_loop",sounds.infinite)
                 waterRunAnimation.run = true
             } else {
-                core.sounds.stop("water_run_loop")
+                sounds.stop("water_run_loop")
                 waterDripAnimation.run = true
             }
             resolveBucketState()
@@ -506,7 +510,7 @@ Base {
 
         onClicked: {
             if(!parasolBaseXBehaviour.animation.running) {
-                core.sounds.play("heavy_drag")
+                scene.sounds.play("heavy_drag")
                 state === "over" ? state = "moved" : state = "over"
             }
         }
@@ -544,6 +548,7 @@ Base {
                         name: "button_8",
                         type: "Object",
                         scene: sceneNumber,
+                        description: "A nice red, round button",
                         itemSource: App.getAsset("sprites/buttons/button_03/button_03.png")
                     }
 
@@ -741,9 +746,9 @@ Base {
                 return
 
             if(sequence.name === "open" || sequence.name === "open then close")
-                core.sounds.play("hatch_open")
+                sounds.play("hatch_open")
             if(sequence.name === "closed")
-                core.sounds.play("hatch_close")
+                sounds.play("hatch_close")
 
             if(sequence.name !== state)
                 state = sequence.name
@@ -791,10 +796,10 @@ Base {
         name: "switch"
 
         onActiveChanged: {
-            core.sounds.play("switch")
+            sounds.play("switch")
             if(active) {
                 game.setText("Lights on")
-                core.sounds.play("light_on")
+                sounds.play("light_on")
                 showExit()
             } else
                 game.setText("Lights out")
