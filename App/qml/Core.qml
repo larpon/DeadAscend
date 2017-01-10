@@ -72,8 +72,8 @@ Item {
 
     MusicPlayer {
         id: musicPlayer
-        volume: volumes.music
-        muted: core.muted
+        volume: 0.65
+        //muted:
     }
 
     Modes {

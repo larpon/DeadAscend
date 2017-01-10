@@ -23,6 +23,11 @@ include(deployment.pri)
 # Import Qak
 include(../extensions/qak/qak.pri)
 
+# Make these modules of QtFirebase
+QTFIREBASE_CONFIG += analytics admob
+# include QtFirebase
+include(../extensions/QtFirebase/qtfirebase.pri)
+
 PLATFORMS_DIR = $$PWD/platforms
 
 ios: {
@@ -64,16 +69,15 @@ include(../gitversion.pri)
 DISTFILES += \
     TODO.md
 
-#unix|macx|win32: {
-#    RESOURCES += \
-#        special_assets.qrc
-#}
-
 RESOURCES += \
     assets.qrc \
     base.qrc \
-    json.qrc \
-    music.qrc
+    json.qrc
+
+unix|macx|win32: {
+    RESOURCES += \
+        music.qrc
+}
 
 lupdate_only {
 SOURCES = *.qml \
