@@ -13,7 +13,27 @@ Item {
     property alias fonts: fonts
     property alias viewport: view.viewport
 
-    Component.onCompleted: onBack(function(){ modes.set('quit') })
+    Component.onCompleted: {
+        onBack(function(){ modes.set('quit') })
+
+        if(Qak.platform.os === "ios") {
+            musicPlayer.source = App.getAsset("sounds/bensound-ofeliasdream.aac")
+        } else {
+            musicPlayer.source = App.getAsset("sounds/bensound-ofeliasdream.mp3")
+        }
+
+        musicPlayer.play()
+    }
+
+    Component.onDestruction: {
+        settings.save()
+        musicPlayer.stop()
+    }
+
+    Store {
+        id: settings
+        name: "core"
+    }
 
     QtObject {
         id: colors
@@ -48,6 +68,12 @@ Item {
             add('ding',App.getAsset('sounds/ding_01.wav'))
 
         }
+    }
+
+    MusicPlayer {
+        id: musicPlayer
+        volume: volumes.music
+        muted: core.muted
     }
 
     Modes {
@@ -179,11 +205,6 @@ Item {
         backQueue.push(func)
         var t = backQueue
         backQueue = t
-    }
-
-    Store {
-        id: settings
-        name: "core"
     }
 
     function reset(type) {

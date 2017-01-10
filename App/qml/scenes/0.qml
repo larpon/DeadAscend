@@ -768,16 +768,86 @@ Base {
     Image {
         id: darkness
         z: aSwitch.z - 1
-        visible: !aSwitch.active
+
         anchors { fill: parent }
 
         fillMode: Image.PreserveAspectFit
         source: App.getAsset("scenes/0_darkness.png")
 
+        property bool flick: aSwitch.active
+
+        Behavior on opacity {
+            NumberAnimation { duration: 50 }
+        }
+
         MouseArea {
             enabled: parent.visible
             anchors { fill: parent }
             onClicked: game.setText("It's too dark to do anything. Better find some light somewhere")
+        }
+
+        onFlickChanged: {
+            if(flick)
+                darknessFlicker.restart()
+            else
+                opacity = 1
+        }
+
+        SequentialAnimation {
+            id: darknessFlicker
+            ScriptAction {
+                script: {
+                    darkness.opacity = 0
+                }
+            }
+            PauseAnimation { duration: 120 }
+            ScriptAction {
+                script: {
+                    darkness.opacity = 1
+                }
+            }
+            PauseAnimation { duration: 150 }
+            ScriptAction {
+                script: {
+                    darkness.opacity = 0
+                }
+            }
+            PauseAnimation { duration: 130 }
+            ScriptAction {
+                script: {
+                    darkness.opacity = 1
+                }
+            }
+            PauseAnimation { duration: 150 }
+            ScriptAction {
+                script: {
+                    darkness.opacity = 0
+                }
+            }
+            PauseAnimation { duration: 250 }
+            ScriptAction {
+                script: {
+                    darkness.opacity = 1
+                }
+            }
+            PauseAnimation { duration: 150 }
+            ScriptAction {
+                script: {
+                    darkness.opacity = 0
+                }
+            }
+            PauseAnimation { duration: 130 }
+            ScriptAction {
+                script: {
+                    darkness.opacity = 1
+                }
+            }
+            PauseAnimation { duration: 150 }
+            ScriptAction {
+                script: {
+                    darkness.opacity = 0
+                }
+            }
         }
     }
 

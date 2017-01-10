@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assets/sounds/bensound-ofeliasdream.mp3</file>
+        <file>assets/sounds/bensound-ofeliasdream.aac</file>
+    </qresource>
+</RCC>

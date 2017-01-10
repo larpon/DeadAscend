@@ -30,5 +30,7 @@
         <file>qml/scenes/6.qml</file>
         <file>qml/scenes/7.qml</file>
         <file>qml/scenes/8.qml</file>
+        <file>qml/scenes/Credits.qml</file>
+        <file>qml/MusicPlayer.qml</file>
     </qresource>
 </RCC>
