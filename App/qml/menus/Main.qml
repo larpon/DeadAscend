@@ -60,6 +60,35 @@ Item {
             anchors.centerIn: parent
             color: core.colors.black
             opacity: 0.8
+
+            TextButton {
+                anchors {
+                    left: parent.left
+                    top: parent.top
+                    leftMargin: 20
+                    topMargin: 10
+                }
+                font.pixelSize: 60
+                allUppercase: true
+                bounce: true
+                text: qsTr("About")
+                onClicked: core.modes.set('about')
+            }
+
+            TextButton {
+                anchors {
+                    left: parent.left
+                    bottom: parent.bottom
+                    leftMargin: 20
+                    bottomMargin: 10
+                }
+                font.pixelSize: 60
+                allUppercase: true
+                bounce: true
+                text: qsTr("Credits")
+                onClicked: core.modes.set('credits')
+            }
+
         }
 
         Item {
@@ -103,12 +132,6 @@ Item {
                 TextButton {
                     anchors.horizontalCenter: parent.horizontalCenter
                     allUppercase: true
-                    text: qsTr("About")
-                }
-
-                TextButton {
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    allUppercase: true
                     text: qsTr("Reset")
                     onClicked: core.reset()
                 }
@@ -116,6 +139,5 @@ Item {
             }
         }
     }
-
 
 }

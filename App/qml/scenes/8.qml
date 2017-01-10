@@ -550,6 +550,7 @@ Base {
         onClicked: {
             //game.goToScene("end")
             game.setText("The end!")
+            core.modes.set("end-credits")
         }
 
     }

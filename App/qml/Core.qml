@@ -95,6 +95,34 @@ Item {
         }
 
         Mode {
+            name: 'credits'
+            onLeave: creditsLoader.opacity = 0
+            onEnter: {
+                onBack(function(){ modes.set('menu') })
+                creditsLoader.opacity = 1
+            }
+        }
+
+        Mode { // TODO
+            name: 'about'
+            onLeave: creditsLoader.opacity = 0
+            onEnter: {
+                onBack(function(){ modes.set('menu') })
+                creditsLoader.opacity = 1
+            }
+        }
+
+        Mode {
+            name: 'end-credits'
+            onLeave: creditsLoader.opacity = 0
+            onEnter: {
+                goBack()
+                onBack(function(){ modes.set('menu') })
+                creditsLoader.opacity = 1
+            }
+        }
+
+        Mode {
             name: 'quit'
             onEnter: Qt.quit()
         }
@@ -138,6 +166,20 @@ Item {
             opacity: 0
             Behavior on opacity {
                 NumberAnimation { duration: 1500 }
+            }
+        }
+
+        Loader {
+            id: creditsLoader
+            anchors { fill: parent }
+            source: 'scenes/Credits.qml'
+            active: opacity > 0
+
+            visible: status == Loader.Ready && opacity > 0
+
+            opacity: 0
+            Behavior on opacity {
+                NumberAnimation { duration: 1000 }
             }
         }
 
