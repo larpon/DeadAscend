@@ -1,6 +1,7 @@
 import QtQuick 2.0
 
 import Qak 1.0
+import QtFirebase 1.0
 
 import "qml"
 
@@ -104,6 +105,7 @@ Application {
                     studioImage.opacity = 1
                 }
             }
+
         }
 
     }
@@ -142,46 +144,73 @@ Application {
         }
     }
 
-    // NOTE Native ad overlays via QtFirebase
-    Loader {
-        id: adControl
+    Timer {
+        id: bannerRetryTimer
+        interval: 30000
+        onTriggered: banner.load()
+    }
 
-        anchors.fill: parent
+    Timer {
+        id: interstitialRetryTimer
+        interval: 30000
+        onTriggered: interstitial.load()
+    }
 
-        asynchronous: true
-        visible: App.useAds
-        active: application.visible && App.useAds
 
-        source: 'qrc:///qml/Ads.qml'
+    // QtFirebase
+    property alias analytics: analytics
+    property alias banner: banner
+    property alias interstitial: interstitial
 
-        function bannerVisible(visibility) {
-            if(!active)
-                return
-            item.bannerVisible(visibility)
-        }
+    AdMob {
+        appId: Qt.platform.os == "android" ? "ca-app-pub-6606648560678905~8027290070" : "ca-app-pub-6606648560678905~9364422479"
 
-        function interstitialVisible(visibility) {
-            if(!active)
-                return
-            item.interstitialVisible(visibility)
-        }
+        testDevices: [
+            "01987FA9D5F5CEC3542F54FB2DDC89F6"
+        ]
+    }
 
-        function interstitialIsLoaded() {
-            if(!active)
-                return false
-            return item.interstitialIsLoaded()
-        }
+    AdMobBanner {
+        id: banner
 
-        /*
-        Connections {
-            target: adControl.item ? adControl.item.banner : null
+        adUnitId: Qt.platform.os == "android" ? "ca-app-pub-6606648560678905/9504023277" : "ca-app-pub-6606648560678905/1841155673"
 
-            onVisibleChanged: {
-                //adControl.item.banner.moveTo(view.viewport.x,view.viewport.y)
-            }
+        visible: loaded
 
-        }*/
+        width: parent.width
+        height: 50
 
+        request: AdMobRequest {}
+
+        onReadyChanged: if(ready) load()
+
+        onError: bannerRetryTimer.restart()
+
+    }
+
+
+
+    AdMobInterstitial {
+        id: interstitial
+        adUnitId: Qt.platform.os == "android" ? "ca-app-pub-6606648560678905/1980756471" : "ca-app-pub-6606648560678905/1701554870"
+
+        request: AdMobRequest {}
+
+        onReadyChanged: if(ready) load()
+
+        onClosed: load()
+
+        onError: interstitialRetryTimer.restart()
+    }
+
+    Analytics {
+        id: analytics
+
+        enabled: true
+
+        minimumSessionDuration: 1000
+
+        sessionTimeout: 5000
     }
 
 }

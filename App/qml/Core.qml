@@ -73,7 +73,7 @@ Item {
 
     MusicPlayer {
         id: musicPlayer
-        volume: 0.65
+        volume: 0.55
         //muted:
     }
 
@@ -83,13 +83,19 @@ Item {
         Mode {
             name: 'menu'
             onLeave: menuLoader.opacity = 0
-            onEnter: menuLoader.opacity = 1
+            onEnter: {
+                menuLoader.opacity = 1
+            }
         }
 
         Mode {
             name: 'game'
-            onLeave: gameLoader.opacity = 0
+            onLeave: {
+                gameLoader.opacity = 0
+                banner.show()
+            }
             onEnter: {
+                banner.hide()
                 onBack(function(){ modes.set('menu') })
                 gameLoader.opacity = 1
             }
@@ -128,6 +134,16 @@ Item {
             onEnter: Qt.quit()
         }
 
+    }
+
+    Connections {
+        target: banner
+        onLoaded: {
+            var m = modes.mode;
+            if(m !== "game") {
+                banner.show()
+            }
+        }
     }
 
     View {
@@ -244,6 +260,34 @@ Item {
         EditorOverlay {
             id: editMode
             anchors { fill: parent }
+        }
+
+        ConfirmDialog {
+            id: adConfirm
+            anchors { centerIn: parent }
+
+            text: qsTr("Do you wan't to see an ad?")
+            acceptText: qsTr("Yeah sure")
+            rejectText: qsTr("Nah")
+
+            onAccepted: {
+                interstitial.show()
+                state == "hidden"
+            }
+            onRejected: state == "hidden"
+        }
+    }
+
+    Timer {
+        id: adTimer
+        running: true
+        interval: 1 * (60*1000) // Minutes
+        repeat: true
+        onTriggered: {
+            App.log('Show ad?',!interstitial.visible,interstitial.loaded)
+            if(!interstitial.visible && interstitial.loaded) {
+                adConfirm.state = "shown"
+            }
         }
     }
 
