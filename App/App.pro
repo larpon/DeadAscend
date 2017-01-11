@@ -55,6 +55,9 @@ android: {
     DISTFILES += \
         $$ANDROID_PACKAGE_SOURCE_DIR/AndroidManifest.xml \
         $$ANDROID_PACKAGE_SOURCE_DIR/build.gradle \
+        $$ANDROID_PACKAGE_SOURCE_DIR/gradle.properties \
+        $$ANDROID_PACKAGE_SOURCE_DIR/local.properties \
+        $$ANDROID_PACKAGE_SOURCE_DIR/google-services.json \
         $$ANDROID_PACKAGE_SOURCE_DIR/src/com/blackgrain/android/deadascend/Main.java \
         $$ANDROID_PACKAGE_SOURCE_DIR/res/values/apptheme.xml \
         $$ANDROID_PACKAGE_SOURCE_DIR/res/values/strings.xml \
@@ -63,7 +66,7 @@ android: {
 }
 
 # make git version available to C++ and QML
-VERSION=1.0.0
+VERSION=0.9.0
 include(../gitversion.pri)
 
 DISTFILES += \

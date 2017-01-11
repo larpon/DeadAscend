@@ -111,6 +111,7 @@ Item {
             height: parent.height
 
             Column {
+                spacing: 40
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.verticalCenter: parent.verticalCenter
 
@@ -122,22 +123,75 @@ Item {
                     onClicked: core.modes.set('game')
                 }
 
+                /* TODO
                 TextButton {
                     anchors.horizontalCenter: parent.horizontalCenter
                     allUppercase: true
                     text: qsTr("Options")
                     onClicked: core.modes.set('menu')
                 }
+                */
 
                 TextButton {
                     anchors.horizontalCenter: parent.horizontalCenter
                     allUppercase: true
                     text: qsTr("Reset")
-                    onClicked: core.reset()
+                    onClicked: confirmReset.state = "shown"
                 }
 
             }
         }
+    }
+
+    ConfirmDialog {
+        id: confirmReset
+
+        text: qsTr("This action will erase all game progress.\nContinue?")
+
+        onAccepted: {
+            core.reset()
+            state = "hidden"
+            resetOkToast.opacity = 1
+        }
+
+        onRejected: state = "hidden"
+    }
+
+    Rectangle {
+        id: resetOkToast
+
+        anchors { centerIn: parent }
+
+        color: core.colors.black
+
+        border.color: core.colors.yellow
+        border.width: 10
+
+        radius: 40
+
+        width: parent.width*0.4
+        height: parent.height*0.3
+
+        opacity: 0
+        Behavior on opacity {
+            NumberAnimation { duration: 250 }
+        }
+
+        Text {
+            anchors { centerIn: parent }
+            text: "Game reset successfully"
+            color: core.colors.yellow
+            style: Text.Outline; styleColor: core.colors.black
+            font { family: core.fonts.standard.name }
+            font.pixelSize: 50
+        }
+
+        Timer {
+            running: resetOkToast.opacity > 0
+            interval: 2000
+            onTriggered: resetOkToast.opacity = 0
+        }
+
     }
 
 }

@@ -44,6 +44,7 @@ Item {
     QtObject {
         id: fonts
         property FontLoader standard: FontLoader { source: App.getAsset("fonts/Amatic_SC/AmaticSC-Bold.ttf") }
+        property FontLoader sans: FontLoader { source: App.getAsset("fonts/Open_Sans/OpenSans-Regular.ttf") }
     }
 
     property alias sounds: soundEffects
@@ -103,12 +104,12 @@ Item {
             }
         }
 
-        Mode { // TODO
+        Mode {
             name: 'about'
-            onLeave: creditsLoader.opacity = 0
+            onLeave: aboutLoader.opacity = 0
             onEnter: {
                 onBack(function(){ modes.set('menu') })
-                creditsLoader.opacity = 1
+                aboutLoader.opacity = 1
             }
         }
 
@@ -172,7 +173,21 @@ Item {
         Loader {
             id: creditsLoader
             anchors { fill: parent }
-            source: 'scenes/Credits.qml'
+            source: 'Credits.qml'
+            active: opacity > 0
+
+            visible: status == Loader.Ready && opacity > 0
+
+            opacity: 0
+            Behavior on opacity {
+                NumberAnimation { duration: 1000 }
+            }
+        }
+
+        Loader {
+            id: aboutLoader
+            anchors { fill: parent }
+            source: 'About.qml'
             active: opacity > 0
 
             visible: status == Loader.Ready && opacity > 0

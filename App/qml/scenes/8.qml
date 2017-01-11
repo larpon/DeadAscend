@@ -488,7 +488,7 @@ Base {
 
         ScriptAction {
             script: {
-                game.showExit(750,100,60*60000,"up")
+                game.showExit(750,100,10000,"up")
             }
         }
 

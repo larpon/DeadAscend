@@ -47,6 +47,7 @@ Application {
     }
 
     View {
+        id: view
         visible: back.opacity > 0
 
         anchors.fill: parent
@@ -139,6 +140,48 @@ Application {
             application.visible = true
             back.opacity = 1
         }
+    }
+
+    // NOTE Native ad overlays via QtFirebase
+    Loader {
+        id: adControl
+
+        anchors.fill: parent
+
+        asynchronous: true
+        visible: App.useAds
+        active: application.visible && App.useAds
+
+        source: 'qrc:///qml/Ads.qml'
+
+        function bannerVisible(visibility) {
+            if(!active)
+                return
+            item.bannerVisible(visibility)
+        }
+
+        function interstitialVisible(visibility) {
+            if(!active)
+                return
+            item.interstitialVisible(visibility)
+        }
+
+        function interstitialIsLoaded() {
+            if(!active)
+                return false
+            return item.interstitialIsLoaded()
+        }
+
+        /*
+        Connections {
+            target: adControl.item ? adControl.item.banner : null
+
+            onVisibleChanged: {
+                //adControl.item.banner.moveTo(view.viewport.x,view.viewport.y)
+            }
+
+        }*/
+
     }
 
 }

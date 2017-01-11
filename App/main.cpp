@@ -1,5 +1,7 @@
 #include "qak.h"
 
+#include "qtfirebase.h"
+
 #include "src/fileio.h"
 #include "src/fpstext.h"
 
@@ -27,6 +29,12 @@ int main(int argc, char *argv[])
         engine.rootContext()->setContextProperty("debugBuild", QVariant(true));
     #else
         engine.rootContext()->setContextProperty("debugBuild", QVariant(false));
+    #endif
+
+    #ifdef QTFIREBASE_BUILD_ADMOB
+        engine.rootContext()->setContextProperty("adBuild", QVariant(true));
+    #else
+        engine.rootContext()->setContextProperty("adBuild", QVariant(false));
     #endif
 
     engine.addImportPath("qrc:///");

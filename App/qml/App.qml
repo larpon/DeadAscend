@@ -7,6 +7,8 @@ QtObject {
     id: app
     property bool dbg: debugBuild
 
+    property bool useAds: adBuild
+
     property bool paused: !Qt.application.active
 
     Component.onCompleted: {
