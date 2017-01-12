@@ -22,7 +22,7 @@ Base {
 
     Store {
         id: store
-        name: "level"+sceneNumber
+        name: "level"+sceneName
 
         property bool keyCombo1: false
         property bool keyCombo2: false
@@ -47,16 +47,16 @@ Base {
         showExit()
 
         var sfx = sounds
-        sfx.add("level"+sceneNumber,"pouring",App.getAsset("sounds/pouring.wav"))
-        sfx.add("level"+sceneNumber,"key_tap",App.getAsset("sounds/key_tap.wav"))
-        sfx.add("level"+sceneNumber,"beep",App.getAsset("sounds/beep.wav"))
-        sfx.add("level"+sceneNumber,"beep_wrong",App.getAsset("sounds/beep_wrong.wav"))
+        sfx.add("level"+sceneName,"pouring",App.getAsset("sounds/pouring.wav"))
+        sfx.add("level"+sceneName,"key_tap",App.getAsset("sounds/key_tap.wav"))
+        sfx.add("level"+sceneName,"beep",App.getAsset("sounds/beep.wav"))
+        sfx.add("level"+sceneName,"beep_wrong",App.getAsset("sounds/beep_wrong.wav"))
 
-        sfx.add("level"+sceneNumber,"radio_loop",App.getAsset("sounds/radio_silence_loop.wav"))
-        sfx.add("level"+sceneNumber,"radio_seek",App.getAsset("sounds/radio_seek.wav"))
-        sfx.add("level"+sceneNumber,"paper_fiddle",App.getAsset("sounds/paper_fiddle.wav"))
+        sfx.add("level"+sceneName,"radio_loop",App.getAsset("sounds/radio_silence_loop.wav"))
+        sfx.add("level"+sceneName,"radio_seek",App.getAsset("sounds/radio_seek.wav"))
+        sfx.add("level"+sceneName,"paper_fiddle",App.getAsset("sounds/paper_fiddle.wav"))
 
-        sfx.add("level"+sceneNumber,"hum",App.getAsset("sounds/low_machine_hum.wav"))
+        sfx.add("level"+sceneName,"hum",App.getAsset("sounds/low_machine_hum.wav"))
     }
 
     Component.onDestruction: {
@@ -382,24 +382,36 @@ Base {
                     if(buffer === "0563") {
                         store.keyCombo1 = true
                         blinkGreenAnimation.indicator = kpi1
+                        var p3 = game.getObject('painting3')
+                        if(p3 && game.inventory.has(p3))
+                            game.blacklistObject('painting3')
                     } else
                         blinkRedAnimation.indicator = kpi1
                 } else if(!store.keyCombo2) {
                     if(buffer === "0037") {
                         store.keyCombo2 = true
                         blinkGreenAnimation.indicator = kpi2
+                        var p4 = game.getObject('painting4')
+                        if(p4 && game.inventory.has(p4))
+                            game.blacklistObject('painting4')
                     } else
                         blinkRedAnimation.indicator = kpi2
                 } else if(!store.keyCombo3) {
                     if(buffer === "0099") {
                         store.keyCombo3 = true
                         blinkGreenAnimation.indicator = kpi3
+                        var p1 = game.getObject('painting1')
+                        if(p1 && game.inventory.has(p1))
+                            game.blacklistObject('painting1')
                     } else
                         blinkRedAnimation.indicator = kpi3
                 } else if(!store.keyCombo4) {
                     if(buffer === "0318") {
                         store.keyCombo4 = true
                         blinkGreenAnimation.indicator = kpi4
+                        var p2 = game.getObject('painting2')
+                        if(p2 && game.inventory.has(p2))
+                            game.blacklistObject('painting2')
                     } else
                         blinkRedAnimation.indicator = kpi4
                 }
@@ -812,7 +824,7 @@ Base {
                         type: "Object",
                         x: 610,
                         y: 150,
-                        scene: sceneNumber,
+                        scene: sceneName,
                         description: "A fuel cell",
                         itemSource: App.getAsset("sprites/fuel_cell/fuel_cell.png")
                     }

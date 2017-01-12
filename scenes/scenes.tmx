@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="250">
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="1" height="1" tilewidth="1100" tileheight="660" nextobjectid="266">
  <tileset firstgid="1" name="0" tilewidth="155" tileheight="191" tilecount="14" columns="0">
   <tile id="0">
    <image width="74" height="97" source="../App/assets/sprites/bucket/bucket_empty.png"/>
@@ -360,6 +360,48 @@
    <image width="52" height="41" source="../App/assets/sprites/fuel_cell/fuel_cell_small.png"/>
   </tile>
  </tileset>
+ <tileset firstgid="121" name="Tutorial" tilewidth="177" tileheight="167" tilecount="2" columns="0">
+  <tile id="0">
+   <image width="154" height="167" source="../App/assets/sprites/zombie_doll/zombie_doll.png"/>
+  </tile>
+  <tile id="1">
+   <image width="177" height="69" source="../App/assets/sprites/wiener/wiener.png"/>
+  </tile>
+ </tileset>
+ <imagelayer name="Tutorial" visible="0" offsetx="0" offsety="2">
+  <image source="../App/assets/scenes/Tutorial.png" width="1100" height="660"/>
+ </imagelayer>
+ <objectgroup draworder="index" name="Tutorial" visible="0">
+  <object id="255" name="light_1_tut" type="Area" x="104.667" y="116" width="120" height="62">
+   <properties>
+    <property name="description" value="A nice source of light"/>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="256" name="box_1_tut" type="Area" x="292" y="360" width="264" height="279.333">
+   <properties>
+    <property name="description" value="This is a box. Every game with a box deserves respect. Respect the box."/>
+    <property name="stateless" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="262" name="zombie_doll" type="Object" gid="121" x="119" y="523" width="154" height="167">
+   <properties>
+    <property name="combines" value="[ &quot;wiener&quot; ]"/>
+    <property name="locked" type="bool" value="true"/>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="tileId" value="0"/>
+   </properties>
+  </object>
+  <object id="265" name="wiener" type="Object" gid="122" x="658" y="556" width="177" height="69">
+   <properties>
+    <property name="combines" value="[  &quot;zombie_doll&quot; ]"/>
+    <property name="locked" type="bool" value="true"/>
+    <property name="stateless" type="bool" value="true"/>
+    <property name="tileId" value="1"/>
+    <property name="z" type="int" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
  <imagelayer name="0 bg" visible="0">
   <image source="../App/assets/scenes/0.png" width="1100" height="660"/>
  </imagelayer>
@@ -538,10 +580,10 @@
    </properties>
   </object>
  </objectgroup>
- <imagelayer name="1 bg" visible="0">
+ <imagelayer name="1 bg">
   <image source="../App/assets/scenes/1.png" width="1100" height="660"/>
  </imagelayer>
- <objectgroup draworder="index" name="1" visible="0">
+ <objectgroup draworder="index" name="1">
   <object id="29" name="chandelier" type="AnimatedArea" gid="15" x="357" y="207" width="647" height="207">
    <properties>
     <property name="description" value="A chandelier. Moving slightly in the draft from the window"/>
@@ -761,10 +803,10 @@
    </properties>
   </object>
  </objectgroup>
- <imagelayer name="2 bg">
+ <imagelayer name="2 bg" visible="0">
   <image source="../App/assets/scenes/2.png" width="1100" height="660"/>
  </imagelayer>
- <objectgroup draworder="index" name="2">
+ <objectgroup draworder="index" name="2" visible="0">
   <object id="75" name="lift" type="AnimatedArea" gid="38" x="576" y="531" width="173" height="531"/>
   <object id="76" name="bottle_green" type="Object" gid="39" x="575" y="721" width="78" height="154">
    <properties>

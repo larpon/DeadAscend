@@ -135,6 +135,13 @@ Item {
                 TextButton {
                     anchors.horizontalCenter: parent.horizontalCenter
                     allUppercase: true
+                    text: qsTr("How to play")
+                    onClicked: core.modes.set('game-tutorial')
+                }
+
+                TextButton {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    allUppercase: true
                     text: qsTr("Reset")
                     onClicked: confirmReset.state = "shown"
                 }

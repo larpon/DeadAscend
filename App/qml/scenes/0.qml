@@ -16,7 +16,7 @@ Base {
 
     Store {
         id: store
-        name: "level"+sceneNumber
+        name: "level"+sceneName
 
         property alias lightOn: aSwitch.active
         property alias bucketPatched: scene.bucketPatched
@@ -32,18 +32,18 @@ Base {
             showExit()
 
         var sfx = sounds
-        sfx.add("level"+sceneNumber,"switch",App.getAsset("sounds/lamp_switch_01.wav"))
-        sfx.add("level"+sceneNumber,"light_on",App.getAsset("sounds/light_on.wav"))
-        sfx.add("level"+sceneNumber,"drip",App.getAsset("sounds/water_drip_01.wav"))
-        sfx.add("level"+sceneNumber,"squeak",App.getAsset("sounds/faucet_sqeak.wav"))
-        sfx.add("level"+sceneNumber,"heavy_drag",App.getAsset("sounds/heavy_drag.wav"))
-        sfx.add("level"+sceneNumber,"hatch_open",App.getAsset("sounds/hatch_open.wav"))
-        sfx.add("level"+sceneNumber,"hatch_close",App.getAsset("sounds/hatch_close.wav"))
-        sfx.add("level"+sceneNumber,"water_run_loop",App.getAsset("sounds/water_run_loop_01.wav"))
+        sfx.add("level"+sceneName,"switch",App.getAsset("sounds/lamp_switch_01.wav"))
+        sfx.add("level"+sceneName,"light_on",App.getAsset("sounds/light_on.wav"))
+        sfx.add("level"+sceneName,"drip",App.getAsset("sounds/water_drip_01.wav"))
+        sfx.add("level"+sceneName,"squeak",App.getAsset("sounds/faucet_sqeak.wav"))
+        sfx.add("level"+sceneName,"heavy_drag",App.getAsset("sounds/heavy_drag.wav"))
+        sfx.add("level"+sceneName,"hatch_open",App.getAsset("sounds/hatch_open.wav"))
+        sfx.add("level"+sceneName,"hatch_close",App.getAsset("sounds/hatch_close.wav"))
+        sfx.add("level"+sceneName,"water_run_loop",App.getAsset("sounds/water_run_loop_01.wav"))
 
         // NOTE For combining gum and bucket
-        sfx.add("level"+sceneNumber,"gum",App.getAsset("sounds/juicy_gum.wav"))
-        sfx.add("level"+sceneNumber,"bucket",App.getAsset("sounds/bucket_put.wav"))
+        sfx.add("level"+sceneName,"gum",App.getAsset("sounds/juicy_gum.wav"))
+        sfx.add("level"+sceneName,"bucket",App.getAsset("sounds/bucket_put.wav"))
     }
 
     Component.onDestruction: {
@@ -547,7 +547,7 @@ Base {
                     var object = {
                         name: "button_8",
                         type: "Object",
-                        scene: sceneNumber,
+                        scene: sceneName,
                         description: "A nice red, round button",
                         itemSource: App.getAsset("sprites/buttons/button_03/button_03.png")
                     }

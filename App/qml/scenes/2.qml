@@ -22,7 +22,7 @@ Base {
 
     Store {
         id: store
-        name: "level"+sceneNumber
+        name: "level"+sceneName
 
         property alias fuseDropped: scene.fuseDropped
         property alias cabinetOpened: scene.cabinetOpened
@@ -48,7 +48,7 @@ Base {
                 y: 300,
                 itemSource: App.getAsset("sprites/cannula/cannula_empty.png"),
                 description: "An empty cannula. Not very helpful when empty...",
-                at: sceneNumber
+                at: sceneName
 
             }
 
@@ -59,7 +59,7 @@ Base {
         showExit()
 
         var sfx = sounds
-        sfx.add("level"+sceneNumber,"klonk",App.getAsset("sounds/klonk.wav"))
+        sfx.add("level"+sceneName,"klonk",App.getAsset("sounds/klonk.wav"))
     }
 
     Component.onDestruction: {

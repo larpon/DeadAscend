@@ -42,7 +42,7 @@ Rectangle {
         }
 
         PauseAnimation {
-            duration: 6000
+            duration: 3000
         }
 
         ScriptAction {
@@ -82,7 +82,7 @@ Rectangle {
         ScriptAction {
             script: {
                 text.text = "
-                Original idea<br>
+                Original story, idea & puzzles<br>
                 Lars Pontoppidan & Stinus Petersen
                 "
                 text.opacity = 1

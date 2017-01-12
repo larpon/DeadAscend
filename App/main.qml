@@ -177,7 +177,7 @@ Application {
 
         visible: loaded
 
-        width: parent.width
+        width: application.width //parent.width
         height: 50
 
         request: AdMobRequest {}

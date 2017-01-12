@@ -20,7 +20,7 @@ Base {
 
     Store {
         id: store
-        name: "level"+sceneNumber
+        name: "level"+sceneName
 
     }
 
@@ -37,15 +37,15 @@ Base {
         showExit()
 
         var sfx = sounds
-        sfx.add("level"+sceneNumber,"hum",App.getAsset("sounds/low_machine_hum.wav"))
-        sfx.add("level"+sceneNumber,"klonk",App.getAsset("sounds/klonk.wav"))
-        sfx.add("level"+sceneNumber,"power_up",App.getAsset("sounds/power_up_zap.wav"))
-        sfx.add("level"+sceneNumber,"small_zaps_1",App.getAsset("sounds/small_zaps_loop.wav"))
-        sfx.add("level"+sceneNumber,"small_zaps_2",App.getAsset("sounds/small_zaps_loop.wav"))
-        sfx.add("level"+sceneNumber,"small_zaps_3",App.getAsset("sounds/small_zaps_loop.wav"))
-        sfx.add("level"+sceneNumber,"small_zaps_4",App.getAsset("sounds/small_zaps_loop.wav"))
-        sfx.add("level"+sceneNumber,"zap_loop",App.getAsset("sounds/zap_loop.wav"))
-        sfx.add("level"+sceneNumber,"liquid",App.getAsset("sounds/liquid_blop.wav"))
+        sfx.add("level"+sceneName,"hum",App.getAsset("sounds/low_machine_hum.wav"))
+        sfx.add("level"+sceneName,"klonk",App.getAsset("sounds/klonk.wav"))
+        sfx.add("level"+sceneName,"power_up",App.getAsset("sounds/power_up_zap.wav"))
+        sfx.add("level"+sceneName,"small_zaps_1",App.getAsset("sounds/small_zaps_loop.wav"))
+        sfx.add("level"+sceneName,"small_zaps_2",App.getAsset("sounds/small_zaps_loop.wav"))
+        sfx.add("level"+sceneName,"small_zaps_3",App.getAsset("sounds/small_zaps_loop.wav"))
+        sfx.add("level"+sceneName,"small_zaps_4",App.getAsset("sounds/small_zaps_loop.wav"))
+        sfx.add("level"+sceneName,"zap_loop",App.getAsset("sounds/zap_loop.wav"))
+        sfx.add("level"+sceneName,"liquid",App.getAsset("sounds/liquid_blop.wav"))
     }
 
     Component.onDestruction: {

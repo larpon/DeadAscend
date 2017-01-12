@@ -16,7 +16,7 @@ Base {
 
     Store {
         id: store
-        name: "level"+sceneNumber
+        name: "level"+sceneName
     }
 
     Component.onCompleted: {
@@ -24,7 +24,7 @@ Base {
         showExit()
 
         var sfx = sounds
-        //sfx.add("level"+sceneNumber,"switch",App.getAsset("sounds/lamp_switch_01.wav"))
+        //sfx.add("level"+sceneName,"switch",App.getAsset("sounds/lamp_switch_01.wav"))
     }
 
     Component.onDestruction: {

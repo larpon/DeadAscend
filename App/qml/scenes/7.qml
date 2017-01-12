@@ -20,7 +20,7 @@ Base {
 
     Store {
         id: store
-        name: "level"+sceneNumber
+        name: "level"+sceneName
 
         property bool ropeTied: false
 
@@ -32,7 +32,7 @@ Base {
         showExit()
 
         var sfx = sounds
-        //sfx.add("level"+sceneNumber,"hum",App.getAsset("sounds/low_machine_hum.wav"))
+        //sfx.add("level"+sceneName,"hum",App.getAsset("sounds/low_machine_hum.wav"))
 
     }
 

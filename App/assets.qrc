@@ -628,16 +628,6 @@
         <file>assets/sprites/treadmill/move/03.png</file>
         <file>assets/sprites/treadmill/move/04.png</file>
         <file>assets/sprites/treadmill/generator.png</file>
-        <file>assets/sprites/tutorial_items/complete.png</file>
-        <file>assets/sprites/tutorial_items/continue.png</file>
-        <file>assets/sprites/tutorial_items/good_job.png</file>
-        <file>assets/sprites/tutorial_items/step_0.png</file>
-        <file>assets/sprites/tutorial_items/step_1.png</file>
-        <file>assets/sprites/tutorial_items/step_2.png</file>
-        <file>assets/sprites/tutorial_items/step_3.png</file>
-        <file>assets/sprites/tutorial_items/step_4.png</file>
-        <file>assets/sprites/tutorial_items/step_5.png</file>
-        <file>assets/sprites/tutorial_items/step_6.png</file>
         <file>assets/sprites/ventilator/wing_1/l/1.png</file>
         <file>assets/sprites/ventilator/wing_1/l/2.png</file>
         <file>assets/sprites/ventilator/wing_1/l/3.png</file>
@@ -1024,8 +1014,6 @@
         <file>assets/scenes/6_fg_shadow.png</file>
         <file>assets/scenes/8.png</file>
         <file>assets/scenes/8_fg_shadow.png</file>
-        <file>assets/scenes/tutorial_fg_shadow.png</file>
-        <file>assets/scenes/tutorial.png</file>
         <file>assets/scenes/keypad/keypad.png</file>
         <file>assets/scenes/7.png</file>
         <file>assets/scenes/7_fg_shadow.png</file>
@@ -1040,5 +1028,7 @@
         <file>assets/sprites/blood/splat/0006.png</file>
         <file>assets/sounds/chopper.wav</file>
         <file>assets/fonts/Open_Sans/OpenSans-Regular.ttf</file>
+        <file>assets/scenes/Tutorial_fg_shadow.png</file>
+        <file>assets/scenes/Tutorial.png</file>
     </qresource>
 </RCC>

@@ -33,7 +33,7 @@ Base {
 
     Store {
         id: store
-        name: "level"+sceneNumber
+        name: "level"+sceneName
 
         property alias zombieHit: scene.zombieHit
         property alias cageHit: scene.cageHit
@@ -56,15 +56,15 @@ Base {
         showExit()
 
         var sfx = sounds
-        sfx.add("level"+sceneNumber,"hum",App.getAsset("sounds/low_machine_hum.wav"))
-        sfx.add("level"+sceneNumber,"scribble",App.getAsset("sounds/scribble.wav"))
-        sfx.add("level"+sceneNumber,"zombie_moan_1",App.getAsset("sounds/zombie_moan_01.wav"))
-        sfx.add("level"+sceneNumber,"zombie_moan_2",App.getAsset("sounds/zombie_moan_02.wav"))
-        sfx.add("level"+sceneNumber,"zombie_moan_3",App.getAsset("sounds/zombie_moan_03.wav"))
-        sfx.add("level"+sceneNumber,"crack_smash",App.getAsset("sounds/crack_smash.wav"))
-        sfx.add("level"+sceneNumber,"glass_smash",App.getAsset("sounds/glass_smash.wav"))
-        sfx.add("level"+sceneNumber,"coin_drop",App.getAsset("sounds/coin_drop.wav"))
-        sfx.add("level"+sceneNumber,"paper_fiddle",App.getAsset("sounds/paper_fiddle.wav"))
+        sfx.add("level"+sceneName,"hum",App.getAsset("sounds/low_machine_hum.wav"))
+        sfx.add("level"+sceneName,"scribble",App.getAsset("sounds/scribble.wav"))
+        sfx.add("level"+sceneName,"zombie_moan_1",App.getAsset("sounds/zombie_moan_01.wav"))
+        sfx.add("level"+sceneName,"zombie_moan_2",App.getAsset("sounds/zombie_moan_02.wav"))
+        sfx.add("level"+sceneName,"zombie_moan_3",App.getAsset("sounds/zombie_moan_03.wav"))
+        sfx.add("level"+sceneName,"crack_smash",App.getAsset("sounds/crack_smash.wav"))
+        sfx.add("level"+sceneName,"glass_smash",App.getAsset("sounds/glass_smash.wav"))
+        sfx.add("level"+sceneName,"coin_drop",App.getAsset("sounds/coin_drop.wav"))
+        sfx.add("level"+sceneName,"paper_fiddle",App.getAsset("sounds/paper_fiddle.wav"))
     }
 
     Component.onDestruction: {
@@ -165,7 +165,7 @@ Base {
                     var object = {
                         name: "coin",
                         type: "Object",
-                        scene: sceneNumber,
+                        scene: sceneName,
                         x: 190,
                         y: 300,
                         itemSource: App.getAsset("sprites/coin/coin.png")
@@ -292,7 +292,7 @@ Base {
                     type: "Object",
                     itemSource: App.getAsset("sprites/cannula/cannula_full.png"),
                     description: "It's full of infested zombie blood",
-                    scene: sceneNumber
+                    scene: sceneName
                 }
 
                 game.spawnObject(object,function(o){
@@ -631,7 +631,7 @@ Base {
                         z: hamster.z,
                         itemSource: App.getAsset("sprites/hamster/big_zombie.png"),
                         description: "... OK. So this is a zombie hamster. It looks pretty strong - but it's hideous",
-                        scene: sceneNumber
+                        scene: sceneName
                     }
                     game.spawnObject(object)
                     scene.hamsterIsZombie = true

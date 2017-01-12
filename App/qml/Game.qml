@@ -160,12 +160,27 @@ Item {
     }
 
     Component.onCompleted: {
+
         store.load()
+
+        if(core.modes.mode.name === "game-tutorial") {
+            App.debug("Going into tutorial mode")
+            previousScene = currentScene
+            currentScene = "Tutorial"
+            inventory.name = "inventoryTutorial"
+        }
+
         inventory.load()
     }
 
     Component.onDestruction: {
         clearDynamicallyLoaded()
+
+        if(currentScene == "Tutorial") {
+            currentScene = previousScene
+            inventory.clear()
+        }
+
         save()
     }
 

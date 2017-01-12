@@ -67,7 +67,7 @@ Base {
 
     Store {
         id: store
-        name: "level"+sceneNumber
+        name: "level"+sceneName
 
         property bool miniGameCompleted: false
     }
@@ -77,14 +77,14 @@ Base {
         showExit()
 
         var sfx = sounds
-        sfx.add("level"+sceneNumber,"shotgun",App.getAsset("sounds/shotgun_shot_01.wav"))
-        sfx.add("level"+sceneNumber,"shotgun_load_1",App.getAsset("sounds/shotgun_load_01.wav"))
-        sfx.add("level"+sceneNumber,"shotgun_load_2",App.getAsset("sounds/shotgun_load_02.wav"))
-        sfx.add("level"+sceneNumber,"shotgun_load_3",App.getAsset("sounds/shotgun_load_03.wav"))
-        sfx.add("level"+sceneNumber,"zombie_moan_1",App.getAsset("sounds/zombie_moan_01.wav"))
-        sfx.add("level"+sceneNumber,"zombie_moan_2",App.getAsset("sounds/zombie_moan_02.wav"))
-        sfx.add("level"+sceneNumber,"zombie_moan_3",App.getAsset("sounds/zombie_moan_03.wav"))
-        sfx.add("level"+sceneNumber,"chopper_loop",App.getAsset("sounds/chopper.wav"))
+        sfx.add("level"+sceneName,"shotgun",App.getAsset("sounds/shotgun_shot_01.wav"))
+        sfx.add("level"+sceneName,"shotgun_load_1",App.getAsset("sounds/shotgun_load_01.wav"))
+        sfx.add("level"+sceneName,"shotgun_load_2",App.getAsset("sounds/shotgun_load_02.wav"))
+        sfx.add("level"+sceneName,"shotgun_load_3",App.getAsset("sounds/shotgun_load_03.wav"))
+        sfx.add("level"+sceneName,"zombie_moan_1",App.getAsset("sounds/zombie_moan_01.wav"))
+        sfx.add("level"+sceneName,"zombie_moan_2",App.getAsset("sounds/zombie_moan_02.wav"))
+        sfx.add("level"+sceneName,"zombie_moan_3",App.getAsset("sounds/zombie_moan_03.wav"))
+        sfx.add("level"+sceneName,"chopper_loop",App.getAsset("sounds/chopper.wav"))
 
     }
 

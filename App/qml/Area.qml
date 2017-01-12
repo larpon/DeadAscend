@@ -69,6 +69,7 @@ Entity {
     Component.onDestruction: save()
 
     onClicked: {
+        game.objectClicked(area)
         autoDescription()
     }
 

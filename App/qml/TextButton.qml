@@ -20,6 +20,9 @@ Item {
 
     signal clicked
 
+    property real halfWidth: width / 2
+    property real halfHeight: height / 2
+
     width: text.width
     height: text.height
 
@@ -88,6 +91,8 @@ Item {
         anchors.fill: parent
         onClicked: {
             clicks++
+
+            core.sounds.play('tick_soft')
 
             if(panicClickSafety && clicks > 1) {
                 panicClickResetTimer.restart()

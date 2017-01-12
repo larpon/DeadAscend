@@ -27,7 +27,7 @@ Base {
 
     Store {
         id: store
-        name: "level"+sceneNumber
+        name: "level"+sceneName
 
         property bool beachBallRemoved: false
         property bool rockingHorseRemoved: false
@@ -48,8 +48,8 @@ Base {
         showExit()
 
         var sfx = sounds
-        sfx.add("level"+sceneNumber,"light_drag",App.getAsset("sounds/light_drag_01.wav"))
-        sfx.add("level"+sceneNumber,"rattle_loop",App.getAsset("sounds/rattle_loop.wav"))
+        sfx.add("level"+sceneName,"light_drag",App.getAsset("sounds/light_drag_01.wav"))
+        sfx.add("level"+sceneName,"rattle_loop",App.getAsset("sounds/rattle_loop.wav"))
 
     }
 

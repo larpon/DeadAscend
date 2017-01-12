@@ -247,7 +247,8 @@ ObjectStore {
         object.parent = game.scene.canvas
         removeVisual(object)
         game.objectRemovedFromInventory(root)
-        object.play('onRemovedFromInventory')
+        if('play' in object)
+            object.play('onRemovedFromInventory')
     }
 
     function removeVisual(object) {

@@ -102,6 +102,19 @@ Item {
         }
 
         Mode {
+            name: 'game-tutorial'
+            onLeave: {
+                gameLoader.opacity = 0
+                banner.show()
+            }
+            onEnter: {
+                banner.hide()
+                onBack(function(){ modes.set('menu') })
+                gameLoader.opacity = 1
+            }
+        }
+
+        Mode {
             name: 'credits'
             onLeave: creditsLoader.opacity = 0
             onEnter: {
@@ -138,9 +151,9 @@ Item {
 
     Connections {
         target: banner
-        onLoaded: {
+        onLoadedChanged: {
             var m = modes.mode;
-            if(m !== "game") {
+            if(m !== "game" && m !== "game-tutorial") {
                 banner.show()
             }
         }
@@ -284,7 +297,7 @@ Item {
         interval: 1 * (60*1000) // Minutes
         repeat: true
         onTriggered: {
-            App.log('Show ad?',!interstitial.visible,interstitial.loaded)
+            //App.log('Show ad?',!interstitial.visible,interstitial.loaded)
             if(!interstitial.visible && interstitial.loaded) {
                 adConfirm.state = "shown"
             }

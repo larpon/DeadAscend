@@ -34,5 +34,6 @@
         <file>qml/About.qml</file>
         <file>qml/Credits.qml</file>
         <file>qml/ConfirmDialog.qml</file>
+        <file>qml/scenes/Tutorial.qml</file>
     </qresource>
 </RCC>

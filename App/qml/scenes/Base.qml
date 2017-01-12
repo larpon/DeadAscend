@@ -12,18 +12,18 @@ Item {
     anchors { fill: parent }
 
     paused: App.paused
-    onPausedChanged: App.debug('Scene',sceneNumber,paused ? 'paused' : 'continued')
+    onPausedChanged: App.debug('Scene',sceneName,paused ? 'paused' : 'continued')
 
     Component.onCompleted: game.elevatorPanel.show = false
 
     Component.onDestruction: {
-        sounds.clear('level'+sceneNumber)
+        sounds.clear('level'+sceneName)
         game.save()
     }
 
     property bool showForegroundShadow: true
 
-    readonly property string sceneNumber: game.currentScene
+    readonly property string sceneName: game.currentScene
 
     default property alias content: canvas.data
     property alias canvas: canvas
@@ -57,7 +57,7 @@ Item {
         id: background
 
         fillMode: Image.PreserveAspectFit
-        source: App.getAsset('scenes/'+sceneNumber+'.png')
+        source: App.getAsset('scenes/'+sceneName+'.png')
 
         cache: false
     }
@@ -83,7 +83,7 @@ Item {
         anchors { fill: parent }
 
         fillMode: Image.PreserveAspectFit
-        source: App.getAsset('scenes/'+sceneNumber+'_fg_shadow.png')
+        source: App.getAsset('scenes/'+sceneName+'_fg_shadow.png')
 
         SequentialAnimation {
             running: showForegroundShadow

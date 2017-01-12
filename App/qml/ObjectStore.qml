@@ -97,4 +97,18 @@ Item {
 
     }
 
+    function clear() {
+
+        for(var i in contents) {
+            var o = contents[i]
+            App.debug('ObjectStore','removing',o.name)
+            contents.splice(i, 1)
+            removed(o)
+            var t = contents
+            contents = t
+            updated()
+        }
+
+    }
+
 }

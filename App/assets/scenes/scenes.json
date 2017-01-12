@@ -2,6 +2,127 @@
  "layers":[
         {
          "height":0,
+         "image":"Tutorial.png",
+         "name":"Tutorial",
+         "offsetx":0,
+         "offsety":2,
+         "opacity":1,
+         "type":"imagelayer",
+         "visible":false,
+         "width":0,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"index",
+         "height":0,
+         "name":"Tutorial",
+         "objects":[
+                {
+                 "height":62,
+                 "id":255,
+                 "name":"light_1_tut",
+                 "properties":
+                    {
+                     "description":"A nice source of light",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":120,
+                 "x":104.667,
+                 "y":116
+                }, 
+                {
+                 "height":279.333,
+                 "id":256,
+                 "name":"box_1_tut",
+                 "properties":
+                    {
+                     "description":"This is a box. Every game with a box deserves respect. Respect the box.",
+                     "stateless":true
+                    },
+                 "propertytypes":
+                    {
+                     "description":"string",
+                     "stateless":"bool"
+                    },
+                 "rotation":0,
+                 "type":"Area",
+                 "visible":true,
+                 "width":264,
+                 "x":292,
+                 "y":360
+                }, 
+                {
+                 "gid":121,
+                 "height":167,
+                 "id":262,
+                 "name":"zombie_doll",
+                 "properties":
+                    {
+                     "combines":"[ \"wiener\" ]",
+                     "locked":true,
+                     "stateless":true,
+                     "tileId":"0"
+                    },
+                 "propertytypes":
+                    {
+                     "combines":"string",
+                     "locked":"bool",
+                     "stateless":"bool",
+                     "tileId":"string"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":154,
+                 "x":119,
+                 "y":523
+                }, 
+                {
+                 "gid":122,
+                 "height":69,
+                 "id":265,
+                 "name":"wiener",
+                 "properties":
+                    {
+                     "combines":"[  \"zombie_doll\" ]",
+                     "locked":true,
+                     "stateless":true,
+                     "tileId":"1",
+                     "z":1
+                    },
+                 "propertytypes":
+                    {
+                     "combines":"string",
+                     "locked":"bool",
+                     "stateless":"bool",
+                     "tileId":"string",
+                     "z":"int"
+                    },
+                 "rotation":0,
+                 "type":"Object",
+                 "visible":true,
+                 "width":177,
+                 "x":658,
+                 "y":556
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":false,
+         "width":0,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "height":0,
          "image":"0.png",
          "name":"0 bg",
          "opacity":1,
@@ -609,7 +730,7 @@
          "name":"1 bg",
          "opacity":1,
          "type":"imagelayer",
-         "visible":false,
+         "visible":true,
          "width":0,
          "x":0,
          "y":0
@@ -1410,7 +1531,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "width":0,
          "x":0,
          "y":0
@@ -1421,7 +1542,7 @@
          "name":"2 bg",
          "opacity":1,
          "type":"imagelayer",
-         "visible":true,
+         "visible":false,
          "width":0,
          "x":0,
          "y":0
@@ -2006,7 +2127,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "width":0,
          "x":0,
          "y":0
@@ -4257,7 +4378,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":250,
+ "nextobjectid":266,
  "orientation":"orthogonal",
  "renderorder":"left-up",
  "tileheight":660,
@@ -4834,6 +4955,27 @@
                 }
             },
          "tilewidth":409
+        }, 
+        {
+         "columns":0,
+         "firstgid":121,
+         "margin":0,
+         "name":"Tutorial",
+         "spacing":0,
+         "tilecount":2,
+         "tileheight":167,
+         "tiles":
+            {
+             "0":
+                {
+                 "image":"..\/sprites\/zombie_doll\/zombie_doll.png"
+                },
+             "1":
+                {
+                 "image":"..\/sprites\/wiener\/wiener.png"
+                }
+            },
+         "tilewidth":177
         }],
  "tilewidth":1100,
  "version":1,
