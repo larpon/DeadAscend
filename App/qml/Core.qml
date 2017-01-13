@@ -8,8 +8,11 @@ import "."
 Item {
     id: core
 
+    readonly property bool paused: (pauses.system || pauses.user)
+
     property alias modes: modes
     property alias colors: colors
+    property alias pauses: pauses
     property alias fonts: fonts
     property alias viewport: view.viewport
 
@@ -33,6 +36,12 @@ Item {
     Store {
         id: settings
         name: "core"
+    }
+
+    QtObject {
+        id: pauses
+        property bool user: false
+        readonly property bool system: App.paused
     }
 
     QtObject {
@@ -230,10 +239,26 @@ Item {
         Rectangle {
             id: loadingScreen
 
+            Timer {
+                id: extraTimer
+                interval: 2500
+                onTriggered: loadingScreen.opacity = 0
+            }
+
+            property bool show: menuLoader.opacity < 1 && gameLoader.opacity < 1 && (gameLoader.item && gameLoader.item.ready)
+
+            onShowChanged: {
+                if(show)
+                    opacity = 1
+                else {
+                    extraTimer.restart()
+                }
+            }
+
             visible: opacity > 0
-            opacity: menuLoader.opacity < 1 && gameLoader.opacity < 1 && (gameLoader.item && gameLoader.item.ready) ? 1 : 0
+            opacity: 0
             Behavior on opacity {
-                NumberAnimation { duration: 00 }
+                NumberAnimation { duration: 200 }
             }
             readonly property bool fullyVisible: opacity >= 1
 
@@ -248,7 +273,7 @@ Item {
                 SequentialAnimation on y {
                     loops: Animation.Infinite
 
-                    paused: running && App.paused && !loadingScreen.visible
+                    paused: running && !loadingScreen.visible
 
                     running: true
 
@@ -365,7 +390,7 @@ Item {
                 modes.set('game')
 
             if (key == Qt.Key_P)
-                App.paused = !App.paused
+                pauses.user = !pauses.user
 
         }
     }

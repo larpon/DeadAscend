@@ -12,6 +12,20 @@ Rectangle {
     anchors { fill: parent }
     color: "black"
 
+    TextButton {
+        anchors {
+            bottom: parent.bottom
+            right: parent.right
+            margins: 20
+        }
+
+        text: "BACK"
+
+        font.pixelSize: 35
+
+        onClicked: core.goBack();
+    }
+
     Text {
         id: text
         anchors { centerIn: parent }

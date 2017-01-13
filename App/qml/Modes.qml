@@ -56,8 +56,9 @@ Item {
         if(mode) {
             mode.enter(modes.mode)
             modes.mode = mode
-        } else
-            console.error('Modes','set','mode not found')
+        } else {
+            console.error('Modes','set mode',mode,'not found')
+        }
     }
 
     function reload() {

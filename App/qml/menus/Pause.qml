@@ -3,9 +3,11 @@ import Qak.QtQuick 2.0
 
 import ".."
 
-Item {
+Rectangle {
     id: pause
     anchors { fill: parent }
+
+    color: core.colors.black
 
     paused: !App.paused
     onPausedChanged: App.debug('Paused',paused ? 'paused' : 'continued')
@@ -31,7 +33,7 @@ Item {
                 anchors.horizontalCenter: parent.horizontalCenter
                 allUppercase: true
                 text: qsTr("Resume")
-                onClicked: game.userPaused = false
+                onClicked: core.pauses.user = false
             }
 
             TextButton {

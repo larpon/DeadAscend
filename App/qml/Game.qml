@@ -11,10 +11,8 @@ Item {
 
     anchors { fill: parent }
 
-    paused: App.paused || userPaused
+    paused: core.paused
     onPausedChanged: { App.debug('Game',paused ? 'paused' : 'continued') }
-
-    property bool userPaused: false
 
     property bool ready: (scene && scene.ready)
 
@@ -235,21 +233,26 @@ Item {
 
         Mode {
             name: 'in-game'
-            //onEnter: sceneLoader.opacity = 0.000001 // shader experiment
             onEnter: sceneLoader.opacity = 1
-            onLeave: sceneLoader.opacity = 0
+            onLeave: {
+                clearDynamicallyLoaded()
+                sceneLoader.opacity = 0
+            }
         }
 
         Mode {
             name: 'pause'
             when: game.paused
-            onEnter: onBack(function(){ App.paused = false })
+            onEnter: onBack(function(){
+                core.pauses.user = false
+            })
             onLeave: goBack()
         }
 
     }
 
     function goToScene(scene) {
+        loadingScreen.show = true
         previousScene = currentScene
         clearDynamicallyLoaded()
         sceneLoader.active = false
@@ -258,7 +261,8 @@ Item {
 
     readonly property bool sceneUnloaded: !sceneLoader.active || !sceneLoader.status === Loader.Ready
     onSceneUnloadedChanged: {
-        App.debug('Scene unloaded',currentScene)
+        if(sceneUnloaded)
+            App.debug('Scene unloaded',currentScene)
     }
 
     Timer {
@@ -277,6 +281,7 @@ Item {
     }
 
     function loadScene() {
+
         if(!sceneData)
             sceneData = jsonReader.read(App.getAsset('scenes/scenes.json'))
 
@@ -367,6 +372,8 @@ Item {
         initializeObjects(objects)
 
         //App.debug(App.serialize(objects))
+
+        loadingScreen.show = false
     }
 
     function initializeObjects(objects) {
@@ -893,7 +900,7 @@ Item {
         source: App.getAsset('menu_button.png')
         MouseArea {
             anchors { fill: parent }
-            onClicked: userPaused = !userPaused
+            onClicked: core.pauses.user = !core.pauses.user
         }
     }
 
@@ -1188,4 +1195,66 @@ Item {
 
         setText('There we go. A patched bucket!')
     }
+
+
+    Rectangle {
+        id: loadingScreen
+
+        z: 100
+
+        Timer {
+            id: extraTimer
+            interval: 1000
+            onTriggered: loadingScreen.opacity = 0
+        }
+
+        property bool show: false
+
+        onShowChanged: {
+            if(show)
+                opacity = 1
+            else {
+                extraTimer.restart()
+            }
+        }
+
+        visible: opacity > 0
+        opacity: 0
+        Behavior on opacity {
+            NumberAnimation { duration: 200 }
+        }
+        readonly property bool fullyVisible: opacity >= 1
+
+        anchors { fill: parent }
+        color: colors.black
+
+        Image {
+            id: loadingImage
+            x: parent.halfWidth - halfWidth; y: parent.halfHeight - halfHeight
+            source: App.getAsset('load.png')
+
+            SequentialAnimation on y {
+                loops: Animation.Infinite
+
+                paused: running && !loadingScreen.visible
+
+                running: true
+
+                // Move from minHeight to maxHeight in 300ms, using the OutExpo easing function
+                NumberAnimation {
+                    from: loadingImage.y; to: loadingImage.y - 30
+                    easing.type: Easing.InCubic; duration: 500
+                }
+
+                // Then move back to minHeight in 1 second, using the OutBounce easing function
+                NumberAnimation {
+                    from: loadingImage.y - 30; to: loadingImage.y
+                    easing.type: Easing.OutCubic; duration: 500
+                }
+
+            }
+        }
+
+    }
+
 }
