@@ -14,7 +14,7 @@ Application {
     width: 1100/1.2
     height: 660/1.2
 
-    color: "white"
+    color: "black"
 
     Component.onCompleted: {
         application.screenMode = Qak.platform.isMobile ? 'full' : 'windowed'
