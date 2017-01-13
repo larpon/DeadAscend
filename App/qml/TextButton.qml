@@ -88,7 +88,7 @@ Item {
     }
 
     MouseArea {
-        anchors.fill: parent
+        anchors { fill: parent }
         onClicked: {
             clicks++
 

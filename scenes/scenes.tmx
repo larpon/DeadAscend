@@ -580,10 +580,10 @@
    </properties>
   </object>
  </objectgroup>
- <imagelayer name="1 bg">
+ <imagelayer name="1 bg" visible="0">
   <image source="../App/assets/scenes/1.png" width="1100" height="660"/>
  </imagelayer>
- <objectgroup draworder="index" name="1">
+ <objectgroup draworder="index" name="1" visible="0">
   <object id="29" name="chandelier" type="AnimatedArea" gid="15" x="357" y="207" width="647" height="207">
    <properties>
     <property name="description" value="A chandelier. Moving slightly in the draft from the window"/>
@@ -974,10 +974,10 @@
    </properties>
   </object>
  </objectgroup>
- <imagelayer name="3 bg" visible="0">
+ <imagelayer name="3 bg">
   <image source="../App/assets/scenes/3.png" width="1100" height="660"/>
  </imagelayer>
- <objectgroup draworder="index" name="3" visible="0">
+ <objectgroup draworder="index" name="3">
   <object id="91" name="lift_3" type="AnimatedArea" gid="53" x="607" y="281.667" width="179" height="142" visible="0"/>
   <object id="97" name="glass_cage_base" type="Area" gid="54" x="340" y="598.667" width="249" height="257">
    <properties>

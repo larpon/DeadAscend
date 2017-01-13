@@ -235,7 +235,7 @@ Item {
             name: 'in-game'
             onEnter: sceneLoader.opacity = 1
             onLeave: {
-                clearDynamicallyLoaded()
+                //clearDynamicallyLoaded()
                 sceneLoader.opacity = 0
             }
         }
@@ -863,7 +863,7 @@ Item {
 //                    radius: 3
 //                }
 //                Rectangle {
-//                    anchors.fill: parent
+//                    anchors { fill: parent }
 //                    color: "transparent"
 //                    radius: 3
 //                    border.width: 2
@@ -881,7 +881,7 @@ Item {
 //                    border.width: 2
 //                    border.color: "black"
 //                    MouseArea {
-//                        anchors.fill: parent
+//                        anchors { fill: parent }
 //                        drag.target: parent
 //                        drag.axis: Drag.XAxis
 //                        drag.minimumX: 0
@@ -999,6 +999,7 @@ Item {
 
         source: App.getAsset('messagebox.png')
 
+        enabled: _show
 
         property bool show: false
         readonly property bool _show: show && !game.paused

@@ -61,7 +61,7 @@ Item {
         id: soundEffects
 
         safePlay: Qak.platform.os === "windows"
-        //muted: core.muted
+        muted: core.paused
         //volume: volumes.sfx
 
         Component.onCompleted: {
@@ -83,7 +83,7 @@ Item {
     MusicPlayer {
         id: musicPlayer
         volume: 0.55
-        //muted:
+        muted: core.paused
     }
 
     Modes {
@@ -295,6 +295,7 @@ Item {
         }
 
         // TODO Remove on release
+
         EditorOverlay {
             id: editMode
             anchors { fill: parent }
@@ -394,4 +395,5 @@ Item {
 
         }
     }
+
 }

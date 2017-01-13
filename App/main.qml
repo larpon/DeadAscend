@@ -35,7 +35,7 @@ Application {
     Loader {
         id: launcher
         visible: false
-        anchors.fill: parent
+        anchors { fill: parent }
         sourceComponent: coreComponent
         focus: true
     }
@@ -43,7 +43,7 @@ Application {
     Component {
         id: coreComponent
         Core {
-            anchors.fill: parent
+            anchors { fill: parent }
         }
     }
 
@@ -51,7 +51,7 @@ Application {
         id: view
         visible: back.opacity > 0
 
-        anchors.fill: parent
+        anchors { fill: parent }
 
         mattes: true
         mattesColor: "black"
@@ -62,7 +62,7 @@ Application {
 
         Item {
             id: back
-            anchors.fill: parent
+            anchors { fill: parent }
             //color: "white"
 
             opacity: 0.99
@@ -212,5 +212,6 @@ Application {
 
         sessionTimeout: 5000
     }
+
 
 }

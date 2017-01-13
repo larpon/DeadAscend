@@ -10,6 +10,8 @@ Item {
     width: parent.width * 0.9
     height: parent.height * 0.9
 
+    enabled: state === "shown"
+
     property alias text: confirmContent.text
 
     property string acceptText: qsTr("Ok")
@@ -90,7 +92,7 @@ Item {
                     }
 
                     MouseArea {
-                        anchors.fill: parent
+                        anchors { fill: parent }
                         onClicked: {
                             confirmDialog.state = "hidden"
                             accepted()
@@ -108,7 +110,7 @@ Item {
                     }
 
                     MouseArea {
-                        anchors.fill: parent
+                        anchors { fill: parent }
                         onClicked: {
                             confirmDialog.state = "hidden"
                             rejected()
