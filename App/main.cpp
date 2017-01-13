@@ -20,10 +20,13 @@ int main(int argc, char *argv[])
     app.setApplicationName("Dead Ascend");
 
     #ifdef VERSION
-    app.setApplicationVersion(QString(VERSION));
+    //app.setApplicationVersion(QString(VERSION));
     #endif
 
     QQmlApplicationEngine engine;
+
+    engine.rootContext()->setContextProperty("version", QString(VERSION));
+    engine.rootContext()->setContextProperty("gitVersion", QString(GIT_VERSION));
 
     #ifdef QT_DEBUG
         engine.rootContext()->setContextProperty("debugBuild", QVariant(true));
