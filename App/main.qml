@@ -156,7 +156,6 @@ Application {
         onTriggered: interstitial.load()
     }
 
-
     // QtFirebase
     property alias analytics: analytics
     property alias banner: banner
@@ -187,8 +186,6 @@ Application {
         onError: bannerRetryTimer.restart()
 
     }
-
-
 
     AdMobInterstitial {
         id: interstitial

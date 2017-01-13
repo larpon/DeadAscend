@@ -13,6 +13,7 @@ Item {
     property alias modes: modes
     property alias colors: colors
     property alias pauses: pauses
+    property alias mutes: mutes
     property alias fonts: fonts
     property alias viewport: view.viewport
 
@@ -45,6 +46,16 @@ Item {
     }
 
     QtObject {
+        id: mutes
+
+        readonly property bool all: user && system
+        readonly property bool some: user || system
+
+        property bool user: false
+        readonly property bool system: core.paused || loadingScreen.visible
+    }
+
+    QtObject {
         id: colors
         property color black: "#000000"
         property color yellow: "#e2c60f"
@@ -61,7 +72,7 @@ Item {
         id: soundEffects
 
         safePlay: Qak.platform.os === "windows"
-        muted: core.paused
+        muted: mutes.some
         //volume: volumes.sfx
 
         Component.onCompleted: {
@@ -320,7 +331,7 @@ Item {
     Timer {
         id: adTimer
         running: true
-        interval: 1 * (60*1000) // Minutes
+        interval: 5 * (60*1000) // Minutes
         repeat: true
         onTriggered: {
             //App.log('Show ad?',!interstitial.visible,interstitial.loaded)
