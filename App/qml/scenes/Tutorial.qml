@@ -173,6 +173,7 @@ Base {
 
         font.pixelSize: 60
 
+        panicClickSafety: true
         bounce: true
 
         text: 'Continue'
