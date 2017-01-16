@@ -99,6 +99,7 @@ Item {
 
     function clear() {
 
+        App.debug('ObjectStore','clear',name)
         for(var i in contents) {
             var o = contents[i]
             App.debug('ObjectStore','removing',o.name)

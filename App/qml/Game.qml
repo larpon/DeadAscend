@@ -131,21 +131,33 @@ Item {
     }
 
     function clearDynamicallyLoaded() {
-
+        App.debug('clearDynamicallyLoaded','Starting')
         var i, o
         for(i in dynamicLoaded) {
             if(dynamicLoaded[i]) {
                 o = dynamicLoaded[i]
+
+                if(o === undefined) {
+                    App.warn('clearDynamicallyLoaded','object is undefined. Skipping...')
+                    continue
+                }
+
+                if(!(o.name)) {
+                    App.warn('clearDynamicallyLoaded','object seem invalid. Skipping...')
+                    continue
+                }
 
                 if(!isBlacklisted(o.name) && Aid.qtypeof(o) === "Object" && !o.inInventory && ('stateless' in o && !o.stateless)) {
                     var name = o.name
                     objectSpawnlist[name] = name
                 }
 
+                App.debug('clearDynamicallyLoaded','destroying',o.name)
                 o.destroy()
             }
         }
         dynamicLoaded = {}
+        App.debug('clearDynamicallyLoaded','Cleared dynamically loaded objects')
     }
 
     property alias inventory: inventory
