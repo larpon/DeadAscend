@@ -565,7 +565,7 @@ Base {
 
             Area {
                 x: 36; y: 36
-                width: 100; height: 100
+                width: 210; height: 100
 
                 round: true
                 stateless: true
@@ -590,7 +590,7 @@ Base {
 
             Area {
                 x: 34; y: 208
-                width: 100; height: 100
+                width: 210; height: 100
 
                 round: true
                 stateless: true

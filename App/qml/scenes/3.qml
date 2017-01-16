@@ -132,6 +132,11 @@ Base {
         ]
 
         onFrame: {
+            var giveSound = Aid.randomRangeInt(1,3)
+            giveSound = (giveSound === 1)
+            if(!giveSound)
+                return
+
             if(frame === 5) {
                 sounds.playRandom(["zombie_moan_1","zombie_moan_2"])
             }

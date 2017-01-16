@@ -178,6 +178,7 @@ Item {
             previousScene = currentScene
             currentScene = "Tutorial"
             inventory.name = "inventoryTutorial"
+            inventory.persistent = false
         }
 
         inventory.load()
@@ -945,6 +946,8 @@ Item {
 
         paused: game.paused
 
+        scrollable: length > 7
+
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
 
@@ -952,6 +955,11 @@ Item {
         readonly property bool _show: show && !paused
 
         on_ShowChanged: core.sounds.play('tick_soft')
+
+        onRemoved: {
+            if(length == 1)
+                show = false
+        }
 
         anchors {
             horizontalCenter: parent.horizontalCenter

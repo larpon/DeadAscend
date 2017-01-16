@@ -17,6 +17,8 @@ ObjectStore {
 
     property bool animate: false
 
+    property bool scrollable: true
+
     ListModel {
         id: visualItems
     }
@@ -127,6 +129,7 @@ ObjectStore {
 
     ListView {
         id: listView
+        interactive: root.scrollable
         anchors { fill: parent }
         orientation: ListView.Horizontal
         spacing: 2
