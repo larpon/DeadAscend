@@ -9,6 +9,8 @@ import "."
 Item {
     id: inventory
 
+    property bool persistent: true
+
     property var key: "key"
     property var properties: []
 
@@ -31,7 +33,7 @@ Item {
     }
     property alias isLoaded: store.isLoaded
     function load() { store.load() }
-    function save() { store.save() }
+    function save() { if(persistent) store.save() }
 
     function add(obj) {
         if(has(obj)) {
