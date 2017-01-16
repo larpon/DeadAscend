@@ -244,6 +244,10 @@ ObjectStore {
     }
 
     onRemoved: {
+        if(!game.scene) {
+            App.warn('Inventory::onRemoved','no scene available')
+            return
+        }
         object.parent = game.scene.canvas
         removeVisual(object)
         game.objectRemovedFromInventory(root)
