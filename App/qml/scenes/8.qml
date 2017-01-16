@@ -345,7 +345,6 @@ Base {
             stateless: true
 
             name: "casing"
-
         }
 
         Area {
@@ -370,6 +369,7 @@ Base {
             name: "satelite_fuel_cell"
             stateless: true
             visible: game.fuelCellConnected
+            description: [ "The fuel cell is connected", "This should give the radio some extra range" ]
         }
 
 

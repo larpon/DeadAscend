@@ -52,7 +52,7 @@ Item {
     property bool helpCalled: false
 
     readonly property bool flasksFilled: flaskMixerBlueLevel > 0 && flaskMixerPurpleLevel > 0 && flaskMixerGreenLevel > 0 && flaskMixerRedLevel > 0
-    readonly property bool flasksCorrect: flaskMixerBlueLevel == 7 && flaskMixerPurpleLevel == 1 && flaskMixerGreenLevel == 1 && flaskMixerRedLevel == 4
+    readonly property bool flasksCorrect: flaskMixerBlueLevel == 6 && flaskMixerPurpleLevel == 1 && flaskMixerGreenLevel == 1 && flaskMixerRedLevel == 4
     onFlasksCorrectChanged: if(flasksCorrect) setText("All systems... GO!")
 
     property bool button8dropped: false
@@ -171,6 +171,12 @@ Item {
 
     Component.onCompleted: {
 
+        if(core.modes.mode.name === "game" && currentScene == "Tutorial") {
+            App.debug("Correcting currentScene var")
+            previousScene = ""
+            currentScene = "0"
+        }
+
         store.load()
 
         if(core.modes.mode.name === "game-tutorial") {
@@ -185,12 +191,11 @@ Item {
     }
 
     Component.onDestruction: {
-        clearDynamicallyLoaded()
-
         if(currentScene == "Tutorial") {
             currentScene = previousScene
             inventory.clear()
         }
+        clearDynamicallyLoaded()
 
         save()
     }
@@ -248,7 +253,6 @@ Item {
             name: 'in-game'
             onEnter: sceneLoader.opacity = 1
             onLeave: {
-                //clearDynamicallyLoaded()
                 sceneLoader.opacity = 0
             }
         }
@@ -274,8 +278,13 @@ Item {
 
     readonly property bool sceneUnloaded: !sceneLoader.active || !sceneLoader.status === Loader.Ready
     onSceneUnloadedChanged: {
-        if(sceneUnloaded)
+        if(sceneUnloaded) {
             App.debug('Scene unloaded',currentScene)
+            if(currentScene == "Tutorial") {
+                inventory.clear()
+            }
+            clearDynamicallyLoaded()
+        }
     }
 
     Timer {
@@ -1002,7 +1011,8 @@ Item {
                 wc = 3
             messages.queue.push( {
                                     'show': Math.round((wc/wpm)*60*1000),
-                                    'msg':arguments[i]
+                                    'msg':arguments[i],
+                                    'of': '('+(i+1)+'/'+arguments.length+')'
                                 });
         }
         messages.show = true
@@ -1038,9 +1048,12 @@ Item {
                     var o = queue.shift()
                     autoHideTextTimer.interval = o.show
                     messageText.text = o.msg
+                    if(o.of !== '(1/1)')
+                        messageOfText.text = o.of
                 } else {
                     messages.show = false
                     messageText.text = ""
+                    messageOfText.text = ""
                 }
             }
 
@@ -1068,6 +1081,20 @@ Item {
 
         }
 
+        Text {
+            id: messageOfText
+
+            anchors {
+                right: parent.right
+                verticalCenter: parent.verticalCenter
+                rightMargin: 10
+            }
+
+            color: core.colors.yellow
+            style: Text.Outline; styleColor: core.colors.black
+            font { family: core.fonts.standard.name; }
+            font.pixelSize: 30
+        }
 
         states: [
             State {
@@ -1098,6 +1125,7 @@ Item {
             onClicked: {
                 messages.show = false
                 messageText.text = ""
+                messageOfText.text = ""
                 messages.queue = []
             }
         }

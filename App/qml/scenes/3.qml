@@ -171,6 +171,7 @@ Base {
                         name: "coin",
                         type: "Object",
                         scene: sceneName,
+                        description: "It's a coin. With a very matte finish",
                         x: 190,
                         y: 300,
                         itemSource: App.getAsset("sprites/coin/coin.png")

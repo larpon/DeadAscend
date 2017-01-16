@@ -24,6 +24,7 @@ Item {
     signal removed(var object)
     signal notRemoved(var object)
     signal updated()
+    signal cleared()
 
     Store {
         id: store
@@ -111,7 +112,7 @@ Item {
             contents = t
             updated()
         }
-
+        cleared()
     }
 
 }

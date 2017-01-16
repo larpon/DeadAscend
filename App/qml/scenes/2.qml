@@ -47,7 +47,7 @@ Base {
                 x: 160,
                 y: 300,
                 itemSource: App.getAsset("sprites/cannula/cannula_empty.png"),
-                description: "An empty cannula. Not very helpful when empty...",
+                description: "An empty syringe. Not very helpful when empty...",
                 at: sceneName
 
             }
@@ -413,6 +413,15 @@ Base {
     }
 
     Area {
+        id: cannulaSmall
+
+        stateless: true
+        visible: cabinetOpened && !scene.emptyCannulaTaken
+
+        name: "cannula_small"
+    }
+
+    Area {
         id: cabinetDoorUp
 
         stateless: true
@@ -567,7 +576,7 @@ Base {
                 x: 36; y: 36
                 width: 210; height: 100
 
-                round: true
+                round: false
                 stateless: true
 
                 name: "lift_up"
@@ -592,7 +601,7 @@ Base {
                 x: 34; y: 208
                 width: 210; height: 100
 
-                round: true
+                round: false
                 stateless: true
 
                 name: "lift_down"
@@ -693,6 +702,19 @@ Base {
 
                     }
 
+                    DropSpot {
+                        anchors { fill: parent }
+                        keys: [ "coin" ]
+
+                        name: "cab_drop"
+
+                        enabled: coinsUsed <= 1
+
+                        onDropped: {
+                            sounds.play("tick_soft")
+                            game.setText("It won't open the door...","Maybe try it with the hinge?")
+                        }
+                    }
                 }
 
                 SequentialAnimation {

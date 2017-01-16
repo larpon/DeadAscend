@@ -38,7 +38,7 @@ Base {
         if(step === 2)
             return 'Good job!'
         if(step === 3)
-            return 'Tab objects<br>to pick them up'
+            return 'Tab once on objects<br>to pick them up'
         if(step === 4)
             return 'Good job!'
         if(step === 5)

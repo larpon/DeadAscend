@@ -215,7 +215,6 @@ Base {
 
     }
 
-
     Area {
         name: "scooter"
 
@@ -414,6 +413,14 @@ Base {
 
             } else {
                 elevatorDoor.setActiveSequence('close')
+            }
+        }
+    }
+
+    onObjectClicked: {
+        if(object.name === "open_sack" || object.name === "sacks") {
+            if(game.inventory.has('grain')) {
+                object.description = 'No need for more grain'
             }
         }
     }
