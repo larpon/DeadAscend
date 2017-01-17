@@ -12,7 +12,13 @@ Item {
     anchors { fill: parent }
 
     paused: core.paused
-    onPausedChanged: { App.debug('Game',paused ? 'paused' : 'continued') }
+    onPausedChanged: {
+        App.debug('Game',paused ? 'paused' : 'continued')
+        if(paused) {
+            store.save()
+        }
+
+    }
 
     property bool ready: (scene && scene.ready)
 
@@ -252,18 +258,7 @@ Item {
         Mode {
             name: 'in-game'
             onEnter: sceneLoader.opacity = 1
-            onLeave: {
-                sceneLoader.opacity = 0
-            }
-        }
-
-        Mode {
-            name: 'pause'
-            when: game.paused
-            onEnter: onBack(function(){
-                core.pauses.user = false
-            })
-            onLeave: goBack()
+            onLeave: sceneLoader.opacity = 0
         }
 
     }
@@ -273,7 +268,8 @@ Item {
         previousScene = currentScene
         clearDynamicallyLoaded()
         sceneLoader.active = false
-        sceneLoadTimer.scene = scene
+        sceneLoadDelayed.scene = scene
+        sceneLoadDelayed.restart()
     }
 
     readonly property bool sceneUnloaded: !sceneLoader.active || !sceneLoader.status === Loader.Ready
@@ -284,21 +280,6 @@ Item {
                 inventory.clear()
             }
             clearDynamicallyLoaded()
-        }
-    }
-
-    Timer {
-        id: sceneLoadTimer
-        running: sceneUnloaded
-        interval: 500
-        repeat: true
-        property string scene: ""
-        onTriggered: {
-            if(scene !== "") {
-                game.currentScene = scene
-                sceneLoader.active = true
-            } else
-                stop()
         }
     }
 
@@ -570,32 +551,43 @@ Item {
         }
     }
 
-    Loader {
-        id: pauseLoader
-        anchors { fill: parent }
-        source: 'menus/Pause.qml'
-        active: opacity > 0
-
-        visible: status == Loader.Ready && opacity > 0
-
-        opacity: game.paused ? 1 : 0
-        Behavior on opacity {
-            NumberAnimation { duration: 200 }
-        }
-    }
-
 //    Rectangle {
 //        anchors { fill: parent }
 //        color: "black"
 //    }
 
+    // NOTE Hack to fix a stupid design error - leading to some unexpected scene loads
+    //
+    Timer {
+        running: sceneLoader.active
+        interval: 1000
+        onTriggered: {
+            App.debug('FIX setting',sceneLoader.source,'to','scenes/'+game.currentScene+'.qml')
+            sceneLoader.source = 'scenes/'+game.currentScene+'.qml'
+        }
+    }
+
+    Timer {
+        id: sceneLoadDelayed
+        interval: 500
+        property string scene: ""
+        onTriggered: {
+            game.currentScene = scene
+            sceneLoader.active = true
+        }
+    }
+
     Loader {
         id: sceneLoader
         anchors { fill: parent }
 
-        source: 'scenes/'+currentScene+'.qml'
+        source: ""
 
         active: opacity > 0
+        onActiveChanged: {
+            if(!active)
+                source = ""
+        }
 
         visible: status == Loader.Ready && opacity > 0
 
@@ -806,113 +798,115 @@ Item {
 
     }
 
-//    MouseArea {
-//        id: glslm
-//        anchors { fill: parent }
-//        hoverEnabled: true
+    /*
+    MouseArea {
+        id: glslm
+        anchors { fill: parent }
+        hoverEnabled: true
 
-//        property var screenCoords: mapToItem(core,mouseX,mouseY)
-//        propagateComposedEvents: true
-//    }
+        property var screenCoords: mapToItem(core,mouseX,mouseY)
+        propagateComposedEvents: true
+    }
 
 
-//    ShaderEffectSource {
-//        id: theSource
-//        sourceItem: sceneLoader
-//    }
+    ShaderEffectSource {
+        id: theSource
+        sourceItem: sceneLoader
+    }
 
-//    ShaderEffect {
-//        id: glsl
-//        //https://www.shadertoy.com/view/Mlt3Df
-//        //https://github.com/bh/cool-old-term/blob/master/app/PreprocessedTerminal.qml#L362
-//        //http://stackoverflow.com/questions/40515921/qt-qml-spotlights-effect/
-//        width: sceneLoader.width
-//        height: sceneLoader.height
-//        property var source: theSource
-//        property real radius: 0.25
-//        property size mouse: Qt.size(glslm.screenCoords.x,core.height-glslm.screenCoords.y)
-//        property size resolution: Qt.size(core.width, core.height)
-//        onLogChanged: console.log('Shader',log)
-//        fragmentShader: "
-//            uniform highp float radius;
-//            uniform sampler2D source;
-//            uniform highp vec2 mouse;
-//            varying highp vec2 qt_TexCoord0;
-//            uniform lowp float qt_Opacity;
-//            uniform highp vec2 resolution;
+    ShaderEffect {
+        id: glsl
+        //https://www.shadertoy.com/view/Mlt3Df
+        //https://github.com/bh/cool-old-term/blob/master/app/PreprocessedTerminal.qml#L362
+        //http://stackoverflow.com/questions/40515921/qt-qml-spotlights-effect/
+        width: sceneLoader.width
+        height: sceneLoader.height
+        property var source: theSource
+        property real radius: 0.25
+        property size mouse: Qt.size(glslm.screenCoords.x,core.height-glslm.screenCoords.y)
+        property size resolution: Qt.size(core.width, core.height)
+        onLogChanged: console.log('Shader',log)
+        fragmentShader: "
+            uniform highp float radius;
+            uniform sampler2D source;
+            uniform highp vec2 mouse;
+            varying highp vec2 qt_TexCoord0;
+            uniform lowp float qt_Opacity;
+            uniform highp vec2 resolution;
 
-//            void main() {
+            void main() {
 
-//                mediump float vecLength = length( ( gl_FragCoord.xy / resolution.x ) - ( mouse.xy / resolution.x ) );
+                mediump float vecLength = length( ( gl_FragCoord.xy / resolution.x ) - ( mouse.xy / resolution.x ) );
 
-//                if( vecLength <= radius )
-//                {
-//                    gl_FragColor = texture2D( source, qt_TexCoord0.xy ) * smoothstep( radius, 0.0, vecLength );
-//                }
-//                else
-//                {
-//                   gl_FragColor = vec4( 0.0, 0.0, 0.0, 1.0 );
-//                }
+                if( vecLength <= radius )
+                {
+                    gl_FragColor = texture2D( source, qt_TexCoord0.xy ) * smoothstep( radius, 0.0, vecLength );
+                }
+                else
+                {
+                   gl_FragColor = vec4( 0.0, 0.0, 0.0, 1.0 );
+                }
 
-//            }
-//        "
+            }
+        "
 
-//        Item {
-//            id: wobbleSlider
-//            anchors.left: parent.left
-//            anchors.right: parent.right
-//            anchors.top: parent.top
-//            height: 40
-//            property real value: bar.x / (foo.width - bar.width)
-//            Item {
-//                id: foo
-//                width: parent.width - 4
-//                height: 6
-//                anchors.centerIn: parent
+        Item {
+            id: wobbleSlider
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.top: parent.top
+            height: 40
+            property real value: bar.x / (foo.width - bar.width)
+            Item {
+                id: foo
+                width: parent.width - 4
+                height: 6
+                anchors.centerIn: parent
 
-//                Rectangle {
-//                    height: parent.height
-//                    anchors.left: parent.left
-//                    anchors.right: bar.horizontalCenter
-//                    color: "blue"
-//                    radius: 3
-//                }
-//                Rectangle {
-//                    height: parent.height
-//                    anchors.left: bar.horizontalCenter
-//                    anchors.right: parent.right
-//                    color: "gray"
-//                    radius: 3
-//                }
-//                Rectangle {
-//                    anchors { fill: parent }
-//                    color: "transparent"
-//                    radius: 3
-//                    border.width: 2
-//                    border.color: "black"
-//                }
+                Rectangle {
+                    height: parent.height
+                    anchors.left: parent.left
+                    anchors.right: bar.horizontalCenter
+                    color: "blue"
+                    radius: 3
+                }
+                Rectangle {
+                    height: parent.height
+                    anchors.left: bar.horizontalCenter
+                    anchors.right: parent.right
+                    color: "gray"
+                    radius: 3
+                }
+                Rectangle {
+                    anchors { fill: parent }
+                    color: "transparent"
+                    radius: 3
+                    border.width: 2
+                    border.color: "black"
+                }
 
-//                Rectangle {
-//                    id: bar
-//                    x: parent.width/20
-//                    y: -7
-//                    width: 20
-//                    height: 20
-//                    radius: 15
-//                    color: "white"
-//                    border.width: 2
-//                    border.color: "black"
-//                    MouseArea {
-//                        anchors { fill: parent }
-//                        drag.target: parent
-//                        drag.axis: Drag.XAxis
-//                        drag.minimumX: 0
-//                        drag.maximumX: foo.width - parent.width
-//                    }
-//                }
-//            }
-//        }
-//    }
+                Rectangle {
+                    id: bar
+                    x: parent.width/20
+                    y: -7
+                    width: 20
+                    height: 20
+                    radius: 15
+                    color: "white"
+                    border.width: 2
+                    border.color: "black"
+                    MouseArea {
+                        anchors { fill: parent }
+                        drag.target: parent
+                        drag.axis: Drag.XAxis
+                        drag.minimumX: 0
+                        drag.maximumX: foo.width - parent.width
+                    }
+                }
+            }
+        }
+    }
+    */
 
     Image {
         anchors {
@@ -1245,6 +1239,20 @@ Item {
         setText('There we go. A patched bucket!')
     }
 
+
+    Loader {
+        id: pauseLoader
+        anchors { fill: parent }
+        source: 'menus/Pause.qml'
+        active: opacity > 0
+
+        visible: status == Loader.Ready && opacity > 0
+
+        opacity: game.paused ? 1 : 0
+        Behavior on opacity {
+            NumberAnimation { duration: 200 }
+        }
+    }
 
     Rectangle {
         id: loadingScreen

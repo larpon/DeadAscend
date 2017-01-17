@@ -2065,10 +2065,10 @@
                  "gid":52,
                  "height":113,
                  "id":213,
-                 "name":"shutgun",
+                 "name":"shotgun",
                  "properties":
                     {
-                     "description":"WOW - a real and loaded shutgun!",
+                     "description":"WOW - a real and loaded shotgun!",
                      "tileId":"17"
                     },
                  "propertytypes":

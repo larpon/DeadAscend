@@ -17,6 +17,10 @@ ImageAnimation {
     property string name: ""
     property string description: ""
 
+    property real margins: core.defaultMargins
+    onInputChanged: { if(input) input.anchors.margins = margins }
+    onMarginsChanged: { if(input) input.anchors.margins = margins }
+
     property alias store: store
     property bool stateless: name == ""
 

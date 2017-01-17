@@ -18,6 +18,10 @@ Entity {
 
     property string itemSource: ""
 
+    property real margins: core.defaultMargins
+    onInputChanged: { if(input) input.anchors.margins = margins }
+    onMarginsChanged: { if(input) input.anchors.margins = margins }
+
     property alias store: store
     property bool stateless: name == ""
 
@@ -38,7 +42,7 @@ Entity {
 
     MouseArea {
         id: rect
-        anchors { fill: parent }
+        anchors { fill: parent; margins: core.defaultMargins }
         enabled: clickable && !round
 
         onClicked: area.clicked(mouse)
@@ -46,7 +50,7 @@ Entity {
 
     RoundMouseArea {
         id: rnd
-        anchors { fill: parent }
+        anchors { fill: parent; margins: core.defaultMargins }
         enabled: clickable && round
 
         onClicked: area.clicked(mouse)

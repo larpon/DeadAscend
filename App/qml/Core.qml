@@ -17,6 +17,8 @@ Item {
     property alias fonts: fonts
     property alias viewport: view.viewport
 
+    readonly property real defaultMargins: Qak.platform.isMobile ? -20 : -10
+
     Component.onCompleted: {
         onBack(function(){ modes.set('quit') })
 

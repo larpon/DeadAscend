@@ -11,7 +11,7 @@ Item {
 
     anchors { fill: parent }
 
-    paused: App.paused
+    paused: core.paused
     onPausedChanged: App.debug('Scene',sceneName,paused ? 'paused' : 'continued')
 
     Component.onCompleted: game.elevatorPanel.show = false

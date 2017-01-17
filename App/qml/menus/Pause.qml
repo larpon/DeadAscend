@@ -33,25 +33,31 @@ Rectangle {
                 anchors.horizontalCenter: parent.horizontalCenter
                 allUppercase: true
                 text: qsTr("Resume")
-                onClicked: core.pauses.user = false
+                onClicked: core.goBack()
             }
 
             TextButton {
                 anchors.horizontalCenter: parent.horizontalCenter
                 allUppercase: true
                 text: qsTr("Menu")
-                onClicked: core.modes.set('menu')
+                onClicked: { core.goBack(); core.modes.set('menu') }
             }
 
             TextButton {
                 anchors.horizontalCenter: parent.horizontalCenter
                 allUppercase: true
                 text: qsTr("Exit")
-                onClicked: core.modes.set('quit')
+                onClicked: { core.goBack(); core.modes.set('quit') }
             }
 
         }
 
+    }
+
+    Component.onCompleted: {
+        onBack(function(){
+            core.pauses.user = false
+        })
     }
 
 

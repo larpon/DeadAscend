@@ -27,7 +27,7 @@ Base {
         store.load()
 
         if(!aSwitch.active)
-            game.setText("The room is pitch dark. You're likely to get eaten by a zombie. You better find some light somewhere.","TIP: There's a switch in here somewhere")
+            game.setText("The room is pitch dark. You better find some light somewhere.","Maybe there's a switch in here somewhere?")
         else
             showExit()
 

@@ -681,6 +681,8 @@ Base {
                 stateless: true
                 visible: !cabinetOpened
 
+                margins: 20
+
                 description: "The cabinet door is locked. Cabinets always hold useful stuff!"
 
                 Image {
@@ -783,6 +785,7 @@ Base {
                             width: sourceSize.width; height: sourceSize.height
                             source: App.getAsset("sprites/medicine_cabinet/screw_top.png")
                         }
+
                     }
 
                     Area {
@@ -801,6 +804,7 @@ Base {
                             source: App.getAsset("sprites/medicine_cabinet/screw_bottom.png")
 
                         }
+
                     }
 
                     SequentialAnimation {
@@ -824,7 +828,7 @@ Base {
                 }
 
                 DropSpot {
-                    anchors { fill: parent }
+                    anchors { fill: parent; margins: core.defaultMargins }
                     keys: [ "coin" ]
 
                     name: "coin_drop"

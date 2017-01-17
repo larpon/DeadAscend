@@ -12,6 +12,8 @@ Base {
 
     ready: store.isLoaded && elevatorDoor.ready
 
+    paused: core.paused || miniGamePaused
+
     onReadyChanged: {
 
         if(game.helpCalled && !store.miniGameCompleted) {
@@ -117,6 +119,9 @@ Base {
         interval: 4000
         onTriggered: {
 
+            if(scene.paused)
+                return
+
             nextZid++
 
             var attrs = {
@@ -133,6 +138,16 @@ Base {
 
             // Next spawn
             interval = Aid.randomRangeInt(100,600)
+
+            if(nextZid == 14) {
+                if(game.inventory.has('shotgun')) {
+                    miniGameAlert.state = "shown"
+                    scene.miniGamePaused = true
+                } else {
+                    miniGameAlertNoGun.state = "shown"
+                    scene.miniGamePaused = true
+                }
+            }
         }
     }
 
@@ -147,6 +162,8 @@ Base {
 
             signal died()
 
+            paused: scene.paused
+
             onDied: {
                 scene.miniGameZombiesKilled++
                 tt.z = -900
@@ -158,7 +175,7 @@ Base {
                 //anchors.centerIn: parent
                 running: true
                 visible: running
-                paused: !visible || scene.miniGamePaused
+                paused: !visible || scene.paused
 
                 MouseArea {
                     anchors { fill: parent }
@@ -182,7 +199,7 @@ Base {
                 x: 0.5; y: -height
                 //anchors.centerIn: parent
                 visible: !zwalk.animating
-                paused: !visible || scene.miniGamePaused
+                paused: !visible || scene.paused
                 onSequenceNameChanged: {
                     if(sequenceName === "dead")
                         tt.died()
@@ -589,6 +606,30 @@ Base {
         ]
     }
 
+
+    ConfirmDialog {
+        id: miniGameAlert
+        anchors { centerIn: parent }
+
+        text: qsTr("The zombies are coming!<br>Furtunately you have your shotgun!<br><br>Tab on the zombies to shot them<br> - SHOOT THEM ALL -")
+        acceptText: qsTr("SUCK ON THIS!")
+        rejectText: qsTr("EAT LEAD!")
+
+        onAccepted: scene.miniGamePaused = false
+        onRejected: scene.miniGamePaused = false
+    }
+
+    ConfirmDialog {
+        id: miniGameAlertNoGun
+        anchors { centerIn: parent }
+
+        text: qsTr("A horde of zombies are coming!<br>You'll need something to protect yourself!<br>See if you can find something in the tower!")
+        acceptText: qsTr("YES - OK")
+        rejectText: qsTr("YES!")
+
+        onAccepted: { scene.miniGamePaused = false; game.goToScene("7") }
+        onRejected: { scene.miniGamePaused = false; game.goToScene("7") }
+    }
 
     onObjectDropped: {
     }

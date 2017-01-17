@@ -303,9 +303,8 @@ Base {
 
                 game.spawnObject(object,function(o){
                     game.inventory.add(o)
+                    game.setText("It's full of infested zombie blood now!")
                 })
-
-                game.setText("It's full of infested zombie blood now!")
 
                 drop.accept()
                 blacklistObject(o.name)
@@ -639,7 +638,9 @@ Base {
                         description: "... OK. So this is a zombie hamster. It looks pretty strong - but it's hideous",
                         scene: sceneName
                     }
-                    game.spawnObject(object)
+                    game.spawnObject(object,function(){
+                        game.setText("What. The...","...")
+                    })
                     scene.hamsterIsZombie = true
                     drop.accept()
                     blacklistObject(o.name)

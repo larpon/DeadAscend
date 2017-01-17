@@ -11,6 +11,10 @@ Entity {
     width: image.width
     height: image.height
 
+    property real margins: core.defaultMargins
+    onInputChanged: { if(input) input.anchors.margins = margins }
+    onMarginsChanged: { if(input) input.anchors.margins = margins }
+
     clickable: !mover.moving
     draggable: !mover.moving
     source: itemSource
@@ -178,6 +182,13 @@ Entity {
                 sfx.add("object/"+name,tag,sounds[tag])
             }
         }
+
+        // Ugly way to set bigger margins on some particular small objects
+        if(name === "coin")
+            margins = core.defaultMargins - 20
+        if(name === "bubblegum")
+            margins = core.defaultMargins - 20
+
     }
     Component.onDestruction: {
         core.sounds.clear("object/"+name)
