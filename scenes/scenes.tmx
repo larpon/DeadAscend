@@ -413,6 +413,7 @@
    <properties>
     <property name="acceptDrops" type="bool" value="true"/>
     <property name="combines" value="[ &quot;bubblegum&quot; ]"/>
+    <property name="description" value="An old bucket. It's got a hole in it"/>
     <property name="soundMap">{
 	&quot;onDragged&quot;:&quot;generic&quot;,
 	&quot;onReturned&quot;:&quot;generic&quot;,

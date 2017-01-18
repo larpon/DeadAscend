@@ -29,7 +29,6 @@ Item {
         }
 
         musicPlayer.play()
-
     }
 
     Component.onDestruction: {

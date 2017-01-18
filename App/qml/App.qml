@@ -16,8 +16,8 @@ QtObject {
         property var topics: ({})
 
         // Get or create a named handler list
-        function list(type) {
-            var t = type.toLowerCase()
+        function list(topic) {
+            var t = topic.replace(/\/$/, "").toLowerCase()
             return topics[t] || (topics[t] = [])
         }
 

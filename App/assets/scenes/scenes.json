@@ -146,6 +146,7 @@
                     {
                      "acceptDrops":true,
                      "combines":"[ \"bubblegum\" ]",
+                     "description":"An old bucket. It's got a hole in it",
                      "soundMap":"{\n\t\"onDragged\":\"generic\",\n\t\"onReturned\":\"generic\",\n\t\"onAddedToInventory\":\"generic\",\n\t\"onCombined\":\"generic\",\n\t\"onDropped\":\"generic\"\n}",
                      "sounds":"{\n\t\"generic\":\"sounds\/bucket_put.wav\"\n}",
                      "tileId":"0"
@@ -154,6 +155,7 @@
                     {
                      "acceptDrops":"bool",
                      "combines":"string",
+                     "description":"string",
                      "soundMap":"string",
                      "sounds":"string",
                      "tileId":"string"
