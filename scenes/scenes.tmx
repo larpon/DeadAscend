@@ -405,10 +405,10 @@
    </properties>
   </object>
  </objectgroup>
- <imagelayer name="0 bg" visible="0">
+ <imagelayer name="0 bg">
   <image source="../App/assets/scenes/0.png" width="1100" height="660"/>
  </imagelayer>
- <objectgroup draworder="index" name="0" visible="0">
+ <objectgroup draworder="index" name="0">
   <object id="2" name="bucket" type="Object" gid="1" x="107.409" y="571.306" width="74" height="97">
    <properties>
     <property name="acceptDrops" type="bool" value="true"/>
@@ -507,6 +507,7 @@
    <properties>
     <property name="acceptDrops" type="bool" value="true"/>
     <property name="combines" value="[ &quot;bucket&quot; ]"/>
+    <property name="description" value="An old - but still sticky gum"/>
     <property name="soundMap">{
 	&quot;onDragged&quot;:&quot;generic&quot;,
 	&quot;onReturned&quot;:&quot;generic&quot;,
@@ -705,6 +706,7 @@
   </object>
   <object id="52" name="fuse" type="Object" gid="18" x="168" y="516.333" width="24" height="30">
    <properties>
+    <property name="description" value="A small fuse"/>
     <property name="tileId" value="3"/>
    </properties>
   </object>
@@ -806,10 +808,10 @@
    </properties>
   </object>
  </objectgroup>
- <imagelayer name="2 bg">
+ <imagelayer name="2 bg" visible="0">
   <image source="../App/assets/scenes/2.png" width="1100" height="660"/>
  </imagelayer>
- <objectgroup draworder="index" name="2">
+ <objectgroup draworder="index" name="2" visible="0">
   <object id="75" name="lift" type="AnimatedArea" gid="38" x="576" y="531" width="173" height="531"/>
   <object id="76" name="bottle_green" type="Object" gid="39" x="575" y="721" width="78" height="154">
    <properties>

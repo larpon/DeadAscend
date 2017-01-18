@@ -127,7 +127,7 @@
          "name":"0 bg",
          "opacity":1,
          "type":"imagelayer",
-         "visible":false,
+         "visible":true,
          "width":0,
          "x":0,
          "y":0
@@ -451,6 +451,7 @@
                     {
                      "acceptDrops":true,
                      "combines":"[ \"bucket\" ]",
+                     "description":"An old - but still sticky gum",
                      "soundMap":"{\n\t\"onDragged\":\"generic\",\n\t\"onReturned\":\"generic\",\n\t\"onAddedToInventory\":\"generic\",\n\t\"onDropped\":\"generic\"\n}",
                      "sounds":"{\n\t\"generic\":\"sounds\/juicy_gum.wav\"\n}",
                      "tileId":"8"
@@ -459,6 +460,7 @@
                     {
                      "acceptDrops":"bool",
                      "combines":"string",
+                     "description":"string",
                      "soundMap":"string",
                      "sounds":"string",
                      "tileId":"string"
@@ -719,7 +721,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "width":0,
          "x":0,
          "y":0
@@ -1153,10 +1155,12 @@
                  "name":"fuse",
                  "properties":
                     {
+                     "description":"A small fuse",
                      "tileId":"3"
                     },
                  "propertytypes":
                     {
+                     "description":"string",
                      "tileId":"string"
                     },
                  "rotation":0,
@@ -1542,7 +1546,7 @@
          "name":"2 bg",
          "opacity":1,
          "type":"imagelayer",
-         "visible":true,
+         "visible":false,
          "width":0,
          "x":0,
          "y":0
@@ -2147,7 +2151,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "width":0,
          "x":0,
          "y":0

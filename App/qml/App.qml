@@ -11,6 +11,35 @@ QtObject {
 
     property bool paused: !Qt.application.active
 
+    property QtObject event: QtObject {
+
+        property var topics: ({})
+
+        // Get or create a named handler list
+        function list(type) {
+            var t = type.toLowerCase()
+            return topics[t] || (topics[t] = [])
+        }
+
+        function sub(topic, handler) {
+            list(topic).push(handler)
+        }
+
+        function unsub(topic, handler) {
+            var e = list(topic),
+            i = e.indexOf(handler)
+            if (~i) e.splice(i, 1)
+        }
+
+        function pub(topic, event) {
+            var l = list('*').concat(list(topic))
+            for(var k in l) {
+                l[k](event)
+            }
+        }
+
+    }
+
     Component.onCompleted: {
         logger.settings.prefix = "Dead Ascend"
 

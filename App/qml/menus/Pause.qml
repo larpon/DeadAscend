@@ -33,21 +33,21 @@ Rectangle {
                 anchors.horizontalCenter: parent.horizontalCenter
                 allUppercase: true
                 text: qsTr("Resume")
-                onClicked: core.goBack()
+                onClicked: core.goBack() // Back to game
             }
 
             TextButton {
                 anchors.horizontalCenter: parent.horizontalCenter
                 allUppercase: true
                 text: qsTr("Menu")
-                onClicked: { core.goBack(); core.modes.set('menu') }
+                onClicked: { core.goBack(); core.goBack(); } // Game -> Menu
             }
 
             TextButton {
                 anchors.horizontalCenter: parent.horizontalCenter
                 allUppercase: true
                 text: qsTr("Exit")
-                onClicked: { core.goBack(); core.modes.set('quit') }
+                onClicked: { core.goBack(); core.goBack(); core.goBack(); } // Game -> Menu -> Quit
             }
 
         }

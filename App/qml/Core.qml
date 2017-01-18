@@ -29,6 +29,7 @@ Item {
         }
 
         musicPlayer.play()
+
     }
 
     Component.onDestruction: {
@@ -347,6 +348,7 @@ Item {
     property var backQueue: []
     function goBack() {
         if(backQueue.length > 0) {
+            App.debug('Popping from back queue')
             var func = backQueue.pop()
             var t = backQueue
             backQueue = t
@@ -355,6 +357,7 @@ Item {
     }
 
     function onBack(func) {
+        App.debug('Pushing to back queue')
         backQueue.push(func)
         var t = backQueue
         backQueue = t
