@@ -147,13 +147,27 @@ Application {
     Timer {
         id: bannerRetryTimer
         interval: 30000
-        onTriggered: banner.load()
+        property int reloads: 0
+        onTriggered: {
+            if(reloads < 50) {
+                banner.load()
+                reloads++
+            } else
+                App.info('Giving up banner ad reload')
+        }
     }
 
     Timer {
         id: interstitialRetryTimer
         interval: 30000
-        onTriggered: interstitial.load()
+        property int reloads: 0
+        onTriggered: {
+            if(reloads < 50) {
+                interstitial.load()
+                reloads++
+            } else
+                App.info('Giving up interstitial reload')
+        }
     }
 
     // QtFirebase
@@ -205,9 +219,21 @@ Application {
 
         enabled: true
 
-        minimumSessionDuration: 1000
+        minimumSessionDuration: 5000
 
-        sessionTimeout: 5000
+        sessionTimeout: 10000
+
+        Component.onCompleted: {
+            App.event.sub('game/object/clicked',function(e){
+                analytics.logEvent('Object','Click',e.name)
+                analytics.logEvent('Object','Click '+e.name)
+                analytics.logEvent('Object','Click '+e.name+' at '+e.at)
+                if(e.at === 'inventory')
+                    analytics.logEvent('Object','Inventory click',e.name)
+                else
+                    analytics.logEvent('Object','Other click',e.name)
+            })
+        }
     }
 
 

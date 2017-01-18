@@ -44,8 +44,11 @@ Item {
     Connections {
         target: game
         onObjectReady: { App.debug('Object ready',object.name); objectReady(object)}
-        onObjectDropped: { App.debug('Object',object.name,'dropped from',object.at); objectDropped(object)}
-        onObjectClicked: { App.debug('Object clicked',object.name); objectClicked(object)}
+        onObjectDropped: { App.debug('Object',object.name,'dropped from',object.at); objectDropped(object) }
+        onObjectClicked: {
+            App.debug('Object clicked',object.name); objectClicked(object)
+            App.event.pub('game/object/clicked',{ name: object.name, at: object.at })
+        }
         onObjectTravelingToInventory: { App.debug('Object traveling to inventory',object.name); objectTravelingToInventory(object) }
         onObjectDragged: { App.debug('Object',object.name,'dragged to',object.at); objectDragged(object) }
         onObjectReturned: { App.debug('Object',object.name,'returned to',object.at);  objectReturned(object) }
