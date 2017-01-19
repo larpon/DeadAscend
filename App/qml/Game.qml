@@ -1042,7 +1042,6 @@ Item {
             interval: 3000
             onTriggered: {
                 var queue = messages.queue
-                console.log('t','queue.length',queue.length)
                 if(queue.length > 0) {
                     var o = queue.shift()
                     messageText.text = o.msg
