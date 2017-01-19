@@ -996,20 +996,24 @@ Item {
     }
 
     function setText(txt) {
+        messages.show = false
         var wpm = 160
         messages.queue = []
-        messages.show = false
         for (var i = 0; i < arguments.length; i++) {
-            var wc = arguments[i].split(' ').length;
+            var wc = arguments[i].split(' ').length
             if(wc <= 2)
                 wc = 3
+            var showFor = Math.round((wc/wpm)*60*1000)
             messages.queue.push( {
-                                    'show': Math.round((wc/wpm)*60*1000),
+                                    'show': showFor,
                                     'msg':arguments[i],
                                     'of': '('+(i+1)+'/'+arguments.length+')'
                                 });
+            if(i == 0)
+                autoHideTextTimer.interval = showFor
         }
         messages.show = true
+        autoHideTextTimer.restart()
     }
 
     Image {
@@ -1032,22 +1036,24 @@ Item {
 
         Timer {
             id: autoHideTextTimer
-            running: messages.show
+            running: false
             repeat: true
             triggeredOnStart: true
             interval: 3000
             onTriggered: {
                 var queue = messages.queue
+                console.log('t','queue.length',queue.length)
                 if(queue.length > 0) {
                     var o = queue.shift()
-                    autoHideTextTimer.interval = o.show
                     messageText.text = o.msg
                     if(o.of !== '(1/1)')
                         messageOfText.text = o.of
+                    autoHideTextTimer.interval = o.show
                 } else {
                     messages.show = false
                     messageText.text = ""
                     messageOfText.text = ""
+                    autoHideTextTimer.stop()
                 }
             }
 
@@ -1117,6 +1123,7 @@ Item {
         MouseArea {
             anchors { fill: parent }
             onClicked: {
+                console.log('messages cleared')
                 messages.show = false
                 messageText.text = ""
                 messageOfText.text = ""

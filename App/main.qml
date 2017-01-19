@@ -226,12 +226,12 @@ Application {
         Component.onCompleted: {
             App.event.sub('game/object/clicked',function(e){
                 analytics.logEvent('Object','Click',e.name)
-                analytics.logEvent('Object','Click '+e.name)
-                analytics.logEvent('Object','Click '+e.name+' at '+e.at)
+                analytics.logEvent('Object','Click_'+e.name)
+                analytics.logEvent('Object','Click_'+e.name+'_at_'+e.at)
                 if(e.at === 'inventory')
-                    analytics.logEvent('Object','Inventory click',e.name)
+                    analytics.logEvent('Object','Inventory_click',e.name)
                 else
-                    analytics.logEvent('Object','Other click',e.name)
+                    analytics.logEvent('Object','Other_click',e.name)
             })
         }
     }
