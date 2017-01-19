@@ -57,4 +57,9 @@ DEFINES += GIT_VERSION=\\\"$$GIT_VERSION\\\"
 #    QMAKE_POST_LINK += /usr/libexec/PlistBuddy -c \"Set :CFBundleShortVersionString $${VERSION}\" $${INFO_PLIST_PATH}
 #}
 
-message(GIT_INITAL_VERSION = $$GIT_INITAL_VERSION"," GIT_VERSION $$GIT_VERSION"," VERSION $$VERSION)
+GIT_BRANCH_NAME = ""
+unix {
+    GIT_BRANCH_NAME = $$system(git rev-parse --abbrev-ref HEAD)
+}
+
+message(GIT_INITAL_VERSION = $$GIT_INITAL_VERSION"," GIT_VERSION $$GIT_VERSION"," VERSION $$VERSION $$GIT_BRANCH_NAME)

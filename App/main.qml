@@ -76,7 +76,7 @@ Application {
                 width: parent.width * 0.8
                 fillMode: Image.PreserveAspectFit
                 anchors.centerIn: parent
-                source: back.opacity > 0 ? App.getAsset('presents.png') : ''
+                source: back.opacity > 0 ? App.getAsset('publisher.png') : ''
 
                 Behavior on opacity {
                     NumberAnimation { duration: 500 }
@@ -89,7 +89,7 @@ Application {
                 width: parent.width * 0.8
                 fillMode: Image.PreserveAspectFit
                 anchors.centerIn: parent
-                source: back.opacity > 0 ? App.getAsset('games logo.png') : ''
+                source: back.opacity > 0 ? App.getAsset('studio.png') : ''
 
                 Behavior on opacity {
                     NumberAnimation { duration: 1000 }

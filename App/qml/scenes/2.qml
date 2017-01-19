@@ -139,7 +139,7 @@ Base {
     Item {
         x: 110; y: 50; z: 1
 
-        visible: hasFlypaper()
+        visible: hasFlypaper() && type === "left"
 
         function hasFlypaper() {
             var fp = game.getObject('flypaper')
@@ -335,6 +335,7 @@ Base {
         onFrame: {
             if(!fuseDropped)
                 return
+            App.debug('!!!!!',sequenceName,frame,changeLevel)
             if(sequenceName === "up" && frame === 12 && changeLevel) {
                 changeLevel = false
                 game.goToScene("3")

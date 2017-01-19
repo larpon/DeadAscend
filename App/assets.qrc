@@ -1030,5 +1030,7 @@
         <file>assets/fonts/Open_Sans/OpenSans-Regular.ttf</file>
         <file>assets/scenes/Tutorial_fg_shadow.png</file>
         <file>assets/scenes/Tutorial.png</file>
+        <file>assets/publisher.png</file>
+        <file>assets/studio.png</file>
     </qresource>
 </RCC>
