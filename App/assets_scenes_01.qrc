@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assets/scenes/8.png</file>
+        <file>assets/scenes/8_fg_shadow.png</file>
+        <file>assets/scenes/2_darkness_overlay_right.png</file>
+        <file>assets/scenes/7.png</file>
+        <file>assets/scenes/2_fg_shadow.png</file>
+        <file>assets/scenes/6office_fg_shadow.png</file>
+        <file>assets/scenes/6.png</file>
+        <file>assets/scenes/5.png</file>
+        <file>assets/scenes/5_fg_shadow.png</file>
+        <file>assets/scenes/Tutorial_fg_shadow.png</file>
+        <file>assets/scenes/3_fg_shadow.png</file>
+        <file>assets/scenes/2_darkness_overlay_left.png</file>
+        <file>assets/scenes/1_fg_shadow.png</file>
+        <file>assets/scenes/6office.png</file>
+        <file>assets/scenes/3.png</file>
+    </qresource>
+</RCC>

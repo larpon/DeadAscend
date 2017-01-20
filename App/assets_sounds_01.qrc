@@ -1,0 +1,27 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assets/sounds/klonk.wav</file>
+        <file>assets/sounds/key_tap.wav</file>
+        <file>assets/sounds/juicy_gum.wav</file>
+        <file>assets/sounds/inventory_01.wav</file>
+        <file>assets/sounds/heavy_drag.wav</file>
+        <file>assets/sounds/hatch_open.wav</file>
+        <file>assets/sounds/hatch_close.wav</file>
+        <file>assets/sounds/glass_smash.wav</file>
+        <file>assets/sounds/generic_tick.wav</file>
+        <file>assets/sounds/generic_move.wav</file>
+        <file>assets/sounds/generic_add.wav</file>
+        <file>assets/sounds/faucet_sqeak.wav</file>
+        <file>assets/sounds/elevator_doors_open.wav</file>
+        <file>assets/sounds/elevator_doors_close.wav</file>
+        <file>assets/sounds/ding_01.wav</file>
+        <file>assets/sounds/crack_smash.wav</file>
+        <file>assets/sounds/coin_drop.wav</file>
+        <file>assets/sounds/close_door.wav</file>
+        <file>assets/sounds/bucket_put.wav</file>
+        <file>assets/sounds/broken_rattle.wav</file>
+        <file>assets/sounds/beep.wav</file>
+        <file>assets/sounds/beep_wrong.wav</file>
+        <file>assets/sounds/chopper.wav</file>
+    </qresource>
+</RCC>
