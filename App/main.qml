@@ -1,5 +1,5 @@
 import QtQuick 2.0
-// qmlimportscanner bug
+// qmlimportscanner bug on iOS
 import QtQuick.Controls 1.4
 
 import Qak 1.0
@@ -181,7 +181,8 @@ Application {
         appId: Qt.platform.os == "android" ? "ca-app-pub-6606648560678905~8027290070" : "ca-app-pub-6606648560678905~9364422479"
 
         testDevices: [
-            "01987FA9D5F5CEC3542F54FB2DDC89F6"
+            "01987FA9D5F5CEC3542F54FB2DDC89F6",
+            "d206f9511ffc1bc2c7b6d6e0d0e448cc"
         ]
     }
 
