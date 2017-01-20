@@ -5,7 +5,7 @@
 	<key>CFBundleDisplayName</key>
         <string>Dead Ascend</string>
 	<key>CFBundleExecutable</key>
-        <string>MyApp</string>
+        <string>App</string>
 	<key>CFBundleGetInfoString</key>
         <string>Dead Ascend bundle</string>
 	<key>CFBundleIconFile</key>
@@ -77,8 +77,8 @@
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
-                <string>UIInterfaceOrientationLandscape</string>
-                <string>UIInterfaceOrientationLandscapeUpsideDown</string>
+                <string>UIInterfaceOrientationLandscapeLeft</string>
+                <string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 </dict>
 </plist>

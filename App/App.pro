@@ -14,7 +14,7 @@ HEADERS += \
     src/fileio.h
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
-# QML_IMPORT_PATH =
+QML_IMPORT_PATH =
 
 # Should be included before extensions
 # Default rules for deployment.
@@ -46,7 +46,8 @@ ios: {
     QMAKE_INFO_PLIST = $$PLATFORMS_DIR/ios/Info.plist
 
     DISTFILES += \
-        $$PLATFORMS_DIR/ios/Info.plist
+        $$PLATFORMS_DIR/ios/Info.plist \
+        $$PLATFORMS_DIR/ios/GoogleService-Info.plist
 }
 
 android: {

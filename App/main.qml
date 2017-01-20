@@ -1,4 +1,6 @@
 import QtQuick 2.0
+// qmlimportscanner bug
+import QtQuick.Controls 1.4
 
 import Qak 1.0
 import QtFirebase 1.0
@@ -146,7 +148,7 @@ Application {
 
     Timer {
         id: bannerRetryTimer
-        interval: 30000
+        interval: 45000
         property int reloads: 0
         onTriggered: {
             if(reloads < 50) {
@@ -159,7 +161,7 @@ Application {
 
     Timer {
         id: interstitialRetryTimer
-        interval: 30000
+        interval: 45000
         property int reloads: 0
         onTriggered: {
             if(reloads < 50) {
