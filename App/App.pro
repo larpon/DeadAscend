@@ -48,6 +48,11 @@ ios: {
     DISTFILES += \
         $$PLATFORMS_DIR/ios/Info.plist \
         $$PLATFORMS_DIR/ios/GoogleService-Info.plist
+
+    # You must deploy your Google Play config file
+    deployment.files = $$PLATFORMS_DIR/ios/GoogleService-Info.plist
+    deployment.path =
+    QMAKE_BUNDLE_DATA += deployment
 }
 
 android: {
