@@ -76,7 +76,6 @@ RESOURCES += \
     base.qrc \
     json.qrc \
     assets.qrc \
-    assets_sounds.qrc \
     assets_scenes.qrc \
     assets_sprites.qrc
 

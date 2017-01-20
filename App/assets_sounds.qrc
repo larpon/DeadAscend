@@ -46,8 +46,6 @@
         <file>assets/sounds/broken_rattle.wav</file>
         <file>assets/sounds/beep.wav</file>
         <file>assets/sounds/beep_wrong.wav</file>
-        <file>assets/sounds/bensound-ofeliasdream.aac</file>
-        <file>assets/sounds/bensound-ofeliasdream.mp3</file>
         <file>assets/sounds/chopper.wav</file>
     </qresource>
 </RCC>
