@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-        <string>AdCrash</string>
+        <string>Dead Ascend</string>
 	<key>CFBundleExecutable</key>
         <string>MyApp</string>
 	<key>CFBundleGetInfoString</key>
-        <string>AdCrash bundle</string>
+        <string>Dead Ascend bundle</string>
 	<key>CFBundleIconFile</key>
 	<string>AppIcon29x29.png</string>
 	<key>CFBundleIcons</key>
@@ -52,9 +52,9 @@
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-        <string>test.ad</string>
+        <string>ad.com.blackgrain.ios.deadascend</string>
 	<key>CFBundleName</key>
-        <string>AdCrash</string>
+        <string>Dead Ascend</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -77,8 +77,8 @@
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+                <string>UIInterfaceOrientationLandscape</string>
+                <string>UIInterfaceOrientationLandscapeUpsideDown</string>
 	</array>
 </dict>
 </plist>
