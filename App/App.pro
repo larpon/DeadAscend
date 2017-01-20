@@ -73,9 +73,12 @@ DISTFILES += \
     TODO.md
 
 RESOURCES += \
-    assets.qrc \
     base.qrc \
-    json.qrc
+    json.qrc \
+    assets.qrc \
+    assets_sounds.qrc \
+    assets_scenes.qrc \
+    assets_sprites.qrc
 
 unix|macx|win32: {
     RESOURCES += \

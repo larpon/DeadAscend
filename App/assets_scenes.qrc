@@ -1,0 +1,37 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assets/scenes/8.png</file>
+        <file>assets/scenes/8_fg_shadow.png</file>
+        <file>assets/scenes/2_darkness_overlay_right.png</file>
+        <file>assets/scenes/7.png</file>
+        <file>assets/scenes/2_fg_shadow.png</file>
+        <file>assets/scenes/6office_fg_shadow.png</file>
+        <file>assets/scenes/6.png</file>
+        <file>assets/scenes/5.png</file>
+        <file>assets/scenes/5_fg_shadow.png</file>
+        <file>assets/scenes/Tutorial_fg_shadow.png</file>
+        <file>assets/scenes/3_fg_shadow.png</file>
+        <file>assets/scenes/2_darkness_overlay_left.png</file>
+        <file>assets/scenes/1_fg_shadow.png</file>
+        <file>assets/scenes/6office.png</file>
+        <file>assets/scenes/3.png</file>
+        <file>assets/scenes/6_fg_shadow.png</file>
+        <file>assets/scenes/2.png</file>
+        <file>assets/scenes/4.png</file>
+        <file>assets/scenes/4_fg_shadow.png</file>
+        <file>assets/scenes/1.png</file>
+        <file>assets/scenes/Tutorial.png</file>
+        <file>assets/scenes/7_fg_shadow.png</file>
+        <file>assets/scenes/0_darkness.png</file>
+        <file>assets/scenes/0.png</file>
+        <file>assets/scenes/0_fg_shadow.png</file>
+        <file>assets/scenes/elevator_panel/fg_shadow.png</file>
+        <file>assets/scenes/elevator_panel/elevator_panel.png</file>
+        <file>assets/scenes/whiteboard/whiteboard.png</file>
+        <file>assets/scenes/medicine_cabinet/notch.png</file>
+        <file>assets/scenes/medicine_cabinet/fg_shadow.png</file>
+        <file>assets/scenes/lift_panel/lift_panel.png</file>
+        <file>assets/scenes/flask_mixer/flask_mixer.png</file>
+        <file>assets/scenes/keypad/keypad.png</file>
+    </qresource>
+</RCC>
