@@ -32,6 +32,8 @@ PLATFORMS_DIR = $$PWD/platforms
 
 ios: {
 
+    CONFIG += resources_big
+
     ios_icon.files = $$files($$PLATFORMS_DIR/ios/icons/AppIcon*.png)
 #    ios_icon.path = icons
     QMAKE_BUNDLE_DATA += ios_icon
@@ -49,8 +51,8 @@ ios: {
         $$PLATFORMS_DIR/ios/Info.plist \
         $$PLATFORMS_DIR/ios/GoogleService-Info.plist
 
-    RCC_BINARY_SOURCES += \
-        $$PWD/assets.qrc
+    #RCC_BINARY_SOURCES += \
+    #    $$PWD/assets.qrc
 
     # You must deploy your Google Play config file
     deployment.files = $$PLATFORMS_DIR/ios/GoogleService-Info.plist $$RCC_BINARY_SOURCES
@@ -85,7 +87,7 @@ RESOURCES += \
     base.qrc \
     json.qrc
 
-unix|macx|win32|android: {
+unix|macx|win32|android|ios: {
     RESOURCES += \
         assets.qrc
 }
