@@ -14,7 +14,7 @@ HEADERS += \
     src/fileio.h
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
-QML_IMPORT_PATH =
+QML_IMPORT_PATH +=
 
 # Should be included before extensions
 # Default rules for deployment.
@@ -49,8 +49,11 @@ ios: {
         $$PLATFORMS_DIR/ios/Info.plist \
         $$PLATFORMS_DIR/ios/GoogleService-Info.plist
 
+    RCC_BINARY_SOURCES += \
+        $$PWD/assets.qrc
+
     # You must deploy your Google Play config file
-    deployment.files = $$PLATFORMS_DIR/ios/GoogleService-Info.plist
+    deployment.files = $$PLATFORMS_DIR/ios/GoogleService-Info.plist $$RCC_BINARY_SOURCES
     deployment.path =
     QMAKE_BUNDLE_DATA += deployment
 }
@@ -80,19 +83,25 @@ DISTFILES += \
 
 RESOURCES += \
     base.qrc \
-    json.qrc \
-    assets.qrc \
-    assets_sounds_01.qrc \
-    assets_sounds_02.qrc \
-    assets_scenes_01.qrc \
-    assets_scenes_02.qrc \
-    assets_sprites_01.qrc \
-    assets_sprites_02.qrc \
-    assets_sprites_03.qrc
+    json.qrc
+
+unix|macx|win32|android: {
+    RESOURCES += \
+        assets.qrc
+}
 
 unix|macx|win32: {
     RESOURCES += \
         music.qrc
+}
+
+!isEmpty(RCC_BINARY_SOURCES) {
+    asset_builder.commands = $$[QT_HOST_BINS]/rcc -binary ${QMAKE_FILE_IN} -o ${QMAKE_FILE_OUT} -no-compress
+    asset_builder.depend_command = $$[QT_HOST_BINS]/rcc -list $$QMAKE_RESOURCE_FLAGS ${QMAKE_FILE_IN}
+    asset_builder.input = RCC_BINARY_SOURCES
+    asset_builder.output = $$OUT_PWD/${QMAKE_FILE_IN_BASE}.qrb
+    asset_builder.CONFIG += no_link target_predeps
+    QMAKE_EXTRA_COMPILERS += asset_builder
 }
 
 lupdate_only {

@@ -34,6 +34,10 @@ int main(int argc, char *argv[])
     qmlRegisterType<QtFirebaseAdMobInterstitial>("QtFirebase", 1, 0, "AdMobInterstitial");
     #endif
 
+    #if defined(Q_OS_IOS)
+    QResource::registerResource("assets.qrb");
+    #endif
+
     QGuiApplication app(argc, argv);
     app.setOrganizationName("Black Grain");
     app.setOrganizationDomain("blackgrain.dk");
