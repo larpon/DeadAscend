@@ -61,7 +61,7 @@ ios: {
     deployment.files += $$OUT_PWD/assets.rcc
 #   PRE_TARGETDEPS += assets # Doesn't work with iOS?
 
-    # You must deploy your own Google Play config file
+    # You must deploy your own service file from your Firebase console
     deployment.files += $$PLATFORMS_DIR/ios/GoogleService-Info.plist
     #deployment.path =
     QMAKE_BUNDLE_DATA += deployment
@@ -75,7 +75,7 @@ android: {
         $$ANDROID_PACKAGE_SOURCE_DIR/build.gradle \
         $$ANDROID_PACKAGE_SOURCE_DIR/gradle.properties \
         $$ANDROID_PACKAGE_SOURCE_DIR/local.properties \
-        $$ANDROID_PACKAGE_SOURCE_DIR/google-services.json \
+        $$ANDROID_PACKAGE_SOURCE_DIR/google-services.json \ # You must deploy your own services file from your Firebase console
         $$ANDROID_PACKAGE_SOURCE_DIR/src/com/blackgrain/android/deadascend/Main.java \
         $$ANDROID_PACKAGE_SOURCE_DIR/res/values/apptheme.xml \
         $$ANDROID_PACKAGE_SOURCE_DIR/res/values/strings.xml \
