@@ -333,7 +333,7 @@ Item {
     Timer {
         id: adTimer
         running: true
-        interval: 5 * (60*1000) // Minutes
+        interval: 7 * (60*1000) // Minutes
         repeat: true
         onTriggered: {
             //App.log('Show ad?',!interstitial.visible,interstitial.loaded)

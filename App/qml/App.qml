@@ -60,6 +60,9 @@ QtObject {
         if(Qak.platform.os === "android") {
             // TODO
             path = 'qrc:///'+Qak.resource.prefix+path
+        } else if(Qak.platform.os === "ios" && endsWith(path,'.aac')) {
+            path = path.split('/').reverse()[0]
+            path = 'file://'+Qak.resource.appPath()+'/'+path
         } else
             path = Qak.resource.url(path)
 

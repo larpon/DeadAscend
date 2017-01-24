@@ -34,10 +34,6 @@ int main(int argc, char *argv[])
     qmlRegisterType<QtFirebaseAdMobInterstitial>("QtFirebase", 1, 0, "AdMobInterstitial");
     #endif
 
-    #if defined(Q_OS_IOS)
-    QResource::registerResource("assets.qrb");
-    #endif
-
     QGuiApplication app(argc, argv);
     app.setOrganizationName("Black Grain");
     app.setOrganizationDomain("blackgrain.dk");
@@ -62,6 +58,15 @@ int main(int argc, char *argv[])
         engine.rootContext()->setContextProperty("adBuild", QVariant(true));
     #else
         engine.rootContext()->setContextProperty("adBuild", QVariant(false));
+    #endif
+
+    #if defined(Q_OS_IOS)
+    //qDebug() << "Register assets at" << QDir::currentPath()+QDir::separator()+"assets.rcc";
+    qDebug() << "Registering" << QCoreApplication::applicationDirPath()+"/assets.rcc";
+    if(QResource::registerResource(QCoreApplication::applicationDirPath()+"/assets.rcc"))
+        qDebug() << "Registered assets";
+    else
+        qDebug() << "FAILED registering assets";
     #endif
 
     engine.addImportPath("qrc:///");

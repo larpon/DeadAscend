@@ -1,7 +1,7 @@
 TEMPLATE = app
 
 QT += qml quick multimedia
-!no_desktop: QT += widgets
+#!no_desktop: QT += widgets
 
 CONFIG += c++11
 
@@ -32,18 +32,13 @@ PLATFORMS_DIR = $$PWD/platforms
 
 ios: {
 
-    CONFIG += resources_big
+    # Copy icons to app sandbox root folder
+    deployment.files += $$files($$PLATFORMS_DIR/ios/icons/AppIcon*.png)
+    deployment.files += $$files($$PLATFORMS_DIR/ios/iTunesArtwork*)
 
-    ios_icon.files = $$files($$PLATFORMS_DIR/ios/icons/AppIcon*.png)
-#    ios_icon.path = icons
-    QMAKE_BUNDLE_DATA += ios_icon
-
-    itunes_icon.files = $$files($$PLATFORMS_DIR/ios/iTunesArtwork*)
-#    ios_icon.path = icons
-    QMAKE_BUNDLE_DATA += itunes_icon
-
-    app_launch_images.files = $$PLATFORMS_DIR/ios/LauncherScreen.xib $$files($$PWD/platforms/ios/LaunchImage*.png) $$files($$PWD/platforms/ios/splash_*.png)
-    QMAKE_BUNDLE_DATA += app_launch_images
+    # Copy native launcher .xib file and splash_screen files
+    deployment.files += $$PLATFORMS_DIR/ios/LauncherScreen.xib $$files($$PWD/platforms/ios/LaunchImage*.png)
+    deployment.files += $$files($$PWD/platforms/ios/splash_*.png)
 
     QMAKE_INFO_PLIST = $$PLATFORMS_DIR/ios/Info.plist
 
@@ -51,12 +46,24 @@ ios: {
         $$PLATFORMS_DIR/ios/Info.plist \
         $$PLATFORMS_DIR/ios/GoogleService-Info.plist
 
-    #RCC_BINARY_SOURCES += \
-    #    $$PWD/assets.qrc
+    # Copy music
+    deployment.files += $$files($$PWD/assets/sounds/bensound-ofeliasdream.aac)
 
-    # You must deploy your Google Play config file
-    deployment.files = $$PLATFORMS_DIR/ios/GoogleService-Info.plist $$RCC_BINARY_SOURCES
-    deployment.path =
+    # Add extra make target entry
+    # Remeber to actually run it: (custom step in QtCreator)
+    # run from ${buildDir}/App
+    # /usr/bin/make assets
+    assetsTarget.target = assets
+    assetsTarget.depends = $$PWD/assets.qrc
+    assetsTarget.commands = $$[QT_HOST_BINS]/rcc -binary -no-compress $$PWD/assets.qrc -o $$OUT_PWD/assets.rcc
+    QMAKE_EXTRA_TARGETS += assetsTarget
+
+    deployment.files += $$OUT_PWD/assets.rcc
+#   PRE_TARGETDEPS += assets # Doesn't work with iOS?
+
+    # You must deploy your own Google Play config file
+    deployment.files += $$PLATFORMS_DIR/ios/GoogleService-Info.plist
+    #deployment.path =
     QMAKE_BUNDLE_DATA += deployment
 }
 
@@ -87,23 +94,14 @@ RESOURCES += \
     base.qrc \
     json.qrc
 
-unix|macx|win32|android|ios: {
+!ios: {
     RESOURCES += \
         assets.qrc
 }
 
-unix|macx|win32: {
+!ios: {
     RESOURCES += \
         music.qrc
-}
-
-!isEmpty(RCC_BINARY_SOURCES) {
-    asset_builder.commands = $$[QT_HOST_BINS]/rcc -binary ${QMAKE_FILE_IN} -o ${QMAKE_FILE_OUT} -no-compress
-    asset_builder.depend_command = $$[QT_HOST_BINS]/rcc -list $$QMAKE_RESOURCE_FLAGS ${QMAKE_FILE_IN}
-    asset_builder.input = RCC_BINARY_SOURCES
-    asset_builder.output = $$OUT_PWD/${QMAKE_FILE_IN_BASE}.qrb
-    asset_builder.CONFIG += no_link target_predeps
-    QMAKE_EXTRA_COMPILERS += asset_builder
 }
 
 lupdate_only {
