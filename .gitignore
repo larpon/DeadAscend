@@ -22,9 +22,6 @@ Makefile
 # KDE .directory files
 .directory
 
-# Build directories
-build-HammerBees-*
-
 # Ignore text editor .swp files
 *.swp
 
