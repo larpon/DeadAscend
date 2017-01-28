@@ -18,7 +18,20 @@ Application {
 
     color: "black"
 
+    Store {
+        id: store
+        name: "window"
+        property alias px: application.x
+        property alias py: application.y
+        property alias w: application.width
+        property alias h: application.height
+        property alias screenMode: application.screenMode
+    }
+
+    Component.onDestruction: store.save()
+
     Component.onCompleted: {
+        store.load()
         application.screenMode = Qak.platform.isMobile ? 'full' : 'windowed'
 
         if(App.dbg) {
