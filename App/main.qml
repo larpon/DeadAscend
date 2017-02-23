@@ -205,15 +205,22 @@ Application {
         adUnitId: Qt.platform.os == "android" ? "ca-app-pub-6606648560678905/9504023277" : "ca-app-pub-6606648560678905/1841155673"
 
         visible: loaded
+        onVisibleChanged: {
+            if(Qt.platform.os === "android")
+                moveTo(AdMobBanner.PositionTopCenter)
+        }
 
-        width: application.width //parent.width
+        width: Qt.platform.os === "android" ? 320 : application.width //parent.width
         height: 50
 
         request: AdMobRequest {}
 
         onReadyChanged: if(ready) load()
 
-        onError: bannerRetryTimer.restart()
+        onError: {
+            //console.error('AdMobBanner error',code,message,width,height)
+            bannerRetryTimer.restart()
+        }
 
     }
 

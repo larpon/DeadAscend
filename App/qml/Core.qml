@@ -314,6 +314,7 @@ Item {
             anchors { fill: parent }
         }
 
+        /*
         ConfirmDialog {
             id: adConfirm
             anchors { centerIn: parent }
@@ -327,18 +328,19 @@ Item {
                 state == "hidden"
             }
             onRejected: state == "hidden"
-        }
+        }*/
     }
 
     Timer {
         id: adTimer
         running: true
-        interval: 7 * (60*1000) // Minutes
+        interval: 5 * (60*1000) // Minutes
         repeat: true
         onTriggered: {
             //App.log('Show ad?',!interstitial.visible,interstitial.loaded)
             if(!interstitial.visible && interstitial.loaded) {
-                adConfirm.state = "shown"
+                //adConfirm.state = "shown"
+                interstitial.show()
             }
         }
     }
