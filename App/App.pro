@@ -84,7 +84,7 @@ android: {
 }
 
 # make git version available to C++ and QML
-VERSION=1.0.0
+VERSION=1.0.1
 include(../gitversion.pri)
 
 DISTFILES += \
