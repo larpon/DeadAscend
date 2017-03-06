@@ -1,8 +1,10 @@
  
 # Dead Ascend
-An open source point'n'click-like 2D adventure game written in Qt/QML and Javascript.
+A hand-drawn, open source, point'n'click-like 2D adventure game written in Qt/QML and Javascript.
 
 "A horde of Zombies chased you to the old radio tower. Your only chance is to ascend up through the tower - solving a host of puzzles on your way to your rescue."
+
+![Screenshot](https://raw.githubusercontent.com/Larpon/DeadAscend/master/gfx/screenshot.png)
 
 ## Quick start
 
