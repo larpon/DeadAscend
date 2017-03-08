@@ -15,6 +15,7 @@ Item {
     onPausedChanged: {
         App.debug('Game',paused ? 'paused' : 'continued')
         if(paused) {
+
             store.save()
         }
 
@@ -1012,6 +1013,8 @@ Item {
             if(i == 0)
                 autoHideTextTimer.interval = showFor
         }
+        // Make sure the banner stay away when text is shown
+        application.banner.hide()
         messages.show = true
         autoHideTextTimer.restart()
     }
