@@ -61,10 +61,10 @@ Base {
         z: -10
         onClicked: {
             var a = [
-                "Nah. Not really interesting",
-                "Not of any use",
-                "It's actually a bit warm in here",
-                "The machines are humming quite a lot - just like downstairs"
+                qsTr("Nah. Not really interesting"),
+                qsTr("Not of any use"),
+                qsTr("It's actually a bit warm in here"),
+                qsTr("The machines are humming quite a lot - just like downstairs")
             ]
             game.setText(Aid.randomFromArray(a))
         }

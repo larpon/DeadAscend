@@ -146,7 +146,7 @@ Rectangle {
             script: {
                 text.text = qsTr("
                 Spanish translation<br>
-                Sara Gutiérrez & Enrique Mora
+                Sara Gutiérrez<br>Enrique Mora Gil
                 ")
                 text.opacity = 1
             }

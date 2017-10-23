@@ -52,7 +52,7 @@ Base {
 
             }
 
-            incubator.now(objectComponent, cannulaSpawn, object, function(o){})
+            Incubate.now(objectComponent, cannulaSpawn, object, function(o){})
 
         }
 
@@ -82,11 +82,11 @@ Base {
         z: -10
         onClicked: {
             var a = [
-                "Not very interesting",
-                "Not of any use",
-                "It's cold in here",
-                "I wonder where everybody is?",
-                "There's faint sounds of mumbling zombies"
+                qsTr("Not very interesting"),
+                qsTr("Not of any use"),
+                qsTr("It's cold in here"),
+                qsTr("I wonder where everybody is?"),
+                qsTr("There's faint sounds of mumbling zombies")
             ]
             game.setText(Aid.randomFromArray(a))
         }

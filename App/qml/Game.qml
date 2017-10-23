@@ -41,7 +41,7 @@ Item {
     property string previousScene: ""
     property Item scene: sceneLoader.item
     property var sceneData
-    property var incubator: Incubator.get()
+
     property var dynamicLoaded: ({})
     property var objectBlacklist: ({})
     property var objectSpawnlist: ({})
@@ -315,8 +315,10 @@ Item {
 
                 if('properties' in object) {
                     Aid.extend(object,object.properties)
-                    delete object.properties
-                    delete object.propertytypes
+                    // NOTE using delete will hit QTBUG-62666
+                    //delete object.properties
+                    //delete object.propertytypes
+
                 }
 
                 if('type' in object) {
@@ -340,16 +342,19 @@ Item {
 
                 if('combines' in object) {
                     object.keys = JSON.parse(object.combines)
-                    delete object.combines
+                    // NOTE using delete will hit QTBUG-62666
+                    //delete object.combines
                 }
 
                 if("tileId" in object && 'image' in tiles[object.tileId]) {
                     object.itemSource = App.getAsset(tiles[object.tileId].image.replace("../",''))
-                    delete object.tileId
+                    // NOTE using delete will hit QTBUG-62666
+                    //delete object.tileId
                 }
 
                 if("ellipse" in object) {
-                    delete object.ellipse
+                    // NOTE using delete will hit QTBUG-62666
+                    //delete object.ellipse
                 }
 
                 if("sounds" in object && !Aid.isObject(object.sounds)) {
@@ -420,7 +425,7 @@ Item {
 
         // NOTE go through inventory and spawn any objects from other scenes
         var ic = inventory.contents
-        //incubator.async = false
+
         for(i in ic) {
             var object = ic[i]
 
@@ -439,7 +444,7 @@ Item {
                 component = objectComponent
 
                 App.debug('Spawning dynamic object from INVENTORY',attrs.name)
-                incubator.now(component, scene.canvas, attrs, function(o){
+                Incubate.now(component, scene.canvas, attrs, function(o){
                     App.debug('Spawned dynamic INVENTORY object',o.name,o)
                     inventory.add(o)
 
@@ -447,7 +452,6 @@ Item {
                 })
             }
         }
-        //incubator.async = true
 
         // NOTE go through loose objects and spawn
         var os = objectSpawnlist
@@ -466,7 +470,7 @@ Item {
                 component = objectComponent
 
                 App.debug('SPAWNED Dynamic object',attrs.name,'prepared')
-                incubator.now(component, scene.canvas, attrs, function(o){
+                Incubate.now(component, scene.canvas, attrs, function(o){
                     App.debug('SPAWNED Dynamic object',o.name,o.draggable,o.z)
 
                     if(o.scene !== currentScene) {
@@ -507,7 +511,7 @@ Item {
         if(object.type === "Area")
             component = areaComponent
 
-        incubator.now(component, scene.canvas, attrs, function(o){
+        Incubate.now(component, scene.canvas, attrs, function(o){
             App.debug('Spawned dynamic object',o.name,o)
             if(inventory.has(o)) {
                 inventory.add(o)
@@ -650,8 +654,8 @@ Item {
                 onClicked: {
                     core.sounds.play('tick')
                     var a = [
-                        "It's clear that the panel is almost completly broken",
-                        "Luckily the elevator still works - thanks to Mr. Hamster"
+                        qsTr("It's clear that the panel is almost completly broken"),
+                        qsTr("Luckily the elevator still works - thanks to Mr. Hamster")
                     ]
                     game.setText(Aid.randomFromArray(a))
                 }
@@ -1198,7 +1202,7 @@ Item {
             opacity: 1
         }
 
-        incubator.now(exitComponent, game, attrs)
+        Incubate.now(exitComponent, game, attrs)
     }
 
     // Global object combinations

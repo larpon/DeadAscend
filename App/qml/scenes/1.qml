@@ -41,13 +41,13 @@ Base {
         z: -10
         onClicked: {
             var a = [
-                "Interesting surface",
-                "Not interesting",
-                "Not of any use",
-                "The room is very cold",
-                "Where is everybody?",
-                "There's sounds of mumbling zombies",
-                "Did you hear that?"
+                qsTr("Interesting surface"),
+                qsTr("Not interesting"),
+                qsTr("Not of any use"),
+                qsTr("The room is very cold"),
+                qsTr("Where is everybody?"),
+                qsTr("There's sounds of mumbling zombies"),
+                qsTr("Did you hear that?")
             ]
             game.setText(Aid.randomFromArray(a))
         }
