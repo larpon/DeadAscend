@@ -27,7 +27,7 @@ Base {
         store.load()
 
         if(!aSwitch.active)
-            game.setText("The room is pitch dark. You better find some light somewhere.","Maybe there's a switch in here somewhere?")
+            game.setText(qsTr("The room is pitch dark. You better find some light somewhere."),qsTr("Maybe there's a switch in here somewhere?"))
         else
             showExit()
 
@@ -58,14 +58,14 @@ Base {
         anchors { fill: parent }
         onClicked: {
             var a = [
-                "Interesting surface",
-                "Nothing interesting here",
-                "Not of any use",
-                "A creepy room",
-                "A bit greased",
-                "Where is everybody?",
-                "There's sounds of mumbling zombies",
-                "Did you hear that?"
+                qsTr("Interesting surface"),
+                qsTr("Nothing interesting here"),
+                qsTr("Not of any use"),
+                qsTr("A creepy room"),
+                qsTr("A bit greased"),
+                qsTr("Where is everybody?"),
+                qsTr("There's sounds of mumbling zombies"),
+                qsTr("Did you hear that?")
             ]
             game.setText(Aid.randomFromArray(a))
         }
@@ -105,7 +105,7 @@ Base {
 
         onClicked: {
             hatch.state = "open then close"
-            game.setText("Gravity forces the hatch to close again","Find a way to keep the hatch open")
+            game.setText(qsTr("Gravity forces the hatch to close again"),qsTr("Find a way to keep the hatch open"))
         }
 
         DropSpot {
@@ -132,7 +132,7 @@ Base {
                     rope_dangle_bucket.run = true
 
                     hatch.state = "open then close"
-                    game.setText("The bucket is not heavy enough to keep the hatch open. Make it heavier")
+                    game.setText(qsTr("The bucket is not heavy enough to keep the hatch open. Make it heavier"))
                 }
             }
         }
@@ -395,7 +395,7 @@ Base {
                     z: bucket.z,
                     sounds: bucket.sounds,
                     soundMap: bucket.soundMap,
-                    description: "The bucket is patched. No holes!",
+                    description: qsTr("The bucket is patched. No holes!"),
                     itemSource: App.getAsset("sprites/bucket/bucket_full.png")
                 }
 
@@ -405,7 +405,7 @@ Base {
                     scene.bucketPatched = true
                 })
 
-                setText("A bucket full of water. It's pretty heavy!")
+                setText(qsTr("A bucket full of water. It's pretty heavy!"))
             }
         }
     }
@@ -484,7 +484,7 @@ Base {
         x: 52; y: 104
         width: 112; height: 54
 
-        onClicked: game.setText("The flourescent lights humms faintly - casting a grim light in the room...","Some flies are having a party here as well")
+        onClicked: game.setText(qsTr("The flourescent lights humms faintly - casting a grim light in the room..."),qsTr("Some flies are having a party here as well"))
     }
 
     Object {
@@ -526,9 +526,9 @@ Base {
 
         onClicked: {
             if(!hasObjectExisted("button_8"))
-                game.setText("There's something small, round and red lying on the edge of the sleeve assembly","It's too far down to reach by hand")
+                game.setText(qsTr("There's something small, round and red lying on the edge of the sleeve assembly"),qsTr("It's too far down to reach by hand"))
             else
-                game.setText("There's nothing more downthere")
+                game.setText(qsTr("There's nothing more downthere"))
         }
 
 
@@ -548,7 +548,7 @@ Base {
                         name: "button_8",
                         type: "Object",
                         scene: sceneName,
-                        description: "A nice red, round button",
+                        description: qsTr("A nice red, round button"),
                         itemSource: App.getAsset("sprites/buttons/button_03/button_03.png")
                     }
 
@@ -557,7 +557,7 @@ Base {
                         game.inventory.show = true
                     })
 
-                    game.setText("Got it! It's a red button!?")
+                    game.setText(qsTr("Got it! It's a red button!?"))
 
                     game.blacklistObject(drag.source.name)
 
@@ -762,7 +762,7 @@ Base {
                 game.goToScene("1")
         }
 
-        description: "A hatch leading upstairs"
+        description: qsTr("A hatch leading upstairs")
     }
 
     Image {
@@ -783,7 +783,7 @@ Base {
         MouseArea {
             enabled: parent.visible
             anchors { fill: parent }
-            onClicked: game.setText("It's too dark to do anything. Better find some light somewhere")
+            onClicked: game.setText(qsTr("It's too dark to do anything. Better find some light somewhere"))
         }
 
         onFlickChanged: {
@@ -868,11 +868,11 @@ Base {
         onActiveChanged: {
             sounds.play("switch")
             if(active) {
-                game.setText("Lights on")
+                game.setText(qsTr("Lights on"))
                 sounds.play("light_on")
                 showExit()
             } else
-                game.setText("Lights out")
+                game.setText(qsTr("Lights out"))
         }
 
         onSource: App.getAsset("sprites/buttons/button_01/button_01_down.png")
@@ -909,7 +909,7 @@ Base {
                 o.locked = true
             } else {
                 if(!bucketPatched)
-                    game.setText("There's a hole in the bucket. You need to patch the bucket somehow")
+                    game.setText(qsTr("There's a hole in the bucket. You need to patch the bucket somehow"))
             }
         }
 

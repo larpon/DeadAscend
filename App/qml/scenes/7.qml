@@ -164,7 +164,7 @@ Base {
                 drop.accept()
 
                 //sounds.play("pouring")
-                game.setText("Brilliant. The rope is firmly tied to the hook")
+                game.setText(qsTr("Brilliant. The rope is firmly tied to the hook"))
 
                 store.ropeTied = true
 
@@ -182,7 +182,7 @@ Base {
             game.scene2type = "left"
             game.goToScene("2")
         } else
-            game.setText("Hmm... If we tied something to the hook...","...")
+            game.setText(qsTr("Hmm... If we tied something to the hook..."),qsTr("..."))
     }
 
     Area {

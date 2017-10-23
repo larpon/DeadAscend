@@ -19,7 +19,8 @@ Rectangle {
             margins: 20
         }
 
-        text: "BACK"
+        //: Menu back button
+        text: qsTr("BACK")
 
         font.pixelSize: 35
 
@@ -71,11 +72,11 @@ Rectangle {
 
         ScriptAction {
             script: {
-                text.text = "
+                text.text = qsTr("
                 Released, Ported & Open Sourced<br>
                 by<br>
                 Black Grain Games
-                "
+                ")
                 text.opacity = 1
             }
         }
@@ -95,10 +96,10 @@ Rectangle {
 
         ScriptAction {
             script: {
-                text.text = "
+                text.text = qsTr("
                 Original story, idea & puzzles<br>
                 Lars Pontoppidan & Stinus Petersen
-                "
+                ")
                 text.opacity = 1
             }
         }
@@ -119,10 +120,10 @@ Rectangle {
 
         ScriptAction {
             script: {
-                text.text = "
+                text.text = qsTr("
                 Engine, Graphics, Sound Effects & Scripting<br>
                 Lars Pontoppidan
-                "
+                ")
                 text.opacity = 1
             }
         }
@@ -143,11 +144,35 @@ Rectangle {
 
         ScriptAction {
             script: {
-                text.text = "
+                text.text = qsTr("
+                Spanish translation<br>
+                Sara Gutiérrez & Enrique Mora
+                ")
+                text.opacity = 1
+            }
+        }
+
+        PauseAnimation {
+            duration: 6000
+        }
+
+        ScriptAction {
+            script: {
+                text.opacity = 0
+            }
+        }
+
+        PauseAnimation {
+            duration: 2000
+        }
+
+        ScriptAction {
+            script: {
+                text.text = qsTr("
                 Music<br>
                 \"Ofelia's Dream\"<br>
                 Royalty Free Music from Bensound
-                "
+                ")
                 text.opacity = 1
             }
         }
@@ -168,13 +193,13 @@ Rectangle {
 
         ScriptAction {
             script: {
-                text.text = "
+                text.text = qsTr("
                 Open Source Components<br>
                 <br>
                 Qt (qt.io)<br>
                 Qak (github.com/Larpon/qak)<br>
                 QtFirebase (github.com/Larpon/QtFirebase)
-                "
+                ")
                 text.opacity = 1
             }
         }
@@ -195,10 +220,10 @@ Rectangle {
 
         ScriptAction {
             script: {
-                text.text = "
+                text.text = qsTr("
                 More games & info<br>
                 http://games.blackgrain.dk
-                "
+                ")
                 text.opacity = 1
             }
         }
@@ -219,7 +244,7 @@ Rectangle {
 
         ScriptAction {
             script: {
-                text.text = "Thank you for playing"
+                text.text = qsTr("Thank you for playing")
                 text.opacity = 1
             }
         }

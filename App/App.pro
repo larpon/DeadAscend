@@ -7,11 +7,13 @@ CONFIG += c++11
 
 SOURCES += main.cpp \
     src/fpstext.cpp \
-    src/fileio.cpp
+    src/fileio.cpp \
+    src/languageswitcher.cpp
 
 HEADERS += \
     src/fpstext.h \
-    src/fileio.h
+    src/fileio.h \
+    src/languageswitcher.h
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH +=
@@ -92,7 +94,8 @@ DISTFILES += \
 
 RESOURCES += \
     base.qrc \
-    json.qrc
+    json.qrc \
+    translations.qrc
 
 !ios: {
     RESOURCES += \
@@ -107,6 +110,13 @@ RESOURCES += \
 lupdate_only {
 SOURCES = *.qml \
           *.js \
+          translations/*.qml \
           qml/*.qml \
           qml/*.js
 }
+
+TRANSLATIONS += \
+    $$PWD/translations/DeadAscend.ts \
+    $$PWD/translations/DeadAscend_en.ts \
+    $$PWD/translations/DeadAscend_es.ts \
+    $$PWD/translations/DeadAscend_da.ts

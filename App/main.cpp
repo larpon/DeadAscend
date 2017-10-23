@@ -1,5 +1,6 @@
 #include "src/fileio.h"
 #include "src/fpstext.h"
+#include "src/languageswitcher.h"
 
 #include <QtQml>
 #include <QtGui/QGuiApplication>
@@ -9,6 +10,7 @@ int main(int argc, char *argv[])
 {
     qmlRegisterType<FileIO, 1>("FileIO", 1, 0, "FileIO");
     qmlRegisterType<FPSText, 1>("FPSText", 1, 0, "FPSText");
+    qmlRegisterType<LanguageSwitcher, 1>("LanguageSwitcher", 1, 0, "LanguageSwitcher");
 
     QGuiApplication app(argc, argv);
     app.setOrganizationName("Black Grain");

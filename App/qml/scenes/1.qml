@@ -102,7 +102,7 @@ Base {
             if(isLadderBuilt())
                 game.goToScene("2")
             else
-                game.setText("Need something to reach the hole in the ceiling")
+                game.setText(qsTr("Need something to reach the hole in the ceiling"))
         }
     }
 
@@ -141,19 +141,19 @@ Base {
                         so.state = "up"
                         sounds.play("move")
                         blacklistObject(o.name)
-                        game.setText("Another rung in the rail!")
+                        game.setText(qsTr("Another rung in the rail!"))
                     } else {
 
                         if((ar1.state === "up" && ar2.state !== "up") || (ar1.state !== "up" && ar2.state === "up")) {
-                            game.setText("One more rail should be put up. I think")
+                            game.setText(qsTr("One more rail should be put up. I think"))
                         } else
-                            game.setText("This could work if there was something to attach to")
+                            game.setText(qsTr("This could work if there was something to attach to"))
                     }
                 }
 
                 if(isLadderBuilt()) {
                     game.showExit(600,150,2000,"up")
-                    game.setText("YES! Finally we can proceed upwards")
+                    game.setText(qsTr("YES! Finally we can proceed upwards"))
                 }
 
             }

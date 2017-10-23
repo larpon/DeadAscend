@@ -128,7 +128,7 @@ Base {
         visible: store.cableConnected
         name: "cable_treadmill"
 
-        onClicked: game.setText("It's now connecting the treadmill with the battery - good thinking!")
+        onClicked: game.setText(qsTr("It's now connecting the treadmill with the battery - good thinking!"))
     }
 
     AnimatedArea {
@@ -160,16 +160,16 @@ Base {
 
         onClicked: {
             if(store.treadmillRunning && store.cableConnected) {
-                game.setText("The elevator is now: Zombie Hamster Powered...","That's... really...","... really... weird")
+                game.setText(qsTr("The elevator is now: Zombie Hamster Powered..."),qsTr("That's... really..."),qsTr("... really... weird"))
             } else if(store.treadmillRunning && !store.cableConnected) {
-                game.setText("There should be a way to connect the treadmill to the motor somehow")
+                game.setText(qsTr("There should be a way to connect the treadmill to the motor somehow"))
             } else if(store.scooterRemoved) {
                 setActiveSequence("single spin")
                 sounds.play("rattle_loop")
                 running = true
-                game.setText("Maybe this treadmill could actually power the elevator","It's just a matter of finding something powerfull enough to run it")
+                game.setText(qsTr("Maybe this treadmill could actually power the elevator"),qsTr("It's just a matter of finding something powerfull enough to run it"))
             } else
-                game.setText("It can't move with all this junk in front of it")
+                game.setText(qsTr("It can't move with all this junk in front of it"))
         }
 
         DropSpot {
@@ -221,7 +221,7 @@ Base {
         visible: !store.scooterRemoved
         onClicked: {
             if(!store.popBaseRemoved)
-                game.setText("It's stuck behind the popcorn machine")
+                game.setText(qsTr("It's stuck behind the popcorn machine"))
             else {
                 mover.moveTo(-width,y+100)
                 sounds.play("move")
@@ -236,7 +236,7 @@ Base {
         visible: !store.popBaseRemoved
         onClicked: {
             if(!store.popTopRemoved)
-                game.setText("The wheels on this is rusted in place. The glass top is making it too heavy to move.")
+                game.setText(qsTr("The wheels on this is rusted in place. The glass top is making it too heavy to move."))
             else {
                 mover.moveTo(-width,y+100)
                 sounds.play("light_drag")
@@ -251,7 +251,8 @@ Base {
         visible: !store.popTopRemoved
         onClicked: {
             if(!store.skiRightRemoved || !store.skiLeftRemoved)
-                game.setText("The skies are in the way")
+                //: Skies the ones you put on and ski down a slope with :)
+                game.setText(qsTr("The skies are in the way"))
             else {
                 mover.moveTo(x,-height)
                 sounds.play("add")
@@ -266,7 +267,7 @@ Base {
         visible: !store.skiLeftRemoved
         onClicked: {
             if(!store.rockingHorseRemoved)
-                game.setText("The rocking horse is in the way")
+                game.setText(qsTr("The rocking horse is in the way"))
             else {
                 mover.moveTo(-width,y)
                 sounds.play("add")
@@ -281,7 +282,7 @@ Base {
         visible: !store.skiRightRemoved
         onClicked: {
             if(!store.beachBallRemoved)
-                game.setText("The beach ball is in the way")
+                game.setText(qsTr("The beach ball is in the way"))
             else {
                 mover.moveTo(-width,y+30)
                 sounds.play("add")
@@ -369,7 +370,7 @@ Base {
                 setActiveSequence("open-show-panel")
                 sounds.play("ding")
             } else
-                game.setText("The elevator needs power to operate.")
+                game.setText(qsTr("The elevator needs power to operate."))
         }
 
         onFrame: {
@@ -397,7 +398,7 @@ Base {
             drop.accept()
 
             sounds.play("tick_soft")
-            game.setText("It's now connecting the treadmill with the battery - good thinking!")
+            game.setText(qsTr("It's now connecting the treadmill with the battery - good thinking!"))
 
             store.cableConnected = true
             var o = drag.source
@@ -420,7 +421,7 @@ Base {
     onObjectClicked: {
         if(object.name === "open_sack" || object.name === "sacks") {
             if(game.inventory.has('grain')) {
-                object.description = 'No need for more grain'
+                object.description = qsTr('No need for more grain')
             }
         }
     }

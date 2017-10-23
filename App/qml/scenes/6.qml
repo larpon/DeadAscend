@@ -160,7 +160,7 @@ Base {
             if(scene.officeUnlocked)
                 state === "on" ? state = "off" : state = "on"
             else
-                game.setText("The door is locked...","The keypad to the right seem to be connected to the door")
+                game.setText(qsTr("The door is locked..."),qsTr("The keypad to the right seem to be connected to the door"))
         }
     }
 
@@ -187,21 +187,21 @@ Base {
             onDropped: {
 
                 if(game.flaskMixerBlueLevel > 0) {
-                    setText("There's already poured liquid in this")
+                    setText(qsTr("There's already poured liquid in this"))
                     return
                 }
 
                 var o = drag.source
 
                 if(o.name !== "bottle_blue") {
-                    setText("... better not put "+o.name.replace("bottle_","")+" liquid in a blue pipe")
+                    setText(qsTr("... better not put %1 liquid in a blue pipe").arg(o.name.replace("bottle_","")))
                     return
                 }
 
                 drop.accept()
 
                 sounds.play("pouring")
-                game.setText("The liquid is poured in now")
+                game.setText(qsTr("The liquid is poured in now"))
 
                 game.flaskMixerBlueLevel = 1
 
@@ -225,21 +225,21 @@ Base {
             onDropped: {
 
                 if(game.flaskMixerPurpleLevel > 0) {
-                    setText("There's already poured liquid in this")
+                    setText(qsTr("There's already poured liquid in this"))
                     return
                 }
 
                 var o = drag.source
 
                 if(o.name !== "bottle_purple") {
-                    setText("... better not put "+o.name.replace("bottle_","")+" liquid in a purple pipe")
+                    setText(qsTr("... better not put %1 liquid in a purple pipe").arg(o.name.replace("bottle_","")))
                     return
                 }
 
                 drop.accept()
 
                 sounds.play("pouring")
-                game.setText("All the purple juicy stuff is poured in now")
+                game.setText(qsTr("All the purple juicy stuff is poured in now"))
 
                 game.flaskMixerPurpleLevel = 2
 
@@ -263,21 +263,21 @@ Base {
             onDropped: {
 
                 if(game.flaskMixerRedLevel > 0) {
-                    setText("There's already poured liquid in this")
+                    setText(qsTr("There's already poured liquid in this"))
                     return
                 }
 
                 var o = drag.source
 
                 if(o.name !== "bottle_red") {
-                    setText("... better not put "+o.name.replace("bottle_","")+" liquid in a red-ish pipe")
+                    setText(qsTr("... better not put %1 liquid in a red-ish pipe").arg(o.name.replace("bottle_","")))
                     return
                 }
 
                 drop.accept()
 
                 sounds.play("pouring")
-                game.setText("All the red goo is poured in now")
+                game.setText(qsTr("All the red goo is poured in now"))
 
                 game.flaskMixerRedLevel = 1
 
@@ -301,21 +301,21 @@ Base {
             onDropped: {
 
                 if(game.flaskMixerGreenLevel > 0) {
-                    setText("There's already poured liquid in this")
+                    setText(qsTr("There's already poured liquid in this"))
                     return
                 }
 
                 var o = drag.source
 
                 if(o.name !== "bottle_green") {
-                    setText("... better not put "+o.name.replace("bottle_","")+" liquid in a green pipe")
+                    setText(qsTr("... better not put %1 liquid in a green pipe").arg(o.name.replace("bottle_","")))
                     return
                 }
 
                 drop.accept()
 
                 sounds.play("pouring")
-                game.setText("...","All the contents are poured in")
+                game.setText(qsTr("..."),qsTr("All the contents are poured in"))
 
                 game.flaskMixerGreenLevel = 4
 
@@ -417,7 +417,7 @@ Base {
                 }
 
                 if(scene.officeUnlocked)
-                    game.setText("It's open!")
+                    game.setText(qsTr("It's open!"))
 
                 buffer = "0000"
             } else {
@@ -471,7 +471,7 @@ Base {
 
             MouseArea {
                 anchors { fill: parent }
-                onClicked: game.setText("A fancy colored keypad")
+                onClicked: game.setText(qsTr("A fancy colored keypad"))
             }
 
             SequentialAnimation {
@@ -499,7 +499,7 @@ Base {
                 ScriptAction {
                     script: {
                         blinkRedAnimation.indicator.state = "red"
-                        game.setText("...","not the right key combination")
+                        game.setText(qsTr("..."),qsTr("not the right key combination"))
                         sounds.play("beep_wrong")
                     }
                 }
@@ -533,9 +533,9 @@ Base {
                         blinkGreenAnimation.indicator.state = "green"
                         if(scene.officeUnlocked) {
                             sounds.play("tick")
-                            game.setText("Open Sesame!")
+                            game.setText(qsTr("Open Sesame!"))
                         } else
-                            game.setText("Green lights are good lights!")
+                            game.setText(qsTr("Green lights are good lights!"))
 
                     }
                 }
@@ -741,20 +741,20 @@ Base {
             Area {
                 x: 298; y: 35
                 width: 589; height: 625
-                description: "..."
+                description: qsTr("...")
             }
 
             Area {
                 x: 387; y: 37
                 width: 24; height: 317
-                description: [ "This must be the cable for the antenna"," It leads to the roof" ]
+                description: [ qsTr("This must be the cable for the antenna"),qsTr("It leads to the roof") ]
             }
 
 
             Area {
                 x: 567; y: 93
                 width: 303; height: 514
-                description: "A fairly large bookcase. Very square"
+                description: qsTr("A fairly large bookcase. Very square")
             }
 
             Area {
@@ -769,43 +769,43 @@ Base {
                     if(!game.helpCalled) {
                         if(game.fuelCellConnected) {
                             game.helpCalled = true
-                            game.setText("YES! THERE'S OTHER SURVIVORS ON THE RADIO","HALLO!? CAN YOU HEAR ME!?","radio: *Loud and clear, over*",
-                            "COME GET ME AT THE TOWER","radio: *We're sending a chopper, over*","AWESOME!, OVER!","...","Woohoo - they are coming for me!","I'll better hurry to the roof and wait for the chopper")
+                            game.setText(qsTr("YES! THERE'S OTHER SURVIVORS ON THE RADIO"),qsTr("HALLO!? CAN YOU HEAR ME!?"),qsTr("radio: *Loud and clear, over*"),
+                            qsTr("COME GET ME AT THE TOWER"),qsTr("radio: *We're sending a chopper, over*"),qsTr("AWESOME!, OVER!"),qsTr("..."),qsTr("Woohoo - they are coming for me!"),qsTr("I'll better hurry to the roof and wait for the chopper"))
                         } else
-                            game.setText("There's only noise...","The indicator for \"LONG RANGE\" is off","You'd need a powered antenna to call for help","More problems than solutions I guess")
+                            game.setText(qsTr("There's only noise..."),qsTr("The indicator for \"LONG RANGE\" is off"),qsTr("You'd need a powered antenna to call for help"),qsTr("More problems than solutions I guess"))
                     } else
-                        game.setText("Help is on the way - I better get to the roof!")
+                        game.setText(qsTr("Help is on the way - I better get to the roof!"))
                 }
             }
 
             Area {
                 x: 644; y: 238
                 width: 52; height: 88
-                description: "A fine lava lamp. It's not working"
+                description: qsTr("A fine lava lamp. It's not working")
             }
 
             Area {
                 x: 779; y: 193
                 width: 80; height: 118
-                description: "A frontpage from the newspaper when the apocalypse got real"
+                description: qsTr("A frontpage from the newspaper when the apocalypse got real")
             }
 
             Area {
                 x: 584; y: 401
                 width: 167; height: 149
-                description: "Books, books, books. I'm looking for a good time"
+                description: qsTr("Books, books, books. I'm looking for a good time")
             }
 
             Area {
                 x: 593; y: 325
                 width: 163; height: 115
-                description: "A shelf full of books"
+                description: qsTr("A shelf full of books")
             }
 
             Area {
                 x: 707; y: 304
                 width: 59; height: 44
-                description: "A small pile of very uninteresting papers"
+                description: qsTr("A small pile of very uninteresting papers")
             }
 
             Area {
@@ -825,7 +825,7 @@ Base {
                         x: 610,
                         y: 150,
                         scene: sceneName,
-                        description: "A fuel cell",
+                        description: qsTr("A fuel cell"),
                         itemSource: App.getAsset("sprites/fuel_cell/fuel_cell.png")
                     }
                     game.spawnObject(object,function(o){
@@ -871,7 +871,7 @@ Base {
                         drop.accept()
 
                         sounds.play("paper_fiddle")
-                        game.setText("The two pieces fit perfectly together")
+                        game.setText(qsTr("The two pieces fit perfectly together"))
 
                         store.chargingPaperRDropped = true
 

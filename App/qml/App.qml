@@ -3,6 +3,8 @@ pragma Singleton
 import QtQuick 2.0
 import Qak 1.0
 
+import LanguageSwitcher 1.0
+
 QtObject {
     id: app
     property bool dbg: debugBuild
@@ -71,6 +73,17 @@ QtObject {
 
         return path
     }
+
+
+    // Dynamic language switch
+    property string language: "en"
+    onLanguageChanged: {
+        debug('App','setting language',language)
+        languageSwitcher.selectLanguage(language)
+    }
+
+    property QtObject __ls: LanguageSwitcher { id: languageSwitcher }
+    property alias lst: languageSwitcher.switched // Language switch trigger hack
 
     // Logging
     property QtObject logger: Log { enabled: dbg; history: debugBuild }

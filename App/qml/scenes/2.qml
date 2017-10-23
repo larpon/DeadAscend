@@ -47,7 +47,7 @@ Base {
                 x: 160,
                 y: 300,
                 itemSource: App.getAsset("sprites/cannula/cannula_empty.png"),
-                description: "An empty syringe. Not very helpful when empty...",
+                description: qsTr("An empty syringe. Not very helpful when empty..."),
                 at: sceneName
 
             }
@@ -345,22 +345,22 @@ Base {
 
         function up() {
             if(!fuseDropped) {
-                game.setText("It seems like it need a fuse to work")
+                game.setText(qsTr("It seems like it need a fuse to work"))
                 return
             }
             sounds.play("lift_motor")
             changeLevel = true
-            game.setText("Going up!")
+            game.setText(qsTr("Going up!"))
             setActiveSequence("go_up")
         }
 
         function down() {
             if(!fuseDropped) {
-                game.setText("It seems like it need a fuse to work")
+                game.setText(qsTr("It seems like it need a fuse to work"))
                 return
             }
             sounds.play("lift_motor")
-            game.setText("Going down!")
+            game.setText(qsTr("Going down!"))
             setActiveSequence("go_down")
         }
 
@@ -373,7 +373,7 @@ Base {
         onClicked: {
             if(!fuseDropped) {
                 sounds.play("tick")
-                game.setText("This lift could get you further up. But it's not working?")
+                game.setText(qsTr("This lift could get you further up. But it's not working?"))
                 return
             }
             lift.up()
@@ -463,7 +463,7 @@ Base {
 
         MouseArea {
             anchors { fill: parent }
-            onClicked: game.setText("It's hard to make out what is behind the wall")
+            onClicked: game.setText(qsTr("It's hard to make out what is behind the wall"))
         }
 
     }
@@ -485,7 +485,7 @@ Base {
 
         MouseArea {
             anchors { fill: parent }
-            onClicked: game.setText("The lift must be on the other side of this wall")
+            onClicked: game.setText(qsTr("The lift must be on the other side of this wall"))
         }
     }
 
@@ -555,7 +555,7 @@ Base {
 
                     fuseDropped = true
                     sounds.play("tick_soft")
-                    game.setText("It fits perfectly!")
+                    game.setText(qsTr("It fits perfectly!"))
                     var o = drag.source
                     blacklistObject(o.name)
                 }
@@ -569,7 +569,7 @@ Base {
                 visible: fuseDropped
                 MouseArea {
                     anchors { fill: parent }
-                    onClicked: game.setText("It fits perfectly in the socket!")
+                    onClicked: game.setText(qsTr("It fits perfectly in the socket!"))
                 }
             }
 
@@ -585,7 +585,7 @@ Base {
                 onClicked: {
                     sounds.play("tick_soft")
                     if(!fuseDropped) {
-                        game.setText("It seems like it need a fuse to work")
+                        game.setText(qsTr("It seems like it need a fuse to work"))
                         return
                     }
 
@@ -593,7 +593,7 @@ Base {
                         controlPanelSmall.state = "off"
                         lift.up()
                     } else
-                        game.setText("The lift is already up")
+                        game.setText(qsTr("The lift is already up"))
 
                 }
             }
@@ -610,7 +610,7 @@ Base {
                 onClicked: {
                     sounds.play("tick_soft")
                     if(!fuseDropped) {
-                        game.setText("It seems like it need a fuse to work")
+                        game.setText(qsTr("It seems like it need a fuse to work"))
                         return
                     }
 
@@ -618,7 +618,7 @@ Base {
                         controlPanelSmall.state = "off"
                         lift.down()
                     } else
-                        game.setText("The lift is already down")
+                        game.setText(qsTr("The lift is already down"))
                 }
             }
         }
@@ -684,7 +684,7 @@ Base {
 
                 margins: 20
 
-                description: "The cabinet door is locked. Cabinets always hold useful stuff!"
+                description: qsTr("The cabinet door is locked. Cabinets always hold useful stuff!")
 
                 Image {
                     id: cabinetDoor
@@ -701,7 +701,7 @@ Base {
                         width: 40; height: 70
                         stateless: true
 
-                        description: "A keyhole"
+                        description: qsTr("A keyhole")
 
                     }
 
@@ -715,7 +715,7 @@ Base {
 
                         onDropped: {
                             sounds.play("tick_soft")
-                            game.setText("It won't open the door...","Maybe try it with the hinge?")
+                            game.setText(qsTr("It won't open the door..."),qsTr("Maybe try it with the hinge?"))
                         }
                     }
                 }
@@ -761,7 +761,7 @@ Base {
 
                 visible: coinsUsed <= 1
 
-                description: [ "A hinge holding the door", "If there's no keys to be found - maybe this can be removed somehow" ]
+                description: [ qsTr("A hinge holding the door"), qsTr("If there's no keys to be found - maybe this can be removed somehow") ]
 
                 Image {
                     id: hinge
@@ -777,7 +777,7 @@ Base {
                         visible: coinsUsed <= 0
                         stateless: true
 
-                        description: "A mighty fine screw"
+                        description: qsTr("A mighty fine screw")
 
                         Image {
                             id: topScrewImage
@@ -796,7 +796,7 @@ Base {
                         visible: coinsUsed <= 1
                         stateless: true
 
-                        description: "A mighty fine screw"
+                        description: qsTr("A mighty fine screw")
 
                         Image {
                             id: bottomScrewImage
@@ -839,7 +839,7 @@ Base {
                     onDropped: {
 
                         sounds.play("tick_soft")
-                        game.setText("That's "+coinsUsed === 0 ? "one":"both" +" screw down!")
+                        game.setText(qsTr("That's %1 down!").arg(coinsUsed === 0 ? "one screw":"both screws"))
 
                         coinsUsed++
 
@@ -848,7 +848,7 @@ Base {
                             drop.accept()
                             var o = drag.source
                             blacklistObject(o.name)
-                            game.setText("Off you go hinge!")
+                            game.setText(qsTr("Off you go hinge!"))
                         }
                     }
                 }

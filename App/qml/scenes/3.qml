@@ -147,7 +147,7 @@ Base {
 
         onClicked: {
             sounds.playRandom(["zombie_moan_1","zombie_moan_2"])
-            game.setText("It's passive...","Only a few live infected cells relieves some muscle ticks","You should take it out of it's missery")
+            game.setText(qsTr("It's passive..."),qsTr("Only a few live infected cells relieves some muscle ticks"),qsTr("You should take it out of it's missery"))
         }
 
         DropSpot {
@@ -164,14 +164,14 @@ Base {
                 zombieTilting.run = true
                 zombieSitting.visible = false
 
-                game.setText("Straight in the head")
+                game.setText(qsTr("Straight in the head"))
 
                 if(!game.getObject("coin")) {
                     var object = {
                         name: "coin",
                         type: "Object",
                         scene: sceneName,
-                        description: "It's a coin. With a very matte finish",
+                        description: qsTr("It's a coin. With a very matte finish"),
                         x: 190,
                         y: 300,
                         itemSource: App.getAsset("sprites/coin/coin.png")
@@ -190,7 +190,7 @@ Base {
 
                     blacklistObject(o.name)
 
-                    game.setText("The hammer broke in two. No need to carry that around any more")
+                    game.setText(qsTr("The hammer broke in two. No need to carry that around any more"))
 
                 }
 
@@ -279,7 +279,7 @@ Base {
         }
 
         onClicked: {
-            game.setText("He's dead Jim","... or as close as dead as zombies get")
+            game.setText(qsTr("He's dead Jim"),qsTr("... or as close as dead as zombies get"))
         }
 
         DropSpot {
@@ -297,13 +297,13 @@ Base {
                     name: "cannula_full",
                     type: "Object",
                     itemSource: App.getAsset("sprites/cannula/cannula_full.png"),
-                    description: "It's full of infested zombie blood",
+                    description: qsTr("It's full of infested zombie blood"),
                     scene: sceneName
                 }
 
                 game.spawnObject(object,function(o){
                     game.inventory.add(o)
-                    game.setText("It's full of infested zombie blood now!")
+                    game.setText(qsTr("It's full of infested zombie blood now!"))
                 })
 
                 drop.accept()
@@ -370,14 +370,14 @@ Base {
         }
 
         function up() {
-            game.setText("Going up!")
+            game.setText(qsTr("Going up!"))
             setActiveSequence("go_up")
         }
 
         function down() {
             sounds.play("lift_motor")
             changeLevel = true
-            game.setText("Going down!")
+            game.setText(qsTr("Going down!"))
             setActiveSequence("go_down")
         }
 
@@ -584,12 +584,12 @@ Base {
 
         onClicked: {
             if(hamsterCalm) {
-                game.setText("The little critter is really calm now. Eating away","Unfortunately it's too small to drive the treadmill upstairs")
+                game.setText(qsTr("The little critter is really calm now. Eating away"),qsTr("Unfortunately it's too small to drive the treadmill upstairs"))
             } else if(cageHit) {
                 hamster.goalSequence = "cs-hide"
-                game.setText("It's scared now the glass is smashed. Maybe it can be lured out of hiding")
+                game.setText(qsTr("It's scared now the glass is smashed. Maybe it can be lured out of hiding"))
             } else
-                game.setText("Such a cute little critter")
+                game.setText(qsTr("Such a cute little critter"))
         }
 
         Connections {
@@ -635,11 +635,11 @@ Base {
                         y: 398,
                         z: hamster.z,
                         itemSource: App.getAsset("sprites/hamster/big_zombie.png"),
-                        description: "... OK. So this is a zombie hamster. It looks pretty strong - but it's hideous",
+                        description: qsTr("... OK. So this is a zombie hamster. It looks pretty strong - but it's hideous"),
                         scene: sceneName
                     }
                     game.spawnObject(object,function(){
-                        game.setText("What. The...","...")
+                        game.setText(qsTr("What. The..."),qsTr("..."))
                     })
                     scene.hamsterIsZombie = true
                     drop.accept()
@@ -647,7 +647,7 @@ Base {
                 }
 
                 if(hamsterCalm && o.name === "cannula") {
-                    game.setText("Indeed you could inject him with something...","But what?")
+                    game.setText(qsTr("Indeed you could inject him with something..."),qsTr("But what?"))
                 }
 
             }
@@ -665,7 +665,7 @@ Base {
 
         onClicked: {
             hamster.goalSequence = "hide"
-            game.setText("The hamster looks pretty scared")
+            game.setText(qsTr("The hamster looks pretty scared"))
             sounds.play("add")
         }
 
@@ -684,7 +684,7 @@ Base {
 
                     blacklistObject(o.name)
 
-                    game.setText("The hammer broke in two. No need to carry that around any more")
+                    game.setText(qsTr("The hammer broke in two. No need to carry that around any more"))
 
                 }
 
@@ -824,7 +824,7 @@ Base {
 
             MouseArea {
                 anchors { fill: parent }
-                onClicked: game.setText("The drawing on the whiteboard is faded - but can still be made out","It looks like a sketch, depicting something involving a syringe and a hamster?")
+                onClicked: game.setText(qsTr("The drawing on the whiteboard is faded - but can still be made out"),qsTr("It looks like a sketch, depicting something involving a syringe and a hamster?"))
             }
         }
 

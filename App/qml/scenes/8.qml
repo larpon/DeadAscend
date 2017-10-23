@@ -19,7 +19,7 @@ Base {
         if(game.helpCalled && !store.miniGameCompleted) {
             miniGameMode = true
             //elevatorDoor.setActiveSequence('close')
-            game.setText(" "," ","...","Something is wrong","I can feel it","I can hear zombies","A lot of zombies!")
+            game.setText(" "," ",qsTr("..."),qsTr("Something is wrong"),qsTr("I can feel it"),qsTr("I can hear zombies"),qsTr("A lot of zombies!"))
         }
 
         elevatorDoor.setActiveSequence('close')
@@ -33,19 +33,19 @@ Base {
 
     onMiniGameZombiesKilledChanged: {
         if(miniGameZombiesKilled == 1)
-            setText("HA! First blood!")
+            setText(qsTr("HA! First blood!"))
         if(miniGameZombiesKilled == 10)
-            setText("Right on!")
+            setText(qsTr("Right on!"))
         if(miniGameZombiesKilled == 20)
-            setText("BOOM baby!")
+            setText(qsTr("BOOM baby!"))
         if(miniGameZombiesKilled == 40)
-            setText("Out of my way!")
+            setText(qsTr("Out of my way!"))
         if(miniGameZombiesKilled == 60)
-            setText("Oh my...","They keep showing up!")
+            setText(qsTr("Oh my..."),qsTr("They keep showing up!"))
         if(miniGameZombiesKilled == 100) {
             miniGameMode = false
             store.miniGameCompleted = true
-            setText("Take that you creep!")
+            setText(qsTr("Take that you creep!"))
         }
     }
 
@@ -53,7 +53,7 @@ Base {
         running: store.miniGameCompleted
         interval: 1000
         onTriggered: {
-            setText("I can hear the chopper in the distance!")
+            setText(qsTr("I can hear the chopper in the distance!"))
         }
     }
 
@@ -369,7 +369,7 @@ Base {
             name: "satelite_dish"
             stateless: true
 
-            description: "That's definitely the antenna dish for the radio"
+            description: qsTr("That's definitely the antenna dish for the radio")
 
         }
 
@@ -378,7 +378,7 @@ Base {
             name: "satelite_box"
             stateless: true
 
-            description: [ "The box has a socket. It could be something like an external power supply for the antenna", "Maybe to give it extra range?" ]
+            description: [ qsTr("The box has a socket. It could be something like an external power supply for the antenna"), qsTr("Maybe to give it extra range?") ]
         }
 
         Area {
@@ -386,7 +386,7 @@ Base {
             name: "satelite_fuel_cell"
             stateless: true
             visible: game.fuelCellConnected
-            description: [ "The fuel cell is connected", "This should give the radio some extra range" ]
+            description: [ qsTr("The fuel cell is connected"), qsTr("This should give the radio some extra range") ]
         }
 
 
@@ -412,10 +412,10 @@ Base {
                     var o = drag.source
 
                     game.blacklistObject(o.name)
-                    game.setText("Good work survivour. The antenna is now powered. This should give some extra range")
+                    game.setText(qsTr("Good work survivour. The antenna is now powered. This should give some extra range"))
 
                 } else {
-                    game.setText("The fuel cell is out of power. It'll be hard to get it charged under these circumstances")
+                    game.setText(qsTr("The fuel cell is out of power. It'll be hard to get it charged under these circumstances"))
                 }
 
             }
@@ -566,7 +566,7 @@ Base {
 
         onClicked: {
             //game.goToScene("end")
-            game.setText("The end!")
+            game.setText(qsTr("The end!"))
             core.modes.set("end-credits")
         }
 

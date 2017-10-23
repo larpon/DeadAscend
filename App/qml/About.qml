@@ -21,7 +21,8 @@ Rectangle {
             margins: 20
         }
 
-        text: "BACK"
+        //: Menu back
+        text: qsTr("BACK")
 
         font.pixelSize: 35
 
@@ -48,7 +49,7 @@ Rectangle {
             NumberAnimation { duration: 1000 }
         }
 
-        text: '
+        text: qsTr('
         Dead Ascend © <font size="1">2016-2017 <a href="http://games.blackgrain.dk">Black Grain</a></font><br>
         Version '+version+' ('+gitVersion+')<br>
         <p>
@@ -85,7 +86,7 @@ Rectangle {
             </ol>
             See our <a href="//blackgrain.dk/privacy.html">privacy policy</a> for info on how we handle the data.
         </p>
-        '
+        ')
     }
 
 }

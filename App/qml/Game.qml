@@ -60,7 +60,7 @@ Item {
 
     readonly property bool flasksFilled: flaskMixerBlueLevel > 0 && flaskMixerPurpleLevel > 0 && flaskMixerGreenLevel > 0 && flaskMixerRedLevel > 0
     readonly property bool flasksCorrect: flaskMixerBlueLevel == 6 && flaskMixerPurpleLevel == 1 && flaskMixerGreenLevel == 1 && flaskMixerRedLevel == 4
-    onFlasksCorrectChanged: if(flasksCorrect) setText("All systems... GO!")
+    onFlasksCorrectChanged: if(flasksCorrect) setText(qsTr("All systems... GO!"))
 
     property bool button8dropped: false
 
@@ -672,7 +672,7 @@ Item {
                             elevatorPanel.show = false
                             goToScene("4")
                         } else
-                            setText("You're already at this floor")
+                            setText(qsTr("You're already at this floor"))
                     }
                 }
             }
@@ -692,7 +692,7 @@ Item {
                             elevatorPanel.show = false
                             goToScene("5")
                         } else
-                            setText("You're already at this floor")
+                            setText(qsTr("You're already at this floor"))
                     }
                 }
             }
@@ -712,7 +712,7 @@ Item {
                             elevatorPanel.show = false
                             goToScene("6")
                         } else
-                            setText("You're already at this floor")
+                            setText(qsTr("You're already at this floor"))
                     }
                 }
             }
@@ -732,14 +732,14 @@ Item {
                             elevatorPanel.show = false
                             goToScene("7")
                         } else
-                            setText("You're already at this floor")
+                            setText(qsTr("You're already at this floor"))
                     }
                 }
             }
 
             Area {
                 stateless: true
-                description: [ "This particular socket is special", "It's clear that a button is missing above all the other buttons" ]
+                description: [ qsTr("This particular socket is special"), qsTr("It's clear that a button is missing above all the other buttons") ]
                 x: 501; y: 60
                 width: 88; height: 66
 
@@ -764,7 +764,7 @@ Item {
                             elevatorPanel.show = false
                             goToScene("8")
                         } else
-                            setText("You're already at this floor")
+                            setText(qsTr("You're already at this floor"))
                     }
                 }
             }
@@ -785,7 +785,7 @@ Item {
                     blacklistObject(drag.source.name)
                     button8dropped = true
 
-                    setText("Miraculously - it fits. Must be your lucky day!")
+                    setText(qsTr("Miraculously - it fits. Must be your lucky day!"))
                 }
             }
 
@@ -1228,7 +1228,7 @@ Item {
             z: bucket.z,
             sounds: bucket.sounds,
             soundMap: bucket.soundMap,
-            description: "The bucket is patched. No holes!",
+            description: qsTr("The bucket is patched. No holes!"),
             scene: currentScene,
             itemSource: bucket.itemSource,
         }
@@ -1245,7 +1245,7 @@ Item {
                 game.inventory.add(o)
         })
 
-        setText('There we go. A patched bucket!')
+        setText(qsTr('There we go. A patched bucket!'))
     }
 
 

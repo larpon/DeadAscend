@@ -71,8 +71,34 @@ Item {
                 font.pixelSize: 60
                 allUppercase: true
                 bounce: true
-                text: qsTr("About")
+                text: App.lst + qsTr("About")
                 onClicked: core.modes.set('about')
+            }
+
+            TextButton {
+                anchors {
+                    left: parent.left
+                    verticalCenter: parent.verticalCenter
+                    leftMargin: 20
+                }
+                font.pixelSize: 40
+                allUppercase: true
+                bounce: true
+                text: App.lst + qsTr("Language")
+                onClicked: {
+                    if(App.language === "en" || App.language === "") {
+                        App.language = "es"
+                        return
+                    }
+                    if(App.language === "es") {
+                        App.language = "da"
+                        return
+                    }
+                    if(App.language === "da") {
+                        App.language = "en"
+                        return
+                    }
+                }
             }
 
             TextButton {
@@ -85,7 +111,7 @@ Item {
                 font.pixelSize: 60
                 allUppercase: true
                 bounce: true
-                text: qsTr("Credits")
+                text: App.lst + qsTr("Credits")
                 onClicked: core.modes.set('credits')
             }
 
@@ -119,7 +145,7 @@ Item {
                     anchors.horizontalCenter: parent.horizontalCenter
                     allUppercase: true
                     bounce: true
-                    text: qsTr("Start")
+                    text: App.lst + qsTr("Start")
                     onClicked: core.modes.set('game')
                 }
 
@@ -127,7 +153,7 @@ Item {
                 TextButton {
                     anchors.horizontalCenter: parent.horizontalCenter
                     allUppercase: true
-                    text: qsTr("Options")
+                    text: App.lst + qsTr("Options")
                     onClicked: core.modes.set('menu')
                 }
                 */
@@ -135,14 +161,14 @@ Item {
                 TextButton {
                     anchors.horizontalCenter: parent.horizontalCenter
                     allUppercase: true
-                    text: qsTr("How to play")
+                    text: App.lst + qsTr("How to play")
                     onClicked: core.modes.set('game-tutorial')
                 }
 
                 TextButton {
                     anchors.horizontalCenter: parent.horizontalCenter
                     allUppercase: true
-                    text: qsTr("Reset")
+                    text: App.lst + qsTr("Reset")
                     onClicked: confirmReset.state = "shown"
                 }
 
@@ -153,7 +179,7 @@ Item {
     ConfirmDialog {
         id: confirmReset
 
-        text: qsTr("This action will erase all game progress.\nContinue?")
+        text: App.lst + qsTr("This action will erase all game progress.\nContinue?")
 
         onAccepted: {
             core.reset()
@@ -186,7 +212,7 @@ Item {
 
         Text {
             anchors { centerIn: parent }
-            text: "Game reset successfully"
+            text: App.lst + qsTr("Game reset successfully")
             color: core.colors.yellow
             style: Text.Outline; styleColor: core.colors.black
             font { family: core.fonts.standard.name }

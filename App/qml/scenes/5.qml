@@ -158,7 +158,7 @@ Base {
             }
         ]
 
-        description: "It's a fan pushing cool fresh air into the room"
+        description: qsTr("It's a fan pushing cool fresh air into the room")
     }
 
     AnimatedArea {
@@ -182,7 +182,7 @@ Base {
             }
         ]
 
-        description: "It's a fan pushing cool fresh air into the room"
+        description: qsTr("It's a fan pushing cool fresh air into the room")
     }
 
     // Levers
@@ -373,12 +373,12 @@ Base {
             onDropped: {
 
                 if(coilLightning.run) {
-                    game.setText("Maybe you should turn off the machinery first")
+                    game.setText(qsTr("Maybe you should turn off the machinery first"))
                     return
                 }
 
                 if(game.fuelCellCharged) {
-                    game.setText("It's already fully charged and ready to go")
+                    game.setText(qsTr("It's already fully charged and ready to go"))
                     return
                 }
 
@@ -519,8 +519,8 @@ Base {
                 var fc = game.getObject('fuel_cell')
                 if(fc && fc.at === "fuel_cell_drop") {
                     fc.z = -1
-                    fc.description = "A half-charged fuel cell"
-                    game.setText("It's charging...","...","...")
+                    fc.description = qsTr("A half-charged fuel cell")
+                    game.setText(qsTr("It's charging..."),qsTr("..."),qsTr("..."))
                     giveFuelCellBackTimer.start()
                 }
             }
@@ -532,7 +532,7 @@ Base {
                     // NOTE setting 'leverLL.state = "up"' here will yield statemachine error: <Unknown File>: QML StateGroup: Can't apply a state change as part of a state definition.
                     // Instead we set it later via a Timer
                     setFuelCellBackTimer.start()
-                    game.setText("The fuel cell has already finished charging")
+                    game.setText(qsTr("The fuel cell has already finished charging"))
                 }
             }
 
@@ -549,10 +549,10 @@ Base {
                 var fc = game.getObject('fuel_cell')
                 if(fc && fc.at === "fuel_cell_drop") {
                     fc.z = 0
-                    fc.description = "A fully charged fuel cell - ready to use"
+                    fc.description = qsTr("A fully charged fuel cell - ready to use")
                     game.fuelCellCharged = true
                     leverLL.state = "up"
-                    game.setText("charged!")
+                    game.setText(qsTr("charged!"))
                 }
             }
         }
@@ -643,8 +643,8 @@ Base {
             MouseArea {
                 anchors { fill: parent }
                 onClicked: {
-                    var txt = "Hmm... This is not an easy task... "
-                    txt += game.flasksFilled ? game.flasksCorrect ? "Some of these still need liquid in them" : "I think everything is ready" : "Something still need to be done here"
+                    var txt = qsTr("Hmm... This is not an easy task... ")
+                    txt += game.flasksFilled ? game.flasksCorrect ? qsTr("Some of these still need liquid in them") : qsTr("I think everything is ready") : qsTr("Something still need to be done here")
 
                     game.setText(txt)
                 }
@@ -659,7 +659,7 @@ Base {
                 sounds.play("tap")
 
                 if(game.flasksCorrect) {
-                    game.setText("Like the old saying goes...","if it ain't broken...","don't fix it!")
+                    game.setText(qsTr("Like the old saying goes..."),qsTr("if it ain't broken..."),qsTr("don't fix it!"))
                     return
                 }
 
@@ -797,11 +797,11 @@ Base {
                     anchors { fill: parent }
                     onClicked: {
                         if(centerLight.color === "green")
-                            game.setText("Nice green glow. Everything seem to be ready")
+                            game.setText(qsTr("Nice green glow. Everything seem to be ready"))
                         if(centerLight.color === "yellow")
-                            game.setText("It's got a nice yellow tint to it. There's more work to be done here")
+                            game.setText(qsTr("It's got a nice yellow tint to it. There's more work to be done here"))
                         if(centerLight.color === "red")
-                            game.setText("It's red. Indicating that something is not in it's right state")
+                            game.setText(qsTr("It's red. Indicating that something is not in it's right state"))
                     }
                 }
             }
