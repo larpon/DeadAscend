@@ -265,6 +265,14 @@
         <source>Off you go hinge!</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>one screw</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>both screws</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>3</name>
@@ -728,6 +736,22 @@
     </message>
     <message>
         <source>The two pieces fit perfectly together</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>green</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>red</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>blue</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>purple</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

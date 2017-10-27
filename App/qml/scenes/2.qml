@@ -839,7 +839,7 @@ Base {
                     onDropped: {
 
                         sounds.play("tick_soft")
-                        game.setText(qsTr("That's %1 down!").arg(coinsUsed === 0 ? "one screw":"both screws"))
+                        game.setText(qsTr("That's %1 down!").arg(coinsUsed === 0 ? qsTr("one screw"):qsTr("both screws")))
 
                         coinsUsed++
 

@@ -57,6 +57,12 @@ Base {
         sfx.add("level"+sceneName,"paper_fiddle",App.getAsset("sounds/paper_fiddle.wav"))
 
         sfx.add("level"+sceneName,"hum",App.getAsset("sounds/low_machine_hum.wav"))
+
+        // Translations for the auto generated liquid colors
+        qsTr("green")
+        qsTr("red")
+        qsTr("blue")
+        qsTr("purple")
     }
 
     Component.onDestruction: {
@@ -194,7 +200,7 @@ Base {
                 var o = drag.source
 
                 if(o.name !== "bottle_blue") {
-                    setText(qsTr("... better not put %1 liquid in a blue pipe").arg(o.name.replace("bottle_","")))
+                    setText(qsTr("... better not put %1 liquid in a blue pipe").arg(qsTr(o.name.replace("bottle_",""))))
                     return
                 }
 
@@ -232,7 +238,7 @@ Base {
                 var o = drag.source
 
                 if(o.name !== "bottle_purple") {
-                    setText(qsTr("... better not put %1 liquid in a purple pipe").arg(o.name.replace("bottle_","")))
+                    setText(qsTr("... better not put %1 liquid in a purple pipe").arg(qsTr(o.name.replace("bottle_",""))))
                     return
                 }
 
@@ -270,7 +276,7 @@ Base {
                 var o = drag.source
 
                 if(o.name !== "bottle_red") {
-                    setText(qsTr("... better not put %1 liquid in a red-ish pipe").arg(o.name.replace("bottle_","")))
+                    setText(qsTr("... better not put %1 liquid in a red-ish pipe").arg(qsTr(o.name.replace("bottle_",""))))
                     return
                 }
 
@@ -308,7 +314,7 @@ Base {
                 var o = drag.source
 
                 if(o.name !== "bottle_green") {
-                    setText(qsTr("... better not put %1 liquid in a green pipe").arg(o.name.replace("bottle_","")))
+                    setText(qsTr("... better not put %1 liquid in a green pipe").arg(qsTr(o.name.replace("bottle_",""))))
                     return
                 }
 
@@ -888,7 +894,7 @@ Base {
                         top: parent.top
                     }
                     mipmap: true
-                    source: App.getAsset("sprites/charging_paper/charging_paper_L.png")
+                    source: App.getAsset("sprites/charging_paper/charging_paper_L."+App.language+".png")
                 }
 
                 Image {

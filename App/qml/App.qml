@@ -78,7 +78,7 @@ QtObject {
     // Dynamic language switch
     property string language: "en"
     onLanguageChanged: {
-        debug('App','setting language',language)
+        debug('App','.language',language)
         languageSwitcher.selectLanguage(language)
     }
 
