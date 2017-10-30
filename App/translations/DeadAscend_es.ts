@@ -144,7 +144,7 @@
     <message>
         <location filename="../qml/scenes/1.qml" line="44"/>
         <source>Interesting surface</source>
-        <translation type="unfinished">Interesante superficie</translation>
+        <translation>Interesante superficie</translation>
     </message>
     <message>
         <location filename="../qml/scenes/1.qml" line="45"/>
@@ -349,22 +349,22 @@
     <message>
         <location filename="../qml/scenes/3.qml" line="84"/>
         <source>Nah. Not really interesting</source>
-        <translation type="unfinished"></translation>
+        <translation>Bah, nada interesante</translation>
     </message>
     <message>
         <location filename="../qml/scenes/3.qml" line="85"/>
         <source>Not of any use</source>
-        <translation type="unfinished">No sirve para nada</translation>
+        <translation>No sirve para nada</translation>
     </message>
     <message>
         <location filename="../qml/scenes/3.qml" line="86"/>
         <source>It&apos;s actually a bit warm in here</source>
-        <translation type="unfinished"></translation>
+        <translation>Hace un poco de calor aquí, ¿no?</translation>
     </message>
     <message>
         <location filename="../qml/scenes/3.qml" line="87"/>
         <source>The machines are humming quite a lot</source>
-        <translation type="unfinished"></translation>
+        <translation>Las máquinas hacen bastante ruido</translation>
     </message>
     <message>
         <location filename="../qml/scenes/3.qml" line="150"/>
@@ -450,7 +450,7 @@
     <message>
         <location filename="../qml/scenes/3.qml" line="638"/>
         <source>... OK. So this is a zombie hamster. It looks pretty strong - but it&apos;s hideous</source>
-        <translation>... vale. Ahora es un hamster-zombi. Parece fuerte, pero es horroroso</translation>
+        <translation>... vale. Ahora es un hámster-zombi. Parece fuerte, pero es horroroso</translation>
     </message>
     <message>
         <location filename="../qml/scenes/3.qml" line="642"/>
@@ -475,7 +475,7 @@
     <message>
         <location filename="../qml/scenes/3.qml" line="668"/>
         <source>The hamster looks pretty scared</source>
-        <translation>Parece que el hamster está bastante asustado</translation>
+        <translation>Parece que el hámster está bastante asustado</translation>
     </message>
     <message>
         <location filename="../qml/scenes/3.qml" line="827"/>
@@ -485,7 +485,7 @@
     <message>
         <location filename="../qml/scenes/3.qml" line="827"/>
         <source>It looks like a sketch, depicting something involving a syringe and a hamster?</source>
-        <translation>Parecen garabatos acerca de una jeringuilla y un hamster</translation>
+        <translation>Parecen garabatos acerca de una jeringuilla y un hámster</translation>
     </message>
 </context>
 <context>
@@ -493,22 +493,22 @@
     <message>
         <location filename="../qml/scenes/4.qml" line="78"/>
         <source>Nah. Not really interesting</source>
-        <translation type="unfinished"></translation>
+        <translation>Bah, nada interesante</translation>
     </message>
     <message>
         <location filename="../qml/scenes/4.qml" line="79"/>
         <source>Not of any use</source>
-        <translation type="unfinished">No sirve para nada</translation>
+        <translation>No sirve para nada</translation>
     </message>
     <message>
         <location filename="../qml/scenes/4.qml" line="80"/>
         <source>It&apos;s actually a bit warm in here</source>
-        <translation type="unfinished"></translation>
+        <translation>Hace un poco de calor aquí, ¿no?</translation>
     </message>
     <message>
         <location filename="../qml/scenes/4.qml" line="81"/>
         <source>There&apos;s almost too quiet...</source>
-        <translation type="unfinished"></translation>
+        <translation>Todo está demasiado tranquilo</translation>
     </message>
     <message>
         <location filename="../qml/scenes/4.qml" line="131"/>
@@ -593,22 +593,22 @@
     <message>
         <location filename="../qml/scenes/5.qml" line="64"/>
         <source>Nah. Not really interesting</source>
-        <translation type="unfinished"></translation>
+        <translation>Bah, nada interesante</translation>
     </message>
     <message>
         <location filename="../qml/scenes/5.qml" line="65"/>
         <source>Not of any use</source>
-        <translation type="unfinished">No sirve para nada</translation>
+        <translation>No sirve para nada</translation>
     </message>
     <message>
         <location filename="../qml/scenes/5.qml" line="66"/>
         <source>It&apos;s actually a bit warm in here</source>
-        <translation type="unfinished"></translation>
+        <translation>Hace un poco de calor aquí, ¿no?</translation>
     </message>
     <message>
         <location filename="../qml/scenes/5.qml" line="67"/>
         <source>The machines are humming quite a lot - just like downstairs</source>
-        <translation type="unfinished"></translation>
+        <translation>Las máquinas hacen bastante ruido, como en la planta de abajo</translation>
     </message>
     <message>
         <location filename="../qml/scenes/5.qml" line="161"/>
@@ -727,22 +727,22 @@
     <message>
         <location filename="../qml/scenes/6.qml" line="65"/>
         <source>purple</source>
-        <translation type="unfinished">morado</translation>
+        <translation>morado</translation>
     </message>
     <message>
         <location filename="../qml/scenes/6.qml" line="82"/>
         <source>Nah. Not really interesting</source>
-        <translation type="unfinished"></translation>
+        <translation>Bah, nada interesante</translation>
     </message>
     <message>
         <location filename="../qml/scenes/6.qml" line="83"/>
         <source>Not of any use</source>
-        <translation type="unfinished">No sirve para nada</translation>
+        <translation>No sirve para nada</translation>
     </message>
     <message>
         <location filename="../qml/scenes/6.qml" line="84"/>
         <source>It&apos;s actually a bit warm in here</source>
-        <translation type="unfinished"></translation>
+        <translation>Hace un poco de calor aquí, ¿no?</translation>
     </message>
     <message>
         <location filename="../qml/scenes/6.qml" line="169"/>
@@ -956,17 +956,17 @@
     <message>
         <location filename="../qml/scenes/7.qml" line="53"/>
         <source>Nah. Not really interesting</source>
-        <translation type="unfinished"></translation>
+        <translation>Bah, nada interesante</translation>
     </message>
     <message>
         <location filename="../qml/scenes/7.qml" line="54"/>
         <source>Not of any use</source>
-        <translation type="unfinished">No sirve para nada</translation>
+        <translation>No sirve para nada</translation>
     </message>
     <message>
         <location filename="../qml/scenes/7.qml" line="55"/>
         <source>It&apos;s actually a bit warm in here</source>
-        <translation type="unfinished"></translation>
+        <translation>Hace un poco de calor aquí, ¿no?</translation>
     </message>
     <message>
         <location filename="../qml/scenes/7.qml" line="167"/>
@@ -1704,12 +1704,12 @@
     <message>
         <location filename="../qml/Game.qml" line="657"/>
         <source>It&apos;s clear that the panel is almost completly broken</source>
-        <translation type="unfinished"></translation>
+        <translation>Está claro que casi todos los botones están rotos</translation>
     </message>
     <message>
         <location filename="../qml/Game.qml" line="658"/>
         <source>Luckily the elevator still works - thanks to Mr. Hamster</source>
-        <translation type="unfinished"></translation>
+        <translation>Por suerte, el ascensor funciona gracias al Sr. Hámster</translation>
     </message>
     <message>
         <location filename="../qml/Game.qml" line="679"/>
@@ -1814,50 +1814,50 @@ Continue?</source>
     <message>
         <location filename="../qml/scenes/Tutorial.qml" line="35"/>
         <source>Welcome survivor&lt;br&gt;This is how you&lt;br&gt;play the game</source>
-        <translation type="unfinished"></translation>
+        <translation>Bienvenido, superviviente&lt;br&gt;Aquí aprenderás&lt;br&gt;a jugar</translation>
     </message>
     <message>
         <location filename="../qml/scenes/Tutorial.qml" line="37"/>
         <source>Tab on objects&lt;br&gt;to examine them</source>
-        <translation type="unfinished"></translation>
+        <translation>Toca los objetos&lt;br&gt;para analizarlos</translation>
     </message>
     <message>
         <location filename="../qml/scenes/Tutorial.qml" line="39"/>
         <location filename="../qml/scenes/Tutorial.qml" line="43"/>
         <location filename="../qml/scenes/Tutorial.qml" line="49"/>
         <source>Good job!</source>
-        <translation type="unfinished"></translation>
+        <translation>¡Buen trabajo!</translation>
     </message>
     <message>
         <location filename="../qml/scenes/Tutorial.qml" line="41"/>
         <source>Tab once on objects&lt;br&gt;to pick them up</source>
-        <translation type="unfinished"></translation>
+        <translation>Toca los objetos&lt;br&gt;para cogerlos</translation>
     </message>
     <message>
         <location filename="../qml/scenes/Tutorial.qml" line="45"/>
         <source>Objects you have&lt;br&gt;picked up is in&lt;br&gt;your inventory...</source>
-        <translation type="unfinished"></translation>
+        <translation>Los objetos&lt;br&gt;que cojas se guardan&lt;br&gt;en el inventario...</translation>
     </message>
     <message>
         <location filename="../qml/scenes/Tutorial.qml" line="47"/>
         <source>To use objects&lt;br&gt;hold and drag them&lt;br&gt;from the inventory to the room&lt;br&gt;(place the zombie doll on the box)</source>
-        <translation type="unfinished"></translation>
+        <translation>Para usar un objeto&lt;br&gt;arrástralo&lt;br&gt;fuera del inventario&lt;br&gt;(coloca el muñeco-zombi encima de la caja)</translation>
     </message>
     <message>
         <location filename="../qml/scenes/Tutorial.qml" line="51"/>
         <source>That&apos;s basically it!&lt;br&gt;Now try and put the wiener&lt;br&gt;on the doll&apos;s head!</source>
-        <translation type="unfinished"></translation>
+        <translation>¡Eso es todo!&lt;br&gt;Ahora intenta colocar la salchicha&lt;br&gt;encima del muñeco</translation>
     </message>
     <message>
         <location filename="../qml/scenes/Tutorial.qml" line="53"/>
         <source>Good job!&lt;br&gt;You have completed the tutorial!&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;red&quot;&gt;NOW TRY THE REAL DEAL&lt;/font&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>¡Bien hecho!&lt;br&gt;¡Has completado el tutorial!&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;red&quot;&gt;Y AHORA... AL LÍO&lt;/font&gt;</translation>
     </message>
     <message>
         <location filename="../qml/scenes/Tutorial.qml" line="180"/>
         <source>Continue</source>
         <extracomment>On a button</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Continuar</translation>
     </message>
 </context>
 <context>
@@ -2043,7 +2043,7 @@ Continue?</source>
     <message>
         <location filename="Extra.qml" line="46"/>
         <source>The door from the medicine cabinet.</source>
-        <translation type="unfinished">La puerta del botiquín</translation>
+        <translation>La puerta del botiquín</translation>
     </message>
     <message>
         <location filename="Extra.qml" line="47"/>
@@ -2128,7 +2128,7 @@ Continue?</source>
     <message>
         <location filename="Extra.qml" line="63"/>
         <source>There&apos;s a hamster living here! Hey little buddy!</source>
-        <translation>Hay un hamster viviendo aquí. ¡Hola, pequeñín!</translation>
+        <translation>Hay un hámster viviendo aquí. ¡Hola, pequeñín!</translation>
     </message>
     <message>
         <location filename="Extra.qml" line="64"/>
@@ -2228,7 +2228,7 @@ Continue?</source>
     <message>
         <location filename="Extra.qml" line="83"/>
         <source>POP, POP no more... pop... corn. Eeer</source>
-        <translation type="unfinished">Palomitas de maíz, palomitas de maíz...</translation>
+        <translation>Palomitas de maíz, palomitas de maíz...</translation>
     </message>
     <message>
         <location filename="Extra.qml" line="84"/>

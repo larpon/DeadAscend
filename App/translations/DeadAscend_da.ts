@@ -167,393 +167,393 @@
     <name>2</name>
     <message>
         <source>An empty syringe. Not very helpful when empty...</source>
-        <translation type="unfinished"></translation>
+        <translation>En tom kanyle. Ikke specielt brugbar når den er tom...</translation>
     </message>
     <message>
         <source>Not very interesting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikke særlig interessant</translation>
     </message>
     <message>
         <source>Not of any use</source>
-        <translation type="unfinished">Ikke brugbart</translation>
+        <translation>Ikke brugbart</translation>
     </message>
     <message>
         <source>It&apos;s cold in here</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er koldt herinde</translation>
     </message>
     <message>
         <source>I wonder where everybody is?</source>
-        <translation type="unfinished"></translation>
+        <translation>Gad vide hvor allesammen er henne?</translation>
     </message>
     <message>
         <source>There&apos;s faint sounds of mumbling zombies</source>
-        <translation type="unfinished"></translation>
+        <translation>Der er svage lyde af zombiemumlen</translation>
     </message>
     <message>
         <source>It seems like it need a fuse to work</source>
-        <translation type="unfinished"></translation>
+        <translation>Det ser ud til at den mangler en sikring for at virke</translation>
     </message>
     <message>
         <source>Going up!</source>
-        <translation type="unfinished"></translation>
+        <translation>Så kører vi op!</translation>
     </message>
     <message>
         <source>Going down!</source>
-        <translation type="unfinished"></translation>
+        <translation>Så kører vi ned!</translation>
     </message>
     <message>
         <source>This lift could get you further up. But it&apos;s not working?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vareelevatoren her kunne godt få dig længere op - men den virker ikke?</translation>
     </message>
     <message>
         <source>It&apos;s hard to make out what is behind the wall</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er svært at se hvad der er bag muren</translation>
     </message>
     <message>
         <source>The lift must be on the other side of this wall</source>
-        <translation type="unfinished"></translation>
+        <translation>Vareelevatoren må være på den anden side af væggen</translation>
     </message>
     <message>
         <source>It fits perfectly!</source>
-        <translation type="unfinished"></translation>
+        <translation>Den passer perfect!</translation>
     </message>
     <message>
         <source>It fits perfectly in the socket!</source>
-        <translation type="unfinished"></translation>
+        <translation>Den passer perfekt i fatningen!</translation>
     </message>
     <message>
         <source>The lift is already up</source>
-        <translation type="unfinished"></translation>
+        <translation>Varelevatoren er allerede oppe</translation>
     </message>
     <message>
         <source>The lift is already down</source>
-        <translation type="unfinished"></translation>
+        <translation>Varelevatoren er allerede nede</translation>
     </message>
     <message>
         <source>The cabinet door is locked. Cabinets always hold useful stuff!</source>
-        <translation type="unfinished"></translation>
+        <translation>Lågen til skabet er låst. Skabe indeholder altid brugbare ting og sager!</translation>
     </message>
     <message>
         <source>A keyhole</source>
-        <translation type="unfinished"></translation>
+        <translation>Et nøglehul</translation>
     </message>
     <message>
         <source>It won&apos;t open the door...</source>
-        <translation type="unfinished"></translation>
+        <translation>Det vil ikke åbne døren...</translation>
     </message>
     <message>
         <source>Maybe try it with the hinge?</source>
-        <translation type="unfinished"></translation>
+        <translation>Prøv det måske med hængslet?</translation>
     </message>
     <message>
         <source>A hinge holding the door</source>
-        <translation type="unfinished"></translation>
+        <translation>Et hængsel der holder døren</translation>
     </message>
     <message>
         <source>If there&apos;s no keys to be found - maybe this can be removed somehow</source>
-        <translation type="unfinished"></translation>
+        <translation>Hvis der ikke findes en nøgle - kan det her måske fjernes på en måde</translation>
     </message>
     <message>
         <source>A mighty fine screw</source>
-        <translation type="unfinished"></translation>
+        <translation>En meget fin skrue!</translation>
     </message>
     <message>
         <source>That&apos;s %1 down!</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er %1 nede!</translation>
     </message>
     <message>
         <source>Off you go hinge!</source>
-        <translation type="unfinished"></translation>
+        <translation>Afsted med dig hængsel!</translation>
     </message>
     <message>
         <source>one screw</source>
-        <translation type="unfinished"></translation>
+        <translation>en skrue</translation>
     </message>
     <message>
         <source>both screws</source>
-        <translation type="unfinished"></translation>
+        <translation>begge skruer</translation>
     </message>
 </context>
 <context>
     <name>3</name>
     <message>
         <source>Nah. Not really interesting</source>
-        <translation type="unfinished"></translation>
+        <translation>Næh. Ikke rigtig interessant</translation>
     </message>
     <message>
         <source>Not of any use</source>
-        <translation type="unfinished">Ikke brugbart</translation>
+        <translation>Ikke brugbart</translation>
     </message>
     <message>
         <source>It&apos;s actually a bit warm in here</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er faktisk lidt varmt herinde</translation>
     </message>
     <message>
         <source>The machines are humming quite a lot</source>
-        <translation type="unfinished"></translation>
+        <translation>Maskinerne summer faktisk en del</translation>
     </message>
     <message>
         <source>It&apos;s passive...</source>
-        <translation type="unfinished"></translation>
+        <translation>Den er passiv...</translation>
     </message>
     <message>
         <source>Only a few live infected cells relieves some muscle ticks</source>
-        <translation type="unfinished"></translation>
+        <translation>Kun et par inficerede celler er i live der hiver lidt i musklerne</translation>
     </message>
     <message>
         <source>You should take it out of it&apos;s missery</source>
-        <translation type="unfinished"></translation>
+        <translation>Du burde gøre en ende på dens lidelser</translation>
     </message>
     <message>
         <source>Straight in the head</source>
-        <translation type="unfinished"></translation>
+        <translation>Lige i hovedet</translation>
     </message>
     <message>
         <source>It&apos;s a coin. With a very matte finish</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er en mønt. Med en ret mat overflade</translation>
     </message>
     <message>
         <source>The hammer broke in two. No need to carry that around any more</source>
-        <translation type="unfinished"></translation>
+        <translation>Hammer gik i stykker. Det er ligemeget at bære rundt på den mere</translation>
     </message>
     <message>
         <source>He&apos;s dead Jim</source>
-        <translation type="unfinished"></translation>
+        <translation>Han er død du</translation>
     </message>
     <message>
         <source>... or as close as dead as zombies get</source>
-        <translation type="unfinished"></translation>
+        <translation>... eller - så død som en zombie nu kan være</translation>
     </message>
     <message>
         <source>It&apos;s full of infested zombie blood</source>
-        <translation type="unfinished"></translation>
+        <translation>Den er fyldt med inficeret zombieblod</translation>
     </message>
     <message>
         <source>It&apos;s full of infested zombie blood now!</source>
-        <translation type="unfinished"></translation>
+        <translation>Den er fyldt med inficeret zombieblod nu!</translation>
     </message>
     <message>
         <source>Going up!</source>
-        <translation type="unfinished"></translation>
+        <translation>Så kører vi op!</translation>
     </message>
     <message>
         <source>Going down!</source>
-        <translation type="unfinished"></translation>
+        <translation>Så kører vi ned!</translation>
     </message>
     <message>
         <source>The little critter is really calm now. Eating away</source>
-        <translation type="unfinished"></translation>
+        <translation>Den little gnaver er virkelig rolig nu. Den guffer løs</translation>
     </message>
     <message>
         <source>Unfortunately it&apos;s too small to drive the treadmill upstairs</source>
-        <translation type="unfinished"></translation>
+        <translation>Uheldigvis er den for lille til at drive trædemøllen ovenpå</translation>
     </message>
     <message>
         <source>It&apos;s scared now the glass is smashed. Maybe it can be lured out of hiding</source>
-        <translation type="unfinished"></translation>
+        <translation>Den er bange nu hvor glasset er smadret. Måske kan den lokkes ud af sit skjul</translation>
     </message>
     <message>
         <source>Such a cute little critter</source>
-        <translation type="unfinished"></translation>
+        <translation>Sådan en sød lille gnaver</translation>
     </message>
     <message>
         <source>... OK. So this is a zombie hamster. It looks pretty strong - but it&apos;s hideous</source>
-        <translation type="unfinished"></translation>
+        <translation>... OK. Så dette er en zombiehamster. Den ser ret stærk ud - men den er grim</translation>
     </message>
     <message>
         <source>What. The...</source>
-        <translation type="unfinished"></translation>
+        <translation>Hvad fand...</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Indeed you could inject him with something...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja, du kunne godt sprøjte noget noget i ham...</translation>
     </message>
     <message>
         <source>But what?</source>
-        <translation type="unfinished"></translation>
+        <translation>Men hvad?</translation>
     </message>
     <message>
         <source>The hamster looks pretty scared</source>
-        <translation type="unfinished"></translation>
+        <translation>Hamsteren ser ret skræmt ud</translation>
     </message>
     <message>
         <source>The drawing on the whiteboard is faded - but can still be made out</source>
-        <translation type="unfinished"></translation>
+        <translation>Tegningen på tavlen er udhvisket - men man kan godt se hvad der er på den</translation>
     </message>
     <message>
         <source>It looks like a sketch, depicting something involving a syringe and a hamster?</source>
-        <translation type="unfinished"></translation>
+        <translation>Det ligner en skitse - af noget der involverer en kanyle og en hamster?</translation>
     </message>
 </context>
 <context>
     <name>4</name>
     <message>
         <source>Nah. Not really interesting</source>
-        <translation type="unfinished"></translation>
+        <translation>Næh. Ikke rigtig interessant</translation>
     </message>
     <message>
         <source>Not of any use</source>
-        <translation type="unfinished">Ikke brugbart</translation>
+        <translation>Ikke brugbart</translation>
     </message>
     <message>
         <source>It&apos;s actually a bit warm in here</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er faktisk lidt varmt herinde</translation>
     </message>
     <message>
         <source>There&apos;s almost too quiet...</source>
-        <translation type="unfinished"></translation>
+        <translation>Der er næsten for stille...</translation>
     </message>
     <message>
         <source>It&apos;s now connecting the treadmill with the battery - good thinking!</source>
-        <translation type="unfinished"></translation>
+        <translation>Den forbinder nu trædemøllen med batteriet - godt tænkt!</translation>
     </message>
     <message>
         <source>The elevator is now: Zombie Hamster Powered...</source>
-        <translation type="unfinished"></translation>
+        <translation>Elevatoren er nu: Zombiehamsterdrevet</translation>
     </message>
     <message>
         <source>That&apos;s... really...</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er... virkelig...</translation>
     </message>
     <message>
         <source>... really... weird</source>
-        <translation type="unfinished"></translation>
+        <translation>... virkelig... underligt</translation>
     </message>
     <message>
         <source>There should be a way to connect the treadmill to the motor somehow</source>
-        <translation type="unfinished"></translation>
+        <translation>Der må være en måde at forbinde trædemøllen med moteren på</translation>
     </message>
     <message>
         <source>Maybe this treadmill could actually power the elevator</source>
-        <translation type="unfinished"></translation>
+        <translation>Måske kunne den her trædemølle rent faktisk drive elevatoren</translation>
     </message>
     <message>
         <source>It&apos;s just a matter of finding something powerfull enough to run it</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er bare et spørgsmål om at finde noget der er kraftfuldt nok til at drive den</translation>
     </message>
     <message>
         <source>It can&apos;t move with all this junk in front of it</source>
-        <translation type="unfinished"></translation>
+        <translation>Den kan ikke flytte sig med alt det bras foran sig</translation>
     </message>
     <message>
         <source>It&apos;s stuck behind the popcorn machine</source>
-        <translation type="unfinished"></translation>
+        <translation>Det sidder fast bag popcornmaskinen</translation>
     </message>
     <message>
         <source>The wheels on this is rusted in place. The glass top is making it too heavy to move.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hjulene på den her er rustet fast. Glasset gør den for tung at flytte</translation>
     </message>
     <message>
         <source>The skies are in the way</source>
         <extracomment>Skies the ones you put on and ski down a slope with :)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Skiene er i vejen</translation>
     </message>
     <message>
         <source>The rocking horse is in the way</source>
-        <translation type="unfinished"></translation>
+        <translation>Gyngehesten står i vejen</translation>
     </message>
     <message>
         <source>The beach ball is in the way</source>
-        <translation type="unfinished"></translation>
+        <translation>Badebolden er i vejen</translation>
     </message>
     <message>
         <source>The elevator needs power to operate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Elevatoren skal have strøm for at virke</translation>
     </message>
     <message>
         <source>No need for more grain</source>
-        <translation type="unfinished"></translation>
+        <translation>Der er ikke behov for mere korn</translation>
     </message>
 </context>
 <context>
     <name>5</name>
     <message>
         <source>Nah. Not really interesting</source>
-        <translation type="unfinished"></translation>
+        <translation>Næh. Ikke rigtig interessant</translation>
     </message>
     <message>
         <source>Not of any use</source>
-        <translation type="unfinished">Ikke brugbart</translation>
+        <translation>Ikke brugbart</translation>
     </message>
     <message>
         <source>It&apos;s actually a bit warm in here</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er faktisk lidt varmt herinde</translation>
     </message>
     <message>
         <source>The machines are humming quite a lot - just like downstairs</source>
-        <translation type="unfinished"></translation>
+        <translation>Maskinerne summer faktisk en del - ligesom nedenunder</translation>
     </message>
     <message>
         <source>It&apos;s a fan pushing cool fresh air into the room</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er en ventilator der blæser frisk luft ind i rummet</translation>
     </message>
     <message>
         <source>Maybe you should turn off the machinery first</source>
-        <translation type="unfinished"></translation>
+        <translation>Måske du skulle slukke for maskineriet først</translation>
     </message>
     <message>
         <source>It&apos;s already fully charged and ready to go</source>
-        <translation type="unfinished"></translation>
+        <translation>Den er fuldt opladt og klar på ballade</translation>
     </message>
     <message>
         <source>A half-charged fuel cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Et halv-opladt batteri</translation>
     </message>
     <message>
         <source>It&apos;s charging...</source>
-        <translation type="unfinished"></translation>
+        <translation>Det oplader...</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>The fuel cell has already finished charging</source>
-        <translation type="unfinished"></translation>
+        <translation>Batteriet er allerede færdigt med at oplade</translation>
     </message>
     <message>
         <source>A fully charged fuel cell - ready to use</source>
-        <translation type="unfinished"></translation>
+        <translation>Et fuldt opladet batteri - lige klar til brug</translation>
     </message>
     <message>
         <source>charged!</source>
-        <translation type="unfinished"></translation>
+        <translation>Opladt!</translation>
     </message>
     <message>
         <source>Hmm... This is not an easy task... </source>
-        <translation type="unfinished"></translation>
+        <translation>Hmm... Det her er ikke en nem opgave...</translation>
     </message>
     <message>
         <source>Some of these still need liquid in them</source>
-        <translation type="unfinished"></translation>
+        <translation>Nogle af dem her mangler stadig væske</translation>
     </message>
     <message>
         <source>I think everything is ready</source>
-        <translation type="unfinished"></translation>
+        <translation>Jeg tror alt er klart</translation>
     </message>
     <message>
         <source>Something still need to be done here</source>
-        <translation type="unfinished"></translation>
+        <translation>Der mangler stadigvæk at blive gjort noget her</translation>
     </message>
     <message>
         <source>Like the old saying goes...</source>
-        <translation type="unfinished"></translation>
+        <translation>Som det gamle ordsprog lyder...</translation>
     </message>
     <message>
         <source>if it ain&apos;t broken...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lad være med at fikse det...</translation>
     </message>
     <message>
         <source>don&apos;t fix it!</source>
-        <translation type="unfinished"></translation>
+        <translation>hvis det ikke er gået i stykker!</translation>
     </message>
     <message>
         <source>Nice green glow. Everything seem to be ready</source>
-        <translation type="unfinished"></translation>
+        <translation>Lækkert grønt skær. Alt ser ud til at være parat</translation>
     </message>
     <message>
         <source>It&apos;s got a nice yellow tint to it. There&apos;s more work to be done here</source>
