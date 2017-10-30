@@ -1209,7 +1209,10 @@
                 Spanish translation&lt;br&gt;
                 Sara Gutiérrez&lt;br&gt;Enrique Mora Gil
                 </source>
-        <translation type="unfinished"></translation>
+        <translation>
+                Traducción al español&lt;br&gt;
+                Sara Gutiérrez&lt;br&gt;Enrique Mora
+                </translation>
     </message>
     <message>
         <source>
