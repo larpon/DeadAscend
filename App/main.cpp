@@ -23,8 +23,22 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
+
+    #ifdef VERSION
     engine.rootContext()->setContextProperty("version", QString(VERSION));
+    #endif
+
+    #ifdef GIT_VERSION
     engine.rootContext()->setContextProperty("gitVersion", QString(GIT_VERSION));
+    #endif
+
+    #ifdef QAK_VERSION
+    engine.rootContext()->setContextProperty("qakVersion", QString(QAK_VERSION));
+    #endif
+
+    #ifdef QAK_GIT_VERSION
+    engine.rootContext()->setContextProperty("qakGitVersion", QString(QAK_GIT_VERSION));
+    #endif
 
     #ifdef QT_DEBUG
         engine.rootContext()->setContextProperty("debugBuild", QVariant(true));
@@ -37,6 +51,8 @@ int main(int argc, char *argv[])
     #else
         engine.rootContext()->setContextProperty("adBuild", QVariant(false));
     #endif
+
+    engine.rootContext()->setContextProperty("qtVersion", QString(QT_VERSION_STR));
 
     #if defined(Q_OS_IOS)
     //qDebug() << "Register assets at" << QDir::currentPath()+QDir::separator()+"assets.rcc";

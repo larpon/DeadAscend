@@ -51,7 +51,7 @@ Rectangle {
 
         text: qsTr('
         Dead Ascend © <font size="1">2016-2017 <a href="http://games.blackgrain.dk">Black Grain</a></font><br>
-        Version '+version+' ('+gitVersion+')<br>
+        Version '+version+' ('+gitVersion+'), Qak '+qakVersion+' ('+qakGitVersion+'), Qt '+qtVersion+'<br>
         <p>
             An open source game utilizing the cross-platform <a href="https://www.qt.io/">Qt</a> project.<br>
             Game and project source code can be found on <a href="https://github.com/Larpon/DeadAscend">GitHub</a>
