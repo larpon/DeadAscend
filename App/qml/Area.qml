@@ -78,6 +78,7 @@ Entity {
     }
 
     function autoDescription() {
+        description = App.eTr(description)
         if(Aid.isString(description) && description !== "")
             game.setText(description)
         if(Aid.isArray(description) && description.length > 0)

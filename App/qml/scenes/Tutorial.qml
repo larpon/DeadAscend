@@ -32,25 +32,25 @@ Base {
 
     function stepText(step) {
         if(step === 0)
-            return 'Welcome survivor<br>This is how you<br>play the game'
+            return qsTr('Welcome survivor<br>This is how you<br>play the game')
         if(step === 1)
-            return 'Tab on objects<br>to examine them'
+            return qsTr('Tab on objects<br>to examine them')
         if(step === 2)
-            return 'Good job!'
+            return qsTr('Good job!')
         if(step === 3)
-            return 'Tab once on objects<br>to pick them up'
+            return qsTr('Tab once on objects<br>to pick them up')
         if(step === 4)
-            return 'Good job!'
+            return qsTr('Good job!')
         if(step === 5)
-            return 'Objects you have<br>picked up is in<br>your inventory...'
+            return qsTr('Objects you have<br>picked up is in<br>your inventory...')
         if(step === 6)
-            return 'To use objects<br>hold and drag them<br>from the inventory to the room<br>(place the zombie doll on the box)'
+            return qsTr('To use objects<br>hold and drag them<br>from the inventory to the room<br>(place the zombie doll on the box)')
         if(step === 7)
-            return 'Good job!'
+            return qsTr('Good job!')
         if(step === 8)
-            return 'That\'s basically it!<br>Now try and put the wiener<br>on the doll\'s head!'
+            return qsTr('That\'s basically it!<br>Now try and put the wiener<br>on the doll\'s head!')
         if(step === 9)
-            return 'Good job!<br>You have completed the tutorial!<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">NOW TRY THE REAL DEAL</font>'
+            return qsTr('Good job!<br>You have completed the tutorial!<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">NOW TRY THE REAL DEAL</font>')
 
         return ""
     }
@@ -126,7 +126,7 @@ Base {
             continueButton.opacity = 1
 
         }
-        if(currentStep === 10) {
+        if(currentStep >= 10) {
             core.goBack()
         }
     }
@@ -176,7 +176,8 @@ Base {
         panicClickSafety: true
         bounce: true
 
-        text: 'Continue'
+        //: On a button
+        text: qsTr('Continue')
 
         onClicked: nextStep()
 

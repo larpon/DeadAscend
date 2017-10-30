@@ -2,6 +2,7 @@ pragma Singleton
 
 import QtQuick 2.0
 import Qak 1.0
+import Qak.Tools 1.0
 
 import LanguageSwitcher 1.0
 
@@ -87,6 +88,27 @@ QtObject {
 
     // Logging
     property QtObject logger: Log { enabled: dbg; history: debugBuild }
+
+    function eTr(input) {
+        var oi
+        if(Aid.isString(input) && input !== "") {
+            oi = input
+            input = qsTr(input)
+            if(input === oi)
+                input = qsTranslate('fromEditor',input)
+        }
+
+        if(Aid.isArray(input) && input.length > 0) {
+            for(var i in input) {
+                oi = input[i]
+                input[i] = qsTr(input[i])
+                if(input[i] === oi)
+                    input[i] = qsTranslate('fromEditor',input[i])
+            }
+        }
+
+        return input
+    }
 
     function log() {
         logger.log.apply(logger, arguments)

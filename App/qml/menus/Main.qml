@@ -76,6 +76,7 @@ Item {
             }
 
             TextButton {
+                id: languageSelect
                 anchors {
                     left: parent.left
                     verticalCenter: parent.verticalCenter
@@ -97,6 +98,49 @@ Item {
                     if(App.language === "da") {
                         App.language = "en"
                         return
+                    }
+                }
+            }
+
+            Row {
+                id: languageSelectFlags
+                anchors {
+                    left: parent.left
+                    top: languageSelect.bottom
+                    leftMargin: 20
+                }
+                spacing: 10
+
+                Image {
+                    height: 20
+                    fillMode: Image.PreserveAspectFit
+                    source: App.getAsset('flags/en.png')
+                    opacity: (App.language === "en" || App.language === "") ? 1 : 0.3
+                    MouseArea {
+                        anchors { fill: parent }
+                        onClicked: App.language = "en"
+                    }
+                }
+
+                Image {
+                    height: 20
+                    fillMode: Image.PreserveAspectFit
+                    source: App.getAsset('flags/es.png')
+                    opacity: (App.language === "es") ? 1 : 0.3
+                    MouseArea {
+                        anchors { fill: parent }
+                        onClicked: App.language = "es"
+                    }
+                }
+
+                Image {
+                    height: 20
+                    fillMode: Image.PreserveAspectFit
+                    source: App.getAsset('flags/dk.png')
+                    opacity: (App.language === "da") ? 1 : 0.3
+                    MouseArea {
+                        anchors { fill: parent }
+                        onClicked: App.language = "da"
                     }
                 }
             }

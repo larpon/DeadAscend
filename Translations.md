@@ -1,9 +1,20 @@
 
-From App directory:
+# Prepare strings
+
+From project root:
+python ./sbin/translation.py ./App/assets/scenes/scenes.json
+mv ./Extra.qml ./App/translations/
+
+# Translation flow
+
+Developer from App directory:
 lupdate App.pro -ts translations/*.ts
 
-From App directory:
+Translator:
 linguist translations/DeadAscend_*.ts
 
-From App directory:
+Developer from App directory:
 lrelease translations/*.ts
+
+# Flags
+https://github.com/hjnilsson/country-flags

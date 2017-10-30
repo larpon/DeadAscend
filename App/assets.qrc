@@ -1033,5 +1033,8 @@
         <file>assets/messagebox.png</file>
         <file>assets/publisher.png</file>
         <file>assets/studio.png</file>
+        <file>assets/flags/dk.png</file>
+        <file>assets/flags/en.png</file>
+        <file>assets/flags/es.png</file>
     </qresource>
 </RCC>

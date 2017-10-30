@@ -3,6 +3,8 @@ import QtQuick 2.0
 import Qak 1.0
 import Qak.Tools 1.0
 
+import "."
+
 ImageAnimation {
     id: area
 
@@ -52,6 +54,7 @@ ImageAnimation {
     }
 
     function autoDescription() {
+        description = App.eTr(description)
         if(Aid.isString(description) && description !== "")
             game.setText(description)
         if(Aid.isArray(description) && description.length > 0)

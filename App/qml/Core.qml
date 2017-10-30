@@ -20,6 +20,8 @@ Item {
     readonly property real defaultMargins: Qak.platform.isMobile ? -20 : -10
 
     Component.onCompleted: {
+        settings.load()
+
         onBack(function(){ modes.set('quit') })
 
         if(Qak.platform.os === "ios") {
@@ -39,6 +41,10 @@ Item {
     Store {
         id: settings
         name: "core"
+
+        property string language: App.language
+
+        onLoaded: App.language = language
     }
 
     QtObject {

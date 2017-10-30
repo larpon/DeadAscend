@@ -35,11 +35,11 @@ QtObject {
                         desc = json.loads(desc)
 
                         for d in desc:
-                            qml_out += pad+"qsTr(\""+d+"\")"+"\n"
+                            qml_out += pad+"qsTranslate(\"fromEditor\",\""+d+"\")"+"\n"
 
                         continue
 
-                    qml_out += pad+"qsTr(\""+desc+"\")"+"\n"
+                    qml_out += pad+"qsTranslate(\"fromEditor\",\""+desc+"\")"+"\n"
 
 
     qml_out += """

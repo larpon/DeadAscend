@@ -993,7 +993,137 @@
     </message>
 </context>
 <context>
-    <name>Extra</name>
+    <name>Game</name>
+    <message>
+        <source>All systems... GO!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It&apos;s clear that the panel is almost completly broken</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Luckily the elevator still works - thanks to Mr. Hamster</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You&apos;re already at this floor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This particular socket is special</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It&apos;s clear that a button is missing above all the other buttons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Miraculously - it fits. Must be your lucky day!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The bucket is patched. No holes!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There we go. A patched bucket!</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Main</name>
+    <message>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Credits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How to play</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This action will erase all game progress.
+Continue?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Game reset successfully</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Pause</name>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Tutorial</name>
+    <message>
+        <source>Welcome survivor&lt;br&gt;This is how you&lt;br&gt;play the game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tab on objects&lt;br&gt;to examine them</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Good job!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tab once on objects&lt;br&gt;to pick them up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Objects you have&lt;br&gt;picked up is in&lt;br&gt;your inventory...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To use objects&lt;br&gt;hold and drag them&lt;br&gt;from the inventory to the room&lt;br&gt;(place the zombie doll on the box)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>That&apos;s basically it!&lt;br&gt;Now try and put the wiener&lt;br&gt;on the doll&apos;s head!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Good job!&lt;br&gt;You have completed the tutorial!&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;red&quot;&gt;NOW TRY THE REAL DEAL&lt;/font&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Continue</source>
+        <extracomment>On a button</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>fromEditor</name>
     <message>
         <source>A nice source of light</source>
         <translation type="unfinished"></translation>
@@ -1412,96 +1542,6 @@
     </message>
     <message>
         <source>A glass bottle of red liquid</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Game</name>
-    <message>
-        <source>All systems... GO!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>It&apos;s clear that the panel is almost completly broken</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Luckily the elevator still works - thanks to Mr. Hamster</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You&apos;re already at this floor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>This particular socket is special</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>It&apos;s clear that a button is missing above all the other buttons</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Miraculously - it fits. Must be your lucky day!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The bucket is patched. No holes!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>There we go. A patched bucket!</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Main</name>
-    <message>
-        <source>About</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Credits</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Start</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>How to play</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Reset</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>This action will erase all game progress.
-Continue?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Game reset successfully</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Pause</name>
-    <message>
-        <source>Resume</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Menu</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -1271,6 +1271,595 @@
 <context>
     <name>Extra</name>
     <message>
+        <source>A nice source of light</source>
+        <translation type="vanished">Una buena luz</translation>
+    </message>
+    <message>
+        <source>This is a box. Every game with a box deserves respect. Respect the box.</source>
+        <translation type="vanished">Esto es una caja. Cualquier juego con una caja merece respeto. Respeta la caja.</translation>
+    </message>
+    <message>
+        <source>An old bucket. It&apos;s got a hole in it</source>
+        <translation type="vanished">Un cubo viejo. Tiene un agujero</translation>
+    </message>
+    <message>
+        <source>Some old junk</source>
+        <translation type="vanished">Algunos trastos viejos</translation>
+    </message>
+    <message>
+        <source>The staircase leading to the next floor</source>
+        <translation type="vanished">La escalera que lleva al piso de arriba</translation>
+    </message>
+    <message>
+        <source>Just another crack in the wall...</source>
+        <translation type="vanished">Cuando crees que me ves rompo la pared...</translation>
+    </message>
+    <message>
+        <source>A crack in the wall reveals the bare bricks. Something must have hit it hard</source>
+        <translation type="vanished">Los ladrillos se ven en el desconchón de la pared. Tuvo que ser un buen golpe</translation>
+    </message>
+    <message>
+        <source>A cable. Very standard actually</source>
+        <translation type="vanished">Un cable. De hecho, bastante normal</translation>
+    </message>
+    <message>
+        <source>An old - but still sticky gum</source>
+        <translation type="vanished">Un chicle viejo pero que aún pega</translation>
+    </message>
+    <message>
+        <source>Some junk</source>
+        <translation type="vanished">Algunos trastos</translation>
+    </message>
+    <message>
+        <source>An old cardboard box. Full of useless junk</source>
+        <translation type="vanished">Una caja de cartón vieja. Está llena de trastos inútiles</translation>
+    </message>
+    <message>
+        <source>A puddle of water</source>
+        <translation type="vanished">Un charco de agua</translation>
+    </message>
+    <message>
+        <source>Some old wooden planks</source>
+        <translation type="vanished">Unas tablas viejas de madera</translation>
+    </message>
+    <message>
+        <source>Your ordinary puddle of water</source>
+        <translation type="vanished">Un charco de agua muy normal</translation>
+    </message>
+    <message>
+        <source>It&apos;s an old faucet. Still working for some unknown reason</source>
+        <translation type="vanished">Es un grifo viejo. Sigue funcionando por razones desconocidas</translation>
+    </message>
+    <message>
+        <source>A cable</source>
+        <translation type="vanished">Un cable</translation>
+    </message>
+    <message>
+        <source>A chandelier. Moving slightly in the draft from the window</source>
+        <translation type="vanished">Una lampara. Su sombra se mueve en la pared</translation>
+    </message>
+    <message>
+        <source>A nice frame</source>
+        <translation type="vanished">Un buen marco</translation>
+    </message>
+    <message>
+        <source>It has the number 099 on the backside</source>
+        <translation type="vanished">Tiene el número 099 escrito en la parte de detrás</translation>
+    </message>
+    <message>
+        <source>A nice picture frame</source>
+        <translation type="vanished">Un buen marco</translation>
+    </message>
+    <message>
+        <source>It has the number 318 on the backside</source>
+        <translation type="vanished">Tiene el número 318 escrito en la parte de detrás</translation>
+    </message>
+    <message>
+        <source>A red barrel with a warning sign</source>
+        <translation type="vanished">Un barril rojo con una señal de peligro</translation>
+    </message>
+    <message>
+        <source>Yeah. So. This is a box</source>
+        <translation type="vanished">Sí. Exacto. Una caja</translation>
+    </message>
+    <message>
+        <source>The one thing almost every game has. The BOX</source>
+        <translation type="vanished">Lo último que le faltaba a este juego: otra caja</translation>
+    </message>
+    <message>
+        <source>The rope from downstairs. It&apos;s tied to the hatch</source>
+        <translation type="vanished">La cuerda que está atada a la trampilla del sótano</translation>
+    </message>
+    <message>
+        <source>A nice cardboard box</source>
+        <translation type="vanished">Una buena caja de cartón</translation>
+    </message>
+    <message>
+        <source>The night is beautiful. The moon is very bright</source>
+        <translation type="vanished">Qué noche tan bonita, la luna está resplandeciente</translation>
+    </message>
+    <message>
+        <source>A worn blue canister</source>
+        <translation type="vanished">Una lata azul usada</translation>
+    </message>
+    <message>
+        <source>What have we here. An empty box. Quite useless</source>
+        <translation type="vanished">Qué tenemos aquí. Una caja vacía. Inútil</translation>
+    </message>
+    <message>
+        <source>A plastic bottle of some kind. Not of any use</source>
+        <translation type="vanished">Una botella de plástico. No sirve para nada</translation>
+    </message>
+    <message>
+        <source>A small fuse</source>
+        <translation type="vanished">Un pequeño fusible</translation>
+    </message>
+    <message>
+        <source>Looks like a ladder rail</source>
+        <translation type="vanished">Parece el riel de una escalera</translation>
+    </message>
+    <message>
+        <source>A ladder rail it seems. With 6 holes in it</source>
+        <translation type="vanished">Parece el riel de una escalera. Tiene seis agujeros</translation>
+    </message>
+    <message>
+        <source>Nothing hides in this shadow</source>
+        <translation type="vanished">Nada se esconde entre las sombras</translation>
+    </message>
+    <message>
+        <source>A glass bottle of green liquid</source>
+        <translation type="vanished">Una botella de vidrio con líquido verde</translation>
+    </message>
+    <message>
+        <source>The door from the medicine cabinet.</source>
+        <translation type="vanished">La puerta del botiquín</translation>
+    </message>
+    <message>
+        <source>A pool of blood. Yuck!</source>
+        <translation type="vanished">Un charco de sangre. ¡Puaj!</translation>
+    </message>
+    <message>
+        <source>That&apos;s a stone dead zombie. No two ways about that</source>
+        <translation type="vanished">Un zombi tieso, no hay duda</translation>
+    </message>
+    <message>
+        <source>It looks like a suicide</source>
+        <translation type="vanished">Parece un suicidio</translation>
+    </message>
+    <message>
+        <source>History&apos;s first zombie suicide?</source>
+        <translation type="vanished">¿El primer suicidio zombi de la historia?</translation>
+    </message>
+    <message>
+        <source>A piece of paper. It&apos;s torn and has blood on it</source>
+        <translation type="vanished">Un trozo de papel. Esta roto y tiene sangre</translation>
+    </message>
+    <message>
+        <source>A glass bottle of blue liquid</source>
+        <translation type="vanished">Una botella de vidrio con líquido azul</translation>
+    </message>
+    <message>
+        <source>Some blood splattered on the wall. Holy mother...</source>
+        <translation type="vanished">Un salpicón de sangre en la pared. Qué asco...</translation>
+    </message>
+    <message>
+        <source>A cute little spiderweb. Not useful though</source>
+        <translation type="vanished">Una tela de araña muy mona. Pero no es útil</translation>
+    </message>
+    <message>
+        <source>Looks like an air vent of some sort. There&apos;s nothing interesting about it</source>
+        <translation type="vanished">Parece un ventilador. No es interesante</translation>
+    </message>
+    <message>
+        <source>Some wooden boxes. They sound empty if you knock on them</source>
+        <translation type="vanished">Cajas de madera. Parece que están vacías si las golpeas</translation>
+    </message>
+    <message>
+        <source>A spiderweb. Not useful though</source>
+        <translation type="vanished">Una tela de araña. No sirve para nada</translation>
+    </message>
+    <message>
+        <source>Some very, very sticky and long flypaper</source>
+        <translation type="vanished">Un papel matamoscas muy pegajoso y muy largo</translation>
+    </message>
+    <message>
+        <source>WOW - a real and loaded shotgun!</source>
+        <translation type="vanished">OSTRAS, ¡una escopeta cargada!</translation>
+    </message>
+    <message>
+        <source>A light source. It&apos;s a wonder the electricity is still working</source>
+        <translation type="vanished">Una luz. Me extraña que siga habiendo electricidad</translation>
+    </message>
+    <message>
+        <source>A wooden box. Nothing special about it</source>
+        <translation type="vanished">Una caja de madera. No tiene nada de especial</translation>
+    </message>
+    <message>
+        <source>House of the living critter</source>
+        <translation type="vanished">La casa del bichejo viviente</translation>
+    </message>
+    <message>
+        <source>There&apos;s a hamster living here! Hey little buddy!</source>
+        <translation type="vanished">Hay un hamster viviendo aquí. ¡Hola, pequeñín!</translation>
+    </message>
+    <message>
+        <source>The glass seem to be tempered. You need a serious tool to get through this</source>
+        <translation type="vanished">La cubierta es de cristal doble. Necesitas una buena herramienta para romperlo</translation>
+    </message>
+    <message>
+        <source>Looks like a sparse workbench</source>
+        <translation type="vanished">Parece una mesa de laboratorio vacía</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="vanished">...</translation>
+    </message>
+    <message>
+        <source>A weird looking machine - in the color of green</source>
+        <translation type="vanished">Una máquina de color verde un poco rara</translation>
+    </message>
+    <message>
+        <source>Fourth of these weird blue machines</source>
+        <translation type="vanished">La última de las máquinas azules</translation>
+    </message>
+    <message>
+        <source>Third of these weird blue machines</source>
+        <translation type="vanished">Y otra de las máquinas azules</translation>
+    </message>
+    <message>
+        <source>Second of these weird blue machines</source>
+        <translation type="vanished">Otra de las máquinas azules</translation>
+    </message>
+    <message>
+        <source>First of these weird blue machines</source>
+        <translation type="vanished">Una de las máquinas azules</translation>
+    </message>
+    <message>
+        <source>A clock - it&apos;s broken. Very broken</source>
+        <translation type="vanished">Un reloj. Está roto. Muy roto</translation>
+    </message>
+    <message>
+        <source>Frame for a painting</source>
+        <translation type="vanished">El marco de un cuadro</translation>
+    </message>
+    <message>
+        <source>It has the number 563 on the backside</source>
+        <translation type="vanished">Tiene el número 563 escrito en la parte de detrás</translation>
+    </message>
+    <message>
+        <source>Some sacks of grain</source>
+        <translation type="vanished">Algunos sacos de cereales</translation>
+    </message>
+    <message>
+        <source>An open sack of grain</source>
+        <translation type="vanished">Un saco de pienso abierto</translation>
+    </message>
+    <message>
+        <source>A small pile of grain</source>
+        <translation type="vanished">Un montoncito de pienso</translation>
+    </message>
+    <message>
+        <source>Looks like splattered blood</source>
+        <translation type="vanished">Parece un salpicón de sangre</translation>
+    </message>
+    <message>
+        <source>There&apos;s also holes from what looks like shotgun bullet holes</source>
+        <translation type="vanished">Hay agujeros dentro de lo que parecen agujeros de bala</translation>
+    </message>
+    <message>
+        <source>A visually pleasing generator - sadly it&apos;s broken</source>
+        <translation type="vanished">Un generador muy chulo. Es una pena que esté roto</translation>
+    </message>
+    <message>
+        <source>A pretty thick power cable. It fits nicely in one end to the elevator motor battery</source>
+        <translation type="vanished">Un cable bastante grueso. Encaja en un extremo del motor del ascensor</translation>
+    </message>
+    <message>
+        <source>Oh my. What a nice little scooter</source>
+        <translation type="vanished">Madre mía. Qué patinete más chulo</translation>
+    </message>
+    <message>
+        <source>POP, POP no more... pop... corn. Eeer</source>
+        <translation type="vanished">Palomitas de maíz, palomitas de maíz...</translation>
+    </message>
+    <message>
+        <source>This is useless. There&apos;s not even snow outside</source>
+        <translation type="vanished">No sirve para nada. Ni siquiera está nevando</translation>
+    </message>
+    <message>
+        <source>Go find a piste - maybe in Italy</source>
+        <translation type="vanished">Busca una pista de esquí. Quizás en Andorra</translation>
+    </message>
+    <message>
+        <source>Rock-on brother!</source>
+        <translation type="vanished">¡A por ellos, vaquero!</translation>
+    </message>
+    <message>
+        <source>Fun in the summer - useless during zombie apocalypses</source>
+        <translation type="vanished">Genial para el verano, pero poco práctico para el apocalipsis zombi</translation>
+    </message>
+    <message>
+        <source>It&apos;s the electrical motor for the elevator</source>
+        <translation type="vanished">Es el motor eléctrico del ascensor</translation>
+    </message>
+    <message>
+        <source>The night is still beautiful</source>
+        <translation type="vanished">La noche sigue preciosa</translation>
+    </message>
+    <message>
+        <source>It look like a charging mechanism of some sort</source>
+        <translation type="vanished">Parece un mecanismo de carga</translation>
+    </message>
+    <message>
+        <source>It&apos;s a pipe for transporting air</source>
+        <translation type="vanished">Es un conducto de ventilación</translation>
+    </message>
+    <message>
+        <source>It&apos;s a fairly big machine of some sort. Could be some kind of generator</source>
+        <translation type="vanished">Es una máquina bastante grande. Podría ser un generador</translation>
+    </message>
+    <message>
+        <source>Some weird big red machinery</source>
+        <translation type="vanished">Maquinaria pesada de color rojo</translation>
+    </message>
+    <message>
+        <source>A big wine red hose coming down from the ceiling</source>
+        <translation type="vanished">Una gran mangera roja que sale del techo</translation>
+    </message>
+    <message>
+        <source>A big blue hose coming down from the ceiling</source>
+        <translation type="vanished">Una gran mangera azul que sale del techo</translation>
+    </message>
+    <message>
+        <source>A big green hose coming down from the ceiling</source>
+        <translation type="vanished">Una gran mangera verde que sale del techo</translation>
+    </message>
+    <message>
+        <source>A big purple hose coming down from the ceiling</source>
+        <translation type="vanished">Una gran mangera morada que sale del techo</translation>
+    </message>
+    <message>
+        <source>Oh dear...</source>
+        <translation type="vanished">Madre mía...</translation>
+    </message>
+    <message>
+        <source>more boxes</source>
+        <translation type="vanished">más cajas</translation>
+    </message>
+    <message>
+        <source>*sigh*</source>
+        <translation type="vanished">*suspiro*</translation>
+    </message>
+    <message>
+        <source>Another lamp. It&apos;s a very consistent lamp design they have in this tower</source>
+        <translation type="vanished">Otra lampara. El diseño de las lámparas de esta torre es fantástico</translation>
+    </message>
+    <message>
+        <source>The mouth of a purple pipe</source>
+        <translation type="vanished">La boca de una tubería morada</translation>
+    </message>
+    <message>
+        <source>The mouth of a green pipe</source>
+        <translation type="vanished">La boca de una tubería verde</translation>
+    </message>
+    <message>
+        <source>The mouth of a blue pipe</source>
+        <translation type="vanished">La boca de una tubería azul</translation>
+    </message>
+    <message>
+        <source>The mouth of a wine red pipe</source>
+        <translation type="vanished">La boca de una tubería roja</translation>
+    </message>
+    <message>
+        <source>A glass bottle of purple liquid</source>
+        <translation type="vanished">Una botella de vidrio con líquido morado</translation>
+    </message>
+    <message>
+        <source>A ventilator. Spreading cool air in the room - it&apos;s bolted to the floor</source>
+        <translation type="vanished">Un ventilador. Da aire fresco en la sala. Está anclado al suelo</translation>
+    </message>
+    <message>
+        <source>Some sacks of grain. I wonder why all this grain is lying around</source>
+        <translation type="vanished">Algunos sacos de cereales. No se por qué hay tanto cereal por el suelo</translation>
+    </message>
+    <message>
+        <source>It&apos;s a clean, neatly wiped, whiteboard</source>
+        <translation type="vanished">Es una pizarra perfectamente limpia</translation>
+    </message>
+    <message>
+        <source>It has the number 037 on the backside</source>
+        <translation type="vanished">Tiene el número 037 escrito en la parte de detrás</translation>
+    </message>
+    <message>
+        <source>An old golden lampshade. Nothing you should carry around</source>
+        <translation type="vanished">Una lampara vieja. No merece la pena que te la lleves</translation>
+    </message>
+    <message>
+        <source>And this is a box. This one stands out because it has stickers on it. But it&apos;s still useless</source>
+        <translation type="vanished">Y esto es una caja. Destaca porque tiene pegatinas, pero es igual de inútil</translation>
+    </message>
+    <message>
+        <source>*sigh* ... a box</source>
+        <translation type="vanished">*suspiro* ... una caja</translation>
+    </message>
+    <message>
+        <source>A hook of some sort. You could tie something to it</source>
+        <translation type="vanished">Un gancho. Podrías atar algo ahí</translation>
+    </message>
+    <message>
+        <source>A glass bottle of red liquid</source>
+        <translation type="vanished">Una botella de vidrio con líquido rojo</translation>
+    </message>
+</context>
+<context>
+    <name>Game</name>
+    <message>
+        <location filename="../qml/Game.qml" line="63"/>
+        <source>All systems... GO!</source>
+        <translation>Todo listo... ¡YA!</translation>
+    </message>
+    <message>
+        <location filename="../qml/Game.qml" line="657"/>
+        <source>It&apos;s clear that the panel is almost completly broken</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Game.qml" line="658"/>
+        <source>Luckily the elevator still works - thanks to Mr. Hamster</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Game.qml" line="679"/>
+        <location filename="../qml/Game.qml" line="699"/>
+        <location filename="../qml/Game.qml" line="719"/>
+        <location filename="../qml/Game.qml" line="739"/>
+        <location filename="../qml/Game.qml" line="771"/>
+        <source>You&apos;re already at this floor</source>
+        <translation>Ya estás en esta planta</translation>
+    </message>
+    <message>
+        <location filename="../qml/Game.qml" line="746"/>
+        <source>This particular socket is special</source>
+        <translation>Este enchufe es un tanto especial</translation>
+    </message>
+    <message>
+        <location filename="../qml/Game.qml" line="746"/>
+        <source>It&apos;s clear that a button is missing above all the other buttons</source>
+        <translation>Está claro que falta un botón encima del resto</translation>
+    </message>
+    <message>
+        <location filename="../qml/Game.qml" line="792"/>
+        <source>Miraculously - it fits. Must be your lucky day!</source>
+        <translation>Encaja de milagro. ¡Es tu día de suerte!</translation>
+    </message>
+    <message>
+        <location filename="../qml/Game.qml" line="1235"/>
+        <source>The bucket is patched. No holes!</source>
+        <translation>El cubo está arreglado, ya no tiene agujeros</translation>
+    </message>
+    <message>
+        <location filename="../qml/Game.qml" line="1252"/>
+        <source>There we go. A patched bucket!</source>
+        <translation>Ahí lo tienes. Un cubo arreglado</translation>
+    </message>
+</context>
+<context>
+    <name>Main</name>
+    <message>
+        <location filename="../qml/menus/Main.qml" line="88"/>
+        <source>Language</source>
+        <translation>Idioma</translation>
+    </message>
+    <message>
+        <location filename="../qml/menus/Main.qml" line="74"/>
+        <source>About</source>
+        <translation>Acerca de</translation>
+    </message>
+    <message>
+        <location filename="../qml/menus/Main.qml" line="158"/>
+        <source>Credits</source>
+        <translation>Créditos</translation>
+    </message>
+    <message>
+        <location filename="../qml/menus/Main.qml" line="192"/>
+        <source>Start</source>
+        <translation>Jugar</translation>
+    </message>
+    <message>
+        <location filename="../qml/menus/Main.qml" line="208"/>
+        <source>How to play</source>
+        <translation>Cómo jugar</translation>
+    </message>
+    <message>
+        <location filename="../qml/menus/Main.qml" line="215"/>
+        <source>Reset</source>
+        <translation>Reiniciar</translation>
+    </message>
+    <message>
+        <location filename="../qml/menus/Main.qml" line="226"/>
+        <source>This action will erase all game progress.
+Continue?</source>
+        <translation>Esto borrará la partida actual.
+¿Continuar?</translation>
+    </message>
+    <message>
+        <location filename="../qml/menus/Main.qml" line="259"/>
+        <source>Game reset successfully</source>
+        <translation>Partida reiniciada con éxito</translation>
+    </message>
+</context>
+<context>
+    <name>Pause</name>
+    <message>
+        <location filename="../qml/menus/Pause.qml" line="35"/>
+        <source>Resume</source>
+        <translation>Continuar</translation>
+    </message>
+    <message>
+        <location filename="../qml/menus/Pause.qml" line="42"/>
+        <source>Menu</source>
+        <translation>Menú</translation>
+    </message>
+    <message>
+        <location filename="../qml/menus/Pause.qml" line="49"/>
+        <source>Exit</source>
+        <translation>Salir</translation>
+    </message>
+</context>
+<context>
+    <name>Tutorial</name>
+    <message>
+        <location filename="../qml/scenes/Tutorial.qml" line="35"/>
+        <source>Welcome survivor&lt;br&gt;This is how you&lt;br&gt;play the game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/scenes/Tutorial.qml" line="37"/>
+        <source>Tab on objects&lt;br&gt;to examine them</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/scenes/Tutorial.qml" line="39"/>
+        <location filename="../qml/scenes/Tutorial.qml" line="43"/>
+        <location filename="../qml/scenes/Tutorial.qml" line="49"/>
+        <source>Good job!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/scenes/Tutorial.qml" line="41"/>
+        <source>Tab once on objects&lt;br&gt;to pick them up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/scenes/Tutorial.qml" line="45"/>
+        <source>Objects you have&lt;br&gt;picked up is in&lt;br&gt;your inventory...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/scenes/Tutorial.qml" line="47"/>
+        <source>To use objects&lt;br&gt;hold and drag them&lt;br&gt;from the inventory to the room&lt;br&gt;(place the zombie doll on the box)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/scenes/Tutorial.qml" line="51"/>
+        <source>That&apos;s basically it!&lt;br&gt;Now try and put the wiener&lt;br&gt;on the doll&apos;s head!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/scenes/Tutorial.qml" line="53"/>
+        <source>Good job!&lt;br&gt;You have completed the tutorial!&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;red&quot;&gt;NOW TRY THE REAL DEAL&lt;/font&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/scenes/Tutorial.qml" line="180"/>
+        <source>Continue</source>
+        <extracomment>On a button</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>fromEditor</name>
+    <message>
         <location filename="Extra.qml" line="9"/>
         <source>A nice source of light</source>
         <translation>Una buena luz</translation>
@@ -1451,7 +2040,7 @@
     <message>
         <location filename="Extra.qml" line="46"/>
         <source>The door from the medicine cabinet.</source>
-        <translation>La puerta del botiquín</translation>
+        <translation type="unfinished">La puerta del botiquín</translation>
     </message>
     <message>
         <location filename="Extra.qml" line="47"/>
@@ -1636,7 +2225,7 @@
     <message>
         <location filename="Extra.qml" line="83"/>
         <source>POP, POP no more... pop... corn. Eeer</source>
-        <translation>Palomitas de maíz, palomitas de maíz...</translation>
+        <translation type="unfinished">Palomitas de maíz, palomitas de maíz...</translation>
     </message>
     <message>
         <location filename="Extra.qml" line="84"/>
@@ -1801,121 +2390,6 @@
         <location filename="Extra.qml" line="120"/>
         <source>A glass bottle of red liquid</source>
         <translation>Una botella de vidrio con líquido rojo</translation>
-    </message>
-</context>
-<context>
-    <name>Game</name>
-    <message>
-        <location filename="../qml/Game.qml" line="63"/>
-        <source>All systems... GO!</source>
-        <translation>Todo listo... ¡YA!</translation>
-    </message>
-    <message>
-        <location filename="../qml/Game.qml" line="657"/>
-        <source>It&apos;s clear that the panel is almost completly broken</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/Game.qml" line="658"/>
-        <source>Luckily the elevator still works - thanks to Mr. Hamster</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/Game.qml" line="679"/>
-        <location filename="../qml/Game.qml" line="699"/>
-        <location filename="../qml/Game.qml" line="719"/>
-        <location filename="../qml/Game.qml" line="739"/>
-        <location filename="../qml/Game.qml" line="771"/>
-        <source>You&apos;re already at this floor</source>
-        <translation>Ya estás en esta planta</translation>
-    </message>
-    <message>
-        <location filename="../qml/Game.qml" line="746"/>
-        <source>This particular socket is special</source>
-        <translation>Este enchufe es un tanto especial</translation>
-    </message>
-    <message>
-        <location filename="../qml/Game.qml" line="746"/>
-        <source>It&apos;s clear that a button is missing above all the other buttons</source>
-        <translation>Está claro que falta un botón encima del resto</translation>
-    </message>
-    <message>
-        <location filename="../qml/Game.qml" line="792"/>
-        <source>Miraculously - it fits. Must be your lucky day!</source>
-        <translation>Encaja de milagro. ¡Es tu día de suerte!</translation>
-    </message>
-    <message>
-        <location filename="../qml/Game.qml" line="1235"/>
-        <source>The bucket is patched. No holes!</source>
-        <translation>El cubo está arreglado, ya no tiene agujeros</translation>
-    </message>
-    <message>
-        <location filename="../qml/Game.qml" line="1252"/>
-        <source>There we go. A patched bucket!</source>
-        <translation>Ahí lo tienes. Un cubo arreglado</translation>
-    </message>
-</context>
-<context>
-    <name>Main</name>
-    <message>
-        <location filename="../qml/menus/Main.qml" line="87"/>
-        <source>Language</source>
-        <translation>Idioma</translation>
-    </message>
-    <message>
-        <location filename="../qml/menus/Main.qml" line="74"/>
-        <source>About</source>
-        <translation>Acerca de</translation>
-    </message>
-    <message>
-        <location filename="../qml/menus/Main.qml" line="114"/>
-        <source>Credits</source>
-        <translation>Créditos</translation>
-    </message>
-    <message>
-        <location filename="../qml/menus/Main.qml" line="148"/>
-        <source>Start</source>
-        <translation>Jugar</translation>
-    </message>
-    <message>
-        <location filename="../qml/menus/Main.qml" line="164"/>
-        <source>How to play</source>
-        <translation>Cómo jugar</translation>
-    </message>
-    <message>
-        <location filename="../qml/menus/Main.qml" line="171"/>
-        <source>Reset</source>
-        <translation>Reiniciar</translation>
-    </message>
-    <message>
-        <location filename="../qml/menus/Main.qml" line="182"/>
-        <source>This action will erase all game progress.
-Continue?</source>
-        <translation>Esto borrará la partida actual.
-¿Continuar?</translation>
-    </message>
-    <message>
-        <location filename="../qml/menus/Main.qml" line="215"/>
-        <source>Game reset successfully</source>
-        <translation>Partida reiniciada con éxito</translation>
-    </message>
-</context>
-<context>
-    <name>Pause</name>
-    <message>
-        <location filename="../qml/menus/Pause.qml" line="35"/>
-        <source>Resume</source>
-        <translation>Continuar</translation>
-    </message>
-    <message>
-        <location filename="../qml/menus/Pause.qml" line="42"/>
-        <source>Menu</source>
-        <translation>Menú</translation>
-    </message>
-    <message>
-        <location filename="../qml/menus/Pause.qml" line="49"/>
-        <source>Exit</source>
-        <translation>Salir</translation>
     </message>
 </context>
 <context>

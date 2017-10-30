@@ -5,162 +5,162 @@
     <name>0</name>
     <message>
         <source>The room is pitch dark. You better find some light somewhere.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rummet er kul sort. Du må hellere finde noget lys et sted.</translation>
     </message>
     <message>
         <source>Maybe there&apos;s a switch in here somewhere?</source>
-        <translation type="unfinished"></translation>
+        <translation>Måske er der en kontakt herinde et sted?</translation>
     </message>
     <message>
         <source>Interesting surface</source>
-        <translation type="unfinished"></translation>
+        <translation>Interessant overflade</translation>
     </message>
     <message>
         <source>Nothing interesting here</source>
-        <translation type="unfinished"></translation>
+        <translation>Her er intet interessant</translation>
     </message>
     <message>
         <source>Not of any use</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikke brugbart</translation>
     </message>
     <message>
         <source>A creepy room</source>
-        <translation type="unfinished"></translation>
+        <translation>Et uhyggeligt rum</translation>
     </message>
     <message>
         <source>A bit greased</source>
-        <translation type="unfinished"></translation>
+        <translation>Lidt fedtet</translation>
     </message>
     <message>
         <source>Where is everybody?</source>
-        <translation type="unfinished"></translation>
+        <translation>Hvor er allesammen henne?</translation>
     </message>
     <message>
         <source>There&apos;s sounds of mumbling zombies</source>
-        <translation type="unfinished"></translation>
+        <translation>Der er lyde fra mumlende zombier</translation>
     </message>
     <message>
         <source>Did you hear that?</source>
-        <translation type="unfinished"></translation>
+        <translation>Hørte du det?</translation>
     </message>
     <message>
         <source>Gravity forces the hatch to close again</source>
-        <translation type="unfinished"></translation>
+        <translation>Tyngdekraften tvinger lemmen til at lukke igen</translation>
     </message>
     <message>
         <source>Find a way to keep the hatch open</source>
-        <translation type="unfinished"></translation>
+        <translation>Find en måde at holde lemmen åben på</translation>
     </message>
     <message>
         <source>The bucket is not heavy enough to keep the hatch open. Make it heavier</source>
-        <translation type="unfinished"></translation>
+        <translation>Spanden er ikke tung nok til at holde lemmen åben. Gør den tungere</translation>
     </message>
     <message>
         <source>The bucket is patched. No holes!</source>
-        <translation type="unfinished"></translation>
+        <translation>Spanden er lappet. Ingen huller!</translation>
     </message>
     <message>
         <source>A bucket full of water. It&apos;s pretty heavy!</source>
-        <translation type="unfinished"></translation>
+        <translation>En spand fyldt med vand. Den er ret tung!</translation>
     </message>
     <message>
         <source>The flourescent lights humms faintly - casting a grim light in the room...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lysstofrøret summer lavt og kaster et skummelt lys i rummet...</translation>
     </message>
     <message>
         <source>Some flies are having a party here as well</source>
-        <translation type="unfinished"></translation>
+        <translation>Nogle fluer holder også fest her</translation>
     </message>
     <message>
         <source>There&apos;s something small, round and red lying on the edge of the sleeve assembly</source>
-        <translation type="unfinished"></translation>
+        <translation>Der er noget småt, rundt og rødt der ligger på kanten af rørsamlingen</translation>
     </message>
     <message>
         <source>It&apos;s too far down to reach by hand</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er for langt nede til at nå med hånden</translation>
     </message>
     <message>
         <source>There&apos;s nothing more downthere</source>
-        <translation type="unfinished"></translation>
+        <translation>Der er ikke mere dernede</translation>
     </message>
     <message>
         <source>A nice red, round button</source>
-        <translation type="unfinished"></translation>
+        <translation>En lækker rød, rund knap</translation>
     </message>
     <message>
         <source>Got it! It&apos;s a red button!?</source>
-        <translation type="unfinished"></translation>
+        <translation>En lækker rød, rund knap!?</translation>
     </message>
     <message>
         <source>A hatch leading upstairs</source>
-        <translation type="unfinished"></translation>
+        <translation>En lem der fører oven på</translation>
     </message>
     <message>
         <source>It&apos;s too dark to do anything. Better find some light somewhere</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er for mørkt til at gøre noget. Find hellere noget lys et sted</translation>
     </message>
     <message>
         <source>Lights on</source>
-        <translation type="unfinished"></translation>
+        <translation>Så er der lys over land</translation>
     </message>
     <message>
         <source>Lights out</source>
-        <translation type="unfinished"></translation>
+        <translation>Sikke mørkt her blev</translation>
     </message>
     <message>
         <source>There&apos;s a hole in the bucket. You need to patch the bucket somehow</source>
-        <translation type="unfinished"></translation>
+        <translation>Der er et hul i spanden. Du bliver nødt til at stoppe hullet på en eller anden måde</translation>
     </message>
 </context>
 <context>
     <name>1</name>
     <message>
         <source>Interesting surface</source>
-        <translation type="unfinished"></translation>
+        <translation>Interessant overflade</translation>
     </message>
     <message>
         <source>Not interesting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikke interessant</translation>
     </message>
     <message>
         <source>Not of any use</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikke brugbart</translation>
     </message>
     <message>
         <source>The room is very cold</source>
-        <translation type="unfinished"></translation>
+        <translation>Rummet er meget koldt</translation>
     </message>
     <message>
         <source>Where is everybody?</source>
-        <translation type="unfinished"></translation>
+        <translation>Hvor er allesammen henne?</translation>
     </message>
     <message>
         <source>There&apos;s sounds of mumbling zombies</source>
-        <translation type="unfinished"></translation>
+        <translation>Der er lyde fra mumlende zombier</translation>
     </message>
     <message>
         <source>Did you hear that?</source>
-        <translation type="unfinished"></translation>
+        <translation>Hørte du det?</translation>
     </message>
     <message>
         <source>Need something to reach the hole in the ceiling</source>
-        <translation type="unfinished"></translation>
+        <translation>Der skal noget til at nå det hul i loften</translation>
     </message>
     <message>
         <source>Another rung in the rail!</source>
-        <translation type="unfinished"></translation>
+        <translation>En stang mere i skinnen!</translation>
     </message>
     <message>
         <source>One more rail should be put up. I think</source>
-        <translation type="unfinished"></translation>
+        <translation>Jeg tror der skal stilles en skinne mere op</translation>
     </message>
     <message>
         <source>This could work if there was something to attach to</source>
-        <translation type="unfinished"></translation>
+        <translation>Det kunne godt virke hvis der var noget at fæstne til</translation>
     </message>
     <message>
         <source>YES! Finally we can proceed upwards</source>
-        <translation type="unfinished"></translation>
+        <translation>SÅDAN! Endelig kan vi fortsætte opad</translation>
     </message>
 </context>
 <context>
@@ -175,7 +175,7 @@
     </message>
     <message>
         <source>Not of any use</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ikke brugbart</translation>
     </message>
     <message>
         <source>It&apos;s cold in here</source>
@@ -282,7 +282,7 @@
     </message>
     <message>
         <source>Not of any use</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ikke brugbart</translation>
     </message>
     <message>
         <source>It&apos;s actually a bit warm in here</source>
@@ -397,7 +397,7 @@
     </message>
     <message>
         <source>Not of any use</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ikke brugbart</translation>
     </message>
     <message>
         <source>It&apos;s actually a bit warm in here</source>
@@ -477,7 +477,7 @@
     </message>
     <message>
         <source>Not of any use</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ikke brugbart</translation>
     </message>
     <message>
         <source>It&apos;s actually a bit warm in here</source>
@@ -572,7 +572,7 @@
     </message>
     <message>
         <source>Not of any use</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ikke brugbart</translation>
     </message>
     <message>
         <source>It&apos;s actually a bit warm in here</source>
@@ -763,7 +763,7 @@
     </message>
     <message>
         <source>Not of any use</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ikke brugbart</translation>
     </message>
     <message>
         <source>It&apos;s actually a bit warm in here</source>
@@ -993,7 +993,138 @@
     </message>
 </context>
 <context>
-    <name>Extra</name>
+    <name>Game</name>
+    <message>
+        <source>All systems... GO!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It&apos;s clear that the panel is almost completly broken</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Luckily the elevator still works - thanks to Mr. Hamster</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You&apos;re already at this floor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This particular socket is special</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It&apos;s clear that a button is missing above all the other buttons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Miraculously - it fits. Must be your lucky day!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The bucket is patched. No holes!</source>
+        <translation type="unfinished">Spanden er lappet. Ingen huller!</translation>
+    </message>
+    <message>
+        <source>There we go. A patched bucket!</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Main</name>
+    <message>
+        <source>Language</source>
+        <translation>Sprog</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Om spillet</translation>
+    </message>
+    <message>
+        <source>Credits</source>
+        <translation>Rulletekster</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Start</translation>
+    </message>
+    <message>
+        <source>How to play</source>
+        <translation>Instruktioner</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Nulstil</translation>
+    </message>
+    <message>
+        <source>This action will erase all game progress.
+Continue?</source>
+        <translation>Denne handling vil slette alle gemte indstillinger
+Fortsæt?</translation>
+    </message>
+    <message>
+        <source>Game reset successfully</source>
+        <translation>Spillet blev nulstillet korrekt</translation>
+    </message>
+</context>
+<context>
+    <name>Pause</name>
+    <message>
+        <source>Resume</source>
+        <translation>Fortsæt</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Hovedmenu</translation>
+    </message>
+    <message>
+        <source>Exit</source>
+        <translation>Afslut</translation>
+    </message>
+</context>
+<context>
+    <name>Tutorial</name>
+    <message>
+        <source>Welcome survivor&lt;br&gt;This is how you&lt;br&gt;play the game</source>
+        <translation>Velkommen overlevende&lt;br&gt;Dette viser hvordan du&lt;br&gt;spiller spillet</translation>
+    </message>
+    <message>
+        <source>Tab on objects&lt;br&gt;to examine them</source>
+        <translation type="unfinished">Tryk på genstandende&lt;br&gt;for at undersøge dem</translation>
+    </message>
+    <message>
+        <source>Good job!</source>
+        <translation>Godt arbejde!</translation>
+    </message>
+    <message>
+        <source>Tab once on objects&lt;br&gt;to pick them up</source>
+        <translation>Tryk en enkelt gang på genstandende&lt;br&gt;for at samle dem op</translation>
+    </message>
+    <message>
+        <source>Objects you have&lt;br&gt;picked up is in&lt;br&gt;your inventory...</source>
+        <translation>Genstande du har&lt;br&gt;samlet op er i&lt;br&gt;din rygsæk...</translation>
+    </message>
+    <message>
+        <source>To use objects&lt;br&gt;hold and drag them&lt;br&gt;from the inventory to the room&lt;br&gt;(place the zombie doll on the box)</source>
+        <translation>For at bruge genstandende&lt;br&gt;hold og træk dem&lt;br&gt; fra rygsækken til rummet&lt;br&gt;(prøv at placere zombiedukken på kassen)</translation>
+    </message>
+    <message>
+        <source>That&apos;s basically it!&lt;br&gt;Now try and put the wiener&lt;br&gt;on the doll&apos;s head!</source>
+        <translation>Det er stortset det!&lt;br&gt;Prøv nu at putte pølsen&lt;br&gt;på dukkens hoved!</translation>
+    </message>
+    <message>
+        <source>Good job!&lt;br&gt;You have completed the tutorial!&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;red&quot;&gt;NOW TRY THE REAL DEAL&lt;/font&gt;</source>
+        <translation>Godt arbejde!&lt;br&gt;Du har gennemført instruktionerne!&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;red&quot;&gt;PRØV DEN ÆGTE VARE!&lt;/font&gt;</translation>
+    </message>
+    <message>
+        <source>Continue</source>
+        <extracomment>On a button</extracomment>
+        <translation>Fortsæt</translation>
+    </message>
+</context>
+<context>
+    <name>fromEditor</name>
     <message>
         <source>A nice source of light</source>
         <translation type="unfinished"></translation>
@@ -1016,11 +1147,11 @@
     </message>
     <message>
         <source>Just another crack in the wall...</source>
-        <translation type="unfinished"></translation>
+        <translation>Endnu en revne i væggen...</translation>
     </message>
     <message>
         <source>A crack in the wall reveals the bare bricks. Something must have hit it hard</source>
-        <translation type="unfinished"></translation>
+        <translation>Man kan se revnerne og stenene i murværket. Noget må have ramt det hårdt</translation>
     </message>
     <message>
         <source>A cable. Very standard actually</source>
@@ -1413,97 +1544,6 @@
     <message>
         <source>A glass bottle of red liquid</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Game</name>
-    <message>
-        <source>All systems... GO!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>It&apos;s clear that the panel is almost completly broken</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Luckily the elevator still works - thanks to Mr. Hamster</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You&apos;re already at this floor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>This particular socket is special</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>It&apos;s clear that a button is missing above all the other buttons</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Miraculously - it fits. Must be your lucky day!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The bucket is patched. No holes!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>There we go. A patched bucket!</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Main</name>
-    <message>
-        <source>Language</source>
-        <translation>Sprog</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation>Om spillet</translation>
-    </message>
-    <message>
-        <source>Credits</source>
-        <translation>Rulletekster</translation>
-    </message>
-    <message>
-        <source>Start</source>
-        <translation>Start</translation>
-    </message>
-    <message>
-        <source>How to play</source>
-        <translation>Instruktioner</translation>
-    </message>
-    <message>
-        <source>Reset</source>
-        <translation>Nulstil</translation>
-    </message>
-    <message>
-        <source>This action will erase all game progress.
-Continue?</source>
-        <translation>Denne handling vil slette alle gemte indstillinger
-Fortsæt?</translation>
-    </message>
-    <message>
-        <source>Game reset successfully</source>
-        <translation>Spillet blev nulstillet korrekt</translation>
-    </message>
-</context>
-<context>
-    <name>Pause</name>
-    <message>
-        <source>Resume</source>
-        <translation>Fortsæt</translation>
-    </message>
-    <message>
-        <source>Menu</source>
-        <translation>Hovedmenu</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation>Afslut</translation>
     </message>
 </context>
 <context>
