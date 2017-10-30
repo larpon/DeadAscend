@@ -1,7 +1,7 @@
 TEMPLATE = app
 
 QT += qml quick multimedia
-#!no_desktop: QT += widgets
+!no_desktop: QT += widgets
 
 CONFIG += c++11
 
