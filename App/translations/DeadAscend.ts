@@ -900,6 +900,79 @@
         <extracomment>Menu back</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Dead Ascend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>2016-2017</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version %1 (%2), Qak %3 (%4), Qt %5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An open source game utilizing the cross-platform &lt;a href=&quot;https://www.qt.io/&quot;&gt;Qt&lt;/a&gt; project.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Game and project source code can be found on &lt;a href=&quot;https://github.com/Larpon/DeadAscend&quot;&gt;GitHub&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The game serves as a showcase and example of how you can build a cross-platform game with Qt.&lt;br&gt;
+            The source code for the game engine is ~&lt;b&gt;97%&lt;/b&gt; QML (including some Javascript) and ~3% C++.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The game uses the following open source projects:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;a href=&quot;https://github.com/Larpon/qak&quot;&gt;Qak&lt;/a&gt; - QML Aid Kit</source>
+        <extracomment>It&apos;s the project titel and subtitles (catch phrases) in English - I have no idea if these should be translated?</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;a href=&quot;https://github.com/Larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt; - an effort to bring the Google Firebase C++ SDK to Qt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The game uses the following fonts:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Music:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;a href=&quot;http://www.bensound.com&quot;&gt;Bensound royalty free music&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/p&gt;</source>
+        <extracomment>It&apos;s what he&apos;d like the credits to be - I&apos;m not sure this should be translated?</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Why does the game have ads and collect analytical data?&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For 2 purposes:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shows developers example use of the open source &lt;a href=&quot;https://github.com/Larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt; project.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Supports our work at &lt;a href=&quot;http://games.blackgrain.dk&quot;&gt;Black Grain Games&lt;/a&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>See our &lt;a href=&quot;//blackgrain.dk/privacy.html&quot;&gt;privacy policy&lt;/a&gt; for info on how we handle the data.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ApplicationWindow</name>
