@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
         engine.rootContext()->setContextProperty("debugBuild", QVariant(false));
     #endif
 
-    #ifdef QTFIREBASE_BUILD_ADMOB
+    #if defined(QTFIREBASE_BUILD_ADMOB) && (defined(Q_OS_IOS) || defined(Q_OS_ANDROID))
         engine.rootContext()->setContextProperty("adBuild", QVariant(true));
     #else
         engine.rootContext()->setContextProperty("adBuild", QVariant(false));
