@@ -6,7 +6,7 @@
     <message>
         <location filename="../qml/scenes/0.qml" line="30"/>
         <source>The room is pitch dark. You better find some light somewhere.</source>
-        <translation>Está muy oscuro. Más te vale encontrar luz.</translation>
+        <translation>Está muy oscuro. Más te vale encontrar luz</translation>
     </message>
     <message>
         <location filename="../qml/scenes/0.qml" line="30"/>
@@ -36,7 +36,7 @@
     <message>
         <location filename="../qml/scenes/0.qml" line="65"/>
         <source>A bit greased</source>
-        <translation>Un poco grasiento</translation>
+        <translation>Está un poco grasiento</translation>
     </message>
     <message>
         <location filename="../qml/scenes/0.qml" line="66"/>
@@ -81,7 +81,7 @@
     <message>
         <location filename="../qml/scenes/0.qml" line="487"/>
         <source>The flourescent lights humms faintly - casting a grim light in the room...</source>
-        <translation>El fluorescente titila ligéramente, desprende una luz débil...</translation>
+        <translation>El fluorescente titila ligeramente, desprende una luz débil...</translation>
     </message>
     <message>
         <location filename="../qml/scenes/0.qml" line="487"/>
@@ -149,7 +149,7 @@
     <message>
         <location filename="../qml/scenes/1.qml" line="45"/>
         <source>Not interesting</source>
-        <translation></translation>
+        <translation>Nada interesante</translation>
     </message>
     <message>
         <location filename="../qml/scenes/1.qml" line="46"/>
@@ -159,7 +159,7 @@
     <message>
         <location filename="../qml/scenes/1.qml" line="47"/>
         <source>The room is very cold</source>
-        <translation></translation>
+        <translation>Hace frío en esta sala</translation>
     </message>
     <message>
         <location filename="../qml/scenes/1.qml" line="48"/>
@@ -189,7 +189,7 @@
     <message>
         <location filename="../qml/scenes/1.qml" line="148"/>
         <source>One more rail should be put up. I think</source>
-        <translation>Creo que con otro peldaño seríar suficiente</translation>
+        <translation>Creo que con otro peldaño sería suficiente</translation>
     </message>
     <message>
         <location filename="../qml/scenes/1.qml" line="150"/>
@@ -212,7 +212,7 @@
     <message>
         <location filename="../qml/scenes/2.qml" line="85"/>
         <source>Not very interesting</source>
-        <translation></translation>
+        <translation>Nada intesante</translation>
     </message>
     <message>
         <location filename="../qml/scenes/2.qml" line="86"/>
@@ -222,17 +222,17 @@
     <message>
         <location filename="../qml/scenes/2.qml" line="87"/>
         <source>It&apos;s cold in here</source>
-        <translation></translation>
+        <translation>Aquí hace frío</translation>
     </message>
     <message>
         <location filename="../qml/scenes/2.qml" line="88"/>
         <source>I wonder where everybody is?</source>
-        <translation></translation>
+        <translation>¿Dónde está todo el mundo?</translation>
     </message>
     <message>
         <location filename="../qml/scenes/2.qml" line="89"/>
         <source>There&apos;s faint sounds of mumbling zombies</source>
-        <translation></translation>
+        <translation>Se oyen zombis a lo lejos</translation>
     </message>
     <message>
         <location filename="../qml/scenes/2.qml" line="348"/>
@@ -290,7 +290,7 @@
     <message>
         <location filename="../qml/scenes/2.qml" line="687"/>
         <source>The cabinet door is locked. Cabinets always hold useful stuff!</source>
-        <translation>EL botiquín está cerrado. Los botiquines siempre tienen cosas útiles</translation>
+        <translation>El botiquín está cerrado. Los botiquines siempre tienen cosas útiles</translation>
     </message>
     <message>
         <location filename="../qml/scenes/2.qml" line="704"/>
@@ -374,7 +374,7 @@
     <message>
         <location filename="../qml/scenes/3.qml" line="150"/>
         <source>Only a few live infected cells relieves some muscle ticks</source>
-        <translation>Las últimas células infectadas le probocan espasmos</translation>
+        <translation>Las últimas células infectadas le provocan espasmos</translation>
     </message>
     <message>
         <location filename="../qml/scenes/3.qml" line="150"/>
@@ -554,7 +554,7 @@
     <message>
         <location filename="../qml/scenes/4.qml" line="224"/>
         <source>It&apos;s stuck behind the popcorn machine</source>
-        <translation>Está atascada detrás de la máquina de palomitas</translation>
+        <translation>Está atascado detrás de la máquina de palomitas</translation>
     </message>
     <message>
         <location filename="../qml/scenes/4.qml" line="239"/>
@@ -780,7 +780,7 @@
     <message>
         <location filename="../qml/scenes/6.qml" line="248"/>
         <source>All the purple juicy stuff is poured in now</source>
-        <translation>Has echado todo el fluído morado</translation>
+        <translation>Has echado todo el fluido morado</translation>
     </message>
     <message>
         <location filename="../qml/scenes/6.qml" line="279"/>
@@ -818,7 +818,7 @@
     <message>
         <location filename="../qml/scenes/6.qml" line="480"/>
         <source>A fancy colored keypad</source>
-        <translation>Un teclado de colores</translation>
+        <translation>Un teclado muy moderno</translation>
     </message>
     <message>
         <location filename="../qml/scenes/6.qml" line="508"/>
@@ -923,7 +923,7 @@
     <message>
         <location filename="../qml/scenes/6.qml" line="796"/>
         <source>A frontpage from the newspaper when the apocalypse got real</source>
-        <translation>La portada de un periódico, dice que el apocalípsis ya está aquí</translation>
+        <translation>La portada de un periódico, dice que el apocalipsis ya está aquí</translation>
     </message>
     <message>
         <location filename="../qml/scenes/6.qml" line="802"/>
@@ -1109,7 +1109,7 @@
     <message>
         <location filename="../qml/scenes/8.qml" line="626"/>
         <source>A horde of zombies are coming!&lt;br&gt;You&apos;ll need something to protect yourself!&lt;br&gt;See if you can find something in the tower!</source>
-        <translation>¡Una horda de zombis!&lt;br&gt;¡Necesitas algo para protregerte!&lt;br&gt;¡Busca algo en la torre!</translation>
+        <translation>¡Una horda de zombis!&lt;br&gt;¡Necesitas algo para protegerte!&lt;br&gt;¡Busca algo en la torre!</translation>
     </message>
     <message>
         <location filename="../qml/scenes/8.qml" line="627"/>
@@ -1133,59 +1133,60 @@
     <message>
         <location filename="../qml/About.qml" line="52"/>
         <source>Dead Ascend</source>
-        <translation type="unfinished"></translation>
+        <translation>Dead Ascend</translation>
     </message>
     <message>
         <location filename="../qml/About.qml" line="52"/>
         <source>2016-2017</source>
-        <translation type="unfinished"></translation>
+        <translation>2016-2017</translation>
     </message>
     <message>
         <location filename="../qml/About.qml" line="53"/>
         <source>Version %1 (%2), Qak %3 (%4), Qt %5</source>
-        <translation type="unfinished"></translation>
+        <translation>Versión %1 (%2), Qak %3 (%4), Qt %5</translation>
     </message>
     <message>
         <location filename="../qml/About.qml" line="55"/>
         <source>An open source game utilizing the cross-platform &lt;a href=&quot;https://www.qt.io/&quot;&gt;Qt&lt;/a&gt; project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un juego de software libre gracias al proyecto  &lt;a href=&quot;https://www.qt.io/&quot;&gt;Qt&lt;/a&gt; multiplataforma</translation>
     </message>
     <message>
         <location filename="../qml/About.qml" line="56"/>
         <source>Game and project source code can be found on &lt;a href=&quot;https://github.com/Larpon/DeadAscend&quot;&gt;GitHub&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>El juego y el código fuente del proyecto pueden encontrarse en &lt;a href=&quot;https://github.com/Larpon/DeadAscend&quot;&gt;GitHub&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../qml/About.qml" line="60"/>
         <source>The game serves as a showcase and example of how you can build a cross-platform game with Qt.&lt;br&gt;
             The source code for the game engine is ~&lt;b&gt;97%&lt;/b&gt; QML (including some Javascript) and ~3% C++.</source>
-        <translation type="unfinished"></translation>
+        <translation>El juego sirve como muestra y ejemplo de cómo construir un juego multiplataforma con Qt..&lt;br&gt;
+            El código fuente para el motor del juego es ~&lt;b&gt;97%&lt;/b&gt; QML (incluyendo Javascript) y ~3% C++.</translation>
     </message>
     <message>
         <location filename="../qml/About.qml" line="63"/>
         <source>The game uses the following open source projects:</source>
-        <translation type="unfinished"></translation>
+        <translation>Este juego usa los siguientes proyectos de software libre:</translation>
     </message>
     <message>
         <location filename="../qml/About.qml" line="67"/>
         <source>&lt;a href=&quot;https://github.com/Larpon/qak&quot;&gt;Qak&lt;/a&gt; - QML Aid Kit</source>
         <extracomment>It&apos;s the project titel and subtitles (catch phrases) in English - I have no idea if these should be translated?</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&quot;https://github.com/Larpon/qak&quot;&gt;Qak&lt;/a&gt; - QML Aid Kit</translation>
     </message>
     <message>
         <location filename="../qml/About.qml" line="68"/>
         <source>&lt;a href=&quot;https://github.com/Larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt; - an effort to bring the Google Firebase C++ SDK to Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&quot;https://github.com/Larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt; - un intento de traspasar  Google Firebase C++ SDK a Qt</translation>
     </message>
     <message>
         <location filename="../qml/About.qml" line="70"/>
         <source>The game uses the following fonts:</source>
-        <translation type="unfinished"></translation>
+        <translation>Se han utilizado las siguientes fuentes en el juego:</translation>
     </message>
     <message>
         <location filename="../qml/About.qml" line="75"/>
         <source>Music:</source>
-        <translation type="unfinished"></translation>
+        <translation>Música:</translation>
     </message>
     <message>
         <location filename="../qml/About.qml" line="79"/>
@@ -1193,32 +1194,34 @@
             &lt;/ul&gt;
         &lt;/p&gt;</source>
         <extracomment>It&apos;s what he&apos;d like the credits to be - I&apos;m not sure this should be translated?</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&quot;http://www.bensound.com&quot;&gt;Música libre de derechos de Bensound&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../qml/About.qml" line="86"/>
         <source>&lt;b&gt;Why does the game have ads and collect analytical data?&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;¿Por qué el juego tiene anuncios y recoge datos analíticos?&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../qml/About.qml" line="87"/>
         <source>For 2 purposes:</source>
-        <translation type="unfinished"></translation>
+        <translation>Con dos propósitos:</translation>
     </message>
     <message>
         <location filename="../qml/About.qml" line="89"/>
         <source>Shows developers example use of the open source &lt;a href=&quot;https://github.com/Larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt; project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Muestra a los desarrolladores un ejemplo del proyecto de software libre de &lt;a href=&quot;https://github.com/Larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/About.qml" line="90"/>
         <source>Supports our work at &lt;a href=&quot;http://games.blackgrain.dk&quot;&gt;Black Grain Games&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Apoya nuestro trabajo en &lt;a href=&quot;http://games.blackgrain.dk&quot;&gt;Black Grain Games&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/About.qml" line="92"/>
         <source>See our &lt;a href=&quot;//blackgrain.dk/privacy.html&quot;&gt;privacy policy&lt;/a&gt; for info on how we handle the data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Consulta nuestra &lt;a href=&quot;//blackgrain.dk/privacy.html&quot;&gt;política de privacidad&lt;/a&gt; para saber más sobre cómo gestionamos los datos.</translation>
     </message>
 </context>
 <context>
@@ -1309,7 +1312,7 @@
                 Spanish translation&lt;br&gt;
                 Sara Gutiérrez &amp; Enrique Mora
                 </source>
-        <translation type="vanished">
+        <translation>
                 Traducción al español&lt;br&gt;
                 Sara Gutiérrez y Enrique Mora
                 </translation>
@@ -1365,423 +1368,423 @@
     <name>Extra</name>
     <message>
         <source>A nice source of light</source>
-        <translation type="vanished">Una buena luz</translation>
+        <translation>Una buena luz</translation>
     </message>
     <message>
         <source>This is a box. Every game with a box deserves respect. Respect the box.</source>
-        <translation type="vanished">Esto es una caja. Cualquier juego con una caja merece respeto. Respeta la caja.</translation>
+        <translation>Esto es una caja. Cualquier juego con una caja merece respeto. Respeta la caja.</translation>
     </message>
     <message>
         <source>An old bucket. It&apos;s got a hole in it</source>
-        <translation type="vanished">Un cubo viejo. Tiene un agujero</translation>
+        <translation>Un cubo viejo. Tiene un agujero</translation>
     </message>
     <message>
         <source>Some old junk</source>
-        <translation type="vanished">Algunos trastos viejos</translation>
+        <translation>Algunos trastos viejos</translation>
     </message>
     <message>
         <source>The staircase leading to the next floor</source>
-        <translation type="vanished">La escalera que lleva al piso de arriba</translation>
+        <translation>La escalera que lleva al piso de arriba</translation>
     </message>
     <message>
         <source>Just another crack in the wall...</source>
-        <translation type="vanished">Cuando crees que me ves rompo la pared...</translation>
+        <translation>Cuando crees que me ves rompo la pared...</translation>
     </message>
     <message>
         <source>A crack in the wall reveals the bare bricks. Something must have hit it hard</source>
-        <translation type="vanished">Los ladrillos se ven en el desconchón de la pared. Tuvo que ser un buen golpe</translation>
+        <translation>Los ladrillos se ven en el desconchón de la pared. Tuvo que ser un buen golpe</translation>
     </message>
     <message>
         <source>A cable. Very standard actually</source>
-        <translation type="vanished">Un cable. De hecho, bastante normal</translation>
+        <translation>Un cable. De hecho, bastante normal</translation>
     </message>
     <message>
         <source>An old - but still sticky gum</source>
-        <translation type="vanished">Un chicle viejo pero que aún pega</translation>
+        <translation>Un chicle viejo pero que aún pega</translation>
     </message>
     <message>
         <source>Some junk</source>
-        <translation type="vanished">Algunos trastos</translation>
+        <translation>Algunos trastos</translation>
     </message>
     <message>
         <source>An old cardboard box. Full of useless junk</source>
-        <translation type="vanished">Una caja de cartón vieja. Está llena de trastos inútiles</translation>
+        <translation>Una caja de cartón vieja. Está llena de trastos inútiles</translation>
     </message>
     <message>
         <source>A puddle of water</source>
-        <translation type="vanished">Un charco de agua</translation>
+        <translation>Un charco de agua</translation>
     </message>
     <message>
         <source>Some old wooden planks</source>
-        <translation type="vanished">Unas tablas viejas de madera</translation>
+        <translation>Unas tablas viejas de madera</translation>
     </message>
     <message>
         <source>Your ordinary puddle of water</source>
-        <translation type="vanished">Un charco de agua muy normal</translation>
+        <translation>Un charco de agua muy normal</translation>
     </message>
     <message>
         <source>It&apos;s an old faucet. Still working for some unknown reason</source>
-        <translation type="vanished">Es un grifo viejo. Sigue funcionando por razones desconocidas</translation>
+        <translation>Es un grifo viejo. Sigue funcionando por razones desconocidas</translation>
     </message>
     <message>
         <source>A cable</source>
-        <translation type="vanished">Un cable</translation>
+        <translation>Un cable</translation>
     </message>
     <message>
         <source>A chandelier. Moving slightly in the draft from the window</source>
-        <translation type="vanished">Una lampara. Su sombra se mueve en la pared</translation>
+        <translation>Una lampara. Su sombra se mueve en la pared</translation>
     </message>
     <message>
         <source>A nice frame</source>
-        <translation type="vanished">Un buen marco</translation>
+        <translation>Un buen marco</translation>
     </message>
     <message>
         <source>It has the number 099 on the backside</source>
-        <translation type="vanished">Tiene el número 099 escrito en la parte de detrás</translation>
+        <translation>Tiene el número 099 escrito en la parte de detrás</translation>
     </message>
     <message>
         <source>A nice picture frame</source>
-        <translation type="vanished">Un buen marco</translation>
+        <translation>Un buen marco</translation>
     </message>
     <message>
         <source>It has the number 318 on the backside</source>
-        <translation type="vanished">Tiene el número 318 escrito en la parte de detrás</translation>
+        <translation>Tiene el número 318 escrito en la parte de detrás</translation>
     </message>
     <message>
         <source>A red barrel with a warning sign</source>
-        <translation type="vanished">Un barril rojo con una señal de peligro</translation>
+        <translation>Un barril rojo con una señal de peligro</translation>
     </message>
     <message>
         <source>Yeah. So. This is a box</source>
-        <translation type="vanished">Sí. Exacto. Una caja</translation>
+        <translation>Sí. Exacto. Una caja</translation>
     </message>
     <message>
         <source>The one thing almost every game has. The BOX</source>
-        <translation type="vanished">Lo último que le faltaba a este juego: otra caja</translation>
+        <translation>Lo último que le faltaba a este juego: otra caja</translation>
     </message>
     <message>
         <source>The rope from downstairs. It&apos;s tied to the hatch</source>
-        <translation type="vanished">La cuerda que está atada a la trampilla del sótano</translation>
+        <translation>La cuerda que está atada a la trampilla del sótano</translation>
     </message>
     <message>
         <source>A nice cardboard box</source>
-        <translation type="vanished">Una buena caja de cartón</translation>
+        <translation>Una buena caja de cartón</translation>
     </message>
     <message>
         <source>The night is beautiful. The moon is very bright</source>
-        <translation type="vanished">Qué noche tan bonita, la luna está resplandeciente</translation>
+        <translation>Qué noche tan bonita, la luna está resplandeciente</translation>
     </message>
     <message>
         <source>A worn blue canister</source>
-        <translation type="vanished">Una lata azul usada</translation>
+        <translation>Una lata azul usada</translation>
     </message>
     <message>
         <source>What have we here. An empty box. Quite useless</source>
-        <translation type="vanished">Qué tenemos aquí. Una caja vacía. Inútil</translation>
+        <translation>Qué tenemos aquí. Una caja vacía. Inútil</translation>
     </message>
     <message>
         <source>A plastic bottle of some kind. Not of any use</source>
-        <translation type="vanished">Una botella de plástico. No sirve para nada</translation>
+        <translation>Una botella de plástico. No sirve para nada</translation>
     </message>
     <message>
         <source>A small fuse</source>
-        <translation type="vanished">Un pequeño fusible</translation>
+        <translation>Un pequeño fusible</translation>
     </message>
     <message>
         <source>Looks like a ladder rail</source>
-        <translation type="vanished">Parece el riel de una escalera</translation>
+        <translation>Parece el riel de una escalera</translation>
     </message>
     <message>
         <source>A ladder rail it seems. With 6 holes in it</source>
-        <translation type="vanished">Parece el riel de una escalera. Tiene seis agujeros</translation>
+        <translation>Parece el riel de una escalera. Tiene seis agujeros</translation>
     </message>
     <message>
         <source>Nothing hides in this shadow</source>
-        <translation type="vanished">Nada se esconde entre las sombras</translation>
+        <translation>Nada se esconde entre las sombras</translation>
     </message>
     <message>
         <source>A glass bottle of green liquid</source>
-        <translation type="vanished">Una botella de vidrio con líquido verde</translation>
+        <translation>Una botella de vidrio con líquido verde</translation>
     </message>
     <message>
         <source>The door from the medicine cabinet.</source>
-        <translation type="vanished">La puerta del botiquín</translation>
+        <translation>La puerta del botiquín</translation>
     </message>
     <message>
         <source>A pool of blood. Yuck!</source>
-        <translation type="vanished">Un charco de sangre. ¡Puaj!</translation>
+        <translation>Un charco de sangre. ¡Puaj!</translation>
     </message>
     <message>
         <source>That&apos;s a stone dead zombie. No two ways about that</source>
-        <translation type="vanished">Un zombi tieso, no hay duda</translation>
+        <translation>Un zombi tieso, no hay duda</translation>
     </message>
     <message>
         <source>It looks like a suicide</source>
-        <translation type="vanished">Parece un suicidio</translation>
+        <translation>Parece un suicidio</translation>
     </message>
     <message>
         <source>History&apos;s first zombie suicide?</source>
-        <translation type="vanished">¿El primer suicidio zombi de la historia?</translation>
+        <translation>¿El primer suicidio zombi de la historia?</translation>
     </message>
     <message>
         <source>A piece of paper. It&apos;s torn and has blood on it</source>
-        <translation type="vanished">Un trozo de papel. Esta roto y tiene sangre</translation>
+        <translation>Un trozo de papel. Esta roto y tiene sangre</translation>
     </message>
     <message>
         <source>A glass bottle of blue liquid</source>
-        <translation type="vanished">Una botella de vidrio con líquido azul</translation>
+        <translation>Una botella de vidrio con líquido azul</translation>
     </message>
     <message>
         <source>Some blood splattered on the wall. Holy mother...</source>
-        <translation type="vanished">Un salpicón de sangre en la pared. Qué asco...</translation>
+        <translation>Un salpicón de sangre en la pared. Qué asco...</translation>
     </message>
     <message>
         <source>A cute little spiderweb. Not useful though</source>
-        <translation type="vanished">Una tela de araña muy mona. Pero no es útil</translation>
+        <translation>Una tela de araña muy mona. Pero no es útil</translation>
     </message>
     <message>
         <source>Looks like an air vent of some sort. There&apos;s nothing interesting about it</source>
-        <translation type="vanished">Parece un ventilador. No es interesante</translation>
+        <translation>Parece un ventilador. No es interesante</translation>
     </message>
     <message>
         <source>Some wooden boxes. They sound empty if you knock on them</source>
-        <translation type="vanished">Cajas de madera. Parece que están vacías si las golpeas</translation>
+        <translation>Cajas de madera. Parece que están vacías si las golpeas</translation>
     </message>
     <message>
         <source>A spiderweb. Not useful though</source>
-        <translation type="vanished">Una tela de araña. No sirve para nada</translation>
+        <translation>Una tela de araña. No sirve para nada</translation>
     </message>
     <message>
         <source>Some very, very sticky and long flypaper</source>
-        <translation type="vanished">Un papel matamoscas muy pegajoso y muy largo</translation>
+        <translation>Un papel matamoscas muy pegajoso y muy largo</translation>
     </message>
     <message>
         <source>WOW - a real and loaded shotgun!</source>
-        <translation type="vanished">OSTRAS, ¡una escopeta cargada!</translation>
+        <translation>OSTRAS, ¡una escopeta cargada!</translation>
     </message>
     <message>
         <source>A light source. It&apos;s a wonder the electricity is still working</source>
-        <translation type="vanished">Una luz. Me extraña que siga habiendo electricidad</translation>
+        <translation>Una luz. Me extraña que siga habiendo electricidad</translation>
     </message>
     <message>
         <source>A wooden box. Nothing special about it</source>
-        <translation type="vanished">Una caja de madera. No tiene nada de especial</translation>
+        <translation>Una caja de madera. No tiene nada de especial</translation>
     </message>
     <message>
         <source>House of the living critter</source>
-        <translation type="vanished">La casa del bichejo viviente</translation>
+        <translation>La casa del bichejo viviente</translation>
     </message>
     <message>
         <source>There&apos;s a hamster living here! Hey little buddy!</source>
-        <translation type="vanished">Hay un hamster viviendo aquí. ¡Hola, pequeñín!</translation>
+        <translation>Hay un hámster viviendo aquí. ¡Hola, pequeñín!</translation>
     </message>
     <message>
         <source>The glass seem to be tempered. You need a serious tool to get through this</source>
-        <translation type="vanished">La cubierta es de cristal doble. Necesitas una buena herramienta para romperlo</translation>
+        <translation>La cubierta es de cristal doble. Necesitas una buena herramienta para romperlo</translation>
     </message>
     <message>
         <source>Looks like a sparse workbench</source>
-        <translation type="vanished">Parece una mesa de laboratorio vacía</translation>
+        <translation>Parece una mesa de laboratorio vacía</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="vanished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>A weird looking machine - in the color of green</source>
-        <translation type="vanished">Una máquina de color verde un poco rara</translation>
+        <translation>Una máquina de color verde un poco rara</translation>
     </message>
     <message>
         <source>Fourth of these weird blue machines</source>
-        <translation type="vanished">La última de las máquinas azules</translation>
+        <translation>La última de las máquinas azules</translation>
     </message>
     <message>
         <source>Third of these weird blue machines</source>
-        <translation type="vanished">Y otra de las máquinas azules</translation>
+        <translation>Y otra de las máquinas azules</translation>
     </message>
     <message>
         <source>Second of these weird blue machines</source>
-        <translation type="vanished">Otra de las máquinas azules</translation>
+        <translation>Otra de las máquinas azules</translation>
     </message>
     <message>
         <source>First of these weird blue machines</source>
-        <translation type="vanished">Una de las máquinas azules</translation>
+        <translation>Una de las máquinas azules</translation>
     </message>
     <message>
         <source>A clock - it&apos;s broken. Very broken</source>
-        <translation type="vanished">Un reloj. Está roto. Muy roto</translation>
+        <translation>Un reloj. Está roto. Muy roto</translation>
     </message>
     <message>
         <source>Frame for a painting</source>
-        <translation type="vanished">El marco de un cuadro</translation>
+        <translation>El marco de un cuadro</translation>
     </message>
     <message>
         <source>It has the number 563 on the backside</source>
-        <translation type="vanished">Tiene el número 563 escrito en la parte de detrás</translation>
+        <translation>Tiene el número 563 escrito en la parte de detrás</translation>
     </message>
     <message>
         <source>Some sacks of grain</source>
-        <translation type="vanished">Algunos sacos de cereales</translation>
+        <translation>Algunos sacos de pienso</translation>
     </message>
     <message>
         <source>An open sack of grain</source>
-        <translation type="vanished">Un saco de pienso abierto</translation>
+        <translation>Un saco de pienso abierto</translation>
     </message>
     <message>
         <source>A small pile of grain</source>
-        <translation type="vanished">Un montoncito de pienso</translation>
+        <translation>Un montoncito de pienso</translation>
     </message>
     <message>
         <source>Looks like splattered blood</source>
-        <translation type="vanished">Parece un salpicón de sangre</translation>
+        <translation>Parece un salpicón de sangre</translation>
     </message>
     <message>
         <source>There&apos;s also holes from what looks like shotgun bullet holes</source>
-        <translation type="vanished">Hay agujeros dentro de lo que parecen agujeros de bala</translation>
+        <translation>Hay agujeros dentro de lo que parecen agujeros de bala</translation>
     </message>
     <message>
         <source>A visually pleasing generator - sadly it&apos;s broken</source>
-        <translation type="vanished">Un generador muy chulo. Es una pena que esté roto</translation>
+        <translation>Un generador muy chulo. Es una pena que esté roto</translation>
     </message>
     <message>
         <source>A pretty thick power cable. It fits nicely in one end to the elevator motor battery</source>
-        <translation type="vanished">Un cable bastante grueso. Encaja en un extremo del motor del ascensor</translation>
+        <translation>Un cable bastante grueso. Encaja en un extremo del motor del ascensor</translation>
     </message>
     <message>
         <source>Oh my. What a nice little scooter</source>
-        <translation type="vanished">Madre mía. Qué patinete más chulo</translation>
+        <translation>Madre mía. Qué patinete más chulo</translation>
     </message>
     <message>
         <source>POP, POP no more... pop... corn. Eeer</source>
-        <translation type="vanished">Palomitas de maíz, palomitas de maíz...</translation>
+        <translation>Palomitas de maíz, palomitas de maíz...</translation>
     </message>
     <message>
         <source>This is useless. There&apos;s not even snow outside</source>
-        <translation type="vanished">No sirve para nada. Ni siquiera está nevando</translation>
+        <translation>No sirve para nada. Ni siquiera está nevando</translation>
     </message>
     <message>
         <source>Go find a piste - maybe in Italy</source>
-        <translation type="vanished">Busca una pista de esquí. Quizás en Andorra</translation>
+        <translation>Busca una pista de esquí. Quizás en Andorra</translation>
     </message>
     <message>
         <source>Rock-on brother!</source>
-        <translation type="vanished">¡A por ellos, vaquero!</translation>
+        <translation>¡A por ellos, vaquero!</translation>
     </message>
     <message>
         <source>Fun in the summer - useless during zombie apocalypses</source>
-        <translation type="vanished">Genial para el verano, pero poco práctico para el apocalipsis zombi</translation>
+        <translation>Genial para el verano, pero poco práctico para el apocalipsis zombi</translation>
     </message>
     <message>
         <source>It&apos;s the electrical motor for the elevator</source>
-        <translation type="vanished">Es el motor eléctrico del ascensor</translation>
+        <translation>Es el motor eléctrico del ascensor</translation>
     </message>
     <message>
         <source>The night is still beautiful</source>
-        <translation type="vanished">La noche sigue preciosa</translation>
+        <translation>La noche sigue preciosa</translation>
     </message>
     <message>
         <source>It look like a charging mechanism of some sort</source>
-        <translation type="vanished">Parece un mecanismo de carga</translation>
+        <translation>Parece un mecanismo de carga</translation>
     </message>
     <message>
         <source>It&apos;s a pipe for transporting air</source>
-        <translation type="vanished">Es un conducto de ventilación</translation>
+        <translation>Es un conducto de ventilación</translation>
     </message>
     <message>
         <source>It&apos;s a fairly big machine of some sort. Could be some kind of generator</source>
-        <translation type="vanished">Es una máquina bastante grande. Podría ser un generador</translation>
+        <translation>Es una máquina bastante grande. Podría ser un generador</translation>
     </message>
     <message>
         <source>Some weird big red machinery</source>
-        <translation type="vanished">Maquinaria pesada de color rojo</translation>
+        <translation>Maquinaria pesada de color rojo</translation>
     </message>
     <message>
         <source>A big wine red hose coming down from the ceiling</source>
-        <translation type="vanished">Una gran mangera roja que sale del techo</translation>
+        <translation>Una gran manguera roja que sale del techo</translation>
     </message>
     <message>
         <source>A big blue hose coming down from the ceiling</source>
-        <translation type="vanished">Una gran mangera azul que sale del techo</translation>
+        <translation>Una gran manguera azul que sale del techo</translation>
     </message>
     <message>
         <source>A big green hose coming down from the ceiling</source>
-        <translation type="vanished">Una gran mangera verde que sale del techo</translation>
+        <translation>Una gran manguera verde que sale del techo</translation>
     </message>
     <message>
         <source>A big purple hose coming down from the ceiling</source>
-        <translation type="vanished">Una gran mangera morada que sale del techo</translation>
+        <translation>Una gran manguera morada que sale del techo</translation>
     </message>
     <message>
         <source>Oh dear...</source>
-        <translation type="vanished">Madre mía...</translation>
+        <translation>Madre mía...</translation>
     </message>
     <message>
         <source>more boxes</source>
-        <translation type="vanished">más cajas</translation>
+        <translation>más cajas</translation>
     </message>
     <message>
         <source>*sigh*</source>
-        <translation type="vanished">*suspiro*</translation>
+        <translation>*suspiro*</translation>
     </message>
     <message>
         <source>Another lamp. It&apos;s a very consistent lamp design they have in this tower</source>
-        <translation type="vanished">Otra lampara. El diseño de las lámparas de esta torre es fantástico</translation>
+        <translation>Otra lampara. El diseño de las lámparas de esta torre es fantástico</translation>
     </message>
     <message>
         <source>The mouth of a purple pipe</source>
-        <translation type="vanished">La boca de una tubería morada</translation>
+        <translation>La boca de una tubería morada</translation>
     </message>
     <message>
         <source>The mouth of a green pipe</source>
-        <translation type="vanished">La boca de una tubería verde</translation>
+        <translation>La boca de una tubería verde</translation>
     </message>
     <message>
         <source>The mouth of a blue pipe</source>
-        <translation type="vanished">La boca de una tubería azul</translation>
+        <translation>La boca de una tubería azul</translation>
     </message>
     <message>
         <source>The mouth of a wine red pipe</source>
-        <translation type="vanished">La boca de una tubería roja</translation>
+        <translation>La boca de una tubería roja</translation>
     </message>
     <message>
         <source>A glass bottle of purple liquid</source>
-        <translation type="vanished">Una botella de vidrio con líquido morado</translation>
+        <translation>Una botella de vidrio con líquido morado</translation>
     </message>
     <message>
         <source>A ventilator. Spreading cool air in the room - it&apos;s bolted to the floor</source>
-        <translation type="vanished">Un ventilador. Da aire fresco en la sala. Está anclado al suelo</translation>
+        <translation>Un ventilador. Da aire fresco en la sala. Está anclado al suelo</translation>
     </message>
     <message>
         <source>Some sacks of grain. I wonder why all this grain is lying around</source>
-        <translation type="vanished">Algunos sacos de cereales. No se por qué hay tanto cereal por el suelo</translation>
+        <translation>Algunos sacos de pienso. No se por qué hay tanto pienso por el suelo</translation>
     </message>
     <message>
         <source>It&apos;s a clean, neatly wiped, whiteboard</source>
-        <translation type="vanished">Es una pizarra perfectamente limpia</translation>
+        <translation>Es una pizarra perfectamente limpia</translation>
     </message>
     <message>
         <source>It has the number 037 on the backside</source>
-        <translation type="vanished">Tiene el número 037 escrito en la parte de detrás</translation>
+        <translation>Tiene el número 037 escrito en la parte de detrás</translation>
     </message>
     <message>
         <source>An old golden lampshade. Nothing you should carry around</source>
-        <translation type="vanished">Una lampara vieja. No merece la pena que te la lleves</translation>
+        <translation>Una lampara vieja. No merece la pena que te la lleves</translation>
     </message>
     <message>
         <source>And this is a box. This one stands out because it has stickers on it. But it&apos;s still useless</source>
-        <translation type="vanished">Y esto es una caja. Destaca porque tiene pegatinas, pero es igual de inútil</translation>
+        <translation>Y esto es una caja. Destaca porque tiene pegatinas, pero es igual de inútil</translation>
     </message>
     <message>
         <source>*sigh* ... a box</source>
-        <translation type="vanished">*suspiro* ... una caja</translation>
+        <translation>*suspiro* ... una caja</translation>
     </message>
     <message>
         <source>A hook of some sort. You could tie something to it</source>
-        <translation type="vanished">Un gancho. Podrías atar algo ahí</translation>
+        <translation>Un gancho. Podrías atar algo ahí</translation>
     </message>
     <message>
         <source>A glass bottle of red liquid</source>
-        <translation type="vanished">Una botella de vidrio con líquido rojo</translation>
+        <translation>Una botella de vidrio con líquido rojo</translation>
     </message>
 </context>
 <context>
@@ -1904,7 +1907,7 @@ Continue?</source>
     <message>
         <location filename="../qml/scenes/Tutorial.qml" line="35"/>
         <source>Welcome survivor&lt;br&gt;This is how you&lt;br&gt;play the game</source>
-        <translation>Bienvenido, superviviente&lt;br&gt;Aquí aprenderás&lt;br&gt;a jugar</translation>
+        <translation>Bienvenido, superviviente&lt;br&gt;Aquí aprenderás a jugar</translation>
     </message>
     <message>
         <location filename="../qml/scenes/Tutorial.qml" line="37"/>
@@ -1931,7 +1934,7 @@ Continue?</source>
     <message>
         <location filename="../qml/scenes/Tutorial.qml" line="47"/>
         <source>To use objects&lt;br&gt;hold and drag them&lt;br&gt;from the inventory to the room&lt;br&gt;(place the zombie doll on the box)</source>
-        <translation>Para usar un objeto&lt;br&gt;arrástralo&lt;br&gt;fuera del inventario&lt;br&gt;(coloca el muñeco-zombi encima de la caja)</translation>
+        <translation>Para usar un objeto&lt;br&gt;arrástralo fuera del inventario&lt;br&gt;(coloca el muñeco-zombi encima de la caja)</translation>
     </message>
     <message>
         <location filename="../qml/scenes/Tutorial.qml" line="51"/>
@@ -2278,7 +2281,7 @@ Continue?</source>
     <message>
         <location filename="Extra.qml" line="75"/>
         <source>Some sacks of grain</source>
-        <translation>Algunos sacos de cereales</translation>
+        <translation>Algunos sacos de pienso</translation>
     </message>
     <message>
         <location filename="Extra.qml" line="76"/>
@@ -2374,22 +2377,22 @@ Continue?</source>
     <message>
         <location filename="Extra.qml" line="95"/>
         <source>A big wine red hose coming down from the ceiling</source>
-        <translation>Una gran mangera roja que sale del techo</translation>
+        <translation>Una gran manguera roja que sale del techo</translation>
     </message>
     <message>
         <location filename="Extra.qml" line="96"/>
         <source>A big blue hose coming down from the ceiling</source>
-        <translation>Una gran mangera azul que sale del techo</translation>
+        <translation>Una gran manguera azul que sale del techo</translation>
     </message>
     <message>
         <location filename="Extra.qml" line="97"/>
         <source>A big green hose coming down from the ceiling</source>
-        <translation>Una gran mangera verde que sale del techo</translation>
+        <translation>Una gran manguera verde que sale del techo</translation>
     </message>
     <message>
         <location filename="Extra.qml" line="98"/>
         <source>A big purple hose coming down from the ceiling</source>
-        <translation>Una gran mangera morada que sale del techo</translation>
+        <translation>Una gran manguera morada que sale del techo</translation>
     </message>
     <message>
         <location filename="Extra.qml" line="99"/>
@@ -2447,7 +2450,7 @@ Continue?</source>
     <message>
         <location filename="Extra.qml" line="112"/>
         <source>Some sacks of grain. I wonder why all this grain is lying around</source>
-        <translation>Algunos sacos de cereales. No se por qué hay tanto cereal por el suelo</translation>
+        <translation>Algunos sacos de pienso. No se por qué hay tanto pienso por el suelo</translation>
     </message>
     <message>
         <location filename="Extra.qml" line="113"/>

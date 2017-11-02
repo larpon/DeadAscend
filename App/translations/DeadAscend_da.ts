@@ -557,340 +557,340 @@
     </message>
     <message>
         <source>It&apos;s got a nice yellow tint to it. There&apos;s more work to be done here</source>
-        <translation type="unfinished"></translation>
+        <translation>Den har et flot gult skær over sig. Vi er ikke helt færdige her</translation>
     </message>
     <message>
         <source>It&apos;s red. Indicating that something is not in it&apos;s right state</source>
-        <translation type="unfinished"></translation>
+        <translation>Den er rød. Indikationen af at noget ikker er i den rigtige tilstand</translation>
     </message>
 </context>
 <context>
     <name>6</name>
     <message>
         <source>Nah. Not really interesting</source>
-        <translation type="unfinished">Næh. Ikke rigtig interessant</translation>
+        <translation>Næh. Ikke rigtig interessant</translation>
     </message>
     <message>
         <source>Not of any use</source>
-        <translation type="unfinished">Ikke brugbart</translation>
+        <translation>Ikke brugbart</translation>
     </message>
     <message>
         <source>It&apos;s actually a bit warm in here</source>
-        <translation type="unfinished">Det er faktisk lidt varmt herinde</translation>
+        <translation>Det er faktisk lidt varmt herinde</translation>
     </message>
     <message>
         <source>The door is locked...</source>
-        <translation type="unfinished"></translation>
+        <translation>Døren er låst...</translation>
     </message>
     <message>
         <source>The keypad to the right seem to be connected to the door</source>
-        <translation type="unfinished"></translation>
+        <translation>Betjeningspanelet til højre ser ud til at være forbundet til døren</translation>
     </message>
     <message>
         <source>There&apos;s already poured liquid in this</source>
-        <translation type="unfinished"></translation>
+        <translation>Der er allerede hældt væske i den her</translation>
     </message>
     <message>
         <source>... better not put %1 liquid in a blue pipe</source>
-        <translation type="unfinished"></translation>
+        <translation>... vi må hellere undgå at hælde %1 væske i et blåt rør</translation>
     </message>
     <message>
         <source>The liquid is poured in now</source>
-        <translation type="unfinished"></translation>
+        <translation>Væsken er hældt i nu</translation>
     </message>
     <message>
         <source>... better not put %1 liquid in a purple pipe</source>
-        <translation type="unfinished"></translation>
+        <translation>... vi må hellere undgå at hælde %1 væske i et lilla rør</translation>
     </message>
     <message>
         <source>All the purple juicy stuff is poured in now</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt det saftige lilla stads er hældt i nu</translation>
     </message>
     <message>
         <source>... better not put %1 liquid in a red-ish pipe</source>
-        <translation type="unfinished"></translation>
+        <translation>... vi må hellere undgå at hælde %1 væske i et rødligt rør</translation>
     </message>
     <message>
         <source>All the red goo is poured in now</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt det røde stads er hældt i nu</translation>
     </message>
     <message>
         <source>... better not put %1 liquid in a green pipe</source>
-        <translation type="unfinished"></translation>
+        <translation>... vi må hellere undgå at hælde %1 væske i et grønt rør</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>All the contents are poured in</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt inndholdet er hældt i</translation>
     </message>
     <message>
         <source>It&apos;s open!</source>
-        <translation type="unfinished"></translation>
+        <translation>Den er åben!</translation>
     </message>
     <message>
         <source>A fancy colored keypad</source>
-        <translation type="unfinished"></translation>
+        <translation>Et smart farvet betjeningspanel</translation>
     </message>
     <message>
         <source>not the right key combination</source>
-        <translation type="unfinished"></translation>
+        <translation>ikke den rigtige kombination</translation>
     </message>
     <message>
         <source>Open Sesame!</source>
-        <translation type="unfinished"></translation>
+        <translation>Døren er åben!</translation>
     </message>
     <message>
         <source>Green lights are good lights!</source>
-        <translation type="unfinished"></translation>
+        <translation>Grønt lys er godt lys!</translation>
     </message>
     <message>
         <source>This must be the cable for the antenna</source>
-        <translation type="unfinished"></translation>
+        <translation>Det her må være kablet til antennen</translation>
     </message>
     <message>
         <source>It leads to the roof</source>
-        <translation type="unfinished"></translation>
+        <translation>Det fører op til loftet</translation>
     </message>
     <message>
         <source>A fairly large bookcase. Very square</source>
-        <translation type="unfinished"></translation>
+        <translation>En ret stor bogreol. Meget firkantet</translation>
     </message>
     <message>
         <source>YES! THERE&apos;S OTHER SURVIVORS ON THE RADIO</source>
-        <translation type="unfinished"></translation>
+        <translation>OPTUR! DER ER ANDRE OVERLEVENDE I RADIOEN</translation>
     </message>
     <message>
         <source>HALLO!? CAN YOU HEAR ME!?</source>
-        <translation type="unfinished"></translation>
+        <translation>HALLO!? KAN I HØRE MIG!?</translation>
     </message>
     <message>
         <source>radio: *Loud and clear, over*</source>
-        <translation type="unfinished"></translation>
+        <translation>radioen: *Højt og tydeligt. Skifter*</translation>
     </message>
     <message>
         <source>COME GET ME AT THE TOWER</source>
-        <translation type="unfinished"></translation>
+        <translation>KOM OG HENT MIG VED TÅRNET</translation>
     </message>
     <message>
         <source>radio: *We&apos;re sending a chopper, over*</source>
-        <translation type="unfinished"></translation>
+        <translation>radioen: *Vi sender en helikopter. Skifter*</translation>
     </message>
     <message>
         <source>AWESOME!, OVER!</source>
-        <translation type="unfinished"></translation>
+        <translation>FANTASTISK! SKIFTER!</translation>
     </message>
     <message>
         <source>Woohoo - they are coming for me!</source>
-        <translation type="unfinished"></translation>
+        <translation>Hurraa - de kommer og henter mig!</translation>
     </message>
     <message>
         <source>I&apos;ll better hurry to the roof and wait for the chopper</source>
-        <translation type="unfinished"></translation>
+        <translation>Jeg må hellere skynde mig op på taget og vente på helikopteren</translation>
     </message>
     <message>
         <source>There&apos;s only noise...</source>
-        <translation type="unfinished"></translation>
+        <translation>Der er kun støj...</translation>
     </message>
     <message>
         <source>The indicator for &quot;LONG RANGE&quot; is off</source>
-        <translation type="unfinished"></translation>
+        <translation>Indikatoren for &quot;LANGBØLJE&quot; er slået fra</translation>
     </message>
     <message>
         <source>You&apos;d need a powered antenna to call for help</source>
-        <translation type="unfinished"></translation>
+        <translation>Du har brug for en forstærket antenne for at kalde efter hjælp</translation>
     </message>
     <message>
         <source>More problems than solutions I guess</source>
-        <translation type="unfinished"></translation>
+        <translation>Flere problemer end løsninger vil jeg gætte på</translation>
     </message>
     <message>
         <source>Help is on the way - I better get to the roof!</source>
-        <translation type="unfinished"></translation>
+        <translation>Hjælpen er på vej - jeg må hellere komme op på taget!</translation>
     </message>
     <message>
         <source>A fine lava lamp. It&apos;s not working</source>
-        <translation type="unfinished"></translation>
+        <translation>En fin lavalampe. Den virker ikke</translation>
     </message>
     <message>
         <source>A frontpage from the newspaper when the apocalypse got real</source>
-        <translation type="unfinished"></translation>
+        <translation>En forside fra avisen fra da apokalypsen blev alvor</translation>
     </message>
     <message>
         <source>Books, books, books. I&apos;m looking for a good time</source>
-        <translation type="unfinished"></translation>
+        <translation>Bøger, bøger, bøger. Hvor har I dog været i mit liv</translation>
     </message>
     <message>
         <source>A shelf full of books</source>
-        <translation type="unfinished"></translation>
+        <translation>En hylde fyldt med bøger</translation>
     </message>
     <message>
         <source>A small pile of very uninteresting papers</source>
-        <translation type="unfinished"></translation>
+        <translation>En lille bunke, meget, uinteressante papirer</translation>
     </message>
     <message>
         <source>A fuel cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Et batteri</translation>
     </message>
     <message>
         <source>The two pieces fit perfectly together</source>
-        <translation type="unfinished"></translation>
+        <translation>De to stykker passer perfekt sammen</translation>
     </message>
     <message>
         <source>green</source>
-        <translation type="unfinished"></translation>
+        <translation>grøn</translation>
     </message>
     <message>
         <source>red</source>
-        <translation type="unfinished"></translation>
+        <translation>rød</translation>
     </message>
     <message>
         <source>blue</source>
-        <translation type="unfinished"></translation>
+        <translation>blå</translation>
     </message>
     <message>
         <source>purple</source>
-        <translation type="unfinished"></translation>
+        <translation>lilla</translation>
     </message>
 </context>
 <context>
     <name>7</name>
     <message>
         <source>Nah. Not really interesting</source>
-        <translation type="unfinished">Næh. Ikke rigtig interessant</translation>
+        <translation>Næh. Ikke rigtig interessant</translation>
     </message>
     <message>
         <source>Not of any use</source>
-        <translation type="unfinished">Ikke brugbart</translation>
+        <translation>Ikke brugbart</translation>
     </message>
     <message>
         <source>It&apos;s actually a bit warm in here</source>
-        <translation type="unfinished">Det er faktisk lidt varmt herinde</translation>
+        <translation>Det er faktisk lidt varmt herinde</translation>
     </message>
     <message>
         <source>Brilliant. The rope is firmly tied to the hook</source>
-        <translation type="unfinished"></translation>
+        <translation>Genialt. Rebet er bundet fast til krogen</translation>
     </message>
     <message>
         <source>Hmm... If we tied something to the hook...</source>
-        <translation type="unfinished"></translation>
+        <translation>Hmm... Hvis vi nu bandt noget til krogen...</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
 </context>
 <context>
     <name>8</name>
     <message>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Something is wrong</source>
-        <translation type="unfinished"></translation>
+        <translation>Der er noget galt</translation>
     </message>
     <message>
         <source>I can feel it</source>
-        <translation type="unfinished"></translation>
+        <translation>Jeg kan fornemme det</translation>
     </message>
     <message>
         <source>I can hear zombies</source>
-        <translation type="unfinished"></translation>
+        <translation>Jeg kan høre zombier</translation>
     </message>
     <message>
         <source>A lot of zombies!</source>
-        <translation type="unfinished"></translation>
+        <translation>Mange zombier!</translation>
     </message>
     <message>
         <source>HA! First blood!</source>
-        <translation type="unfinished"></translation>
+        <translation>HA! I første huk!</translation>
     </message>
     <message>
         <source>Right on!</source>
-        <translation type="unfinished"></translation>
+        <translation>Sådan!</translation>
     </message>
     <message>
         <source>BOOM baby!</source>
-        <translation type="unfinished"></translation>
+        <translation>BUM BUM min ven!</translation>
     </message>
     <message>
         <source>Out of my way!</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjern dig!</translation>
     </message>
     <message>
         <source>Oh my...</source>
-        <translation type="unfinished"></translation>
+        <translation>Åh åh...</translation>
     </message>
     <message>
         <source>They keep showing up!</source>
-        <translation type="unfinished"></translation>
+        <translation>De bliver ved med at strømme til!</translation>
     </message>
     <message>
         <source>Take that you creep!</source>
-        <translation type="unfinished"></translation>
+        <translation>Tag den dit uhyre!</translation>
     </message>
     <message>
         <source>I can hear the chopper in the distance!</source>
-        <translation type="unfinished"></translation>
+        <translation>Jeg kan høre helikopteren i det fjerne!</translation>
     </message>
     <message>
         <source>That&apos;s definitely the antenna dish for the radio</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er helt sikkert parabolmodtageren til radioen</translation>
     </message>
     <message>
         <source>The box has a socket. It could be something like an external power supply for the antenna</source>
-        <translation type="unfinished"></translation>
+        <translation>Boksen har et stik. Det kunne godt være noget i stil med en ekstern strømforsyning</translation>
     </message>
     <message>
         <source>Maybe to give it extra range?</source>
-        <translation type="unfinished"></translation>
+        <translation>Måske for at give den ekstra rækkevide?</translation>
     </message>
     <message>
         <source>The fuel cell is connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Batteriet er forbundet</translation>
     </message>
     <message>
         <source>This should give the radio some extra range</source>
-        <translation type="unfinished"></translation>
+        <translation>Dette burde give radioen noget ekstra rækkevide</translation>
     </message>
     <message>
         <source>Good work survivour. The antenna is now powered. This should give some extra range</source>
-        <translation type="unfinished"></translation>
+        <translation>Godt arbejde. Radioen er nu aktiv. Det burde give lidt ekstra rækkevide</translation>
     </message>
     <message>
         <source>The fuel cell is out of power. It&apos;ll be hard to get it charged under these circumstances</source>
-        <translation type="unfinished"></translation>
+        <translation>Batteriet er løbet tør for strøm. Det bliver svært at få genopladt i de her omgivelser</translation>
     </message>
     <message>
         <source>The end!</source>
-        <translation type="unfinished"></translation>
+        <translation>SLUT</translation>
     </message>
     <message>
         <source>The zombies are coming!&lt;br&gt;Furtunately you have your shotgun!&lt;br&gt;&lt;br&gt;Tab on the zombies to shot them&lt;br&gt; - SHOOT THEM ALL -</source>
-        <translation type="unfinished"></translation>
+        <translation>Zombierne kommer!&lt;br&gt;Heldigvis har du din shotgun!&lt;br&gt;&lt;br&gt;Klik på zombierne for at skyde dem&lt;br&gt; - SKYD DEM ALLE -</translation>
     </message>
     <message>
         <source>SUCK ON THIS!</source>
-        <translation type="unfinished"></translation>
+        <translation>SUT PÅ DEN HER!</translation>
     </message>
     <message>
         <source>EAT LEAD!</source>
-        <translation type="unfinished"></translation>
+        <translation>ÆD BLY!</translation>
     </message>
     <message>
         <source>A horde of zombies are coming!&lt;br&gt;You&apos;ll need something to protect yourself!&lt;br&gt;See if you can find something in the tower!</source>
-        <translation type="unfinished"></translation>
+        <translation>En hoorde af zombier kommer efter dig!&lt;br&gt;Du må finde noget at beskytte dig selv med!&lt;br&gt;Se om ikke du kan finde noget i tårnet et sted!</translation>
     </message>
     <message>
         <source>YES - OK</source>
-        <translation type="unfinished"></translation>
+        <translation>JA - OK</translation>
     </message>
     <message>
         <source>YES!</source>
-        <translation type="unfinished"></translation>
+        <translation>JA!</translation>
     </message>
 </context>
 <context>
@@ -898,105 +898,106 @@
     <message>
         <source>BACK</source>
         <extracomment>Menu back</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>TILBAGE</translation>
     </message>
     <message>
         <source>Dead Ascend</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>2016-2017</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Version %1 (%2), Qak %3 (%4), Qt %5</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>An open source game utilizing the cross-platform &lt;a href=&quot;https://www.qt.io/&quot;&gt;Qt&lt;/a&gt; project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Et open source spil der går brug af det krydsplatforme &lt;a href=&quot;https://www.qt.io/&quot;&gt;Qt&lt;/a&gt; projekt.</translation>
     </message>
     <message>
         <source>Game and project source code can be found on &lt;a href=&quot;https://github.com/Larpon/DeadAscend&quot;&gt;GitHub&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Spillet og projektets kildekode kan findes på &lt;a href=&quot;https://github.com/Larpon/DeadAscend&quot;&gt;GitHub&lt;/a&gt;</translation>
     </message>
     <message>
         <source>The game serves as a showcase and example of how you can build a cross-platform game with Qt.&lt;br&gt;
             The source code for the game engine is ~&lt;b&gt;97%&lt;/b&gt; QML (including some Javascript) and ~3% C++.</source>
-        <translation type="unfinished"></translation>
+        <translation>Spillet er et eksempel på hvordan du kan lave et krydsplatform spil med Qt.&lt;br&gt;
+            Spillets kildekode er ~&lt;b&gt;97%&lt;/b&gt; QML (inklusiv noget Javascript) og ~3% C++.</translation>
     </message>
     <message>
         <source>The game uses the following open source projects:</source>
-        <translation type="unfinished"></translation>
+        <translation>Spillet gør brug af følgende open source projekter:</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;https://github.com/Larpon/qak&quot;&gt;Qak&lt;/a&gt; - QML Aid Kit</source>
         <extracomment>It&apos;s the project titel and subtitles (catch phrases) in English - I have no idea if these should be translated?</extracomment>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>&lt;a href=&quot;https://github.com/Larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt; - an effort to bring the Google Firebase C++ SDK to Qt</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>The game uses the following fonts:</source>
-        <translation type="unfinished"></translation>
+        <translation>Spillet gør brug af følgende skifttyper:</translation>
     </message>
     <message>
         <source>Music:</source>
-        <translation type="unfinished"></translation>
+        <translation>Musik:</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;http://www.bensound.com&quot;&gt;Bensound royalty free music&lt;/a&gt;&lt;/li&gt;
             &lt;/ul&gt;
         &lt;/p&gt;</source>
         <extracomment>It&apos;s what he&apos;d like the credits to be - I&apos;m not sure this should be translated?</extracomment>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>&lt;b&gt;Why does the game have ads and collect analytical data?&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Hvorfor har spillet reklamer og hvorfor samler det analysedata?&lt;/b&gt;</translation>
     </message>
     <message>
         <source>For 2 purposes:</source>
-        <translation type="unfinished"></translation>
+        <translation>Af 2 årsager:</translation>
     </message>
     <message>
         <source>Shows developers example use of the open source &lt;a href=&quot;https://github.com/Larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt; project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det viser udviklere eksempelbrug af det open source &lt;a href=&quot;https://github.com/Larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt; projekt.</translation>
     </message>
     <message>
         <source>Supports our work at &lt;a href=&quot;http://games.blackgrain.dk&quot;&gt;Black Grain Games&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det støtter vores arbejde hos &lt;a href=&quot;http://games.blackgrain.dk&quot;&gt;Black Grain Games&lt;/a&gt;.</translation>
     </message>
     <message>
         <source>See our &lt;a href=&quot;//blackgrain.dk/privacy.html&quot;&gt;privacy policy&lt;/a&gt; for info on how we handle the data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se vores &lt;a href=&quot;//blackgrain.dk/privacy.html&quot;&gt;privatlivspolitik&lt;/a&gt; for mere information om hvordan vi hånderer dataen.</translation>
     </message>
 </context>
 <context>
     <name>ApplicationWindow</name>
     <message>
         <source>Qak (%1x%2)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>ConfirmDialog</name>
     <message>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation>Godkend</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Afbryd</translation>
     </message>
 </context>
 <context>
     <name>Console</name>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Send</translation>
     </message>
 </context>
 <context>
@@ -1004,7 +1005,7 @@
     <message>
         <source>BACK</source>
         <extracomment>Menu back button</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>TILBAGE</translation>
     </message>
     <message>
         <source>
@@ -1012,28 +1013,41 @@
                 by&lt;br&gt;
                 Black Grain Games
                 </source>
-        <translation type="unfinished"></translation>
+        <translation>
+                Udgivet, Konverteret &amp; Gjort Open Sourc&lt;br&gt;
+                af&lt;br&gt;
+                Black Grain Games
+                </translation>
     </message>
     <message>
         <source>
                 Original story, idea &amp; puzzles&lt;br&gt;
                 Lars Pontoppidan &amp; Stinus Petersen
                 </source>
-        <translation type="unfinished"></translation>
+        <translation>
+                Original historie, ide &amp; opgaver&lt;br&gt;
+                Lars Pontoppidan &amp; Stinus Petersen
+                </translation>
     </message>
     <message>
         <source>
                 Engine, Graphics, Sound Effects &amp; Scripting&lt;br&gt;
                 Lars Pontoppidan
                 </source>
-        <translation type="unfinished"></translation>
+        <translation>
+                Motor, Grafik, Lydeffekter &amp; Scripting&lt;br&gt;
+                Lars Pontoppidan
+                </translation>
     </message>
     <message>
         <source>
                 Spanish translation&lt;br&gt;
                 Sara Gutiérrez&lt;br&gt;Enrique Mora Gil
                 </source>
-        <translation type="unfinished"></translation>
+        <translation>
+                Spanskoversættelse&lt;br&gt;
+                Sara Gutiérrez&lt;br&gt;Enrique Mora Gil
+                </translation>
     </message>
     <message>
         <source>
@@ -1041,7 +1055,11 @@
                 &quot;Ofelia&apos;s Dream&quot;&lt;br&gt;
                 Royalty Free Music from Bensound
                 </source>
-        <translation type="unfinished"></translation>
+        <translation>
+                Musik&lt;br&gt;
+                &quot;Ofelia&apos;s Dream&quot;&lt;br&gt;
+                Royalty Free Music from Bensound
+                </translation>
     </message>
     <message>
         <source>
@@ -1051,57 +1069,66 @@
                 Qak (github.com/Larpon/qak)&lt;br&gt;
                 QtFirebase (github.com/Larpon/QtFirebase)
                 </source>
-        <translation type="unfinished"></translation>
+        <translation>
+                Open Source Komponenter&lt;br&gt;
+                &lt;br&gt;
+                Qt (qt.io)&lt;br&gt;
+                Qak (github.com/Larpon/qak)&lt;br&gt;
+                QtFirebase (github.com/Larpon/QtFirebase)
+                </translation>
     </message>
     <message>
         <source>
                 More games &amp; info&lt;br&gt;
                 http://games.blackgrain.dk
                 </source>
-        <translation type="unfinished"></translation>
+        <translation>
+                Flere spil &amp; information&lt;br&gt;
+                http://games.blackgrain.dk
+                </translation>
     </message>
     <message>
         <source>Thank you for playing</source>
-        <translation type="unfinished"></translation>
+        <translation>Tak fordi du gad at spille spillet</translation>
     </message>
 </context>
 <context>
     <name>Game</name>
     <message>
         <source>All systems... GO!</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle systemer klar... KØR!</translation>
     </message>
     <message>
         <source>It&apos;s clear that the panel is almost completly broken</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er tydeligt at panelet næsten er fuldkommen ødelagt</translation>
     </message>
     <message>
         <source>Luckily the elevator still works - thanks to Mr. Hamster</source>
-        <translation type="unfinished"></translation>
+        <translation>Heldigvis virker elevatoren stadig - takket være Hr. Hamster</translation>
     </message>
     <message>
         <source>You&apos;re already at this floor</source>
-        <translation type="unfinished"></translation>
+        <translation>Du er allerede på denne etage</translation>
     </message>
     <message>
         <source>This particular socket is special</source>
-        <translation type="unfinished"></translation>
+        <translation>Denne indfatning virker helt speciel</translation>
     </message>
     <message>
         <source>It&apos;s clear that a button is missing above all the other buttons</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er tydeligt at der mangler en knap over alle de andre knapper</translation>
     </message>
     <message>
         <source>Miraculously - it fits. Must be your lucky day!</source>
-        <translation type="unfinished"></translation>
+        <translation>På mirakuløs vis passer den. Det må være din dag i dag!</translation>
     </message>
     <message>
         <source>The bucket is patched. No holes!</source>
-        <translation type="unfinished">Spanden er lappet. Ingen huller!</translation>
+        <translation>Spanden er lappet. Ingen huller!</translation>
     </message>
     <message>
         <source>There we go. A patched bucket!</source>
-        <translation type="unfinished"></translation>
+        <translation>Sådan. Et styk lappet spand!</translation>
     </message>
 </context>
 <context>
@@ -1164,7 +1191,7 @@ Fortsæt?</translation>
     </message>
     <message>
         <source>Tab on objects&lt;br&gt;to examine them</source>
-        <translation type="unfinished">Tryk på genstandende&lt;br&gt;for at undersøge dem</translation>
+        <translation>Tryk på genstandende&lt;br&gt;for at undersøge dem</translation>
     </message>
     <message>
         <source>Good job!</source>
@@ -1200,23 +1227,23 @@ Fortsæt?</translation>
     <name>fromEditor</name>
     <message>
         <source>A nice source of light</source>
-        <translation type="unfinished"></translation>
+        <translation>En dejlig lyskilde</translation>
     </message>
     <message>
         <source>This is a box. Every game with a box deserves respect. Respect the box.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dette er en kasse. Ethvert spil med en kasse fortjener respekt. Respektér kassen.</translation>
     </message>
     <message>
         <source>An old bucket. It&apos;s got a hole in it</source>
-        <translation type="unfinished"></translation>
+        <translation>En gammel spand. Den har et hul i bunden</translation>
     </message>
     <message>
         <source>Some old junk</source>
-        <translation type="unfinished"></translation>
+        <translation>Noget gammelt bras</translation>
     </message>
     <message>
         <source>The staircase leading to the next floor</source>
-        <translation type="unfinished"></translation>
+        <translation>Trapperne der fører oven på</translation>
     </message>
     <message>
         <source>Just another crack in the wall...</source>
@@ -1228,402 +1255,402 @@ Fortsæt?</translation>
     </message>
     <message>
         <source>A cable. Very standard actually</source>
-        <translation type="unfinished"></translation>
+        <translation>Et kabel. Meget standard endda</translation>
     </message>
     <message>
         <source>An old - but still sticky gum</source>
-        <translation type="unfinished"></translation>
+        <translation>Et gammelt, stadig klistret, tyggegummi</translation>
     </message>
     <message>
         <source>Some junk</source>
-        <translation type="unfinished"></translation>
+        <translation>Noget bras</translation>
     </message>
     <message>
         <source>An old cardboard box. Full of useless junk</source>
-        <translation type="unfinished"></translation>
+        <translation>En gammel papkasse. Fyldt med ubrugeligt bras</translation>
     </message>
     <message>
         <source>A puddle of water</source>
-        <translation type="unfinished"></translation>
+        <translation>En vandpyt</translation>
     </message>
     <message>
         <source>Some old wooden planks</source>
-        <translation type="unfinished"></translation>
+        <translation>Nogle gamle brædder</translation>
     </message>
     <message>
         <source>Your ordinary puddle of water</source>
-        <translation type="unfinished"></translation>
+        <translation>Din helt almindelige vandpyt</translation>
     </message>
     <message>
         <source>It&apos;s an old faucet. Still working for some unknown reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er en gammel vandhane. Den virker stadig af uvisse årsager</translation>
     </message>
     <message>
         <source>A cable</source>
-        <translation type="unfinished"></translation>
+        <translation>Et kabel</translation>
     </message>
     <message>
         <source>A chandelier. Moving slightly in the draft from the window</source>
-        <translation type="unfinished"></translation>
+        <translation>En lysekrone. Der bevæger sig en smugle i vinden fra vinduet</translation>
     </message>
     <message>
         <source>A nice frame</source>
-        <translation type="unfinished"></translation>
+        <translation>En lækker ramme</translation>
     </message>
     <message>
         <source>It has the number 099 on the backside</source>
-        <translation type="unfinished"></translation>
+        <translation>Det har nummeret 099 på bagsiden</translation>
     </message>
     <message>
         <source>A nice picture frame</source>
-        <translation type="unfinished"></translation>
+        <translation>En lækker billederamme</translation>
     </message>
     <message>
         <source>It has the number 318 on the backside</source>
-        <translation type="unfinished"></translation>
+        <translation>Det har nummeret 318 på bagsiden</translation>
     </message>
     <message>
         <source>A red barrel with a warning sign</source>
-        <translation type="unfinished"></translation>
+        <translation>En rød tønde med et advarselsmærke på</translation>
     </message>
     <message>
         <source>Yeah. So. This is a box</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja. Så deeeet. Det er en kasse</translation>
     </message>
     <message>
         <source>The one thing almost every game has. The BOX</source>
-        <translation type="unfinished"></translation>
+        <translation>En af de ting som ethvert spil har. En KASSE</translation>
     </message>
     <message>
         <source>The rope from downstairs. It&apos;s tied to the hatch</source>
-        <translation type="unfinished"></translation>
+        <translation>Rebet fra nedenunder. Det er bundet til lemmen</translation>
     </message>
     <message>
         <source>A nice cardboard box</source>
-        <translation type="unfinished"></translation>
+        <translation>Den lækker papkasse</translation>
     </message>
     <message>
         <source>The night is beautiful. The moon is very bright</source>
-        <translation type="unfinished"></translation>
+        <translation>Natten er smuk. Månen lyser meget op</translation>
     </message>
     <message>
         <source>A worn blue canister</source>
-        <translation type="unfinished"></translation>
+        <translation>En slidt, blå, dåse</translation>
     </message>
     <message>
         <source>What have we here. An empty box. Quite useless</source>
-        <translation type="unfinished"></translation>
+        <translation>Hvad har vi så her. En tom kasse. Rimelig ligegyldig</translation>
     </message>
     <message>
         <source>A plastic bottle of some kind. Not of any use</source>
-        <translation type="unfinished"></translation>
+        <translation>En plastikflaske af en art. Ligegyldig</translation>
     </message>
     <message>
         <source>A small fuse</source>
-        <translation type="unfinished"></translation>
+        <translation>En lille sikring</translation>
     </message>
     <message>
         <source>Looks like a ladder rail</source>
-        <translation type="unfinished"></translation>
+        <translation>Ligner noget til en stige</translation>
     </message>
     <message>
         <source>A ladder rail it seems. With 6 holes in it</source>
-        <translation type="unfinished"></translation>
+        <translation>Siden på en stige ser det ud til. Med seks huller i</translation>
     </message>
     <message>
         <source>Nothing hides in this shadow</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingenting gemmer sig denne skygge</translation>
     </message>
     <message>
         <source>A glass bottle of green liquid</source>
-        <translation type="unfinished"></translation>
+        <translation>En glasflaske med grøn væske</translation>
     </message>
     <message>
         <source>The door from the medicine cabinet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Døren fra medicinskabet.</translation>
     </message>
     <message>
         <source>A pool of blood. Yuck!</source>
-        <translation type="unfinished"></translation>
+        <translation>En blodpøl. Ad!</translation>
     </message>
     <message>
         <source>That&apos;s a stone dead zombie. No two ways about that</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er en sten død zombie. Det er ikke til at diskutere</translation>
     </message>
     <message>
         <source>It looks like a suicide</source>
-        <translation type="unfinished"></translation>
+        <translation>Det ligner et selvmord</translation>
     </message>
     <message>
         <source>History&apos;s first zombie suicide?</source>
-        <translation type="unfinished"></translation>
+        <translation>Verdenhistoriens første zombie selvmord?</translation>
     </message>
     <message>
         <source>A piece of paper. It&apos;s torn and has blood on it</source>
-        <translation type="unfinished"></translation>
+        <translation>Et stykke papir. Det er revet itu og har blod på</translation>
     </message>
     <message>
         <source>A glass bottle of blue liquid</source>
-        <translation type="unfinished"></translation>
+        <translation>En glasflaske med blå væske</translation>
     </message>
     <message>
         <source>Some blood splattered on the wall. Holy mother...</source>
-        <translation type="unfinished"></translation>
+        <translation>Noget blod der er splattet ud på væggen. Jesus...</translation>
     </message>
     <message>
         <source>A cute little spiderweb. Not useful though</source>
-        <translation type="unfinished"></translation>
+        <translation>Et sødt lille spidelvæv. Dog ikke rigtig brugbart</translation>
     </message>
     <message>
         <source>Looks like an air vent of some sort. There&apos;s nothing interesting about it</source>
-        <translation type="unfinished"></translation>
+        <translation>Det ligner en ventilationskanal af en art. Der er ikke noget interessant over den</translation>
     </message>
     <message>
         <source>Some wooden boxes. They sound empty if you knock on them</source>
-        <translation type="unfinished"></translation>
+        <translation>Nogle trækasser. De lyder tomme hvis du banker på dem</translation>
     </message>
     <message>
         <source>A spiderweb. Not useful though</source>
-        <translation type="unfinished"></translation>
+        <translation>Et spidelvæv. Dog ikke rigtig brugbart</translation>
     </message>
     <message>
         <source>Some very, very sticky and long flypaper</source>
-        <translation type="unfinished"></translation>
+        <translation>Noget meget meget klistret - og langt fluepapir</translation>
     </message>
     <message>
         <source>WOW - a real and loaded shotgun!</source>
-        <translation type="unfinished"></translation>
+        <translation>HOLD DA OP - et ægte oversavet jagtgevær!</translation>
     </message>
     <message>
         <source>A light source. It&apos;s a wonder the electricity is still working</source>
-        <translation type="unfinished"></translation>
+        <translation>En lampe. Det er vildt at elektrisiteten stadig virker</translation>
     </message>
     <message>
         <source>A wooden box. Nothing special about it</source>
-        <translation type="unfinished"></translation>
+        <translation>En trækasse. Intet specielt over den</translation>
     </message>
     <message>
         <source>House of the living critter</source>
-        <translation type="unfinished"></translation>
+        <translation>Den levende døde hamsters hus</translation>
     </message>
     <message>
         <source>There&apos;s a hamster living here! Hey little buddy!</source>
-        <translation type="unfinished"></translation>
+        <translation>Der bor en hamster her! Hej lille ven!</translation>
     </message>
     <message>
         <source>The glass seem to be tempered. You need a serious tool to get through this</source>
-        <translation type="unfinished"></translation>
+        <translation>Glasset ser hærdet ud. Du har brug for et seriøst værktøj for at bryde igennem det</translation>
     </message>
     <message>
         <source>Looks like a sparse workbench</source>
-        <translation type="unfinished"></translation>
+        <translation>Ser ud til at være et ret tom værkstedsbord</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>A weird looking machine - in the color of green</source>
-        <translation type="unfinished"></translation>
+        <translation>En underlig maskine - i farven grøn</translation>
     </message>
     <message>
         <source>Fourth of these weird blue machines</source>
-        <translation type="unfinished"></translation>
+        <translation>Den fjerde af de her underlige blå maskiner</translation>
     </message>
     <message>
         <source>Third of these weird blue machines</source>
-        <translation type="unfinished"></translation>
+        <translation>Den tredie af de her underlige blå maskiner</translation>
     </message>
     <message>
         <source>Second of these weird blue machines</source>
-        <translation type="unfinished"></translation>
+        <translation>Den anden af de her underlige blå maskiner</translation>
     </message>
     <message>
         <source>First of these weird blue machines</source>
-        <translation type="unfinished"></translation>
+        <translation>Den første af de her underlige blå maskiner</translation>
     </message>
     <message>
         <source>A clock - it&apos;s broken. Very broken</source>
-        <translation type="unfinished"></translation>
+        <translation>Et ur - det er gået i stykker. Meget i stykker</translation>
     </message>
     <message>
         <source>Frame for a painting</source>
-        <translation type="unfinished"></translation>
+        <translation>En ramme til et billede</translation>
     </message>
     <message>
         <source>It has the number 563 on the backside</source>
-        <translation type="unfinished"></translation>
+        <translation>Det har nummeret 563 på bagsiden</translation>
     </message>
     <message>
         <source>Some sacks of grain</source>
-        <translation type="unfinished"></translation>
+        <translation>Nogle kornsække</translation>
     </message>
     <message>
         <source>An open sack of grain</source>
-        <translation type="unfinished"></translation>
+        <translation>En åben kornsæk</translation>
     </message>
     <message>
         <source>A small pile of grain</source>
-        <translation type="unfinished"></translation>
+        <translation>En lille bunke korn</translation>
     </message>
     <message>
         <source>Looks like splattered blood</source>
-        <translation type="unfinished"></translation>
+        <translation>Ligner udsplattet blod</translation>
     </message>
     <message>
         <source>There&apos;s also holes from what looks like shotgun bullet holes</source>
-        <translation type="unfinished"></translation>
+        <translation>Der er også huller fra hvad der må være kugler fra et jagtgevær</translation>
     </message>
     <message>
         <source>A visually pleasing generator - sadly it&apos;s broken</source>
-        <translation type="unfinished"></translation>
+        <translation>En visuelt tiltrækkende generator. Uheldigvis gået i stykker</translation>
     </message>
     <message>
         <source>A pretty thick power cable. It fits nicely in one end to the elevator motor battery</source>
-        <translation type="unfinished"></translation>
+        <translation>Et rimelig tykt strømkabel. Det passer i den ene ende af batteriet til elevatormotoren</translation>
     </message>
     <message>
         <source>Oh my. What a nice little scooter</source>
-        <translation type="unfinished"></translation>
+        <translation>Årh. Sikken et sødt lille løbehjul</translation>
     </message>
     <message>
         <source>POP, POP no more... pop... corn. Eeer</source>
-        <translation type="unfinished"></translation>
+        <translation>POP, POP ikke mere... pop... korn. Øøøøh</translation>
     </message>
     <message>
         <source>This is useless. There&apos;s not even snow outside</source>
-        <translation type="unfinished"></translation>
+        <translation>Den her er ubrugelig. Der er ikke engang noget sne udenfor</translation>
     </message>
     <message>
         <source>Go find a piste - maybe in Italy</source>
-        <translation type="unfinished"></translation>
+        <translation>Find en piste - måske i Italien</translation>
     </message>
     <message>
         <source>Rock-on brother!</source>
-        <translation type="unfinished"></translation>
+        <translation>Rock og rul brormand!</translation>
     </message>
     <message>
         <source>Fun in the summer - useless during zombie apocalypses</source>
-        <translation type="unfinished"></translation>
+        <translation>Sjov om sommeren - ubrugelig under zombieapokalypser</translation>
     </message>
     <message>
         <source>It&apos;s the electrical motor for the elevator</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er den elektriske motor til elevatoren</translation>
     </message>
     <message>
         <source>The night is still beautiful</source>
-        <translation type="unfinished"></translation>
+        <translation>Natten er stadigvæk smuk</translation>
     </message>
     <message>
         <source>It look like a charging mechanism of some sort</source>
-        <translation type="unfinished"></translation>
+        <translation>Det ligner en ladestation af en art</translation>
     </message>
     <message>
         <source>It&apos;s a pipe for transporting air</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er et rør til transport af luft</translation>
     </message>
     <message>
         <source>It&apos;s a fairly big machine of some sort. Could be some kind of generator</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er en ret stor maskine af en art. Det kunne være en generator</translation>
     </message>
     <message>
         <source>Some weird big red machinery</source>
-        <translation type="unfinished"></translation>
+        <translation>Noget underligt, stort, maskineri</translation>
     </message>
     <message>
         <source>A big wine red hose coming down from the ceiling</source>
-        <translation type="unfinished"></translation>
+        <translation>En stor, vinrød, slange der kommer ned igennem loftet</translation>
     </message>
     <message>
         <source>A big blue hose coming down from the ceiling</source>
-        <translation type="unfinished"></translation>
+        <translation>En stor, blå, slange der kommer ned igennem loftet</translation>
     </message>
     <message>
         <source>A big green hose coming down from the ceiling</source>
-        <translation type="unfinished"></translation>
+        <translation>En stor, grøn, slange der kommer ned igennem loftet</translation>
     </message>
     <message>
         <source>A big purple hose coming down from the ceiling</source>
-        <translation type="unfinished"></translation>
+        <translation>En stor, lilla, slange der kommer ned igennem loftet</translation>
     </message>
     <message>
         <source>Oh dear...</source>
-        <translation type="unfinished"></translation>
+        <translation>Puha...</translation>
     </message>
     <message>
         <source>more boxes</source>
-        <translation type="unfinished"></translation>
+        <translation>flere kasser</translation>
     </message>
     <message>
         <source>*sigh*</source>
-        <translation type="unfinished"></translation>
+        <translation>*suk*</translation>
     </message>
     <message>
         <source>Another lamp. It&apos;s a very consistent lamp design they have in this tower</source>
-        <translation type="unfinished"></translation>
+        <translation>Endnu en lampe. Det er et meget konsistent lampe design de fører her i tårnet</translation>
     </message>
     <message>
         <source>The mouth of a purple pipe</source>
-        <translation type="unfinished"></translation>
+        <translation>Mundingen af et lilla rør</translation>
     </message>
     <message>
         <source>The mouth of a green pipe</source>
-        <translation type="unfinished"></translation>
+        <translation>Mundingen af et grønt rør</translation>
     </message>
     <message>
         <source>The mouth of a blue pipe</source>
-        <translation type="unfinished"></translation>
+        <translation>Mundingen af et blåt rør</translation>
     </message>
     <message>
         <source>The mouth of a wine red pipe</source>
-        <translation type="unfinished"></translation>
+        <translation>Mundingen af et vinrødt rør</translation>
     </message>
     <message>
         <source>A glass bottle of purple liquid</source>
-        <translation type="unfinished"></translation>
+        <translation>En glasflaske med lilla væske</translation>
     </message>
     <message>
         <source>A ventilator. Spreading cool air in the room - it&apos;s bolted to the floor</source>
-        <translation type="unfinished"></translation>
+        <translation>Et ventilationsanlæg. Der spræder kølig luft i rummet. Det er boltet fast til gulvet</translation>
     </message>
     <message>
         <source>Some sacks of grain. I wonder why all this grain is lying around</source>
-        <translation type="unfinished"></translation>
+        <translation>Nogle kornsække. Det undrer mig hvorfor alt det korn ligger og flyder</translation>
     </message>
     <message>
         <source>It&apos;s a clean, neatly wiped, whiteboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er en ren, nydeligt udhvisket, tavle</translation>
     </message>
     <message>
         <source>It has the number 037 on the backside</source>
-        <translation type="unfinished"></translation>
+        <translation>Det har nummeret 037 på bagsiden</translation>
     </message>
     <message>
         <source>An old golden lampshade. Nothing you should carry around</source>
-        <translation type="unfinished"></translation>
+        <translation>En gammel gylden lampeskærm. Ikke noget du samler på</translation>
     </message>
     <message>
         <source>And this is a box. This one stands out because it has stickers on it. But it&apos;s still useless</source>
-        <translation type="unfinished"></translation>
+        <translation>Og her er så en kasse. Den virker speciel fordi den har mærkater på. Men den er ligemeget</translation>
     </message>
     <message>
         <source>*sigh* ... a box</source>
-        <translation type="unfinished"></translation>
+        <translation>*suk* ... en kasse</translation>
     </message>
     <message>
         <source>A hook of some sort. You could tie something to it</source>
-        <translation type="unfinished"></translation>
+        <translation>En krog af en art. Du kunne binde noget til den</translation>
     </message>
     <message>
         <source>A glass bottle of red liquid</source>
-        <translation type="unfinished"></translation>
+        <translation>En glasflaske med rød væske</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
         <source>Dead Ascend (%1x%2)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 </TS>
