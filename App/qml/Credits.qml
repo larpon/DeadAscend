@@ -169,6 +169,30 @@ Rectangle {
         ScriptAction {
             script: {
                 text.text = qsTr("
+                Danish translation<br>
+                Lars Pontoppidan
+                ")
+                text.opacity = 1
+            }
+        }
+
+        PauseAnimation {
+            duration: 6000
+        }
+
+        ScriptAction {
+            script: {
+                text.opacity = 0
+            }
+        }
+
+        PauseAnimation {
+            duration: 2000
+        }
+
+        ScriptAction {
+            script: {
+                text.text = qsTr("
                 Music<br>
                 \"Ofelia's Dream\"<br>
                 Royalty Free Music from Bensound

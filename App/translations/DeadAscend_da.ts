@@ -1045,7 +1045,7 @@
                 Sara Gutiérrez&lt;br&gt;Enrique Mora Gil
                 </source>
         <translation>
-                Spanskoversættelse&lt;br&gt;
+                Oversættelse til Spansk&lt;br&gt;
                 Sara Gutiérrez&lt;br&gt;Enrique Mora Gil
                 </translation>
     </message>
@@ -1090,6 +1090,16 @@
     <message>
         <source>Thank you for playing</source>
         <translation>Tak fordi du gad at spille spillet</translation>
+    </message>
+    <message>
+        <source>
+                Danish translation&lt;br&gt;
+                Lars Pontoppidan
+                </source>
+        <translation>
+                Oversættelse til Dansk&lt;br&gt;
+                Lars Pontoppidan
+                </translation>
     </message>
 </context>
 <context>

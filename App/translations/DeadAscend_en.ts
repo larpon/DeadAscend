@@ -1064,6 +1064,13 @@
         <source>Thank you for playing</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>
+                Danish translation&lt;br&gt;
+                Lars Pontoppidan
+                </source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Game</name>
