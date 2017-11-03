@@ -57,7 +57,7 @@
     </message>
     <message>
         <source>The bucket is patched. No holes!</source>
-        <translation>Spanden er lappet. Ingen huller!</translation>
+        <translation>Spanden er lappet. Nul huller!</translation>
     </message>
     <message>
         <source>A bucket full of water. It&apos;s pretty heavy!</source>
@@ -914,7 +914,7 @@
     </message>
     <message>
         <source>An open source game utilizing the cross-platform &lt;a href=&quot;https://www.qt.io/&quot;&gt;Qt&lt;/a&gt; project.</source>
-        <translation type="unfinished">Et open source spil der gør brug af det krydsplatforme &lt;a href=&quot;https://www.qt.io/&quot;&gt;Qt&lt;/a&gt; projekt.</translation>
+        <translation>Et open source spil der gør brug af det krydsplatforme &lt;a href=&quot;https://www.qt.io/&quot;&gt;Qt&lt;/a&gt; projekt.</translation>
     </message>
     <message>
         <source>Game and project source code can be found on &lt;a href=&quot;https://github.com/Larpon/DeadAscend&quot;&gt;GitHub&lt;/a&gt;</source>
