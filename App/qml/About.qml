@@ -50,7 +50,7 @@ Rectangle {
         }
 
         text: qsTr('Dead Ascend')+' © <font size="1">'+qsTr('2016-2017')+' <a href="http://games.blackgrain.dk">Black Grain</a></font><br>'+
-        qsTr('Version %1 (%2), Qak %3 (%4), Qt %5').arg(version).arg(gitVersion).arg(qakVersion).arg(qakGitVersion).arg(qtVersion)+'<br>
+        qsTr('Version %1 (%2), Qak %3 (%4), QtFirebase %5 (%6), Qt %7').arg(version).arg(gitVersion).arg(qakVersion).arg(qakGitVersion).arg(qtFirebaseVersion).arg(qtFirebaseGitVersion).arg(qtVersion)+'<br>
         <p>
             '+qsTr('An open source game utilizing the cross-platform <a href="https://www.qt.io/">Qt</a> project.')+'<br>'+
             qsTr('Game and project source code can be found on <a href="https://github.com/Larpon/DeadAscend">GitHub</a>')+'

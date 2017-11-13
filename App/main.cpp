@@ -40,6 +40,15 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("qakGitVersion", QString(QAK_GIT_VERSION));
     #endif
 
+    #ifdef QTFIREBASE_VERSION
+    engine.rootContext()->setContextProperty("qtFirebaseVersion", QString(QTFIREBASE_VERSION));
+    #endif
+
+    #ifdef QTFIREBASE_GIT_VERSION
+    engine.rootContext()->setContextProperty("qtFirebaseGitVersion", QString(QTFIREBASE_GIT_VERSION));
+    #endif
+
+
     #ifdef QT_DEBUG
         engine.rootContext()->setContextProperty("debugBuild", QVariant(true));
     #else
