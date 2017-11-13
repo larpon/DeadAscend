@@ -1,18 +1,44 @@
 buildscript {
     repositories {
+        // You can search here for sdk's
+        // http://search.maven.org/
+        mavenLocal()
+
+        // You can search here for sdk's
+        // https://bintray.com/bintray/jcenter
         jcenter()
+
+        flatDir {
+            dirs System.getProperty("user.dir") + '/libs'
+        }
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.2'
-        classpath 'com.google.gms:google-services:3.0.0' // QtFirebase
+        // You can update gradle by changing build-folder/android-build/gradle/wrapper/gradle-wrapper.properties
+        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.google.gms:google-services:3.+'
     }
 }
 
 allprojects {
     repositories {
+        mavenLocal()
         jcenter()
+
+        maven { url "https://maven.google.com" }
+
+        flatDir {
+            dirs System.getProperty("user.dir") + '/libs'
+        }
     }
+
+    /*
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:deprecation"
+        }
+    }
+    */
 }
 
 apply plugin: 'com.android.application'
@@ -50,6 +76,11 @@ android {
 
     defaultConfig {
         applicationId "com.blackgrain.android.deadascend.ad"  // Needed by QtFirebase
+
+        vectorDrawables.useSupportLibrary = true
+
+        // Enabling multidex support.
+        multiDexEnabled = true
     }
 
     lintOptions {
@@ -66,10 +97,16 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile fileTree(dir: 'src', include: ['*.jar'])
 
+    compile 'com.android.support:multidex:1.+'
+
     compile 'com.android.support:appcompat-v7:25.0.1'
-    compile 'com.google.firebase:firebase-ads:10.0.1' // QtFirebase
-    compile 'com.google.firebase:firebase-analytics:10.0.1' // QtFirebase
-    compile 'com.google.android.gms:play-services-base:10.0.1' // QtFirebase
+    compile 'com.google.android.gms:play-services-base:11.+'  // QtFirebase mandatory - Firebase rely on Google Play services
+
+    // For QtFirebase AdMob support
+    compile 'com.google.firebase:firebase-ads:11.+'
+
+    // For QtFirebase Analytics support
+    compile 'com.google.firebase:firebase-core:11.+'
 }
 
 apply plugin: 'com.google.gms.google-services' // QtFirebase
