@@ -9,6 +9,11 @@ QT += qml quick multimedia
 
 CONFIG += c++11
 
+# This disable generating subdirs for build modes on Windows
+# Works with QtCreator qmake builds - but shit with commandline
+# See https://bugreports.qt.io/browse/QTCREATORBUG-13807 for solutions
+CONFIG -= debug_and_release
+
 SOURCES += main.cpp \
     src/fpstext.cpp \
     src/fileio.cpp \
