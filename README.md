@@ -44,6 +44,7 @@ Once you have a fully working Qt/Qt Creator setup - you are ready to checkout an
    - Open `/path/to/projects/DeadAscend/DeadAscend.pro` in Qt Creator
    - Choose your kit(s)
    - Add custom process step to build profile: Projects -> Build -> Build steps -> `/usr/bin/make` / `assets` / `%{buildDir}/App`
+   ![Extra make target](https://raw.githubusercontent.com/Larpon/DeadAscend/master/docs/img/Screenshot_20180406_125946.png)
    - Hit "Run"
 
 ## Bugs and issues
