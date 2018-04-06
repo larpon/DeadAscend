@@ -1,5 +1,9 @@
 TEMPLATE = app
 
+!android:!ios: {
+    TARGET = DeadAscend
+}
+
 QT += qml quick multimedia
 !no_desktop: QT += widgets
 
