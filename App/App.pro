@@ -79,7 +79,7 @@ android: {
 include(assets.pri)
 
 # make git version available to C++ and QML
-VERSION=1.1.0
+VERSION=1.1.1
 include(../gitversion.pri)
 
 DISTFILES += \
