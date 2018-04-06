@@ -63,14 +63,19 @@ int main(int argc, char *argv[])
 
     engine.rootContext()->setContextProperty("qtVersion", QString(QT_VERSION_STR));
 
-    #if defined(Q_OS_IOS)
-    //qDebug() << "Register assets at" << QDir::currentPath()+QDir::separator()+"assets.rcc";
-    qDebug() << "Registering" << QCoreApplication::applicationDirPath()+"/assets.rcc";
-    if(QResource::registerResource(QCoreApplication::applicationDirPath()+"/assets.rcc"))
+    QString assetPath;
+    #if defined(Q_OS_ANDROID)
+        assetPath = "assets:/assets.rcc";
+    #else
+        assetPath = QCoreApplication::applicationDirPath()+"/assets.rcc";
+    #endif
+
+    qDebug() << "Registering" << assetPath;
+    if(QResource::registerResource(assetPath))
         qDebug() << "Registered assets";
     else
         qDebug() << "FAILED registering assets";
-    #endif
+
 
     engine.addImportPath("qrc:///");
 

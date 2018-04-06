@@ -39,10 +39,12 @@ Once you have a fully working Qt/Qt Creator setup - you are ready to checkout an
    If you are building for Android and/or iOS you also need to setup [QtFirebase](https://github.com/Larpon/QtFirebase).
    Instructions and a working example is available [here](https://github.com/Larpon/QtFirebaseExample).
 
-3. Open in Qt Creator
+3. Qt Creator
 
    - Open `/path/to/projects/DeadAscend/DeadAscend.pro` in Qt Creator
-   - Choose your kit(s) and hit "Run"
+   - Choose your kit(s)
+   - Add custom process step to build profile: Projects -> Build -> Build steps -> `/usr/bin/make` / `assets` / `%{buildDir}/App`
+   - Hit "Run"
 
 ## Bugs and issues
 If you encounter anything odd with the game feel free to report an [issue](https://github.com/Larpon/DeadAscend/issues).
