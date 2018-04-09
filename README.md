@@ -1,4 +1,4 @@
- 
+
 # Dead Ascend
 
 A hand-drawn, open source, point'n'click-like 2D adventure game written in Qt/QML and Javascript.
@@ -54,10 +54,13 @@ Once you have a fully working Qt/Qt Creator setup - you are ready to checkout an
    b. Command line
 
       ```
-      cd /path/to/projects/DeadAscend
-      qmake
+      cd /path/to/DeadAscend
+      # BIN_DIR and ASSETS_DIR are optional
+      qmake "BIN_DIR=/usr/share/deadascend" "ASSETS_DIR=/usr/share/data/deadascend"
+      make qmake_all
       make assets -C App
-      make
+      make -C App
+      make install
       ./App/DeadAscend
       ```
 

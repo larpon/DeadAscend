@@ -50,31 +50,35 @@ int main(int argc, char *argv[])
 
 
     #ifdef QT_DEBUG
-        engine.rootContext()->setContextProperty("debugBuild", QVariant(true));
+    engine.rootContext()->setContextProperty("debugBuild", QVariant(true));
     #else
-        engine.rootContext()->setContextProperty("debugBuild", QVariant(false));
+    engine.rootContext()->setContextProperty("debugBuild", QVariant(false));
     #endif
 
     #if defined(QTFIREBASE_BUILD_ADMOB) && (defined(Q_OS_IOS) || defined(Q_OS_ANDROID))
-        engine.rootContext()->setContextProperty("adBuild", QVariant(true));
+    engine.rootContext()->setContextProperty("adBuild", QVariant(true));
     #else
-        engine.rootContext()->setContextProperty("adBuild", QVariant(false));
+    engine.rootContext()->setContextProperty("adBuild", QVariant(false));
     #endif
 
     engine.rootContext()->setContextProperty("qtVersion", QString(QT_VERSION_STR));
 
     QString assetPath;
     #if defined(Q_OS_ANDROID)
-        assetPath = "assets:/assets.rcc";
+    assetPath = "assets:/assets.rcc";
     #else
-        assetPath = QCoreApplication::applicationDirPath()+"/assets.rcc";
+        #if defined(ASSETS_DIR)
+        assetPath = QString(ASSETS_DIR)+"/assets.rcc";
+        #endif
+        if(assetPath.isEmpty() || assetPath.isNull())
+            assetPath = QCoreApplication::applicationDirPath()+"/assets.rcc";
     #endif
 
     qDebug() << "Registering" << assetPath;
     if(QResource::registerResource(assetPath))
-        qDebug() << "Registered assets";
+        qDebug() << "Registered assets from" << assetPath;
     else
-        qDebug() << "FAILED registering assets";
+        qDebug() << "FAILED registering assets from" << assetPath;
 
 
     engine.addImportPath("qrc:///");
