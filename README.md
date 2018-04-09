@@ -61,8 +61,8 @@ Once you have a fully working Qt/Qt Creator setup - you are ready to checkout an
       make assets -C App
       make -C App
       make install
-      ./App/DeadAscend
       ```
+      You can now run `./App/DeadAscend` - or if you used `BIN_DIR`: `/usr/share/deadascend/DeadAscend`
 
 ## Bugs and issues
 
