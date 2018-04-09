@@ -4,13 +4,13 @@ android: {
 }
 
 assetsTarget.target = assets
+assetsTarget.output = $$ASSETS_OUT/assets.rcc
 assetsTarget.depends = $$PWD/assets.qrc
-assetsTarget.commands = $$[QT_HOST_BINS]/rcc -binary -no-compress -o $$ASSETS_OUT/assets.rcc $$PWD/assets.qrc # For multiple commands add: $$escape_expand(\n\t) <command> or && <command>
-
 !ios: {
-    #assetsTarget.depends += $$PWD/music.qrc
-    assetsTarget.commands += $$PWD/music.qrc
+    assetsTarget.depends += $$PWD/music.qrc
 }
+assetsTarget.commands = $$[QT_HOST_BINS]/rcc -binary -no-compress -o $$assetsTarget.output $$assetsTarget.depends
+# For multiple commands add: $$escape_expand(\n\t) <command> or && <command>
 
 Q_COMPRESS_PNG_FILES.name = COMPRESS_PNG_FILES
 Q_COMPRESS_PNG_FILES.value = NO
@@ -43,6 +43,7 @@ macos|ios: {
     #deployment.path =
     QMAKE_BUNDLE_DATA += deployment
 }
+
 QMAKE_EXTRA_TARGETS += assetsTarget
 
 !isEmpty(ASSETS_DIR) {
