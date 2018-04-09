@@ -27,12 +27,11 @@ Once you have a fully working Qt/Qt Creator setup - you are ready to checkout an
    cd /path/to/projects
    git clone git@github.com:Larpon/DeadAscend.git
    ```
-2. Install project dependencies
+2. Retrieve project dependencies
 
    ```
-   cd /path/to/projects/DeadAscend/extensions/
-   git clone git@github.com:Larpon/qak.git
-   git clone git@github.com:Larpon/QtFirebase.git
+   cd /path/to/projects/DeadAscend
+   git submodule update --init
    ```
 
    **NOTE**<br>
