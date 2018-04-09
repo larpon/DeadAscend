@@ -1,0 +1,6 @@
+[submodule "extensions/qak"]
+	path = extensions/qak
+	url = https://github.com/Larpon/qak.git
+[submodule "extensions/QtFirebase"]
+	path = extensions/QtFirebase
+	url = https://github.com/Larpon/QtFirebase.git
