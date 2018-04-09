@@ -56,13 +56,12 @@ Once you have a fully working Qt/Qt Creator setup - you are ready to checkout an
       ```
       cd /path/to/DeadAscend
       # BIN_DIR and ASSETS_DIR are optional
-      qmake "BIN_DIR=/usr/share/deadascend" "ASSETS_DIR=/usr/share/data/deadascend"
-      make qmake_all
+      qmake -r "BIN_DIR=/usr/bin" "ASSETS_DIR=/usr/share/deadascend"
       make assets -C App
-      make -C App
+      make
       make install
       ```
-      You can now run `./App/DeadAscend` - or if you used `BIN_DIR`: `/usr/share/deadascend/DeadAscend`
+      You can now run `./App/DeadAscend` - or if you used `BIN_DIR`: `/usr/bin/DeadAscend`
 
 ## Bugs and issues
 
