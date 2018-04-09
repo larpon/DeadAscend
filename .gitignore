@@ -14,7 +14,14 @@ build/
 # QMake
 Makefile
 .qmake.*
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
 
+# Build objects
+*.o
+*.rcc
+App/DeadAscend*
 
 # Mac store files
 .DS_Store
