@@ -73,9 +73,9 @@ android: {
 
 # Adds extra make target entry for assets
 # This is to speed up build process and be more memory efficient
-# Remeber to actually run it: (custom step in QtCreator, "make assets" from commandline)
+# Remember to actually run it: (custom step in QtCreator, "make assetsrcc" from commandline)
 # run from ${buildDir}/App
-# /usr/bin/make assets
+# /usr/bin/make assetsrcc
 include(assets.pri)
 
 # make git version available to C++ and QML
