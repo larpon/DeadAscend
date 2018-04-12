@@ -3,7 +3,7 @@ android: {
     ASSETS_OUT=$$ANDROID_PACKAGE_SOURCE_DIR/assets
 }
 
-assetsTarget.target = assets
+assetsTarget.target = assetsrcc
 assetsTarget.output = $$ASSETS_OUT/assets.rcc
 assetsTarget.depends = $$PWD/assets.qrc
 !ios: {
