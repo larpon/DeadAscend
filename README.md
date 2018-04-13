@@ -18,7 +18,7 @@ By playing the pre-build versions above you are supporting my (indie) game produ
 
 ## DIY Building
 
-Currently the only supported way to build and run the game is through [Qt Creator](https://www.qt.io/ide/) which usually comes bundled with [Qt](https://www.qt.io).
+You can build the game from command line or with [Qt Creator](https://www.qt.io/ide/) (which usually comes bundled with [Qt](https://www.qt.io)).
 It can be downloaded and installed in various ways so please refer to Qt homepage and documentation on howto get Qt Creator.
 
 Once you have a fully working Qt/Qt Creator setup - you are ready to checkout and build "Dead Ascend".
