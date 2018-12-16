@@ -5,6 +5,7 @@ import Qak.Tools 1.0
 import Qak.QtQuick 2.0
 
 import "."
+import "menus"
 
 Item {
     id: game
@@ -250,7 +251,6 @@ Item {
         property alias fuelCellConnected: game.fuelCellConnected
 
         property alias helpCalled: game.helpCalled
-
     }
 
     Modes {
@@ -1253,13 +1253,13 @@ Item {
     }
 
 
-    Loader {
+    Pause {
         id: pauseLoader
         anchors { fill: parent }
-        source: 'menus/Pause.qml'
-        active: opacity > 0
+        //source: 'menus/Pause.qml'
+        enabled: opacity > 0
 
-        visible: status == Loader.Ready && opacity > 0
+        visible: opacity > 0
 
         opacity: game.paused ? 1 : 0
         Behavior on opacity {
