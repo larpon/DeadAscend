@@ -707,7 +707,7 @@ Base {
                 x: 243; y: 66
                 fillMode: Image.PreserveAspectFit
                 width: sourceSize.width; height: sourceSize.height
-                source: App.getAsset("sprites/flask_mixer_levels/blue_"+level+".png")
+                source: level > 0 ? App.getAsset("sprites/flask_mixer_levels/blue_"+level+".png") : ''
 
                 property int level: game.flaskMixerBlueLevel
 
@@ -727,7 +727,7 @@ Base {
                 x: 70; y: 72
                 fillMode: Image.PreserveAspectFit
                 width: sourceSize.width; height: sourceSize.height
-                source: App.getAsset("sprites/flask_mixer_levels/green_"+level+".png")
+                source: level > 0 ? App.getAsset("sprites/flask_mixer_levels/green_"+level+".png") : ''
 
                 property int level: game.flaskMixerGreenLevel
 
@@ -747,7 +747,7 @@ Base {
                 x: 65; y: 403
                 fillMode: Image.PreserveAspectFit
                 width: sourceSize.width; height: sourceSize.height
-                source: App.getAsset("sprites/flask_mixer_levels/purple_"+level+".png")
+                source: level > 0 ? App.getAsset("sprites/flask_mixer_levels/purple_"+level+".png") : ''
 
                 property int level: game.flaskMixerPurpleLevel
 
@@ -767,7 +767,7 @@ Base {
                 x: 250; y: 410
                 fillMode: Image.PreserveAspectFit
                 width: sourceSize.width; height: sourceSize.height
-                source: App.getAsset("sprites/flask_mixer_levels/wine_red_"+level+".png")
+                source: level > 0 ? App.getAsset("sprites/flask_mixer_levels/wine_red_"+level+".png") : ''
 
                 property int level: game.flaskMixerRedLevel
 
