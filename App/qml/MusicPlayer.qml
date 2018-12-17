@@ -55,7 +55,7 @@ Item {
         }
 
         onMuteChanged: {
-            App.debug('MusicPlayer','Mute changed',mute)
+            App.debug('MusicPlayer','Mute changed',mute) //¤
             //mute ? pause() : play()
             muted = mute
         }

@@ -378,7 +378,7 @@ Base {
         property string buffer: "0000"
 
         onKeyClicked: {
-            App.debug(key)
+            App.debug(key) //¤
             sounds.play("key_tap")
             if(key === "CLR") {
                 buffer = "0000"
@@ -432,7 +432,7 @@ Base {
                 sb.shift()
                 buffer = sb.join("")
             }
-            App.debug(buffer)
+            App.debug(buffer) //¤
             display.text = buffer
         }
 

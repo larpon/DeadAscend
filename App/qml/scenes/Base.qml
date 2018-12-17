@@ -12,7 +12,7 @@ Item {
     anchors { fill: parent }
 
     paused: core.paused
-    onPausedChanged: App.debug('Scene',sceneName,paused ? 'paused' : 'continued')
+    onPausedChanged: App.debug('Scene',sceneName,paused ? 'paused' : 'continued') //¤
 
     Component.onCompleted: game.elevatorPanel.show = false
 
@@ -43,17 +43,38 @@ Item {
 
     Connections {
         target: game
-        onObjectReady: { App.debug('Object ready',object.name); objectReady(object)}
-        onObjectDropped: { App.debug('Object',object.name,'dropped from',object.at); objectDropped(object) }
+        onObjectReady: {
+            App.debug('Object ready',object.name) //¤
+            objectReady(object)
+        }
+        onObjectDropped: {
+            App.debug('Object',object.name,'dropped from',object.at) //¤
+            objectDropped(object)
+        }
         onObjectClicked: {
-            App.debug('Object clicked',object.name); objectClicked(object)
+            App.debug('Object clicked',object.name); objectClicked(object) //¤
             App.event.pub('game/object/clicked',{ name: object.name, at: object.at })
         }
-        onObjectTravelingToInventory: { App.debug('Object traveling to inventory',object.name); objectTravelingToInventory(object) }
-        onObjectDragged: { App.debug('Object',object.name,'dragged to',object.at); objectDragged(object) }
-        onObjectReturned: { App.debug('Object',object.name,'returned to',object.at);  objectReturned(object) }
-        onObjectAddedToInventory: { App.debug('Object',object.name,'added to inventory from',object.at);  objectAddedToInventory(object) }
-        onObjectRemovedFromInventory: { App.debug('Object removed from inventory',object.name);  objectRemovedFromInventory(object) }
+        onObjectTravelingToInventory: {
+            App.debug('Object traveling to inventory',object.name) //¤
+            objectTravelingToInventory(object)
+        }
+        onObjectDragged: {
+            App.debug('Object',object.name,'dragged to',object.at) //¤
+            objectDragged(object)
+        }
+        onObjectReturned: {
+            App.debug('Object',object.name,'returned to',object.at) //¤
+            objectReturned(object)
+        }
+        onObjectAddedToInventory: {
+            App.debug('Object',object.name,'added to inventory from',object.at) //¤
+            objectAddedToInventory(object)
+        }
+        onObjectRemovedFromInventory: {
+            App.debug('Object removed from inventory',object.name) //¤
+            objectRemovedFromInventory(object)
+        }
     }
 
     Image {

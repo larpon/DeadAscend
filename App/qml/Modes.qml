@@ -14,7 +14,7 @@ Item {
         property var c: ({})
 
         function add(mode) {
-            console.debug('Adding',mode.name)
+            App.debug('Adding',mode.name) //¤
             var t = c
             t[mode[key]] = mode
             c = t
@@ -57,7 +57,7 @@ Item {
             mode.enter(modes.mode)
             modes.mode = mode
         } else {
-            console.error('Modes','set mode',mode,'not found')
+            App.error('Modes','set mode',mode,'not found')
         }
     }
 

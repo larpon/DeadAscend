@@ -10,7 +10,7 @@ Rectangle {
     color: core.colors.black
 
     paused: !App.paused
-    onPausedChanged: App.debug('Paused',paused ? 'paused' : 'continued')
+    onPausedChanged: App.debug('Paused',paused ? 'paused' : 'continued') //¤
 
     Item {
         anchors { fill: parent }

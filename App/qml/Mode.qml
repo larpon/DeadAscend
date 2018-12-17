@@ -22,6 +22,6 @@ Item {
     signal enter(var previousMode)
     signal leave
 
-    onLeave: console.debug('Leaving mode',name)
-    onEnter: console.debug('Entering mode',name,'from',previousMode.name)
+    onLeave: App.debug('Leaving mode',name) //¤
+    onEnter: App.debug('Entering mode',name,'from',previousMode.name) //¤
 }

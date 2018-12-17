@@ -358,7 +358,7 @@ Item {
     property var backQueue: []
     function goBack() {
         if(backQueue.length > 0) {
-            App.debug('Popping from back queue')
+            App.debug('Popping from back queue') //¤
             var func = backQueue.pop()
             var t = backQueue
             backQueue = t
@@ -367,7 +367,7 @@ Item {
     }
 
     function onBack(func) {
-        App.debug('Pushing to back queue')
+        App.debug('Pushing to back queue') //¤
         backQueue.push(func)
         var t = backQueue
         backQueue = t
@@ -386,7 +386,7 @@ Item {
 
         focus: true
         Keys.onReleased: {
-            App.debug("Got key event",event,event.key)
+            App.debug("Got key event",event,event.key) //¤
 
             var key = event.key
 
