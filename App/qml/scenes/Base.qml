@@ -52,7 +52,8 @@ Item {
             objectDropped(object)
         }
         onObjectClicked: {
-            App.debug('Object clicked',object.name); objectClicked(object) //¤
+            App.debug('Object clicked',object.name) //¤
+            objectClicked(object)
             App.event.pub('game/object/clicked',{ name: object.name, at: object.at })
         }
         onObjectTravelingToInventory: {
