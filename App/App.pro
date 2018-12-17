@@ -31,6 +31,9 @@ QML_IMPORT_PATH +=
 # Default rules for deployment.
 include(deployment.pri)
 
+CONFIG(release, debug|release) {
+    QAK_CONFIG += nowarnings
+}
 # Import Qak
 include(../extensions/qak/qak.pri)
 
