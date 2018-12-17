@@ -335,7 +335,7 @@ Base {
         onFrame: {
             if(!fuseDropped)
                 return
-            App.debug('!!!!!',sequenceName,frame,changeLevel)
+            App.debug('!!!!!',sequenceName,frame,changeLevel) //¤
             if(sequenceName === "up" && frame === 12 && changeLevel) {
                 changeLevel = false
                 game.goToScene("3")

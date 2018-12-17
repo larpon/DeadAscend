@@ -378,7 +378,7 @@ Base {
         property string buffer: "0000"
 
         onKeyClicked: {
-            App.debug(key)
+            App.debug(key) //¤
             sounds.play("key_tap")
             if(key === "CLR") {
                 buffer = "0000"
@@ -432,7 +432,7 @@ Base {
                 sb.shift()
                 buffer = sb.join("")
             }
-            App.debug(buffer)
+            App.debug(buffer) //¤
             display.text = buffer
         }
 
@@ -483,9 +483,9 @@ Base {
             SequentialAnimation {
                 id: blinkRedAnimation
 
-                running: indicator !== undefined
+                running: Boolean(indicator)
 
-                property var indicator
+                property var indicator: null
                 ScriptAction {
                     script: {
                         blinkRedAnimation.indicator.state = "red"
@@ -495,12 +495,12 @@ Base {
                 SequentialAnimation {
                     loops: 6
                     PauseAnimation { duration: 300 }
-                    NumberAnimation { target: blinkRedAnimation.indicator; property: "opacity"; duration: 100; from: 0; to: 1 }
+                    NumberAnimation { target: blinkRedAnimation.indicator ? blinkRedAnimation.indicator : null; property: "opacity"; duration: 100; from: 0; to: 1 }
                     PauseAnimation { duration: 20 }
-                    NumberAnimation { target: blinkRedAnimation.indicator; property: "opacity"; duration: 40; from: 1; to: 0 }
+                    NumberAnimation { target: blinkRedAnimation.indicator ? blinkRedAnimation.indicator : null; property: "opacity"; duration: 40; from: 1; to: 0 }
                 }
 
-                NumberAnimation { target: blinkRedAnimation.indicator; property: "opacity"; duration: 100; from: 0; to: 1 }
+                NumberAnimation { target: blinkRedAnimation.indicator ? blinkRedAnimation.indicator : null; property: "opacity"; duration: 100; from: 0; to: 1 }
 
                 ScriptAction {
                     script: {
@@ -527,12 +527,12 @@ Base {
                 SequentialAnimation {
                     loops: 6
                     PauseAnimation { duration: 300 }
-                    NumberAnimation { target: blinkGreenAnimation.indicator; property: "opacity"; duration: 100; from: 0; to: 1 }
+                    NumberAnimation { target: blinkGreenAnimation.indicator ? blinkGreenAnimation.indicator : null; property: "opacity"; duration: 100; from: 0; to: 1 }
                     PauseAnimation { duration: 20 }
-                    NumberAnimation { target: blinkGreenAnimation.indicator; property: "opacity"; duration: 40; from: 1; to: 0 }
+                    NumberAnimation { target: blinkGreenAnimation.indicator ? blinkGreenAnimation.indicator : null; property: "opacity"; duration: 40; from: 1; to: 0 }
                 }
 
-                NumberAnimation { target: blinkGreenAnimation.indicator; property: "opacity"; duration: 100; from: 0; to: 1 }
+                NumberAnimation { target: blinkGreenAnimation.indicator ? blinkGreenAnimation.indicator : null; property: "opacity"; duration: 100; from: 0; to: 1 }
 
                 ScriptAction {
                     script: {

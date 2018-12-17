@@ -5,6 +5,7 @@ import Qak.Tools 1.0
 import Qak.QtQuick 2.0
 
 import "."
+import "menus"
 
 Item {
     id: game
@@ -13,7 +14,7 @@ Item {
 
     paused: core.paused
     onPausedChanged: {
-        App.debug('Game',paused ? 'paused' : 'continued')
+        App.debug('Game',paused ? 'paused' : 'continued') //¤
         if(paused) {
 
             store.save()
@@ -138,7 +139,7 @@ Item {
     }
 
     function clearDynamicallyLoaded() {
-        App.debug('clearDynamicallyLoaded','Starting')
+        App.debug('clearDynamicallyLoaded','Starting') //¤
         var i, o
         for(i in dynamicLoaded) {
             if(dynamicLoaded[i]) {
@@ -159,12 +160,12 @@ Item {
                     objectSpawnlist[name] = name
                 }
 
-                App.debug('clearDynamicallyLoaded','destroying',o.name)
+                App.debug('clearDynamicallyLoaded','destroying',o.name) //¤
                 o.destroy()
             }
         }
         dynamicLoaded = {}
-        App.debug('clearDynamicallyLoaded','Cleared dynamically loaded objects')
+        App.debug('clearDynamicallyLoaded','Cleared dynamically loaded objects') //¤
     }
 
     property alias inventory: inventory
@@ -179,7 +180,7 @@ Item {
     Component.onCompleted: {
 
         if(core.modes.mode.name === "game" && currentScene == "Tutorial") {
-            App.debug("Correcting currentScene var")
+            App.debug("Correcting currentScene var") //¤
             previousScene = ""
             currentScene = "0"
         }
@@ -187,7 +188,7 @@ Item {
         store.load()
 
         if(core.modes.mode.name === "game-tutorial") {
-            App.debug("Going into tutorial mode")
+            App.debug("Going into tutorial mode") //¤
             previousScene = currentScene
             currentScene = "Tutorial"
             inventory.name = "inventoryTutorial"
@@ -250,7 +251,6 @@ Item {
         property alias fuelCellConnected: game.fuelCellConnected
 
         property alias helpCalled: game.helpCalled
-
     }
 
     Modes {
@@ -276,7 +276,7 @@ Item {
     readonly property bool sceneUnloaded: !sceneLoader.active || !sceneLoader.status === Loader.Ready
     onSceneUnloadedChanged: {
         if(sceneUnloaded) {
-            App.debug('Scene unloaded',currentScene)
+            App.debug('Scene unloaded',currentScene) //¤
             if(currentScene == "Tutorial") {
                 inventory.clear()
             }
@@ -393,7 +393,7 @@ Item {
         Aid.loopChildren(scene.canvas,function(object) {
             if('name' in object) {
                 if(isBlacklisted(object.name)) {
-                    App.debug('Object',object.name,'is blacklisted. Hidding...')
+                    App.debug('Object',object.name,'is blacklisted. Hidding...') //¤
                     object.visible = false
                     return
                 }
@@ -409,11 +409,11 @@ Item {
 
                 // NOTE Object already has a state saved on disk - skip setting values
                 if(Aid.qtypeof(staticObject) === "Object" && staticObject.store.existOnDisk()) {
-                    App.debug('Static object',staticObject.name,'already has a state saved on disk. Skipping...')
+                    App.debug('Static object',staticObject.name,'already has a state saved on disk. Skipping...') //¤
                     continue
                 }
 
-                App.debug('Correcting static object',staticObject.name,'from scene data')
+                App.debug('Correcting static object',staticObject.name,'from scene data') //¤
                 setProperties(staticObject,object,true)
 
 
@@ -424,13 +424,13 @@ Item {
         }
 
         // NOTE go through inventory and spawn any objects from other scenes
-        var ic = inventory.contents
+        var ic = inventory.contents, object
 
         for(i in ic) {
-            var object = ic[i]
+            object = ic[i]
 
             if(isBlacklisted(object.name)) {
-                App.debug('Object',object.name,'is blacklisted. Skipping...')
+                App.debug('Object',object.name,'is blacklisted. Skipping...') //¤
                 continue
             }
 
@@ -443,9 +443,9 @@ Item {
 
                 component = objectComponent
 
-                App.debug('Spawning dynamic object from INVENTORY',attrs.name)
+                App.debug('Spawning dynamic object from INVENTORY',attrs.name) //¤
                 Incubate.now(component, scene.canvas, attrs, function(o){
-                    App.debug('Spawned dynamic INVENTORY object',o.name,o)
+                    App.debug('Spawned dynamic INVENTORY object',o.name,o) //¤
                     inventory.add(o)
 
                     dynamicLoaded[o.name] = o
@@ -458,7 +458,7 @@ Item {
         for(var name in os) {
 
             if(isBlacklisted(name)) {
-                App.debug('Object',name,'is blacklisted. Skipping...')
+                App.debug('Object',name,'is blacklisted. Skipping...') //¤
                 continue
             }
 
@@ -469,12 +469,12 @@ Item {
 
                 component = objectComponent
 
-                App.debug('SPAWNED Dynamic object',attrs.name,'prepared')
+                App.debug('SPAWNED Dynamic object',attrs.name,'prepared') //¤
                 Incubate.now(component, scene.canvas, attrs, function(o){
-                    App.debug('SPAWNED Dynamic object',o.name,o.draggable,o.z)
+                    App.debug('SPAWNED Dynamic object',o.name,o.draggable,o.z) //¤
 
                     if(o.scene !== currentScene) {
-                        App.debug("I'm not currently here. Bye",o.name)
+                        App.debug("I'm not currently here. Bye",o.name) //¤
                         o.destroy()
                         return
                     }
@@ -490,7 +490,7 @@ Item {
     function spawnObject(object,onSpawned) {
 
         if(isBlacklisted(object.name)) {
-            App.debug('Object',object.name,'is blacklisted. Not spawning...')
+            App.debug('Object',object.name,'is blacklisted. Not spawning...') //¤
             return
         }
 
@@ -512,7 +512,7 @@ Item {
             component = areaComponent
 
         Incubate.now(component, scene.canvas, attrs, function(o){
-            App.debug('Spawned dynamic object',o.name,o)
+            App.debug('Spawned dynamic object',o.name,o) //¤
             if(inventory.has(o)) {
                 inventory.add(o)
             }
@@ -567,7 +567,7 @@ Item {
         running: sceneLoader.active
         interval: 1000
         onTriggered: {
-            App.debug('FIX setting',sceneLoader.source,'to','scenes/'+game.currentScene+'.qml')
+            App.debug('FIX setting',sceneLoader.source,'to','scenes/'+game.currentScene+'.qml') //¤
             sceneLoader.source = 'scenes/'+game.currentScene+'.qml'
         }
     }
@@ -1129,7 +1129,7 @@ Item {
         MouseArea {
             anchors { fill: parent }
             onClicked: {
-                console.log('messages cleared')
+                App.debug('messages cleared') //¤
                 messages.show = false
                 messageText.text = ""
                 messageOfText.text = ""
@@ -1187,9 +1187,7 @@ Item {
                 onTriggered: exit.opacity = 0
             }
 
-            Component.onDestruction: {
-                App.debug('Exit sign is out')
-            }
+            Component.onDestruction: App.debug('Exit sign is out') //¤
         }
     }
 
@@ -1253,13 +1251,13 @@ Item {
     }
 
 
-    Loader {
+    Pause {
         id: pauseLoader
         anchors { fill: parent }
-        source: 'menus/Pause.qml'
-        active: opacity > 0
+        //source: 'menus/Pause.qml'
+        enabled: opacity > 0
 
-        visible: status == Loader.Ready && opacity > 0
+        visible: opacity > 0
 
         opacity: game.paused ? 1 : 0
         Behavior on opacity {

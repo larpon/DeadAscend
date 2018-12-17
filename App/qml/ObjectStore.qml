@@ -38,7 +38,7 @@ Item {
 
     function add(obj) {
         if(has(obj)) {
-            App.debug('ObjectStore',obj[key],'already in store. Skipping...')
+            App.debug('ObjectStore',obj[key],'already in store. Skipping...') //¤
             notAdded(obj)
             return
         }
@@ -52,7 +52,7 @@ Item {
             o[prop] = obj[prop]
         }
 
-        App.debug('ObjectStore','adding',obj[key])
+        App.debug('ObjectStore','adding',obj[key]) //¤
         contents.push(o)
         added(obj)
         var t = contents
@@ -89,7 +89,7 @@ Item {
             }
         }
         if(r >= 0) {
-            App.debug('ObjectStore','removing',obj[key])
+            App.debug('ObjectStore','removing',obj[key]) //¤
             contents.splice(r, 1)
             removed(obj)
             var t = contents
@@ -102,10 +102,10 @@ Item {
 
     function clear() {
 
-        App.debug('ObjectStore','clear',name)
+        App.debug('ObjectStore','clear',name) //¤
         for(var i in contents) {
             var o = contents[i]
-            App.debug('ObjectStore','removing',o.name)
+            App.debug('ObjectStore','removing',o.name) //¤
             contents.splice(i, 1)
             removed(o)
             var t = contents

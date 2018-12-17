@@ -132,7 +132,7 @@ Base {
             }
 
             Incubate.now(zombieComponent, zField, attrs, function(o){
-                App.debug('Spawned zombie',o.zid)
+                App.debug('Spawned zombie',o.zid) //¤
                 scene.zombies[o.zid] = o
             })
 
@@ -479,7 +479,7 @@ Base {
             }
 
             onFrame: {
-                App.debug(sequenceName, frame )
+                App.debug(sequenceName, frame ) //¤
                 if(sequenceName === "open-show-panel" && frame == 4) {
                     game.elevatorPanel.show = true
                     sounds.play("elevator_open")

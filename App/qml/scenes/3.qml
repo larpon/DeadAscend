@@ -579,7 +579,7 @@ Base {
                 sounds.play("scribble")
             if(n === "bl-circle")
                 sounds.play("scribble",2)
-            App.debug("Hamster in sequence",sequence.name)
+            App.debug("Hamster in sequence",sequence.name) //¤
         }
 
         onClicked: {
@@ -618,7 +618,7 @@ Base {
             if(cageHit) {
                 var o = drag.source
 
-                App.debug('DROPPED',o.name)
+                App.debug('DROPPED',o.name) //¤
 
                 if(!hamsterCalm && o.name === "grain") {
                     hamster.jumpTo('peek-mid')

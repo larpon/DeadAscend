@@ -8,7 +8,7 @@ Item {
     anchors { fill: parent }
 
     paused: App.paused
-    onPausedChanged: App.debug('Menu',paused ? 'paused' : 'continued')
+    onPausedChanged: App.debug('Menu',paused ? 'paused' : 'continued') //¤
 
     Image {
         id: background

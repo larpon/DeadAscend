@@ -24,4 +24,9 @@ android-no-sdk {
     INSTALLS += target
 }
 
+!isEmpty(BIN_DIR) {
+    message("Using $$BIN_DIR for binary output (from BIN_DIR variable)")
+    target.path = $$BIN_DIR
+}
+
 export(INSTALLS)

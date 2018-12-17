@@ -31,7 +31,7 @@ Item {
         for(var key in keys) {
             t += key + '=' + keys[key] + "\n"
         }
-        console.debug('Statistics dump:\n',t)
+        App.debug('Statistics dump:\n',t) //¤
     }
 
     function reset() {

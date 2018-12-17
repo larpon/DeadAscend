@@ -185,7 +185,7 @@ ObjectStore {
     }
 
     onAdded: {
-        App.debug('Inventory','added',object.name)
+        App.debug('Inventory','added',object.name) //¤
 
         core.sounds.play('add')
 
@@ -214,7 +214,7 @@ ObjectStore {
     }
 
     onNotAdded: {
-        App.debug('Inventory','(not) added',object.name)
+        App.debug('Inventory','(not) added',object.name) //¤
 
         core.sounds.play('add')
         var m = row.mapFromItem(object.parent,object.x,object.y)
@@ -273,7 +273,7 @@ ObjectStore {
             var vo = visualItems.get(i)
             if(vo.key === object.name) {
                 found = true
-                App.debug("Inventory","updating",object.name,"visual reference")
+                App.debug("Inventory","updating",object.name,"visual reference") //¤
                 removeVisual(object)
                 visualItems.insert(i,{ key: object.name, object: object })
                 break

@@ -41,8 +41,8 @@ Entity {
     property string _at: ""
     property int _z: 0
 
-    onAtChanged: App.debug('Object',name,'at',at)
-    on_AtChanged: App.debug('Object',name,'came from',_at)
+    onAtChanged: App.debug('Object',name,'at',at) //¤
+    on_AtChanged: App.debug('Object',name,'came from',_at) //¤
 
     property alias keys: dropSpot.keys
 
@@ -285,10 +285,10 @@ Entity {
     }
 
     function dump() {
-        console.log(name)
+        App.log(name)
         for(var i in root) {
             if(!Aid.isFunction(root[i]))
-                console.log(i,':',root[i])
+                App.log(i,':',root[i])
         }
     }
 

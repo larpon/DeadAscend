@@ -1,5 +1,6 @@
 buildscript {
     repositories {
+        google()
         // You can search here for sdk's
         // http://search.maven.org/
         mavenLocal()
@@ -15,8 +16,8 @@ buildscript {
 
     dependencies {
         // You can update gradle by changing build-folder/android-build/gradle/wrapper/gradle-wrapper.properties
-        classpath 'com.android.tools.build:gradle:2.3.3'
-        classpath 'com.google.gms:google-services:3.+'
+        classpath 'com.android.tools.build:gradle:3.1.0'
+        classpath 'com.google.gms:google-services:4.0.1'
     }
 }
 
@@ -76,11 +77,11 @@ android {
 
     defaultConfig {
         applicationId "com.blackgrain.android.deadascend.ad"  // Needed by QtFirebase
-
+        //minSdkVersion 18
         vectorDrawables.useSupportLibrary = true
 
         // Enabling multidex support.
-        multiDexEnabled = true
+        //multiDexEnabled = true
     }
 
     lintOptions {
@@ -93,20 +94,82 @@ android {
     }
 }
 
+// Pre-experimental Gradle plug-in NDK boilerplate below.
+// Right now the Firebase plug-in does not work with the experimental
+// Gradle plug-in so we're using ndk-build for the moment.
+project.ext {
+    // Configure the Firebase C++ SDK location.
+    firebase_cpp_sdk_dir = System.getProperty('firebase_cpp_sdk.dir')
+    firebaseSdkUsed = 'system property firebase_cpp_sdk.dir'
+
+    if (firebase_cpp_sdk_dir == null || firebase_cpp_sdk_dir.isEmpty()) {
+        firebase_cpp_sdk_dir = System.getenv('FIREBASE_CPP_SDK_DIR')
+        firebaseSdkUsed = 'system env variable FIREBASE_CPP_SDK_DIR'
+        if (firebase_cpp_sdk_dir == null || firebase_cpp_sdk_dir.isEmpty()) {
+            if ((new File('firebase_cpp_sdk')).exists()) {
+                firebase_cpp_sdk_dir = 'firebase_cpp_sdk'
+            } else {
+                throw new StopActionException(
+                    'firebase_cpp_sdk.dir property or the FIREBASE_CPP_SDK_DIR ' +
+                    'environment variable must be set to reference the Firebase C++ ' +
+                    'SDK install directory.  This is used to configure static library ' +
+                    'and C/C++ include paths for the SDK.'
+                )
+            }
+        }
+    }
+
+    if (!(new File(firebase_cpp_sdk_dir)).exists()) {
+        throw new StopActionException(
+            sprintf('Firebase C++ SDK directory %s does not exist', firebase_cpp_sdk_dir)
+        )
+    }
+    println 'QtFirebase using Firebase C++ SDK located in ' + firebase_cpp_sdk_dir + ' (from ' + firebaseSdkUsed + ')'
+
+    // Check the NDK location using the same configuration options as the
+    // experimental Gradle plug-in.
+    def ndkDir = android.ndkDirectory
+    ndkUsed = 'android.ndkDirectory'
+
+    if (ndkDir == null || !ndkDir.exists()) {
+        ndkDir = new File(System.getProperty('ndk_dir'))
+        ndkUsed = 'system property ndk_dir'
+    }
+    if (ndkDir == null || !ndkDir.exists()) {
+        ndkDir = new File(System.getenv('ANDROID_NDK_HOME'))
+        ndkUsed = 'system env variable ANDROID_NDK_HOME'
+    }
+    if (ndkDir == null || !ndkDir.exists()) {
+        throw new StopActionException(
+            'Android NDK directory should be specified using the ndkDir ' +
+            'property or ANDROID_NDK_HOME environment variable.'
+        )
+    }
+    println 'QtFirebase (Firebase C++ SDK) using Android NDK located in ' + ndkDir + ' (from ' + ndkUsed + ')'
+
+}
+
+repositories {
+    flatDir {
+        dirs project.ext.firebase_cpp_sdk_dir + "/libs/android"
+    }
+}
+
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile fileTree(dir: 'src', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'src', include: ['*.jar'])
 
-    compile 'com.android.support:multidex:1.+'
+    implementation 'com.android.support:appcompat-v7:27.1.1'         // Optional??
+    implementation 'com.google.android.gms:play-services-base:15.0.1'  // Mandatory - Firebase rely on Google Play services
 
-    compile 'com.android.support:appcompat-v7:25.0.1'
-    compile 'com.google.android.gms:play-services-base:11.+'  // QtFirebase mandatory - Firebase rely on Google Play services
+    // For AdMob support
+    implementation 'com.google.firebase:firebase-ads:15.0.1'
 
-    // For QtFirebase AdMob support
-    compile 'com.google.firebase:firebase-ads:11.+'
+    // For Google Analytics support
+    implementation 'com.google.firebase:firebase-core:16.0.1'         // Recommended package
+    // implementation 'com.google.firebase:firebase-analytics:12.+' // deprecated
 
-    // For QtFirebase Analytics support
-    compile 'com.google.firebase:firebase-core:11.+'
+    implementation 'com.google.firebase:firebase-common:16.0.0'
 }
 
 apply plugin: 'com.google.gms.google-services' // QtFirebase
