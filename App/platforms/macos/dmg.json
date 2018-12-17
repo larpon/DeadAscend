@@ -3,7 +3,7 @@
     "icon": "dmg_icon.icns",
     "background": "dmg_back.png",
     "contents": [
-        { "x": 200, "y": 640, "type": "file", "path": "/tmp/non/DeadAscend.app" },
+        { "x": 200, "y": 640, "type": "file", "path": "/tmp/dead_ascend/DeadAscend.app" },
         { "x": 600, "y": 640, "type": "link", "path": "/Applications" }
     ]
 }
