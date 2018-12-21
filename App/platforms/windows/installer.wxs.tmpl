@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!-- https://github.com/giddie/qt-cmake-template/blob/master/win/installer.cmake.wxs -->
+  <Product Id="*" Name="@PROJECT_LONGNAME@" Version="@PROJECT_VERSION@" Manufacturer="Black Grain Games"
+           UpgradeCode="e8884340-a4b8-11e8-861a-68f7286be452"
+           Language="1033" Codepage="1252">
+    <Package Id="*" InstallerVersion="200" Compressed="yes" Languages="1033"
+             SummaryCodepage="1252" InstallScope="perMachine"/>
+    <Media Id="1" Cabinet="data.cab" EmbedCab="yes"/>
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed. If you are trying to downgrade, please uninstall the newer version first."
+                  AllowSameVersionUpgrades="yes"/>
+
+    <Icon Id="appicon.ico" SourceFile="appicon.ico"/>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ProductMenuDir" Name="@PROJECT_LONGNAME@">
+          <Component Id="ProductMenuDir" Guid="*">
+            <RegistryValue Root="HKMU" Key="Software\[Manufacturer]\[ProductName]"
+                           Type="string" Name="ProductMenuDirInstalled" Value=""
+                           KeyPath="yes"/>
+            <RemoveFolder Id="ProductMenuDir" On="uninstall"/>
+          </Component>
+        </Directory>
+      </Directory>
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLDIR" Name="@PROJECT_LONGNAME@">
+          <Directory Id="audioPartDir" Name="audio" />
+          <Directory Id="bearerPartDir" Name="bearer"/>
+          <Directory Id="iconenginesPartDir" Name="iconengines"/>
+          <Directory Id="imageformatsPartDir" Name="imageformats"/>
+
+          <Directory Id="mediaservicePartDir" Name="mediaservice"/>
+          <Directory Id="platformsPartDir" Name="platforms"/>
+          <Directory Id="playlistformatsPartDir" Name="playlistformats"/>
+          <Directory Id="qmltoolingPartDir" Name="qmltooling"/>
+
+          <Directory Id="QtPartDir" Name="Qt"/>
+          <Directory Id="QtGraphicalEffectsPartDir" Name="QtGraphicalEffects"/>
+          <Directory Id="QtMultimediaPartDir" Name="QtMultimedia"/>
+          <Directory Id="QtQmlPartDir" Name="QtQml"/>
+          <Directory Id="QtQuickPartDir" Name="QtQuick"/>
+          <Directory Id="QtQuick.2PartDir" Name="QtQuick.2"/>
+          <Directory Id="QtTestPartDir" Name="QtTest"/>
+          <Directory Id="QtWebSocketsPartDir" Name="QtWebSockets"/>
+          <Directory Id="scenegraphPartDir" Name="scenegraph"/>
+          <Directory Id="stylesPartDir" Name="styles"/>
+          <Directory Id="translationsPartDir" Name="translations"/>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <DirectoryRef Id="INSTALLDIR">
+      <!-- Main Executable -->
+      <Component Guid="*">
+        <File Id="MainExecutable" Name="@PROJECT_EXE_NAME@.exe" Source="@PROJECT_EXE_NAME@.exe" KeyPath="yes">
+          <Shortcut Id="StartMenuShortcut" Directory="ProductMenuDir"
+                    Name="@PROJECT_LONGNAME@" Icon="appicon.ico" Advertise="yes"/>
+        </File>
+      </Component>
+    </DirectoryRef>
+
+    <!-- Qt DLLs -->
+    <ComponentGroup Id="QtDlls" Directory="INSTALLDIR">
+      <Component Guid="*">
+        <File Name="Qt5Core.dll" KeyPath="yes"/>
+      </Component>
+      <Component Guid="*">
+        <File Name="Qt5Gui.dll" KeyPath="yes"/>
+      </Component>
+      <Component Guid="*">
+        <File Name="Qt5Multimedia.dll" KeyPath="yes"/>
+      </Component>
+      <Component Guid="*">
+        <File Name="Qt5MultimediaQuick.dll" KeyPath="yes"/>
+      </Component>
+      <Component Guid="*">
+        <File Name="Qt5Network.dll" KeyPath="yes"/>
+      </Component>
+      <Component Guid="*">
+        <File Name="Qt5Qml.dll" KeyPath="yes"/>
+      </Component>
+      <Component Guid="*">
+        <File Name="Qt5Quick.dll" KeyPath="yes"/>
+      </Component>
+      <Component Guid="*">
+        <File Name="Qt5QuickControls2.dll" KeyPath="yes"/>
+      </Component>
+      <Component Guid="*">
+        <File Name="Qt5QuickParticles.dll" KeyPath="yes"/>
+      </Component>
+      <Component Guid="*">
+        <File Name="Qt5QuickTemplates2.dll" KeyPath="yes"/>
+      </Component>
+      <Component Guid="*">
+        <File Name="Qt5Svg.dll" KeyPath="yes"/>
+      </Component>
+      <Component Guid="*">
+        <File Name="Qt5WebSockets.dll" KeyPath="yes"/>
+      </Component>
+      <Component Guid="*">
+        <File Name="Qt5Widgets.dll" KeyPath="yes"/>
+      </Component>
+      <Component Guid="*">
+        <File Name="Qt5QuickTest.dll" KeyPath="yes"/>
+      </Component>
+      <Component Guid="*">
+        <File Name="Qt5Test.dll" KeyPath="yes"/>
+      </Component>
+    </ComponentGroup>
+
+    <!-- System DLLs -->
+    <ComponentGroup Id="SystemDlls" Directory="INSTALLDIR">
+      <Component Guid="*">
+        <File Name="d3dcompiler_47.dll" KeyPath="yes"/>
+      </Component>
+      <Component Guid="*">
+        <File Name="libEGL.dll" KeyPath="yes"/>
+      </Component>
+      <Component Guid="*">
+        <File Name="libGLESV2.dll" KeyPath="yes"/>
+      </Component>
+      <Component Guid="*">
+        <File Name="opengl32sw.dll" KeyPath="yes"/>
+      </Component>
+    </ComponentGroup>
+
+    <!-- assets -->
+    <ComponentGroup Id="Assets" Directory="INSTALLDIR">
+      <Component Guid="*">
+        <File Name="assets.rcc" KeyPath="yes"/>
+      </Component>
+    </ComponentGroup>
+
+    <!-- This describes what will actually get installed -->
+    <Feature Id="Core">
+      <ComponentRef Id="MainExecutable"/>
+
+      <ComponentGroupRef Id="QtDlls"/>
+      <ComponentGroupRef Id="SystemDlls"/>
+      <ComponentGroupRef Id="Assets"/>
+
+      <!-- Components generated by build script -->
+      <ComponentGroupRef Id="audioPart"/>
+      <ComponentGroupRef Id="bearerPart"/>
+      <ComponentGroupRef Id="iconenginesPart"/>
+      <ComponentGroupRef Id="imageformatsPart"/>
+
+      <ComponentGroupRef Id="mediaservicePart"/>
+      <ComponentGroupRef Id="platformsPart"/>
+      <ComponentGroupRef Id="playlistformatsPart"/>
+      <ComponentGroupRef Id="qmltoolingPart"/>
+
+      <ComponentGroupRef Id="QtPart"/>
+      <ComponentGroupRef Id="QtGraphicalEffectsPart"/>
+      <ComponentGroupRef Id="QtMultimediaPart"/>
+      <ComponentGroupRef Id="QtQmlPart"/>
+      <ComponentGroupRef Id="QtQuickPart"/>
+      <ComponentGroupRef Id="QtQuick.2Part"/>
+      <ComponentGroupRef Id="QtTestPart"/>
+      <ComponentGroupRef Id="QtWebSocketsPart"/>
+      <ComponentGroupRef Id="scenegraphPart"/>
+      <ComponentGroupRef Id="stylesPart"/>
+      <ComponentGroupRef Id="translationsPart"/>
+
+      <ComponentRef Id="ProductMenuDir"/>
+    </Feature>
+
+    <Property Id="ARPPRODUCTICON" Value="appicon.ico"/>
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR"/>
+    <!-- To offer the option to lanch after installation -->
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOX" Value="1"/>
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch program after installation"/>
+    <Property Id="WixShellExecTarget" Value="[#MainExecutable]"/>
+    <CustomAction Id="LaunchApplication" BinaryKey="WixCA"
+                  DllEntry="WixShellExec" Impersonate="yes"/>
+    <UI>
+      <UIRef Id="WixUI_InstallDir"/>
+      <UIRef Id="WixUI_ErrorProgressText"/>
+      <!-- To offer the option to lanch after installation -->
+      <Publish Dialog="ExitDialog" Control="Finish" Event="DoAction"
+               Value="LaunchApplication">
+        WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed
+      </Publish>
+    </UI>
+
+    <WixVariable Id="WixUIBannerBmp" Value="installer-header.bmp"/>  <!-- Size: 493x58 -->
+    <WixVariable Id="WixUIDialogBmp" Value="installer-welcome.bmp"/> <!-- Size: 493x312 -->
+
+    <!-- <WixVariable Id="WixUILicenseRtf" Value="..\Licence.rtf"/> -->
+  </Product>
+</Wix>
