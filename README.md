@@ -16,6 +16,8 @@ A hand-drawn, open source, point'n'click-like 2D adventure game written in Qt/QM
 
 By playing the pre-build versions above you are supporting my (indie) game productions.
 
+Dead Ascend is now also available pre-build for [Linux, MacOS and Windows on itch.io](https://blackgrain.itch.io/dead-ascend)
+
 ## DIY Building
 
 You can build the game from command line or with [Qt Creator](https://www.qt.io/ide/) (which usually comes bundled with [Qt](https://www.qt.io)).
