@@ -82,7 +82,15 @@ android {
 
         // Enabling multidex support.
         //multiDexEnabled = true
+/*
+        externalNativeBuild.cmake {
+            arguments "-DFIREBASE_CPP_SDK_DIR=$gradle.firebase_cpp_sdk_dir"
+        }*/
     }
+    /*
+    externalNativeBuild.cmake {
+        path 'CMakeLists.txt'
+    }*/
 
     lintOptions {
         checkReleaseBuilds false
@@ -155,6 +163,7 @@ repositories {
     }
 }
 
+/*
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation fileTree(dir: 'src', include: ['*.jar'])
@@ -170,6 +179,12 @@ dependencies {
     // implementation 'com.google.firebase:firebase-analytics:12.+' // deprecated
 
     implementation 'com.google.firebase:firebase-common:16.0.0'
+}*/
+
+apply from: "$gradle.firebase_cpp_sdk_dir/Android/firebase_dependencies.gradle"
+firebaseCpp.dependencies {
+  analytics
+  admob
 }
 
 apply plugin: 'com.google.gms.google-services' // QtFirebase
