@@ -2,6 +2,17 @@
 <manifest package="com.blackgrain.android.deadascend.ad" xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.1.2-armv7" android:versionCode="13" android:installLocation="auto">
     <application android:hardwareAccelerated="true" android:name="org.qtproject.qt5.android.bindings.QtApplication" android:label="@string/app_name" android:icon="@drawable/icon">
 
+        <!-- See https://developers.google.com/admob/android/quick-start#update_your_androidmanifestxml -->
+        <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.ca-app-pub-6606648560678905~8027290070"
+            android:value="com.blackgrain.android.deadascend.ad"/>
+
+        <!-- See https://developers.google.com/ad-manager/mobile-ads-sdk/android/quick-start#update_your_androidmanifestxml -->
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true"/>
+
         <activity android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|locale|fontScale|keyboard|keyboardHidden|navigation" android:name="com.blackgrain.android.deadascend.Main" android:label="@string/app_name" android:screenOrientation="landscape" android:theme="@style/AppTheme" android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

@@ -163,12 +163,14 @@ repositories {
     }
 }
 
-/*
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation fileTree(dir: 'src', include: ['*.jar'])
 
     implementation 'com.android.support:appcompat-v7:27.1.1'         // Optional??
+
+/*
     implementation 'com.google.android.gms:play-services-base:15.0.1'  // Mandatory - Firebase rely on Google Play services
 
     // For AdMob support
@@ -179,7 +181,8 @@ dependencies {
     // implementation 'com.google.firebase:firebase-analytics:12.+' // deprecated
 
     implementation 'com.google.firebase:firebase-common:16.0.0'
-}*/
+    */
+}
 
 apply from: "$gradle.firebase_cpp_sdk_dir/Android/firebase_dependencies.gradle"
 firebaseCpp.dependencies {
