@@ -71,3 +71,7 @@ Once you have a fully working Qt/Qt Creator setup - you are ready to checkout an
 If you encounter anything odd with the game feel free to report an [issue](https://github.com/Larpon/DeadAscend/issues).
 
 If you're having trouble with QtFirebase please open an issue on the [QtFirebase project issue page](https://github.com/Larpon/QtFirebase/issues).
+
+## Other game projects
+
+[non - The First Warp](https://store.steampowered.com/app/761730)
