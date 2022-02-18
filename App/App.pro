@@ -79,7 +79,7 @@ android: {
 # Remember to actually run it: (custom step in QtCreator, "make assetsrcc" from commandline)
 # run from ${buildDir}/App
 # /usr/bin/make assetsrcc
-include(assets.pri)
+//include(assets.pri)
 
 # make git version available to C++ and QML
 VERSION=1.1.2
@@ -91,7 +91,9 @@ DISTFILES += \
 RESOURCES += \
     base.qrc \
     json.qrc \
-    translations.qrc
+    translations.qrc \
+    assets.qrc \
+    music.qrc 
 
 lupdate_only {
 SOURCES = *.qml \
@@ -105,4 +107,6 @@ TRANSLATIONS += \
     $$PWD/translations/DeadAscend.ts \
     $$PWD/translations/DeadAscend_en.ts \
     $$PWD/translations/DeadAscend_es.ts \
-    $$PWD/translations/DeadAscend_da.ts
+    $$PWD/translations/DeadAscend_da.ts \
+    $$PWD/translations/DeadAscend_de.ts \
+    $$PWD/translations/DeadAscend_nl.ts 
