@@ -155,11 +155,11 @@ Item {
                 Image {
                     height: 20
                     fillMode: Image.PreserveAspectFit
-                    source: App.getAsset('flags/de.png')
-                    opacity: (App.language === "de") ? 1 : 0.3
+                    source: App.getAsset('flags/nl.png')
+                    opacity: (App.language === "nl") ? 1 : 0.3
                     MouseArea {
                         anchors { fill: parent }
-                        onClicked: App.language = "de"
+                        onClicked: App.language = "nl"
                     }
                 }
             }
