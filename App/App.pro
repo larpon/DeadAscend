@@ -79,7 +79,7 @@ android: {
 # Remember to actually run it: (custom step in QtCreator, "make assetsrcc" from commandline)
 # run from ${buildDir}/App
 # /usr/bin/make assetsrcc
-//include(assets.pri)
+include(assets.pri)
 
 # make git version available to C++ and QML
 VERSION=1.1.2
