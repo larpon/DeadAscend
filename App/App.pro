@@ -105,4 +105,6 @@ TRANSLATIONS += \
     $$PWD/translations/DeadAscend.ts \
     $$PWD/translations/DeadAscend_en.ts \
     $$PWD/translations/DeadAscend_es.ts \
-    $$PWD/translations/DeadAscend_da.ts
+    $$PWD/translations/DeadAscend_da.ts \
+    $$PWD/translations/DeadAscend_de.ts \
+    $$PWD/translations/DeadAscend_nl.ts 

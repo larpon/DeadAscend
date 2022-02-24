@@ -96,6 +96,14 @@ Item {
                         return
                     }
                     if(App.language === "da") {
+                        App.language = "de"
+                        return
+                    }
+                    if(App.language === "de") {
+                        App.language = "en"
+                        return                  
+                    }
+                    if(App.language === "nl") {
                         App.language = "en"
                         return
                     }
@@ -141,6 +149,17 @@ Item {
                     MouseArea {
                         anchors { fill: parent }
                         onClicked: App.language = "da"
+                    }
+                }
+                
+                Image {
+                    height: 20
+                    fillMode: Image.PreserveAspectFit
+                    source: App.getAsset('flags/nl.png')
+                    opacity: (App.language === "nl") ? 1 : 0.3
+                    MouseArea {
+                        anchors { fill: parent }
+                        onClicked: App.language = "nl"
                     }
                 }
             }
