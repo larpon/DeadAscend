@@ -96,12 +96,8 @@ Item {
                         return
                     }
                     if(App.language === "da") {
-                        App.language = "de"
+                        App.language = "nl"
                         return
-                    }
-                    if(App.language === "de") {
-                        App.language = "en"
-                        return                  
                     }
                     if(App.language === "nl") {
                         App.language = "en"

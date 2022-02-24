@@ -39,14 +39,6 @@ bool LanguageSwitcher::selectLanguage(QString language)
             qDebug() << this << "::selectLanguage loaded" << language;
             emit languageChanged();
         }
-    } else if(language == QString("de")) {
-        _loaded = _translator->load("DeadAscend_"+language, ":/translations");
-        if(_loaded) {
-            QTextCodec::setCodecForLocale(QTextCodec::codecForName("utf8"));
-            qApp->installTranslator(_translator);
-            qDebug() << this << "::selectLanguage loaded" << language;
-            emit languageChanged();
-        }
     } else if(language == QString("nl")) {
         _loaded = _translator->load("DeadAscend_"+language, ":/translations");
         if(_loaded) {

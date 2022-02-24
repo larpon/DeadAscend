@@ -82,7 +82,7 @@ android: {
 include(assets.pri)
 
 # make git version available to C++ and QML
-VERSION=1.1.2
+VERSION=1.1.3
 include(../gitversion.pri)
 
 DISTFILES += \
@@ -106,5 +106,4 @@ TRANSLATIONS += \
     $$PWD/translations/DeadAscend_en.ts \
     $$PWD/translations/DeadAscend_es.ts \
     $$PWD/translations/DeadAscend_da.ts \
-    $$PWD/translations/DeadAscend_de.ts \
     $$PWD/translations/DeadAscend_nl.ts 
