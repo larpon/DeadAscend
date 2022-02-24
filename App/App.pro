@@ -91,9 +91,7 @@ DISTFILES += \
 RESOURCES += \
     base.qrc \
     json.qrc \
-    translations.qrc \
-    assets.qrc \
-    music.qrc 
+    translations.qrc
 
 lupdate_only {
 SOURCES = *.qml \
