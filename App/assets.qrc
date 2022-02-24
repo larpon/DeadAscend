@@ -1036,8 +1036,10 @@
         <file>assets/flags/dk.png</file>
         <file>assets/flags/en.png</file>
         <file>assets/flags/es.png</file>
+        <file>assets/flags/nl.png</file>
         <file>assets/sprites/charging_paper/charging_paper_L.es.png</file>
         <file>assets/sprites/charging_paper/charging_paper_L.da.png</file>
         <file>assets/sprites/charging_paper/charging_paper_L.en.png</file>
+		<file>assets/sprites/charging_paper/charging_paper_L.nl.png</file>
     </qresource>
 </RCC>

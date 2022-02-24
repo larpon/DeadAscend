@@ -106,13 +106,14 @@ Item {
                 }
             }
 
-            Row {
+            Grid {
                 id: languageSelectFlags
                 anchors {
                     left: parent.left
                     top: languageSelect.bottom
                     leftMargin: 20
                 }
+                columns: 3
                 spacing: 10
 
                 Image {
