@@ -221,8 +221,8 @@ Rectangle {
                 Open Source Components<br>
                 <br>
                 Qt (qt.io)<br>
-                Qak (github.com/Larpon/qak)<br>
-                QtFirebase (github.com/Larpon/QtFirebase)
+                Qak (github.com/larpon/qak)<br>
+                QtFirebase (github.com/larpon/QtFirebase)
                 ")
                 text.opacity = 1
             }

@@ -913,8 +913,8 @@
         <translation>An opensourcespel, gebruikmakend van het platform-onafhankelijke &lt;a href=&quot;https://www.qt.io/&quot;&gt;Qt&lt;/a&gt;-project.</translation>
     </message>
     <message>
-        <source>Game and project source code can be found on &lt;a href=&quot;https://github.com/Larpon/DeadAscend&quot;&gt;GitHub&lt;/a&gt;</source>
-        <translation>De spel- en broncode is te vinden op &lt;a href=&quot;https://github.com/Larpon/DeadAscend&quot;&gt;GitHub&lt;/a&gt;</translation>
+        <source>Game and project source code can be found on &lt;a href=&quot;https://github.com/larpon/DeadAscend&quot;&gt;GitHub&lt;/a&gt;</source>
+        <translation>De spel- en broncode is te vinden op &lt;a href=&quot;https://github.com/larpon/DeadAscend&quot;&gt;GitHub&lt;/a&gt;</translation>
     </message>
     <message>
         <source>The game serves as a showcase and example of how you can build a cross-platform game with Qt.&lt;br&gt;
@@ -927,13 +927,13 @@
         <translation>Het spel maakt gebruik van de volgende opensourceprojecten:</translation>
     </message>
     <message>
-        <source>&lt;a href=&quot;https://github.com/Larpon/qak&quot;&gt;Qak&lt;/a&gt; - QML Aid Kit</source>
+        <source>&lt;a href=&quot;https://github.com/larpon/qak&quot;&gt;Qak&lt;/a&gt; - QML Aid Kit</source>
         <extracomment>It&apos;s the project titel and subtitles (catch phrases) in English - I have no idea if these should be translated?</extracomment>
-        <translation>&lt;a href=&quot;https://github.com/Larpon/qak&quot;&gt;Qak&lt;/a&gt; - QML Aid Kit</translation>
+        <translation>&lt;a href=&quot;https://github.com/larpon/qak&quot;&gt;Qak&lt;/a&gt; - QML Aid Kit</translation>
     </message>
     <message>
-        <source>&lt;a href=&quot;https://github.com/Larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt; - an effort to bring the Google Firebase C++ SDK to Qt</source>
-        <translation>&lt;a href=&quot;https://github.com/Larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt; - een poging om de Google Firebase C++-sdk naar Qt te porteren</translation>
+        <source>&lt;a href=&quot;https://github.com/larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt; - an effort to bring the Google Firebase C++ SDK to Qt</source>
+        <translation>&lt;a href=&quot;https://github.com/larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt; - een poging om de Google Firebase C++-sdk naar Qt te porteren</translation>
     </message>
     <message>
         <source>The game uses the following fonts:</source>
@@ -961,8 +961,8 @@
         <translation>Om 2 redenen:</translation>
     </message>
     <message>
-        <source>Shows developers example use of the open source &lt;a href=&quot;https://github.com/Larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt; project.</source>
-        <translation>Om ontwikkelaars te laten zien hoe je het open source &lt;a href=&quot;https://github.com/Larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt;-project implementeert.</translation>
+        <source>Shows developers example use of the open source &lt;a href=&quot;https://github.com/larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt; project.</source>
+        <translation>Om ontwikkelaars te laten zien hoe je het open source &lt;a href=&quot;https://github.com/larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt;-project implementeert.</translation>
     </message>
     <message>
         <source>Supports our work at &lt;a href=&quot;http://games.blackgrain.dk&quot;&gt;Black Grain Games&lt;/a&gt;.</source>
@@ -1091,15 +1091,15 @@
                 Open Source Components&lt;br&gt;
                 &lt;br&gt;
                 Qt (qt.io)&lt;br&gt;
-                Qak (github.com/Larpon/qak)&lt;br&gt;
-                QtFirebase (github.com/Larpon/QtFirebase)
+                Qak (github.com/larpon/qak)&lt;br&gt;
+                QtFirebase (github.com/larpon/QtFirebase)
                 </source>
         <translation>
                 Opensource-onderdelen&lt;br&gt;
                 &lt;br&gt;
                 Qt (qt.io)&lt;br&gt;
-                Qak (github.com/Larpon/qak)&lt;br&gt;
-                QtFirebase (github.com/Larpon/QtFirebase)
+                Qak (github.com/larpon/qak)&lt;br&gt;
+                QtFirebase (github.com/larpon/QtFirebase)
                 </translation>
     </message>
     <message>

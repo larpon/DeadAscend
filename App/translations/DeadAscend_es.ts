@@ -1152,8 +1152,8 @@
     </message>
     <message>
         <location filename="../qml/About.qml" line="56"/>
-        <source>Game and project source code can be found on &lt;a href=&quot;https://github.com/Larpon/DeadAscend&quot;&gt;GitHub&lt;/a&gt;</source>
-        <translation>El juego y el código fuente del proyecto pueden encontrarse en &lt;a href=&quot;https://github.com/Larpon/DeadAscend&quot;&gt;GitHub&lt;/a&gt;</translation>
+        <source>Game and project source code can be found on &lt;a href=&quot;https://github.com/larpon/DeadAscend&quot;&gt;GitHub&lt;/a&gt;</source>
+        <translation>El juego y el código fuente del proyecto pueden encontrarse en &lt;a href=&quot;https://github.com/larpon/DeadAscend&quot;&gt;GitHub&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../qml/About.qml" line="60"/>
@@ -1169,14 +1169,14 @@
     </message>
     <message>
         <location filename="../qml/About.qml" line="67"/>
-        <source>&lt;a href=&quot;https://github.com/Larpon/qak&quot;&gt;Qak&lt;/a&gt; - QML Aid Kit</source>
+        <source>&lt;a href=&quot;https://github.com/larpon/qak&quot;&gt;Qak&lt;/a&gt; - QML Aid Kit</source>
         <extracomment>It&apos;s the project titel and subtitles (catch phrases) in English - I have no idea if these should be translated?</extracomment>
-        <translation>&lt;a href=&quot;https://github.com/Larpon/qak&quot;&gt;Qak&lt;/a&gt; - QML Aid Kit</translation>
+        <translation>&lt;a href=&quot;https://github.com/larpon/qak&quot;&gt;Qak&lt;/a&gt; - QML Aid Kit</translation>
     </message>
     <message>
         <location filename="../qml/About.qml" line="68"/>
-        <source>&lt;a href=&quot;https://github.com/Larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt; - an effort to bring the Google Firebase C++ SDK to Qt</source>
-        <translation>&lt;a href=&quot;https://github.com/Larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt; - un intento de traspasar  Google Firebase C++ SDK a Qt</translation>
+        <source>&lt;a href=&quot;https://github.com/larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt; - an effort to bring the Google Firebase C++ SDK to Qt</source>
+        <translation>&lt;a href=&quot;https://github.com/larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt; - un intento de traspasar  Google Firebase C++ SDK a Qt</translation>
     </message>
     <message>
         <location filename="../qml/About.qml" line="70"/>
@@ -1210,8 +1210,8 @@
     </message>
     <message>
         <location filename="../qml/About.qml" line="89"/>
-        <source>Shows developers example use of the open source &lt;a href=&quot;https://github.com/Larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt; project.</source>
-        <translation>Muestra a los desarrolladores un ejemplo del proyecto de software libre de &lt;a href=&quot;https://github.com/Larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt;.</translation>
+        <source>Shows developers example use of the open source &lt;a href=&quot;https://github.com/larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt; project.</source>
+        <translation>Muestra a los desarrolladores un ejemplo del proyecto de software libre de &lt;a href=&quot;https://github.com/larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/About.qml" line="90"/>
@@ -1347,15 +1347,15 @@
                 Open Source Components&lt;br&gt;
                 &lt;br&gt;
                 Qt (qt.io)&lt;br&gt;
-                Qak (github.com/Larpon/qak)&lt;br&gt;
-                QtFirebase (github.com/Larpon/QtFirebase)
+                Qak (github.com/larpon/qak)&lt;br&gt;
+                QtFirebase (github.com/larpon/QtFirebase)
                 </source>
         <translation>
                 Componentes de Software Libre&lt;br&gt;
                 &lt;br&gt;
                 Qt (qt.io)&lt;br&gt;
-                Qak (github.com/Larpon/qak)&lt;br&gt;
-                QtFirebase (github.com/Larpon/QtFirebase)
+                Qak (github.com/larpon/qak)&lt;br&gt;
+                QtFirebase (github.com/larpon/QtFirebase)
                 </translation>
     </message>
     <message>

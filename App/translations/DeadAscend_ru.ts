@@ -917,7 +917,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Game and project source code can be found on &lt;a href=&quot;https://github.com/Larpon/DeadAscend&quot;&gt;GitHub&lt;/a&gt;</source>
+        <source>Game and project source code can be found on &lt;a href=&quot;https://github.com/larpon/DeadAscend&quot;&gt;GitHub&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -930,12 +930,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;a href=&quot;https://github.com/Larpon/qak&quot;&gt;Qak&lt;/a&gt; - QML Aid Kit</source>
+        <source>&lt;a href=&quot;https://github.com/larpon/qak&quot;&gt;Qak&lt;/a&gt; - QML Aid Kit</source>
         <extracomment>It&apos;s the project titel and subtitles (catch phrases) in English - I have no idea if these should be translated?</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;a href=&quot;https://github.com/Larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt; - an effort to bring the Google Firebase C++ SDK to Qt</source>
+        <source>&lt;a href=&quot;https://github.com/larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt; - an effort to bring the Google Firebase C++ SDK to Qt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -962,7 +962,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Shows developers example use of the open source &lt;a href=&quot;https://github.com/Larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt; project.</source>
+        <source>Shows developers example use of the open source &lt;a href=&quot;https://github.com/larpon/QtFirebase&quot;&gt;QtFirebase&lt;/a&gt; project.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1048,8 +1048,8 @@
                 Open Source Components&lt;br&gt;
                 &lt;br&gt;
                 Qt (qt.io)&lt;br&gt;
-                Qak (github.com/Larpon/qak)&lt;br&gt;
-                QtFirebase (github.com/Larpon/QtFirebase)
+                Qak (github.com/larpon/qak)&lt;br&gt;
+                QtFirebase (github.com/larpon/QtFirebase)
                 </source>
         <translation type="unfinished"></translation>
     </message>

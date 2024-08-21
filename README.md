@@ -6,7 +6,7 @@ A hand-drawn, open source, point'n'click-like 2D adventure game written in Qt/QM
 
 "A horde of Zombies chased you to the old radio tower. Your only chance is to ascend up through the tower - solving a host of puzzles on your way to your rescue."
 
-![Screenshot](https://raw.githubusercontent.com/Larpon/DeadAscend/master/gfx/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/larpon/DeadAscend/master/gfx/screenshot.png)
 
 ## Quick start
 
@@ -30,19 +30,19 @@ Once you have a fully working Qt/Qt Creator setup - you are ready to checkout an
 
    ```
    cd /path/to/projects
-   git clone https://github.com/Larpon/DeadAscend.git
+   git clone https://github.com/larpon/DeadAscend.git
    ```
 2. Install project dependencies
 
    ```
    cd /path/to/projects/DeadAscend/extensions/
-   git clone https://github.com/Larpon/qak.git
-   git clone https://github.com/Larpon/QtFirebase.git
+   git clone https://github.com/larpon/qak.git
+   git clone https://github.com/larpon/QtFirebase.git
    ```
 
    **NOTE**<br>
-   If you are building for Android and/or iOS you also need to setup [QtFirebase](https://github.com/Larpon/QtFirebase).
-   Instructions and a working example is available [here](https://github.com/Larpon/QtFirebaseExample).
+   If you are building for Android and/or iOS you also need to setup [QtFirebase](https://github.com/larpon/QtFirebase).
+   Instructions and a working example is available [here](https://github.com/larpon/QtFirebaseExample).
 
 3. Build
 
@@ -51,7 +51,7 @@ Once you have a fully working Qt/Qt Creator setup - you are ready to checkout an
       - Open `/path/to/projects/DeadAscend/DeadAscend.pro` in Qt Creator
       - Choose your kit(s)
       - Add custom process step to build profile: Projects -> Build -> Build steps -> `/usr/bin/make` / `assetsrcc` / `%{buildDir}/App`
-      ![Extra make target](https://raw.githubusercontent.com/Larpon/DeadAscend/master/docs/img/QtCreatorProjectMakeStep.png)
+      ![Extra make target](https://raw.githubusercontent.com/larpon/DeadAscend/master/docs/img/QtCreatorProjectMakeStep.png)
       - Hit "Run"
 
    b. Command line
@@ -68,9 +68,9 @@ Once you have a fully working Qt/Qt Creator setup - you are ready to checkout an
 
 ## Bugs and issues
 
-If you encounter anything odd with the game feel free to report an [issue](https://github.com/Larpon/DeadAscend/issues).
+If you encounter anything odd with the game feel free to report an [issue](https://github.com/larpon/DeadAscend/issues).
 
-If you're having trouble with QtFirebase please open an issue on the [QtFirebase project issue page](https://github.com/Larpon/QtFirebase/issues).
+If you're having trouble with QtFirebase please open an issue on the [QtFirebase project issue page](https://github.com/larpon/QtFirebase/issues).
 
 ## Other game projects
 

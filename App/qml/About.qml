@@ -53,7 +53,7 @@ Rectangle {
         qsTr('Version %1 (%2), Qak %3 (%4), QtFirebase %5 (%6), Qt %7').arg(version).arg(gitVersion).arg(qakVersion).arg(qakGitVersion).arg(qtFirebaseVersion).arg(qtFirebaseGitVersion).arg(qtVersion)+'<br>
         <p>
             '+qsTr('An open source game utilizing the cross-platform <a href="https://www.qt.io/">Qt</a> project.')+'<br>'+
-            qsTr('Game and project source code can be found on <a href="https://github.com/Larpon/DeadAscend">GitHub</a>')+'
+            qsTr('Game and project source code can be found on <a href="https://github.com/larpon/DeadAscend">GitHub</a>')+'
         </p>
 
         <p>'+
@@ -64,8 +64,8 @@ Rectangle {
             <ul>
                 <li>'+
                 //: It's the project titel and subtitles (catch phrases) in English - I have no idea if these should be translated?
-                qsTr('<a href="https://github.com/Larpon/qak">Qak</a> - QML Aid Kit')+'</li>
-                <li>'+qsTr('<a href="https://github.com/Larpon/QtFirebase">QtFirebase</a> - an effort to bring the Google Firebase C++ SDK to Qt')+'</li>
+                qsTr('<a href="https://github.com/larpon/qak">Qak</a> - QML Aid Kit')+'</li>
+                <li>'+qsTr('<a href="https://github.com/larpon/QtFirebase">QtFirebase</a> - an effort to bring the Google Firebase C++ SDK to Qt')+'</li>
             </ul>'+
             qsTr('The game uses the following fonts:')+'
             <ul>
@@ -86,7 +86,7 @@ Rectangle {
              '+qsTr('<b>Why does the game have ads and collect analytical data?</b>')+'<br>
              '+qsTr('For 2 purposes:')+'
              <ol>
-                 <li>'+qsTr('Shows developers example use of the open source <a href="https://github.com/Larpon/QtFirebase">QtFirebase</a> project.')+'</li>
+                 <li>'+qsTr('Shows developers example use of the open source <a href="https://github.com/larpon/QtFirebase">QtFirebase</a> project.')+'</li>
                  <li>'+qsTr('Supports our work at <a href="http://games.blackgrain.dk">Black Grain Games</a>.')+'</li>
              </ol>
              '+qsTr('See our <a href="//blackgrain.dk/privacy.html">privacy policy</a> for info on how we handle the data.')+'
